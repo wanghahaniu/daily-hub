@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>源哥 × XZ服务器 · 全品类交叉日报 2026-10-07</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  background:linear-gradient(180deg,#eef1f8 0%,#f7f5fc 100%);
+  color:#2b2b3a;line-height:1.78;padding:22px 13px 44px;
+  -webkit-font-smoothing:antialiased;font-size:15px;
+}
+.page{max-width:780px;margin:0 auto}
+
+/* ── 头部 ── */
+.header{background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 55%,#b45ce0 100%);
+  border-radius:18px;padding:28px 26px 24px;color:#fff;box-shadow:0 10px 30px rgba(108,92,231,.25)}
+.header .kick{font-size:11.5px;letter-spacing:.16em;opacity:.8}
+.header h1{font-size:26px;letter-spacing:.5px;margin-top:8px;display:flex;align-items:center;gap:9px}
+.header .sub{margin-top:10px;font-size:13.8px;opacity:.95;line-height:1.72}
+.header .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px}
+.header .tags span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  padding:3px 11px;border-radius:999px;font-size:12.3px}
+
+/* ── 卡片 ── */
+.card{background:#fff;border-radius:16px;padding:20px 22px;margin-top:16px;
+  box-shadow:0 4px 16px rgba(60,60,120,.07)}
+.card-title{font-size:17.5px;font-weight:700;display:flex;align-items:center;gap:9px;
+  padding-bottom:11px;margin-bottom:13px;border-bottom:2px dashed #e6e6f2;line-height:1.5}
+.card-title .ico{font-size:19px}
+.card-title .sub{font-size:12.3px;font-weight:400;color:#8a8a9e;margin-left:auto;text-align:right}
+
+.hl{font-weight:700}
+.hl-red{color:#d5372a}.hl-blue{color:#2f57cf}
+.hl-purple{color:#7c3fd4}.hl-orange{color:#c9700f}
+mark{background:#fff1a8;padding:0 4px;border-radius:4px;font-weight:600;color:#5a4a00}
+
+/* ── 数字看板 ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:4px 0 2px}
+.stat{background:#f6f8ff;border:1px solid #e2e8fb;border-radius:10px;text-align:center;padding:11px 5px}
+.stat .v{font-size:18.5px;font-weight:800;color:#3563e9;letter-spacing:-.01em}
+.stat .v small{font-size:11.5px;font-weight:600;margin-left:1px}
+.stat .k{font-size:11.5px;color:#6a6a7c;margin-top:2px;line-height:1.4}
+
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;
+  background:#eceaf6;border:0.5px solid #eceaf6;border-radius:10px;overflow:hidden;margin:12px 0}
+.kv>div{background:#fff;padding:9px 11px}
+.kv .k{font-size:11.3px;color:#8a8a9c;margin-bottom:2px;line-height:1.4}
+.kv .v{font-size:16.5px;font-weight:700;letter-spacing:-.01em}
+.kv .v small{font-size:11.5px;font-weight:400;color:#5f5e6a;margin-left:2px}
+
+/* ── chip ── */
+.chip-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+.chip{border-radius:10px;padding:10px 13px;font-size:13.3px;font-weight:600;
+  display:flex;align-items:center;gap:8px}
+.chip small{display:block;font-weight:400;opacity:.85;font-size:11.8px;line-height:1.5;margin-top:1px}
+.chip.c-purple{background:#f1ebfd;color:#6d3fc0;border-left:4px solid #8a5cf6}
+.chip.c-red{background:#fdecea;color:#c03a24;border-left:4px solid #e0563c}
+.chip.c-blue{background:#e9effe;color:#2b54c9;border-left:4px solid #4c7df0}
+.chip.c-orange{background:#fdf1e3;color:#b96a12;border-left:4px solid #f09a3e}
+
+/* ── takeaway ── */
+.takeaway{margin-top:13px;border-radius:10px;padding:12px 15px;font-size:13.9px;
+  background:#f4f0fe;border:1px solid #ddd0fa;color:#5b3ea8;line-height:1.76}
+.takeaway b{color:#7a3fd0}
+.takeaway.warn{background:#fdf1e3;border-color:#f5d9b0;color:#9a5b0e}
+.takeaway.warn b{color:#c46a00}
+.takeaway.danger{background:#fdecea;border-color:#f6c6bd;color:#b03020}
+.takeaway.danger b{color:#d03517}
+.takeaway.good{background:#e8f7ee;border-color:#bfe6cd;color:#156b3c}
+.takeaway.good b{color:#1a8a4e}
+.takeaway.plain{background:#f6f7fb;border-color:#e2e5ef;color:#4a4a5e}
+.takeaway.plain b{color:#2b2b3a}
+
+/* ── step ── */
+.step{display:flex;gap:12px;margin-top:15px}
+.step .num{flex:0 0 26px;height:26px;border-radius:50%;color:#fff;font-size:13.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;margin-top:3px}
+.step .num.n1{background:#4c7df0}.step .num.n2{background:#8a5cf6}.step .num.n3{background:#e0563c}
+.step .body{flex:1;min-width:0}
+.step .body h4{font-size:14.9px;margin-bottom:5px;line-height:1.6}
+.step .body p{font-size:13.8px;color:#4a4a5c}
+
+/* ── 传导链 ── */
+.chain{display:flex;flex-direction:column;margin-top:10px}
+.chain-item{display:flex;align-items:flex-start;gap:12px;position:relative;padding-bottom:15px}
+.chain-item:before{content:"";position:absolute;left:15px;top:33px;bottom:0;width:2px;background:#e8d9fb}
+.chain-item:last-child:before{display:none}
+.chain-icon{flex:0 0 32px;height:32px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:15px;background:#f1ebfd;border:1px solid #ddd0fa}
+.chain-item .txt{flex:1;font-size:13.8px;color:#4a4a5c;padding-top:4px;line-height:1.72}
+.chain-item .txt b{color:#2b2b3a}
+
+/* ── scenario ── */
+.scenario{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.sc-box{border-radius:12px;padding:13px 15px;font-size:13.7px;display:flex;gap:11px;align-items:flex-start;
+  line-height:1.72}
+.sc-box .tag{flex:0 0 auto;font-size:11.5px;font-weight:800;border-radius:6px;padding:2px 9px;margin-top:3px;
+  white-space:nowrap}
+.sc-box .bd{flex:1;min-width:0}
+.sc-box h4{font-size:14.2px;margin-bottom:4px;line-height:1.6}
+.sc-1{background:#e8f7ee;border:1px solid #bfe6cd}
+.sc-1 h4,.sc-1 .tag{color:#157a41}.sc-1 .tag{background:#d2f0dd}
+.sc-2{background:#fdf1e3;border:1px solid #f5d9b0}
+.sc-2 h4,.sc-2 .tag{color:#b96a12}.sc-2 .tag{background:#f8e2c4}
+.sc-3{background:#fdecea;border:1px solid #f3c2b8}
+.sc-3 h4,.sc-3 .tag{color:#c03a24}.sc-3 .tag{background:#f9d3cb}
+.sc-4{background:#e9effe;border:1px solid #c3d3fb}
+.sc-4 h4,.sc-4 .tag{color:#2b54c9}.sc-4 .tag{background:#d6e2fd}
+
+/* ── 要点 ── */
+ul.pts{margin:9px 0 0;list-style:none}
+ul.pts li{font-size:13.9px;color:#45455a;padding:5px 0 5px 19px;position:relative;line-height:1.74}
+ul.pts li:before{content:"▸";position:absolute;left:1px;color:#8a5cf6;font-weight:700}
+ul.pts li b{color:#2b2b3a}
+
+/* ── 表格 ── */
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 0}
+table{width:100%;border-collapse:collapse;font-size:13.3px;min-width:520px}
+th{text-align:left;font-weight:600;font-size:11.8px;color:#5f5e6a;padding:7px 8px;
+  background:#f1efe8;border-bottom:1px solid #d3d0c7;white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid #eceaf6;vertical-align:top;line-height:1.66}
+tr:last-child td{border-bottom:none}
+td.r,th.r{text-align:right;white-space:nowrap}
+
+/* ── 跟踪日历 ── */
+.tl{list-style:none;margin-top:10px}
+.tl li{display:flex;gap:11px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed #eceaf6}
+.tl li:last-child{border-bottom:none}
+.tl .d{flex:0 0 60px;font-size:12.3px;font-weight:800;color:#fff;background:#8a5cf6;
+  border-radius:7px;padding:3px 0;text-align:center;line-height:1.4}
+.tl .d.soon{background:#e0563c}
+.tl .d.later{background:#9aa4b8}
+.tl .tx{flex:1;font-size:13.6px;color:#4a4a5c;line-height:1.7}
+.tl .tx b{color:#2b2b3a}
+
+/* ── 总结 ── */
+.summary{margin-top:18px;border-radius:18px;padding:22px 24px;color:#fff;
+  background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 60%,#b45ce0 100%);
+  box-shadow:0 10px 30px rgba(108,92,231,.25)}
+.summary h2{font-size:18.5px;margin-bottom:13px;display:flex;align-items:center;gap:8px}
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.sum-item{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  border-radius:12px;padding:13px 15px;font-size:13.4px;line-height:1.74}
+.sum-item h4{font-size:14.3px;margin-bottom:5px}
+.sum-item p{opacity:.94}
+
+/* ── 页脚 ── */
+.foot{margin-top:20px;padding:16px 20px;background:#fff;border-radius:14px;
+  box-shadow:0 4px 16px rgba(60,60,120,.06);font-size:12.6px;color:#6a6a7c;line-height:1.85}
+.foot b{color:#3a3a4c}
+.foot details{margin-top:10px}
+.foot summary{cursor:pointer;font-size:12.6px;color:#6d5fb8;font-weight:600}
+.foot .idx{margin-top:8px;font-size:11.8px;color:#8a8a9c;line-height:1.8}
+.footer-tags{margin-top:16px;text-align:center;font-size:12.3px;color:#8a8a9c}
+.footer-tags span{display:inline-block;margin:3px 5px;padding:3px 12px;background:#eceaf6;
+  border-radius:999px;color:#6d5fb8}
+
+@media(max-width:640px){
+  body{font-size:14.5px;padding:16px 11px 40px}
+  .page{max-width:100%}
+  .card{padding:16px 15px;border-radius:14px}
+  .header{padding:22px 19px 20px}
+  .header h1{font-size:21.5px}
+  .header .sub{font-size:13px}
+  .card-title{font-size:16px}
+  .chip-row,.scenario,.sum-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .kv{grid-template-columns:1fr 1fr}
+  .summary{padding:18px 16px}
+  .tl .d{flex:0 0 54px;font-size:11.5px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════ 头部 ══════════ -->
+<div class="header">
+  <div class="kick">源哥会员专享 × XZ服务器 · 双库交叉</div>
+  <h1>🧭 全品类交叉日报</h1>
+  <div class="sub">2026 年 10 月 7 日（周三）· 今日核心变化：<b>AI 的技术路线已收敛到 CPO，瓶颈从「芯片够不够」位移到「能不能按期交出来」；油价的约束不在原油，在成品油。</b></div>
+  <div class="tags">
+    <span>#CPO 收敛</span><span>#受益要分层</span><span>#交付裂缝</span><span>#柴油 9 倍</span><span>#实际利率</span><span>#付费 4.5%</span><span>#港股扩容</span>
+  </div>
+</div>
+
+<!-- ══════════ 今日总览 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">📌</span>今日总览<span class="sub">23 份投行研报读到原文</span></div>
+  <div class="stats">
+    <div class="stat"><div class="v">5<small>环节</small></div><div class="k">CPO 同时指向</div></div>
+    <div class="stat"><div class="v">4.5<small>%</small></div><div class="k">AI 付费渗透率</div></div>
+    <div class="stat"><div class="v">9<small>倍</small></div><div class="k">柴油裂解价差</div></div>
+    <div class="stat"><div class="v">+0.9<small>%</small></div><div class="k">10Y 实际利率年内</div></div>
+  </div>
+
+  <div class="chip-row">
+    <div class="chip c-purple">🔗 头条 · CPO 收敛<small>台积电 CoWoS 2028E 348 万片、鸿海 CPO 交换机主供、高通授权华为专利 —— 五环节同一天收敛</small></div>
+    <div class="chip c-blue">💾 存储定价转向<small>东芝 HDD 产能翻倍，整盘厂单日跌 10–11%，但磁头与玻璃基板反而受益</small></div>
+    <div class="chip c-red">📉 变现裂缝<small>近半美国成年人用 AI，付得起的只有 4.5%；内部人同期套现 8,450 亿美元</small></div>
+    <div class="chip c-orange">🛢 油价的约束在成品油<small>霍尔木兹通行量接近战前，但柴油裂解价差从 10 美元涨到 90 美元</small></div>
+  </div>
+
+  <div class="takeaway">
+    <b>一句话：</b>今天所有信息指向同一件事——<span class="hl-red">AI 的竞争已不在「谁抢到芯片」，而在「谁锁到电力、预定到产能、并等它真的交出来」</span>。<br>
+    <mark>最大的约束是物理交付，其次才是钱。</mark>
+  </div>
+  <div class="takeaway warn">
+    <b>口径提醒：</b>外资行研报的数据日期是 <b>10 月 6 日</b>（该库每日凌晨才补齐当日文件，运行时刻 10 月 7 日的文件夹尚未生成）；彭博口径为 <b>10 月 7 日当日</b>。两库重复条目已合并，未读到的内容不猜不补。
+  </div>
+</div>
+
+<!-- ══════════ 三条主线 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🧩</span>今天的三条主线<span class="sub">从几十份报告里提炼的共识</span></div>
+
+  <div class="step">
+    <div class="num n1">1</div>
+    <div class="body">
+      <h4>CPO：从「一条技术路线」变成「唯一终点」</h4>
+      <p>五家分处不同环节的公司、三家投行、一个地缘事件，在同一天全部指向同一件事——<b>共封装光学</b>。台积电把 CoWoS 年产能从 2025 年 67.5 万片推到 2028E <b>348 万片</b>；鸿海是 CPO 交换机主要供应商；LandMark 硅光营收占比从 42% 冲到 2026E <b>87%</b>；大立光 FA 产品 2H27 量产；<b>高通 10-06 授权华为 LogicFolding 专利，明确涵盖 CPO</b>。<br>
+      路径本身也值得注意：华为因拿不到 EUV 光刻机，选择<b>用数据传输速度弥补制程不足</b>——这条被封锁逼出来的路线，现在成了全球主流。<br>
+      <b>说人话：</b>CPO 的意思是把光模块从「插在服务器旁边的盒子」改成「直接贴装在芯片旁边」。一旦装上就再也回不去可插拔方案——<b>它不是一次升级，而是一次不可逆的架构切换</b>。这解释了为什么五个互不相干的环节会在同一天被点名。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num n2">2</div>
+    <div class="body">
+      <h4>AI 开支没见顶，但「受益」必须按环节分层</h4>
+      <p>同一天，两组完全相反的数据。<b>供给侧极乐观</b>：全球 AI 投资今年突破 1 万亿美元；台积电 2027 年资本开支从 780 亿上调到 <b>850 亿美元</b>；SpaceX 的 AI 部门 FY27 营收被上调到 <b>904 亿美元</b>（高盛原话：市场共识「过于保守」）。<br>
+      <b>需求侧极冷</b>：近半美国成年人用 AI 聊天机器人，<b>但全国只有 4.5% 的人付得起订阅</b>；付得起的人里最重的那 1%，平均每月花 903 美元，而中位数只有 25 美元。标杆案例是 Harvey——毛利率从年初 50% 掉到 6 月的 <b>-50%</b>，9 月才转正。<br>
+      <b>说人话：</b>这两组数据不矛盾，因为它们说的是产业链的<b>两端</b>。上游卖铲子的一直在赚钱（台积电毛利率 67.5%），下游用铲子的人正被两头大夹：一边是模型变便宜导致成本失控，一边是用户不肯付钱。<b>所以「AI 受益」这个词今天必须分层用——买上游的盈利修正，和买应用层的估值，是两笔完全不同的交易。</b></p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num n3">3</div>
+    <div class="body">
+      <h4>油价的约束不在原油，在成品油</h4>
+      <p>霍尔木兹海峡 10 月以来发生 <b>9 起</b>油轮遇袭，市场一度紧张；但同期<b>海峡通行量已接近战前水平</b>，布伦特站稳 101 美元——这是「加保费」而不是「断供给」。<br>
+      真正的断供发生在下游：<b>柴油裂解价差从 2025 年 6 月的 10 美元涨到 2026 年 9 月的 90 美元</b>，取暖油从 15 涨到 110。加上乌克兰袭击俄炼厂，两个战场同向叠加。传导结果已到餐桌：<span class="hl-red">美国农民成本同比 +50%，联合国食品价格指数创 2022 年以来最高</span>。<br>
+      <b>说人话：</b>原油加的是<b>风险溢价</b>，柴油加的是<b>真实的物理短缺</b>。所以判断「这轮通胀多久能退」，不要盯原油价格，<b>要盯柴油和运费</b>——因为农户和物流的账单是按柴油结的，不是按原油结的。这也解释了为什么各国政府的回应全是减税和释放储备，而不是干预油价。</p>
+    </div>
+  </div>
+
+  <div class="takeaway good">
+    <b>三条线的交汇点：</b>定价权正从「宣布了扩产计划的一方」手里，转到<b>「握有存量合规资产和已认证产能的一方」</b>手里——已并网的核电与燃气、已通过认证的液冷产线、已拿到长协的料号。
+  </div>
+  <div class="takeaway">
+    <b>可跟踪的裁决变量收敛为两组：</b>① <b>各家的月度实际交付量</b>，而不是签约公告数量；② <b>长协覆盖率与预付款金额的披露</b>——前者验证「名义产能」有没有变成「可交付产能」，后者验证下游是不是真愿意为锁定产能付钱。
+  </div>
+</div>
+
+<!-- ══════════ 头条一 · CPO ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🔗</span>头条 · CPO 为什么是确定的<span class="sub">五个环节 · 同一天</span></div>
+
+  <div class="kv">
+    <div><div class="k">台积电 CoWoS 年产能</div><div class="v">67.5→348<small>万片</small></div></div>
+    <div><div class="k">LandMark 硅光营收占比</div><div class="v">42→87<small>%</small></div></div>
+    <div><div class="k">鸿海 9 月营收超预期</div><div class="v">+15<small>%</small></div></div>
+    <div><div class="k">大立光 FA 产品量产</div><div class="v">2H27</div></div>
+    <div><div class="k">台积电 2027E 资本开支</div><div class="v">850<small>亿美元</small></div></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>供给侧的量是硬数字，不是叙事</b>：台积电 CoWoS 年产能 2025 年 67.5 万片 → 2026E 127.5 万 → 2027E <b>273 万</b> → 2028E <b>348 万</b>；季度出货从 2Q26 的 8.6 万片拉到 4Q27E 的 <b>26.6 万片</b>，<span class="hl-blue">三年 26 倍</span>。同时 2027/2028 年资本开支自 780/820 亿上调至 <b>850/980 亿美元</b>。</li>
+    <li><b>需求侧同时从 GPU 扩散到 CPU 和网络</b>——这是台积电这次上调盈利的全部理由（2027E EPS 上调 7%、2028E 上调 8%，而估值倍数 22 倍<b>一分没动</b>）。高盛原话：agentic AI 驱动的 CPU 需求是过去一年最大的变化。</li>
+    <li><b>材料侧的证据最硬</b>：LandMark 硅光（SiPh）营收占比从 2024 年 42% → 2026E <b>87%</b> → 2027E 93%，毛利率同步从 19.8% 升到 <b>55.7%</b>；1.6T 及以上光模块 2027/28E 同比 <b>+188%</b>、+30%。</li>
+    <li><b>地缘那条线也在同一张图上</b>：高通 10-06 同意授权华为 LogicFolding 芯片制造专利（多年期交叉授权，涵盖 5G、AI 服务、近封装与 CPO）。<span class="hl-purple">封锁正在从「禁运」转向「许可」——管制强度见顶，但转化为交易。</span></li>
+  </ul>
+
+  <div class="scenario">
+    <div class="sc-box sc-1">
+      <span class="tag">反直觉</span>
+      <div class="bd">
+        <h4>为什么 CPO 比 GPU 更确定</h4>
+        <p>GPU 每一代都可能被新架构替代（记得 Hopper 被 Blackwell 挤掉吗），但<b>「芯片之间怎么传数据」这个问题只会越来越大</b>。芯片越并行、封装越密集，铜互连的距离和功耗就越不可接受——所以 CPO 不是一家公司的判断，是物理决定的。<br>换句话说：<mark>GPU 的路线图是各家自己画的，CPO 的路线图是物理画的。</mark></p>
+      </div>
+    </div>
+    <div class="sc-box sc-2">
+      <span class="tag">风险</span>
+      <div class="bd">
+        <h4>大立光：现价已跑在目标价前面</h4>
+        <p>现价 NT$6,730，而花旗与伯恩斯坦给出的目标价是 <b>NT$5,150</b>，相对台股指数 P/E 1.7x（历史均值 0.8–1.0x）。<br>3Q26 营收低于预期 14%（折叠屏 iPhone 延后、base model 后置）。<b>这是本期唯一「股价已跑在卖方目标价前面」的覆盖标的</b>——AI/CPO 认证进度不及预期时，下行风险最集中。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <b>我的判断：</b>CPO 的确定性来自「<b>物理约束 + 已发生的合同</b>」双重锁定，不同于 GPU 那种「靠各家路线图对赌」。真正要盯的不是技术可行性，而是<b>认证与量产节奏</b>——大立光的 FA 产品 2H27 才量产，鸿海的 CPO 交换机仍在放量早期。<span class="hl-red">2027 年之前，这条链的收入贡献会一直小于产能规划。</span>
+  </div>
+  <div class="takeaway plain">
+    <b>说人话版投资含义：</b>如果买 CPO 概念，要买<b>已经拿到订单且毛利率在往上走</b>的环节（LandMark 毛利率 42.7%→55.7% 是最硬的证据），而不是<b>还在等客户认证</b>的环节。前者已经兑现，后者还在画饼——这两者的估值差，就是未来的收益差。
+  </div>
+</div>
+
+<!-- ══════════ 头条二 · 油价传导链 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🛢</span>头条 · 从霍尔木兹到餐桌<span class="sub">油价 → 柴油 → 农户 → 食品</span></div>
+
+  <div class="chain">
+    <div class="chain-item">
+      <div class="chain-icon">⚓</div>
+      <div class="txt"><b>海峡：保费上涨，实物流未断。</b>10 月以来 9 起油轮遇袭，袭击数已达 9 月全月（海峡+波斯湾合计）的一半；但<b>通行量接近战前水平</b>，布伦特稳站 101 美元。市场炒的是<b>风险溢价</b>，不是断供。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">⛽</div>
+      <div class="txt"><b>成品油：真的在断。</b>柴油裂解价差 10 → <span class="hl-red">90 美元</span>，取暖油 15 → 110 美元。叠加乌克兰袭击俄炼厂，<b>两个战场同向</b>。这是本期最硬的价格信号。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">🚜</div>
+      <div class="txt"><b>到农户：美国成本 +50%。</b>巴西柴油涨 40%，英国农机柴油开支 +40% 至 56 万英镑，运输燃油附加费 24%。欧洲最大农业游说团警告高价格可能导致<b>「明显的产量下滑」</b>。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">🍞</div>
+      <div class="txt"><b>到餐桌：联合国食品价格指数创 2022 年以来最高</b>，彭博农业现货指数三个月录得四年来最大涨幅。印度的雨季是十多年来最弱，季风降雨低于正常 13%，<span class="hl-red">食品通胀预计 10–11 月升破 8.5%</span>。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">🏛️</div>
+      <div class="txt"><b>政府的回应全是「减税 + 放储备」，没有一个是干预油价。</b>特朗普已签署行政令放宽免税柴油使用限制，并表示在考虑暂停联邦汽油税。<b>原因很直白：这是全球性供给约束，单方面干预没用</b>——他此前威胁禁止柴油出口，已经被 G7 伙伴用「释放紧急储备」的代价换掉了。</div>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <div class="sc-box sc-3">
+      <span class="tag">矛盾</span>
+      <div class="bd">
+        <h4>同一份数据，两种解读</h4>
+        <p>能源口径出现分歧：<b>彭博看到的是「中东出口上升 + 沙特降价，市场趋宽松」</b>，而美银看到的是<b>「裂解价差扩张 9 倍，实物短缺」</b>。<br><b>说人话：</b>两者都对，只是看的东西不同——期货在交易「风险溢价」，裂解价差在交易「实物可得性」。<mark>判断通胀要不要退，看后者；判断会不会崩，看前者。</mark></p>
+      </div>
+    </div>
+    <div class="sc-box sc-4">
+      <span class="tag">变量</span>
+      <div class="bd">
+        <h4>一个被低估的独立风险</h4>
+        <p>墨西哥湾风暴或成 <b>2026 年大西洋首个飓风</b>，两日内可能袭击油气生产设施。<br>这是叠加在霍尔木兹之上的<b>独立供给风险</b>，与中东局势无关。如果它登陆，「通胀要退」的判断需要立即重估。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway warn">
+    <b>要打的折扣：</b>① 美国政府<b>明确不愿深入介入</b>沙特对胡塞的攻势（这是风险溢价里的折价来源）；② 封锁已令数十艘满载油轮滞留伊朗沿海，更多在斯里兰卡附近观望——<b>运力被占用本身就是运价</b>；③ 美银指出「数据中心资本开支暂停」与能源冲击并列为铜价两大风险，<span class="hl-orange">说明若 AI 投资降温，油价与铜价会同时失去需求支撑</span>。
+  </div>
+</div>
+
+<!-- ══════════ 头条三 · 变现裂缝 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">📉</span>头条 · 4.5% 意味着什么<span class="sub">AI 叙事的最强反证</span></div>
+
+  <div class="kv">
+    <div><div class="k">用 AI 的成年人</div><div class="v">近半<small>人</small></div></div>
+    <div><div class="k">其中付得起订阅</div><div class="v hl-red">4.5<small>%</small></div></div>
+    <div><div class="k">最重 1% 月支出</div><div class="v">903<small>美元</small></div></div>
+    <div><div class="k">付费中位数</div><div class="v">25<small>美元/月</small></div></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>支出极度集中</b>：付得起的用户里，最能花的那 <b>1% 贡献了整体消费级 AI 支出的 19.5%</b>，平均每月 903 美元；<b>而中位数只有 25 美元</b>。a16z 的判断是：<b>这些顶级用户「更像产消者（prosumers），不是主流消费者」</b>。</li>
+    <li><b>成本端同时被压</b>：标杆案例 Harvey 毛利率从年初 50% 掉到 6 月的 <b>-50%</b>（智能体更新带来用量激增），9 月才转正；为此 OpenAI 与 Anthropic 双双降价——<b>Claude Opus 5.5 运行成本比前代低约 40%</b>，OpenAI 也在 GPT-6 家族推更便宜的选项。</li>
+    <li><b>最反直觉的一组数据</b>：2026 年前九个月科技亿万富翁财富增加 <b>8,450 亿美元</b>，创同期历史之最——<span class="hl-red">而这批人正是第三季度最大的内部人卖家之一</span>。财富在创新，人员在套现。</li>
+    <li><b>专业投资者已经用仓位投票</b>：「AI 受冲击」板块（IT 服务、消费金融、软件）仓位接近<b>纪录低点</b>，工业股相对非必需消费品接近<b>纪录高位</b>。押注 AI 资本开支受益股的「轻松钱」已经结束。</li>
+    <li><b>估值端同时收紧</b>：全球股市已收历史新高，但股债相关性<b>由负转正</b>（美股 vs 美债 +0.40，2025 年 10 月还是 -0.15），3M 隐含波动率 13 为 2026 年最低。<b>股债不再是跷跷板，估值扩张失去燃料。</b></li>
+  </ul>
+
+  <div class="takeaway">
+    <b>说人话：</b>6 家最大的 AI 公司都希望投资者把它们的聊天机器人当成「下一代消费级公用事业」——像搜索或邮件一样。而 <b>4.5%</b> 这个数字说的是：<span class="hl-red">它现在还是个开发者工具，不是公用事业。</span>这个差别决定了 IPO 叙事能不能立住，也决定了应用层该按「订阅公司」还是按「周期股」估值。
+  </div>
+  <div class="takeaway good">
+    <b>但要避免另一个极端：</b>这不是看空 AI。同期台积电上调 2027E 资本开支至 850 亿美元、毛利率 67.5%，SpaceX AI 部门 FY27 营收被上调到 904 亿美元。<b>分歧不在「AI 会不会成功」，而在「钱从哪一段赚」。</b>上游算力与电力正在赚钱且在加仓，下游应用在等付费率证明自己。
+  </div>
+</div>
+
+<!-- ══════════ 宏观：利率的性质 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">📈</span>宏观 · 本轮抛售的性质<span class="sub">不是通胀，是实际利率</span></div>
+
+  <div class="kv">
+    <div><div class="k">10Y 实际收益率 年内</div><div class="v hl-red">+0.9<small>%</small></div></div>
+    <div><div class="k">10Y 通胀盈亏平衡</div><div class="v">几乎不动<small>约 0.1%</small></div></div>
+    <div><div class="k">德债利率 +10bp</div><div class="v">→ 欧股 <span class="hl-red">-1.2%</span></div></div>
+    <div><div class="k">美股 vs 美债相关性</div><div class="v hl-red">+0.40</div></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>这是本期最重要的一句话</b>：10 年期美债收益率年内上行约 0.9%，<b>而通胀盈亏平衡几乎纹丝不动</b>（约 0.1%）。所以抛售来自<b>实际利率上行 = 宏观条件收紧</b>，而不是通胀恐慌。<span class="hl-blue">两者的央行对策完全相反</span>——通胀恐慌要加息，实际利率上行反而不用。</li>
+    <li><b>信用市场给的反证是「金融条件仍极松」</b>：9 月 2Y-10Y 上行超 50bp，但美股和信用市场几乎没反应；客户调查中 <b>50% 认为美国货币政策是「宽松的」</b>，40% 中性，8% 紧缩。<b>利率在涨，传导失败了。</b>这种背离通常不会持久。</li>
+    <li><b>油价的赌注要逐条核对</b>：知名策略师警告「100 美元油价 + 5% 美债 + 强美元」三条件齐发时，标普 500 随后 3–5 个月跌最多 15%。<span class="hl-orange">本期油价 101 美元已达标，但 10Y 约 4.5% 尚未到 5%。</span>所以这是<b>高度关注的尾部风险，不是即将发生的事</b>。</li>
+    <li><b>亚洲货币：估值说便宜，资金流说在撤</b>。四模型估值显示新台币低估 18.4%（最便宜）、美元最贵 14.3%；但 EM 已<b>连续第二周资金外流</b>，且由最耐心的「实物资金」驱动，EM 套利头寸在<b>所有期限都拥挤</b>。处理方式不是翻空，是「赚一半、留一半」。</li>
+    <li><b>关税通胀其实已经走完了</b>：纽约联储测算关税推高进口价 10% → 零售价仅涨 5.6%（三分之二一个月内显现，三分之一需 6–12 个月走完供应链），<b>效应今年 2 月见顶、8 月已回落至近零</b>。真正没走完的是能源与运输。</li>
+  </ul>
+
+  <div class="takeaway">
+    <b>说人话：</b>如果抛售是通胀驱动的，你可以赌央行会救；<b>但如果是实际利率驱动的，央行不会救</b>——因为那就是他们想要的结果。所以现在真正该关心的不是「通胀会不会降」，而是「经济能不能扛住不降息的利率」。而 50% 的客户认为货币是宽松的，说明<mark>市场还没开始担心这件事</mark>。
+  </div>
+</div>
+
+<!-- ══════════ 中国 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🇨🇳</span>中国 · 政策托底，但增长已被 AI 接走<span class="sub">大摩闭门会 + 微观订单</span></div>
+
+  <div class="takeaway warn" style="margin-top:0">
+    <b>大摩的判断：姿态大于内容。</b>首次全国性购房按揭贴息（1 个百分点、贴息 5 年、九成由中央财政出资）看起来是历史性的，但只覆盖建筑面积 ≤120㎡、总价 ≤150 万元的房源——<span class="hl-red">估算仅覆盖去年房屋总成交量的 16%，年度财政支出只有 150–200 亿元</span>。首席中国策略师邢自强的原话是「打破去杠杆陷阱的力度远远不够」。<br>
+    <b>说人话：</b>这是第一次动用中央资产负债表补贴居民买房，方向是对的；但 150–200 亿的量级，相对于整个房地产市场的存量，<b>象征意义远大于实际托底能力</b>。真要等像样的加码——大摩测算年内还有超 6,000 亿专项债结存限额可动用，那才是关键。
+  </div>
+
+  <div class="scenario">
+    <div class="sc-box sc-4">
+      <span class="tag">微观印证</span>
+      <div class="bd">
+        <h4>增长源已经换人了</h4>
+        <p>一家中国精密机床厂的新订单结构，一年内发生了这样的切换：<br>
+        <b>汽车 40.5% → 22.5%</b>（腰斩）｜<b>电子 10.1% → 21.4%</b>｜<b>AI 液冷 7.2% → 18.8%</b>（2.6 倍）。<br>
+        母公司日本出口订单同期 <b>+127%</b>。<span class="hl-blue">这家公司的增长不是「AI 业务增长」，是「AI 业务吃掉了传统业务」。</span></p>
+      </div>
+    </div>
+    <div class="sc-box sc-1">
+      <span class="tag">好消息</span>
+      <div class="bd">
+        <h4>香港：加息这次伤不到楼市</h4>
+        <p>大摩测算本轮加息对香港的传导远小于 2022–23：一个月 HIBOR 仅从约 3% 升 <b>50bp 至 3.5%</b>，<b>最坏情形按揭利率也不高于 3.5%</b>。对照上一轮：实际按揭利率从不足 2% 飙至 4% 以上、房价两年跌 22%。<br>
+        支撑：港币存贷比 <b>69%，为 2009 年以来最低</b>；国际收支已由连续三年负数转为正数。预计今年住宅涨 12%、明年涨 5%。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <b>配置上的直接结论：</b>大摩的选股建议很明确——<b>楼价坚挺 ≠ 股价坚挺</b>。开发商股 3–6 个月仍受压（融资成本上升 + 跨境资本收紧）；开发企业只看好恒基；<b>更看好写字楼收租公司</b>（太古地产、Hong Kong Land）。港股整体仍被韩日投资者当作融资来源，短期反弹环境反而压制港股。
+  </div>
+  <div class="takeaway plain">
+    <b>一个可交易日期：</b>恒生科技指数成分股将从 30 只扩至 50 只，<b>11 月 20 日公布名单、12 月 7 日生效</b>，官方承认的原因是「缺核心 AI 硬件公司、互联网权重过高」，导致年内下跌约 24%。<br>
+    候选池门槛已经写明：<b>有 AI 硬件收入 + 近两财年销售额 ≥5 亿港元 + 三个月日均成交 ≥1 亿港元</b>。按历史规律，入指预期通常提前 4–6 周启动，即 10 月下旬就可能有先行行情。<span class="hl-red">反向风险必须并列看</span>：同一天美国国会议员要求美联储审查香港的美元流动性工具资格。
+  </div>
+</div>
+
+<!-- ══════════ 人物与政治态度 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🎤</span>谁在说什么<span class="sub">只看有商业或政策指向的</span></div>
+
+  <div class="step">
+    <div class="num n1">1</div>
+    <div class="body">
+      <h4>马斯克 / SpaceX：借 400 亿买英伟达芯片</h4>
+      <p>拟承担 <b>400 亿美元债务</b>（100 亿贷款 + 300 亿投资级债券），阿波罗牵头，<b>2027 年完成</b>。同时在佛罗里达修 32.4 英里天然气管道为星舰供气，11 月巴黎车展展示 Cybercab。<br>
+      <b>说人话：</b>反直觉点在于<b>这是芯片需求方的融资，不是芯片供给方的订单</b>。一家航天公司愿意借 400 亿买 GPU，这本身就把 AI 算力需求从科技行业外溢到了航天与国防。而高盛给 SpaceX 的新框架是「每 GW 算力托管合同变现率 200–500 亿美元」——把闲置算力当资产估值。<b>但要清醒：目前「自用」是主路径，「出租」只是期权。</b></p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num n2">2</div>
+    <div class="body">
+      <h4>特朗普：选举优先，不想加码</h4>
+      <p>油价高到威胁 11 月中期选举，已签署行政令<b>放宽免税柴油使用范围</b>，并表示「正在考虑」暂停联邦汽油税。对伊朗和沙特：<b>不愿更深入介入</b>，鼓励利雅得避免也门冲突。<br>
+      <b>说人话：</b>他在用财政工具压油价，而不是用军事工具压伊朗。这解释了为什么会有「美国对伊朗封锁令数十艘油轮滞留、更多在斯里兰卡观望」——<b>风险溢价里含着一块「美国政府明确不想管」的折价，这在历史上通常是下行风险大于上行风险的结构。</b></p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num n3">3</div>
+    <div class="body">
+      <h4>IMF 总裁：把 AI 列为通胀因素</h4>
+      <p>原话：<b>「AI 建设热潮是通胀性的，能源和食品冲击是通胀性的，关税、国防开支和高额公共债务都可能是通胀性的」</b>，呼吁各国央行「审慎偏鹰派」。<br>
+      <b>说人话：</b>这是全球央行行长在给 AI 资本开支<b>重新定价</b>。过去三年 AI 投资一直被当作「生产率革命 = 利好股市」的免费午餐，现在它和关税、国防、债务并列进了通胀清单。<span class="hl-red">这与「实际利率上行、央行不降息」的判断是同一件事的两面</span>——对 AI 基建板块是最直接的政策性风险提示。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num n1">4</div>
+    <div class="body">
+      <h4>印度央行：四年首次加息，且罕见点名「主要央行」</h4>
+      <p>回购利率上调 25bp 至 5.50%，表述为「校准式收紧」，同时上调增长与通胀预测。<b>声明中罕见点名「主要央行的货币政策收紧」与发达经济体收益率飙升</b>。卢比被推至接近 1:97 的历史低位。野村的判断是会「小步走」——10 月、12 月各 25bp，而非紧缩周期。<br>
+      <b>说人话：</b>印度央行的处境是经典的<b>三难困境</b>：想稳汇率、想保资本自由流动、又想保货币政策独立，三者只能取其二。利差被压到数十年低位后资本外流，被迫加息防守，但加息本身又加重外流。<b>说人话讲：这是「美元强 + 新兴市场货币弱」这个组合还会持续的证据</b>——印度已加入土耳其、巴西等紧缩行列，意味着 EM 的被动收紧会持续抽走流动性。</p>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <b>本期没找到的（如实说明）：</b>黄仁勋 10 月 6–7 日<b>无本人直接言论</b>，只有第三方转述的「SpaceX 400 亿采购」；英特尔 CEO Terafab 的表态只涉及与马斯克合作推进该项目，未涉及金额或订单。这些没有推断填充。
+  </div>
+</div>
+
+<!-- ══════════ 跟踪日历 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">📅</span>跟踪日历<span class="sub">每条都带确认或证伪信号</span></div>
+  <ul class="tl">
+    <li><div class="d soon">10/08</div><div class="tx"><b>大立光 3Q26 法说会</b> —— 看 FA 产品的客户认证进度、是否提前量产。这是 CPO 链最关键的一个验证点。</div></li>
+    <li><div class="d soon">10/08</div><div class="tx"><b>三星财报</b> —— 存储与电池的共同节点。看存储价格与资本开支指引，验证「超级周期进入验证阶段」的判断。</div></li>
+    <li><div class="d soon">10/08 起</div><div class="tx"><b>Stellantis 是否如期停产</b> —— 前值已确认因电池供应不足 10 月底停产。若范围扩大或延长，「去中国化电池产能不足」从个案变系统性问题。</div></li>
+    <li><div class="d">10/10 前</div><div class="tx"><b>台湾 Syntec 9 月营收</b> —— 液冷上游的交叉验证；同月鸿海营收看 CPO 交换机能否连续第 3 个月环比增长。</div></li>
+    <li><div class="d">10/15</div><div class="tx"><b>台积电 3Q26 分析师会议</b> —— 看 CoWoS 产能指引是否再上调。2027E 已是 273 万片，再上调就是第三重确认。</div></li>
+    <li><div class="d">10 月内</div><div class="tx"><b>OpenAI 300 亿融资是否落地</b> —— 阿联酋基金到账是硬指标。另看是否有第二个「72 小时 0 权重」级别的大模型开源。</div></li>
+    <li><div class="d">10 月下旬</div><div class="tx"><b>恒生科技扩容先行行情窗口</b> —— 名单 11/20 公布，按历史规律提前 4–6 周定价。三重条件筛选候选池，见中国板块。</div></li>
+    <li><div class="d later">11/20</div><div class="tx"><b>恒生科技指数新名单公布</b> —— 关键验证：新增的 20 只是否真的含 AI 硬件。若仍没有，说明扩容只是被动跟随市值。</div></li>
+    <li><div class="d later">11 月</div><div class="tx"><b>APEC 峰会（普京与习主席会晤）</b> —— 中方提议部长级会议改为线上，是近年少见信号。</div></li>
+    <li><div class="d later">持续</div><div class="tx"><b>霍尔木兹袭击计数与柴油裂解价差</b> —— 前者是保费指标，后者是实物指标，两者背离时以裂解价差为准。</div></li>
+  </ul>
+  <div class="takeaway plain" style="margin-top:6px">
+    <b>下期最该回答的三个问题：</b>① CPO 链的收入贡献何时真正开始（2027 年之前大概率仍是「产能先行、收入滞后」）；② AI 付费率 4.5% 会不会上移；③ 柴油裂解价差 90 美元是峰值还是会继续走阔。
+  </div>
+</div>
+
+<!-- ══════════ 总结 ══════════ -->
+<div class="summary">
+  <h2>📐 今天该记住的四件事</h2>
+  <div class="sum-grid">
+    <div class="sum-item">
+      <h4>1 · CPO 是唯一被物理锁定的技术路线</h4>
+      <p>五环节 + 三投行 + 一个地缘事件同日收敛。它不是各家画路线图对赌，是物理决定的不可逆架构切换。<b>买已兑现毛利率的环节（42.7%→55.7%），别买还在等认证的。</b></p>
+    </div>
+    <div class="sum-item">
+      <h4>2 · AI 受益必须分层</h4>
+      <p>上游卖铲子的一直在赚（台积电毛利率 67.5%、2027 资本开支上调至 850 亿）；下游正在被两头大夹（4.5% 付费率 + 成本失控）。<b>买上游盈利修正 ≠ 买应用层估值。</b></p>
+    </div>
+    <div class="sum-item">
+      <h4>3 · 油价的约束在成品油，不在原油</h4>
+      <p>霍尔木兹加的是保费（通行量接近战前），柴油加的是真实短缺（裂解价差 9 倍）。判断通胀退不退，盯柴油和运费；判断会不会崩，盯原油。<b>墨西哥湾飓风是独立风险。</b></p>
+    </div>
+    <div class="sum-item">
+      <h4>4 · 最大的脆弱性在利率，不在估值</h4>
+      <p>抛售由实际利率驱动（+0.9% vs 盈亏平衡 0.1%），意味着央行<b>不会来救</b>。而股债相关性转正、隐波 13 为 2026 最低、主动资金流出 5,500 亿——<b>市场还没开始担心这件事。</b></p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 页脚 ══════════ -->
+<div class="foot">
+  <b>数据来源：</b>源哥会员专享库（彭博六大栏目 10-07 当日 + 大摩 10.05 闭门会逐字稿 + 彭路原文 13 条）与 XZ服务器库（外资行研报 23 份读到原文，数据日期 10-06）。两库同源条目已合并，重复内容只保留一处。
+  <details>
+    <summary>展开查看本期数据源可读情况与已知缺口</summary>
+    <div class="idx">
+      <b>可读性</b>：两个知识库本期均为原文级可读。彭博六大栏目均取 .md 全文副本；大摩闭门会为数千字中文逐字稿；外资行研报 23 份读到 PDF 正文（高盛 7、花旗 8、美银 3、野村 2、伯恩斯坦 4、德银 1）。<br>
+      <b>数据日期差异</b>：XZ 库每日凌晨补齐当日文件，运行时刻 10-07 文件夹尚未生成，故外资行部分为 10-06；彭博口径为 10-07 当日。<br>
+      <b>已知缺口（如实披露）</b>：① 一份高盛 SpaceX 专报因内容超长（8 万字符）读取受限，已用同机构同作者在另一份报告中的对应段落替代，核心数字完整；② 黄仁勋当日无本人直接言论，仅第三方转述，未做推断填充；③ 外资行 58 份研报中约 37 份本期未读，未用标题推断填充；④ 源哥库 4 个非当日栏目（合计 2,400+ 条）本期未进入。<br>
+      <b>未使用</b>：知识星球 404K 数据源（自 2026-10-06 起按指令弃用，本期未访问）。
+    </div>
+  </details>
+</div>
+<div class="footer-tags">
+  <span>源哥会员专享 × XZ服务器</span><span>2026-10-07</span><span>双库交叉 · 原文级</span>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>门类日报库 · 日报工作台</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#f2f4f8;--card:#fff;--line:#e5e9f0;--txt:#151c2c;--sub:#68738a;--faint:#98a2b3;
+--brand:#1f5fbf;--brand-bg:#eaf1fd;--ok:#0a9c5b;--ok-bg:#e8f5ec;
+--sh:0 1px 2px rgba(20,30,50,.05),0 8px 24px rgba(20,30,50,.06);
+--r:16px;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+background:var(--bg);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased;
+padding-bottom:env(safe-area-inset-bottom)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+a{color:inherit}
+
+.cbar{background:#fff;border-bottom:1px solid var(--line);padding:16px 0 0;position:sticky;top:0;z-index:40}
+.searchbox{position:relative;padding-bottom:12px}
+.searchbox svg{position:absolute;left:14px;top:15px;color:var(--faint)}
+#q{width:100%;height:46px;padding:0 46px 0 41px;border:1px solid var(--line);border-radius:12px;
+background:var(--bg);font-size:16px;color:var(--txt);outline:none;transition:.18s}
+#q:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(31,95,191,.12);background:#fff}
+.clr{position:absolute;right:6px;top:8px;width:32px;height:32px;border:none;background:none;
+cursor:pointer;color:var(--faint);display:none;align-items:center;justify-content:center;border-radius:50%}
+.clr.on{display:flex}
+
+.crumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-bottom:14px}
+.crumb a,.crumb button{background:var(--bg);border:1px solid var(--line);border-radius:20px;
+padding:7px 14px;font-size:13px;color:var(--sub);cursor:pointer;text-decoration:none;
+font-family:inherit;transition:.18s;display:inline-flex;align-items:center;gap:6px;min-height:36px}
+.crumb a:hover,.crumb button:hover{border-color:var(--brand);color:var(--brand)}
+.crumb .cur{font-size:15.5px;font-weight:600;display:inline-flex;align-items:center;gap:8px;padding:0 4px}
+.crumb .cur i{width:9px;height:9px;border-radius:50%;background:var(--tc)}
+
+.head{padding:20px 0 4px}
+.head h1{font-size:20px;font-weight:600;display:flex;align-items:center;gap:9px}
+.head .meta{font-size:13px;color:var(--sub);margin-top:7px;display:flex;gap:16px;flex-wrap:wrap}
+.head .meta b{color:var(--txt);font-weight:600;font-variant-numeric:tabular-nums}
+.st{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:500;
+padding:2.5px 8px;border-radius:20px;line-height:1.5}
+.st i{width:5px;height:5px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.st.ok{background:var(--ok-bg);color:var(--ok)}
+.st.no{background:#eef1f6;color:var(--faint)}
+.st .t{font-variant-numeric:tabular-nums;font-weight:600}
+
+.dateblock{margin-bottom:6px}
+.date-h{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--sub);font-weight:600;padding:15px 0 9px}
+.date-h .n{font-size:11.5px;color:var(--faint);margin-left:auto;font-weight:400}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--tc);flex:0 0 auto}
+.it{display:flex;align-items:center;gap:12px;padding:13px 14px;border:1px solid var(--line);
+border-radius:12px;text-decoration:none;transition:.18s;background:var(--card);box-shadow:0 1px 2px rgba(20,30,50,.04)}
+.it+.it{margin-top:8px}
+.it:hover{border-color:var(--brand);background:var(--brand-bg);transform:translateX(2px)}
+.it-m{flex:1;min-width:0}
+.it-t{font-size:14.5px;font-weight:500;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.it-s{font-size:12.5px;color:var(--sub);margin-top:4px;overflow:hidden;
+display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-clamp:2}
+.it-d{font-size:11.5px;color:var(--faint);white-space:nowrap;flex:0 0 auto;text-align:right;
+font-variant-numeric:tabular-nums}
+.it-d b{display:block;font-size:13.5px;color:var(--txt);font-weight:500}
+.arrow{color:var(--faint);flex:0 0 auto}
+.chip{font-size:11px;padding:1.5px 7px;border-radius:5px;background:#eef1f6;color:var(--sub);white-space:nowrap}
+.tens{font-size:11.5px;padding:1.5px 7px;border-radius:5px;font-weight:600;white-space:nowrap}
+
+.empty{text-align:center;padding:52px 20px;color:var(--faint);background:var(--card);
+border:1px solid var(--line);border-radius:var(--r)}
+.empty svg{opacity:.4;margin-bottom:12px}
+.empty p{font-size:14px}
+.empty p.sm{font-size:12.5px;margin-top:6px}
+footer{text-align:center;padding:26px 16px 34px;font-size:11.5px;color:var(--faint);line-height:1.9}
+.localwarn{background:#fff4e5;border:1px solid #f5c26b;border-radius:var(--r);
+padding:14px 16px;margin:16px 0 18px;display:none}
+.localwarn.on{display:block}
+.lw-h{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:600;color:#8a5a00;margin-bottom:8px}
+.lw-b{font-size:13px;color:#8a5a00;line-height:1.75}
+.lw-url{display:inline-block;margin-top:8px;padding:8px 13px;background:#fff;border:1px solid #f0c27a;
+border-radius:8px;font-size:13px;color:#8a5a00;text-decoration:none;font-weight:600;
+word-break:break-all;min-height:44px;line-height:1.6}
+@media(max-width:720px){.it:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="cbar">
+ <div class="wrap">
+  <div class="searchbox">
+   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+   <input id="q" type="search" placeholder="在本门类内搜索…" autocomplete="off">
+   <button class="clr" id="clr" aria-label="清空">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+   </button>
+  </div>
+  <div class="crumb">
+   <button type="button" id="back">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    返回九宫格
+   </button>
+   <span class="cur" id="curName"></span>
+  </div>
+ </div>
+</div>
+
+<div class="wrap">
+ <div class="localwarn" id="localWarn">
+  <div class="lw-h">
+   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+   当前是本地预览地址，点日报会打不开
+  </div>
+  <div class="lw-b">页面本身加载正常，但日报文件没有跟着这个预览一起提供。请用正式地址打开：</div>
+  <a class="lw-url" href="https://wanghahaniu.github.io/daily-hub/cat.html?k=us-iran" target="_blank">https://wanghahaniu.github.io/daily-hub/</a>
+ </div>
+
+ <div class="head" id="head"></div>
+ <div id="list"></div>
+</div>
+
+<footer>
+ <div id="footInfo"></div>
+ <div>页面与日报文件均托管于 GitHub Pages · 数据每日由定时任务自动更新</div>
+</footer>
+
+<script>
+var DATA = null, KEY = "", SRC = null, KW = "";
+
+function pad(n){ return n<10 ? "0"+n : ""+n; }
+function todayStr(){ var d=new Date(); return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate()); }
+function el(id){ return document.getElementById(id); }
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,function(c){
+  return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function catColor(key){
+  return ({
+    "us-iran":"#c5221f","oil":"#d97528","copper":"#b8761f","futures":"#1f5fbf",
+    "zsxq":"#7b3fb5","zsxq-sum":"#0a9c5b","tech-geo":"#0e7c9c","cross":"#8a5cf6","macro-geo":"#546e7a"
+  })[key] || "#68738a";
+}
+function tensionColor(v){
+  if(v==null) return {bg:"#eef1f6", fg:"#68738a"};
+  if(v>=90) return {bg:"#fdecea", fg:"#c5221f"};
+  if(v>=70) return {bg:"#fff4e5", fg:"#d97528"};
+  return {bg:"#e8f5ec", fg:"#0a9c5b"};
+}
+
+function loadManifest(cb){
+  fetch("manifest.json?t=" + Date.now())
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(d){ DATA = d; cb(); })
+    .catch(function(e){
+      el("list").innerHTML = '<div class="empty"><p>日报索引加载失败</p><p class="sm">'+
+        (e?("原因："+e.message):"")+'　请检查网络后刷新页面</p></div>';
+    });
+}
+
+function rows(){
+  if(!DATA || !SRC) return [];
+  return DATA.items.filter(function(i){
+    if(i.key !== KEY) return false;
+    if(!KW) return true;
+    var k = KW;
+    return (i.title+" "+i.cat+" "+i.date+" "+(i.pageTitle||"")+" "+(i.summary||"")).toLowerCase().indexOf(k) >= 0;
+  });
+}
+
+function renderHead(){
+  var today = todayStr();
+  var hit = DATA.items.filter(function(i){ return i.key===KEY && i.date===today; });
+  var hhmm = "", maxM = "";
+  hit.forEach(function(i){ if((i.mtime||"") > maxM) maxM = i.mtime||""; });
+  if(maxM.length>=16) hhmm = maxM.slice(11,16);
+  var badge = hit.length
+    ? '<span class="st ok"><i></i>今日已更新'+(hhmm?' <span class="t">'+hhmm+'</span>':'')+'</span>'
+    : '<span class="st no"><i></i>今日未更新</span>';
+  var c = catColor(KEY);
+  el("curName").innerHTML = '<i style="--tc:'+c+'"></i>'+esc(SRC.cat);
+  el("head").innerHTML =
+    '<h1><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+c+'"></span>'+
+      esc(SRC.cat)+' <span style="margin-left:6px">'+badge+'</span></h1>' +
+    '<div class="meta"><span>共 <b>'+rows().length+'</b> 篇</span>' +
+    '<span>时间跨度 <b>'+SRC.earliest+'</b> 至 <b>'+SRC.latest+'</b></span>' +
+    (KW?'<span>搜索「<b>'+esc(KW)+'</b>」</span>':'')+'</div>';
+  document.getElementById("head").style.setProperty("--tc", c);
+  el("curName").style.setProperty("--tc", c);
+  document.documentElement.style.setProperty("--tc", c);
+}
+
+function renderList(){
+  var r = rows();
+  if(!r.length){
+    el("list").innerHTML = '<div class="empty">'+
+      '<svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>'+
+      '<p>'+(KW?'没有匹配的日报':'该门类暂无日报')+'</p>' +
+      '<p class="sm">'+(KW?'换个关键词试试':'日报由定时任务自动生成，稍后刷新页面查看')+'</p></div>';
+    return;
+  }
+  var c = catColor(KEY);
+  var byDate = {}, order = [];
+  r.forEach(function(i){
+    if(!byDate[i.date]){ byDate[i.date] = []; order.push(i.date); }
+    byDate[i.date].push(i);
+  });
+  order.sort().reverse();
+
+  el("list").innerHTML = order.map(function(d){
+    var badges = byDate[d].map(function(i){
+      var tens = (i.key==="us-iran" && i.tension!=null)
+        ? ' <span class="tens" style="background:'+tensionColor(i.tension).bg+';color:'+tensionColor(i.tension).fg+'">紧张度 '+i.tension+'</span>' : "";
+      var hhmm = (i.mtime||"").length>=16 ? i.mtime.slice(11,16) : "";
+      return '<a class="it" href="'+i.url+'">' +
+        '<span class="it-m">' +
+          '<span class="it-t">'+esc(i.title)+tens+
+            (hhmm?'<span class="chip">更新于 '+hhmm+'</span>':'')+'</span>' +
+          '<span class="it-s">'+esc(i.summary || "（无摘要）")+'</span>' +
+        '</span>' +
+        '<span class="it-d"><b>'+(i.sizeKB||0)+' KB</b>'+(hhmm?hhmm:"")+'</span>' +
+        '<svg class="arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>' +
+      '</a>';
+    }).join("");
+    return '<div class="dateblock"><div class="date-h">' +
+      '<span class="dot"></span>'+d+'<span class="n">'+byDate[d].length+' 篇</span></div>' +
+      badges + '</div>';
+  }).join("");
+}
+
+function refresh(){ renderHead(); renderList(); }
+
+function initEvents(){
+  var q = el("q"), clr = el("clr"), timer=null;
+  var pre = KEY ? "?k="+encodeURIComponent(KEY) : "";
+  q.value = KW;
+  clr.classList.toggle("on", !!KW);
+  q.oninput = function(){
+    clr.classList.toggle("on", q.value.length>0);
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      var v = q.value.trim();
+      location.replace(location.pathname + pre + (v ? "&q="+encodeURIComponent(v) : ""));
+    }, 260);
+  };
+  clr.onclick = function(){ location.replace(location.pathname + pre); };
+  el("back").onclick = function(){ location.href = "index.html"; };
+}
+
+function checkLocalEnv(){
+  var h = location.hostname;
+  var official = (h === "wanghahaniu.github.io") ||
+                 (h.indexOf("localhost") >= 0 && location.port === "8899");
+  if(!official) el("localWarn").classList.add("on");
+}
+
+function init(){
+  var p = new URLSearchParams(location.search);
+  KEY = p.get("k") || "";
+  KW = (p.get("q") || "").toLowerCase();
+  initEvents();
+  checkLocalEnv();
+  loadManifest(function(){
+    SRC = null;
+    DATA.sources.forEach(function(s){ if(s.key === KEY) SRC = s; });
+    if(!SRC){
+      el("list").innerHTML = '<div class="empty"><p>门类不存在</p>' +
+        '<p class="sm">请从 <a href="index.html" style="color:var(--brand)">九宫格首页</a> 选择一个门类</p></div>';
+      return;
+    }
+    document.title = SRC.cat + " · 日报工作台";
+    refresh();
+    el("footInfo").textContent = "本门类共 " + rows().length + " 篇 · 覆盖 " + SRC.earliest + " 至 " + SRC.latest;
+  });
+}
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+else init();
+</script>
+</body>
+</html>
