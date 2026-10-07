@@ -13,6 +13,18 @@ SCRIPT="C:/Users/wangz/WorkBuddy/2026-10-07-23-45-13/collect_reports.py"
 echo "[1/4] 扫描日报目录..."
 "$PY" "$SCRIPT"
 
+# 安全兜底：collect_reports.py 若被改动导致敏感标记失效，这里再拦一次——
+# 敏感正文绝不能留在 reports/（否则会被提交、公开可访问）
+if [ -d reports/cross ] || [ -d reports/macro-geo ]; then
+  mkdir -p ../daily-hub-private/reports
+  for d in cross macro-geo; do
+    if [ -d "reports/$d" ]; then
+      echo "  ⚠️ reports/$d 属敏感分类，移出仓库"
+      mv "reports/$d" "../daily-hub-private/reports/$d" 2>/dev/null || true
+    fi
+  done
+fi
+
 echo "[2/4] 提取紧张度 + 剥离敏感分类..."
 "$PY" - <<'PYEOF'
 import json,re,os

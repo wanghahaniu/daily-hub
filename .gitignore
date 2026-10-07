@@ -1,0 +1,4 @@
+# 敏感分类：源自源哥库/XZ库，自动化指令禁止发布外网，绝不能提交
+reports/cross/
+reports/macro-geo/
+manifest.local-only.json
