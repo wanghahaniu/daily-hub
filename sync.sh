@@ -10,8 +10,19 @@ echo "[1/3] 扫描日报目录..."
 
 echo "[2/3] 剥离敏感分类（源哥库/XZ库内容不外传）..."
 "$PY" - <<'PYEOF'
-import json
+import json,re,sys
+def txt_of(p):
+    h=open(p,encoding='utf-8',errors='ignore').read()
+    t=re.sub(r'<[^>]+>',' ',re.sub(r'<(script|style).*?</\1>',' ',h,flags=re.S|re.I))
+    return re.sub(r'\s+',' ',t)
+
 m=json.load(open('manifest.json',encoding='utf-8'))
+# 提取美伊日报紧张度（正文 3000 字内形如 88 /100 的数字）
+for it in m['items']:
+    if it['key']!='us-iran': continue
+    f=re.findall(r'(\d{1,3})\s*/\s*100', txt_of(it['url'])[:3000])
+    it['tension']=int(f[0]) if f and 0<int(f[0])<=100 else None
+
 pub_i=[i for i in m['items'] if not i.get('sensitive')]
 pub_s=[s for s in m['sources'] if not s.get('sensitive')]
 loc={'items':[i for i in m['items'] if i.get('sensitive')],
@@ -20,7 +31,8 @@ json.dump({'sources':pub_s,'items':pub_i},open('manifest.json','w',encoding='utf
 import os
 os.makedirs('../daily-hub-private',exist_ok=True)
 json.dump(loc,open('../daily-hub-private/manifest.local-only.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)
-print(f"  公开 {len(pub_i)} 篇 / 本地私密 {len(loc['items'])} 篇")
+ui=[i for i in pub_i if i['key']=='us-iran']
+print(f"  公开 {len(pub_i)} 篇（含紧张度 {sum(1 for i in ui if i.get('tension'))}/{len(ui)} 篇）/ 本地私密 {len(loc['items'])} 篇")
 PYEOF
 
 echo "[3/3] 提交并推送..."
