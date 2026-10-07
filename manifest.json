@@ -6,7 +6,6 @@
    "badge": "US",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\automation-2026-09-06-17-57-46",
    "count": 26,
-   "sensitive": false,
    "latest": "2026-10-07",
    "earliest": "2026-09-06"
   },
@@ -16,7 +15,6 @@
    "badge": "OIL",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-09-08-15-10-27",
    "count": 25,
-   "sensitive": false,
    "latest": "2026-10-07",
    "earliest": "2026-09-08"
   },
@@ -26,7 +24,6 @@
    "badge": "CU",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-09-08-15-10-27",
    "count": 25,
-   "sensitive": false,
    "latest": "2026-10-07",
    "earliest": "2026-09-08"
   },
@@ -36,7 +33,6 @@
    "badge": "FUT",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\automation-2026-09-06-18-00-11",
    "count": 16,
-   "sensitive": false,
    "latest": "2026-10-08",
    "earliest": "2026-09-10"
   },
@@ -46,7 +42,6 @@
    "badge": "RSH",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-09-15-01-18-34",
    "count": 16,
-   "sensitive": false,
    "latest": "2026-10-07",
    "earliest": "2026-09-15"
   },
@@ -56,7 +51,6 @@
    "badge": "ZSQ",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-09-01-13-23-48\\outputs",
    "count": 22,
-   "sensitive": false,
    "latest": "2026-10-07",
    "earliest": "2026-09-02"
   },
@@ -65,10 +59,27 @@
    "cat": "科技与地缘日报",
    "badge": "TEC",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-10-05-22-11-37",
-   "count": 4,
-   "sensitive": false,
+   "count": 5,
    "latest": "2026-10-07",
    "earliest": "2026-10-05"
+  },
+  {
+   "key": "cross",
+   "cat": "源哥×XZ交叉日报",
+   "badge": "XRD",
+   "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-10-05-22-11-37",
+   "count": 3,
+   "latest": "2026-10-07",
+   "earliest": "2026-10-06"
+  },
+  {
+   "key": "macro-geo",
+   "cat": "宏观地缘日报",
+   "badge": "MAC",
+   "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-09-15-01-18-34",
+   "count": 1,
+   "latest": "2026-10-07",
+   "earliest": "2026-10-07"
   }
  ],
  "items": [
@@ -111,7 +122,7 @@
    "cat": "科技与地缘日报",
    "badge": "TEC",
    "date": "2026-10-07",
-   "title": "科技与地缘日报",
+   "title": "科技与地缘日报（四星球版）",
    "pageTitle": "科技与地缘每日总结 · 2026-10-07",
    "summary": "科技与地缘每日总结 · 2026-10-07 Economic 国际投行研报 × 404K Semi-Ai × 研报平权 × 小牛研报纪要 · 每日总结 科技与地缘每日总结 2026 年 10 月 7 日（周三） 四星球",
    "sizeKB": 104.2,
@@ -122,11 +133,22 @@
    "cat": "科技与地缘日报",
    "badge": "TEC",
    "date": "2026-10-07",
+   "title": "科技与地缘日报（精炼版）",
+   "pageTitle": "科技与地缘每日总结 · 2026-10-07",
+   "summary": "科技与地缘每日总结 · 2026-10-07 Economic 国际投行研报 × 404K Semi-Ai × 研报平权 × 小牛研报纪要 📡 科技与地缘每日总结 2026 年 10 月 7 日（周三）· 今天的核心变化",
+   "sizeKB": 65.3,
+   "url": "reports/tech-geo/2026-10-07-2.html"
+  },
+  {
+   "key": "tech-geo",
+   "cat": "科技与地缘日报",
+   "badge": "TEC",
+   "date": "2026-10-07",
    "title": "科技与地缘日报",
    "pageTitle": "科技与地缘每日总结 · 2026-10-07（四星球版）",
    "summary": "科技与地缘每日总结 · 2026-10-07（四星球版） Economic 国际投行研报 × 404K Semi-Ai × 研报平权 × 小牛研报纪要 · 每日总结 科技与地缘每日总结 2026 年 10 月 7 日（周",
    "sizeKB": 115.0,
-   "url": "reports/tech-geo/2026-10-07.html"
+   "url": "reports/tech-geo/2026-10-07-3.html"
   },
   {
    "key": "zsxq-sum",
@@ -148,7 +170,40 @@
    "pageTitle": "今日市场分析笔记 · 2026-10-07",
    "summary": "今日市场分析笔记 · 2026-10-07 📊 今日市场分析笔记 2026年10月7日（周三）· 智能体把瓶颈推向 CPU / 存储议价权登顶 / 节后电子链重估 #CPU重估 #HBM涨价 #智能体 #PCB·CCL ",
    "sizeKB": 51.0,
-   "url": "reports/zsxq-sum/2026-10-07.html"
+   "url": "reports/zsxq-sum/2026-10-07-2.html"
+  },
+  {
+   "key": "cross",
+   "cat": "源哥×XZ交叉日报",
+   "badge": "XRD",
+   "date": "2026-10-07",
+   "title": "源哥 × XZ 交叉日报（精炼版）",
+   "pageTitle": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07",
+   "summary": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07 源哥会员专享 × XZ服务器 · 双库交叉 🧭 全品类交叉日报 2026 年 10 月 7 日（周三）· 今日核心变化： AI 的技术路线已收敛到 CPO，",
+   "sizeKB": 43.4,
+   "url": "reports/cross/2026-10-07.html"
+  },
+  {
+   "key": "cross",
+   "cat": "源哥×XZ交叉日报",
+   "badge": "XRD",
+   "date": "2026-10-07",
+   "title": "源哥 × XZ 交叉日报",
+   "pageTitle": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07",
+   "summary": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07 源哥 × XZ服务器 · 全品类交叉日报 2026 年 10 月 7 日（周三）· 交叉源：源哥会员专享库（Bloomberg 六大栏目 + 大摩闭门会 +",
+   "sizeKB": 129.5,
+   "url": "reports/cross/2026-10-07-2.html"
+  },
+  {
+   "key": "macro-geo",
+   "cat": "宏观地缘日报",
+   "badge": "MAC",
+   "date": "2026-10-07",
+   "title": "宏观地缘日报",
+   "pageTitle": "宏观地缘日报 · 2026-10-07（样刊 v3）",
+   "summary": "宏观地缘日报 · 2026-10-07（样刊 v3） 🌐 宏观地缘日报 2026年10月7日（周三）· 样刊 v3 ｜ 覆盖窗口 10-05 ~ 10-07 ｜ 美债 5.3% 时代 · 制裁双升级 · 对华贸易防御制度",
+   "sizeKB": 44.8,
+   "url": "reports/macro-geo/2026-10-07.html"
   },
   {
    "key": "zsxq",
@@ -205,6 +260,17 @@
    "summary": "科技与地缘每日总结 · 2026-10-06 Economic 国际投行研报 × 404K Semi-Ai × 研报平权 · 每日总结 科技与地缘每日总结 2026 年 10 月 6 日（周一） 三星球去重后 162 条",
    "sizeKB": 58.4,
    "url": "reports/tech-geo/2026-10-06.html"
+  },
+  {
+   "key": "cross",
+   "cat": "源哥×XZ交叉日报",
+   "badge": "XRD",
+   "date": "2026-10-06",
+   "title": "源哥 × XZ 交叉日报",
+   "pageTitle": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-06",
+   "summary": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-06 源哥 × XZ服务器 · 全品类交叉日报 2026年10月6日（周二） · 读法： 先看共识矩阵 → B4 商业动向 → B5 政治态度（这三块是纲），再看",
+   "sizeKB": 187.6,
+   "url": "reports/cross/2026-10-06.html"
   },
   {
    "key": "zsxq",
@@ -804,11 +870,11 @@
    "cat": "期货看板",
    "badge": "FUT",
    "date": "2026-09-22",
-   "title": "期货看板日报",
+   "title": "期货看板日报（_v6）",
    "pageTitle": "期货看板每日总结 · 09-22 作战地图（v6.2）",
    "summary": "期货看板每日总结 · 09-22 作战地图（v6.2） 期货看板每日总结 · 09-22 作战地图（v6.2） 数据基准 ：2026-09-21（周一）收盘 — 1d 16:20 / 4h 15:36 生成（09-21 ",
    "sizeKB": 19.9,
-   "url": "reports/futures/2026-09-22.html"
+   "url": "reports/futures/2026-09-22-2.html"
   },
   {
    "key": "zsxq",
