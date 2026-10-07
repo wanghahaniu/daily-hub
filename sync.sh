@@ -12,6 +12,27 @@ cd "$(dirname "$0")"
 PY="C:/Users/wangz/.workbuddy/binaries/python/versions/3.13.12/python.exe"
 SCRIPT="C:/Users/wangz/WorkBuddy/2026-10-07-23-45-13/collect_reports.py"
 
+# ---- 并发互斥锁 ----
+# 8:30 那批自动化（美伊/铜原油/知识星球/宏观地缘）几乎同时结束，会各自触发本脚本，
+# 多个 git 进程同时 push 会互相抢锁导致推送失败。用目录锁串行化：
+#   - mkdir 是原子操作，谁先建成功谁获得执行权
+#   - 等不到锁就直接退出（本次改动由下一个触发者补上，不丢）
+#   - 锁超过 20 分钟视为上次异常退出留下的死锁，自动清理
+LOCK=".sync.lock"
+STALE=1200
+if ! mkdir "$LOCK" 2>/dev/null; then
+  AGE=$(( $(date +%s) - $(stat -c %Y "$LOCK" 2>/dev/null || echo 0) ))
+  if [ "$AGE" -gt "$STALE" ]; then
+    echo "清理死锁（已存在 ${AGE}s）"
+    rm -rf "$LOCK" && mkdir "$LOCK"
+  else
+    echo "已有同步在执行，本次跳过（${AGE}s 前启动）"
+    exit 0
+  fi
+fi
+# 无论正常退出还是异常退出都释放锁
+trap 'rm -rf "$LOCK"' EXIT INT TERM
+
 echo "[1/4] 扫描日报目录..."
 "$PY" "$SCRIPT"
 
@@ -81,13 +102,13 @@ fi
 git -c user.name="wanghahaniu" -c user.email="wanghahaniu@users.noreply.github.com" \
     commit -q -m "日报更新 $(date +%Y-%m-%d)"
 
-# 网络抖动时重试。判断成功看 git 退出码（成功时 stderr 为空，不能靠 grep 输出判断）
+# 网络抖动或 GitHub 快进合并报500 时重试；用 --force 让远端直接重建引用（实测可绕过 500）
 push_retry() {
   local refspec="$1" i out
   for i in 1 2 3; do
-    if out=$(git push origin "${refspec}" 2>&1); then return 0; fi
-    echo "    第${i}次失败：$(echo "$out" | grep -viE '^warning|^remote:|^Receiving|^Resolving|^Counting|^Compressing|^Writing' | head -1)"
-    sleep 5
+    if out=$(git push --force origin "${refspec}" 2>&1); then return 0; fi
+    echo "    第${i}次失败：$(echo "$out" | grep -iE 'error|rejected|Internal Server' | head -1)"
+    sleep 8
   done
   return 1
 }

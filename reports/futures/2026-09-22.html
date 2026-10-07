@@ -3,448 +3,178 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>期货看板每日总结 · 2026-09-22 作战地图</title>
+<title>期货看板每日总结 · 09-22 作战地图（v6.2）</title>
 <style>
-  :root{
-    --bg:#f4f6f9; --card:#ffffff; --line:#e6e9ef;
-    --ink:#1c2430; --ink2:#5b6675; --ink3:#8a94a3;
-    --red:#d92d20; --red-d:#b42318; --red-bg:#fef2f1;
-    --green:#16855a; --green-bg:#edfdf4;
-    --amber:#b45309; --amber-bg:#fffaf0;
-    --blue:#1d4ed8; --blue-bg:#eff5ff;
-    --navy:#25456f;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1060px;margin:0 auto;padding:18px 16px 60px}
-
-  header{background:linear-gradient(135deg,#22406a 0%,#2c5386 55%,#37649e 100%);color:#fff;border-radius:16px;padding:26px 28px 22px;position:relative;overflow:hidden}
-  header::after{content:"";position:absolute;right:-70px;top:-70px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(217,45,32,.22),transparent 70%)}
-  header::before{content:"";position:absolute;right:80px;bottom:-100px;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.07),transparent 70%)}
-  .hd-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;position:relative;z-index:1}
-  .tag{font-size:11.5px;letter-spacing:.12em;color:#a9c0dd;text-transform:uppercase}
-  h1{font-size:25px;font-weight:800;margin:4px 0 2px;letter-spacing:.4px}
-  h1 em{font-style:normal;color:#ffa79c}
-  .hd-sub{font-size:13px;color:#cddbec;display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px;position:relative;z-index:1}
-  .hd-sub b{color:#fff}
-  .chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px 11px;font-size:12.5px;color:#eef4fb;white-space:nowrap}
-  .chip.red{background:rgba(217,45,32,.3);border-color:rgba(255,140,130,.45)}
-  .chip.green{background:rgba(22,133,90,.34);border-color:rgba(120,231,183,.45)}
-  .chip.amber{background:rgba(245,158,11,.24);border-color:rgba(255,205,100,.5)}
-  .chip b{color:#fff}
-  .cnum{font-weight:800;font-size:14px}
-  .chip .arrow{color:#ffb3a8;font-weight:700}
-
-  .verdict{margin-top:16px}
-  .vtitle{font-size:15px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:7px;margin:0 0 10px 2px}
-  .vtitle .ln{flex:1;height:2px;background:linear-gradient(90deg,#d92d20,transparent)}
-  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-  .vcard{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:12px;padding:15px 16px 14px;box-shadow:0 1px 3px rgba(28,36,48,.05)}
-  .vcard.b{border-left-color:var(--amber)}
-  .vcard.c{border-left-color:var(--blue)}
-  .vcard.g{border-left-color:var(--green)}
-  .vcard .vt{font-size:14.5px;font-weight:800;margin-bottom:7px;display:flex;align-items:center;gap:6px}
-  .vcard .vd{font-size:13.5px;color:var(--ink2);line-height:1.72}
-  .vcard .vd b{color:var(--ink)}
-
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:16px;box-shadow:0 1px 3px rgba(28,36,48,.05)}
-  h2{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:14px;padding-bottom:9px;border-bottom:2px solid var(--line);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-  h2 .n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:var(--navy);color:#fff;font-size:14px;font-weight:800;flex:0 0 auto}
-  h3{font-size:15.5px;font-weight:800;margin:18px 0 9px;color:var(--ink);display:flex;align-items:center;gap:7px}
-  h3:first-of-type{margin-top:4px}
-  p{font-size:14.5px;color:var(--ink2);margin-bottom:9px}
-  p b,li b{color:var(--ink)}
-  ul{margin:0 0 10px 20px}
-  li{font-size:14.3px;color:var(--ink2);margin-bottom:5px}
-  .hl{color:var(--red-d);font-weight:800}
-  .hlg{color:var(--green);font-weight:800}
-  .hla{color:var(--amber);font-weight:800}
-
-  .tbwrap{overflow-x:auto;margin:10px 0 4px;-webkit-overflow-scrolling:touch}
-  table{width:100%;border-collapse:collapse;font-size:13.4px;min-width:560px}
-  th{background:#f0f3f8;color:var(--navy);font-weight:700;text-align:left;padding:9px 10px;border-bottom:2px solid #dde3ec;white-space:nowrap;font-size:12.8px}
-  td{padding:8px 10px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top}
-  tr:last-child td{border-bottom:none}
-  tbody tr:hover{background:#fafbfd}
-  td b{color:var(--ink)}
-  .up{color:var(--red);font-weight:800}
-  .dn{color:var(--green);font-weight:800}
-  .warn{color:var(--amber);font-weight:800}
-  .mut{color:var(--ink3)}
-  .nowrap{white-space:nowrap}
-
-  .bdg{display:inline-block;padding:1.5px 8px;border-radius:999px;font-size:11.8px;font-weight:800;white-space:nowrap}
-  .bdg.r{background:var(--red-bg);color:var(--red-d);border:1px solid #fbd5d1}
-  .bdg.g{background:var(--green-bg);color:var(--green);border:1px solid #c7f0dd}
-  .bdg.a{background:var(--amber-bg);color:var(--amber);border:1px solid #fce3b4}
-  .bdg.y{background:#fffbeb;color:#a16207;border:1px solid #fde68a}
-  .bdg.b{background:var(--blue-bg);color:var(--blue);border:1px solid #cddffb}
-  .bdg.n{background:#f1f3f7;color:var(--ink3);border:1px solid #e2e6ee}
-
-  .ov{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
-  .ovc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .ovc .ot{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:9px;letter-spacing:.3px}
-  .ovrow{display:flex;justify-content:space-between;align-items:center;font-size:13.4px;padding:4px 0;border-bottom:1px dashed #eef1f6}
-  .ovrow:last-child{border-bottom:none}
-  .ovrow span:first-child{color:var(--ink3)}
-  .ovrow span:last-child{font-weight:800;color:var(--ink)}
-
-  .oneline{background:linear-gradient(135deg,#fff8f7,#fff);border:1px solid #fbd5d1;border-left:5px solid var(--red);border-radius:12px;padding:15px 18px;margin-top:14px;font-size:14.6px;color:var(--ink);line-height:1.75}
-  .oneline b{color:var(--red-d)}
-
-  .note{background:#f8fafc;border:1px dashed #d8dfe9;border-radius:10px;padding:11px 14px;font-size:13.2px;color:var(--ink2);margin:10px 0}
-  .note b{color:var(--ink)}
-
-  .oplist{counter-reset:o;list-style:none;margin:0}
-  .oplist li{counter-increment:o;position:relative;padding:9px 0 9px 38px;border-bottom:1px dashed #eef1f6;font-size:14.2px;color:var(--ink2);line-height:1.7}
-  .oplist li:last-child{border-bottom:none}
-  .oplist li::before{content:counter(o);position:absolute;left:0;top:9px;width:24px;height:24px;border-radius:7px;background:var(--navy);color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
-
-  footer{margin-top:22px;padding:14px 16px;background:#eef1f6;border-radius:12px;font-size:12.6px;color:var(--ink3);line-height:1.7}
-
-  @media(max-width:820px){
-    .vgrid{grid-template-columns:1fr}
-    .ov{grid-template-columns:1fr}
-    h1{font-size:21px}
-    .card{padding:16px 15px}
-    header{padding:20px 18px 18px}
-  }
+  body { margin:0; padding:0; background:#f4f5f7; font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif; color:#2b2f36; line-height:1.65; }
+  .header { background:#1f2733; color:#fff; padding:28px 18px 22px; }
+  .header h1 { margin:0 0 10px; font-size:20px; }
+  .header .meta { font-size:12px; color:#aeb7c2; }
+  .header .meta div { margin:2px 0; }
+  .header .oneline { margin-top:12px; background:#2b3648; border-radius:8px; padding:10px 12px; font-size:13px; color:#ffd97a; }
+  .wrap { max-width:860px; margin:0 auto; padding:14px 12px 40px; }
+  .card { background:#fff; border-radius:10px; padding:16px 16px 8px; margin:14px 0; box-shadow:0 1px 3px rgba(0,0,0,.06); }
+  .card h2 { margin:0 0 10px; font-size:16px; border-left:4px solid #3b7cff; padding-left:8px; }
+  .card h3 { margin:14px 0 6px; font-size:14px; }
+  .card p, .card li { font-size:13px; }
+  .note { background:#fff8e6; border:1px solid #f0d98c; border-radius:8px; padding:8px 12px; font-size:12px; margin:10px 0; }
+  .judge-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin:8px 0 14px; }
+  .judge-card { background:#fff; border:1px solid #e4e7eb; border-left:4px solid #ccc; border-radius:8px; padding:10px 12px; }
+  .judge-card .jt { font-weight:700; font-size:13px; margin-bottom:6px; }
+  .judge-card p { margin:4px 0; font-size:12.5px; }
+  .j-red { border-left-color:#c0392b; }
+  .j-gold { border-left-color:#b8860b; }
+  .j-green { border-left-color:#117a65; }
+  table { width:100%; border-collapse:collapse; font-size:12px; margin:8px 0 14px; }
+  th, td { border:1px solid #e4e7eb; padding:6px 7px; text-align:left; vertical-align:top; }
+  th { background:#f0f3f7; font-weight:600; }
+  .lead { color:#c0392b; font-weight:600; }
+  .pull { color:#b8860b; font-weight:600; }
+  .danger { color:#c0392b; font-weight:600; }
+  .bear { color:#7d3c98; font-weight:600; }
+  .fresh { color:#117a65; font-weight:600; }
+  .flat { color:#8a919c; }
+  .foot { font-size:11px; color:#8a919c; padding:10px 4px; }
 </style>
 </head>
 <body>
+
+<div class="header">
+  <h1>期货看板每日总结 · 09-22 作战地图（v6.2）</h1>
+  <div class="meta">
+    <div><b>数据基准</b>：2026-09-21（周一）收盘 — 1d 16:20 / 4h 15:36 生成（09-21 夜盘未纳入）</div>
+    <div><b>对比基准</b>：2026-09-18（1d 17 多 / 22 空；4h 13 多 / 26 空）</div>
+    <div><b>看板</b>：http://110.42.220.207:8000/#bu2610</div>
+    <div><b>本次运行</b>：2026-09-22 运行；服务端数据仍为 09-21 收盘（09-22 日线 16:20 后才更新），本报告基于 09-21 收盘；<b>Δ4h 已用 09-18 归档算出真实环比（58 只）</b></div>
+    <div><b>版本</b>：v6.2 —— 新增 🟢 4h 蓄势池（捞回「4h 已强、日线未达门槛」的品种）；🚀新贵 需 Δ4h≥+1.0 且 4h>1.0</div>
+  </div>
+  <div class="oneline">一句话：<b>09-21 是能源链多头集体松动日 —— eg / fu / pg / PL / lu 四小时全部收破 4h EE 出桶，绝对龙头只剩 bu、ec 两只；但 Δ4h 显示这批松动是「跌后回抽」而非继续恶化，明日是判真摔还是假摔的关键。</b></div>
+</div>
+
 <div class="wrap">
 
-<header>
-  <div class="hd-top">
-    <span class="tag">Futures Dashboard · Daily</span>
-    <span class="chip red">能源链 4h 集体破位 · 6 只掉桶</span>
-    <span class="chip">日线多空 15 : 18</span>
-    <span class="chip red">双强只剩 bu / ec</span>
-    <span class="chip amber">MA 贴 4h EE +0.82%</span>
-    <span class="chip green">sp 新 BK ＋ 股指群修复</span>
-  </div>
-  <h1>期货看板每日总结 · <em>09-22 作战地图</em></h1>
-  <div class="hd-sub">
-    <span>数据基准：<b>2026-09-21（周一）收盘</b>（1d 16:20 / 4h 15:36 生成，21:00 夜盘未纳入）</span>
-    <span>对比基准：<b>09-18</b>（1d 17 多 / 22 空；4h 13 多 / 26 空）</span>
-    <span>看板：<b>110.42.220.207:8000</b></span>
-    <span>下一交易日：<b>周二 09-22</b></span>
-    <span style="background:rgba(255,255,255,.1);border-radius:8px;padding:2px 10px">📌 本次运行 09-21 20:29：数据已更新为当日收盘 —— 本图已按周一收盘全部重算，关键位无需再校准（夜盘除外）</span>
-  </div>
-</header>
+<div class="note">⚠️ <b>Δ4h 口径</b>：本期 Δ4h = 09-21 4h score − 09-18 4h score，<b>为真实环比</b>（基线 58 只），非估算。注意区分：<b>Δ4h 回升 ≠ 结构修复</b> —— fu / pg 的 Δ 虽为正，但 4h 仍挂 long_to_short 桶且收破 4h EE，属「跌后回抽」。<b>v6.1 起新贵档要求 4h score &gt; 1.0</b>，故这类回抽品种统一降为回调档，不再标 🚀。</div>
 
-<div class="oneline">
-  <b>一句话：能源链 4h 集体破位、多头大收缩 —— 能拿的只剩 bu / ec 双强龙头，MA 贴线硬扛，m / fu / pg 生死线贴脸。今天的关键词是「收缩与防守」。</b>
-</div>
-
-<div class="oneline" style="border-left-color:var(--amber);background:linear-gradient(135deg,#fffaf0,#fff);border-color:#fce3b4">
-  ⚠️ <b style="color:var(--amber)">别误读两件事</b>：① 1d「多转空」14 只里 RM / TA / PR / PF / PX / eb / bz 等<b>日线早已离场（存量信号）</b>，今日真正新增的 4h 破位只有 <b>lu / PL / fu / eg 四只</b>（09-21 11:30–15:00）—— 别把存量当新增恐慌；② 反向也一样：<b>sc 原油 4h score 单日暴修 +8.33（−8.05 → +0.29）</b>，但<b>日线仍在多转空桶</b> —— 4h 修复 ≠ 反转，别抢多。
-</div>
-
-<!-- ===== 总览 ===== -->
 <div class="card">
-  <h2><span class="n">📊</span>两口径总览</h2>
-  <div class="tbwrap"><table>
-    <thead><tr><th>口径</th><th>多头</th><th>空头</th><th>多转空</th><th>多转空预警</th><th>空转多</th><th>遇压</th><th>回踩</th></tr></thead>
-    <tbody>
-      <tr><td><b>1d 日线</b></td><td class="dn">17 → <b>15</b></td><td class="dn">22 → <b>18</b></td><td class="up">9 → <b>14</b></td><td>3 → 2</td><td>3 → 6</td><td>15 → 11</td><td>11 → 13</td></tr>
-      <tr><td><b>4h</b></td><td>13 → 14</td><td class="dn">26 → <b>21</b></td><td>17 → 15</td><td>1 → 0</td><td class="up">11 → <b>16</b></td><td class="mut">—</td><td class="mut">—</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">读法：日线多头 17→15、空头 22→18，<b>两端都在收缩</b>；4h 空转多 11→16 是全场最活变量（股指群 + sp + 有色尾部）。</div>
-</div>
-
-<!-- ===== 核心判断 ===== -->
-<div class="verdict">
-  <div class="vtitle">核心判断（五条）<span class="ln"></span></div>
-  <div class="vgrid">
-    <div class="vcard">
-      <div class="vt">1️⃣ 能源链 4h 集体破位，多头大失血 🔴</div>
-      <div class="vd"><b>eg / fu / pg / PL / lu / m 六只日线多头全部「4h 平仓 ＋ 收破 4h EE」</b>，其中 lu（15:00）、PL / fu / eg（11:30）均为今日新转。芳烃能化氛围坏（开空 v、SH ＋ 已离场 8 只）→ <b>eg / PL 判分歧 🟠</b>；能源链自身氛围好 → fu / pg / lu 列单只预警 🟠。</div>
+  <h2>一、核心判断（5 条）</h2>
+  <div class="note"><b>0️⃣ 当日信号动作（必读）</b>：<b>1d</b> —— BK=<b>sp 纸浆</b>(1.34)｜SP=<b>pp 聚丙烯</b>(−2.39)｜BP=<b>沪深300</b>(0.52)。<b>4h</b> —— BK=<b>jd 鸡蛋</b>(0.89)/<b>OI 菜籽油</b>(0.62)/<b>sc 原油</b>(0.29)｜SP=<b>lu 低硫燃料油</b>(−1.32)/<b>eg 乙二醇</b>(−0.68)/<b>al 铝</b>(−0.46)｜SK=<b>y 豆油</b>(−0.12)｜BP=<b>沪深300</b>/<b>上证50</b>/<b>rb 螺纹钢</b>。</div>
+  <div class="judge-grid">
+    <div class="judge-card j-red">
+      <div class="jt">1️⃣ 能源链五只 4h 集体破 EE 出桶，多头主力板块换位 🔴</div>
+      <p><b>事实</b>：eg（4h −0.68，当日 4h SP）/ fu（−0.86）/ pg（−1.16）/ PL（−1.31）/ lu（−1.32，当日 4h SP）—— 5 只全部<b>收破 4h EE、掉出 4h 多头桶</b>；sc 原油 09-18 已日线 SP（POS=0）。</p>
+      <p><b>动作</b>：09-15 那批 7 只龙头，6 个交易日里 5 只进危险分歧、1 只离场 → <span class="danger">能源链多单全线收缩，主力板块让位给 bu / ec 两只独苗。</span></p>
     </div>
-    <div class="vcard b">
-      <div class="vt">2️⃣ 双强收缩到两只，ec 排名持续爬升成最硬一头 ✅</div>
-      <div class="vd"><b>bu</b>（18.45 / 1.19 / #1）与 <b>ec</b>（7.91 / 1.57 / #4 +2 up，7 日轨迹 16→4 连升）= 仅存双强。<b>MA 日线绝对龙头 10.24 但 4h 仅 +0.34 贴零</b>，4h EE 3459.67 距 +0.82% —— 上周贴线警报未解除，只是没破。</div>
+    <div class="judge-card j-gold">
+      <div class="jt">2️⃣ 绝对龙头只剩两只：bu 沥青 / ec 欧线 🥇</div>
+      <p><b>事实</b>：bu 1d <b>18.45</b>（全榜第一）＋ 4h <b>+1.19</b>，多榜 #1；ec 1d 7.91 ＋ 4h <b>+1.57</b>，多榜 <b>#4（+2 上升）</b>。</p>
+      <p><b>动作</b>：<span class="lead">双周期双强仅此 2 只</span>，多单核心仓向 bu / ec 集中。</p>
     </div>
-    <div class="vcard g">
-      <div class="vt">3️⃣ 新多接力：sp 今日 BK ＋ 股指群 4h 空转多修复 ✅</div>
-      <div class="vd"><b>sp 纸浆今日 BK</b>（1.34，排名 NEW #10，4h +2.43 修复强）；股指群 4h 空转多：科创50 +3.87、<b>000852 +2.72（rank +3 新贵，日线已持多）</b>、IM +1.93、沪深300 +1.11、上证50 +0.87。4h 尚未进多头桶 → <b>只跟踪不加仓</b>。</div>
+    <div class="judge-card j-green">
+      <div class="jt">3️⃣ 新贵档收紧后全场只剩 sp 纸浆 1 只 🚀</div>
+      <p><b>事实</b>：Δ4h 为正的日线多头本是 MA（+2.0）/ fu（+2.4）/ pg（+1.8）/ sp（+1.3）四只；按 v6.1 新增「4h score 必须 &gt; 1.0」前置，<b>MA（+0.34）/ fu（−0.86）/ pg（−1.16）三只 4h 均未上 1.0 → 全部降为 🟡 回调</b>，只有 <b>sp 纸浆（4h +2.43，当日 1d BK）</b> 保留 🚀 新贵。</p>
+      <p><b>动作</b>：<span class="fresh">这才是「新贵」该有的含义 —— 4h 真的转强，而非破桶后的跌后回抽。sp 小仓试多，日线 score 上 4.5 再提级。</span></p>
     </div>
-    <div class="vcard c">
-      <div class="vt">4️⃣ 空头主线未变，但 4h 普遍反弹收敛 ⚠️</div>
-      <div class="vd">CJ（−14.19）/ LC（−6.36）/ lh（−5.22）纹丝不动；黑色 <b>j / jm 4h 大收敛（Δ+3.51 / +4.92）</b>仍在空头桶；FG 4h +1.14 转正；sc 4h Δ+8.33 修复但日线仍在多转空桶。<b>空单持有，但 4h 收敛时别加空。</b></div>
+    <div class="judge-card j-red">
+      <div class="jt">4️⃣ m 豆粕贴日线 EE 仅 0.37%，最脆的一只 🔴</div>
+      <p><b>事实</b>：1d +3.20，收 3386 vs 日线 <b>EE 3373.67（仅 +0.37%）</b>；4h −0.71 已收破 4h EE、掉出多头桶；4h 破位自 09-17 起未修复。</p>
+      <p><b>动作</b>：4h 结构比 09-15 那次"抵抗成功"的剧本更差 → <span class="danger">危险分歧，多单减半，日线收盘破 3373.67 走。</span></p>
     </div>
-    <div class="vcard">
-      <div class="vt">5️⃣ 熊头遇压新触 au：第 5 次 ＋ 排名 +4 🚨</div>
-      <div class="vd"><b>au 第 5 次触压</b>（KK 944.36，距 −0.44%）＋ 空头榜 +4 上移；<b>i 距 KK +0.05%、ao +0.14%（4h 已空转多）</b>；1d 短转长预警 <b>PS、ss</b>。贴压三只空单<b>破 KK 立即减半</b>；PS / ss 动能衰减不加空。</div>
+    <div class="judge-card j-green">
+      <div class="jt">5️⃣ 新增 🟢 蓄势池：股指三只 4h 全场最强，日线还没跟上</div>
+      <p><b>事实</b>：<b>588000 科创50ETF（4h +3.87，全榜最高）/ 000852 中证1000（+2.72，排名 +3↑）/ IM 中证1000·09（+1.93）</b> —— 4h 均站上 1.0 且在多头桶，但日线 score 仅 0.81 / 0.94 / 1.47，<b>按四档口径只能判 ⚪ 未入档</b>。</p>
+      <p><b>动作</b>：这就是四档的结构性盲区 —— <b>门槛全在日线侧（≥4.5），4h 再强也进不来</b>。本期起单列蓄势池承接：<span class="fresh">4h 已就位，只等日线 score 跟上 → 小仓试多 / 观察，日线确认即提级。</span></p>
     </div>
   </div>
 </div>
 
-<!-- ===== 二 趋势与龙头 ===== -->
 <div class="card">
-  <h2><span class="n">2</span>📈 趋势与龙头（权重最高 · 重点看）</h2>
-  <p><b>龙头定义</b>：<b>日线多头偏强（score ≥ 4.5）＋ 4h 偏强（score ≥ 1.0）＝ 双强龙头</b>；排名上升 / 动能增强作辅助加分。</p>
-
-  <h3>🥇 双强龙头（2 只）—— 日线强 ＋ 4h 强，最该拿住的一批</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>日线 score</th><th>4h score</th><th>排名 / 动能</th><th>定性</th></tr></thead>
-    <tbody>
-      <tr><td><b>bu 石油沥青</b></td><td class="up">18.45</td><td class="up">+1.19</td><td>#1（+0）flat</td><td>全市场绝对第一，4h 重拾强势（Δ+1.86）→ <b>持有</b></td></tr>
-      <tr><td><b>ec 集运欧线</b></td><td class="up">7.91</td><td class="up">+1.57</td><td><b>#4（+2）up</b>，7 日轨迹 16→13→17→16→7→6→4 连升</td><td>🔴 <b>唯一排名连续爬升的龙头 = 最硬</b></td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">双强只剩<b>能源链两只</b> —— 上周五「ec 独苗」警报解除，但同门 fu / pg / lu 今日 4h 破位：<b>龙头在收缩，不是在扩张</b>。</div>
-
-  <h3>🥇★ 日线绝对龙头（1 只）</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>日线 score</th><th>4h score</th><th>排名 / 动能</th><th>说明</th></tr></thead>
-    <tbody>
-      <tr><td><b>MA 甲醇</b></td><td class="up">10.24</td><td class="warn">+0.34（贴零，未转负）</td><td>#2（+0）flat</td><td>4h 弱正但<b>从未转负</b>；收 3488 vs 4h EE 3459.67 —— <b>贴线 +0.82% 🚨 最贴线的绝对龙头</b>，收破即减半</td></tr>
-    </tbody>
-  </table></div>
-  <p>🥈 <b>准龙头：0 只</b>（上周五的准龙头群体已被今日 4h 破位清空）。</p>
-
-  <h3>🟡 回踩持有多头（3 只）—— 日线强 ＋ <b>4h 仍持多</b> → 按回踩对待，尊重趋势</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>日线 score</th><th>4h score</th><th>关键位（收盘 vs 日线 EE）</th><th>结论</th></tr></thead>
-    <tbody>
-      <tr><td><b>bu 沥青</b></td><td>18.45</td><td class="up">1.19 ✅</td><td>5897 vs 5298.00（+11.3%）</td><td>持有</td></tr>
-      <tr><td><b>ec 集运欧线</b></td><td>7.91</td><td class="up">1.57 ✅</td><td>2197 vs 2013.00（+9.1%）</td><td>持有，排名加分</td></tr>
-      <tr><td><b>MA 甲醇</b></td><td>10.24</td><td class="warn">0.34 🟡</td><td>3488 vs 3241.33（+7.6%）；4h EE 3459.67 贴线 +0.82%</td><td>持有，<b>盯 4h EE 3459.67</b></td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">此表只放 <b>4h 仍在多头桶</b>（真持多）的品种 —— 今日从 5 只缩到 3 只：eg / fu / pg / PL / lu / m 已跌出。</div>
-
-  <h3>⚠️ 4h 多头已结束（未重新 BK）—— 6 只（日线仍多者）</h3>
-  <div class="note">⚠️ <b>「4h score 转正」≠「4h 重新 BK」</b>：结构是否修复<b>只看有没有回到 4h 多头桶</b>。❗ 破位 = 4h 收盘跌破 4h EE；平仓 = 掉出多头桶；动能转负 = 仍持多但 score&lt;0 —— <b>三件事不许混用</b>。</div>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>日线 score</th><th>4h score</th><th>4h 结构状态</th><th>4h 关键位</th><th>排名</th><th>结论</th></tr></thead>
-    <tbody>
-      <tr><td><b>eg 乙二醇</b></td><td>8.94</td><td class="dn">−0.68</td><td>🚨 <b>破位</b>（今日 11:30）</td><td>收 6027 &lt; 4h EE 6087.67（−1.0%）</td><td>#3（+0）</td><td>🟠 <b>列分歧</b>（氛围坏）</td></tr>
-      <tr><td><b>PL 丙烯</b></td><td>6.74</td><td class="dn">−1.31</td><td>🚨 <b>破位</b>（今日 11:30）</td><td>收 9027 &lt; 4h EE 9255.00（−2.5%）</td><td>#7（+0）</td><td>🟠 <b>列分歧</b>（氛围坏）</td></tr>
-      <tr><td><b>fu 燃料油</b></td><td>7.85</td><td class="dn">−0.86</td><td>🚨 <b>破位</b>（今日 11:30）</td><td>收 4213 &lt; 4h EE 4346.67（−3.1%）</td><td>#5（+0）</td><td>🟠 减半；<b>日线 EE 4183.33 贴线 +0.71%</b></td></tr>
-      <tr><td><b>pg 液化气</b></td><td>7.66</td><td class="dn">−1.16</td><td>🚨 <b>破位</b>（09-17）</td><td>收 6704 &lt; 4h EE 7084.33（−5.4%）</td><td>#6（<b>−2 掉队</b>）</td><td>🟠 减半；<b>日线 EE 6653.00 贴线 +0.77%</b></td></tr>
-      <tr><td><b>lu 低硫燃油</b></td><td>4.86</td><td class="dn">−1.32</td><td>🚨 <b>破位</b>（今日 15:00 新转）</td><td>收 5665 &lt; 4h EE 5698.67（−0.6%）</td><td>#8（+0）</td><td>🟠 减半，破日线 EE 5476.00 走</td></tr>
-      <tr><td><b>m 豆粕</b></td><td>3.20</td><td class="dn">−0.71</td><td>🚨 <b>破位</b>（09-17）＋ 收已破日线 DD</td><td>收 3386 &lt; 4h EE 3453.67（−2.0%）</td><td>#9（+1）</td><td>🔴 <b>高危</b>：<b>日线 EE 3373.67 贴脸 +0.37%</b></td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">对照：RM / TA / PR / PF / PX / eb / bz 也已 4h 转空，但<b>日线已离场（POS=0）→ 归「已离场」档</b>（第六节处理）。</div>
+  <h2>二、多头阵营 · 四档（1d POS=1 共 16 只）</h2>
+  <table>
+    <tr><th>品种</th><th>日线 score</th><th>4h score</th><th>Δ4h</th><th>排名</th><th>档位</th><th>一句话</th></tr>
+    <tr><td><b>bu 沥青</b></td><td><b>18.45（第1）</b></td><td>+1.19</td><td class="fresh">+1.9</td><td>#1 flat</td><td class="lead">🥇 绝对龙头</td><td>双周期双强，Δ 还在加力，全场最硬多头</td></tr>
+    <tr><td><b>ec 欧线</b></td><td>7.91</td><td>+1.57</td><td class="bear">−1.0</td><td>#6→#4（+2↑）</td><td class="lead">🥇 绝对龙头</td><td>结构最强但 Δ 已走弱，排名升是唯一支撑 → 持有不加</td></tr>
+    <tr><td><b>sp 纸浆</b> 🆕</td><td>1.34</td><td><b>+2.43</b></td><td class="fresh">+1.3</td><td>新入榜 #10</td><td class="fresh">🚀 新贵</td><td><b>当日 1d BK 新开多</b> ＋ 4h 空转多<b>站上 1.0</b> → 全场唯一新贵，小仓试多</td></tr>
+    <tr><td><b>MA 甲醇</b></td><td>10.24</td><td>+0.34</td><td class="fresh">+2.0</td><td>#2 flat</td><td class="pull">🟡 回调</td><td>Δ 大幅回升但 4h 仅 +0.34 <b>未过 1.0</b> → 新贵降档，持有</td></tr>
+    <tr><td><b>eg 乙二醇</b></td><td>8.94</td><td>−0.68（破EE）</td><td class="pull">+0.9</td><td>#3 flat</td><td class="pull">🟡 回调</td><td>当日 4h SP ＋ 破 4h EE，Δ 回暖 → 减半</td></tr>
+    <tr><td><b>fu 燃料油</b></td><td>7.85</td><td>−0.86（破EE）</td><td class="fresh">+2.4</td><td>#5 flat</td><td class="pull">🟡 回调</td><td>Δ 猛回升但 4h 仍破桶<b>未过 1.0 → 新贵降档</b>；贴日线 EE +0.71% → <b>减半盯生死线</b></td></tr>
+    <tr><td><b>pg 液化气</b></td><td>7.66</td><td>−1.16（破EE）</td><td class="fresh">+1.8</td><td>#4→#6（−2↓）</td><td class="pull">🟡 回调</td><td>Δ 回升但 4h 最弱 ＋ 排名掉队 → <b>新贵降档</b>；贴日线 EE +0.77% → <b>减半盯生死线</b></td></tr>
+    <tr><td><b>PL 丙烯</b></td><td>6.74</td><td>−1.31（破EE）</td><td class="pull">+0.4</td><td>#7 flat</td><td class="pull">🟡 回调</td><td>4h 明显偏弱破桶 → 减半</td></tr>
+    <tr><td><b>lu 低硫燃油</b></td><td>4.86</td><td>−1.32（破EE）</td><td class="bear">−0.4</td><td>#8 flat</td><td class="pull">🟡 回调</td><td>当日 4h SP ＋ Δ 继续走弱 → 减半，破日线 EE 5476 走</td></tr>
+  </table>
+  <p style="font-size:11px;color:#8a919c;">未入档日线多头 6 只（1d &lt; 4.5 且 Δ4h 平缓）：<b>m 豆粕（3.20，4h 破EE，见下）、jd 鸡蛋（0.94，当日 4h BK）、pb 铅（0.84）、AP 苹果（0.04）</b>，其中 <b>IM 中证1000（1.47）/ 000852 中证1000（0.94）/ 588000 科创50ETF（0.81）</b> 三只 4h 已站上 1.0，<b>转下方蓄势池单列</b>。排名列「—」= 只在预警桶（本期 IM）。</p>
+  <div class="note">⚠️ <b>m 豆粕虽未入四档，却是本期最危险的多头</b>：贴日线 EE 3373.67 仅 <b>+0.37%</b> ＋ 4h −0.71 已破 4h EE，Δ4h +0.85 属跌后回抽 → <b>减半，破 EE 走</b>。</div>
 </div>
 
-<!-- ===== 三 龙头回踩 ===== -->
 <div class="card">
-  <h2><span class="n">3</span>🔁 龙头回踩（提升权重 · 优先于分歧）</h2>
-  <p><b>规则</b>：① 日线多头偏强 ＋ 4h 没有明显偏弱 → 一律先按回踩处理；② ①板块氛围坏 ②4h 明显偏弱 ③排名动量衰减 <b>三条中两条</b>才升级分歧；③ <b>4h 重新 BK = 回踩结束信号</b>；日线收盘破 EE = 多头生死线。</p>
-
-  <h3>✅ 回踩结束 / 4h 重新走强（优先低吸）</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>回踩情况</th><th>4h 状态</th><th>关键位</th></tr></thead>
-    <tbody>
-      <tr><td><b>bu 沥青</b></td><td>多头桶内整理，4h 重拾强势</td><td class="up">+1.19（Δ+1.86）</td><td>日线 EE 5298 远在下方</td></tr>
-      <tr><td><b>ec 集运欧线</b></td><td>回踩 4 次后再次走强，rank +2</td><td class="up">+1.57 全场最强</td><td>日线 EE 2013 远在下方</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>🟡 回踩进行中（4h 贴零未破 → 持有观察）</h3>
-  <p><b>MA 甲醇</b>（4h +0.34 贴零、未破 4h EE）—— 持有，盯 4h EE 3459.67 与日线 EE 3241.33。<br>
-  <b>sp 纸浆</b>（今日 BK 新多，4h 空转多 +2.43 修复强）—— 持有观察，等 4h 进多头桶确认。</p>
-
-  <h3>⚠️ 回踩偏警戒（排名动量衰减）</h3>
-  <p><b>pg 液化气</b> —— rank #6（−2），7 日轨迹 3→6 连续下滑 ＋ 4h 破位 → <b>已升级</b>，见下表。</p>
-
-  <h3>🚨 回踩已升级（4h 破位，日线仍多）—— 6 只</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>4h 状态</th><th>日线</th><th>升级理由</th><th>去向</th></tr></thead>
-    <tbody>
-      <tr><td><b>eg 乙二醇</b></td><td>🚨 破位（11:30 新转）</td><td>8.94 仍强</td><td>芳烃能化氛围坏 ＋ 4h 平仓转负 → <b>判分歧</b></td><td><span class="bdg a">🟠 第四节</span></td></tr>
-      <tr><td><b>PL 丙烯</b></td><td>🚨 破位（11:30 新转）</td><td>6.74</td><td>同上 → <b>判分歧</b></td><td><span class="bdg a">🟠 第四节</span></td></tr>
-      <tr><td><b>fu 燃料油</b></td><td>🚨 破位（11:30 新转）</td><td>7.85，距 EE +0.71%</td><td>能源链氛围好 → 单只预警</td><td><span class="bdg y">🟠 生死线</span></td></tr>
-      <tr><td><b>pg 液化气</b></td><td>🚨 破位 ＋ 排名掉队</td><td>7.66，距 EE +0.77%</td><td>单只预警（排名加重量级）</td><td><span class="bdg y">🟠 生死线</span></td></tr>
-      <tr><td><b>lu 低硫燃油</b></td><td>🚨 破位（15:00 新转）</td><td>4.86，距 EE +3.45%</td><td>单只预警</td><td><span class="bdg y">🟠 生死线</span></td></tr>
-      <tr><td><b>m 豆粕</b></td><td>🚨 破位（09-17）</td><td>3.20，距 EE +0.37%，<b>收已破 DD</b></td><td>抵抗 4 条未全中 → 按工业品口径</td><td><span class="bdg r">🔴 第四节</span></td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">ℹ️ m 豆粕未进「多头抵抗」名单 —— 4 条件未全中（收盘 3386 已破 DD 3405.75、4h −0.71 深于 −0.5），<b>不给农产品开后门</b>，指向第四节防滥用对照。</div>
+  <h2>三·补、🟢 4h 蓄势池（3 只）</h2>
+  <p><b>4h 已就位、日线还没跟上</b> —— 按四档口径它们都只能判 ⚪ 未入档，但 4h 动量是全场最强的：<b>别当没信号处理，这是明日最可能入档的名单。</b></p>
+  <table>
+    <tr><th>品种</th><th>4h score</th><th>Δ4h</th><th>日线 score</th><th>入池理由</th><th>提级条件</th></tr>
+    <tr><td><b>588000 科创50ETF</b></td><td><b>+3.87（全榜最高）</b></td><td class="bear">−0.50</td><td>0.81</td><td>4h 最强但日线 score 仅 0.81，多榜 #14（−1↓）</td><td>日线 score ≥ 4.5 或 BK 确认</td></tr>
+    <tr><td><b>000852 中证1000</b></td><td><b>+2.72</b></td><td class="fresh">+0.70</td><td>0.94</td><td>4h 次强 ＋ 排名 <b>#15→#12（+3↑）</b> ＋ Δ 为正</td><td>同上；排名动量最好的一只</td></tr>
+    <tr><td><b>IM 中证1000·09</b></td><td><b>+1.93</b></td><td class="flat">0.00</td><td>1.47</td><td>日线 score 三只里最高，只差临门一脚</td><td>同上；注意当日 4h BP（沪深300 同向）</td></tr>
+  </table>
+  <div class="note">📌 <b>三只同属股指群</b> —— 4h 空转多 16 只里股指领衔，但日线这一侧全部未达 4.5 → <b>股指是「4h 先行、日线滞后」的典型蓄势，一旦日线补上就是集体入档。</b><br>同期未入池 2 只（真·未入档，4h 水平不足）：<b>pb 铅（4h +0.55）/ AP 苹果（4h +0.36）</b>。</div>
 </div>
 
-<!-- ===== 四 分歧 ===== -->
 <div class="card">
-  <h2><span class="n">4</span>⭐ 分歧严重 · 特别关注名单（简化版）</h2>
-  <p><b>通用判据（两条同时满足才算分歧）</b>：① <b>板块氛围坏</b>：同板块近 5 个交易日 ≥2 只日线平仓（SP/BP）或开空且偏弱；② <b>自身</b>：4h 平仓（多头结束）＋ 日线仍是多头但偏弱。</p>
-
-  <h3>🆕 关键分流：农产品 ≠ 工业品</h3>
-  <div class="note"><b>工业品</b>（黑色/有色/能化/橡胶）→ 氛围带动型分歧<b>权重大 → 判分歧</b>（上下游产业链，真实需求传导）；<b>农产品</b>（油脂粕/农软）→ 被氛围带下来的硬品种 → 判<b>「多头抵抗」当回踩看待</b>（互相替代、情绪性错杀、跌不深）。</div>
-
-  <h3>🟡 农产品「多头抵抗」判定 —— 本期 0 只（m 未全中实录）</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>#</th><th>条件</th><th>m 豆粕 实测（09-21）</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>板块氛围坏（≥2 只日线平仓/开空且偏弱）</td><td class="up">✅ a 开空 ＋ y / b / RM / OI / p 已离场</td></tr>
-      <tr><td>2</td><td>自身日线趋势没坏（score&gt;0 且收盘 ≥ DD）</td><td class="dn">❌ 收 3386 &lt; DD 3405.75（已破）</td></tr>
-      <tr><td>3</td><td>4h 只是平仓/贴零，不是破位（4h ≥ −0.5）</td><td class="dn">❌ 4h −0.71 且收破 4h EE</td></tr>
-      <tr><td>4</td><td>排名动量没衰减（rank_change ≥ 0）</td><td class="up">✅ #9（+1）</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">→ <b>2/4 中，缺 2 条 → 不构成多头抵抗，按工业品口径处理</b>：🟠 减半，<b>收破日线 EE 3373.67 = 离场线</b>（当前贴脸 +0.37%，<b>全场多头最危险</b>）。⚠️ 防滥用对照：m 就是反例 —— 判据不是给农产品开后门。</div>
-
-  <h3>分歧名单（工业品 · 2 条，按严重度排序）</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>板块</th><th>板块氛围（近 5 日日线平仓/开空且偏弱）</th><th>命中品种</th><th>自身状态</th><th>评级</th></tr></thead>
-    <tbody>
-      <tr><td><b>能化（芳烃）</b></td><td>开空 v、SH ＋ 已离场 8 只（bz / eb / PX / l / pp / PF / PR / UR）</td><td><b>PL 丙烯</b></td><td>4h 破位 −1.31（今日 11:30），日线 6.74</td><td><span class="bdg a">🟠 减半</span></td></tr>
-      <tr><td><b>能化（芳烃）</b></td><td>同上</td><td><b>eg 乙二醇</b></td><td>4h 破位 −0.68（今日 11:30），日线 8.94</td><td><span class="bdg a">🟠 减半</span></td></tr>
-    </tbody>
-  </table></div>
-  <p><b>动作</b>：🔴 = 多单不持有/先撤，盯日线 SK；🟠 = 多单减半，破 EE 走。<b>反向修复 = 4h 重新 BK → 立即剔除</b>（不是「分数转正」）。PL / eg 日线未挂预警、排名未衰减，故只到 🟠 —— <b>补日线预警即升 🔴</b>。</p>
-
-  <p><b>🟡 农产品「多头抵抗」名单：0 只</b> —— 无品种 4 条全中。jd / AP 农软弱多（09-18 BK）今日回踩新触，属「新多首次回踩观察」，不套抵抗判据。生死线 = 日线 EE，收盘破 EE = 抵抗失败；4h 重新 BK = 抵抗成功。</p>
-  <p><b>❌ 已移出名单</b>：RM / TA / PR / PF / PX / eb / bz（日线 POS=0 已离场）、b / al（日线无桶）→ 归「已离场/已转空」，第六节处理。</p>
-  <p><b>⚠️ 非板块级单独预警（3 只）：fu / pg / lu</b> —— 4h 破位 ＋ 能源链板块氛围好（同门 bu / ec 仍强）→ 不判分歧，<b>多单减半，破各自日线 EE 立即走</b>（fu 4183.33、pg 6653.00、lu 5476.00）。</p>
+  <h2>三、空头阵营 · 镜像四档（1d POS=−1 共 18 只）</h2>
+  <table>
+    <tr><th>品种</th><th>日线 score</th><th>4h score</th><th>Δ4h</th><th>排名</th><th>档位</th><th>一句话</th></tr>
+    <tr><td><b>lh 生猪</b></td><td>−5.22</td><td>−1.31</td><td class="fresh">−0.3</td><td>空榜 #3 flat</td><td class="bear">🐻 绝对熊头</td><td>双周期双空，全场唯一熊头</td></tr>
+    <tr><td><b>CJ 红枣</b></td><td><b>−14.19（最弱）</b></td><td>+0.22</td><td class="pull">+0.5</td><td>空榜 #1 七连庄</td><td class="pull">🟡 反抽</td><td>日线极弱但 4h 微正，空单持有不加</td></tr>
+    <tr><td><b>LC 碳酸锂</b></td><td>−6.36</td><td><b>+2.07</b></td><td class="bear">+2.9</td><td>空榜 #2 flat</td><td class="danger">🔴 空头危险分歧</td><td>Δ 大幅回升 ＋ 4h 大反弹 → <b>空单减/撤，防反转</b></td></tr>
+    <tr><td><b>CF 棉花</b></td><td>−2.74</td><td>+0.35</td><td class="bear">+1.1</td><td>空榜 #5（−1↓）</td><td class="danger">🔴 空头危险分歧</td><td>4h 转正 ＋ Δ 上行 → 空单减半</td></tr>
+    <tr><td><b>a 豆一</b></td><td>−0.16</td><td>+0.70</td><td class="bear">+2.4</td><td>空榜 #16（−2↓）</td><td class="danger">🔴 空头危险分歧</td><td>4h 转强 ＋ Δ 猛升 → 空单减半</td></tr>
+    <tr><td><b>v PVC</b></td><td>+0.05（正）</td><td>+0.27</td><td class="bear">+2.2</td><td>空榜 #17（−1↓）</td><td class="danger">🔴 空头危险分歧</td><td><b>score 已转正 ＋ 空榜排名仍升 = 队列塌陷假象</b> → 空单撤</td></tr>
+    <tr><td><b>FG 玻璃</b></td><td>+0.87（正）</td><td>+1.14</td><td class="bear">+1.3</td><td>#21→<b>#18</b>（+3↑）</td><td class="danger">🔴 空头危险分歧</td><td>日线 score 已转正，排名升是塌陷假象 → <b>空单撤</b></td></tr>
+    <tr><td><b>cs 玉米淀粉</b></td><td>−2.33</td><td>−0.29</td><td class="flat">+0.0</td><td>空榜 #7（+2↑）</td><td class="pull">🟡 反抽</td><td>Δ 持平，空头持有</td></tr>
+    <tr><td><b>j 焦炭</b></td><td>−1.85</td><td>−0.27</td><td class="fresh">+3.5</td><td>空榜 #8（−1↓）</td><td class="pull">🟡 反抽</td><td>Δ 大幅回升 → 空单持有但<b>别加</b></td></tr>
+    <tr><td><b>jm 焦煤</b></td><td>−1.31</td><td>−0.43</td><td class="fresh">+4.9（最大）</td><td>空榜 #9（−1↓）</td><td class="pull">🟡 反抽</td><td>全场 Δ 最大回升 → 空单持有但<b>别加</b></td></tr>
+  </table>
+  <p style="font-size:11px;color:#8a919c;"><b>本期无 📉 空头新贵</b>：Δ4h 显著下行的空头一只都没有 —— 空头侧全是「失速回升」，没有「加速下杀」。未入档空头 8 只：<b>ss（−3.02）/ SA（−2.35）/ SH（−1.31，Δ 持平）/ c（−1.16，rank +4↑）/ PS（−0.96）/ ao（−0.76，4h 转 short_to_long）/ au（−0.62，rank +4↑）/ i（−0.21，rank +4↑）</b>，持有原仓不追。排名列「—」= 只在预警桶。</p>
+  <div class="note">⚠️ <b>au / i 空榜排名 +4 与贴 KK 互证</b>：au 距 KK −0.44%（第 5 次触压）、i 距 KK +0.05% → <b>空单破 KK 立即减半</b>。</div>
 </div>
 
-<!-- ===== 五 看空主线 ===== -->
 <div class="card">
-  <h2><span class="n">5</span>看空主线（日线空头 18 只）</h2>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种（score）</th><th>状态</th><th>性质</th></tr></thead>
-    <tbody>
-      <tr><td><b>CJ 红枣 −14.19</b></td><td>空头榜 #1 七连庄；4h +0.22 反弹乏力</td><td>🟢 顺空</td></tr>
-      <tr><td><b>LC 碳酸锂 −6.36</b></td><td>4h +2.07 反弹收敛（Δ+2.94）</td><td>⚠️ 4h 反弹，别加空</td></tr>
-      <tr><td><b>lh 生猪 −5.22</b></td><td>4h −1.31 仍弱</td><td>🟢 顺空</td></tr>
-      <tr><td><b>ss 不锈钢 −3.02</b></td><td>1d 短转长预警 ＋ 距 KK +0.68%；排名 +1</td><td>⚠️ 动能衰减，不加空</td></tr>
-      <tr><td><b>CF 棉花 −2.74</b></td><td>4h +0.35 收敛；排名 −1</td><td>⚠️ 动能衰减</td></tr>
-      <tr><td><b>SA 纯碱 −2.35</b></td><td>4h +0.59 收敛</td><td>⚠️ 动能衰减</td></tr>
-      <tr><td><b>cs 玉米淀粉 −2.33</b></td><td>排名 +2 上移</td><td>🟢 顺空</td></tr>
-      <tr><td><b>j 焦炭 −1.85</b></td><td>4h Δ+3.51 大收敛</td><td>⚠️ 4h 反弹，别加空</td></tr>
-      <tr><td><b>SH 烧碱 −1.31</b></td><td>触压 1 次；排名 +1</td><td>⚠️ 动能衰减</td></tr>
-      <tr><td><b>jm 焦煤 −1.31</b></td><td>4h Δ+4.92 大收敛</td><td>⚠️ 4h 反弹，别加空</td></tr>
-      <tr><td><b>c 玉米 −1.16</b></td><td>排名 +4 新贵</td><td>🟢 顺空</td></tr>
-      <tr><td><b>PS 多晶硅 −0.96</b></td><td><b>1d 短转长预警</b> ＋ 排名 −2</td><td>🚨 动能衰减，不加空</td></tr>
-      <tr><td><b>ao 氧化铝 −0.76</b></td><td>4h 空转多 +0.42 ＋ 距 KK +0.14%</td><td>🚨 贴压，破 KK 减半</td></tr>
-      <tr><td><b>au 黄金 −0.62</b></td><td><b>第 5 次触压 ＋ 排名 +4</b>；距 KK −0.44%</td><td>🚨 贴压最警惕</td></tr>
-      <tr><td><b>i 铁矿石 −0.21</b></td><td><b>距 KK +0.05%</b> ＋ 排名 +4</td><td>🚨 贴压，破 KK 减半</td></tr>
-      <tr><td><b>a 豆一 −0.16</b></td><td>排名 −2 下滑</td><td>🟢 顺空</td></tr>
-      <tr><td><b>v PVC +0.05</b></td><td>score 转正</td><td>⚪ 观察，SK 前不新空</td></tr>
-      <tr><td><b>FG 玻璃 +0.87</b></td><td>4h +1.14 转正 ＋ 排名 +3</td><td>⚪ 观察，等日线 SK</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">无当日新开空（09-21 无 SK 信号）。空头动能整体在 4h 层面收敛 —— <b>存量空单持有、不加空</b>；真强空只剩 CJ / lh / cs / c / a 的结构与排名还顺。</div>
+  <h2>四、动量异动榜</h2>
+  <p><b>多向加速（Δ4h 正，前 8）</b>：</p>
+  <ul>
+    <li><b>jm 焦煤 +4.9 / j 焦炭 +3.5</b> —— ⚠️ 回升的是<b>空头</b>（仍挂 short_trend），是空头失速而非多头启动 → 空单别加</li>
+    <li><b>LC 碳酸锂 +2.9</b> —— 空头危险分歧确认：4h +2.07 大反弹</li>
+    <li><b>a 豆一 +2.4 / v PVC +2.2</b> —— 空头危险分歧（v 的 score 已转正）</li>
+    <li><b>fu 燃料油 +2.4</b> —— 4h −0.86 仍破桶，<b>Δ 回暖 ≠ 结构修复</b> → 回调档，减半不加仓</li>
+    <li><b>MA 甲醇 +2.0</b> —— 4h +0.34 未过 1.0，同样只是回抽 → 回调档持有</li>
+    <li><b>bu 沥青 +1.9</b> —— 🥇 龙头确认：日线第一 ＋ Δ 加力</li>
+  </ul>
+  <p><b>空向失速（Δ4h 负，前 5）</b>：</p>
+  <ul>
+    <li><b>ec 欧线 −1.0</b> —— 🥇 龙头但 Δ 走弱 → 持有不加（排名 +2 是唯一支撑）</li>
+    <li><b>pb 铅 −0.6</b> —— ⚪ 真·未入档（4h +0.55 水平不足），暂不介入</li>
+    <li><b>588000 科创50ETF −0.5</b> —— 🟢 蓄势池，<b>Δ 虽为负但 4h 仍高达 3.87</b>，属高位小回 → 仍可观察</li>
+    <li><b>lu 低硫燃油 −0.4</b> —— 🟡 回调档，<b>Δ 继续走弱 ＋ 当日 4h SP</b> → 五只破桶里最该先减的</li>
+    <li><b>AP 苹果 −0.4</b> —— ⚪ 真·未入档，无操作价值</li>
+  </ul>
+  <p><b>排名异动（|Δrank| ≥ 3）</b>：多头榜 <b>000852 中证1000 #15→#12（+3↑）</b>、AP +2、ec +2；pg <b>#4→#6（−2↓）掉队</b>。空头榜 <b>c 玉米 +4↑ / au +4↑ / i +4↑ / FG +3↑</b> —— 其中 <b>FG / v / a 已挂空头危险分歧</b>，说明<b>空头榜尾部排名上升 = 队列塌陷假象，不能当新空跟进</b>；au / i 的中位上升则与贴 KK 互证，属<b>真反弹风险</b>。</p>
 </div>
 
-<!-- ===== 六 阶段性转折 ===== -->
 <div class="card">
-  <h2><span class="n">6</span>阶段性转折（简化版）</h2>
-
-  <h3>A. 🔴 双级别共振空（4h 转空 ＋ 日线已开空）→ 可跟空</h3>
-  <p><b>本期无</b> —— 4h 多转空 15 只中无一同时挂日线空头桶（4h 转弱全部发生在日线多头或无桶品种上）。</p>
-
-  <h3>B. ⬜ 4h 转弱但日线仍多 → 指向表</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>分档</th><th>品种</th><th>去哪看</th></tr></thead>
-    <tbody>
-      <tr><td>日线强 ＋ 4h 无明显偏弱</td><td>bu / ec / MA</td><td>→ 第三节「回踩」</td></tr>
-      <tr><td>日线偏弱 ＋ 4h 平仓 ＋ 板块氛围坏（工业品）</td><td><b>PL / eg</b></td><td>→ 第四节「分歧名单」🟠</td></tr>
-      <tr><td>日线趋势没坏 ＋ 4h 平仓 ＋ 氛围坏（农产品，未全中）</td><td><b>m</b></td><td>→ 按工业品口径，第四节防滥用对照</td></tr>
-      <tr><td>日线中低分 ＋ 4h 破位但板块氛围好</td><td><b>fu / pg / lu</b></td><td>→ 单只预警（第八节生死线）</td></tr>
-      <tr><td>自身日线已非多头（POS=0/−1）</td><td>RM / TA / PR / PF / PX / eb / bz / b / al</td><td>→ 已离场/已转空，观望等日线 SK</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>C. ⚪ 反向信号（4h 空转多 / 短转长 —— 分层裁决）</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>信号</th><th>日线</th><th>裁决</th></tr></thead>
-    <tbody>
-      <tr><td><b>000852 中证1000</b></td><td>4h +2.72 ＋ rank +3 新贵</td><td><b>1d 多头桶</b></td><td>🔴 <b>修复最实</b>，等 4h 重新 BK 确认再加</td></tr>
-      <tr><td><b>sp 纸浆</b></td><td>4h +2.43</td><td>1d 多头桶（今日 BK）</td><td>🔴 新多持有观察</td></tr>
-      <tr><td><b>科创50ETF</b></td><td>4h +3.87（09-18 起）</td><td>1d POS=1，回踩 1 次</td><td>⚪ 修复候选，4h 未进多头桶不加仓</td></tr>
-      <tr><td><b>IM / 沪深300 / 上证50</b></td><td>4h +1.93 / +1.11 / +0.87（今日 15:00）</td><td>IM 1d 挂多头回踩预警</td><td>⚪ 修复苗头，等日线 BK</td></tr>
-      <tr><td>PK / OI / cu / zn / rb / ni</td><td>4h 空转多 +0.1 ~ +0.9</td><td>1d 无桶</td><td>⚪ 假转折概率高，只观察</td></tr>
-      <tr><td><b>ao 氧化铝</b></td><td>4h +0.42</td><td><b>1d 空头桶</b></td><td>🚨 矛盾信号：空头反弹，别当反转</td></tr>
-      <tr><td>ag 白银</td><td>4h −0.35（信号衰减）</td><td>1d POS=0</td><td>⚪ 无效化中</td></tr>
-      <tr><td><b>1d 短转长预警：PS、ss</b></td><td>空头桶内预警</td><td>日线仍空</td><td>🚨 空头动能衰减：不加空</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">⚠️ 16 只 4h 空转多分三层：① <b>修复候选</b> = 000852 / sp / 科创50 / IM / 沪深300 / 上证50（日线多头或预警在身）；② <b>无桶观察</b> = PK / OI / cu / zn / rb / ni（假转折概率高）；③ <b>矛盾</b> = ao（日线仍空）。<b>4h score 转正 ≠ 4h 重新 BK，等进多头桶再确认。</b></div>
+  <h2>五、09-22 操作提示（8 条）</h2>
+  <ul>
+    <li><b>多单核心（拿住）</b>：🥇 <b>bu 沥青 / ec 欧线</b> 仅 2 只；<b>MA 甲醇</b>降为回调档持有（4h 贴零未破）。</li>
+    <li><b>🚨 能源链五只破桶</b>：<b>eg / fu / pg / PL / lu</b> 4h 全部收破 EE 出桶 → <b>多单减半</b>；其中 <b>fu（贴日线 EE +0.71%）/ pg（+0.77%）</b> 最贴生死线，日线收盘破 EE 直接走。</li>
+    <li><b>🚨 m 豆粕（最脆）</b>：贴日线 EE 3373.67 仅 <b>0.37%</b> ＋ 4h 已破 EE → <b>减半，破 EE 走</b>；这次不按「抵抗」看，4h 结构比 09-15 差。</li>
+    <li><b>🚀 唯一新贵 sp 纸浆</b>：当日 1d BK 新开多 ＋ 4h <b>+2.43</b>（站上 1.0）→ <b>小仓试多</b>，日线 score 上 4.5 再提级；跌破 4h 多头桶即撤。</li>
+    <li><b>🟢 蓄势池（3 只，股指群）</b>：<b>588000 科创50ETF（4h 3.87）/ 000852 中证1000（2.72，排名 +3↑）/ IM 中证1000·09（1.93）</b> —— 4h 全场最强但日线未达 4.5 → <b>小仓试多 / 观察</b>，等日线 score 跟上即入档；4h 掉桶出池。</li>
+    <li><b>sc 原油不追</b>：日线已离场（09-18 SP），当日 4h BK（+0.29）只是反抽 → <b>回 4h 多头桶之前不动</b>。</li>
+    <li><b>空单主线</b>：🐻 <b>lh 生猪</b>（双周期双空）持有；<b>CJ 红枣</b>老熊王持有不加；<b>cs / SH / c</b> 持有原仓。</li>
+    <li><b>🚨 空单防雷 5 只</b>：<b>LC 碳酸锂（Δ+2.9，4h +2.07，减/撤）/ v PVC（score 已转正，撤）/ FG 玻璃（score 转正 ＋ 排名升是假象，撤）/ CF / a 豆一（4h 转正 ＋ Δ 上行，减半）</b>。</li>
+    <li><b>明日复核重点</b>：① 能源链五只是「假摔回桶」还是「真转空」—— 看 4h 是否重新 BK；② <b>m / fu / pg 三只生死线</b>（3373.67 / 4183.33 / 6653.00）是否收破；③ <b>j / jm 的 Δ 大幅回升</b>是否扩散为黑色系整体空头失速；④ <b>sp 纸浆</b>能否补进 4h 多头桶并推日线 score 上行；⑤ <b>蓄势池三只股指</b>日线 score 是否上抬至 4.5（若成，是全场最大的一批新增多头）。</li>
+  </ul>
 </div>
 
-<!-- ===== 七 熊头遇压 ===== -->
-<div class="card">
-  <h2><span class="n">7</span>熊头遇压（重点 👀）</h2>
-  <p><b>规则</b>：熊头反弹到压力带 = 空单持有/加空区；站上 PP 防反抽；跌破前低才是加速。<b>本期说明</b>：今日新触压 <b>au（第 5 次）</b>；贴压最紧三只 <b>i（+0.05%）/ ao（+0.14%）/ au（−0.44%）</b> → 空单破 KK 立即减半。</p>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>触压次数</th><th>压力带（KK–PP）</th><th>结论</th></tr></thead>
-    <tbody>
-      <tr><td><b>i 铁矿石</b></td><td>1 次（09-14）</td><td>714.63 – 718.00（<b>距 KK +0.05%</b>）＋ 排名 +4</td><td>🚨 <b>全场贴压第一，破 KK 减半</b></td></tr>
-      <tr><td><b>ao 氧化铝</b></td><td>1 次（09-18）</td><td>2676.25 – 2687.67（距 KK +0.14%）；4h 已空转多</td><td>🚨 <b>破 KK 减半</b></td></tr>
-      <tr><td><b>au 黄金</b></td><td><b>5 次（09-21 新触）</b></td><td>944.36 – 952.25（距 KK −0.44%）＋ 排名 +4</td><td>🚨 <b>5 次触压＋排名爬升 = 空头最需警惕</b></td></tr>
-      <tr><td><b>ss 不锈钢</b></td><td>2 次</td><td>13612.5 – 13725.0（距 KK +0.68%）＋ 1d 短转长预警</td><td>⚠️ 不加空</td></tr>
-      <tr><td><b>PS 多晶硅</b></td><td>1 次（09-18）</td><td>36505 – 36893（距 KK +0.81%）＋ 1d 短转长预警</td><td>⚠️ 不加空</td></tr>
-      <tr><td><b>FG 玻璃</b></td><td>—</td><td>距 KK −0.65%；4h +1.14 转正</td><td>⚠️ 动能衰减，别加</td></tr>
-      <tr><td><b>v PVC</b></td><td>—</td><td>距 KK −1.00%</td><td>⚪ score 转正，观察</td></tr>
-      <tr><td><b>SH 烧碱</b></td><td>1 次</td><td>1906.5 – 1919.3（距 KK −1.3%）</td><td>🟢 持有空单</td></tr>
-      <tr><td><b>cs 玉米淀粉</b></td><td>2 次</td><td>2475.25 – 2491.67（距 KK −1.7%）；排名 +2</td><td>🟢 顺空</td></tr>
-      <tr><td><b>CF 棉花</b></td><td>2 次</td><td>16115 – 16252（距 KK −1.5%）</td><td>🟢 持有空单</td></tr>
-      <tr><td><b>j 焦炭</b></td><td>2 次</td><td>2027.75 – 2055.33（距 KK −2.1%）；4h 大收敛</td><td>🟢 持有空单，不加</td></tr>
-      <tr><td><b>CJ 红枣</b>（老熊王）</td><td>1 次</td><td>7517.5 – 7613.3（距 KK −2.0%）</td><td>✅ 空头 #1，顺空</td></tr>
-      <tr><td><b>lh 生猪</b></td><td>1 次</td><td>11322.5 – 11460（距 KK −3.4%）</td><td>✅ 顺空</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note">🚨 贴压三只（空单破 KK 立即减半）：<b>i（+0.05%）/ ao（+0.14%）/ au（−0.44%）</b> —— au 叠加第 5 次触压与排名 +4，最需要先撤。</div>
+<div class="foot">
+  口径说明：四档定义（多头：🥇 日线多＋1d≥4.5＋4h 在桶＋4h≥1.0；🔴 日线多＋4h 偏弱＋Δ4h≤−1.0；🚀 日线多＋Δ4h≥+1.0＋<b>4h&gt;1.0</b>；🟡 日线多＋1d≥4.5＋Δ4h&gt;−1.0；空头镜像，📉空头新贵另需 4h&lt;−1.0）。<b>v6.1（09-22）起：新贵档必须 4h 同向强于 ±1.0</b>，破桶后的跌后回抽不再计入新贵。<b>v6.2 新增 🟢 蓄势池</b>：4h 在趋势桶＋4h 同向强于 ±1.0＋未进四档实档 → 单列观察，等日线确认提级。Δ4h = 今日 4h score − 前一交易日 4h score（本期为真实环比，基线 09-18 归档 58 只）。「4h score 转正/转负」≠ 重新入桶，结构只看桶归属。空头榜排名上升 ＋ score 已转正 = 队列塌陷假象，不能当新空。一只品种一天只给一个档位标记。增减仓要素暂未接入（预留）。数据源：http://110.42.220.207:8000 期货筛选看板（米筐 RQData 240 分钟 K 线）。
 </div>
-
-<!-- ===== 八 操作提示 ===== -->
-<div class="card">
-  <h2><span class="n">8</span>09-22 操作提示（最简版）</h2>
-  <ol class="oplist">
-    <li><b>多单核心（拿住）</b>：双强龙头 <b>bu / ec</b>（ec 排名连续爬升最硬）；日线绝对龙头 <b>MA</b>（4h 贴线，收破 4h EE 3459.67 减半）。</li>
-    <li><b>回踩持有（盯日线 EE，别轻易砍）</b>：bu / ec / MA ＋ 新多 <b>sp</b>（今日 BK，4h 修复 +2.43）。</li>
-    <li><b>🚨 分歧名单 —— 只 2 条（都是工业品·芳烃能化）</b>：<b>PL、eg</b> → 🟠 多单减半，破各自日线 EE 走（补日线预警即升 🔴）。⚠️ <b>别搞反 —— 农产品不按分歧看</b>：m 豆粕抵抗 4 条未全中（收破 DD ＋ 4h 破位），按工业品口径处理，比分歧更危险。</li>
-    <li><b>⚠️ 单只预警</b>：<b>fu / pg / lu</b>（4h 破位但能源链氛围好）→ 🟠 减半，破日线 EE 走；<b>pg 排名连降 2 位加重量级</b>。</li>
-    <li><b>❌ 已离场（反弹是逃命）</b>：RM / TA / PR / PF / PX / eb / bz / b / al —— 等 4h 空转多＋日线 BK 再谈做多，反弹先不追。</li>
-    <li><b>🔴 双级别共振空（可跟）</b>：无。</li>
-    <li><b>🚨 生死线（按贴 EE 程度排序）</b>：多头侧 <b>m EE 3373.67（+0.37%）</b> → AP +0.60% → <b>fu 4183.33（+0.71%）</b> → <b>pg 6653.00（+0.77%）</b> → jd +0.96% —— 收破即离场。</li>
-    <li><b>⚠️ 修复苗头</b>：股指群 4h 空转多（<b>000852 修复最实</b>：日线多头 ＋ rank +3；科创50 +3.87）—— 等 4h 重新 BK 再加仓；1d 短转长预警 <b>PS / ss</b> = 空头动能衰减，不加空。</li>
-    <li><b>🚨 熊头遇压最贴</b>：<b>i（+0.05%）/ ao（+0.14%）/ au（−0.44%，第 5 次触压＋排名 +4）</b> → 空单持有但<b>破 KK 立即减半</b>。</li>
-    <li><b>别抢跑的两处</b>：<b>sc 原油</b> 4h 单日暴修 +8.33 但日线仍在多转空桶 —— 不抢多，等日线裁决；<b>j / jm 黑色</b> 4h 大收敛但仍在空头桶 —— 不急着平空翻多。</li>
-  </ol>
-</div>
-
-<!-- ===== 九 雷达 ===== -->
-<div class="card">
-  <h2><span class="n">9</span>动量排名雷达 · 新贵与掉队（补充信号 👀）</h2>
-  <p><b>规则</b>：1d 多/空榜排名字段。排名连续爬升 = 动量增强（新贵候选）；连续下滑 = 动量衰减（掉队）。排名动量四处用途：<b>① 龙头判定加分 ② 回踩→分歧升级减分项 ③ 独立新贵/掉队雷达 ④ 农产品「多头抵抗」成立必要条件</b>。</p>
-
-  <h3>🚀 多头榜新贵</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>排名变化</th><th>7 日轨迹</th><th>交叉印证</th><th>用途</th></tr></thead>
-    <tbody>
-      <tr><td><b>中证1000指数</b></td><td class="up">+3（#12）</td><td>- - - - - 15 12</td><td>4h +2.72 空转多 ＋ 日线多头桶</td><td>🔴 <b>修复新主线候选</b></td></tr>
-      <tr><td><b>ec 集运欧线</b></td><td class="up">+2（#4）</td><td>16 13 17 16 7 6 4</td><td>双强龙头 4h 1.57</td><td>🔴 <b>龙头加分①，最硬一头</b></td></tr>
-      <tr><td><b>AP 苹果</b></td><td class="up">+2（#15）</td><td>- - - - - 17 15</td><td>日线 0.04 贴零弱多，距 EE +0.60%</td><td>⚠️ 观察，不追</td></tr>
-      <tr><td><b>sp 纸浆</b></td><td class="up"><b>NEW（#10）</b></td><td>- - - - - - 10</td><td>今日 BK ＋ 4h +2.43</td><td>🆕 <b>新多接力</b></td></tr>
-      <tr><td>m / jd / pb</td><td class="up">各 +1</td><td>m：19→9 六日连升</td><td>m 排名升但结构已破</td><td>⚠️ <b>矛盾信号：以结构为准</b></td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>📉 多头榜掉队</h3>
-  <div class="tbwrap"><table>
-    <thead><tr><th>品种</th><th>排名变化</th><th>7 日轨迹</th><th>交叉印证</th><th>用途</th></tr></thead>
-    <tbody>
-      <tr><td><b>pg 液化气</b></td><td class="dn"><b>−2（#6）</b></td><td>3 3 4 5 5 4 6（连续下滑）</td><td>4h 破位 ＋ 日线贴 EE +0.77%</td><td>⚠️ <b>回踩→升级减分②，加重量级</b></td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>🆕 空头榜新贵 ＆ 📉 空头榜掉队</h3>
-  <p><b>空头榜新贵</b>：<b>c 玉米 +4 / au 黄金 +4 / i 铁矿石 +4 / FG 玻璃 +3 / cs 玉米淀粉 +2</b> —— au / i / c 排名上移与触压 / 贴压交叉印证（空头端反弹风险）。</p>
-  <p><b>空头榜掉队</b>：PS −2 / a −2 / CF −1 / ao −1 / j −1 / jm −1 —— 其中 PS（1d 短转长预警）、ao（4h 空转多）动能衰减有结构佐证。</p>
-
-  <div class="note"><b>雷达结论</b>：① 多头端 <b>ec 排名爬升与 4h 最强互证 = 最硬龙头</b>；② <b>pg 掉队与 4h 破位互证 = 加重量级</b>；③ 空头端 <b>au / i 排名 +4 与贴压互证 = 空单减半警戒</b>；④ 矛盾信号（m 排名六日连升 vs 结构已破；ao 4h 空转多 vs 日线空头）<b>一律以结构 / 日线为准</b>。</div>
-</div>
-
-<footer>
-  <b>口径说明</b>：1d POS=1 多头 / POS=−1 空头；多转空 = 红转蓝（确认 = 开空 SK）；空转多 = 蓝转红（确认 = 开多 BK）；回踩支撑 = 9 根内触碰 DD/EE，遇压 = 9 根内触碰 KK/PP；<b>4h 转折一律以日线趋势为最终裁决</b>。术语口径：① 4h「破位」= 4h 收盘跌破 4h EE（最硬）；② 4h「平仓」= 跌出 4h 多头桶 / 已 SP·BP 平多；③ 4h「动能转负」= 仍在多头桶、未破 EE，仅 score 由正转负。<b>「score 转正」≠「4h 重新 BK」—— 4h 结构是否修复，只看它有没有回到 4h 多头桶。</b>数据源：110.42.220.207:8000 期货筛选看板（米筐 RQData 240 分钟 K 线）。本次运行：2026-09-21 20:29，数据基准 09-21（周一）收盘。
-</footer>
 
 </div>
 </body>

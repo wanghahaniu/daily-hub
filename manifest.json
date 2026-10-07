@@ -32,7 +32,7 @@
    "cat": "期货看板",
    "badge": "FUT",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\automation-2026-09-06-18-00-11",
-   "count": 16,
+   "count": 15,
    "latest": "2026-10-08",
    "earliest": "2026-09-10"
   },
@@ -50,7 +50,7 @@
    "cat": "知识星球总结",
    "badge": "ZSQ",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-09-01-13-23-48\\outputs",
-   "count": 22,
+   "count": 21,
    "latest": "2026-10-07",
    "earliest": "2026-09-02"
   },
@@ -59,7 +59,7 @@
    "cat": "科技与地缘日报",
    "badge": "TEC",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-10-05-22-11-37",
-   "count": 5,
+   "count": 3,
    "latest": "2026-10-07",
    "earliest": "2026-10-05"
   },
@@ -68,7 +68,7 @@
    "cat": "源哥×XZ交叉日报",
    "badge": "XRD",
    "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-10-05-22-11-37",
-   "count": 3,
+   "count": 2,
    "latest": "2026-10-07",
    "earliest": "2026-10-06"
   },
@@ -122,44 +122,11 @@
    "cat": "科技与地缘日报",
    "badge": "TEC",
    "date": "2026-10-07",
-   "title": "科技与地缘日报（四星球版）",
-   "pageTitle": "科技与地缘每日总结 · 2026-10-07",
-   "summary": "科技与地缘每日总结 · 2026-10-07 Economic 国际投行研报 × 404K Semi-Ai × 研报平权 × 小牛研报纪要 · 每日总结 科技与地缘每日总结 2026 年 10 月 7 日（周三） 四星球",
-   "sizeKB": 104.2,
-   "url": "reports/tech-geo/2026-10-07.html"
-  },
-  {
-   "key": "tech-geo",
-   "cat": "科技与地缘日报",
-   "badge": "TEC",
-   "date": "2026-10-07",
    "title": "科技与地缘日报（精炼版）",
    "pageTitle": "科技与地缘每日总结 · 2026-10-07",
    "summary": "科技与地缘每日总结 · 2026-10-07 Economic 国际投行研报 × 404K Semi-Ai × 研报平权 × 小牛研报纪要 📡 科技与地缘每日总结 2026 年 10 月 7 日（周三）· 今天的核心变化",
    "sizeKB": 65.3,
-   "url": "reports/tech-geo/2026-10-07-2.html"
-  },
-  {
-   "key": "tech-geo",
-   "cat": "科技与地缘日报",
-   "badge": "TEC",
-   "date": "2026-10-07",
-   "title": "科技与地缘日报",
-   "pageTitle": "科技与地缘每日总结 · 2026-10-07（四星球版）",
-   "summary": "科技与地缘每日总结 · 2026-10-07（四星球版） Economic 国际投行研报 × 404K Semi-Ai × 研报平权 × 小牛研报纪要 · 每日总结 科技与地缘每日总结 2026 年 10 月 7 日（周",
-   "sizeKB": 115.0,
-   "url": "reports/tech-geo/2026-10-07-3.html"
-  },
-  {
-   "key": "zsxq-sum",
-   "cat": "知识星球总结",
-   "badge": "ZSQ",
-   "date": "2026-10-07",
-   "title": "市场分析笔记",
-   "pageTitle": "今日市场分析笔记 · 2026-10-07",
-   "summary": "今日市场分析笔记 · 2026-10-07 📊 今日市场分析笔记 2026年10月7日 · 债股定价背离 / AI 撞上电力墙 / 铜金预测上修 / 消费端 AI 降温 #债股背离 #电力缺口32GW #存储降配 #铜价",
-   "sizeKB": 38.7,
-   "url": "reports/zsxq-sum/2026-10-07.html"
+   "url": "reports/tech-geo/2026-10-07.html"
   },
   {
    "key": "zsxq-sum",
@@ -170,18 +137,7 @@
    "pageTitle": "今日市场分析笔记 · 2026-10-07",
    "summary": "今日市场分析笔记 · 2026-10-07 📊 今日市场分析笔记 2026年10月7日（周三）· 智能体把瓶颈推向 CPU / 存储议价权登顶 / 节后电子链重估 #CPU重估 #HBM涨价 #智能体 #PCB·CCL ",
    "sizeKB": 51.0,
-   "url": "reports/zsxq-sum/2026-10-07-2.html"
-  },
-  {
-   "key": "cross",
-   "cat": "源哥×XZ交叉日报",
-   "badge": "XRD",
-   "date": "2026-10-07",
-   "title": "源哥 × XZ 交叉日报（精炼版）",
-   "pageTitle": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07",
-   "summary": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07 源哥会员专享 × XZ服务器 · 双库交叉 🧭 全品类交叉日报 2026 年 10 月 7 日（周三）· 今日核心变化： AI 的技术路线已收敛到 CPO，",
-   "sizeKB": 43.4,
-   "url": "reports/cross/2026-10-07.html"
+   "url": "reports/zsxq-sum/2026-10-07.html"
   },
   {
    "key": "cross",
@@ -192,7 +148,7 @@
    "pageTitle": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07",
    "summary": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07 源哥 × XZ服务器 · 全品类交叉日报 2026 年 10 月 7 日（周三）· 交叉源：源哥会员专享库（Bloomberg 六大栏目 + 大摩闭门会 +",
    "sizeKB": 129.5,
-   "url": "reports/cross/2026-10-07-2.html"
+   "url": "reports/cross/2026-10-07.html"
   },
   {
    "key": "macro-geo",
@@ -859,22 +815,11 @@
    "cat": "期货看板",
    "badge": "FUT",
    "date": "2026-09-22",
-   "title": "期货看板日报",
-   "pageTitle": "期货看板每日总结 · 2026-09-22 作战地图",
-   "summary": "期货看板每日总结 · 2026-09-22 作战地图 Futures Dashboard · Daily 能源链 4h 集体破位 · 6 只掉桶 日线多空 15 : 18 双强只剩 bu / ec MA 贴 4h EE ",
-   "sizeKB": 38.1,
-   "url": "reports/futures/2026-09-22.html"
-  },
-  {
-   "key": "futures",
-   "cat": "期货看板",
-   "badge": "FUT",
-   "date": "2026-09-22",
    "title": "期货看板日报（_v6）",
    "pageTitle": "期货看板每日总结 · 09-22 作战地图（v6.2）",
    "summary": "期货看板每日总结 · 09-22 作战地图（v6.2） 期货看板每日总结 · 09-22 作战地图（v6.2） 数据基准 ：2026-09-21（周一）收盘 — 1d 16:20 / 4h 15:36 生成（09-21 ",
    "sizeKB": 19.9,
-   "url": "reports/futures/2026-09-22-2.html"
+   "url": "reports/futures/2026-09-22.html"
   },
   {
    "key": "zsxq",

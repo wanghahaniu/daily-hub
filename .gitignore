@@ -3,3 +3,6 @@
 # reports/cross/
 # reports/macro-geo/
 manifest.local-only.json
+
+# 同步锁目录（并发互斥用，不入库）
+.sync.lock/
