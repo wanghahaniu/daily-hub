@@ -69,6 +69,26 @@
    "sensitive": false,
    "latest": "2026-10-07",
    "earliest": "2026-10-05"
+  },
+  {
+   "key": "cross",
+   "cat": "源哥×XZ交叉日报",
+   "badge": "XRD",
+   "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-10-05-22-11-37",
+   "count": 2,
+   "sensitive": false,
+   "latest": "2026-10-07",
+   "earliest": "2026-10-06"
+  },
+  {
+   "key": "macro-geo",
+   "cat": "宏观地缘日报",
+   "badge": "MAC",
+   "dir": "C:\\Users\\wangz\\WorkBuddy\\2026-09-15-01-18-34",
+   "count": 1,
+   "sensitive": false,
+   "latest": "2026-10-07",
+   "earliest": "2026-10-07"
   }
  ],
  "items": [
@@ -151,6 +171,28 @@
    "url": "reports/zsxq-sum/2026-10-07.html"
   },
   {
+   "key": "cross",
+   "cat": "源哥×XZ交叉日报",
+   "badge": "XRD",
+   "date": "2026-10-07",
+   "title": "源哥 × XZ 交叉日报",
+   "pageTitle": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07",
+   "summary": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-07 源哥 × XZ服务器 · 全品类交叉日报 2026 年 10 月 7 日（周三）· 交叉源：源哥会员专享库（Bloomberg 六大栏目 + 大摩闭门会 +",
+   "sizeKB": 129.5,
+   "url": "reports/cross/2026-10-07.html"
+  },
+  {
+   "key": "macro-geo",
+   "cat": "宏观地缘日报",
+   "badge": "MAC",
+   "date": "2026-10-07",
+   "title": "宏观地缘日报",
+   "pageTitle": "宏观地缘日报 · 2026-10-07（样刊 v3）",
+   "summary": "宏观地缘日报 · 2026-10-07（样刊 v3） 🌐 宏观地缘日报 2026年10月7日（周三）· 样刊 v3 ｜ 覆盖窗口 10-05 ~ 10-07 ｜ 美债 5.3% 时代 · 制裁双升级 · 对华贸易防御制度",
+   "sizeKB": 44.8,
+   "url": "reports/macro-geo/2026-10-07.html"
+  },
+  {
    "key": "zsxq",
    "cat": "商品研报日报",
    "badge": "RSH",
@@ -205,6 +247,17 @@
    "summary": "科技与地缘每日总结 · 2026-10-06 Economic 国际投行研报 × 404K Semi-Ai × 研报平权 · 每日总结 科技与地缘每日总结 2026 年 10 月 6 日（周一） 三星球去重后 162 条",
    "sizeKB": 58.4,
    "url": "reports/tech-geo/2026-10-06.html"
+  },
+  {
+   "key": "cross",
+   "cat": "源哥×XZ交叉日报",
+   "badge": "XRD",
+   "date": "2026-10-06",
+   "title": "源哥 × XZ 交叉日报",
+   "pageTitle": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-06",
+   "summary": "源哥 × XZ服务器 · 全品类交叉日报 2026-10-06 源哥 × XZ服务器 · 全品类交叉日报 2026年10月6日（周二） · 读法： 先看共识矩阵 → B4 商业动向 → B5 政治态度（这三块是纲），再看",
+   "sizeKB": 187.6,
+   "url": "reports/cross/2026-10-06.html"
   },
   {
    "key": "zsxq",
