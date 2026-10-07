@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日市场分析笔记 · 2026-09-25</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: linear-gradient(180deg, #eef1f8 0%, #f6f4fb 100%);
+    color: #2b2b3a; line-height: 1.75; padding: 24px 14px 40px;
+  }
+  .page { max-width: 760px; margin: 0 auto; }
+
+  /* ===== 头部 ===== */
+  .header {
+    background: linear-gradient(135deg, #5b6cff 0%, #8a5cf6 55%, #b45ce0 100%);
+    border-radius: 18px; padding: 30px 28px 26px; color: #fff;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, .25);
+  }
+  .header h1 { font-size: 26px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+  .header .sub { margin-top: 10px; font-size: 13.5px; opacity: .93; }
+  .header .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .header .tags span {
+    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35);
+    padding: 3px 12px; border-radius: 999px; font-size: 12.5px;
+  }
+
+  /* ===== 卡片通用 ===== */
+  .card {
+    background: #fff; border-radius: 16px; padding: 22px 24px;
+    margin-top: 18px; box-shadow: 0 4px 16px rgba(60,60,120,.07);
+  }
+  .card-title {
+    font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 9px;
+    padding-bottom: 12px; margin-bottom: 14px; border-bottom: 2px dashed #e6e6f2;
+  }
+  .card-title .ico { font-size: 20px; }
+  .card-title small { font-weight: 400; font-size: 12px; color: #8b8b9e; margin-left: auto; }
+
+  .hl { font-weight: 700; }
+  .hl-red   { color: #e0492f; }
+  .hl-green { color: #1c9c54; }
+  .hl-blue  { color: #3563e9; }
+  .hl-purple{ color: #8a5cf6; }
+  .hl-orange{ color: #e07b1f; }
+  mark { background: #fff1a8; padding: 0 4px; border-radius: 4px; font-weight: 600; color: #5a4a00; }
+  .up { color: #e0492f; font-weight: 700; }
+  .dn { color: #1c9c54; font-weight: 700; }
+
+  p.t { font-size: 14px; color: #3d3d4e; margin-top: 9px; }
+  p.t:first-of-type { margin-top: 0; }
+  ul.dot { margin: 8px 0 0 0; padding-left: 0; list-style: none; }
+  ul.dot li { font-size: 13.8px; color: #4a4a5c; padding-left: 18px; position: relative; margin-top: 7px; }
+  ul.dot li::before {
+    content: ""; position: absolute; left: 4px; top: 10px;
+    width: 6px; height: 6px; border-radius: 50%; background: #b9a8f5;
+  }
+
+  /* 统计卡 */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 6px 0 4px; }
+  .stats.four { grid-template-columns: repeat(4, 1fr); }
+  .stat {
+    background: #f6f8ff; border: 1px solid #e2e8fb; border-radius: 10px;
+    text-align: center; padding: 12px 6px;
+  }
+  .stat .v { font-size: 19px; font-weight: 800; color: #3563e9; }
+  .stat .k { font-size: 11.5px; color: #6a6a7c; margin-top: 2px; line-height: 1.4; }
+  .stat.p .v { color: #8a5cf6; }
+  .stat.r .v { color: #e0492f; }
+  .stat.g .v { color: #1c9c54; }
+
+  /* 三色情景 */
+  .scenario { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 12px; }
+  .sc-box { border-radius: 12px; padding: 13px 16px; font-size: 13.8px; }
+  .sc-box h4 { font-size: 14.5px; margin-bottom: 4px; }
+  .sc-box p { color: #4a4a5c; }
+  .sc-1 { background: #e8f7ee; border: 1px solid #bfe6cd; }
+  .sc-1 h4 { color: #157a41; }
+  .sc-2 { background: #fdf1e3; border: 1px solid #f5d9b0; }
+  .sc-2 h4 { color: #b96a12; }
+  .sc-3 { background: #fdecea; border: 1px solid #f6c6bd; }
+  .sc-3 h4 { color: #c03a24; }
+
+  /* 传导链 */
+  .chain { display: flex; flex-direction: column; margin-top: 10px; }
+  .chain-item { display: flex; align-items: flex-start; gap: 12px; position: relative; padding-bottom: 15px; }
+  .chain-item::before {
+    content: ""; position: absolute; left: 15px; top: 34px; bottom: 0; width: 2px; background: #e8d9fb;
+  }
+  .chain-item:last-child::before { display: none; }
+  .chain-icon {
+    flex: 0 0 32px; height: 32px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 15px; background: #f1ebfd; border: 1px solid #ddd0fa;
+  }
+  .chain-item .txt { flex: 1; font-size: 13.8px; color: #4a4a5c; padding-top: 4px; }
+  .chain-item .txt b { color: #2b2b3a; }
+
+  /* takeaway 块 */
+  .takeaway {
+    margin-top: 14px; border-radius: 10px; padding: 12px 16px; font-size: 13.8px;
+    background: #f4f0fe; border: 1px solid #ddd0fa; color: #5b3ea8;
+  }
+  .takeaway b { color: #7a3fd0; }
+  .takeaway.warn { background: #fdf1e3; border-color: #f5d9b0; color: #9a5b0e; }
+  .takeaway.warn b { color: #c46a00; }
+  .takeaway.danger { background: #fdecea; border-color: #f6c6bd; color: #b03020; }
+  .takeaway.danger b { color: #d03517; }
+  .takeaway.ok { background: #e8f7ee; border-color: #bfe6cd; color: #157a41; }
+  .takeaway.ok b { color: #0f6b38; }
+
+  /* 引言 */
+  .quote {
+    margin-top: 12px; border-left: 4px solid #b9a8f5; background: #faf8ff;
+    border-radius: 0 10px 10px 0; padding: 12px 16px; font-size: 13.8px; color: #4a3f6b;
+  }
+  .quote .who { display: block; margin-top: 6px; font-size: 12px; color: #9a90b8; }
+
+  /* 来源标注 */
+  .src { margin-top: 12px; font-size: 11.5px; color: #9a9aae; text-align: right; }
+
+  /* chips */
+  .chip-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px; }
+  .chip {
+    border-radius: 10px; padding: 10px 14px; font-size: 13.5px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .chip small { display: block; font-weight: 400; opacity: .8; font-size: 11.5px; }
+  .chip.c-green  { background: #e8f7ee; color: #157a41; border-left: 4px solid #2ebd6e; }
+  .chip.c-red    { background: #fdecea; color: #c03a24; border-left: 4px solid #e0563c; }
+  .chip.c-blue   { background: #e9effe; color: #2b54c9; border-left: 4px solid #4c7df0; }
+  .chip.c-orange { background: #fdf1e3; color: #b96a12; border-left: 4px solid #f09a3e; }
+
+  /* ===== 四象限 ===== */
+  .final {
+    margin-top: 20px; border-radius: 18px; padding: 24px 22px 22px; color: #fff;
+    background: linear-gradient(135deg, #5b6cff 0%, #8a5cf6 55%, #b45ce0 100%);
+    box-shadow: 0 10px 30px rgba(108, 92, 231, .22);
+  }
+  .final h2 { font-size: 19px; display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+  .quad { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .q {
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28);
+    border-radius: 12px; padding: 12px 14px;
+  }
+  .q h4 { font-size: 13.5px; display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+  .q p { font-size: 12.6px; line-height: 1.65; opacity: .95; }
+
+  .foot { text-align: center; font-size: 11.5px; color: #9a9aae; margin-top: 18px; line-height: 1.8; }
+
+  @media (max-width: 520px) {
+    .stats, .stats.four, .chip-row { grid-template-columns: 1fr 1fr; }
+    .quad { grid-template-columns: 1fr; }
+    .header h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== 头部 ===== -->
+  <div class="header">
+    <h1>📒 今日市场分析笔记</h1>
+    <div class="sub">2026 年 9 月 25 日（周五 · 中秋） · 知识星球纪要聚合</div>
+    <div class="tags">
+      <span>AI 融资变现之问</span>
+      <span>美光 DRAM 锁到 2028</span>
+      <span>High-NA EUV 时间表</span>
+      <span>800V 直流机房之争</span>
+      <span>AI 软件冰火两重天</span>
+      <span>中国出口依赖存储涨价</span>
+      <span>日本国债破 3%</span>
+      <span>商品期权节前降波</span>
+    </div>
+  </div>
+
+  <!-- ===== 1. 总览 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">📊</span>今日总览<small>6 个已开通星球 · 41 条新帖</small></div>
+    <div class="stats four">
+      <div class="stat p"><div class="v">6</div><div class="k">有效星球<br>（共 25 个）</div></div>
+      <div class="stat"><div class="v">41</div><div class="k">今日新增帖子<br>（09-24 08:25 后）</div></div>
+      <div class="stat r"><div class="v">33</div><div class="k">精读全文条数</div></div>
+      <div class="stat g"><div class="v">12</div><div class="k">主题卡片分区</div></div>
+    </div>
+    <p class="t" style="margin-top:14px;"><b>今日主线：</b>昨天市场还在为「AI 需求有多强」定价，今天话题转向了<mark>「谁来为这些算力付钱、这些钱能换回多少回报」</mark>。Meta 抛出 500–750 亿美元融资、阿卡迈与 Anthropic 签下 116 亿美元七年长约、NBIS 给 78 万颗 GPU 做估值——三件事指向同一个问题：<span class="hl-red">闲置时段由谁买单</span>。</p>
+    <p class="t">产业侧则是<mark>供给硬约束继续</mark>：美光 DRAM 履约率仅约 60%、行业缺口锁到 2028 年；台积电 2030 / 三星 2028 才导入 High-NA EUV；800V 直流机柜未来 18–24 个月难成标准。中国侧，出口高增长被拆解出「存储涨价贡献过半」的隐忧，现货铜升水创 2021 年 11 月以来最高。</p>
+    <div class="takeaway">🔑 <b>一句话：</b>需求叙事已经讲完，市场开始逐笔核算 <b>capex → 营收 → 自由现金流</b> 的转化效率；凡是「合同额巨大但每美元资本开支只换回 0.3 美元营收」的交易，都会被重新打折。</div>
+    <div class="src">统计口径：09-24 08:25 至 09-25 16:00</div>
+  </div>
+
+  <!-- ===== 2. 头条：AI 融资 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🔥</span>头条 · AI 融资的「稀释恐惧症」<small>研报平权 / 404K · 09-25 15:38</small></div>
+    <div class="stats">
+      <div class="stat r"><div class="v">500-750亿</div><div class="k">Meta 拟融资规模（美元）</div></div>
+      <div class="stat p"><div class="v">2500亿</div><div class="k">Meta EBITDA 目标（美元）</div></div>
+      <div class="stat"><div class="v">3%</div><div class="k">对应股权稀释</div></div>
+    </div>
+    <ul class="dot">
+      <li>错过 Meta 这轮上涨的投资者正在拿融资说事。但把数字放在一起看：<b>2 万亿美元市值、EBITDA 迈向 2500 亿美元的 Meta，只卖 10 倍 EBITDA</b>；而 SpaceX 的<mark>低轨卫星寿命只有 5–7 年，却给到 60 倍 EBITDA</mark>。</li>
+      <li>而且在这组数字里，<b>Reality Labs 的销售额仍停留在每季度 5 亿–10 亿美元</b>——基本没被算进价值。</li>
+      <li>作者的态度很明确：<span class="hl-green">3% 的稀释本身不该让人害怕</span>，但<mark>融资确实让一部分机构投资者继续观望</mark>，这是短期压制股价的真实因素。</li>
+    </ul>
+    <div class="takeaway ok">✅ <b>怎么读：</b>这不是基本面问题，是<b>锚定问题</b>。市场用 SpaceX 的 60 倍当参照系时，Meta 的 10 倍显得便宜；但只要融资不落地，观望资金就不会回来。</div>
+  </div>
+
+  <!-- ===== 3. 算力金融化 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">💰</span>算力金融化 · 三笔大单的回报率拷问<small>404K Semi-Ai · 09-25 13:46 / 15:56</small></div>
+    <div class="stats four">
+      <div class="stat p"><div class="v">78万颗</div><div class="k">被估价的 GPU 清单</div></div>
+      <div class="stat r"><div class="v">250亿</div><div class="k">满负荷年收入（美元）</div></div>
+      <div class="stat"><div class="v">116亿</div><div class="k">阿卡迈-Anthropic 7年协议</div></div>
+      <div class="stat g"><div class="v">0.31</div><div class="k">每美元 capex 换回年营收</div></div>
+    </div>
+    <p class="t" style="margin-top:12px;"><b>① 给 78 万颗 GPU 估价（15:56）：</b>核心问题不是有多少卡，而是<b>谁来购买闲置时段</b>。按 NBIS 可抢占实例费率——全部售出约 <span class="up">250 亿美元/年</span>，售出 75% 时段约 190 亿，现货最低价仅 60 亿，按需价则达 460 亿。<mark>区间跨度 7.7 倍</mark>。</p>
+    <ul class="dot">
+      <li>参照锚：<b>Anthropic 已每月向 SpaceX 支付 12.5 亿美元</b>；另有 <b>22 万颗 GB300 将于下周到位</b>；<span class="up">NBIS 将于 10 月 1 日把按需价格上调约 20%</span>（这是两周内第二次涨价）。</li>
+    </ul>
+    <p class="t" style="margin-top:12px;"><b>② 阿卡迈 × Anthropic 116 亿美元（13:46）：</b>7 年期，让阿卡迈成为大型 AI 公司的 <b>CPU 通用计算</b>基础设施供应商；叠加先前约 18 亿美元协议，名义承诺约 134 亿；另有潜在 90 亿扩张框架<span class="hl-orange">尚未签约，不能算到手</span>。</p>
+    <div class="chain" style="margin-top:12px;">
+      <div class="chain-item">
+        <div class="chain-icon">💸</div>
+        <div class="txt"><b>先花钱：</b>总资本支出约 <b>55 亿美元</b>，2026 年先增约 <b>17 亿</b>，主要用于提前锁定零部件（尤其是存储器）。</div>
+      </div>
+      <div class="chain-item">
+        <div class="chain-icon">📉</div>
+        <div class="txt"><b>现金流先坏：</b>原先「2026 年自由现金流大约打平」的假设失效，粗略调整后 <span class="dn">2026 FCF 可能约 −18 亿美元</span>。</div>
+      </div>
+      <div class="chain-item">
+        <div class="chain-icon">⏳</div>
+        <div class="txt"><b>营收后到：</b>2027 年增量营收仅约 <b>1.5–3 亿美元</b>；2028 年内年化运行水平约 <b>17 亿美元</b>（运行水平 ≠ 当年全年营收）。</div>
+      </div>
+      <div class="chain-item">
+        <div class="chain-icon">⚖️</div>
+        <div class="txt"><b>回报存疑：</b>116 亿 / 7 年 ≈ 年均 16.6 亿美元，相对 55 亿 capex 是<b>每 1 美元只换 0.30–0.31 美元年营收</b>，低于公司过去讲的 0.50–1.00 区间。55 亿分 7 年折旧，一年折旧约 7.9 亿，接近 17 亿年化营收的一半。</div>
+      </div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>认股权证不是白送：</b>表面像给 Anthropic 约 5% 股权，实际先归属 40%（条件是首次付款），<mark>其余 60% 需再额外承诺 90 亿美元、分三期每期 30 亿</mark>——这 90 亿不在已签的 116 亿里，也不是保证会发生。</li>
+      <li><b>客户集中度：</b>阿卡迈总营收约 80 亿美元量级，未来 Anthropic 相关年营收有机会接近 <b>20 亿美元</b>。真正的敞口不只是「占营收 25%」，而是<span class="hl-red">很多新投入的股东资本回收都绑在这段关系上</span>（Anthropic 对 AWS 另有超 1000 亿美元量级承诺）。</li>
+      <li><b>市场怎么定价：</b>公告后股价约 <b>129.60 美元</b>、股权价值约 186 亿美元，较先前约 110 美元参考价市值增加约 <b>28 亿美元</b>——涨的是「整个云业务前景 + 未来还能再拿大单」的重估，而不是把 116 亿合同折现。</li>
+    </ul>
+    <div class="takeaway warn">⚠️ <b>结论：</b>合同很大，但<b>不自动等于高回报项目</b>。战略逻辑变好、近端现金流与融资风险变差——涨完之后的风险回报不一定更好。真正要看后续条款细节、部署进度、融资条件，以及能不能复制更多客户。</div>
+  </div>
+
+  <!-- ===== 4. 存储超级周期 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🧠</span>存储 · 美光财报前瞻：缺口锁到 2028，焦点转向「周期多长」<small>研报平权 · 09-25 07:43</small></div>
+    <div class="stats four">
+      <div class="stat r"><div class="v">60%</div><div class="k">DRAM 履约率</div></div>
+      <div class="stat p"><div class="v">+80%</div><div class="k">服务器 DDR bit 同比</div></div>
+      <div class="stat"><div class="v">87.6%</div><div class="k">FY26Q4 预计毛利率</div></div>
+      <div class="stat g"><div class="v">1625</div><div class="k">目标价（美元）</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>产业核查：供需缺口持续扩大至 2027 年，整体 DRAM 至少到 2028 年仍供不应求。</b>服务器及存储 SSD bit 需求同比增长<span class="up">可能超过 100%</span>。</li>
+      <li><b>FY26Q4（8 月）预期：</b>营收 <b>524 亿美元</b>、EPS <b>32.50 美元</b>，优于指引且营收略高于指引上限——<mark>上修几乎全部来自更好的定价，不是出货量</mark>。</li>
+      <li>分产品：DRAM <b>397 亿</b>（bit +3%、ASP <span class="up">+23%</span>）；其中 DDR 362 亿（ASP +24%）；HBM 35 亿（bit +9%、ASP +10%）。NAND 约 <b>127 亿</b>（bit +4%、ASP <span class="up">+23%</span>）。</li>
+      <li><b>毛利率路径：</b>Q4 约 87.6%（比指引高约 160bp）→ 11 月季度 88.6% → <span class="up">峰值约 91%</span>（27Q4 / 28Q1）。2026/27/28 日历年整体毛利率 <b>85.6% / 90.2% / 89.5%</b>。</li>
+      <li><b>HBM 关键变化：</b>Rubin Ultra 规格调整后，首款 VR300 变体每 GPU 仅用 <b>384GB HBM4</b>，2027Q3 才升至 <b>512GB HBM4E</b>（低于先前 768GB 假设）——<mark>但可把有限的 HBM 分给更多 GW 的机架出货</mark>。2027 日历年美光 HBM 出货约 <b>117.2 亿 Gb</b>，混合 HBM ASP 同比 <span class="up">+76%</span>（HBM4 约 30 美元/GB、HBM4E 约 33 美元/GB）。</li>
+      <li><b>回购是下一个催化：</b>CHIPS 法案相关的回购限制将于 <b>2026/12/9 解除</b>，预计 FY27Q2（2 月）起每季度回购约 200 亿美元，并快速升至<span class="up">每季度 400–500 亿美元</span>。</li>
+      <li><b>盈利预测大幅上修：</b>2027/28/29 日历年 EPS 约 <b>212 / 277 / 219 美元</b>，均远高于华尔街预期；2028 年底每股有形账面价值约 <b>360 美元</b>。目标价 1625 美元（约 8 倍 NTM P/E）。</li>
+    </ul>
+    <div class="takeaway ok">✅ <b>最有力的一条论述：</b>即使假设周期另一端（2028 下半年起）<b>现货价格下跌约 80%</b>，低谷年化 EPS 仍会高于美光下季度可能给出的年化 EPS 指引。FY27 capex 约 510 亿美元，资本密集度仍仅为高双位数。</div>
+    <div class="src">LTA（长期协议）已开始限制预测数字的上修空间 → 投资者焦点应从「价格还能涨多少」转向「需求持续性 + 资本回报」</div>
+  </div>
+
+  <!-- ===== 5. 韩系存储预期 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🇰🇷</span>韩系存储 · 一致预期首次下调，但绝对水平仍在高位<small>404K Semi-Ai · 09-25 14:49</small></div>
+    <div class="stats">
+      <div class="stat p"><div class="v">1390亿</div><div class="k">三星+海力士合计营业利润（美元）</div></div>
+      <div class="stat r"><div class="v">-5%</div><div class="k">SK海力士利润预期下修</div></div>
+      <div class="stat"><div class="v">189.87万亿</div><div class="k">合计营业利润（韩元）</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>FnGuide 一个月一致预期（截至 9/25）：</b>三星电子销售额 <b>199.1189 万亿韩元</b>（1460 亿美元）、营业利润 <b>105.6443 万亿韩元</b>（770 亿美元）；SK 海力士销售额 <b>94.1071 万亿韩元</b>（690 亿美元）、营业利润 <b>74.1257 万亿韩元</b>（540 亿美元）。</li>
+      <li>三个月前的预期更高：三星 204.5704 / 110.5736 万亿韩元，海力士 99.3949 / 78.0802 万亿韩元。<mark>一个月预期已把三星销售额下调 2.6%、利润下调 4.4%；海力士销售额下调 5.3%、利润下调 5%。</mark></li>
+    </ul>
+    <div class="takeaway warn">⚠️ <b>核心争论：</b>这次下调有多少源于<b>汇率</b>，又有多少源于<b>长期协议已开始限制 ASP</b>？若剔除汇率因素后两家合计营业利润仍达 190 万亿韩元（约 1390 亿美元），<b>下一次调整将跟随美元走势，还是韩元计价数据</b>——这是判断存储周期见顶与否的关键观察点。</div>
+  </div>
+
+  <!-- ===== 6. 先进制程 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🔬</span>先进制程 · High-NA EUV 时间表落定，英特尔抢先<small>404K Semi-Ai · 09-25 15:32</small></div>
+    <div class="stats four">
+      <div class="stat"><div class="v">0.33→0.55</div><div class="k">EUV 数值孔径提升</div></div>
+      <div class="stat p"><div class="v">2030</div><div class="k">台积电逻辑量产导入</div></div>
+      <div class="stat g"><div class="v">2028</div><div class="k">三星 DRAM 量产导入</div></div>
+      <div class="stat r"><div class="v">100万片</div><div class="k">英特尔高NA 晶圆处理量</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li>下一代 EUV 把数值孔径从 0.33 提至 0.55，<b>一次绘制更精细电路、减少工艺步骤</b>，被视为半导体微缩竞争的核心。</li>
+      <li><b>英特尔领先一步：</b>自 <b>2026 年 7 月</b>起已在 18A 工艺的 Panther Lake 处理器<b>部分层</b>应用高 NA EUV，相关晶圆处理量<span class="up">已超过 100 万片</span>。</li>
+      <li>三星将<b>率先在行业内把高 NA EUV 引入 DRAM 量产</b>，目标是延长存储微缩路线图、提高工艺效率；台积电则认为随着 AI 用晶体管结构变复杂，需要高 NA 的层数将增加，2030 年先进节点起正式导入。</li>
+      <li><b>容易被忽略的一条：</b>ASML 与台积电、三星、英特尔共同推进把光掩模从 <b>6 英寸扩大至 12 英寸</b>，以提高光刻机生产率；<mark>SK 海力士也被提及可能加入</mark>。这是设备端生产率的又一次台阶式提升。</li>
+    </ul>
+    <div class="takeaway">🔑 <b>含义：</b>高 NA 的量产窗口比市场想象得晚（逻辑 2030、DRAM 2028），意味着<b>未来 2–3 年的产能扩张仍由现有 EUV 产能决定</b>——供给弹性有限，是存储与先进制程涨价能延续的底层原因。</div>
+  </div>
+
+  <!-- ===== 7. 数据中心架构 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">⚡</span>数据中心 · 800V 直流之争：混合方案先赢，铜用量少 40-60%<small>研报平权 · 09-25 13:26</small></div>
+    <div class="stats four">
+      <div class="stat p"><div class="v">18-24个月</div><div class="k">原生 800VDC 难成标准</div></div>
+      <div class="stat r"><div class="v">85%+</div><div class="k">混合方案已能拿到的收益</div></div>
+      <div class="stat"><div class="v">400万</div><div class="k">原生1MW机柜价值（美元）</div></div>
+      <div class="stat g"><div class="v">40-60%</div><div class="k">完整 800VDC 少用铜</div></div>
+    </div>
+    <p class="t" style="margin-top:12px;">渠道核查 + IT 硬件与网络团队反馈的核心结论：<b>未来 18–24 个月内，完全原生的 800 伏直流机房不太可能成为标准</b>；更近端的最优路径是<span class="hl-purple">混合方案（通过 sidecar 侧柜）</span>。更长期看，800VDC 实质是一次<b>内容结构切换</b>，会抬升「美元 / 机柜 / 兆瓦」的 TAM。</p>
+    <div class="scenario">
+      <div class="sc-box sc-1">
+        <h4>🟢 电气侧：受益</h4>
+        <p>交流 / UPS 利润池<b>不会消失，而是迁移到直流耦合储能 + 整流</b>。单机柜净功率与热管理含量明显上升（GB200 约 <b>50 万美元</b> → 原生 1MW 机柜约 <b>400 万美元</b>）。主要受益：中高压电气供应商 <b>SU、ABB、SIE、GEV、ENR</b>。ABB 已于 9/24 推出完整 800VDC 原生架构。</p>
+      </div>
+      <div class="sc-box sc-2">
+        <h4>🟡 热管理：中性偏正面</h4>
+        <p>800VDC 会给机房加温，<b>冷水机组需求是重新规格化而不是取消</b>；更高密度机柜使液冷成刚需，并可能把液冷延伸到其他设备，增加 CDU / 歧管需求。<b>JCI、TT、CARR、NVT</b>。</p>
+      </div>
+      <div class="sc-box sc-3">
+        <h4>🔴 铜材脱媒：受挤压</h4>
+        <p>完整 800VDC 成本约 <b>1000–1050 万美元/MW</b>，对比今天约 1200–1300 万美元/MW——去掉集中式交流占地，并<span class="dn">少用 40–60% 的铜</span>。对铜母排 / 导体、交流转换级 / 中央 UPS 偏负面。<b>LR</b> 约 <b>20%</b> 的数据中心销售在 2029 年后存在风险（集中在母排与 PDU）。</p>
+      </div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>SST（固态变压器）是关键使能技术，但还不划算：</b>商用规模下成本约为传统变压器的 <b>2 倍</b>、使用寿命约为其 <b>1/3</b>——这正是 sidecar 方案目前最有效的原因。渠道核查显示，<mark>混合方案已能拿到更高电压能力/收益的 85% 以上</mark>。</li>
+    </ul>
+    <div class="takeaway">🔑 <b>投资含义：</b>别按「全架构 800VDC 明天就落地」下注。<b>近端买中高压与热管理，别买低压铜材</b>；NVT 母排销售占比估计仅低个位数百分比，加上 Maverick 后从 800VDC 中料将净受益。</div>
+  </div>
+
+  <!-- ===== 8. 电力设备 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🔌</span>电力设备 · 康明斯订单排到 2028H2，但增量利润率被摊薄<small>研报平权 · 09-25 14:17</small></div>
+    <div class="stats four">
+      <div class="stat r"><div class="v">2028H2</div><div class="k">95升发动机订单排产</div></div>
+      <div class="stat"><div class="v">35→55GW</div><div class="k">大马力产能 2025→2030</div></div>
+      <div class="stat p"><div class="v">90亿+</div><div class="k">2030 数据中心年收入（美元）</div></div>
+      <div class="stat g"><div class="v">600</div><div class="k">目标价（美元，原690）</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>需求是真的：</b>数据中心激增的需求把康明斯 <b>95 升发动机订单排到了 2028 年下半年</b>；公司计划投入 <b>4.5 亿美元</b>，把大马力发动机产能从 2025 年的 35GW 扩至 2030 年的 <b>55GW</b>；管理层预计数据中心年收入从 2026 年约 50 亿增至 2030 年 <b>90 多亿美元</b>。2027H2 试点 130 升天然气机组进军主电源市场。</li>
+      <li><b>但利润率没跟上：</b>受 EPA 2027 排放法规影响，公司对 15 升发动机约 <b>7000 美元</b>、中型发动机超 <b>4000 美元</b>的罚款采取<span class="hl-orange">等额转嫁</span>——推高售价却带不来增量 EBITDA，把 <b>2027 销售周期的发动机增量利润率机械性稀释至约 15%</b>。</li>
+      <li><b>研发节省也推迟：</b>中型 HELM 平台因跨底盘测试<span class="dn">延期至 2028 年 1 月</span>推出，每年 1 亿–1.5 亿美元的研发费用削减要推到 2028H2 才体现。</li>
+      <li>摩根大通把目标价由 690 下调至 <b>600 美元</b>（对应 FY28 约 10 倍 EV/EBITDA），预测 FY26–28 EPS 从 29.64 增至 40.06 美元。</li>
+    </ul>
+    <div class="takeaway warn">⚠️ <b>风险点：</b>交付放量 ≠ 盈利扩张。需紧盯<b>超大规模云厂商资本开支与电力供应节奏</b>；若云厂商开支突然放缓，或排放法规废除导致车队提前采购需求落空，高增长设想便难以兑现。</div>
+  </div>
+
+  <!-- ===== 9. AI 软件冰火两重天 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🤖</span>AI 软件 · 冰火两重天：用友被下调，金山办公被力挺<small>研报平权 · 09-25 12:16 / 15:18</small></div>
+    <div class="chip-row" style="margin-bottom:12px;">
+      <div class="chip c-red">🔻 用友网络<small>目标价 10 → 6 元：AI 替代按人头计费的席位</small></div>
+      <div class="chip c-green">🔺 金山办公<small>目标价 325 元：AI 嵌入工作流，6.76 亿 MAU 卡位入口</small></div>
+    </div>
+    <p class="t"><b>🐻 用友：AI 签约没拉动大盘。</b>公司手握 <b>65 个垂直智能体、623 项技能</b>，2026 上半年 AI 收入 <b>4.64 亿元</b>、AI 合同 <b>9.06 亿元</b>，但<span class="dn">合并总收入仅同比增长 4.1% 至 37 亿元</span>——自动化工作流正在替代按人头计费的软件席位和定制实施服务，新增业务无法转化为净增量。</p>
+    <ul class="dot">
+      <li>26H1 毛利率提升 2.6pct 至 <b>50.9%</b>，但净亏损仍达 <b>9.28 亿元</b>、经营性现金流出 <b>10 亿元</b>；当期研发支出中有 <b>5.03 亿元被资本化</b>、费用化仅 5.35 亿元，<mark>修饰了账面亏损</mark>。</li>
+      <li>JPM 预测 2026–28 年收入 95.68 / 101.42 / 107.5 亿元，<span class="dn">比市场一致预期低 3% / 5% / 10%</span>；即便 2028 年云服务占比稳定在 77% 左右，若大企业转向自建内部工具，传统软件定价权还会被削弱。2026 FCF 仍为 −2.2 亿元，<b>2027 年才可能扭负为正</b>。</li>
+    </ul>
+    <p class="t" style="margin-top:12px;"><b>🐂 金山办公：卡住入口就卡住了变现。</b>JPM 预测中国 AI 终端客户支出中<span class="up">下游软件占比将从 2026 年的 14% 升至 2030 年的 29%</span>。金山凭借全球 <b>6.76 亿 MAU</b>，把 AI 嵌入原生文档编辑与工作流变现，<mark>无需承担底层大模型训练成本</mark>。</p>
+    <ul class="dot">
+      <li>企业端：WPS 365 在 26H1 实现收入 <b>4.97 亿元</b>，连续 6 个季度高增；旗舰版 <b>599 元/用户/年</b>，大幅低于微软 365 Copilot 国内年费约 <b>2784 元</b>，靠本地私有云部署与合规抢窗口期。</li>
+      <li>盈利路径：2027 年 12 月目标价 <b>325.00 元</b>，预测 2028 年收入 108.62 亿元、<span class="up">FCF 增至 37.47 亿元</span>。</li>
+    </ul>
+    <div class="takeaway danger">🚨 <b>两家共同的风险：</b>入口被架空。若第三方独立智能体绕过办公软件直接处理任务，<b>「用户任务能否持续留在应用界面内」</b>就成为估值的前提条件——这也是用友被杀逻辑的反面。</div>
+    <div class="src">同日另有：亚太科技策略 9 月版（第 3 版）维持「AI 需求未见放缓」判断，景气聚焦存储、半导体设备、先进代工与封测、服务器 ODM；手机 / PC / 面板相对偏弱</div>
+  </div>
+
+  <!-- ===== 10. 中国 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🇨🇳</span>中国 · 出口高增长的「含金量」与财政的硬约束<small>财经图集 09-25 假期特辑 / 09-24 晚</small></div>
+    <div class="stats four">
+      <div class="stat r"><div class="v">5倍</div><div class="k">存储芯片价格与出口额涨幅</div></div>
+      <div class="stat p"><div class="v">127%</div><div class="k">中国政府债务/GDP</div></div>
+      <div class="stat"><div class="v">1375元</div><div class="k">现货铜升水（元/吨）</div></div>
+      <div class="stat g"><div class="v">730万</div><div class="k">港口集装箱周吞吐（标箱）</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>⚠️ 出口增速的成色：</b>2026 年中期以人民币计价的出口同比增速维持 18%–20% 高位，<b>存储芯片和其他 AI 相关产品贡献超过一半增幅</b>。与 2024 年 12 月相比，<mark>存储芯片价格和中国存储芯片出口额均已升至近 5 倍</mark>——出口额激增主要由涨价推动，实际出货量并未同速增长。<span class="hl-red">随着存储价格趋稳，这部分拉动可能在 2027 年明显减弱，届时整体出口增速或回落至其他产品目前约 5%–7% 的水平。</span></li>
+      <li><b>贸易筹码的真实分布（Merics）：</b>剔除纺织品后，<b>美国、欧盟分别约有 380 类和 275 类商品依赖中国</b>，中国依赖美欧的类别约 55 类和 110 类。<b>筹码不只取决于制造业规模，还取决于断供后谁更难找到替代。</b></li>
+      <li><b>出口扩张的外溢效应（荣鼎）：</b>若中国全球出口份额从 2025 年 20% 升至 2030 年 28%，相对基准情景<b>中国年出口额多约 1.13 万亿美元，其他国家合计少约 5.1 万亿美元</b>，美国和德国受损居前。</li>
+      <li><b>去杠杆的真相（大摩）：</b>2021–2025 年，<b>剔除经营贷</b>的居民信贷/GDP 从约 49% 降至 42%；<b>计入经营贷</b>后却只从约 63% 降至 60%——部分借款人用经营贷置换房贷，<mark>债务只是换了名目，并未真正还清</mark>。</li>
+      <li><b>财政空间（IMF 口径 / 巴克莱）：</b>中国政府债务相当于 GDP 的 <b>127%</b>，与美国的 124% 接近，低于日本 207%。<span class="hl-orange">这一水平将对后续进一步举债刺激产生约束。</span></li>
+      <li><b>铜的紧张是真的：</b>中国现货铜相对近月期货的升水一度达每吨 <b>1375 元</b>，创 <b>2021 年 11 月</b>以来最高——中秋国庆前集中备货遇上国内库存偏低，8 月精炼铜进口环比<span class="dn">下降 11% 至 25 万吨</span>。加工企业原料成本直接抬升。</li>
+      <li><b>AI 人才：培养在中国，工作在美国（卡内基）：</b>2025 年全球顶尖 AI 人才中 <b>57.4% 在中国完成本科</b>（2022 年 46.3%），美国培养比例由 19.8% 降至 13.3%；但<b>美国当年净吸纳 2145 名研究人员，中国净流出 1729 人</b>。</li>
+      <li><b>外资退、国资进：</b>外资在中国 VC 交易额占比由 2018 年 <b>54.8%</b> 降至 2023 年 <b>20%</b>；美元基金在新募集资金中占比由 2021 年 14% 降至 2024 年 <b>1%</b>。国有背景投资者参与的 AI 融资在 26H1 明显增加。</li>
+      <li><b>海外资产的尴尬（BCA）：</b>中国海外资产规模庞大，但<b>净投资收入长期偏低，近年相当于 GDP 的负 0.5% 左右</b>；对比德国约正 2.7%、日本接近正 6%–7%。原因：对外资产中大量低收益外储与债券，而外国在华投资更多集中于高回报股权与直接投资。</li>
+      <li><b>香港 8 月：</b>商品出口同比<span class="up">+53% 至 6679 亿港元</span>，进口<span class="up">+60% 至创纪录 7391 亿港元</span>，<b>当月逆差扩大至 712 亿港元</b>（3 月以来最大）；前八个月累计逆差 <b>3712 亿港元</b>。</li>
+      <li><b>金融开放：</b>中国正研究扩大「互换通」，计划<b>最早 2028 年</b>允许境外投资者通过香港交易境内标准利率互换和标准债券远期。</li>
+      <li><b>台湾流动性：</b>货币当局已<span class="hl-blue">连续 16 天减少发行定期存单，累计减发 1.02 万亿元新台币</span>，创 2002 年有记录以来最大规模；8 月金融机构放款与投资同比 +9.43%，为 1998 年以来最快。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 11. 中国政策与地产 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🏠</span>中国地产 · 房贷补贴的算术：5 万元只够抵 4 个月利息<small>研报平权 · 09-25 11:15</small></div>
+    <div class="stats">
+      <div class="stat r"><div class="v">4.0个月</div><div class="k">5 万元补贴上限可抵利息</div></div>
+      <div class="stat p"><div class="v">38万亿</div><div class="k">存量房贷规模（元）</div></div>
+      <div class="stat g"><div class="v">1.3%</div><div class="k">全国贴息占财政支出比重</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>补贴的量级太小：</b>以 500 万元 30 年期房贷为例，上海单户 <b>5 万元</b>补贴上限只能抵扣 <b>4.0 个月</b>利息；就算提高到 10 万元，也仅够 <b>7.9 个月</b>。各地普遍采取<span class="hl-orange">一次性封顶而非按年持续拨款</span>，短期减免很难改变购房决策。</li>
+      <li><b>全国铺开算不过来账：</b>截至 2026 年 6 月存量房贷 <b>38 万亿元</b>，若按 1.0 个百分点补贴，每年需支出 <b>3810 亿元</b>，占全国财政支出 <b>1.3%</b>。全周期贴息成本过高，即便推行也会被限定在新房，且期限大概率压缩至 1–3 年。</li>
+      <li><b>资金池覆盖有限：</b>上海设立的 <b>2 亿元</b>补贴池只能覆盖 <b>4000 套</b>房源，仅占当地新房年成交量约 <b>4%</b>。</li>
+    </ul>
+    <div class="takeaway danger">🚨 <b>交易层面警示：</b>2026 年国庆前两个交易日内房股<span class="up">上涨 5%</span>，融创等出险房企<span class="up">大涨 23%</span>，走势与 2025 年 11 月、12 月两次「因传闻冲高后又回吐」如出一辙。<b>若 10 月 1 日前没有实质政策落地，博弈情绪会转为新一轮卖压</b>——接下来只看能否出台真正突破地方预算约束的增量举措。</div>
+  </div>
+
+  <!-- ===== 12. 美国宏观 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🇺🇸</span>美国 · 账面财富 vs 通胀痛感，国会僵局概率飙升<small>研报平权 09-25 13:16 / 财经图集</small></div>
+    <div class="stats four">
+      <div class="stat r"><div class="v">+13万亿</div><div class="k">26Q2 家庭净资产单季增加</div></div>
+      <div class="stat"><div class="v">71%</div><div class="k">对物价应对不满的受访者</div></div>
+      <div class="stat p"><div class="v">90%</div><div class="k">民主党夺回众议院概率</div></div>
+      <div class="stat g"><div class="v">-45%</div><div class="k">股债 200 日相关系数</div></div>
+    </div>
+    <p class="t" style="margin-top:12px;"><b>纸面财富 ≠ 体感改善。</b>JPM 数据：2026 年第二季度美国家庭净资产<span class="up">单季激增 13 万亿美元</span>，过去一年累计增加近 20 万亿美元；从投资账户转入支票账户用于消费的资金规模比 2019 年翻了近一倍。但民调显示 <b>71%</b> 的受访者对当前物价应对不满，<b>31%</b> 的家庭把生活成本列为最主要财务难题。</p>
+    <ul class="dot">
+      <li><b>钱被谁吃掉了：</b>五大湖和东南部地区关税负担增加<span class="dn">超过两倍</span>；中东冲突把布伦特原油推至每桶 <b>100–110 美元</b>区间——<mark>一旦零售汽油持续高于每加仑 4 美元，就会直接吃掉法案给家庭的 1500 亿–1600 亿美元减税红利</mark>。</li>
+      <li><b>选举定价（Polymarket）：</b>民主党赢得众议院合约价格升至约 <b>90%</b>，参议院也升至 <b>60% 以上</b>。但竞争性选区数量从过去约 90 个压缩到现在的 <b>20–30 个</b>，很难形成席位绝对优势；共和党维持参议院多数的概率下滑至 <b>36%</b>。<span class="hl-orange">即使两院易手，摇摆议员仍会阻碍关键法案，选后华盛顿很难走出政策胶着。</span></li>
+    </ul>
+    <p class="t" style="margin-top:12px;"><b>同日其他关键指标：</b></p>
+    <ul class="dot">
+      <li><b>股债关系彻底逆转：</b>标普 500 与 10 年期美债收益率的 200 日相关系数已降至约 <b>−45%</b>，为 <b>1997 年以来最低</b>。2020 年后通胀成为主要担忧，收益率上升更多意味着融资成本与估值压力。</li>
+      <li><b>AI 融资转向外部：</b>高盛汇总显示<b>大型云计算运营商 2026 年资本支出将超过经营现金流</b>；AI 相关发行人已占今年美元投资级债券发行总额的<b>四分之一</b>，高盛把全年美国 IG 发行预测<span class="up">上调 2000 亿至 2.3 万亿美元</span>。26H1 海外投资者净买入美国公司债 2510 亿美元（2025 全年 3920 亿），持有约 29% 存量。</li>
+      <li><b>⚠️ 拥挤度的警报：</b>26Q2 股价表现最强的一组标普 1500 公司中，<b>85.2% 的 EPS 超预期（历史新高）</b>，但公布利好后的股价相对市场<span class="dn">反而下跌 2.4%（纪录最差）</span>。<mark>对持仓拥挤、估值高的股票，强劲盈利早已计入价格，普通利好只能算预期兑现。</mark></li>
+      <li><b>就业仍强：</b>9 月第二周初请失业金降至 <b>19.7 万人</b>（7 月 60 年低点以来最低，预期 20.1 万）；续请仅微升至 171.9 万人。8 月新屋销售环比 +6.4%、年化 <b>68.4 万户</b>创年内最高（预期 62 万），中位价 39.37 万美元。</li>
+      <li><b>通胀是暂时的？</b>Alpine Macro 预计关税、能源、AI 建设三项供应冲击 2026 年内合计推高核心 PCE 约 <b>1 个百分点</b>，但 <b>2027 年贡献降至约 0.25 个百分点</b>——关税传导已过峰值，能源随后回落，AI 数据中心需求持续更久。</li>
+      <li><b>财富效应的双向弹性（牛津经济）：</b>本轮扩张期财富效应平均为消费年化增速贡献 <b>0.4pct</b>。若 AI 推动更广泛盈利与股市上涨，消费增速最多比基准<span class="up">高 0.3pct</span>；若 AI 回报不及预期引发重估，负财富效应可令消费增速<span class="dn">降低 0.7pct</span>，<b>冲击可能超过互联网泡沫破裂时期</b>。</li>
+      <li><b>劳动份额长期下滑：</b>美国非农商业部门劳动报酬占增加值比重较 1990 年代平均<span class="dn">下降约 7.5 个百分点</span>，高盛认为自动化是主因——机器和软件替代的任务多于新创造的任务。</li>
+      <li><b>长期债券的痛：</b>追踪 20 年以上美债的 TLT 跌 1.6% 至 <b>80.46 美元</b>，<b>创成立以来最低收盘价</b>，较 2020 年高点已跌去一半以上。</li>
+      <li><b>芯片盈利上修动能在放缓（Pictet）：</b>美国半导体行业盈利预测上调比例 2026 年一度<span class="up">接近 90%</span>（2009 和 2017 年以来高位），当前边际改善已开始放缓，<b>未来高估值更依赖实际订单和 AI 投资回报兑现</b>。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 13. 全球 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🌍</span>全球 · 日本国债破 3%，北欧分化，航运股跑赢芯片股<small>财经图集 09-24 晚 / 09-25</small></div>
+    <div class="stats four">
+      <div class="stat r"><div class="v">3.075%</div><div class="k">日本 10Y 国债收益率</div></div>
+      <div class="stat p"><div class="v">1996</div><div class="k">该收益率上次高位年份</div></div>
+      <div class="stat"><div class="v">+17%</div><div class="k">6月底以来亚洲航运股</div></div>
+      <div class="stat g"><div class="v">-18%</div><div class="k">同期半导体股</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>🇯🇵 日本利率的连锁反应：</b>假期后补跌，10Y 国债收益率<span class="up">上升 10bp 至 3.075%</span>，创 <b>1996 年以来新高</b>；5Y 升至 2.37%。政策利率升至约 1.25% 后，银行短期最优惠贷款利率由长期约 1.5% 升至<span class="up">接近 2.4%</span>——<mark>日本约四分之三的购房者使用浮动利率贷款</mark>，加息很快转化为更高月供。<b>8 月东京二手公寓均价环比 −0.2%，为 28 个月来首次下跌。</b></li>
+      <li><b>日本景气降温：</b>9 月制造业 PMI 初值 54.9 → <b>54.1</b>（连续第九个月扩张但为 2 月来最慢）；服务业 52.5 → 51.6；综合 53.5 → <b>52.5</b>（5 月以来最低）。</li>
+      <li><b>北欧分化创纪录：</b>挪威加息 25bp 至 <b>4.5%</b>（8 月 CPI 3.3%、核心 3%）；瑞典维持 1.75% 但释放进一步加息信号。<b>两国政策利率之差扩大至 2.75 个百分点，为 2008 年金融危机以来最大。</b>瑞士维持 0% 并保留外汇干预选项。</li>
+      <li><b>🇪🇺 欧洲亮点：</b>德国 9 月 Ifo 商业景气 88.8 → <b>89.9</b>（预期 89.0），创 2023 年 5 月以来最高，连续第五个月上升。8 月欧洲新车销量 +5.3%，其中<span class="up">纯电动大增 52%</span> 占当月交付 29%，<b>中国品牌已占当地新车销量近 12%</b>。法国商业景气 98 → 96、消费者信心持平 86，仍低于长期均值。</li>
+      <li><b>⚓ 航运 vs 芯片：</b>6 月底以来亚洲航运股<span class="up">上涨约 17%</span>，同期半导体股<span class="dn">下跌约 18%</span>。红海和霍尔木兹海峡受阻、船舶绕行叠加提前出货，推动集装箱运价升至 <b>2024 年 7 月以来最高</b>。<mark>但若美伊达成协议、主要航道恢复通行，运价与航运股的风险溢价可能迅速回落。</mark></li>
+      <li><b>💰 债务与融资：</b>全球债务总额已超 <b>365 万亿美元</b>创新高，但债务/GDP 约 <b>311%</b>，仍低于 2021 年近 338% 的峰值——<span class="hl-orange">比例下降不是因为债务减少，而是通胀推高名义 GDP</span>。成熟经济体政府过去 12 个月利息支出由 2023 年约 2 万亿升至 <b>3.6 万亿美元</b>。AI 相关科技企业 2026 年债券发行将超 <b>5000 亿美元</b>（2025 约 2700 亿，美国公司占比超九成）。</li>
+      <li><b>⚠️ 两个「少数派驱动」的信号：</b>① 26Q3 全球股息公告约 <b>19%</b> 为削减股息，为 2020 年疫情以来最高（美国实际削减仅 11 家）；② 2026 年全球融资并购增长高度依赖少数超级交易——<b>前五大股票融资占全球发行额 29.6%</b>（2025 为 8%），SpaceX 上市 + Alphabet 增发贡献约四分之一；并购金额 +48% 但交易数量仅 +6%。</li>
+      <li><b>🔄 AI 算力重心迁移（SemiAnalysis）：</b>OpenAI 与 Anthropic 用于<b>后训练</b>的算力占比由 2024 年不足 5% 升至 2026 年约 <b>50%</b>，<b>预训练则从约 67% 降至约 12%</b>，推理服务仍占约 38%。<mark>算力需求由一次性训练转向持续优化与运行。</mark></li>
+      <li><b>🛢️ 原油库存意外累积：</b>截至 9/18 一周美国商业原油库存<span class="up">意外增加 296.9 万桶至 4.264 亿桶</span>（预期减少 60 万），因炼厂加工量减少 51.9 万桶/日、产能利用率降至 94%、净进口增加 36.9 万桶/日；库欣增 226.6 万桶至 2370 万桶。但汽油库存<span class="dn">减少 168.6 万桶至 2.06 亿桶</span>——<b>成品油仍比原油紧张</b>。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 14. 医药消费 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">💊</span>医药消费 · 信达冲刺 350 亿、福泰肾病新药超预期、美妆 K 型分化<small>研报平权 · 09-25</small></div>
+    <div class="stats">
+      <div class="stat p"><div class="v">350亿</div><div class="k">信达 2030 国内销售目标（元）</div></div>
+      <div class="stat r"><div class="v">-42.7%</div><div class="k">福泰 inaxaplin UACR 降幅</div></div>
+      <div class="stat g"><div class="v">8.3%</div><div class="k">国货涨价对增速的解释力</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>信达生物：从烧钱转向结构性盈利。</b>销售及行政开支费率从 2025 财年 <b>56%</b> 降至 2030 年 <b>41%</b>，核心 EBIT 利润率从 2026 年约 13% 升至 2030 年 <b>32%</b>。减重药玛仕度肽 26 年 8 月电商销售环比 +13% 至 <b>1.34 亿元</b>，在竞品降价冲击下守住 <b>21.4%</b> 份额，国内峰值预计约 100 亿元；<mark>2026 年 11 月医保谈判条款将直接决定降价后能否换来足够放量</mark>。出海方面 IBI363 在鳞状 NSCLC 二线取得 <b>37% ORR、18.2 个月 mOS</b>，已启动全球 3 期，但记录到 <b>16.9%</b> 的肺炎/间质性肺病发生率。</li>
+      <li><b>福泰制药：超预期。</b>inaxaplin 在 APOL1 介导肾病患者中 UACR<span class="dn">下降 42.7%</span>，<b>超过管理层 20%–40% 的基准区间</b>；糖尿病合并肾病亚组仍有 <b>17.3%</b> 额外降幅。高盛估算美欧目标患者在核心人群外<span class="up">新增约 10 万名</span>，全球销售峰值可达 <b>20 亿美元</b>；2027 年初公布 48 周中期数据争取加速批准，维持 <b>653.00 美元</b>目标价。</li>
+      <li><b>美妆 K 型分化（瑞银）：</b>2025–27 年中国高端美妆零售额 CAGR <b>5.1%</b>，但红利被国际品牌锁定——前 20 大外资品牌中<b>单价上涨能解释 2025 年线上增速波动的 50%</b>，前 20 大国货仅 <b>8.3%</b>。大众市场：<b>代工厂 6 个月即可复制配方</b>，白牌 GMV 2025 年<span class="up">+52% 至 272 亿元</span>并杀入 80–230 元主流价格带。<mark>国货子品牌在 500 元以上销量占比不足 1%</mark>，18–24 岁人群护肤消费意愿 2026 年降至 <b>47%</b>。出路转向品牌聚合或获取海外品牌独家授权。另：中国自法国进口香水已升至月均约 <b>7400 万美元</b>，为 2016 年的七倍以上。</li>
+    </ul>
+  </div>
+
+  <!-- ===== 15. 半导体材料 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🔋</span>半导体材料 · 碳化硅景气度再验证：单笔订单超 25 年营收八成<small>小牛研报纪要 · 华西电子 · 09-25 10:06</small></div>
+    <div class="stats">
+      <div class="stat r"><div class="v">9580万</div><div class="k">增购最高销售额（美元）</div></div>
+      <div class="stat p"><div class="v">80%+</div><div class="k">相当于 25 年整体营收</div></div>
+      <div class="stat g"><div class="v">240%+</div><div class="k">对 25 年首大客户采购量</div></div>
+    </div>
+    <ul class="dot" style="margin-top:10px;">
+      <li><b>瀚天天成 9/24 公告：</b>一客户同意增购外延片，最高销售额约 <b>9580 万美元</b>（约 7.5 亿港币），将于 <b>2026 年底前</b>交付。按最高金额计算，该采购事项贡献营收<span class="up">有望超过 25 年整体营收的 80%</span>；25 年第一大客户占比 35%，若按最高额落地，采购量达首大客户全年的 <b>240%+</b>。该客户为 SiC 行业全球领导者、亦为上市公司。</li>
+      <li><b>上游同样紧张：</b>天岳先进 9 月公告称碳化硅衬底销量显著增长、产能供给已较为紧张，<mark>预计下半年产能将更加紧张</mark>。</li>
+      <li><b>行业空间：</b>华西电子认为 SiC 已进入高速成长期，AI、工业、消费、车规多方位需求持续增长，市场规模有望从 25 年的 <b>85 亿元</b>增长至未来约 <b>2000 亿元</b>。受益标的：设备（晶升股份、新益昌、联动科技）、衬底（天岳先进、三安光电、晶盛机电）、外延（瀚天天成、天域半导体）、芯片器件（新洁能、芯联集成、士兰微等）、SST（阳光电源、金盘科技、四方股份）。</li>
+    </ul>
+    <div class="takeaway warn">⚠️ 风险提示：行业竞争加剧、订单落地交付风险。单笔订单占比过高本身就意味着<b>客户集中度风险</b>。</div>
+  </div>
+
+  <!-- ===== 16. 商品期权 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🍊</span>商品期权实战 · 节前降波为主，原油隐波高估可做空<small>Orange期权 · 09-24 17:27 复盘</small></div>
+    <p class="t"><b>09.24 复盘要点：</b>股指节后首日<span class="hl-blue">预计降波</span>，大体规划是节后到国庆节前两天关注低吸；能化可做点跨品种套利；生猪比例购可继续拿，跨节价差可以跨节。</p>
+    <div class="chip-row">
+      <div class="chip c-blue">📉 股指<small>节后首日预计降波，节后到国庆前两天关注低吸机会</small></div>
+      <div class="chip c-red">🛢️ 原油/能化<small>内盘隐波高估，可试做空原油隐波：双卖宽跨式</small></div>
+      <div class="chip c-green">🐷 生猪鸡蛋<small>鸡蛋看跌价差可加卖 put；生猪比例购：卖 2 份 12000 看涨，买 11400/11600 一份对冲</small></div>
+      <div class="chip c-orange">🟠 能化套利<small>做空原油隐波后，去关联品种把隐波买回来：双买苯乙烯或乙二醇</small></div>
+      <div class="chip c-green">🌾 豆粕 / 红枣<small>豆粕可考虑牛三腿；红枣比例购可止盈也可继续拿</small></div>
+      <div class="chip c-blue">⚫ 黑色 / 有色 / 纯碱玻璃<small>焦煤看跌价差破新低后再考虑止盈；有色、纯碱玻璃先观望</small></div>
+    </div>
+    <div class="takeaway danger">🚨 <b>节前策略（09-24 10:31）风险提示：</b>节前效应下<span class="up">原油隐波大涨但外盘没动</span>，内盘隐波被高估，大概率是节后隐波崩塌的节奏。<b>做法：</b>做空原油隐波（双卖宽跨式），然后去关联品种把隐波买回来（双买苯乙烯或乙二醇）。<mark>风险较大，注意仓位管理。</mark></div>
+    <div class="takeaway">💡 <b>近期兑现/待处理：</b>红枣卖近买远组合可止盈（近月隐波走低、远月隐波走高，一组赚六七十）；花生不符合 √t 规律但<b>可以做日历价差（卖近买远）</b>。</div>
+  </div>
+
+  <!-- ===== 17. 宏观观点 ===== -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🧭</span>宏观观点 · 刘煜辉：跌的时候就加金<small>刘煜辉之宏观高维 · 09-24 10:05</small></div>
+    <div class="quote">
+      「你若不信西大命那么好，或者信咱会自奋蹄，<b>跌的时候就加金</b>，是黄金，还是互金，逻辑上是相通的。」
+      <span class="who">— 刘煜辉，2026-09-24</span>
+    </div>
+    <p class="t" style="margin-top:12px;"><b>解读：</b>这是把「黄金」与「互联网黄金（互金）」放在同一个框架下——两者的共同底层是<span class="hl-red">对美元体系信誉度的对冲</span>。若不信美国国运继续占优（西大命好），或者相信中国会自我奋发，那么每一次下跌都是加仓机会，标的无所谓是实物黄金还是互金资产。</p>
+    <p class="t">这与他近期一脉相承的表述一致：<b>「黄金的对立面只有一个，那就是生产率」</b>；以及 <b>「A 股现在价值落在政策博弈上，是个经典的赔率问题……现在只有两个字：等待」</b>。政策面 9/24 已有 <b>8000 亿元 1 年期 MLF</b> 落地。</p>
+    <div class="takeaway">🔑 <b>可操作的推论：</b>在「等待」的大前提下，黄金/互金是被明确点名的<b>逢跌加仓方向</b>，而 A 股整体被定义为赔率问题而非趋势问题。</div>
+  </div>
+
+  <!-- ===== 四象限 ===== -->
+  <div class="final">
+    <h2>🎯 一句话总结</h2>
+    <div class="quad">
+      <div class="q">
+        <h4>📈 市场现状</h4>
+        <p>叙事转向「算账」：Meta 拟融资 500–750 亿、阿卡迈-Anthropic 116 亿七年长约、78 万颗 GPU 估值区间 60–460 亿美元——<b>合同额一个比一个大，但每美元 capex 只换回 0.3 美元营收</b>。同时拥挤度警报响起：85.2% 超预期却股价 −2.4%（纪录最差）。</p>
+      </div>
+      <div class="q">
+        <h4>🧠 产业逻辑</h4>
+        <p>供给硬约束依旧：DRAM 履约率仅 60%、缺口锁到 2028；High-NA EUV 逻辑要到 2030、DRAM 2028 才量产；800VDC 未来 18–24 个月只能走 sidecar 混合方案（已能拿到 85%+ 收益，少用 40–60% 铜）。<b>算力重心从预训练（67%→12%）转向后训练（→50%）。</b></p>
+      </div>
+      <div class="q">
+        <h4>⚠️ 关键风险</h4>
+        <p>① 中国出口 18–20% 增速中存储贡献过半、价格已涨近 5 倍，<b>2027 或回落至 5–7%</b>；② 中国政府债务 127% GDP 制约刺激；③ 美国通胀吃掉落税红利、民主党夺回众议院概率 90%；④ 日本 10Y 破 3%、3/4 房奴用浮动利率；⑤ 芯片盈利上修动能在放缓。</p>
+      </div>
+      <div class="q">
+        <h4>🧩 操作提示</h4>
+        <p>刘煜辉：<b>跌的时候加金（黄金/互金逻辑相通）</b>，A 股是赔率问题、当下是「等待」。商品侧 Orange 明确<b>节前降波</b>——股指节后低吸、原油双卖宽跨式 + 关联品种双买（控仓位）、生猪比例购、红枣可止盈、有色与纯碱玻璃观望。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    数据来源：知识星球（研报平权 / Orange期权 / 小牛研报纪要 / 404K Semi-Ai / 刘煜辉之宏观高维 / 财经图集）<br>
+    仅作信息聚合与学习记录，不构成任何投资建议 · 生成时间 2026-09-25 16:05
+  </div>
+
+</div>
+</body>
+</html>

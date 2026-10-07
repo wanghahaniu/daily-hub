@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="6tV4RRwoURZHUvTZ0tTvjH">
+<head data-page-node-id="xfT3CN3i6yBGYVPsOQyUPW">
+<meta charset="UTF-8" data-page-node-id="nmjVDpme1yjpPRzikqHVpZ">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="xsTLjyKPKXbAmlIBXrp1De">
+<title>铜市日报 · 2026-09-09</title>
+<style>
+  :root{
+    --bg:#0f141b; --bg-grad:#0b0f16; --panel:#151c26; --panel2:#1a2230; --border:#242e3c;
+    --txt:#e9edf4; --sub:#98a4b6; --muted:#667184;
+    --up:#e5484d; --down:#2fb875; --orange:#f5a623; --accent:#f5a623; --gold:#e8b84b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:radial-gradient(1200px 600px at 50% -100px, #26221a 0%, var(--bg-grad) 55%);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; padding:40px 20px 70px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{text-align:center;margin-bottom:34px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:10px}
+  .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.5}
+  header h1{font-size:34px;font-weight:800;letter-spacing:1px;color:var(--txt);margin-bottom:6px}
+  header h1 .dot{color:var(--orange)}
+  header .src{color:var(--sub);font-size:12.5px;line-height:1.9}
+  header .src .pill{display:inline-block;padding:1px 9px;border-radius:20px;background:rgba(245,166,35,.12);color:var(--orange);border:1px solid rgba(245,166,35,.3);font-size:11px;margin:0 3px}
+
+  .hero{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+  .hero .kpi{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 22px;text-align:center;min-width:150px;flex:1;transition:transform .18s ease,border-color .18s ease}
+  .hero .kpi:hover{transform:translateY(-3px);border-color:var(--orange)}
+  .hero .kpi .v{font-size:24px;font-weight:800;color:var(--up);letter-spacing:.5px}
+  .hero .kpi .v.orange{color:var(--orange)}
+  .hero .kpi .l{font-size:12px;color:var(--sub);margin-top:4px}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.22)}
+  .card h2{font-size:18px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+  .card h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#f5a623,#d88a0e);color:#1a1206;font-size:14px;font-weight:800;box-shadow:0 2px 8px rgba(245,166,35,.3)}
+  .card h2 .hint{font-size:11.5px;color:var(--muted);font-weight:400;margin-left:auto}
+
+  .reason{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;padding:12px 14px;border-radius:11px;background:var(--panel2);border:1px solid transparent;transition:border-color .15s}
+  .reason:hover{border-color:var(--border)}
+  .reason .idx{flex:0 0 28px;height:28px;border-radius:8px;background:rgba(245,166,35,.16);color:var(--orange);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+  .reason .txt{font-size:14.5px;color:#d2d9e4}
+  .reason .txt b{color:var(--orange)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  thead th{color:var(--sub);font-weight:600;background:var(--panel2);font-size:12px;letter-spacing:.3px;position:sticky;top:0}
+  tbody tr{transition:background .12s}
+  tbody tr:hover{background:rgba(255,255,255,.02)}
+  td b{color:var(--txt)}
+  td .tm{font-variant-numeric:tabular-nums;color:var(--sub)}
+
+  .tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;font-weight:600;white-space:nowrap;line-height:1.5}
+  .tag-up{background:rgba(229,72,77,.14);color:#ff7a7e;border:1px solid rgba(229,72,77,.42)}
+  .tag-down{background:rgba(47,184,117,.14);color:#4fd699;border:1px solid rgba(47,184,117,.42)}
+  .tag-neu{background:rgba(152,164,182,.12);color:var(--sub);border:1px solid var(--border)}
+  .tag-strong{background:rgba(229,72,77,.22);color:#ff7a7e;border:1px solid var(--up);font-weight:700}
+  .tag-gold{background:rgba(232,184,75,.14);color:var(--gold);border:1px solid rgba(232,184,75,.4)}
+
+  .quote{border-left:4px solid var(--orange);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#c9d0dc;margin:16px 0 4px}
+  .quote b{color:var(--orange)}
+  .quote.gold{border-left-color:var(--gold)}
+  .quote.gold b{color:var(--gold)}
+
+  .inst-card{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;border-radius:11px;background:var(--panel2);border:1px solid var(--border);margin-bottom:12px}
+  .inst-card .org{flex:0 0 130px;font-size:13px;font-weight:800;color:var(--orange);line-height:1.5}
+  .inst-card .org .d{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+  .inst-card .view{font-size:13.5px;color:#d2d9e4}
+  .inst-card .view b{color:var(--orange)}
+
+  .zsxq{display:flex;flex-direction:column;gap:14px}
+  .z-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative}
+  .z-card .z-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .z-card .z-badge{font-size:11px;font-weight:700;padding:3px 11px;border-radius:6px;background:rgba(232,184,75,.16);color:var(--gold);border:1px solid rgba(232,184,75,.35);letter-spacing:.5px}
+  .z-card .z-group{font-size:13px;font-weight:700;color:var(--txt)}
+  .z-card .z-time{font-size:11px;color:var(--muted);margin-left:auto}
+  .z-card p{font-size:13.5px;color:#ccd4e0;line-height:1.8}
+  .z-card p b{color:var(--gold)}
+  .z-card p .c-blue{color:#54a8ff}
+
+  .verdict{background:linear-gradient(135deg,#1a2230,#141a24);border:1px solid #2a3550}
+  .verdict .main{font-size:15.5px;font-weight:700;color:var(--txt);margin-bottom:16px;padding:16px 18px;background:var(--panel2);border-radius:11px;border-left:4px solid var(--orange);line-height:1.8}
+  .verdict .main b{color:var(--orange)}
+  .verdict ul{padding-left:4px;font-size:13.5px;color:#c9d0dc;list-style:none}
+  .verdict li{margin-bottom:11px;padding-left:22px;position:relative;line-height:1.75}
+  .verdict li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--orange)}
+  .verdict li b{color:var(--up)}
+  .verdict li b.down{color:var(--down)}
+  .verdict li b.gold{color:var(--gold)}
+  .verdict li .k{font-weight:700;color:var(--txt)}
+
+  .footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:14px;line-height:1.9}
+
+  @media (max-width:640px){
+    body{padding:24px 12px 50px}
+    .card{padding:20px 16px}
+    header h1{font-size:26px}
+    .hero .kpi{min-width:130px;padding:12px 14px}
+    .hero .kpi .v{font-size:20px}
+    .inst-card .org{flex-basis:90px}
+  }
+</style>
+</head>
+<body data-page-node-id="9CYlk5fRXIR2IADag9OBxJ">
+<div class="wrap" data-page-node-id="Ly7Y3aaX4CGN1oX1g8ihBj">
+  <header data-page-node-id="lSMa13IE2X00yerj0xWoUF">
+    <div class="eyebrow" data-page-node-id="cU07q2xSFmluyg17IgFq4m">Copper Daily</div>
+    <h1 data-page-node-id="U9qFOH6Fl6BDP5aWTCaruI">铜市日报<span class="dot" data-page-node-id="59EwHUBtOa12Rr8XD5AyoS"> · </span>2026.09.09</h1>
+    <div class="src" data-page-node-id="SRJT3WbRY6OBCWetZabiAC">
+      <span class="pill" data-page-node-id="E1y2C6wkU63qZ23GJxgZTx">华尔街见闻</span><span class="pill" data-page-node-id="mmmRkWGcShtFAU7w6vOJe0">market-delta 实时快讯</span><span class="pill" data-page-node-id="NKwlxD94xLbXaV3xRdswuB">Wind 海外机构</span><span class="pill" data-page-node-id="QTBiHM3KLvbLLD6fktZ8W8">知识星球</span>
+    </div>
+  </header>
+
+  <div class="hero" data-page-node-id="RCd7hjzcVa6fZiddnMmVwr">
+    <div class="kpi" data-page-node-id="Dr3oRnkNDdHtcfdq3bkf8l"><div class="v" data-page-node-id="teR6Js7Ao6cMRuoMOBznEq">$14,665</div><div class="l" data-page-node-id="z0IN4bCWQ0tO6HCEW68Xpn">伦铜收盘（高位震荡）</div></div>
+    <div class="kpi" data-page-node-id="mLPJh8N1xoLgWFoKhCaW0j"><div class="v orange" data-page-node-id="0la41H3XsDzffcLqhidqbs">111,080</div><div class="l" data-page-node-id="7aAF7U5U7Y1Q36Es3LYMCC">沪铜主力收盘（元/吨）</div></div>
+    <div class="kpi" data-page-node-id="6C8l8QIHPOtrEuCmtjKGE4"><div class="v" data-page-node-id="7QdLfS8bZXKTH6XcnujzTz">+300元</div><div class="l" data-page-node-id="E6nC3F6xuDYbvF8OWZRox2">华东现货升水</div></div>
+    <div class="kpi" data-page-node-id="hLepis5o7U0422sf69gKEu"><div class="v" data-page-node-id="VWGuw63m7LwkzRGfjlCWC8">$2万</div><div class="l" data-page-node-id="b6etcuboiceBJYnyUhZCwc">国金看多铜目标价</div></div>
+  </div>
+
+  <!-- 一、核心结论 -->
+  <div class="card" data-page-node-id="kTwonRBQAJIW6ou9Mwb317">
+    <h2 data-page-node-id="bB0g9J9LCWB3L8b5rwXqMq"><span class="no" data-page-node-id="93BYMUHt6Y0iFtpYr7h8bn">一</span>核心结论：今日看多铜的 5 个最核心理由</h2>
+    <div class="reason" data-page-node-id="2N2qo7UO6oO0ISMPWNGPuk"><div class="idx" data-page-node-id="vDcD9kELSH31PHx4c68D5D">1</div><div class="txt" data-page-node-id="nDL3zTsPUH2UzrYdjvg5T7"><b data-page-node-id="2sjSnr7smKgbIymeSMZkuV">伦铜历史新高后高位整理、现货买盘托底</b>——LME 三月铜 9/9 全天 14,610-14,742 震荡、收盘 14,665 美元/吨，多头获利止盈但价格每下探 14,600 附近现货买盘即进场承接，注销仓单占比仍超 50%、非美现货偏紧托底。</div></div>
+    <div class="reason" data-page-node-id="RvgV4CmpFH2PBynkqklARG"><div class="idx" data-page-node-id="svaP0vCSZaX38ftRpHfIft">2</div><div class="txt" data-page-node-id="NyVWcy0RefTkgTOft80qkp"><b data-page-node-id="kOMYSH31r0SwKN4B6kUrPG">沪铜站稳 11 万关口、年内涨幅超 13%</b>——沪铜主力 9/9 收 111,080 元/吨（+0.74%，盘中最高 111,720、最低 110,720），11 万整数关口多空激烈争夺，远月近高远低的 back 结构反映市场对近端供给的担忧重于远端。</div></div>
+    <div class="reason" data-page-node-id="yUmbiqqBwi3LR9yDuOMrwj"><div class="idx" data-page-node-id="kr2hE93wlPaafVoNRvauGG">3</div><div class="txt" data-page-node-id="dpZoXLHnGwJBFHSq4PwjeB"><b data-page-node-id="K7SDNHRRZaUDALWDh1Ya91">铜精矿加工费"跌成倒贴"</b>——TC 现货指数暴跌至 <b data-page-node-id="o5TwaeU1K9e5EJnkZd3JUj">-201.56 美元/吨</b> 历史极值，冶炼厂每加工一吨铜精矿要倒贴钱（单吨理论亏损 4,313 元），"加工费"变"倒贴费"，矿端枯竭的硬核信号。</div></div>
+    <div class="reason" data-page-node-id="Q0qu1VJpWlbKDYigMkMLWm"><div class="idx" data-page-node-id="QlFSEVx5FJ03b2yqAspjDF">4</div><div class="txt" data-page-node-id="kVQBGOrEKcH8E0rBob2zRQ"><b data-page-node-id="YjHtOmFVDxZx6EOcnppE81">关税虹吸 = 全球库存"结构性撕裂"</b>——COMEX 库存占全球交易所显性库存近 <b data-page-node-id="hydBcWmFJg0HFibfUvQrcQ">70%</b>（美国仅消耗全球 6-7% 的铜），美国 7 月铜进口总量首破 22 万吨、自刚果（金）阴极铜 5.329 万吨创历史纪录，非美可交割铜持续被抽走。</div></div>
+    <div class="reason" data-page-node-id="BPJBMlSzraY3etZAcfZp69"><div class="idx" data-page-node-id="kLDN2YkX3pYUxH9iKpm6HL">5</div><div class="txt" data-page-node-id="ULBAEn7n6oxjEZWPkYWD7F"><b data-page-node-id="Ev1oJydX1YDNhz2qHgMEm3">海外机构集体上修 + 产业资本看涨</b>——国金证券看铜价突破 <b data-page-node-id="7QEOedEw0fGDdeRr9SEt4g">2 万美元</b>、中金 15,000、花旗 15,000-17,000、瑞银 15,500；智利央行称"贸易条件改善主要因铜价前景"；洛阳钼业、紫金矿业管理层公开看涨。</div></div>
+  </div>
+
+  <!-- 二、海外机构观点 -->
+  <div class="card" data-page-node-id="7SvFK83IDqsp2Muu29eTwL">
+    <h2 data-page-node-id="oqCzjplY7iYAPMxGeBAxHE"><span class="no" data-page-node-id="FtkwrdJCxKJ5GFcn7iOIpj">二</span>近 5 天海外机构观点 <span class="hint" data-page-node-id="s3IwveCEiR55asb7KhGCkd">Wind 财经新闻</span></h2>
+    <div class="inst-card" data-page-node-id="2DUkMnq7eNnhjZmop96fCn"><div class="org" data-page-node-id="gsPAbH1akgjOftACXePo9W">国金证券<span class="d" data-page-node-id="MZU6uuCTLfsi79n3Z5F35n">9/8</span></div><div class="view" data-page-node-id="q7RLt2nQXzNUHAKDKSD3QO">智利出口走弱叠加美国持续吸铜，非美供给紧张强化，看好铜价突破 <b data-page-node-id="XcKagzTogwmR5zSkIUi589">2 万美金</b>。</div></div>
+    <div class="inst-card" data-page-node-id="ZNBtHhHmEaPFKmcqHjyZJy"><div class="org" data-page-node-id="5HywhSgQTWHclDzAbFZtiH">中金<span class="d" data-page-node-id="c6zmR0ZVeOKQBRch4CmKtf">郭朝辉 · 9/8</span></div><div class="view" data-page-node-id="G2ZAFbEOIqbzHWjVgwXFTq">铜价上涨更具确定性，有望向 <b data-page-node-id="UBPCtnNoQnb0HEtjiWKBdF">15,000 美元/吨</b> 新高迈进；AI 算力用铜增量看高至 100 万吨。</div></div>
+    <div class="inst-card" data-page-node-id="VdYw47u717E7hKEkTm6Vp5"><div class="org" data-page-node-id="FabkxiQuo9q1XXnAGtpCMO">花旗<span class="d" data-page-node-id="zVvHFNTVGljVLgRpWDuAxT">Tom Mulqueen · 9/8</span></div><div class="view" data-page-node-id="e5lQLsDAtWltYSyTQqxCK5">年底铜价可达 <b data-page-node-id="tG7sjWhPACNgiwJWqqpMu5">15,000 美元/吨</b>；若制造业复苏、能源转型、数据中心或战略储备超预期，可升至 <b data-page-node-id="YaZio7XfCVFGTs6sYYN3kY">17,000 美元</b>。</div></div>
+    <div class="inst-card" data-page-node-id="K0MXawNVrMgYVWCnwTnJL9"><div class="org" data-page-node-id="h6r62md6ApyTDzYzl3qnKn">瑞银财富<span class="d" data-page-node-id="5Gt8PRarw7OZVo6XC5dSz1">9/8</span></div><div class="view" data-page-node-id="DAuAzm4ZxUFJqAVopoid0y">未来几个季度铜价可达 <b data-page-node-id="Gs2hA3FtqCGGu0EV4oN2nX">15,500 美元/吨</b>，主流投行中最乐观；铜从"周期品"转"战略资源"。</div></div>
+    <div class="inst-card" data-page-node-id="SU1omLDqvOhWzkzocNLfnQ"><div class="org" data-page-node-id="lSmaFx6rtDrHOpgGNBcKpJ">摩根士丹利<span class="d" data-page-node-id="9OYYTsbghvdMQ2UAXg0HFg">9/8</span></div><div class="view" data-page-node-id="Km1S2rsEQvtrhyRI2G0jJd">2026 年缺口约 <b data-page-node-id="6Hj303gol8VtG87BXqMxgO">60 万吨</b>"几乎没有缓冲"；矿山供应现 2017 年来首次年度萎缩，智利 8 月出口量创一年多最低。</div></div>
+    <div class="inst-card" data-page-node-id="C42RiaS4vyTiJHoZwP8yJ2"><div class="org" data-page-node-id="GvduAP0xyDCKgFJfGW2tXi">高盛<span class="d" data-page-node-id="H5zvhJT1eR6DEcyx4BmWZj">9/8</span></div><div class="view" data-page-node-id="TtCKsP6dYQuk8ZyqjgIUXX">美国铜库存累积预期从 55 万吨上调至 <b data-page-node-id="YHtfCg1g8j4I9OK0VN1ryF">90 万吨</b>，非美缺口从 6 万吨扩至 64 万吨。</div></div>
+    <div class="inst-card" data-page-node-id="fD2BUENNoivGbmp0omwSKM"><div class="org" data-page-node-id="edXskYGolhfRGwwAqDJH4C">智利央行<span class="d" data-page-node-id="tlfyG2RwTtx3hDByjUDN9f">9/9</span></div><div class="view" data-page-node-id="H7F0Lr5nYyVyQasx3HHaAq">贸易条件的预期趋势更为有利，主要原因是 <b data-page-node-id="7x6z2O6oOfQ6woh8lhNbhI">铜价前景改善</b>。</div></div>
+    <div class="quote gold" data-page-node-id="o4xgt6wwF7Kf30R6H6x008">海外机构共识：目标价集中在 <b data-page-node-id="IMh9ACFjEd2z0gflYgk6x0">15,000-15,500 美元</b>，国金看高至 2 万；分歧不在"缺不缺"，而在"2027 年缺口收敛速度"与"关税政策能否落地"。</div>
+  </div>
+
+  <!-- 三、知识星球深度观点 -->
+  <div class="card" data-page-node-id="yXcEJ8FwIpxAxLN4NmRmv4">
+    <h2 data-page-node-id="eo0FL6P5LwJqUxcaEIGQ6r"><span class="no" data-page-node-id="hSsjrGQr07xYo6HCIAXnY6">三</span>知识星球深度观点 <span class="hint" data-page-node-id="lNmAHVIpiNZTzAW64FfeFv">近期时效</span></h2>
+    <div class="zsxq" data-page-node-id="WTQnuaEtTrWcXt0g1PHHGb">
+      <div class="z-card" data-page-node-id="SKW37vZAxhHsKnDeItDOor">
+        <div class="z-head" data-page-node-id="XCSfyEwZsLwhJYtMtkqNU7"><span class="z-badge" data-page-node-id="zPAQbrxiu7GBiXna0thO6M">Orange 期权</span><span class="z-group" data-page-node-id="Pr7mlGP8aVeUV5A8dLpbW5">铜近月隐波"低估"</span><span class="z-time" data-page-node-id="V5EJNbLRYjZH36N6OZnGKn">2026-09-09 22:09</span></div>
+        <p data-page-node-id="FlaavINBRoRiH46P7sv0qt">铜的外盘在升波、远月升波、<b data-page-node-id="B6UTsrSbZCLq6Bo1M74Kz9">近月却在降波</b>，大概率近月隐波低估，可试<b data-page-node-id="39pmoVPQc5OS8MngdJtVsG">双买策略做多铜隐波</b>；叠加周五 CPI 对有色金属的影响，可以试下做多隐含波动率。</p>
+      </div>
+      <div class="z-card" data-page-node-id="apGHdDDdDH3PqGvTsHRjdu">
+        <div class="z-head" data-page-node-id="FALZfKoolHCkQLYVJzMYNo"><span class="z-badge" data-page-node-id="cJVfDJPrCko0itdzhJJHIz">小牛研报纪要·国金金属铜</span><span class="z-group" data-page-node-id="QEbEref5lpTKwGLW31bU9o">非美供给紧张强化</span><span class="z-time" data-page-node-id="w6lCcHRUrJSNQbfqhAzzpy">2026-09-08</span></div>
+        <p data-page-node-id="4HAccIPfRqmudGdfWGKISG">智利 8 月铜出口 46.25 亿美元（环比 -14%、同比 -3.2% 创去年 7 月最低）；美国 7 月铜进口首破 22 万吨、刚果阴极铜 5.329 万吨创新高；<b data-page-node-id="m8NREGUcJQQ41xacYGKUEB">继续看好铜价突破 2 万美金</b>。</p>
+      </div>
+      <div class="z-card" data-page-node-id="TChsaXJ59LqUSdOyBta46B">
+        <div class="z-head" data-page-node-id="iRePUdq2q07jPadMZeOpeE"><span class="z-badge" data-page-node-id="tjpPbkBc5TNfLKa4XdLr6H">刘煜辉之宏观高维</span><span class="z-group" data-page-node-id="cMGLKlrPmartIyxnOrX43B">铜短线交易"需求衰退"</span><span class="z-time" data-page-node-id="hAFpGMennchxw6UvZCFdng">中长期框架</span></div>
+        <p data-page-node-id="mD6JLOtATSwE6AqY6lI798">铜短线交易的是<b data-page-node-id="svn2ZT7EiQ7w8jF3zYTSKd">供给冲击下的需求衰退</b>，尤其是美国 AI 基建 capex 坍塌的可能——短线几乎与油<b data-page-node-id="uJpsrYxoK7rMmZ3dH3l9hj">强负相关</b>；8/30 将"铜"列入四季度重点关注名单。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、今日实时快讯 -->
+  <div class="card" data-page-node-id="gRUaJ5c4Y6yrJP2m46qdqJ">
+    <h2 data-page-node-id="Z6RN63WJ05Lnap0O60CHVO"><span class="no" data-page-node-id="2lyyY0oEbbVdgUHqAgV9AB">四</span>今日（9/9）实时快讯与时间线 <span class="hint" data-page-node-id="QtxMB0CU751HuaDGAkrPWL">数据截止 22:15</span></h2>
+    <table data-page-node-id="fBFcmbCc1UWPRyblQSCLlK">
+      <thead data-page-node-id="ICFwvH3QWkDDnPH9DXI6nP"><tr data-page-node-id="orWBfXrz2Taum9VrtX7wg1"><th style="width:70px" data-page-node-id="GGoaoDmK18pdWn8OhA97ul">时间</th><th data-page-node-id="yZ1ieLwmeK5Y4uwEFFCh25">事件</th><th style="width:92px" data-page-node-id="ZTYiwcRdI4aqtCWHXjhQQ3">标签</th></tr></thead>
+      <tbody data-page-node-id="dnzSt2jqv6vHAlDMkI7jcJ">
+      <tr data-page-node-id="JopbgKnWCBnl7BWY0R1RpG"><td class="tm" data-page-node-id="ACFw2oHcjn4cJQZrdb8J4B">22:09</td><td data-page-node-id="ffZiL74Q6zfTV3oEUjiln7">Orange 期权：铜近月隐波低估，双买做多隐波、叠加周五 CPI</td><td data-page-node-id="wELe6IOTBwsqG28K3rJ3Qq"><span class="tag tag-neu" data-page-node-id="GprRXdzPimyUYqDHDtdAtR">期权策略</span></td></tr>
+      <tr data-page-node-id="yxO7WGwZGgbXKxtlrNiI0G"><td class="tm" data-page-node-id="BmZ9MMqpNt2O1j3AdYhOL4">20:19</td><td data-page-node-id="OL3CNg12h3iSIWCBMwc7sO">智利央行：贸易条件预期趋势更有利，主因<b data-page-node-id="IC0MJYqBwDWrm887llklLz">铜价前景改善</b></td><td data-page-node-id="oL0dKxgywPMCq81P9FIJex"><span class="tag tag-up" data-page-node-id="VHVc82yZVTGcEoe5O28lTL">机构观点</span></td></tr>
+      <tr data-page-node-id="ttJklGNzURnbXkwKvRMawi"><td class="tm" data-page-node-id="8nvEmOjE3UWdiAjqGrkTAh">收盘</td><td data-page-node-id="JHy31cOJcD6q6G2MHBDd62">伦铜收 <b data-page-node-id="LsmtACRveLq0ntovMISV4A">14,665 美元/吨</b>（-0.4% 高位回落）、沪铜主力 <b data-page-node-id="FVEdKxWFFWDtZ4SEczPjCr">111,080 元/吨</b>（+0.74%），冲高后获利盘兑现</td><td data-page-node-id="Ii8WQ2DnBhqDjfiZKb3BCZ"><span class="tag tag-down" data-page-node-id="tO8LGxR2kYGV93TexyI6qj">高位震荡</span></td></tr>
+      <tr data-page-node-id="95CGo596hjxnNwdhMPK5cX"><td class="tm" data-page-node-id="QKmZ3Zh65PGxLun5lRYNSv">14:20</td><td data-page-node-id="Sl1g3FYAAtV3QmzGEMChsV">主力资金净流入<b data-page-node-id="c9SFdbXCKNDVfTKSd8415L">有色金属</b>、通信、国防军工板块（有色居前）</td><td data-page-node-id="T2OWrlSgNCJIqrafO2tZBg"><span class="tag tag-up" data-page-node-id="fzhtB2o7yspWL2udOaPpM0">资金流入</span></td></tr>
+      <tr data-page-node-id="znCbacyUmiCkQ59b604fH9"><td class="tm" data-page-node-id="GVpLVCEyQuRjCRtA2s3593">13:59</td><td data-page-node-id="593TDoHtoZ7wLCgvvJHXoe">港股有色金属股午后异动：<b data-page-node-id="5GZrOyy4kQVh0WlRl8iOPv">中国宏桥 +4%、紫金矿业、江西铜业 +2%</b> 等多股跟涨</td><td data-page-node-id="aR1yNOl8TkoPBboQlWxVeC"><span class="tag tag-up" data-page-node-id="7LrYx7trnaX4tkFbeqnhrd">内外联动</span></td></tr>
+      <tr data-page-node-id="EX0m7Ln9RG2EoS9hS4GCSV"><td class="tm" data-page-node-id="QXAfWeVrLfX9WJeEL5NDVC">12:49</td><td data-page-node-id="GPNCwhDEGpgnIHljEYSL1R">【期货热点】海外库存枯竭引"铜荒"担忧，<b data-page-node-id="XasHTZf2HbIaYHg7jIbXVr">伦铜创历史新高</b>，季节性需求能否撑起涨势</td><td data-page-node-id="3kTSO7UbsoIXXHFqy9Pjw8"><span class="tag tag-up" data-page-node-id="SR3FUaBNWwpwuYwltiyAfZ">供给警报</span></td></tr>
+      <tr data-page-node-id="rh43c7yziGrVcmqokgi3Jw"><td class="tm" data-page-node-id="XVThGGBqPk4JkFCyiTnJrh">12:25</td><td data-page-node-id="alzppITDTlk4FAuf7mKVVo">长江现货 1#铜均价 <b data-page-node-id="ywHWgwIp13KhmDpXIGMkly">111,640 元/吨（+250）</b>、升贴水 250 元维持正向升水；伦铜 14,728（+234）</td><td data-page-node-id="IZKKEyuKGJRtsr2r0QyVMF"><span class="tag tag-up" data-page-node-id="DKP5rikcsKWuEKXGqscEsi">现货抢筹</span></td></tr>
+      <tr data-page-node-id="hP1tYdsV2FxK1ETLqorU1f"><td class="tm" data-page-node-id="HsDSHGnOBCdhuL6DPlE03c">08:10</td><td data-page-node-id="m6H2NBmT8gW31dW7nLrUUt"><b data-page-node-id="YvCFG6EHxhJBgH6pFexZGf">必和必拓联手波兰巨头 KGHM 全球抢矿</b>（签谅解备忘录），伦铜冲破 14,700、沪铜站上 11 万</td><td data-page-node-id="SLSIo4xTCBPmuxiH7IQrSJ"><span class="tag tag-up" data-page-node-id="DV3D2b5Cy8cx7PmtBhc6cX">供给警报</span></td></tr>
+      <tr data-page-node-id="zQ3k2DlwsOORHAwmGHO8Mj"><td class="tm" data-page-node-id="ZPGL5dyB0uX4rnQh6yfP2K">08:10</td><td data-page-node-id="0uZHUPr5TGXyeMr20zloVJ">智利国家铜业委员会 Cochilco：智利冶炼厂产能利用率仅 <b data-page-node-id="vHKziIMBgc0ONNFtahojCy">60%</b></td><td data-page-node-id="MVM3X2bvl12k5ccCMDd5Ty"><span class="tag tag-up" data-page-node-id="hLJeSCE51VlwPhvNADzwoF">供给约束</span></td></tr>
+      <tr data-page-node-id="Hv8fP7FxmnJ3HUCdRaIh9K"><td class="tm" data-page-node-id="AAdRH5xAVJHDnO60LRArga">隔夜</td><td data-page-node-id="hjK6VN5HmgXnqDFHfNH5ss">LME 期铜 9/8 收 <b data-page-node-id="bIAOxTJvTTisdbsjx5FOdZ">14,728 美元/吨（+1.61%）</b>，盘中触及 <b data-page-node-id="7TZkV54xUTzIWXokroaE4w">14,779 美元</b> 再创历史新高</td><td data-page-node-id="Zfml3HEfi9TT7fooWCSc9S"><span class="tag tag-up" data-page-node-id="AVdy0AttJzt2oEdk1DBLwa">历史新高</span></td></tr>
+      <tr data-page-node-id="4yqFGvOBwkjbf9yVUkzqWv"><td class="tm" data-page-node-id="0aQea7pajJagIRcmCjQA1o">数据</td><td data-page-node-id="UOECOQanoV9tUAC8nc9Sns">上期所仓单 21,412 吨（-1,903）；全球三大交易所铜库存约 94 万吨、美国境内占比高达 85%</td><td data-page-node-id="QrvRJClDAqfmQZZFYSffCZ"><span class="tag tag-neu" data-page-node-id="ss66MxuXDDkYuNDnC7Tqrh">库存分化</span></td></tr>
+      <tr data-page-node-id="RGJiooo7YVbQtJMSpaVhp9"><td class="tm" data-page-node-id="VDcxAG9lIL0RobbGJeaQXM">数据</td><td data-page-node-id="SIAm0VzJLt8C3KrpBIvEHI">铜精矿加工费 TC 暴跌至 <b data-page-node-id="xGAKkcrEDEpqQcBHLFEbpJ">-201.56 美元/吨</b>历史低位，冶炼单吨理论亏损 4,313 元</td><td data-page-node-id="B2DhXF1lquADh7jBRmOrqT"><span class="tag tag-up" data-page-node-id="yTjgeVfOluRJMRgJbGXwWR">供给枯竭</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote" data-page-node-id="MNSDqbY9lp4XpGzV5DkSVR">关键价格：伦铜 LME 三月合约 <b data-page-node-id="3U5YcdkfTjvHGbFDwNRlIY">$14,665/吨</b>（盘中历史新高 14,779 后回落）；沪铜主力 111,080 元/吨；华东现货 111,480 元/吨（升水 300 元）。</div>
+  </div>
+
+  <!-- 五、昨天参照 -->
+  <div class="card" data-page-node-id="F6t71w1ynkK0F7zUCu7525">
+    <h2 data-page-node-id="7n1AeDB4bzBDZhd93mVmBG"><span class="no" data-page-node-id="Ji4LG2h6mI7j92Sz8xHpD1">五</span>昨天（9/8）发生了什么（背景参照）</h2>
+    <table data-page-node-id="lpUXceqOT6MKRGBdL9Ob9G">
+      <thead data-page-node-id="BTxBrPnAnpcwXonho0QD8K"><tr data-page-node-id="BDtdicpA3YflDm9LmbpU6u"><th style="width:120px" data-page-node-id="UYIEOQT6In0HgmHjtdJzVm">时间/事件</th><th data-page-node-id="GJxGvuXRCJ3NsExHSsTjYD">内容</th></tr></thead>
+      <tbody data-page-node-id="7fCJqgjki8AdeaBXOcE9VZ">
+      <tr data-page-node-id="cyBbTh9yepRpFXaYCAEyxv"><td data-page-node-id="rj6DK98DzUSnoiXDXGXCVJ"><b data-page-node-id="udW5KSLygHNu2rs39TfBTd">伦铜新高</b></td><td data-page-node-id="QEjZ2XeIDrdwlEDx5bZfUF">伦铜盘中触及 14,779 美元、收 14,728（+1.61%），连续两日刷新历史纪录；上期所铜仓单 21,412 吨环比 -1,903 吨</td></tr>
+      <tr data-page-node-id="LEGrRAVDSwRzGOjt0Cw3nC"><td data-page-node-id="x2il7vGPNAqQuRtOTkadOC"><b data-page-node-id="3dVA9BRuGtvYL1hlRExqvC">A股抢货</b></td><td data-page-node-id="l5qC8EnzxLsBppxw4JKEgs">有色·铜概念活跃，精艺股份涨停、北方铜业触及涨停，北方铜业登主力资金净流入榜</td></tr>
+      <tr data-page-node-id="d2E6BAk4OqsZRsBULGtB23"><td data-page-node-id="7a1kPDKWvfuPYU8FxuxHAQ"><b data-page-node-id="QRmYY0irisADwXiAuWF4a8">智利收缩</b></td><td data-page-node-id="PJjuIUc5nkefJpyDwwhS06">智利 8 月铜出口收入创逾一年新低，Q2 铜产量创至少 19 年最弱</td></tr>
+      <tr data-page-node-id="SQYJkQNncizgK6AtKs1TBG"><td data-page-node-id="y17VLDxMvLYVfHgVy9SNy9"><b data-page-node-id="DRuIU7EHcD27JhiBDLHxty">海外上修</b></td><td data-page-node-id="oxT4zkQ0dN7Ww6rhZ6RfyL">大摩下调矿山供应预期、花旗/瑞银上修目标价；美股自由港等矿业股大涨</td></tr>
+      </tbody>
+    </table>
+    <div class="quote" data-page-node-id="BsvFpKJgitWFEW9g2blAcz">关键参照：昨天铜是"14,779 历史新高 + 资金抢货"的单边加速，今天是"新高后高位震荡 + 获利止盈 + 现货买盘托底"，上涨波段进入"预期验证阶段"，但供给硬约束与关税虹吸两条主线未变。</div>
+  </div>
+
+  <!-- 六、逻辑对比 -->
+  <div class="card" data-page-node-id="E3UFyxh0IVtIs0YLlV4H3M">
+    <h2 data-page-node-id="NfDCIxDHhTUrx9fQF6zWBv"><span class="no" data-page-node-id="Tx3ViLwDzFGJqv3eYFFSw4">六</span>核心逻辑增强 vs 削弱对比</h2>
+    <table data-page-node-id="bVVXHqblAYgUWHw4qUpEQi">
+      <thead data-page-node-id="aA7UOqYYc3HM90IVqDPwmF"><tr data-page-node-id="hWAtuoQC0yAi2PkyOTY2HD"><th data-page-node-id="eqFNycctJ9IHjZNGkK0qMQ">核心逻辑</th><th data-page-node-id="zMNLQClf6yeWyUJ1A7SOHj">9/8 状态</th><th data-page-node-id="ppyuZVPbgzgQC45jsNXEWq">9/9 状态</th><th style="width:92px" data-page-node-id="Nk3D34bwQaUL1FblQcWOQL">变化</th></tr></thead>
+      <tbody data-page-node-id="EZQ8GCiNbO2sbmRI0lVzPa">
+      <tr data-page-node-id="BaihJGUXNAoEB64Hx08mxM"><td data-page-node-id="uD5yehHlu10QGoIcP6D4pz"><b data-page-node-id="dKReK9TjfFzIkHBBx7INjq">LME 库存低位 + 现货升水</b></td><td data-page-node-id="XS56anEksgE5H6ko6h9Epx">仓单再 -1,903 吨</td><td data-page-node-id="5AljbePTYJPbEIDmunQUbl">注销仓单占比仍 >50%、现货池偏紧</td><td data-page-node-id="V11vhAcIpotolKyjpH2Cn9"><span class="tag tag-up" data-page-node-id="z9Km6nmHKXz0r0S8wz8gPv">增强 ↑</span></td></tr>
+      <tr data-page-node-id="22zCT0SxvujBYTYlc5RmER"><td data-page-node-id="dfJALawgy9N8aD7MdRW23G"><b data-page-node-id="iCbAoTnWBu0ZJWPhpd9DE6">关税套利 + Comex 囤积</b></td><td data-page-node-id="LsTpzvDzSYscRWZaCR6xTS">报告超期 2 个月</td><td data-page-node-id="BJ2ezsSiqfKdjyfzW3wHnA">COMEX 占全球显性库存近 70%、美 7 月进口首破 22 万吨</td><td data-page-node-id="Og6s4Pjm9AWbXs0WJWHwGG"><span class="tag tag-up" data-page-node-id="KDQTjlr3RcGb8nEb9HxCfv">增强 ↑</span></td></tr>
+      <tr data-page-node-id="SijiC2UGBbgE8mCLTlIfeR"><td data-page-node-id="wVOzfsuFBw6ZGQ6gOyekM4"><b data-page-node-id="y6gcZNrK52da6HZEuZbYlW">矿端供给收缩</b></td><td data-page-node-id="98TXGx4rnrah9LKhmtN7jG">智利 8 月出口一年新低</td><td data-page-node-id="SPUhMouVn783J3lsj8S8DF">ICSG 上半年 -2.6%、智利出口 46.25 亿环比 -14%、进口双降</td><td data-page-node-id="dLqyec3B98AyivBStGbYPz"><span class="tag tag-up" data-page-node-id="hxH7AklFHQc9FkBJE2Gxa4">增强 ↑</span></td></tr>
+      <tr data-page-node-id="GVQT5vQHr0fRXeduLkNPl5"><td data-page-node-id="dBgPbC3wsCtI5Dpf8pG4XQ"><b data-page-node-id="jwWLWHRNVjNx7RQabA7nof">海外机构预期上修</b></td><td data-page-node-id="AQKcWdXKTCyGWIzqHCplrF">花旗看 15,000-17,000</td><td data-page-node-id="Y2R0DigH0PCWitEQ2jPjGS">国金看 2 万、智利央行称前景改善</td><td data-page-node-id="vDDuJ3IKWFOxG7vxAvix46"><span class="tag tag-up" data-page-node-id="WJx4FgUcmrhBR5ba5TFAX3">增强 ↑</span></td></tr>
+      <tr data-page-node-id="lrPdmcweOm8VlENcaFWXDq"><td data-page-node-id="0JKtahjLnYTjWIGl2lcHvB"><b data-page-node-id="lfzXPPF61vEkjFrSt8m1QX">中国现货抢货</b></td><td data-page-node-id="b8RHK4QLbMrczGNBIP4WPf">A股涨停潮</td><td data-page-node-id="OQeuDFWluH30ebNPipEARA">A股/港股有色联动、现货升水 300 元</td><td data-page-node-id="5fPRiGUB1tIlg4PvoTD4r1"><span class="tag tag-up" data-page-node-id="jWJzcwrsK7p1e7OoJGbawp">增强 ↑</span></td></tr>
+      <tr data-page-node-id="H9xUsxllqh8f78CEqFlWSA"><td data-page-node-id="SYZM5jBAYgR2mApH8TBEqi"><b data-page-node-id="sCDbFiZtoU7UaQH5EnCgmW">高位获利兑现</b></td><td data-page-node-id="b6BLeFABCL7FYuxETzNKDj">单边上涨</td><td data-page-node-id="iLsLnZVRinduhEMMa2JoiJ">伦铜回落 14,665、多头止盈离场</td><td data-page-node-id="KjHoNosJ9an07rA1Gc5mqJ"><span class="tag tag-down" data-page-node-id="EzgjR76NBODeB6anmIvKMO">削弱 ↓</span></td></tr>
+      <tr data-page-node-id="nW6fkXrQEUeTkFk1h13ZeC"><td data-page-node-id="iC95Ktnh8SdFtVEsIs52Og"><b data-page-node-id="HBTP6NzgYF2Eg7aw7QCLE6">需求替代风险</b></td><td data-page-node-id="uBt4mNh6Dk3dJEEbgjz1BD">暂无明显兑现</td><td data-page-node-id="3g2GA9B6sxrdxgoXPCPu4v">高铜价催化再生铜（金田 +168%）、下游以销定产</td><td data-page-node-id="08Lxn2jvMTMIYfIgQx6L6Z"><span class="tag tag-neu" data-page-node-id="dYNrWx7FJOAzFArepc0qPA">持平 →</span></td></tr>
+      <tr data-page-node-id="ccH472ErBBmhFosDPCWdKq"><td data-page-node-id="anGTM3H7SZHNnA7RuHQt73"><b data-page-node-id="QIHVSgR5DdRiBiyLvoFfHh">宏观逆风（加息、美债）</b></td><td data-page-node-id="DZhvJPRjt6Z8aljVMpV2St">加息预期 60%</td><td data-page-node-id="t4oU3PxqtjdEr8HhWnK8gg">美债 2 年期 4.42% 创 2025/1 新高，等 CPI 落地</td><td data-page-node-id="weo0ExhoQo7dsKYM8p9hMH"><span class="tag tag-up" data-page-node-id="v66cskVNa4u0btvxONvdMH">脱敏 ↑</span></td></tr>
+      <tr data-page-node-id="rhR5sz7rsj32AE1CrcOgrd"><td data-page-node-id="0CSTBAqWHbwLGHktobyMmx"><b data-page-node-id="5JgB1imxqBE596VUwF4Eqc">整体净影响</b></td><td colspan="2" style="text-align:center" data-page-node-id="gSJksC1g4UkJPJE06ucsF6">—</td><td data-page-node-id="IvZFvI4rBABHCGepjbcTk9"><span class="tag tag-strong" data-page-node-id="hfUdqAbJN819syn8jQwbLa">强势偏多 ↑</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote" data-page-node-id="yXrdPwaUMPuCRR5H8bvGDp">对比判断：昨日市场还在"消化关税预期"，今天已经进入"资金驱动 + 仓单验证 + 海外机构集体上修目标价"阶段，所有供给端逻辑全面加强；但盘面从单边上涨转入高位震荡，短期获利盘兑现是唯一新增的削弱变量，需求侧尚未发力但已被市场接受为长期增量，铜价"对宏观利空脱敏"的特征日益明显。</div>
+  </div>
+
+  <!-- 七、综合结论 -->
+  <div class="card verdict" data-page-node-id="74pdqcDQ9iZ53HbO9oODAo">
+    <h2 data-page-node-id="2hFH592s1WpEhAMlFJFuOn"><span class="no" data-page-node-id="sWN4NpHcL9bkADwMp4YPzA">七</span>综合结论</h2>
+    <div class="main" data-page-node-id="0tammMg3cWyT1AQDlL11D9">今日铜的运行主线 = <b data-page-node-id="1Hedy8g1A6o7VwDOi7rwQe">供给硬约束的全面验证</b>（加工费倒贴 + 矿端收缩 + 进口双降）+ 关税虹吸的库存错配（COMEX 占全球 70%、美进口首破 22 万吨）+ 海外机构目标价集体上修（国金看 2 万），但盘面从单边上涨转入<b data-page-node-id="UvtXg2yy3nI6CG1PAo5rEA">高位震荡</b>（伦铜 14,665、沪铜 111,080）。</div>
+    <ul data-page-node-id="OcmZ4iPrgOoZYMg5DhXb6n">
+      <li data-page-node-id="WG86JFORyf2tSr5spIetsq"><span class="k" data-page-node-id="Nbfckle6ihBoHMW0FpWaYD">方向</span>：多头格局未破，但短线进入"预期验证阶段"，伦铜在 14,779 历史高点下方反复博弈。</li>
+      <li data-page-node-id="b3DqfzGeCiqroeGnNVmh29"><span class="k" data-page-node-id="sWJKzRclty7yEWgFvck3mz">海外机构共识</span>：目标价集中 15,000-15,500 美元，国金看高至 2 万；长期"AI + 新能源 + 供给刚性"三重逻辑支撑。</li>
+      <li data-page-node-id="F2qQCSWeqsbcilWC3r79im"><span class="k" data-page-node-id="jbYtq0EFAzQvQAr6MxjHNg">星球视角</span>：刘煜辉提示短线"供给冲击下的需求衰退"风险、与油<b class="gold" data-page-node-id="SGQAKm7ddDua2OFfev6ZTV">强负相关</b>，8/30 将"铜"列入四季度重点关注；Orange 期权提示近月隐波低估、可双买做多隐波。</li>
+      <li data-page-node-id="KLFTJXmnDG5OW5fLtPqirU"><span class="k" data-page-node-id="MHmRTKDkrqlsyiCkTp4XlK">风险点</span>：美国关税预期证伪是最大变量（若白宫否决关税，囤积铜快速回流将引发回调）；周五 CPI 数据影响加息路径；高位持续压制下游采购意愿。</li>
+      <li data-page-node-id="kLpM1i1EaMeRwsZXVChble"><span class="k" data-page-node-id="T2CEvdw1WCpr9FW5haetye">下周关键</span>：美国 232 调查建议 9/28 节点、白宫精炼铜关税最终决定、周五美国 CPI、伦铜能否站稳 14,500、中国 8 月铜进口数据。</li>
+      <li data-page-node-id="fstJkIxereDK0Z1G9QygFb"><span class="k" data-page-node-id="R2wqGeoNkSWZy8r1J8qaqH">操作倾向</span>：顺势多头，回调不破 14,200 视为健康调整；高位严控仓位，紧盯关税政策落地节奏，不盲目追高。</li>
+    </ul>
+  </div>
+
+  <div class="footer" data-page-node-id="SmHRPDgZCxmwHUWtgBvPP2">生成时间：2026-09-09 23:15 · 数据截止 22:15<br data-page-node-id="rZqKOCIxAUJQqh6o1h0su6">数据源：华尔街见闻 · market-delta 实时快讯 · Wind 财经新闻（海外机构观点） · 知识星球（刘煜辉之宏观高维 / Orange 期权 / 小牛研报纪要）</div>
+</div>
+</body>
+</html>

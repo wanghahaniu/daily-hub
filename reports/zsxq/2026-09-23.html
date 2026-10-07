@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星球研报主题日报 · 2026-09-23</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body {
+    margin: 0; background: #f6f7f5; color: #2b2f2c;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    font-size: 15px; line-height: 1.72;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 56px; }
+
+  header {
+    padding: 30px 22px 24px; margin: 0 -16px 24px;
+    background: linear-gradient(160deg, #fbfcfb 0%, #eef2ee 100%);
+    border-bottom: 1px solid #e3e8e2;
+  }
+  header h1 { font-size: 23px; font-weight: 600; margin: 0 0 7px; letter-spacing: .4px; }
+  header .date { font-size: 13.5px; color: #838b85; }
+  .stats { display: flex; flex-wrap: wrap; gap: 20px 22px; margin-top: 18px; }
+  .stat .n { font-size: 21px; font-weight: 600; color: #33473b; line-height: 1.2; }
+  .stat .l { font-size: 12.5px; color: #8d958f; }
+
+  h2 {
+    font-size: 16.5px; font-weight: 600; margin: 36px 0 14px;
+    padding-left: 12px; border-left: 3px solid #9ab8a6; line-height: 1.3;
+  }
+  h2 .cnt { font-size: 12.5px; font-weight: 400; color: #98a09a; margin-left: 8px; }
+  h3.sub {
+    font-size: 14px; font-weight: 600; color: #4a7a5d; margin: 20px 0 10px;
+    letter-spacing: .3px;
+  }
+  h3.sub:first-of-type { margin-top: 6px; }
+  h3.sub .tag { font-size: 11.5px; font-weight: 400; color: #a2a9a4; margin-left: 6px; }
+
+  .focus { display: grid; gap: 11px; }
+  .fcard {
+    background: #fff; border: 1px solid #e6eae4; border-radius: 13px;
+    padding: 15px 17px; border-left: 3px solid #c9a05b;
+  }
+  .fcard .ft { font-size: 14.5px; font-weight: 600; margin-bottom: 5px; color: #232825; }
+  .fcard .fx { font-size: 13.5px; color: #626a65; }
+
+  .group { background: #fff; border: 1px solid #e6eae4; border-radius: 14px; padding: 6px 18px 12px; }
+  .group + .group { margin-top: 14px; }
+  .item { padding: 13px 0; border-bottom: 1px dashed #eef0ec; }
+  .item:last-child { border-bottom: none; }
+  .meta { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
+  .src {
+    font-size: 11.5px; padding: 1.5px 8px; border-radius: 20px;
+    background: #eef2ee; color: #5e7568; white-space: nowrap;
+  }
+  .src.w7 { background: #f4f0e4; color: #7d6a3e; }
+  .time { font-size: 12px; color: #a2a9a4; font-variant-numeric: tabular-nums; }
+  .txt { font-size: 14px; color: #3c443f; }
+  .txt b { font-weight: 600; color: #1f2421; }
+  .up { color: #c0392b; font-weight: 600; }
+  .dn { color: #2e8b57; font-weight: 600; }
+  .hd { font-weight: 600; color: #33473b; }
+
+  .note {
+    font-size: 13px; color: #6d766f; background: #f9faf8;
+    border: 1px dashed #e2e8e1; border-radius: 10px; padding: 10px 13px; margin: 4px 0 10px;
+  }
+
+  .cal { background: #fff; border: 1px solid #e6eae4; border-radius: 14px; padding: 8px 18px; }
+  .row { display: flex; gap: 14px; padding: 11px 0; border-bottom: 1px dashed #eef0ec; align-items: baseline; }
+  .row:last-child { border-bottom: none; }
+  .row .d { flex: none; width: 112px; font-size: 13px; font-weight: 600; color: #4a7a5d; }
+  .row .e { font-size: 13.5px; color: #4a524d; }
+
+  footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid #e3e8e2; font-size: 12.5px; color: #a2a9a4; line-height: 1.8; }
+  footer b { color: #8d958f; font-weight: 600; }
+  @media (max-width: 520px) {
+    header { padding: 24px 16px 20px; }
+    header h1 { font-size: 20px; }
+    .stats { gap: 14px 16px; }
+    .row { flex-direction: column; gap: 2px; }
+    .row .d { width: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>星球研报主题日报</h1>
+  <div class="date">2026-09-23（星期三）· 覆盖原油 / 宏观 / 铜 / 期权四大板块</div>
+  <div class="stats">
+    <div class="stat"><div class="n">502</div><div class="l">抓取总条数（3天窗口）</div></div>
+    <div class="stat"><div class="n">26</div><div class="l">原油命中</div></div>
+    <div class="stat"><div class="n">30</div><div class="l">宏观命中</div></div>
+    <div class="stat"><div class="n">28</div><div class="l">铜命中</div></div>
+    <div class="stat"><div class="n">13</div><div class="l">期权命中</div></div>
+    <div class="stat"><div class="n">64</div><div class="l">去重后条目</div></div>
+  </div>
+</header>
+
+<h2>今日焦点 <span class="cnt">3 条最重要的矛盾</span></h2>
+<div class="focus">
+
+  <div class="fcard">
+    <div class="ft">① 油价：联大会谈「非常有建设性」的口头缓和 vs 曼德海峡被禁、运价再刷历史极值</div>
+    <div class="fx">
+      <b>一边是缓和叙事。</b>美伊代表在联大期间举行会晤，特朗普称三小时会谈「非常有建设性」、伊朗达成协议「动力很足」；伊朗高官称若美国减轻军事压力并解除海上封锁，<b>可在 7 天内重新开放霍尔木兹海峡</b>；沙特阿美已非正式告知亚洲炼油商可很快从红海延布港装运原油，此前被无人机袭击关停的东西输油管道已重启。WTI 10 月合约 <span class="dn">-1.24%</span> 报 <b>94.59 美元</b>、布伦特 11 月 <span class="dn">-1.09%</span>，原油<b>连续第五个交易日喘息</b>。<br>
+      <b>另一边政治与物流约束一条都没解。</b>同一场联大演讲中特朗普明确表示<b>预计中期选举前不会达成</b>重开协议；伊朗计划<b>扣押船只直至 20% 的海峡罚款被支付</b>；胡塞武装控制曼德海峡并禁止沙特油轮通过，令延布港出口骤减，出口重心又被迫转回受阻的霍尔木兹。<br>
+      <b>硬证据在运价与产能：</b>9/17 VLCC TD3C / TD15 / TD22 分别达 <b>121 / 53 / 39 万美元/天</b>，再刷历史极值；截至 9/21 全球已有 <b>99 家大化工企业</b>出现停产/减产/不可抗力，炼化-航运-造船价差破纪录。
+    </div>
+  </div>
+
+  <div class="fcard">
+    <div class="ft">② 宏观：纳指 100 创 6 月以来首个新高 vs 月末流动性、季末再平衡与仓位集中三重压力</div>
+    <div class="fx">
+      <b>一边是 AI 兑现度继续上行。</b>纳指 100 <span class="up">+82bp</span> 报 <b>30732</b>（6 月以来首个新高、连涨四日）、费城半导体 <span class="up">+2%</span> 创 7 月中旬以来收盘新高，存储普涨（闪迪 <span class="up">+6%</span>、美光 <span class="up">+5%</span>、希捷 <span class="up">+4%</span>）；阿里 9 月 MaaS 收入达 <b>200 亿元</b>（8 月 160 亿元），月环比 <span class="up">+25%</span>，目标年底 300 亿元，阿里云 2032 年数据中心超 <b>20GW</b>；Meta Muse 上线五天下载量超过 ChatGPT 早期表现、累计超 <b>250 万次</b>；戴蒙称明年超大规模数据中心生态投资或达 <b>1 万亿美元</b>。<br>
+      <b>另一边是月末资金与仓位的机械性收缩。</b>10Y 美债 <b>4.9531%</b>、VIX 仅 <b>14.27</b>；城堡投资 Rubner 明确「月底前仍有进一步下行空间」——<b>回购进入静默期、7 万亿美元期权敞口上周五已到期退出、系统化策略仍是潜在卖压、季末再平衡不利</b>，中选年从当前时点至 9/30 平均跌幅约 <b>1.1%</b>（但 9/30 低点至年底平均 <span class="up">+5.6%</span>）。仓位集中度极高：境内公募 <b>43%</b> 资产配在信息技术（超指数权重 14pct），融资最集中的前 10% 科技股占全部 A 股融资余额 <b>30%</b>——业绩一旦低于预期，减仓与融资平仓可能相互强化。
+    </div>
+  </div>
+
+  <div class="fcard">
+    <div class="ft">③ 铜：电解铜「现货紧、挤仓降温」 vs AI 材料链「缺口定价 + 单机价值量翻倍」</div>
+    <div class="fx">
+      <b>电解铜线：</b>LME 铜 <span class="up">+2.36%</span> 至 <b>14562.0 美元/吨</b>、SHFE 铜 <span class="up">+0.58%</span> 至 <b>109620 元/吨</b>、COMEX <span class="up">+2.42%</span> 至 6.7155 美元/磅；矿端成本继续恶化，SMM 进口铜精矿指数周 <span class="dn">-12.19</span> 至 <b>-221.89 美元/干吨</b>；但挤仓博弈降温——LME 注销仓单占比回落至 <b>45.26%</b>（周内 <span class="dn">-2.62pct</span>），261021 合约持仓 2.22 万手 vs 可交割仓单仅 <b>5586 手</b>。矿端增量看紫金：巨龙前 8 个月产铜 <b>186.4 千吨</b>（<span class="up">+47%</span>）。<br>
+      <b>AI 材料链：</b>高盛预测 AI 覆铜板市场规模 2026-28 年分别 <span class="up">+181% / +217% / +115%</span>，2028 年达 <b>475 亿美元</b>；美银测算 VR200 单机 PCB 价值量 <b>6-8 万美元</b>（GB200 的 3 倍），Rubin Ultra 2027 年破 <b>10 万美元</b>；HVLP4 铜箔 2027 年缺口约 <b>31%</b>、T-Glass 缺口 2027 年由 19% 升至 <b>32%</b>。<br>
+      <b>两条线驱动与风险完全不同：</b>前者看矿端供给、库存与持仓结构，后者看算力资本开支与材料认证节奏，本报告分开陈列。
+    </div>
+  </div>
+
+</div>
+
+<h2>原油 <span class="cnt">命中 26 条 · 取 9 条</span></h2>
+<div class="group">
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:34</span></div>
+    <div class="txt"><span class="hd">隔夜市场回顾（华创宏观·张瑜团队）：</span>特朗普联大演讲措辞强硬、重申<b>11 月中期选举后</b>与伊朗达成协议；美联储官员密集表态——里士满联储警告通胀压力或需时间消退、波士顿联储称加息有助通胀回目标、巴尔金称尚不清楚是否需进一步加息、柯林斯认为通胀维持 2% 以上可能性更高。益普索民调显示特朗普支持率跌至 <b>32%</b>（创政治生涯新低，共和党选民 82%→<b>73%</b>）。美债基差交易规模降至逾两年低点，Pimco 淡化长期美债看空、称收益率升至 <b>5% 以上</b>后债券更具吸引力。<b>物流侧：</b>沙特阿美已非正式告知亚洲炼油商可很快从红海延布港装运，东西输油管道重启；但胡塞控制曼德海峡、禁止沙特油轮通过，延布港出口骤减。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:24</span></div>
+    <div class="txt"><span class="hd">VLCC 运价再刷历史极值：</span>据 Clarksons，9 月 17 日 VLCC <b>TD3C / TD15 / TD22 航线运费分别达 121 / 53 / 39 万美元/天</b>，再次刷新历史极值。造船端同步高景气：2026 年 8 月全球新船订单 176 艘，其中中国船厂接获 <b>125 艘 / 4,026,573 CGT</b>，修正总吨占全球订单量 <b>78.88%</b>。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:19</span></div>
+    <div class="txt"><span class="hd">全球炼化-航运-造船重大提示：</span>监测显示截至 <b>9 月 21 日全球已有 99 家大化工企业</b>出现停产 / 减产 / 不可抗力情景。俄乌及中东大体量炼厂、化工厂的物理性产能损失及漫长重建时间带来的价差破纪录，<b>并非停战或和平所能快速缓解</b>，炼化-航运-造船等价差获利型产业链的长期盈利中枢或显著超预期。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:01</span></div>
+    <div class="txt"><span class="hd">美股盘面速览（交易台）：</span>WTI 原油 <span class="dn">-1.24%</span> 报 <b>94.59 美元</b>，<b>原油连续第五个交易日迎来喘息</b>，谈判仍在推进，有消息称伊朗可能在 7 天内重新开放霍尔木兹海峡（前提是美国减轻军事压力）。时间线出现反复：特朗普当日早间在联大表示预计中期选举前不会达成协议，下午又表示伊朗达成协议「动力很足」。10Y 美债 <b>4.9531%</b>、VIX <b>14.27</b>、美元指数 100.55。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 07:28</span></div>
+    <div class="txt"><span class="hd">隔夜全球要闻：</span>伊朗外长与美特使在纽约会晤，伊方称会晤为「传达重开海峡条件」；<b>伊朗计划扣押船只直至 20% 的霍尔木兹海峡罚款被支付</b>；国际原油结算价收跌超 1%（WTI 10 月 <span class="dn">-1.24%</span>、布伦特 11 月 <span class="dn">-1.09%</span>）。<b>惠誉上调 2027 年石油价格预期</b>，同时维持 2026 年布伦特原油 <b>87 美元/桶</b>的预期。泽连斯基称已准备好与俄罗斯实现能源停火。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">财经图集</span><span class="time">09-22 18:12</span></div>
+    <div class="txt"><span class="hd">关键相关性变化：</span>「<b>美债收益率与油价的相关性升至多年高位</b>」；制裁压力迫使<b>印度考虑减少俄罗斯原油采购</b>；全球能源融资扩张但绿色转型比例仍不足。另提示「沙特原油出口回升仍受地区安全风险限制」。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">财经图集</span><span class="time">09-22 07:25</span></div>
+    <div class="txt"><span class="hd">战争拉长航线推动中国造船订单爆发：</span>中国造船业上半年新订单接近增长两倍，按载重吨计算拿下 2026 年全球 <b>82% 的油轮订单</b>；6 月底手持订单达 <b>3.6325 亿载重吨</b>，相当于约七年的建造量。美伊战争及霍尔木兹海峡受阻迫使能源运输改走更长航线，推高船舶需求，<b>油轮日租金一度超过 100 万美元</b>，并催生逾 200 亿美元新订单。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-21 09:29</span></div>
+    <div class="txt"><span class="hd">光大石化周观点：IEA 下调原油供需预期。</span>IEA 预计 <b>2026 年全球原油需求下降 250 万桶/日</b>（需求预测值下调 94 万桶/日），2027 年回升 260 万桶/日、勉强抵消今年降幅；供给端 2026 年总供应下降 570 万桶/日、2027 年反弹 800 万桶/日。8 月全球观测原油库存 <b>-9,500 万桶</b>，自 2 月以来累计 <b>-5.07 亿桶</b>（≈280 万桶/日）。成品油：海湾国家 8 月柴油净出口 <b>39 万桶/日</b>（仅为冲突前 1/4 有余）；8 月海湾+俄罗斯成品油净出口合计较 2 月 <b>-160 万桶/日</b>（2 月两地占全球成品油海运贸易近 45%）。炼厂开工：8 月欧洲 <b>90.43%</b>、9/11 当周美国 <b>96.80%</b>，均处年内高位。化工产能：陶氏、道达尔、SABIC 已敲定欧洲乙烯蒸汽裂解、聚乙烯装置<b>永久关停时间表</b>。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">财经图集</span><span class="time">09-21 07:17</span></div>
+    <div class="txt"><span class="hd">持仓结构：</span>「<b>原油多空仓位同步增加，市场分歧加剧</b>」——多空同时加仓，显示当前油价位置并无一致性预期。</div>
+  </div>
+
+</div>
+
+<h2>宏观 <span class="cnt">命中 30 条 · 取 10 条</span></h2>
+<div class="group">
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 09:06</span></div>
+    <div class="txt"><span class="hd">盘前追踪：</span>纳指继续创新高，<b>费城半导体连续六个交易日上涨</b>；宏观与产业双重利好，市场关注地缘冲突缓解，特朗普称将在中期选举结束后终结冲突、美伊正式谈判、伊朗总统已抵美，油价回落缓解通胀压力。A 股昨日量能放大至 <b>2.15 万亿</b>，双创均触及均线压制，<b>IM 期指摸到 8 月高点</b>，3950-3990 区间存在筹码交互压力；判断「到 10 月中旬宏观数据出来前都比较中性」。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 09:04</span></div>
+    <div class="txt"><span class="hd">AI 硬件材料三条边际（散热 / 供电 / 基板）：</span><b>①石墨烯散热（08:53）</b>——AI 芯片 TIM 材料沿硅脂（H100）→相变材料（GB200/300）→石墨烯垫片（Rubin）迭代，<b>NV 服务器除单独售卖的芯片外全部采用石墨烯作 TIM2</b>；石墨烯垫片比相变片贵 <b>10 倍</b>、比硅脂贵 <b>50 倍</b>，按均价 100 元/片、明年 Rubin 10 万柜测算对应 <b>10 亿元以上</b>市场空间，国内龙头 NV 份额 <b>80%-90%</b>、4Q26 起放量。<b>②AI 陶瓷（09:04）</b>——1.6T 光模块配套陶瓷件总价约 <b>400 元</b>、占 BOM 成本 10% 左右，DPC 线距公差要求 ±3μm、TEC 板厚/铜厚均匀性 ±5μm（普通板 ±10μm），扩产壁垒在金属化环节。<b>③VPD 供电（08:28）</b>——Vicor 上调 Q3 营收环比指引至<b>超 20%</b>（原近 10%），下一代 GPU 功耗突破 <b>1800W</b>，VPD 垂直供电、模块化电源、800V HVDC 成刚需。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:22</span></div>
+    <div class="txt"><span class="hd">出口：会谈叙事积极，国内关税有望下降。</span>财政部长贝森特与何立峰副总理在纽约会晤，贝森特称双方接触「非常成功」；预计<b>关税休战延期、非战略用品关税互免</b>等关键事项进展积极，<b>重点跟踪双方首脑 9 月 24 日美国会谈</b>。非战略用品关税互免主要聚焦低端消费品、轻工业/日用及其他非关键工业零部件。另需注意：美国产能过剩 301 关税、越南知识产权 301 关税（<b>预计 11 月落地</b>）或缩小我国与东南亚关税差。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 07:25</span></div>
+    <div class="txt"><span class="hd">9/22 复盘（AI 与产业数据）：</span><b>阿里</b> 2026.9 MaaS 收入达 <b>200 亿元</b>（约 29 亿美元），较 8 月 160 亿元（约 23.5 亿美元）月环比 <span class="up">+25%</span>，有望年底达 300 亿元；阿里云目标 2032 年数据中心超 <b>20GW</b>；千问参数规模扩至 <b>2.4T</b>（全球累计下载超 30 亿次），已启动 5-10T 参数规模下一代研发。<b>AI 眼镜</b>：2026 上半年全球出货 <b>420 万副</b>（<span class="up">+127%</span>），中国市场 <span class="up">+306%</span>，Meta 以 340 万副拿下 <b>81.3%</b>份额。<b>锂电</b>：10 月总排产约 <b>345GWh</b>（<span class="up">+3.9%</span>）。<b>自动驾驶</b>：万钢预计 2030 年 L2 普及率达 90%、L3 及以上渗透率超 35%。<b>北斗</b>：产业规模将五年内突破 1 万亿元（当前总产值已破 6,290 亿元）。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">财经图集</span><span class="time">09-23 07:21</span></div>
+    <div class="txt"><span class="hd">三组关键数字：</span><b>①汇兑损失创新高</b>——中国非金融上市公司 2026 上半年录得约 <b>700 亿元</b>汇兑损失，相当于总利润的 <b>4%</b>，为十年来最高（集中于信息技术、工业与材料）；但境外收入仍增长 23%，<b>海外收入占比过半的企业利润增长 80%</b>，出口增长仍足以覆盖汇率拖累。<b>②持仓高度集中</b>——境内公募已有 <b>43%</b> 资产配在信息技术板块（较 A 股指数权重高 14pct）；融资最集中的前 10% 科技股占全部 A 股融资余额 <b>30%</b>（中国 AI 企业上半年利润 +40% vs 非 AI +7%）。<b>③港股新股长期回报转负</b>——2026 年上市港股挂牌一周/一月/三月后回报中位数约 <b>26%/23%/21%</b>，<b>六个月后转为约 -10%</b>；今年已有逾 200 家公司上市、合计融资 770 亿美元。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-22 23:02</span></div>
+    <div class="txt"><span class="hd">大摩 · IT 硬件：企业硬件支出现状。</span>二季度传统服务器收入同比 <span class="up">+87%</span>、存储增速加速至 <span class="up">+34%</span>、PC 收入 <span class="up">+14%</span>，均创十年（除疫情期）新高；但 8 只企业硬件股中有 6 只当前估值倍数已低于业绩发布前水平，板块平均市盈率压缩约 1 倍——<b>存储处于上行周期最早阶段、服务器已深入中段、PC 出货量正快速恶化</b>。首选超配 Pure Storage、TD Synnex，其次 HPE；最不看好 HP Inc.。催化剂密集：<b>9/23 P 分析师日、9/24 SNX 业绩、9/30 HPE 网络分析师日</b>。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-22 21:30</span></div>
+    <div class="txt"><span class="hd">DRAM 模组：</span>2025 年全球 DRAM 模组市场营收达 <b>212 亿美元</b>，同比 <span class="up">+59%</span>（2024 年仅 +7%），主因下半年价格大涨叠加模组厂集中出货。前五大模组厂占整体营收 <b>77%</b>、前九大占 81%：金士顿市占 <b>62%</b>（营收 +48%）、威刚 +82%、博帝 +89%、宜鼎 +132%、宇瞻 +96%。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-22 19:22</span></div>
+    <div class="txt"><span class="hd">城堡投资 Rubner：</span>战术观点不变——<b>股市在月底前仍有进一步下行空间</b>。回购正在进入静默期，<b>7 万亿美元的期权敞口已于上周五到期退出</b>，系统化策略仓位仍是潜在卖压来源，季末再平衡不利，且正进入中期选举年份中季节性表现最弱的阶段。历史上从当前时点至 9/30 平均跌幅约 <b>1.1%</b>，随后 10 月逐步回升，<b>从 9/30 低点到年底平均涨幅 5.6%</b>。策略：利用月底前的进一步走弱增持核心多头。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-21 17:07</span></div>
+    <div class="txt"><span class="hd">韩股回购买盘将消失：</span>三星电子与 SK 海力士合计 <b>34.6978 万亿韩元</b>的回购可能<b>提前至 10 月中旬</b>结束（早于原定 11 月）。三星已买入计划数量的 <b>74.69%</b>、剩余 1348 万余股（约需 6-7 个交易日）；SK 海力士已买入 <b>58.79%</b>、剩余 992 万股（约需 15-16 个交易日）。压力项：布伦特原油处于 100 美元水平、10Y 美债收益率接近 5%、美元兑韩元 1385 区间。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">研报平权</span><span class="time">09-20 13:14</span></div>
+    <div class="txt"><span class="hd">高盛 · 新兴亚洲分化：</span>马来西亚作为亚洲第 3 大科技出口地，数据中心建设动能延续至 2027 年、天然气涨价使其成为新兴亚洲最大受益方；<b>泰国 2Q26 经常账户陷入 5.75 亿美元逆差</b>（8 个季度以来首次转负）。<b>韩国</b>：央行 2026 年 8 月加息至 3.0%，但利率互换市场计入约 4 次加息、1 年远期 3 个月利率冲上 <b>4.20%</b>，高盛预计本轮终点仅 <b>3.25%</b>（即只剩 1 次 25bp 空间）。<b>印度</b>：非居民外币存款计划吸收 <b>1,280 亿美元</b>（远超预估 800 亿）并提前收官，美元兑卢比稳定在 95-97。<b>中国</b>：商品贸易顺差占 GDP 约 6%，过去 12 个月不含黄金的贸易顺差累计 <b>1.3 万亿美元</b>，实际有效汇率低估约 <b>20%</b>，为后续每年对美元升值 3%-5% 形成底盘。</div>
+  </div>
+
+</div>
+
+<h2>铜 <span class="cnt">命中 28 条 · 双线分列</span></h2>
+
+<h3 class="sub">A. 电解铜 <span class="tag">价格 / 矿端 / 库存 / 需求侧边际</span></h3>
+<div class="group">
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 07:59</span></div>
+    <div class="txt"><span class="hd">摩根大通 · 紫金矿业 A/H 西藏调研纪要：</span>巨龙铜矿 <b>2026 年前 8 个月产铜 186.4 千吨</b>（同比 <span class="up">+47%</span>），全年目标 <b>300-313 千吨</b>（<span class="up">+57%-62%</span>）；前 8 个月营收 212 亿元（<span class="up">+96%</span>）、归母净利 66 亿元，全年营收目标约 350 亿元（<span class="up">+110%</span>）、净利 105 亿元。二期 1 月试产，回收率 <b>86%</b>（一期达到同等水平耗时 4-5 年），当前选矿回收率已达 <b>90%</b>（同比 +2.7pct）。成本：铜现金成本（扣副产品抵扣后）<b>24,700 元/吨</b>（同比 <span class="up">+17.7%</span>，扣除前 34,000 元/吨），矿石单位成本 90.73 元/吨（<span class="up">+13.9%</span>）。2027 年产量指引 310-320 千吨，无三期下 2029-2030 年进入高品位区后可达 <b>350-400 千吨</b>；雄龙名义产能 76.4 千吨/年、天原/雄村约 46.6 千吨/年。维护增持，<b>A 股目标价 46.00 元</b>（9/21 收 31.30 元）、H 股 50.00 港元。风险：尾矿审批与西藏资源税改革。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:00</span></div>
+    <div class="txt"><span class="hd">大摩 · 美的集团电话会：</span>3Q <b>铜及塑料价格压力较 2Q 难言缓解</b>，但外汇拖累随套保增加及基数效应收窄。ToC 海外 OEM 订单增速自 1H26 的中高单位数<b>提升至 7-8 月的双位数</b>，OBM 维持双位数增长；1H26 国内空调行业整体中单位数下滑，美的实现约 <b>10%</b> 增长。热泵出口 1H26 对欧盟同比 <span class="up">超 60%</span>。目标价 A 股 99.00 元（隐含 17% 上行）、H 股 103 港元，维持超配。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">财经图集</span><span class="time">09-22 18:12</span></div>
+    <div class="txt"><span class="hd">现货与铜价位置：</span>当日要点明确列示「<b>中国现货紧张推动铜价逼近历史高位</b>」——即本轮铜价上行的现货基础在中国端而非欧美库存。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">研报平权</span><span class="time">09-23 00:00</span></div>
+    <div class="txt"><span class="hd">需求侧替代风险：</span><b>铜缆触及物理极限</b>，推动数据中心转向光互连——横向扩展光互连密度达基准链路的约 <b>10 倍</b>，纵向扩展光模块用量在 2026-2027 年<b>翻倍</b>。这条是电解铜在 AI 场景的<b>替代性边际</b>，与下面覆铜板链的「用铜量增加」方向相反，需分开跟踪。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-21 21:07</span></div>
+    <div class="txt"><span class="hd">需求侧增量：</span>安费诺展台首次现场演示 <b>XPO 收发器</b>——液冷 64 通道、224G/lane PAM4 运行（未使用 FEC），从金手指到交换机 ASIC 的电气 I/O 通过 <b>CPC（共封装铜缆）</b>连接，<b>因此铜用量更多</b>；单交换机装入 8 个模块可达 <b>100T</b>。厂方称可与 NPO 媲美。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-21 07:26</span></div>
+    <div class="txt"><span class="hd">天风金属 · 铜周报（截至 9/18 周度）：</span>LME 铜 <span class="up">+2.36%</span> 至 <b>14,562.0 美元/吨</b>，LME 库存环比 <span class="up">+12,200 吨</span> 至 <b>255,100 吨</b>；COMEX 铜 <span class="up">+2.42%</span> 至 6.7155 美元/磅，库存 -64.41 吨至 696,215.2 吨；SHFE 铜 <span class="up">+0.58%</span> 至 <b>109,620 元/吨</b>，库存 <span class="dn">-1,293 吨</span> 至 56,073 吨。<b>矿端：</b>SMM 进口铜精矿指数（周）<span class="dn">-12.19</span> 至 <b>-221.89 美元/干吨</b>；SMM 上海平水铜现货升贴水 <span class="up">+670</span> 至 735 元/吨；电解铜社会库存（不含保税）+0.16 万吨至 8.91 万吨；10-11 正套周度 +50 至 430 元/吨；C-L 价差 +33.36 至 239.23 美元/吨。<b>挤仓降温：</b>9/17 LME 注销仓单占比 <b>45.26%</b>（较上周五 -2.62pct）；9/18 Cash-3M 升水 21.55-10.38 美元/吨；LME 261021 合约持仓约 <b>2.22 万手</b> vs 可交割仓单 <b>5,586 手</b>（注册仓单 139,650 吨）。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src w7">Orange期权</span><span class="time">09-20 15:26 · 7天窗口</span></div>
+    <div class="txt"><span class="hd">沪铜周度深度：</span>沪铜处于「<b>高位剧烈换手后的多空重构期</b>」，后市波动会显著放大，<b>节奏比方向更重要</b>（波动率视角，详见期权板块）。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src w7">财经图集</span><span class="time">09-18 17:28 · 7天窗口</span></div>
+    <div class="txt"><span class="hd">供给侧收缩：</span>「<b>铜价高企与原料短缺推动中国铜材减产</b>」——高铜价叠加原料紧张已开始压缩国内铜材加工产量，是近一周铜线唯一的冶炼/加工端减产信号。</div>
+  </div>
+
+</div>
+
+<h3 class="sub">B. 铜箔-覆铜板 <span class="tag">AI 材料链（与铜价逻辑完全独立）</span></h3>
+<div class="group">
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 09:09</span></div>
+    <div class="txt"><span class="hd">摩根大通 9/23 晨报：</span>今日科技重点含 <b>「PCB、覆铜板与载板：Prismark 专家电话会要点」</b>；HBM 供需模型更新——<b>降规之后仍存在价格利好，2026-28E 需求复合增速 63%</b>；另列存储多空博弈（市场已计入极端悲观情景，未来 12 个月风险收益比具吸引力）。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 09:06</span></div>
+    <div class="txt"><span class="hd">生益科技（覆铜板龙头）：</span>高盛全球 AI PCB/CCL 报告预测 <b>AI 覆铜板市场规模 2026-28 年分别同比增长 181% / 217% / 115%，2028 年达 475 亿美元</b>（价值量口径，量增叠加规格升级）。份额：<b>英伟达 CCL 分配中生益占 55-60%，华为 CCL 份额中占 65%</b>。产能：泰国工厂 2026 年 9 月投产、2027 年国内再加新产能，订单簿仍旧饱满。业绩：<b>3Q26E 收入同比 +59%、环比 +16% 至 130 亿元</b>，毛利率守住 30% 以上。高盛目标价 <b>249 元</b>。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:53</span></div>
+    <div class="txt"><span class="hd">玻璃基板（京东方交流）：</span>力争 <b>27Q1 或上半年量产</b>；试验线已全线拉通，覆盖 TGV 打孔、镀铜、ABF 增层、封装切割全流程，产品处于送样验证阶段；未来 1-2 年将在半导体封装领域布局。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:32</span></div>
+    <div class="txt"><span class="hd">大摩 · 大中华科技（封装 / CCL / 铜箔）：</span>中国先进封装 2029 年 TAM 将达 <b>1,000 亿元</b>，其中 Chiplet 2.5D 以 <b>40% 年复合增速</b>扩张，2027 年中国 2.5D 封装年产能增至 <b>43.6 万片</b>晶圆。<b>CCL/PCB：</b>AI / 数据中心相关 CCL 市场 2025-2030 年复合增速 <b>47%</b>，PCB 同期 <b>18%</b>，AI 需求将为 PCB 市场新增逾 <b>700 亿美元</b>规模；<b>先进 AI PCB 生产周期长达 102 天，是常规 PCB 的 2.2 倍</b>。<b>铜箔：HVLP4 预计 2027 年供应缺口约 31%、2028 年约 20%</b>，供需紧平衡支撑加工费溢价。个股：长电科技（超配，目标价 90.2 元）、盛合晶微（均配，目标价 118.4 元）。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-22 11:16</span></div>
+    <div class="txt"><span class="hd">英特尔玻璃基板专利：</span>芯片裸片<b>直接嵌入玻璃基板</b>，通过 TGV 为片上 MicroLED 供电；玻璃基板经激光诱导刻蚀+化学刻蚀形成通孔与裸片腔体，再铜电镀形成 TGV。英特尔自 2023 年展示首批样品后持续扩产，ECTC 2026 已展示 HVM 验证（通孔形成、金属化、<b>24 层布线</b>、翘曲控制、光电集成），并与 3D Glass Solutions 合作。关键信号在玻璃基板本身：正被定位为具备功能的<b>异构集成平台</b>，而非仅有机基板替代材料。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-22 08:09</span></div>
+    <div class="txt"><span class="hd">AI 服务器架构升级推升 PCB 与钻针消耗（美银）：</span>2026 下半年交付的 <b>VR200 机柜采用无铜缆设计，单机 PCB 价值量达 6 万-8 万美元，是 GB200 的 3 倍</b>；2027 年 Rubin Ultra 平台单机价值更将突破 <b>10 万美元</b>。耗材瓶颈：为承载 224G 高频，基板转向含石英玻璃布的 <b>M9 材料</b>，单根涂层钻针寿命从 M7 的 <b>1,000 孔骤降至 100-200 孔</b>，单板钻针消耗量<b>激增 5 倍</b>；美银预测英伟达相关 AI 钻针市场 2028 年达 <b>140 亿元</b>。设备端：钻孔设备占 PCB 设备总资本开支 <b>21%</b>（最大单项），中国 PCB 厂 2026 年资本开支<b>同比增加 1 倍以上</b>；全球 PCB 钻孔设备市场 2029 年达 27 亿美元。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-21 20:05</span></div>
+    <div class="txt"><span class="hd">HVLP4 铜箔供需与加工费：</span>按 80-90% 良率估算，<b>英伟达 Rubin、LPU、AWS、Meta、AMD、800G 交换机加总约 1,200-1,300 吨/月</b>；若看实际 PCB 生产可能到 1,400 吨/月，另一口径甚至 3,000 吨以上。HVLP4 加工费约 <b>25-30 美元/公斤</b>；AWS、英伟达 Rubin、800G 交换机是最大需求来源。产能：2026 年高阶产能约 1,200-1,300 吨/月，2027 年可到 <b>2,300-2,400 吨/月</b>；<b>福邦把 2026 年缺口下修到约 27%，2027 年上修后仍有约 17%</b>。另：<b>T-Glass</b> 缺口 2027 年可能从约 19% 升到 <b>32%</b>、2028 年上看 <b>51%</b>（七成需求在 FCBGA/ABF）；<b>Q-Glass</b> 先在 LPU 放量，LPU 需求约 12-13 千、对应 Q glass 约 110 万米/月（算上良率损耗需 210-220 万米/月）。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">研报平权</span><span class="time">09-21 00:00</span></div>
+    <div class="txt"><span class="hd">三井金属：</span>因同行估值回调与马来西亚产线认证推迟，目标价由 56,000 日元下调至 <b>36,000 日元</b>，但供需紧张未逆转——大摩预测 <b>2027 年全球 HVLP4 铜箔月需求增长 218% 至 3,270 吨</b>；即便三井 2027 年产能份额降至 <b>33%</b>，全行业严重缺口仍拉动其出货量<b>增长 70%</b>，且 2027 财年实现 <b>21% 产品涨价</b>。光模块超薄铜箔：2031 财年月度目标提高至 60 万平方米，整体超薄铜箔月产能 2029 财年扩至 <b>800 万平方米</b>。盈利结构：AI 铜箔经常性利润从 2026 财年 <b>200 亿日元</b>增至 2029 财年 <b>750 亿日元</b>，占比 <b>15%→46%</b>。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">研报平权</span><span class="time">09-20 15:35</span></div>
+    <div class="txt"><span class="hd">鼎泰高科（钻针）：</span>约 <b>95% 生产设备自研自产</b>，产能扩建周期压缩至 <b>3 个月</b>（全球同行普遍 8-12 个月）；美银预计全球市占率从 2025 年 <b>29%</b> 提升到 2027 年 <b>40% 以上</b>。结构升级：深径比超 50:1 的高精度钻针单价约 <b>20 元</b>（传统钻针 10 倍以上），平均单价将从 1.22 元<b>翻倍至 2028 年 2.35 元</b>，综合毛利率从 42.3% 扩张到 <b>60.6%</b>；2026-28 年净利润复合增速 <b>90%</b> 达 60.4 亿元。风险：以碳化钨和钴为主的直接材料占营业成本 <b>50%</b>，且钨钢仍依赖日本供应商。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src w7">研报平权</span><span class="time">09-17 18:11 · 7天窗口</span></div>
+    <div class="txt"><span class="hd">材料瓶颈与估值洼地（大摩）：</span>到 2030 年数据中心电路板需求将<b>增长逾 6 倍至 860 亿美元</b>，但掌握核心原料的上游材料板块 2026 年预测市盈率仅约 <b>26 倍</b>，显著低于下游制造环节的 <b>35 倍</b>。特种电子玻纤布严重断供：占据全球约 <b>90%</b> 特种低膨胀玻纤供应的日东纺扩产周期长达近两年，导致 2026-2027 年供需缺口持续；2027 年高阶铜箔面临 <b>31%</b> 供给缺口。</div>
+  </div>
+
+</div>
+
+<h2>期权 <span class="cnt">命中 13 条 · 取 10 条（含 7 天窗口补充 2 条）</span></h2>
+<div class="group">
+  <div class="note">3 天窗口有效条目偏少（Orange期权 3 条 + 交易台/机构视角 2 条），另从近 7 天窗口补 2 条 Orange 实盘策略，已标注 <span class="src w7" style="background:#f4f0e4;color:#7d6a3e;">· 7天窗口</span>，不计入顶部统计口径。命中数中含有明显蹭词噪声（如「BCB 树脂期权」），已剔除。</div>
+
+  <div class="item">
+    <div class="meta"><span class="src">Orange期权</span><span class="time">09-23 09:33</span></div>
+    <div class="txt"><span class="hd">红枣 · 卖近买远组合止盈：</span>近月隐波走低、远月隐波走高，日历（卖近买远）组合可获利了结，<b>一组赚六七十</b>。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">小牛研报纪要</span><span class="time">09-23 08:01</span></div>
+    <div class="txt"><span class="hd">美股衍生品资金流（交易台）：</span>纳指 100 收盘创 6 月以来首个新高，<b>固定行权价波动率受买盘推动，曲线中段与远端上行，波动率终于脱离夏季持续低位运行的底部区间</b>。资金流：市场出现 <b>VIX 十月期权买盘</b>——<b>10 月 17 日跨式期权与 10 月 18 日看跌期权均有 2 万张成交</b>；交易台<b>看好 10 月 20 日看涨期权</b>，认为在密集事件日历到来前以相对低廉的价格提供有吸引力的凸性。标普 500 固定行权价波动率遭卖盘、偏斜度大幅收窄；半导体各期限看涨期权均迎买盘。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">Orange期权</span><span class="time">09-22 23:15</span></div>
+    <div class="txt"><span class="hd">实盘复盘（账户总资金 2300+，浮亏 504）：</span><b>①鸡蛋 2611 C4000</b>——周一 13:40 入场认购、成本 44，收盘后发现国泰东证开始平多做空、结合尾盘隐波回落，次日开盘拉升后收长上影线且隐波回落，止损离场，<b>亏约 150 元</b>。<b>②碳酸锂 P110000</b>——当日最危险一单：开盘出现隐波背离（价格下跌、隐波升高）叠加滞涨，成本 700、止损设 550，随后价格反弹、隐波下跌，在 <b>600 提前手动止损</b>（这次选择相信盘感、打破交易规则），之后出现大幅背离下跌、期权价格从 700 跌到 <b>230</b>，<b>亏 240+</b>。<b>③焦煤 P1300</b>——成本 14.4、复盘价 10.3，仍持仓（机构资金分化、整体净持仓偏空 + 隐波背离，15 分钟 5 日线下穿 18 日线时进场）。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">09-22 19:22</span></div>
+    <div class="txt"><span class="hd">期权敞口与月末流动性：</span>城堡 Rubner 指出 <b>7 万亿美元的期权敞口已于上周五到期退出</b>，叠加回购静默期、系统化策略潜在卖压、季末再平衡，构成月底前的机械性卖压来源；并判断 9/30 低点至年底中选年平均 <span class="up">+5.6%</span>，计划利用月底走弱增持核心多头。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">Orange期权</span><span class="time">09-22 18:02</span></div>
+    <div class="txt"><span class="hd">09.22 复盘 / 明日计划：</span><b>有色</b>——沪铜看涨价差<b>考虑止盈</b>，后面再操作；<b>股指</b>——中证 1000 关注做多波动率机会，节前两天可轻仓低吸；<b>生猪鸡蛋</b>——鸡蛋看跌价差可加卖 put；<b>能化</b>——情绪回落，除沥青外的弱势品种在背离反弹后考虑看跌价差；<b>广期所</b>——多晶硅看跌价差<b>止损、先观望</b>；<b>油脂油料</b>——棕榈比例购止盈，豆粕可做牛三腿；<b>红枣</b>——可做比例购。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">Orange期权</span><span class="time">09-21 17:48</span></div>
+    <div class="txt"><span class="hd">09.21 复盘：</span><b>股指</b>——中证 1000 短期看降波上涨，再持续几天会有<b>做多 Gamma</b> 的机会；<b>有色</b>——沪铜仍可考虑做看涨价差；<b>油脂</b>——棕榈比例购 1:2 权利金平衡组合继续持有，弱反弹时止盈离场；<b>红枣</b>——可做比例购。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">Orange期权</span><span class="time">09-21 13:40</span></div>
+    <div class="txt"><span class="hd">红枣波动率回归策略：</span>可做<b>看涨日历价差</b>（卖出深度实值认购 2 份 + 买入平值认购 1 份），或做<b>对角价差</b>（卖出近月认购 7200 + 买入远月认购 7400），本质是做波动率套利回归。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src">Orange期权</span><span class="time">09-20 15:26</span></div>
+    <div class="txt"><span class="hd">沪铜周度深度：</span>沪铜处于「高位剧烈换手后的多空重构期」，<b>后市波动会显著放大，节奏比方向更重要</b>——与电解铜线的基本面判断相互独立，属波动率视角。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src w7">Orange期权</span><span class="time">09-18 10:05 · 7天窗口</span></div>
+    <div class="txt"><span class="hd">铜隐波末日轮（前序点位，供对照）：</span>当时判断铜的隐波很低，<b>12-13 隐波</b>下双买做多波动率性价比高，可在末日期权上小仓位试「彩票」（明确彩票仓位就是买入那一刻即可接受归 0），当天近月跌波、远月升波、外盘同步升波。</div>
+  </div>
+
+  <div class="item">
+    <div class="meta"><span class="src w7">Orange期权</span><span class="time">09-17 13:53 · 7天窗口</span></div>
+    <div class="txt"><span class="hd">跨品种隐波错配打法：</span>沥青近月隐波过高、远月过低 → <b>卖出近月认购平值 + 买入远月平值认购</b>（暴露 Gamma）；同时燃油近月隐波跌太多、远月未动 → <b>买入近月 4450 认沽 + 卖出远月 4300 认沽</b>（反日历价差、做多 Gamma）。即「<b>沥青卖近买远、燃油买近卖远</b>」，两个品种同时吃隐波差回归并对冲 Gamma 风险。</div>
+  </div>
+
+</div>
+
+<h2>关键时间点 <span class="cnt">未来几天</span></h2>
+<div class="cal">
+  <div class="row"><div class="d">9/23（周三）</div><div class="e">摩根大通分析师会：冶金及动力煤市场前景（9:00）、全球 TMT Spec Sales 反馈及 Idea（14:00）、宏发股份公司会（16:00）；<b>Pure Storage（P）分析师日</b>——焦点为 3-4 年后营业利润率指引，达 20% 中段符合预期</div></div>
+  <div class="row"><div class="d">9/24（周四）</div><div class="e"><b>中美元首会谈</b>（跟踪关税休战延期、非战略用品关税互免）；国新办 10:00 举行「十五五」文旅高质量发展发布会；<b>Meta Connect</b> / 音频类 AI 眼镜 luna 发布；TD Synnex（SNX）业绩</div></div>
+  <div class="row"><div class="d">9/26（周五）</div><div class="e">HNB 国标征求意见截止——产品定型与供应链招标临近</div></div>
+  <div class="row"><div class="d">9/28（周一）</div><div class="e">荣耀 Magic9 系列发布，首批搭载阿里 Qwen Intelligence 的机型</div></div>
+  <div class="row"><div class="d">9/30（周三）</div><div class="e"><b>季末 / 月末</b>：回购静默期 + 季末再平衡；中选年此窗口平均跌幅约 1.1%；HPE 网络分析师日</div></div>
+  <div class="row"><div class="d">10 月中旬</div><div class="e">三星电子与 SK 海力士回购预计结束（合计 34.7 万亿韩元）；中国 10 月中旬宏观数据发布（此前政策与市场预期相对中性）</div></div>
+  <div class="row"><div class="d">10/12-10/14</div><div class="e">摩根大通中韩机器人调研（首尔 / 上海）</div></div>
+  <div class="row"><div class="d">10/17-10/20</div><div class="e">美股 10 月期权到期窗口（10/17 跨式、10/18 看跌期权各约 2 万张成交）；<b>10/19 芝商所推出比特币现金与 Uniswap 期货</b>；10/20 交易台重点看好看涨期权</div></div>
+  <div class="row"><div class="d">10/22</div><div class="e">微软创新日（Pure Storage 参加，关注其能否成为第二家超大规模客户）</div></div>
+  <div class="row"><div class="d">11 月</div><div class="e">美国产能过剩 301 关税、越南知识产权 301 关税预计落地；11/16-18 摩根大通亚太科技创新与增长峰会（香港）</div></div>
+</div>
+
+<footer>
+  <b>数据来源（知识星球，仅只读检索）：</b>小牛研报纪要、研报平权、财经图集、404K Semi-Ai、Orange期权；本轮「海外宏观」星球返回 0 条内容（抓取接口异常 <code>latest=0</code>），「隔壁老王爱博弈」抓取 30 条但无主题命中，故本报告未含这两家内容。<br>
+  <b>抓取范围：</b>2026-09-21 至 09-23 全量翻页 + 本地关键词过滤（3 天窗口，抓取 502 条，四主题命中 26 / 30 / 28 / 13，去重后 64 条）；电解铜线与期权板块另从近 7 天窗口（抓取 567 条、去重前命中 36 / 39 / 37 / 28）补充少量条目，已在条目旁标注「· 7天窗口」，不计入顶部统计口径。<br>
+  <b>免责声明：</b>本报告内容均为知识星球原文摘录与整理，观点与数据归属原发布机构与作者，不代表本报告立场，<b>不构成任何投资建议</b>；所涉价格为报告口径下引用值，实际交易请以交易所与官方数据为准。
+</footer>
+
+</div>
+</body>
+</html>

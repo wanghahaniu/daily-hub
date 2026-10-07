@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日市场分析笔记 · 2026-09-14</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: linear-gradient(180deg, #eef1f8 0%, #f6f4fb 100%);
+    color: #2b2b3a;
+    line-height: 1.75;
+    padding: 24px 14px 40px;
+  }
+  .page { max-width: 760px; margin: 0 auto; }
+
+  /* ===== 头部 ===== */
+  .header {
+    background: linear-gradient(135deg, #5b6cff 0%, #8a5cf6 55%, #b45ce0 100%);
+    border-radius: 18px;
+    padding: 30px 28px 26px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, .25);
+  }
+  .header h1 { font-size: 26px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+  .header .sub { margin-top: 10px; font-size: 13.5px; opacity: .92; }
+  .header .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .header .tags span {
+    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35);
+    padding: 3px 12px; border-radius: 999px; font-size: 12.5px;
+  }
+  .header .meta { margin-top: 14px; font-size: 12.5px; opacity: .85; }
+
+  /* ===== 卡片通用 ===== */
+  .card {
+    background: #fff; border-radius: 16px; padding: 22px 24px;
+    margin-top: 18px; box-shadow: 0 4px 16px rgba(60,60,120,.07);
+  }
+  .card-title {
+    font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 9px;
+    padding-bottom: 12px; margin-bottom: 14px; border-bottom: 2px dashed #e6e6f2;
+  }
+  .card-title .ico { font-size: 20px; }
+  .card .src { font-size: 12px; color: #8a8a9c; margin-top: 6px; }
+
+  /* 关键词高亮 */
+  .hl { font-weight: 700; }
+  .hl-red   { color: #e0492f; }
+  .hl-green { color: #1c9c54; }
+  .hl-blue  { color: #3563e9; }
+  .hl-purple{ color: #8a5cf6; }
+  .hl-orange{ color: #e07b1f; }
+  mark { background: #fff1a8; padding: 0 4px; border-radius: 4px; font-weight: 600; color:#5a4a00;}
+
+  /* 今日概览 chips */
+  .chip-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chip {
+    border-radius: 10px; padding: 10px 14px; font-size: 13.5px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .chip small { display:block; font-weight: 400; opacity: .8; font-size: 12px; }
+  .chip.c-green  { background: #e8f7ee; color: #157a41; border-left: 4px solid #2ebd6e; }
+  .chip.c-red    { background: #fdecea; color: #c03a24; border-left: 4px solid #e0563c; }
+  .chip.c-blue   { background: #e9effe; color: #2b54c9; border-left: 4px solid #4c7df0; }
+  .chip.c-orange { background: #fdf1e3; color: #b96a12; border-left: 4px solid #f09a3e; }
+
+  /* 结论条 */
+  .takeaway {
+    margin-top: 14px; border-radius: 10px; padding: 12px 16px; font-size: 14px;
+    background: #f4f0fe; border: 1px solid #ddd0fa; color: #5b3ea8;
+  }
+  .takeaway b { color: #7a3fd0; }
+  .takeaway.warn { background: #fdf1e3; border-color: #f5d9b0; color: #9a5b0e; }
+  .takeaway.warn b { color: #c46a00; }
+  .takeaway.danger { background: #fdecea; border-color: #f6c6bd; color: #b03020; }
+  .takeaway.danger b { color: #d03517; }
+
+  /* 编号小节 */
+  .step { display: flex; gap: 12px; margin-top: 14px; }
+  .step .num {
+    flex: 0 0 26px; height: 26px; border-radius: 50%; color: #fff; font-size: 14px;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; margin-top: 2px;
+  }
+  .step .num.n1 { background: #4c7df0; } .step .num.n2 { background: #8a5cf6; } .step .num.n3 { background: #e0563c; }
+  .step .body { flex: 1; }
+  .step .body h4 { font-size: 15px; margin-bottom: 4px; }
+  .step .body p { font-size: 13.8px; color: #4a4a5c; }
+
+  /* 数据卡片 */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0 4px; }
+  .stat {
+    background: #f6f8ff; border: 1px solid #e2e8fb; border-radius: 10px;
+    text-align: center; padding: 12px 6px;
+  }
+  .stat .v { font-size: 19px; font-weight: 800; color: #3563e9; }
+  .stat .k { font-size: 12px; color: #6a6a7c; margin-top: 2px; }
+
+  /* 情景对比 */
+  .scenario { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .sc-box { border-radius: 12px; padding: 14px 16px; font-size: 13.8px; }
+  .sc-box h4 { font-size: 14.5px; margin-bottom: 6px; }
+  .sc-a { background: #fdecea; border: 1px solid #f3c2b8; }
+  .sc-a h4 { color: #c03a24; }
+  .sc-b { background: #e8f7ee; border: 1px solid #bfe6cd; }
+  .sc-b h4 { color: #157a41; }
+
+  /* 时间轴 */
+  .timeline { margin-top: 10px; }
+  .tl-item { display: flex; gap: 12px; position: relative; padding-bottom: 14px; }
+  .tl-item::before {
+    content: ""; position: absolute; left: 7px; top: 18px; bottom: 0; width: 2px; background: #e0dff0;
+  }
+  .tl-item:last-child::before { display: none; }
+  .tl-dot { flex: 0 0 16px; height: 16px; border-radius: 50%; background: #8a5cf6; margin-top: 5px; box-shadow: 0 0 0 4px #efe9fd; }
+  .tl-item p { font-size: 13.8px; color: #4a4a5c; }
+  .tl-item b { color: #2b2b3a; }
+
+  /* 研报清单表格 */
+  .report-list { margin-top: 12px; }
+  .report-item {
+    border-left: 3px solid #8a5cf6; background: #faf8ff;
+    padding: 10px 14px; margin-top: 10px; border-radius: 0 8px 8px 0;
+  }
+  .report-item h4 { font-size: 14.5px; margin-bottom: 4px; color: #4a3a8a; }
+  .report-item p { font-size: 13.5px; color: #4a4a5c; }
+  .report-item .meta { font-size: 11.5px; color: #8a8a9c; margin-top: 4px; }
+
+  /* 底部总结 */
+  .summary {
+    margin-top: 20px; border-radius: 18px; padding: 24px;
+    background: linear-gradient(135deg, #5b6cff 0%, #8a5cf6 60%, #b45ce0 100%);
+    color: #fff; box-shadow: 0 10px 30px rgba(108,92,231,.25);
+  }
+  .summary h2 { font-size: 19px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .sum-item {
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28);
+    border-radius: 12px; padding: 13px 15px; font-size: 13.5px;
+  }
+  .sum-item h4 { font-size: 14.5px; margin-bottom: 5px; }
+  .sum-item p { opacity: .93; }
+
+  .footer-tags { margin-top: 18px; text-align: center; font-size: 12.5px; color: #8a8a9c; }
+  .footer-tags span { display: inline-block; margin: 3px 5px; padding: 3px 12px; background: #eceaf6; border-radius: 999px; color: #6d5fb8; }
+
+  @media (max-width: 560px) {
+    .chip-row, .scenario, .sum-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 头部 -->
+  <div class="header">
+    <h1>📊 今日市场分析笔记</h1>
+    <div class="sub">2026年9月14日 · 宽松兑现 / 光电PCB / Anthropic 2万亿 IPO / 沙特被油价拖垮 / 高盛东亚调研</div>
+    <div class="tags">
+      <span>#海外中资股</span><span>#光电衬底</span><span>#ABF涨价</span><span>#Anthropic IPO</span><span>#SMR核电</span><span>#折叠iPhone</span><span>#沙特衰退</span><span>#PVC跨期</span>
+    </div>
+    <div class="meta">📚 本次共覆盖 <b>7</b> 个已开通 Skill 权限的星球，合计抓取约 <b>40</b> 条新内容 → 提炼为 6 张主题卡片</div>
+  </div>
+
+  <!-- 一、今日市场总览 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🧭</span>今天的主线 / 暗线</div>
+    <div class="chip-row">
+      <div class="chip c-blue">💱 宽松信号兑现<small>海外中资股周涨 3.9%，A 股平淡</small></div>
+      <div class="chip c-green">🧠 Anthropic 拟 IPO<small>Q2 营收 115 亿美元、估值 2 万亿</small></div>
+      <div class="chip c-orange">🔌 光电 / PCB / 电感<small>索特克、欣兴、TDK 三箭齐发</small></div>
+      <div class="chip c-red">🇸🇦 沙特 Q2 -4.7%<small>石油活动 -24.8%，美伊冲击外溢</small></div>
+    </div>
+    <div class="takeaway">
+      <b>一句话：</b><span class="hl-blue">海外中资股</span>靠宽松预期+估值折价跑赢 A 股，<span class="hl-purple">AI 算力链条</span>（光电衬底/ABF 载板/电感/SMR/折叠铰链）从高盛到研报平权到 404K 形成跨球共振，而<span class="hl-red">沙特 -24.8% 石油活动</span>把"霍尔木兹出事了"写进了 Q2 GDP。
+    </div>
+  </div>
+
+  <!-- 二、AI 半导体 / 光电 / 核电 高盛系 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🚀</span>AI 算力 + 光电 + PCB + 核电（高盛系/研报平权/404K）</div>
+    <p style="font-size:14px;">一条横跨 <span class="hl-purple">7 个产业链环节</span> 的卖方调研日：高盛一天推 5 篇中国/日本/台湾 buy，覆盖从光模块模拟 IC 到铰链、从 SMR 到 ABF 载板；研报平权和 404K 同步放出索特克、欣兴两条业绩拐点。</p>
+
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>索特克 Soitec · 光电集成衬底 AI 拉爆业绩拐点</h4>
+        <p>2027FY Q1 营收 1.13 亿欧元 <b>+23%</b> 超指引，管理层预期 Q2 同比 <span class="hl-orange">+30%</span>。AI 光互联衬底 2027 财年翻倍，营收占比有望拉升至 <span class="hl-blue">约 1/3</span>。台积电 2028 年前光电 IC 月产能扩至 2.5 万片+。</p>
+        <div class="stats">
+          <div class="stat"><div class="v">23%</div><div class="k">Q1 营收同比</div></div>
+          <div class="stat"><div class="v">5-10×</div><div class="k">潜在市场空间</div></div>
+          <div class="stat"><div class="v">200 €</div><div class="k">目标价</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>欣兴电子 · AI ABF 载板涨价兑现利润反转</h4>
+        <p>Q2 营收 428.9 亿新台币，毛利率 <b>24.8%</b>（环比 +）。数据中心占营收 47% → <span class="hl-blue">61%</span>；ABF 价格单季 <b>+17%</b>。资本支出提至 537 亿新台币，英伟达高端 GPU 中拿下 35-40% 份额，谷歌 TPU/亚马逊 Trainium <span class="hl-purple">超 50%</span>。</p>
+        <div class="stats">
+          <div class="stat"><div class="v">61%</div><div class="k">数据中心占比</div></div>
+          <div class="stat"><div class="v">+17%</div><div class="k">ABF 单季涨幅</div></div>
+          <div class="stat"><div class="v">990 NT$</div><div class="k">券商目标价</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>高盛同日五连发：TDK / 圣邦 / 新日兴 / JSW / 锐捷</h4>
+        <p>
+          • <span class="hl-blue">TDK（6762.T）</span>买入，目标价 4900 日元 (<span class="hl-green">+74.5%</span>)：铝电解电容器 AI/数据中心产能 <b>200 → 700</b>；<br>
+          • <span class="hl-blue">圣邦股份（300661）</span>中性 143 元 (<span class="hl-green">+32.4%</span>)：光模块模拟 IC 进入扩张期；<br>
+          • <span class="hl-blue">新日兴（3376.TW）</span>买入 300 NT$（<span class="hl-green">+64%</span>）：折叠 iPhone 铰链 1,999 美元起；<br>
+          • <span class="hl-blue">日本制钢所（5631.T）</span>买入 11,500 日元（<span class="hl-green">+65%</span>）：日美第三批 SMR 核电设备优先；<br>
+          • <span class="hl-blue">锐捷网络（301165）</span>：中国 AI 产业链调研买点。
+        </p>
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <b>主线确认：</b>AI 算力已经不只买英伟达/中际旭创了，<b>整条供给侧</b>（衬底→载板→电感→铰链→核电设备→DUV 光刻）都在被高盛/研报平权/404K 反复点名为 alpha 来源。
+    </div>
+  </div>
+
+  <!-- 三、H 股 vs A 股 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🌏</span>海外中资股宽松兑现，H 股跑赢 A 股胜率 76%</div>
+    <p style="font-size:14px;">政策宽松信号 → 海外中资股单周 <span class="hl-green">+3.9%</span>，A 股表现平淡。分化来自 7 月制造业 PMI 49.2 / 服务业 PMI 49.3，实体仍然偏弱，估值修复先于盈利兑现。</p>
+
+    <div class="stats">
+      <div class="stat"><div class="v" style="color:#1c9c54;">12.0×</div><div class="k">MSCI 中国 PE</div></div>
+      <div class="stat"><div class="v">14.8×</div><div class="k">沪深 300 PE</div></div>
+      <div class="stat"><div class="v" style="color:#3563e9;">76%</div><div class="k">H 跑赢 A 胜率</div></div>
+    </div>
+
+    <div class="scenario">
+      <div class="sc-box sc-a">
+        <h4>压制因素（外资/南向）</h4>
+        亚洲 IT 行业净风险敞口 <b>20.8%</b>（新低）；南向资金单周 <span class="hl-red">净流出 24 亿美元</span>；外资离场与国内需求不足共振。
+      </div>
+      <div class="sc-box sc-b">
+        <h4>支撑因素（国内托底）</h4>
+        核心 ETF 3 周 <b>+1400 亿元</b>净流入；散户情绪指标 <b>0.7</b>（未现盲目追高）；长鑫成为 A 股总市值最大、宇树人形机器人推动国产替代。
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <b>关键判断：</b>资金更青睐<span class="hl-blue">有升级属性的原材料、资本品、科技硬件</span>，回避<span class="hl-red">房地产、食品饮料</span>。胜负手在于制造业 PMI 能否重回 <b>50 荣枯线</b>，这是行情从估值修复切到盈利兑现的临界点。
+    </div>
+  </div>
+
+  <!-- 四、刘煜辉宏观 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🧠</span>刘煜辉 · 西大靠 AGI 破通胀，东大等 shock</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><p><b>2026-09-12 · AI 叩关，物理基础还是决定性</b><br>AI 进攻智能奇点（自我迭代）<span class="hl-purple">极其需要钱</span>，钱却<b>刚好处在最贵周期冲顶</b>：发散不能收敛的财政裂口 + 厄尔尼诺 + 地缘 + 中选，可能失控的长期通胀预期 → <b>高资本成本长期化</b>。</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p><b>2026-09-12 · 美联储加息几次不是要点，都是贝叶斯</b><br>一句话总结当下：<span class="hl-blue">西大靠运气，只有"通关 AGI"一条路克服通胀；东大则希望看到西大运气不好带来的超级周期 shock</span>。</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><p><b>2026-09-11 · 国内舆论微妙动向在吹风</b><br>对外：单押科技新质能否对冲基座坍塌；对内：更大力度释放<b>并购重组</b>改革活力、支持上市公司转型升级。结论 —— <mark>外面的事情主要决定里面出手的时机</mark>。</p></div>
+    </div>
+
+    <div class="takeaway warn">
+      <b>策略含义：</b>中美博弈进入"AI 攻坚 vs 等 shock"阶段，<b>宽松窗口是有限期的</b>——资本市场要抢在新质叙事失效前完成定价；并购重组可能重新成为 A 股主线。
+    </div>
+  </div>
+
+  <!-- 五、商品期权实战 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🎯</span>商品期权实战（Orange）</div>
+    <p style="font-size:14px;">继续"日历价差 + Gamma Scalping + 跨期"三板斧，本周兑现节奏明显加快。</p>
+
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>科创 50ETF 期权 · 兑现止盈</h4>
+        <p>极致收敛 → 博弈 Gamma + 升波（隐波 55% 分位）。给 3 天窗口让 theta 消耗完，<span class="hl-green">小收获离场</span>。后续计划：今天指数跳空破位大阴线，越近 9 月下旬到期，越可能做"砸盘恐慌"——<b>继续观察</b>。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>PVC 价差兑现 · 93 → 107</h4>
+        <p>又见"根号 T"机会：前天近低远高，今天切换为<span class="hl-purple">近高远低</span> → 卖近月买远月日历价差。入场 <span class="hl-blue">93</span>，出场 <span class="hl-green">107</span>，一周兑现。</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>苯乙烯跨期套利</h4>
+        <p>近月和远月波动率结构存在套利空间，无方向性敞口，<b>吃波动率回归</b>。比纯双卖的好处是 gamma 控制更稳。</p>
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <b>节奏提醒：</b>9 月下旬科创 50ETF 末日轮临近，关注"<b>指数收不回来</b>"的砸盘机会；PVC/LPG/沥青/苯乙烯的日历价差可以常备。
+    </div>
+  </div>
+
+  <!-- 六、研报纪要 / 财经图集 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">📚</span>研报纪要 + 全球财经图集（截选）</div>
+
+    <div class="report-list">
+      <div class="report-item">
+        <h4>高盛 · 康诺亚生物（2162.HK）：CM512 哮喘再验证</h4>
+        <p>TSLP/IL-13 双抗第 3 次阳性数据，跨试验对比优于 lunsekimig；目标价 <span class="hl-green">118.88 港元（+62.7%）</span>，买入。</p>
+        <div class="meta">📄 9/13 高盛 5.5 MB 译稿 · 目标价支撑：司普奇拜 + CM512 + Sone-Ve + CM336 + 现金</div>
+      </div>
+
+      <div class="report-item">
+        <h4>小牛 · 中金点金：AI 加速演进，网络安全价值重估</h4>
+        <p>AI 攻防对抗上升推动安全产品从"合规驱动"转"刚需驱动"，9/14 新鲜出炉。</p>
+        <div class="meta">📄 中金 AI 网络安全 9/14 · 同期：英伟达高盛科技大会 9/12、9/13 光博会看光赛道</div>
+      </div>
+
+      <div class="report-item">
+        <h4>小牛 · 沪指失守 3900，市场在重新定价什么？</h4>
+        <p>政策利好已经定价，但 PMI 仍未回 50；轻资产、可并购、高 ROE 板块在重新拿到溢价。</p>
+        <div class="meta">📄 9/12 策略 · 与"陈果: A 股大缩量，要变盘？"形成共振</div>
+      </div>
+
+      <div class="report-item">
+        <h4>小牛 · 重新关注 AI 通胀链：金刚石散热走向应用</h4>
+        <p>GPU 功耗到 Rubin Ultra 预期 3600W，传统散热触顶，金刚石散热从实验室走出。</p>
+        <div class="meta">📄 9/13 · 与研报平权"AI 散热鏖战"主题一脉相承</div>
+      </div>
+    </div>
+
+    <div class="takeaway danger" style="margin-top:18px;">
+      <b>全球财经图集关键数字：</b><br>
+      • 8 月中国出口 <span class="hl-green">4014 亿美元</span> 同比 +25%，原油进口 3790 万吨恢复 +6.2%（仍同比 -23%）；<br>
+      • 沙特 Q2 实际 GDP <span class="hl-red">-4.7%</span>，石油活动 <span class="hl-red">-24.8%</span>，非石油仅 +0.9%——<b>美伊冲突直接拖垮沙特增长</b>；<br>
+      • 美国利息支出/财政 <span class="hl-red">18.5%</span> 创 1991 来新高；投资级公司债净发行 <span class="hl-orange">9200 亿美元</span>，AI 云商已发 1500 亿 / 2027 到期仅 230 亿——债务刚兑压力后移；<br>
+      • 日本 7 月名义工资 +4.7% 创 34 年最强；5 年国债投标倍数 3.42、5 年期收益率 2.3%，市场 fully price in 9/18 央行加息。
+    </div>
+  </div>
+
+  <!-- 底部一句话总结 -->
+  <div class="summary">
+    <h2>🧠 一句话总结（加深版）</h2>
+    <div class="sum-grid">
+      <div class="sum-item">
+        <h4>📌 市场现状</h4>
+        <p>海外中资股周涨 3.9%、H 股 3 个月跑赢 A 股胜率 76%，A 股实体偏弱（PMI 49.2）但宽松预期托底；估值修复先于盈利兑现。</p>
+      </div>
+      <div class="sum-item">
+        <h4>🏭 产业主线</h4>
+        <p>AI 算力供给侧（光电衬底、ABF 载板、薄膜电感、SMR 核电、折叠铰链）被高盛/研报平权/404K 同步点名，Anthropic 拟以 2 万亿估值 IPO 抬升整链水位。</p>
+      </div>
+      <div class="sum-item">
+        <h4>⚠️ 关键风险</h4>
+        <p>沙特 -24.8% 石油活动、8 月原油进口仍同比 -23%，霍尔木兹余波未消；AI 云商债务膨胀 2850 亿集中在 2035 后，债务后移是另一条暗线。</p>
+      </div>
+      <div class="sum-item">
+        <h4>🛡️ 散户避雷</h4>
+        <p>不追高估值已经反映了 AI 的标的（圣邦）；末日轮做科创 50ETF 期权要等"砸完恐慌"再进场；研报文档以纪要消化为主，不以单篇观点做隔夜重仓。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-tags">
+    <span>#宽松兑现</span><span>#H股跑赢</span><span>#Anthropic</span><span>#光电衬底</span><span>#ABF涨价</span><span>#折叠iPhone</span><span>#沙特衰退</span><span>#PVC跨期</span><span>#2026.9.14</span>
+  </div>
+
+</div>
+</body>
+</html>

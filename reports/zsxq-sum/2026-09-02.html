@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识星球每日总结 · 2026-09-02</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --ink: #1f2937;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #2563eb;
+    --accent-soft: #eff6ff;
+    --red: #c0392b;
+    --red-soft: #fdf0ef;
+    --green: #1a7f5a;
+    --green-soft: #eaf6f0;
+    --amber: #b45309;
+    --amber-soft: #fdf6e3;
+    --purple: #7c3aed;
+    --purple-soft: #f3efff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    padding: 24px 16px 60px;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+
+  .hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #3b82f6 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 32px 32px 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(37,99,235,.18);
+  }
+  .hero .date { font-size: 14px; opacity: .85; letter-spacing: 1px; }
+  .hero h1 { font-size: 28px; margin: 8px 0 6px; font-weight: 700; }
+  .hero .sub { font-size: 14px; opacity: .9; }
+
+  .overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 16px;
+    text-align: center;
+  }
+  .stat .num { font-size: 30px; font-weight: 800; color: var(--accent); line-height: 1.1; }
+  .stat .lbl { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  .tagline { margin: 26px 0 14px; }
+  .tagline h2 { font-size: 19px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .tagline h2::before { content: ""; width: 5px; height: 22px; background: var(--accent); border-radius: 3px; }
+  .tagline .desc { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  .section { margin-bottom: 34px; }
+  .section-head {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 18px;
+    border-radius: 12px 12px 0 0;
+    font-size: 16px; font-weight: 700;
+    color: #fff;
+  }
+  .section-head .badge {
+    font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 20px;
+    color: #fff; background: rgba(0,0,0,.18);
+  }
+  .section-body {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 4px 0;
+  }
+
+  .post { padding: 16px 20px; border-bottom: 1px solid var(--line); }
+  .post:last-child { border-bottom: none; }
+  .post .meta { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+  .post .time {
+    font-size: 12px; color: var(--muted); background: #f3f4f6;
+    padding: 2px 9px; border-radius: 6px;
+  }
+  .post .src {
+    font-size: 12px; color: var(--accent); background: var(--accent-soft);
+    padding: 2px 9px; border-radius: 6px; font-weight: 600;
+  }
+  .post h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 8px; line-height: 1.45; }
+  .post p { font-size: 14px; color: #374151; margin-bottom: 8px; }
+  .post .key {
+    background: var(--red-soft);
+    border-left: 3px solid var(--red);
+    padding: 9px 14px; border-radius: 6px;
+    font-size: 13.5px; color: #7f1d1d;
+    margin-top: 4px;
+  }
+  .post .key.green { background: var(--green-soft); border-color: var(--green); color: #065f46; }
+  .post .key.amber { background: var(--amber-soft); border-color: var(--amber); color: #78350f; }
+  .post .key.purple { background: var(--purple-soft); border-color: var(--purple); color: #5b21b6; }
+  .post ul { margin: 6px 0 6px 20px; }
+  .post ul li { font-size: 13.5px; color: #374151; margin-bottom: 4px; }
+
+  .s-macro .section-head { background: #1e3a8a; }
+  .s-semi .section-head { background: #0f766e; }
+  .s-option .section-head { background: #b45309; }
+  .s-report .section-head { background: #7c3aed; }
+  .s-info .section-head { background: #be185d; }
+
+  .foot {
+    text-align: center; font-size: 12px; color: var(--muted);
+    margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line);
+  }
+  .foot .disc { margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="date">KNOWLEDGE PLANET DAILY BRIEF</div>
+    <h1>知识星球每日总结</h1>
+    <div class="sub">2026 年 9 月 2 日 · 星期三 · 自动抓取已开通 Skill 权限星球的最新内容</div>
+  </div>
+
+  <div class="overview">
+    <div class="stat"><div class="num">7</div><div class="lbl">覆盖星球</div></div>
+    <div class="stat"><div class="num">70</div><div class="lbl">拉取新帖</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">主题归类</div></div>
+    <div class="stat"><div class="num">09-02</div><div class="lbl">报告日期</div></div>
+  </div>
+
+  <div class="tagline">
+    <h2>本期要点速览</h2>
+    <div class="desc">一句话看懂今天各大星球在聊什么：算力/AI 硬件热度不减、宏观「弃硬切软」、期权波动率博弈、A股强势板块轮动。</div>
+  </div>
+
+  <!-- ============ 宏观策略 ============ -->
+  <div class="section s-macro">
+    <div class="section-head">宏观策略 <span class="badge">刘煜辉之宏观高维</span></div>
+    <div class="section-body">
+
+      <div class="post">
+        <div class="meta"><span class="src">刘煜辉之宏观高维</span><span class="time">2026-09-01 11:19</span></div>
+        <h3>今年最后四个月策略四句话</h3>
+        <div class="key">「弃硬切软，弃大求小，弃债切金，弃抱团容量求雨露均沾」</div>
+        <p>给场内资金划出清晰的方向坐标：从硬件转向软件、从大盘切向小盘、从债券切向黄金、从抱团大盘容量股转向全面铺开。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">刘煜辉之宏观高维</span><span class="time">2026-09-02 06:03</span></div>
+        <h3>墨菲定律，如期而至</h3>
+        <p>对市场此前担忧的风险兑现作出回应，语气偏谨慎，提示此前提示的负面情景正在发生。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">刘煜辉之宏观高维</span><span class="time">2026-08-30 22:20</span></div>
+        <h3>剩下四个月，场内资本赌四个事</h3>
+        <ul>
+          <li>一赌美国长期通胀预期不失控（厄尔尼诺、原油…）</li>
+          <li>二赌美联储不加息</li>
+          <li>三赌大厂不出 capex 减速指引</li>
+          <li>四赌中期选举川普不溃败</li>
+        </ul>
+        <div class="key amber">关键结论：四个赌局必须「同时成立」，任何一项落空都可能引发风险资产重定价。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">刘煜辉之宏观高维</span><span class="time">2026-08-30 21:16</span></div>
+        <h3>全球宏观上是一盘死局</h3>
+        <p>核心论点是历史上从未有一个大国拥有如此强大的供应链、能忍受如此弱的内需、同时通过资本项关闭来拒绝「特里芬难题」的成本。西方处于意识形态的「WG 期」，谁也拿它没办法。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">刘煜辉之宏观高维</span><span class="time">2026-08-31 09:58</span></div>
+        <h3>AI 为何对货币金融周期如此敏感</h3>
+        <div class="key">AI 产业正进入「攻坚智能奇点」的关键阶段，极其烧钱，而钱恰好处在最贵周期冲顶时——财政裂口、厄尔尼诺、地缘、中期选举叠加，高资本成本长期化。闯关过去就是通往 AGI 的船票，闯不过去就是「飞刀」。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">刘煜辉之宏观高维</span><span class="time">2026-08-30 11:11</span></div>
+        <h3>剩下四个月，我的视线范围</h3>
+        <p>互金、软件（网安、金融科技、数据、广告、游戏传媒）、商业航天、资本运作，以及恒科互联网、黄金、铜。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">刘煜辉之宏观高维</span><span class="time">2026-08-30 12:58</span></div>
+        <h3>转发：三部门新政抽离预售融资功能</h3>
+        <p>新政将房地产从「金融杠杆模式」强行扭转为「制造业模式」：按揭放款延至竣工备案、资金全额封闭监管，开发商资金占用周期大幅拉长。</p>
+        <div class="key green">利好头部央国企（融资成本仅 1.7%~2.2%）、二手房中介（贝壳、我爱我家）、持有型物业房企；高杠杆中小民企面临生死考验。</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ 半导体 / AI ============ -->
+  <div class="section s-semi">
+    <div class="section-head">半导体 / AI 硬件 <span class="badge">研报平权 · 404K Semi-Ai</span></div>
+    <div class="section-body">
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 16:45</span></div>
+        <h3>英伟达下调 Rubin Ultra HBM 规格：从 12-Hi 384GB 降至 8-Hi 192GB</h3>
+        <div class="key">核心结论：降规是「供应紧张」的表征，而非需求疲软。HBM/DRAM 涨价后 memory 已占资本成本约 40%，降规将其压至 28%，但支出并未消失，而是转向 scale-up 光互连（NVL576 上 scale-up 占比从 4% 增至 12%）。定价权牢牢在供应商手中，短缺仍在扩大。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 15:05</span></div>
+        <h3>scale-across / NPO / CPO 放量时间表</h3>
+        <ul>
+          <li>scale-across、NPO：要到 2027–2028 年</li>
+          <li>scale-up NPO：预计明年</li>
+          <li>scale-out CPO：预计 2029 年放量；scale-up CPO 不早于 2029</li>
+          <li>scale-in：要到 2030 年之后</li>
+        </ul>
+        <div class="key amber">光学基础设施建设其实还没真正开始。核心议题不是「贵不贵」，而是①市场是否过度提前定价（会带来波动即黄金机会）②InP 等基础材料供应是否够用。需求本身极其庞大，不是问题。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 14:17</span></div>
+        <h3>SpaceX 与 AMD 加速算力扩张</h3>
+        <p>SpaceX 季度销售额同比 +92% 至 78 亿美元，AI 业务收入 8.18 亿→25.61 亿美元，云订单 141 亿、积压 475 亿美元；已安装算力 400MW→1.4GW，目标 2027 年末 10GW。瑞银测算若 2GW→10GW，2027 年需约 3 万套 Rubin 机架，对应 2100–2400 亿美元服务器硬件需求。</p>
+        <p>AMD 数据中心收入同比 +107% 至 67 亿美元，MI450 Helios 预计 Q3 末小量出货、Q4 量产。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 12:12</span></div>
+        <h3>戴尔估值升至高位，利润兑现成关键</h3>
+        <p>巴克莱分部估值显示 12 家 AI 标的隐含 AI 市盈率从 43 倍升至 46 倍，戴尔达 69 倍（历史峰值）。光通信标的较 6 月峰值仍回撤 40%/33%。</p>
+        <div class="key amber">关键结论：服务器厂商靠订单+毛利率改善获得更高估值，但 69 倍隐含估值将更依赖利润兑现，后续需验证云厂商 capex 是否继续上调。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 13:52</span></div>
+        <h3>PCB / 覆铜板 / 载板：NVL576 或引入 PTFE</h3>
+        <p>NVL576 交换托盘可能引入 PTFE 材料，但高速 CCL 升级路线图不变（附两份 PDF 研报）。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 10:09</span></div>
+        <h3>华城电机受益于变压器供需缺口</h3>
+        <p>AI 数据中心负荷 + 电网更新，行业景气或延续 5–7 年。美国大型电力变压器交期延长至 2–4 年，进口占 82%。华城电机在手订单超 200 亿新台币，能见度延伸至 2029 年。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 08:06</span></div>
+        <h3>人形机器人放量先看智能与工时成本</h3>
+        <div class="key">近期增量先落在计算基础设施，经济性大规模部署预计 2035 年以后。执行器占物料成本 30%~50% 是最大成本项；高精度减速器由日厂主导，稀土/永磁依赖中国。每台机器人对应 600 美元以上半导体机会。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 12:17</span></div>
+        <h3>供应链限制的变迁脉络</h3>
+        <div class="key amber">限制不断累积：2023 加速器+电网 → 2024 HBM+先进封装 → 2025 电力+冷却 → 2026 光源。供应瓶颈沿产业链持续向后传导。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">研报平权</span><span class="time">2026-09-02 10:23</span></div>
+        <h3>达拉斯联储：生成式 AI 已开始压缩就业</h3>
+        <p>得州高 AI 敞口企业招聘职位减少 8%~9%；软件开发、网页设计、管理、文书、编辑是敞口最高职业，冲击率先落在应届生与跳槽者。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">2026-09-02 15:58</span></div>
+        <h3>控制即智能：HoloMotion-1 运动基座模型解读</h3>
+        <p>地平线机器人开源 4 亿参数「小脑」模型。核心观点：控制本身就是智能，而非推理后的简单执行。小脑占人脑 10% 质量却含 80% 神经元。</p>
+        <div class="key purple">关键：4 亿总参数但每控制周期仅激活约 700 万（稀疏 MoE），300Hz 对应 50Hz 控制循环；跨本体泛化仍是未解难题，目前仅完成四阶段路线图第一步。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">2026-09-02 15:10</span></div>
+        <h3>Astra 采用「循环深度」牺牲推理可见性</h3>
+        <p>OpenAI 的 Astra 模型通过循环深度让文本多次通过相同层，使小模型表现接近大模型，降低内存与带宽成本；但代价是削弱对思维链的监控。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">2026-09-02 15:36</span></div>
+        <h3>Sam Altman：OpenAI 将大量算力转向对齐与监控</h3>
+        <div class="key green">「已推迟一次重大前沿 RL 运行」；「AI 安全比任何公司发展势头都更重要」。Hugging Face 事件后放缓节奏，把算力投向对齐研究与新监控系统。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">404K Semi-Ai</span><span class="time">2026-09-02 15:34 / 16:19</span></div>
+        <h3>Sam Altman 谈 OpenAI 下一代模型与 AI 反弹（深度报告）</h3>
+        <p>两份深度报告（含完整版更正），围绕下一代模型进展与 AI 板块反弹逻辑。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ 商品期权 ============ -->
+  <div class="section s-option">
+    <div class="section-head">商品 / 期权 <span class="badge">Orange期权</span></div>
+    <div class="section-body">
+
+      <div class="post">
+        <div class="meta"><span class="src">Orange期权</span><span class="time">2026-09-02 09:50</span></div>
+        <h3>#策略 能化低波品种已被「消灭」</h3>
+        <p>原油、苯乙烯、PX、PTA 的低波补涨思路已兑现（eb 双买开盘即翻倍），原油沥青波动率套利一组获利约三万，建议获利离场。整体思路是「找关系、找定价错误」。</p>
+        <div class="key">尿素可继续持有，偏看涨对待；能化后续再找波动率错配机会。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">Orange期权</span><span class="time">2026-09-02 08:52</span></div>
+        <h3>#宏观基本面 贵金属高位回落解读</h3>
+        <p>美元指数与美债收益率上行压制金银，10 年期美债收益率突破 4.78%。杰克逊霍尔偏鹰 + 美联储官员偏紧表态，市场重新定价利率路径；原油反弹加剧输入性通胀担忧。</p>
+        <div class="key amber">结论：金银短期整体偏弱，白银弹性大调整更深；后续关注美国非农、官员表态与中东局势。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">Orange期权</span><span class="time">2026-09-01 21:16</span></div>
+        <h3>#策略 镍波动率背离，如期下跌</h3>
+        <p>镍下午波动率背离如期下跌，到支撑位可止盈一部分，留一部分格局破位下跌。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">Orange期权</span><span class="time">2026-09-01 18:27</span></div>
+        <h3>#今日复盘 / 明日计划（09.01）</h3>
+        <ul>
+          <li>股指：先观望</li>
+          <li>有色：贵金属观察能否企稳；工业金属沪铝升波增仓，可关注升波走强机会</li>
+          <li>生猪/鸡蛋/红枣：可做比例购做看涨降波，后市看震荡偏弱</li>
+          <li>能化：高波逼仓品种卖权不宜过多</li>
+          <li>油脂油料/橡胶：关注厄尔尼诺相关农产品升波机会</li>
+        </ul>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">Orange期权</span><span class="time">2026-09-01 14:22</span></div>
+        <h3>#策略 空波动率机会：甲醇 / 沥青</h3>
+        <p>镍有波动率背离可试空；尿素有资金进场做多迹象；空甲醇隐波（双卖）+ 苯乙烯（双买）对冲，配比约 5:3。原油与外盘均未升波，甲醇升波偏异常。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ 研报纪要 ============ -->
+  <div class="section s-report">
+    <div class="section-head">研报纪要 / 盘面复盘 <span class="badge">小牛研报纪要</span></div>
+    <div class="section-body">
+
+      <div class="post">
+        <div class="meta"><span class="src">小牛研报纪要</span><span class="time">2026-09-02 15:42</span></div>
+        <h3>9月2日复盘笔记：军工 / 机器人 / 液冷 / 电网 / 油服 / AI应用等</h3>
+        <p>大盘：沪指跌 0.97%，创业板指跌 2.39%，科创50 跌 1.82%；两市成交超 1.8 万亿，缩量逾 2000 亿。</p>
+        <div class="key">重磅信息：①普华永道预计 2050 年全球数据中心累计投资 31.6 万亿美元；②国家能源局部署新型电网建设，加快重大电网工程核准。</div>
+        <p><strong>强势板块（涨停）</strong>：军工（建设工业、内蒙一机等，板块上半年净利 +32.92%）、液冷（飞龙股份、雪人集团，CDU 订单排至 2026 年底）、电网设备（远东股份、神马电力）、油服（美伊冲突油价大涨，WTI 收 90.22 美元 +5.2%）、AI应用（首部 AI 长剧上星收视第一）、算力租赁（大位科技、竞业达）、PCB（松下覆铜板最高涨 30%）、玻纤（中国巨石电子布厚布涨 15%）、互联金融、光纤、旅游、AI手机。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">小牛研报纪要</span><span class="time">2026-09-02 15:40</span></div>
+        <h3>今日投资舆情热点</h3>
+        <ul>
+          <li>军工：80 家公司上半年营收 +18.89%、净利 +32.92%</li>
+          <li>算力硬件：山东/广东液冷产线满产，CDU 订单排至 2026 年底</li>
+          <li>机器人：全球首个腿式机器人国际标准由中国牵头发布</li>
+          <li>电网：国家能源局加快输电通道核准，支持民企投资新型电网</li>
+        </ul>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">小牛研报纪要</span><span class="time">2026-09-02 15:44</span></div>
+        <h3>乐舒适：基本面无虞，看好长期成长性</h3>
+        <p>非洲卫品龙头，26H1 非洲收入 +27%、拉美收入 +123%；上市以来连续 2 次业绩超预期，26 年仅 16 倍 PE，分红率提升至 65%。</p>
+        <div class="key green">观点：回调建议买入，中期拉美收入占比有望从 5.8% 提升至 15%。</div>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">小牛研报纪要</span><span class="time">2026-09-02 15:38</span></div>
+        <h3>光大交运：继续推荐嘉友国际</h3>
+        <p>短期看低通车辆（甘其毛都口岸降至 600 车/日）+ 口岸低库存反弹；中期看非洲物流通道落地。Q4 物流量价齐升可期，处资源品涨价周期，低估值+确定性强。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">小牛研报纪要</span><span class="time">2026-09-02 15:37</span></div>
+        <h3>【HYDZ HL】高凯技术大涨，继续推荐微导纳米</h3>
+        <p>昨日回调时重点推荐的高凯技术今日大涨；同步看好新增推荐的微导纳米，订单景气度持续向好。</p>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">小牛研报纪要</span><span class="time">2026-09-02 15:44</span></div>
+        <h3>信达消费业绩综述（地产链 / 服装家纺）+ 外资研报</h3>
+        <p>当日批量发布信达消费板块业绩综述及多份外资研报、财联社资讯，覆盖地产链、服装家纺等方向。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ 财经资讯 ============ -->
+  <div class="section s-info">
+    <div class="section-head">财经资讯 / 数据图集 <span class="badge">财经图集 · 隔壁老王爱博弈</span></div>
+    <div class="section-body">
+
+      <div class="post">
+        <div class="meta"><span class="src">财经图集</span><span class="time">2026-09-02 07:45</span></div>
+        <h3>FinGraph 每日财经图集：2026-09-02（早）</h3>
+        <p>覆盖中国、美国、欧洲、英国、亚太、新兴市场、全球与大宗的宏观数据图集。核心看点：</p>
+        <ul>
+          <li><strong>中国消费信心</strong>：7 月消费者信心指数降至 89.2，就业/收入信心偏弱制约实际支出</li>
+          <li><strong>中国 AI 出口</strong>：约 80% 属加工贸易，国内增加值贡献有限（高盛）</li>
+          <li><strong>货币与财政</strong>：M2 相当于 GDP 约 255%，财政增收比降息更关键（德银）</li>
+          <li><strong>科创板</strong>：上半年净利同比 +437.6%，盈利修复明显</li>
+          <li><strong>中国存储</strong>：厂商扩产或重塑全球价格格局（大摩）</li>
+          <li><strong>美国国债</strong>：30 年期收益率 9/2 升至 5.27%，回购难压长期融资压力</li>
+          <li><strong>欧元区</strong>：能源推动 CPI 升至 3.3%，加息预期强化</li>
+          <li><strong>俄罗斯</strong>：2026 原油产量预计降至 988 万桶/日，创 2009 年以来最低</li>
+        </ul>
+      </div>
+
+      <div class="post">
+        <div class="meta"><span class="src">隔壁老王爱博弈</span><span class="time">2026-03-12 10:01</span></div>
+        <h3>最近的一些见闻与想法（最近更新）</h3>
+        <p>注：该星球最新帖子停留在 2026 年 3 月，近期更新频率较低。历史主题围绕低波资产、股指/农产品等低波品种博弈、周度总结展开。</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="foot">
+    <div>本报告由 WorkBuddy 自动生成 · 数据来源：知识星球（Zsxq）已开通 Skill 权限的星球</div>
+    <div class="disc">本报告仅为信息整理与观点摘要，不构成任何投资建议。市场有风险，投资需谨慎。</div>
+  </div>
+
+</div>
+</body>
+</html>

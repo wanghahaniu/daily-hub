@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="RQNty78rIwLCm7oSE858wp">
+<head data-page-node-id="z2SEyMJLh1z927UQucKPGF">
+<meta charset="UTF-8" data-page-node-id="fdmMZr9OYGVO35gSJROpOx">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="SmmCznC41vCgIFC54BBAlj">
+<title>今日市场分析笔记 · 2026-09-10</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: linear-gradient(180deg, #eef1f8 0%, #f6f4fb 100%);
+    color: #2b2b3a;
+    line-height: 1.75;
+    padding: 24px 14px 40px;
+  }
+  .page { max-width: 760px; margin: 0 auto; }
+
+  /* ===== 头部 ===== */
+  .header {
+    background: linear-gradient(135deg, #5b6cff 0%, #8a5cf6 55%, #b45ce0 100%);
+    border-radius: 18px;
+    padding: 30px 28px 26px;
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, .25);
+  }
+  .header h1 { font-size: 26px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+  .header .sub { margin-top: 10px; font-size: 13.5px; opacity: .92; }
+  .header .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .header .tags span {
+    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35);
+    padding: 3px 12px; border-radius: 999px; font-size: 12.5px;
+  }
+
+  /* ===== 卡片通用 ===== */
+  .card {
+    background: #fff; border-radius: 16px; padding: 22px 24px;
+    margin-top: 18px; box-shadow: 0 4px 16px rgba(60,60,120,.07);
+  }
+  .card-title {
+    font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 9px;
+    padding-bottom: 12px; margin-bottom: 14px; border-bottom: 2px dashed #e6e6f2;
+  }
+  .card-title .ico { font-size: 20px; }
+  .src { font-size: 12px; color: #9a9ab0; font-weight: 400; margin-left: auto; }
+
+  /* 关键词高亮 */
+  .hl { font-weight: 700; }
+  .hl-red   { color: #e0492f; }
+  .hl-green { color: #1c9c54; }
+  .hl-blue  { color: #3563e9; }
+  .hl-purple{ color: #8a5cf6; }
+  .hl-orange{ color: #e07b1f; }
+  mark { background: #fff1a8; padding: 0 4px; border-radius: 4px; font-weight: 600; color:#5a4a00;}
+
+  /* 今日概览 chips */
+  .chip-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chip {
+    border-radius: 10px; padding: 10px 14px; font-size: 13.5px; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .chip small { display:block; font-weight: 400; opacity: .8; font-size: 12px; }
+  .chip.c-green  { background: #e8f7ee; color: #157a41; border-left: 4px solid #2ebd6e; }
+  .chip.c-red    { background: #fdecea; color: #c03a24; border-left: 4px solid #e0563c; }
+  .chip.c-blue   { background: #e9effe; color: #2b54c9; border-left: 4px solid #4c7df0; }
+  .chip.c-orange { background: #fdf1e3; color: #b96a12; border-left: 4px solid #f09a3e; }
+  .chip.c-purple { background: #f2edfd; color: #6a3fc0; border-left: 4px solid #9a6cf0; }
+
+  /* 结论条 */
+  .takeaway {
+    margin-top: 14px; border-radius: 10px; padding: 12px 16px; font-size: 14px;
+    background: #f4f0fe; border: 1px solid #ddd0fa; color: #5b3ea8;
+  }
+  .takeaway b { color: #7a3fd0; }
+  .takeaway.warn { background: #fdf1e3; border-color: #f5d9b0; color: #9a5b0e; }
+  .takeaway.warn b { color: #c46a00; }
+  .takeaway.danger { background: #fdecea; border-color: #f6c6bd; color: #b03020; }
+  .takeaway.danger b { color: #d03517; }
+
+  /* 编号小节 */
+  .step { display: flex; gap: 12px; margin-top: 14px; }
+  .step .num {
+    flex: 0 0 26px; height: 26px; border-radius: 50%; color: #fff; font-size: 14px;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; margin-top: 2px;
+  }
+  .step .num.n1 { background: #4c7df0; } .step .num.n2 { background: #8a5cf6; } .step .num.n3 { background: #e0563c; } .step .num.n4 { background: #2ebd6e; }
+  .step .body { flex: 1; }
+  .step .body h4 { font-size: 15px; margin-bottom: 4px; }
+  .step .body p { font-size: 13.8px; color: #4a4a5c; }
+
+  /* 数据卡片 */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0 4px; }
+  .stat {
+    background: #f6f8ff; border: 1px solid #e2e8fb; border-radius: 10px;
+    text-align: center; padding: 12px 6px;
+  }
+  .stat .v { font-size: 19px; font-weight: 800; color: #3563e9; }
+  .stat .k { font-size: 12px; color: #6a6a7c; margin-top: 2px; }
+
+  /* 情景对比 */
+  .scenario { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .sc-box { border-radius: 12px; padding: 14px 16px; font-size: 13.8px; }
+  .sc-box h4 { font-size: 14.5px; margin-bottom: 6px; }
+  .sc-a { background: #fdecea; border: 1px solid #f3c2b8; }
+  .sc-a h4 { color: #c03a24; }
+  .sc-b { background: #e8f7ee; border: 1px solid #bfe6cd; }
+  .sc-b h4 { color: #157a41; }
+
+  /* 时间轴 */
+  .timeline { margin-top: 10px; }
+  .tl-item { display: flex; gap: 12px; position: relative; padding-bottom: 14px; }
+  .tl-item::before {
+    content: ""; position: absolute; left: 7px; top: 18px; bottom: 0; width: 2px; background: #e0dff0;
+  }
+  .tl-item:last-child::before { display: none; }
+  .tl-dot { flex: 0 0 16px; height: 16px; border-radius: 50%; background: #8a5cf6; margin-top: 5px; box-shadow: 0 0 0 4px #efe9fd; }
+  .tl-item p { font-size: 13.8px; color: #4a4a5c; }
+  .tl-item b { color: #2b2b3a; }
+  .tl-time { font-size: 12px; color: #9a9ab0; display: inline-block; margin-right: 6px; }
+
+  /* 底部总结 */
+  .summary {
+    margin-top: 20px; border-radius: 18px; padding: 24px;
+    background: linear-gradient(135deg, #5b6cff 0%, #8a5cf6 60%, #b45ce0 100%);
+    color: #fff; box-shadow: 0 10px 30px rgba(108,92,231,.25);
+  }
+  .summary h2 { font-size: 19px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .sum-item {
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28);
+    border-radius: 12px; padding: 13px 15px; font-size: 13.5px;
+  }
+  .sum-item h4 { font-size: 14.5px; margin-bottom: 5px; }
+  .sum-item p { opacity: .93; }
+
+  .footer-tags { margin-top: 18px; text-align: center; font-size: 12.5px; color: #8a8a9c; }
+  .footer-tags span { display: inline-block; margin: 3px 5px; padding: 3px 12px; background: #eceaf6; border-radius: 999px; color: #6d5fb8; }
+
+  @media (max-width: 560px) {
+    .chip-row, .scenario, .sum-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body data-page-node-id="lyQwZV3PH2iATcDFnUioaW">
+<div class="page" data-page-node-id="gjrnDfkNdBVExKM4QkqPGM">
+
+  <!-- 头部 -->
+  <div class="header" data-page-node-id="qmpUWo91W2jEjA8tV37Pvy">
+    <h1 data-page-node-id="cBa33vcBy9B44KBZyHwRMf">📊 今日市场分析笔记</h1>
+    <div class="sub" data-page-node-id="du8PdjfKAaGw5yCZJHSyQV">2026年9月10日 · 知识星球 6 大星球精选 · 铜价新高 / AI算力 / 存储涨价 / 期权波动率</div>
+    <div class="tags" data-page-node-id="w2vGLx7KBxEvNCktYMl1cC">
+      <span data-page-node-id="DtXPB5KG78dSidOlJvKNBE">#铜价16000美元</span><span data-page-node-id="ChaUUO3he0X38YSPyF4709">#AI电力瓶颈</span><span data-page-node-id="5GW0f5E7hr6ebUA6R2VpIw">#存储CAGR38%</span><span data-page-node-id="gFBzY4tH0s9qHAf2kybjPb">#期权隐波</span><span data-page-node-id="jElFuuUzjMeZmLtuBjnPPD">#地缘</span><span data-page-node-id="U6fLOpXWkD9HVpRZVUJw8Q">#VLCC运价</span>
+    </div>
+  </div>
+
+  <!-- 今日概览 -->
+  <div class="card" data-page-node-id="5WlJi1uzAAFXtpNdVcUcWf">
+    <div class="card-title" data-page-node-id="eu35uisy7j0TfzPSE23aG7"><span class="ico" data-page-node-id="TKojJxDBEInLmawErug7CZ">🗂️</span>今日总览</div>
+    <div class="chip-row" data-page-node-id="UZYx027WXiIyogTdorCH6o">
+      <div class="chip c-purple" data-page-node-id="tkKL8wy85DniIelFGs03Sz">🌐 覆盖 6 个星球<small data-page-node-id="TXCVlQO2Wn9xMsaiELAqVJ">研报平权 · 404K · 刘煜辉 · 小牛 · Orange · 财经图集</small></div>
+      <div class="chip c-blue" data-page-node-id="ycvApskHuEYfh12I7qfPyN">📮 精选 40+ 条新帖<small data-page-node-id="cPdrUbt3DL2oGZZ8dYr4Dx">隔壁老王爱博弈停更(3月)已剔除</small></div>
+      <div class="chip c-orange" data-page-node-id="ixG9Bu65KH2qTgOkGvvvc7">🥇 核心主线：铜<small data-page-node-id="LEAmccL3MB5QjD0IhdpEgl">铜价新高 + 镍铜比价175年最低</small></div>
+      <div class="chip c-green" data-page-node-id="nUMCIGE88XNb1uij6VErw3">⚡ 产业主线：AI算力<small data-page-node-id="oD2CbWJmFxoHBE8NYgO3a5">存储涨价 + 电力成为新瓶颈</small></div>
+    </div>
+    <div class="takeaway" data-page-node-id="k2o45JbUNtZQVZI6Ts4flP">
+      <b data-page-node-id="lWVCfRAkR2DjNUeuE9TR6S">一句话：</b>今日星球信息高度聚焦<mark data-page-node-id="gXdDBK7MVV1Oi7EuDfMXLF">「铜」</mark>与<mark data-page-node-id="AfIrkds4SMvz2HqFacfheB">「AI算力/电力」</mark>两条主线——
+      中信金属看铜价年内站上 <span class="hl-red" data-page-node-id="6OylRnY9z8uX6sahTtc6Cv">16000 美元/吨</span>，镍铜比价创 175 年最低；
+      海外则一致指向 <b data-page-node-id="GBthfELHEqdzX7ZOuSG5y1">AI 的下一个瓶颈是电力</b>，燃气轮机寡头订单排到 2031 年。
+    </div>
+  </div>
+
+  <!-- 一、AI 半导体 -->
+  <div class="card" data-page-node-id="0IFFUyURqcPUOTCErXvbmA">
+    <div class="card-title" data-page-node-id="CVkxAVj8BJGnFJfSzpdSSW"><span class="ico" data-page-node-id="49PYcPUuCBogTeTr6aPNcK">🤖</span>AI 半导体 / 光通信<span class="src" data-page-node-id="j9Q97MIJIQ93bVBQ9QcT5t">研报平权 · 404K Semi-Ai</span></div>
+
+    <div class="step" data-page-node-id="N2ejotnNcSP9kBPqYsHGNv">
+      <div class="num n1" data-page-node-id="JzYKB0fO2kucqBAA8lDHhF">1</div>
+      <div class="body" data-page-node-id="D3uBYUX4Po5r4cTYPdkj04">
+        <h4 data-page-node-id="ya0RL5T9yiGkAnR7Zz7HJe">SK 海力士：野村给出「离谱」的 2030 测算</h4>
+        <p data-page-node-id="lcFPECWPvBHSe92C4Mu0KN">若维持当前约 25% 全球存储份额，野村预测 SK 海力士 <b data-page-node-id="A7whTill3loABZ6R1qylGM">2030 年营收约 9,180 亿美元</b>，未来 4 年营收 <span class="hl-blue" data-page-node-id="5tyQbuLirUHwKo1UUYpiWB">CAGR 需达 38%</span>；即便净利率每年下滑 200bps，2030 年净利仍超 5,000 亿美元。叠加每年 15–20% 回购，<mark data-page-node-id="K18RDCgK43w78LZyF9SQFK">EPS 复合增速可达 55–60%</mark>。</p>
+        <div class="stats" data-page-node-id="k8ScnB8nJvYCm0IHkGUMCo">
+          <div class="stat" data-page-node-id="SCBdoAIk8gJpiNxrDsivQe"><div class="v" data-page-node-id="7go36q5d3bTqR6624euSRE">9180亿$</div><div class="k" data-page-node-id="BJC5cC1kzhgGCWtrwbR9ww">2030年营收(野村)</div></div>
+          <div class="stat" data-page-node-id="8KNNhXGFuC2cVfIlvJEwjt"><div class="v" data-page-node-id="ZayZh8RBZtvYt76C7X40Ee">38%</div><div class="k" data-page-node-id="iPs7kVetOsOfnLzWkaxxJF">营收CAGR</div></div>
+          <div class="stat" data-page-node-id="LsOpuHqv0HiXPKGuhwn7yA"><div class="v" data-page-node-id="e2F4zX78HV29vjgVhz2efg">55-60%</div><div class="k" data-page-node-id="WkKMwtspazS9ttpg5kx1n6">EPS CAGR(含回购)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="4XPRQCkjjj8gAb6eEdtqhK">
+      <div class="num n2" data-page-node-id="NGYPasvhKt0ICZjmwssPBV">2</div>
+      <div class="body" data-page-node-id="7KgbLxN25e0nZkfCmDQ8eb">
+        <h4 data-page-node-id="dZvOnln9LBt1yMNUOKx3CN">谷歌云：AI 渗透率 80%，但盈利靠「客户长期价值」兑现</h4>
+        <p data-page-node-id="MIdujDLwDLu29rF9GcADRk">高盛给 Alphabet 目标价 <span class="hl-blue" data-page-node-id="DUAGoSZvcCHJixR8daKzkt">435 美元</span>（+28.5%）。谷歌云已有 <b data-page-node-id="Fj0Tbd11YqBCOcLAF6AKZA">17 条年收入超 10 亿美元</b>产品线，AI 覆盖约 80% 云客户，90% 财富 100 强已用 Gemini；关键是 Gemini 客户能否跑出普通客户 <b data-page-node-id="aZZ7Ewcu6kXDYCeEZRzWJJ">1.5 倍</b>的 5 年全生命周期价值，否则持续资本开支会拉长利润率承压。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="xvdvIL0T6o1rj6RTlj9pmA">
+      <div class="num n3" data-page-node-id="q9duCl7T7H7squrl7S20Cl">3</div>
+      <div class="body" data-page-node-id="DPCuUGzn1QIJsmCCqZLFlG">
+        <h4 data-page-node-id="MTG0smZQgYEdE6Eh6njydQ">英飞凌 / 东山精密：AI 涨价能否跨出算力领域</h4>
+        <p data-page-node-id="FgJiToUSix4uCZTQjmV2WU">英飞凌 EPS 预计 <b data-page-node-id="juUQQAE4jawpgKcaF0uHuT">1.57→2.74 欧元</b>（FY26→27），目标 91 欧元；AI 已推动功率半导体涨价，试金石是能否外溢到汽车/工业。东山精密借索尔思切入光芯片，已交付 <b data-page-node-id="8ki5LKSV0j8S4rdwLlq88a">200G EML</b>，800G/1.6T 下半年加速，累计追加 <span class="hl-blue" data-page-node-id="ctanDHCx2jpXLjEttyjGSU">17 亿美元</span>扩产。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="z3mXcfeVfXfIosVWdFCXf3">
+      <div class="num n4" data-page-node-id="milRuLmLVuzgvIw0GdebUn">4</div>
+      <div class="body" data-page-node-id="A494iGyQoce8iVoHBrHmQJ">
+        <h4 data-page-node-id="39ORxcJ3gFkugAosMv9j7i">OpenAI / Meta / Codex：应用与广告货币化提速</h4>
+        <p data-page-node-id="xiAXqy7G3BfvliiiyVpIFI">OpenAI 广告业务 <b data-page-node-id="02jtrQ17NADlPJlYn1suXZ">7 个月 run rate 达 10 亿美元</b>，定价从「数 tokens」转向「按成果」；Meta 收购瑞典 Stilla 加码 Business Agent（已覆盖 100 万+商家）。Codex 用 Rust 构建、代码审查已达「超人」级别自动拦截 PR。</p>
+      </div>
+    </div>
+
+    <div class="takeaway warn" data-page-node-id="oiD3g52s2EkKHCIjFXK4sO">
+      <b data-page-node-id="ThK4G9ZkR0LyRwDv118ODj">主线延伸：</b>海外共识正从「GPU/存储」转向 <mark data-page-node-id="tYctxseu3363inTZ19fjBf">「AI 的下一个瓶颈是电力」</mark>——BNEF 测算数据中心 2035 年耗电 <b data-page-node-id="0FF9pXXqtQabDZR2UkY1iv">1,350 TWh</b>、占美国总电力 20%，燃气轮机（GE Vernova / 西门子能源 / 三菱重工）订单排满至 <b data-page-node-id="FjcKsq5iX3eOpc3eVThfM3">2031 年</b>，美国至少 15 座煤电推迟退役。
+    </div>
+  </div>
+
+  <!-- 二、宏观策略 / 地缘 -->
+  <div class="card" data-page-node-id="XrLb71xLUeMZPgBvzsvZYe">
+    <div class="card-title" data-page-node-id="Z13jpMlhAlF94QACQOeGPn"><span class="ico" data-page-node-id="KtcomY0TE6ptIdXF3EvtAA">🌍</span>宏观策略 / 地缘<span class="src" data-page-node-id="Sl7ZNLcoHYYaeBRJsy0nxs">刘煜辉之宏观高维</span></div>
+
+    <div class="step" data-page-node-id="8VXcDfDIVTnpUxTIacbGD0">
+      <div class="num n1" data-page-node-id="NXe3FBDYTmlAFeHs853FWb">1</div>
+      <div class="body" data-page-node-id="14KuwCfQKXXRIVCOZf2ZuN">
+        <h4 data-page-node-id="KO5fHSTnWIefeAHhzi3xy7">从生产国到消费国：印钞是「最具比较优势的产业」</h4>
+        <p data-page-node-id="4rRkOddYaXAY3VpnncvyLW">核心论点：<b data-page-node-id="oJBHfyDF0uemiRqDLO69qc">拿到足够强的地缘能力后，「印钞票」就会变成国家最具比较优势的产业</b>，国家自然从生产国变成消费国——这不是教科书药方能解释的路径。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="buisJsJwpSlm9FbIIsxiE3">
+      <div class="num n2" data-page-node-id="nf2FgKOIDiZEySE5kUUoye">2</div>
+      <div class="body" data-page-node-id="3P6v9vhxaEoHO2aQfndsbo">
+        <h4 data-page-node-id="pjFR1N8G2OESxgmznB29uL">地缘别只盯着伊朗：几件事正在冲击叙事</h4>
+        <p data-page-node-id="JLt87TgAEac5nh04xYWLdx">① 台积电亚利桑那晶圆厂 <b data-page-node-id="q4pAe9DU9ylDKr7y3sDZEB">良率 92%、能做 2 纳米</b>，最先进制程产业链在西大已开始成形；② 马斯克称特斯拉不用稀土磁；③ 日本掌握稀土提炼技术、明年量产半导体金属；④ 富士通智能产线明年量产 Rubin。这些都是西大「闯关智能奇点」的物质基础。</p>
+      </div>
+    </div>
+
+    <div class="takeaway" data-page-node-id="b6nTgLWwFOzcQIqpG5DAwg">
+      <b data-page-node-id="BC7WEBE0tIGN6KLZiYPqx3">作者视角：</b>地缘与产业自主的叙事正在加速重构，<b data-page-node-id="mAADlJwcnQZ8m4YBCFBLFO">最先进制程 + 关键材料「去海峡化」</b>是长期变量，需纳入资产定价框架。
+    </div>
+  </div>
+
+  <!-- 三、A股研报纪要 -->
+  <div class="card" data-page-node-id="VhEsvvvnE64IgynnDZYfSw">
+    <div class="card-title" data-page-node-id="R54ZPKkLn3TTK93OW6WCAF"><span class="ico" data-page-node-id="jlvC02WqAOFxoUz1XvLnKU">📈</span>A 股研报纪要<span class="src" data-page-node-id="kwS6WMCZi2kqo6ljB85rnV">小牛研报纪要</span></div>
+
+    <div class="step" data-page-node-id="DhP1kf6YKKMHCtDhr0B0JA">
+      <div class="num n1" data-page-node-id="IBxJGHRgzs0pb5qBq5jxiv">1</div>
+      <div class="body" data-page-node-id="BgluyGsgkZhPlIYhzweS5F">
+        <h4 data-page-node-id="r1Lj8Y1DgHS1gZxHA7UyPg">铜：中信证券金属「供给系列四」——铜价站上 16000 美元</h4>
+        <p data-page-node-id="BkI2TKkgWfJvRKaV9iN0DQ">上半年全球主要铜矿产量 <span class="hl-red" data-page-node-id="PyHx9ESLWaAqUQsCOAFjcm">同比 -4.6%</span>（连续四季下滑），全年产量指引增速从 +3.9% 下修至 <b data-page-node-id="SZJtFrt0j0OnQ05zFYynXk">-2.0%</b>。中长期铜矿供应增速仅 <b data-page-node-id="HQPUDfD29kueeUA5SBlQ57">2%–2.5%</b>（中资约 1.5% + 外资约 0.8%），不宜高估 2028–29 供应高峰；叠加极端天气扰动去库延续，<mark data-page-node-id="APMpnUwQDjQU9fdX7tKHRV">递增式关税落地后年内铜价有望站上 16000 美元/吨</mark>。</p>
+        <div class="stats" data-page-node-id="lG0QnYEwvATsaGhUZIDorz">
+          <div class="stat" data-page-node-id="CIQvntREN0JfDTzMZavxHZ"><div class="v" style="color:#e0492f;" data-page-node-id="R5pFLWeMMMyklzF4aflA8u">-4.6%</div><div class="k" data-page-node-id="qRx8lHYxX1o9JYsLZZatGt">上半年铜矿产量同比</div></div>
+          <div class="stat" data-page-node-id="ZoyX2mTEMnhDGV3BXgh302"><div class="v" data-page-node-id="HlTWkdhdKepEUBKDtBWpEm">2-2.5%</div><div class="k" data-page-node-id="6AWO5lhPvaEPQKsGrDVUmB">中长期供应增速</div></div>
+          <div class="stat" data-page-node-id="iWAGGAvBALabyY4NXuF9r6"><div class="v" style="color:#e0492f;" data-page-node-id="2TMwnK0GCjL6Jahm2P3orE">16000$</div><div class="k" data-page-node-id="skxZLAOP9JdEXwaQZyBuXG">年内铜价目标</div></div>
+        </div>
+        <p style="margin-top:8px;" data-page-node-id="5s4Lu1BIGTwHa7qNjzODxL">重点标的：<span class="hl-red" data-page-node-id="a3OeaNrrCUMHqIVp08zeZB">五矿资源、洛阳钼业、金诚信、中国黄金国际、江西铜业、中国有色矿业、西部矿业</span>（两条主线：业绩弹性 + 资源储量重估）。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="MWU7sDyYE7EZ5VYfZGIbu1">
+      <div class="num n2" data-page-node-id="IrphWBno0WpJJ3mzDWAM7a">2</div>
+      <div class="body" data-page-node-id="4CO61X3QssFV9HoNYsso1T">
+        <h4 data-page-node-id="AQDsp58kowdXrbEliKOiaW">消费：江南布衣 FY26 派特别股息，股息率 11.9%</h4>
+        <p data-page-node-id="Fhkot0hdE68A6ImAxuerNA">FY26 收入 60.5 亿（+9.0%）、归母净利 10.0 亿（<b data-page-node-id="DjBh4PAjgKgB5x7mbHE4Jt">+11.7%</b>），派息比率约 106%，对应当前 <span class="hl-green" data-page-node-id="lNbFeiqosFIjV0NWS7FmSd">股息率 11.9%</span>；活跃会员超 61 万（+9%），新兴品牌收入 +32%。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="GwY4tXqw7Cra6xfVq98FGj">
+      <div class="num n3" data-page-node-id="cgnNaBDF2PTu9lxAoKoTV5">3</div>
+      <div class="body" data-page-node-id="1OnxxntQmQB4o2dA2OVf05">
+        <h4 data-page-node-id="U8nEmMYFOZzJT1DsCE2QI8">航运：VLCC 中东湾外线 38w，美伊袭船加剧运力紧张</h4>
+        <p data-page-node-id="3EFO9HX3847Alhu7scAp1W">华源交运：美伊双方声称近期互袭 <b data-page-node-id="78mOZOqljxBdFsXDCqn2R4">18 艘油轮</b>，海峡袭船加重运力短缺，<mark data-page-node-id="e49oCftcDFBNznFDyKWkBc">VLCC 运力中枢或 26Q4 破 20w、2027 再创新高</mark>，当前股价仅定价 12–13w，预期差可观。强推<span class="hl-blue" data-page-node-id="93lfnnmMuEYv3JKESdJIFA">招商轮船、中远海能 A/H</span>；成品油运推<span class="hl-blue" data-page-node-id="KEWhALFDpJK1JEBqLl2u6M">招商南油</span>。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="mcBXyLi2LXGKxlDDkF9cW2">
+      <div class="num n4" data-page-node-id="L7yzjMKPMma0PzJC4oKxfr">4</div>
+      <div class="body" data-page-node-id="HshIosghcxCgHM0RDbxWVA">
+        <h4 data-page-node-id="c2dhRJ0Hr1EsI1LjAJoefZ">军工：GRIP 框架 · 珠海航展、建军百年</h4>
+        <p data-page-node-id="RC0OezElBkzA6GzZEkcmFA">广发军工强调板块内需基本盘稳增，围绕<span class="hl-purple" data-page-node-id="7o3vyiwHLo80ieKLiminas">睿创微纳、中国动力/航发动力、国睿科技/中航沈飞、中航光电</span>等物理 AI 端侧感知、发动机出海、液冷/光链路数据中心全布局。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、商品期权实战 -->
+  <div class="card" data-page-node-id="hFouJnZuJH8PBa7KmjeMCb">
+    <div class="card-title" data-page-node-id="WcEgMdUUovcJpB1LAG6fft"><span class="ico" data-page-node-id="pTAGqkIuEmnuGVErdnNaKu">📊</span>商品期权实战<span class="src" data-page-node-id="qqGTqCpiZaK06jMnYKIvNV">Orange期权</span></div>
+
+    <div class="timeline" data-page-node-id="ar9MCfPUbQV8Q5shwUFvEE">
+      <div class="tl-item" data-page-node-id="a23ll0ztmAUoDTn78OpCtt"><div class="tl-dot" data-page-node-id="uzmtZeVLjOgiTs9t1eJ3Z8"></div><p data-page-node-id="r82HYPhYs2ZfR0kNzpLZTX"><span class="tl-time" data-page-node-id="36GQelocuIQcnnaGsDwWt2">09-10 09:13</span><b data-page-node-id="81kjA7s3t9nt3QlYAGu6nF">隐波安静，铜双买止盈离场</b>——下午/今晚或再冲一波隐波，但需谨防事件落地波动率崩塌，关注今晚 <b data-page-node-id="0oc6KFSwSOEEdFiA7b7uyq">CPI</b>，可找机会做 <mark data-page-node-id="fgzLqQ8IGnPLtvT1UUxVh9">Gamma Scalping</mark>。</p></div>
+      <div class="tl-item" data-page-node-id="a0gDJqc1vnBYU0N2dzJxJj"><div class="tl-dot" data-page-node-id="fk8pZplWH9F0QChTZBF0CP"></div><p data-page-node-id="aRxYLoEf3jMl2SMRbDYoXr"><span class="tl-time" data-page-node-id="NafQNF9Am6pF2H4ZGeC42c">09-09 22:09</span><b data-page-node-id="PjTQYT6HrStduGbu8b8b95">铜外盘/远月升波、近月降波</b>——近月隐波大概率低估，<b data-page-node-id="2sS6zvj2ju2jtILLshmLsN">试试双买做多铜隐波</b>，叠加周五 CPI 对有色影响。</p></div>
+      <div class="tl-item" data-page-node-id="eLMEDtrYSWOLxuprqbNgwk"><div class="tl-dot" data-page-node-id="iGKmzI2XeXR4BqdLzZRdwN"></div><p data-page-node-id="Yvga90jXLq5ufLlODSII3u"><span class="tl-time" data-page-node-id="H2f5cTKKHAR0wi6vCKiZkO">09-09 17:56</span><b data-page-node-id="51xmzOBqKMD36d8HnH0SCl">09.09 复盘 / 明日计划</b>——① 中证1000 轻仓买跨式布局做多波动；② 贵金属用看涨价差对冲时间损耗；③ 能化做跨月套利组合；④ 棉花考虑牛三腿；生猪鸡蛋红枣/广期所/纯碱玻璃先观望。</p></div>
+    </div>
+
+    <div class="takeaway warn" data-page-node-id="inYvOUG0UbuCYZJgmgMMfU">
+      <b data-page-node-id="j8WarXyEOPAxADSEHfhP6D">期权视角：</b>铜从「看价格」转向「看隐波」——外盘升波、近月低估，<b data-page-node-id="kY3FAHUchdjmrGNRobH0Du">做多波动率 + Gamma 日内刷</b>是当前主线，但需防 <b data-page-node-id="PbwatvLtDqtHUgDjH2qb03">CPI 事件落地后隐波崩塌</b>。
+    </div>
+  </div>
+
+  <!-- 五、全球财经图集 -->
+  <div class="card" data-page-node-id="FD5dnAG1PBpuvv7RbhFDIj">
+    <div class="card-title" data-page-node-id="Lht20VVLp7vIatk5EXFeg2"><span class="ico" data-page-node-id="TtnXru4bxVucjECA6LHn7j">💹</span>全球财经图集<span class="src" data-page-node-id="eA6SoR7PBG5bhG0CpkYcwH">财经图集 · FinGraph</span></div>
+
+    <div class="step" data-page-node-id="D61dQQX5sVlEAKQMevjkvp">
+      <div class="num n1" data-page-node-id="ALn4WERUmzAooIHXgxe3qq">1</div>
+      <div class="body" data-page-node-id="Z4nnNoz3qcTkUmqDCHxHcE">
+        <h4 data-page-node-id="wzX298wLyxYqKfP6jRq6Hl">中国：CPI 回升「广度有限」，人民币套息兴起</h4>
+        <p data-page-node-id="dtMe7MnWGFGw1aMSDfBYoJ">8 月 CPI 同比 +0.8%，但 <b data-page-node-id="Vw5ZlBMBquxAAYQOhAerWM">28 个小类中仍有 15 个下跌</b>；PPI 改善覆盖面明显更广（下跌行业 26→14 个）。<mark data-page-node-id="62ovlQE4azgROzy6WBFdmf">离岸人民币套息收益/波动率比升至 1.1（日元仅 0.25）</mark>，人民币开始替代日元做融资货币；人民币实际汇率较合理水平<b data-page-node-id="VDlIpbarTGTT8Gr4OC0R17">低估约 12%</b>，继续支撑出口。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="DsBy4NGUvjMUinLdc1SDF6">
+      <div class="num n2" data-page-node-id="9CddEqmPLu9U7nrsxaAt9D">2</div>
+      <div class="body" data-page-node-id="JlMA3HApaz9wl4HtLNofal">
+        <h4 data-page-node-id="mz4p3wUfsIuRJr60pozRWs">美国：估值「相对便宜」但基础脆弱</h4>
+        <p data-page-node-id="Krh5n9oaYACmgwAQ9KoEgS">标普 500 远期 PE/预期利润率之比降至 <b data-page-node-id="Y7C5kXC1Z5PQGEfQMlYQV0">113.7</b>（接近科技泡沫破裂后低位）；但 PE 超 40 倍公司只剩 <b data-page-node-id="nd2s3i4CmJ301KgJb9wWAT">27 家</b>，投机热度退潮；美 10 年期国债收益率升至 <b data-page-node-id="fgDoaBEHeMTKGtNgUVsk0O">4.84%</b> 三年高位，财政部回购 60 亿难改供给压力。美国企业转向欧洲发债（今年已 1490 亿欧元）。</p>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="DaydzdZWcip7NZJ5TT9BpH">
+      <div class="num n3" data-page-node-id="seEwLehzsqLqiXrQLiiqjE">3</div>
+      <div class="body" data-page-node-id="DQ8sWbZdJWtXhaYHkxhwRp">
+        <h4 data-page-node-id="wdNT20Xx2iunBndFFNdzzR">大宗：镍铜比价 175 年最低，跨太平洋运价破 7000 美元</h4>
+        <p data-page-node-id="4uPEJd0BDrqyuzavCOVHuj"><mark data-page-node-id="VdzeQUUEzWn1UiLGFSxDYb">镍价/铜价比价降至 1.17 倍，为有记录以来最低</mark>——印尼低成本镍放量 vs 铜矿品位下降、需求增长，若磷酸铁锂继续扩份额，175 年价格关系或现结构性逆转。上海→洛杉矶集装箱即期运价破 <b data-page-node-id="aOfguYtdPPBqZDEGDBpcfv">7000 美元</b>（2024 年来最高），伊朗战争 + 绕航 + 关税抢运共同推高。</p>
+        <div class="stats" data-page-node-id="OojycbeHdR9eJZSaGoBCan">
+          <div class="stat" data-page-node-id="Yh1FqiU2HcbxBvAsEujWnT"><div class="v" style="color:#e0492f;" data-page-node-id="rWd9UII9GxsqoqCsWqG4Uo">1.17x</div><div class="k" data-page-node-id="2VhEsXXLbhpkKOXEMrGCaa">镍铜比价(历史最低)</div></div>
+          <div class="stat" data-page-node-id="r0VdTdXvTFEQjjDn6ZgsZc"><div class="v" data-page-node-id="PpPZxp7BKpOKUCsPu6wgRx">7000$</div><div class="k" data-page-node-id="3myGkCYG8G1iFPXRbM04Fb">跨太平洋即期运价</div></div>
+          <div class="stat" data-page-node-id="gpN56Ib2f41fgWG4EnScMq"><div class="v" data-page-node-id="exZ2SkHfpcx9FG9mST3ymU">4.84%</div><div class="k" data-page-node-id="59iQgrDyRaf7TpF76YymP5">美10Y收益率(3年高位)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-page-node-id="BUcFRhR4PEVfFzC1M1LNor">
+      <div class="num n4" data-page-node-id="XYcg7OAFpb0bKBGyDEfXCP">4</div>
+      <div class="body" data-page-node-id="RUar54278uHXA9VttRVafG">
+        <h4 data-page-node-id="PtkzONSaKoY37CSdaONCpp">其他：苹果折叠屏 + 香港黄金门户 + 软银还债</h4>
+        <p data-page-node-id="5LihtCBbtg0S916XkmYclW">苹果发布首款折叠屏 <b data-page-node-id="8RHz8VoJFICAPHypm3PAH3">iPhone Duo</b>（约 2000 美元），把年度发布拆成两个周期；香港前 7 月从俄进口黄金近 <b data-page-node-id="E4hwAQqQmO98haYT4bTq1T">100 吨</b>创纪录，成内地黄金进口门户；软银 9/15 偿还 <b data-page-node-id="ZT69EnFQSg9U0dT51ravGv">259 亿美元</b>过桥贷，财务风险转向 OpenAI 持股价值能否稳住。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部总结 -->
+  <div class="summary" data-page-node-id="M3RXmHTzCVxrXPmSGA0Eie">
+    <h2 data-page-node-id="DHmJuVlNx3NGQn8891WtEt">🧠 一句话总结</h2>
+    <div class="sum-grid" data-page-node-id="l1Ts4LTmFh27kNci5crnk3">
+      <div class="sum-item" data-page-node-id="KckFB6rwAickwErJzWFQqB">
+        <h4 data-page-node-id="XC7uDVnTU1uUEAFtE8uEv6">📌 市场现状</h4>
+        <p data-page-node-id="2DEfBgz7z1KXY3NljHXZry">铜价新高 + 镍铜比价 175 年最低，商品做多情绪升温；美股估值「相对便宜」但投机退潮，美债收益率 4.84% 压顶。</p>
+      </div>
+      <div class="sum-item" data-page-node-id="d02ttQUA6XNDDLBcyiOWz3">
+        <h4 data-page-node-id="dToOoVC26W2AKcoCMQMnW7">🏭 产业主线</h4>
+        <p data-page-node-id="OvgtwSO1TYXfdKp5n54vr0">AI 算力从「GPU/存储」延伸到「电力」——存储 CAGR 38%、燃气轮机订单排到 2031，电力是新瓶颈也是新主线。</p>
+      </div>
+      <div class="sum-item" data-page-node-id="Qig31LiDdaEXlH6n2WYTDQ">
+        <h4 data-page-node-id="dhNdpiEfbDePvQbcIzoArq">⚠️ 关键风险</h4>
+        <p data-page-node-id="K4j71ZfVRSj0HB1FIFxHgd">今晚 CPI 事件落地或引发隐波崩塌；铜矿 2028-29 供应高峰、美联储高利率、美伊海峡袭船仍是高频扰动源。</p>
+      </div>
+      <div class="sum-item" data-page-node-id="UGkHKc9knK5viHoEloyFbr">
+        <h4 data-page-node-id="lnxQyDCeW1hQa65FwLXIrM">🛡️ 散户避雷</h4>
+        <p data-page-node-id="3jApoWSQTenDdj5PEl3wIr">不追高铜期权、CPI 前不重仓赌隐波方向；解禁/估值高的题材不接飞刀，重点跟踪有业绩弹性的铜矿与 AI 电力标的。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-tags" data-page-node-id="3DYgKQ3Fhs2Tv8pf4FGU9C">
+    <span data-page-node-id="QWjpaCGDB7hwNwyVDePz4T">#铜价16000美元</span><span data-page-node-id="u4wigEVhBMFeJfa7y3p6Tl">#镍铜比价</span><span data-page-node-id="X6WTFMJ1z7GFB3tiTTtReD">#AI电力</span><span data-page-node-id="xedBKPRjDGICBBRGYTAxJZ">#存储涨价</span><span data-page-node-id="po5l1O4F3cTr79YZMzFMOT">#期权隐波</span><span data-page-node-id="sEgcwhj567ldORcRQ0nzKY">#VLCC</span><span data-page-node-id="FjikIaWtBxFZ6ytxhON0Nj">#地缘</span><span data-page-node-id="uXDrUJBqLrvhEdDguAjLGk">#2026.9.10</span>
+  </div>
+
+</div>
+</body>
+</html>

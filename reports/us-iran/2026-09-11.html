@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美伊局势日报 · 2026-09-11</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a1d24; --sub:#5b6472; --line:#e6e8ee;
+    --red:#d92632; --green:#1a9e6c; --amber:#e88a1a; --blue:#2f6fed;
+    --red-bg:#fdeaea; --green-bg:#e7f7f0; --gray-bg:#f0f2f5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:20px 14px 60px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{background:linear-gradient(135deg,#a60d1e 0%,#d92632 60%,#e88a1a 130%);color:#fff;border-radius:16px;padding:26px 28px;margin-bottom:18px;box-shadow:0 8px 24px rgba(217,38,50,.18)}
+  header .kicker{font-size:13px;opacity:.9;letter-spacing:2px}
+  header h1{font-size:26px;margin:6px 0 4px;font-weight:700}
+  header .date{font-size:14px;opacity:.95}
+  .scorebox{display:flex;align-items:center;gap:18px;margin-top:16px;flex-wrap:wrap}
+  .score-num{font-size:52px;font-weight:800;line-height:1}
+  .score-meta{font-size:14px;opacity:.95}
+  .score-meta b{font-size:16px}
+  .card{background:var(--card);border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(20,24,40,.06);border:1px solid var(--line)}
+  .card h2{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .card h2 .bar{width:5px;height:18px;background:var(--red);border-radius:3px;display:inline-block}
+  .one-line{background:var(--red-bg);border:1px solid #f5c6cb;border-radius:10px;padding:14px 16px;font-size:15px;color:#8c1320;font-weight:600}
+  .muted{color:var(--sub);font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+  .metric{background:var(--gray-bg);border-radius:10px;padding:12px 14px;text-align:center}
+  .metric .v{font-size:22px;font-weight:700;color:var(--red)}
+  .metric .k{font-size:12px;color:var(--sub);margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+  th{background:#f2f4f7;font-weight:600;white-space:nowrap}
+  .t-date{white-space:nowrap;font-weight:600;color:#333}
+  .tag-red{color:var(--red);font-weight:700}
+  .tag-green{color:var(--green);font-weight:700}
+  .tag-gray{color:#8a93a2;font-weight:700}
+  .warn{color:var(--red);font-weight:800}
+  .double-warn{background:var(--red-bg);border-left:4px solid var(--red);border-radius:6px;padding:10px 12px;margin:8px 0}
+  .double-warn .tag{display:inline-block;font-weight:800;font-size:12px;padding:2px 8px;border-radius:4px;margin-right:6px}
+  .tag-nuke{background:#fff;color:var(--red);border:1px solid var(--red)}
+  .tag-oil{background:#fff;color:#b3541e;border:1px solid #b3541e}
+  .tag-econ{background:#fff;color:#7a1f9e;border:1px solid #7a1f9e}
+  .chart-box{position:relative;height:280px;margin-top:6px}
+  .chart-box.tall{height:300px}
+  .legend{font-size:12px;color:var(--sub);margin-top:6px}
+  .pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:20px;margin:2px 3px 2px 0}
+  .pill.r{background:var(--red-bg);color:var(--red)}
+  .pill.g{background:var(--green-bg);color:var(--green)}
+  .pill.o{background:#fdf0e0;color:var(--amber)}
+  footer{color:var(--sub);font-size:12px;text-align:center;margin-top:20px}
+  .score-table td:first-child{white-space:nowrap}
+  @media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}header h1{font-size:22px}.score-num{font-size:42px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">US–IRAN SITUATION DAILY · 美伊局势每日监测</div>
+  <h1>美伊局势日报</h1>
+  <div class="date">2026年9月11日 星期五 · 数据截至 9/11 晚间（北京时间）</div>
+  <div class="scorebox">
+    <div class="score-num">96<span style="font-size:24px;font-weight:600">/100</span></div>
+    <div class="score-meta"><b>极度紧张 · 红色警戒</b><br>较昨日 96 持平，维持监测以来峰值</div>
+  </div>
+</header>
+
+<div class="card">
+  <h2><span class="bar"></span>核心结论（一句话）</h2>
+  <div class="one-line">9/11 五角大楼「9·11」纪念仪式上，特朗普与国防部长赫格塞思双双就伊朗战争强硬表态：特朗普威胁打击纳坦兹附近「镐山」核设施、赫格塞思宣称「已掌控霍尔木兹海峡、将打完这场仗」；美军中央司令部称一周内摧毁 10 艘伊朗油轮、海上封锁已使 96 艘商船改道；伊朗革命卫队击毁一艘美军无人艇并警告「任何敌对力量都将成为打击目标」，同时宣布恢复弹道导弹生产；胡塞武装占领也门摩卡港并向曼德海峡推进，全球原油供应遭霍尔木兹 + 曼德「双重绞杀」，布伦特盘中触及 109.97 美元四个月新高、战争险费率升至船体价值 10% 本轮峰值，综合紧张度维持 96 的历史峰值。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>今日评分明细（0–100）</h2>
+  <div class="grid">
+    <div class="metric"><div class="v">97</div><div class="k">军事冲突（30%）</div></div>
+    <div class="metric"><div class="v">92</div><div class="k">高层言论（20%）</div></div>
+    <div class="metric"><div class="v">97</div><div class="k">通航中断（25%）</div></div>
+    <div class="metric"><div class="v">98</div><div class="k">战争险/市场（25%）</div></div>
+  </div>
+  <table class="score-table" style="margin-top:14px">
+    <tr><th style="width:30%">维度（权重）</th><th>分项评分</th><th>加权贡献</th></tr>
+    <tr><td>军事冲突烈度（30%）</td><td>97</td><td>29.1</td></tr>
+    <tr><td>高层言论威胁度（20%）</td><td>92（=一般言论 86×50% + 敏感威胁 97×50%）</td><td>18.4</td></tr>
+    <tr><td>霍尔木兹通航中断（25%）</td><td>97</td><td>24.25</td></tr>
+    <tr><td>战争险/市场（25%）</td><td>98</td><td>24.5</td></tr>
+    <tr><td style="font-weight:700;color:var(--red)">综合紧张度</td><td style="font-weight:700;color:var(--red)">96 / 100</td><td style="font-weight:700;color:var(--red)">96.25</td></tr>
+  </table>
+  <div class="muted" style="margin-top:8px">评分框架：军事冲突 30% + 高层言论威胁度 20%（一般言论 50% + 敏感威胁 50%）+ 霍尔木兹通航中断 25% + 战争险/市场 25%。较昨日 96 持平：军事冲突微降 1 分（9/11 当日无新增大规模交火，以言论 + 外溢为主），但通航中断升至 97（海峡实际关闭、最近 24 小时仅 3–6 艘）、战争险/市场升至 98（布伦特盘中破 109.97 四个月新高、战争险 10% 本轮峰值、胡塞占摩卡引发霍尔木兹 + 曼德双线封堵），两者抵消了「选举后停战」口头信号与 9/14 海湾-伊朗会谈的缓和预期，综合评分高位企稳。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>⚠️⚠️ 敏感威胁双重标注（红色高亮 · 归入「言论」维度）</h2>
+  <div class="double-warn"><span class="tag tag-nuke">☢️核</span> <b>特朗普 9/10–9/11</b>：威胁打击纳坦兹铀浓缩设施附近「镐山」（Pickaxe Mountain）；9/11 五角大楼「9·11」仪式上重申「伊朗这个头号恐怖主义赞助国，永远不会拥有核武器」。</div>
+  <div class="double-warn"><span class="tag tag-econ">💥经济命脉</span> <b>美国国防部长赫格塞思 9/11（五角大楼「9·11」仪式）</b>：「我们已杀死他们的领导人、摧毁他们的空军，他们的海军已沉入海底」「经济压力每天都在收紧，我们掌控着海峡，我们将打完这场仗」。</div>
+  <div class="double-warn"><span class="tag tag-oil">🛢️能源设施</span> <b>美军中央司令部 9/10</b>：过去一周累计摧毁 10 艘伊朗油轮；对伊海上封锁已使 96 艘商船改道（50 余艘运载人道主义物资船只获准通行）。</div>
+  <div class="double-warn"><span class="tag tag-econ">💥经济命脉</span> <b>伊朗伊斯兰革命卫队海军 9/10</b>：在霍尔木兹海峡入口击毁一艘美军无人艇（艇体编号「5838」），宣称海峡处于其「控制与情报监视」之下，警告「任何敌对力量都将成为打击目标」。</div>
+  <div class="double-warn"><span class="tag tag-oil">🛢️能源设施</span> <b>伊朗 9/9</b>：作为对美摧毁 5 艘伊朗油轮的回应，攻击霍尔木兹海峡附近 10 艘船只，并宣布将升级对进一步袭击的回应；革命卫队 9/9 称打击 2 艘美军「宙斯盾」驱逐舰 + 8 艘油轮。</div>
+  <div class="muted">敏感威胁子项评分：<b style="color:var(--red)">97</b>（占言论维度 50% 权重）——特朗普「镐山核设施」威胁与赫格塞思「掌控海峡 + 海军沉海底」表态叠加，美军一周摧毁 10 艘油轮、伊朗击毁美无人艇，敏感威胁由「威胁」持续固化为「实际行动」，且从霍尔木兹向红海曼德海峡外溢。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>倒序时间序列 · 美伊对比表</h2>
+  <table>
+    <tr><th style="width:64px">日期</th><th style="width:38%">美国（言论/行动）</th><th style="width:38%">伊朗（言论/行动）</th><th style="width:64px">类别</th></tr>
+    <tr>
+      <td class="t-date">9/11<br><span class="muted">今日·周五</span></td>
+      <td>🔴 <b class="warn">⚠️⚠️</b>特朗普 9/11 五角大楼称「伊朗永不能有核武器」、威胁打击「镐山」核设施（☢️）；🔴 <b class="warn">⚠️⚠️</b>赫格塞思 9/11「掌控海峡、打完这场仗、海军沉海底」（💥）；⚪ 特朗普「对伊战争绝不后悔」「选举后立即停战」、否认约旦基地战机受损；⚪ 财政部 9/10 制裁伊朗代理人网络（伊拉克/黎巴嫩/阿联酋/土耳其）。</td>
+      <td>🔴 <b class="warn">⚠️</b>革命卫队海军 9/10 击毁霍尔木兹入口美军无人艇（编号 5838）、警告打击任何敌对力量；🔴 9/9 袭约旦美军基地（弹道导弹，约旦称拦截 18 枚）；⚪ 恢复弹道导弹生产（WSJ 9/10 引美方官员，霍吉尔综合体）；🟢 9/14 海湾-伊朗外长会谈讨论霍尔木兹安全航道；🟢 暂停向非伊朗籍船收取 10% 运费附加费。</td>
+      <td>🔴冲突升级<br>🟢缓和</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/10<br><span class="muted">周四</span></td>
+      <td>🔴 <b class="warn">⚠️⚠️</b>中央司令部：一周摧毁 10 艘伊朗油轮、封锁致 96 艘商船改道（🛢️）；⚪ 特朗普（Fox）「无后悔、重来还会这么做」。</td>
+      <td>🔴 <b class="warn">⚠️</b>革命卫队击毁霍尔木兹入口美军无人艇（5838）；⚪ 恢复弹道导弹生产；⚪ 外交部：若再遭袭将升级报复。</td>
+      <td>🔴冲突升级</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/9<br><span class="muted">周三</span></td>
+      <td>🔴 中央司令部摧毁 5 艘伊朗油轮（4 阿曼湾 + 1 哈尔克岛附近）；⚪ 鲁比奥「每袭舰一次就损失油轮一次」；⚪ 财政部制裁 27 家伊朗航空 + 36 实体。</td>
+      <td>🔴 <b class="warn">⚠️⚠️</b>革命卫队打击 2 艘美宙斯盾舰（DDG-119/DDG-53）+ 8 艘油轮 + 10 艘违规船（🛢️）；🔴 袭约旦美军基地（弹道导弹）；🔴 捕获霍尔木兹入口美军无人潜航器；⚪ 穆赫比开出 5 项停火条件并设海上「制裁区域」（💥）；🟢 外长称与阿曼海峡谈判「重大进展」。</td>
+      <td>🔴冲突升级<br>🟢缓和</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/8<br><span class="muted">周二</span></td>
+      <td>🔴 美军摧毁 5 艘伊朗油轮（阿曼湾 Kaviz、Charminar、Horizon 1、Riesco + 哈尔克岛 Derya）；⚪ 鲁比奥称「伊朗将为此付出代价」。</td>
+      <td>🔴 <b class="warn">⚠️⚠️</b>革命卫队警告科威特/巴林油轮船员立即撤离（🛢️）；🔴 向约旦美军基地发射弹道导弹；⚪ 总统佩泽希齐扬称「继续抵抗至侵略者完全后悔」。</td>
+      <td>🔴冲突升级</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/7<br><span class="muted">周一</span></td>
+      <td>🔴 美军持续打击伊朗油轮（击沉 1 艘、瘫痪 2 艘）；⚪ 副总统万斯否认「战争」定性。</td>
+      <td>🔴 <b class="warn">⚠️</b>革命卫队再以弹道导弹袭美航母/驱逐舰（未命中）；⚠️ 威胁设霍尔木兹「禁区」；⚪ 巴加埃称美国侵略是海峡不安全根源。</td>
+      <td>🔴冲突升级</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/6<br><span class="muted">周日</span></td>
+      <td>🔴 美军摧毁 3 艘伊朗油轮（回应伊导弹袭舰）。</td>
+      <td>⚪ <b class="warn">⚠️⚠️</b>雷扎伊宣布未来几天设霍尔木兹「禁区」（从美封锁线至装载港，入者制裁、保险失效）。</td>
+      <td>🔴威胁升级</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/5<br><span class="muted">周六</span></td>
+      <td>🔴 美中央司令部击沉 1 艘、永久瘫痪 2 艘伊朗油轮。</td>
+      <td>🔴 革命卫队弹道导弹袭美航母/驱逐舰；打击 3 艘美关联船只及 3 艘「非法航道」油轮。</td>
+      <td>🔴冲突升级</td>
+    </tr>
+  </table>
+  <div class="legend">类别：<span class="pill r">🔴 军事冲突/威胁升级</span><span class="pill g">🟢 降温/缓和</span><span class="pill o">⚪ 声明/一般言论</span>　<span class="warn">⚠️</span>=严重项　<span class="warn">⚠️⚠️</span>=敏感威胁（核/能源/经济命脉）</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>霍尔木兹海峡通航量与战争险/保险</h2>
+  <table>
+    <tr><th style="width:25%">指标</th><th>最新读数</th><th>变化（环比）</th></tr>
+    <tr><td>通航量</td><td>约 6 艘/日（最近 24 小时 3–6 艘，hormuzstraitmonitor 9/11）</td><td>环比 9/10 约 6 艘持平，仍处 5 月以来最低区间；正常日均约 60 艘，现仅约 5–7%；海峡日流量不足 200 万桶/日，较 8 月日均约 430 万桶进一步下滑</td></tr>
+    <tr><td>战争险费率（AWRP）</td><td>船体价值的 10%（本轮冲突以来最高）</td><td>环比 9/9 持平，区间 7.5%–10%；部分承保商暂停即期承保、削减承保能力，由地区政府充当「最后承保人」</td></tr>
+    <tr><td>附加战争险保费</td><td>货物价值的 10%（最高）</td><td>冲突前约为零；货物保险占货物价值 5%–6%，部分货主放弃投保</td></tr>
+    <tr><td>油轮过境成本</td><td>1000 万–2000 万美元/航次</td><td>创历史新高；VLCC 中东海湾→中国日租金约 70 万美元，现货 WS 145–285（+190%–470% vs 危机前）</td></tr>
+    <tr><td>布伦特原油</td><td>9/10 收 107.63 美元/桶（+6.34%），9/11 盘中触及 109.97（四个月新高）后回落、收约 108</td><td>周涨约 13%，自 7 月 17 日当周以来最强单周；年内累计涨幅进一步扩大</td></tr>
+    <tr><td>WTI 原油</td><td>9/10 收 102.48 美元/桶（+6.69%），9/11 约 103.45</td><td>自 5 月以来首次周收于 100 美元上方</td></tr>
+  </table>
+  <div class="muted" style="margin-top:8px">注：通航量用<b>环比</b>（与近日及 10 日均值比），不与战前（约 125 艘/日、2000 万桶/日）比；战前基准仅作背景参考。外溢信号：胡塞武装 9/10 占领也门红海港口摩卡 + 哈尼什群岛 + 迈永岛，向曼德海峡推进至约 46 公里，沙特阿美吉赞炼油厂 4 座储油罐被摧毁——霍尔木兹 + 曼德「双线封堵」成型。机构预测：高盛称航运袭击加剧油价或达 120 美元（若出口正常化则回落 80）；摩根大通估每多中断一个月油价 +7–8 美元、中断 3 个月则布伦特月均约 114；花旗上调三季度布伦特均价至 86（因海峡重开时间表拉长）；ANZ 上调短期布伦特至 95。沙特 8 月产量降至 623.8 万桶/日（1990 年以来最低）。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>① 每日紧张度评分走势（标注今日）</h2>
+  <div class="chart-box tall"><canvas id="scoreChart"></canvas></div>
+  <div class="legend">红色折线为每日综合紧张度评分（0–100），今日 96 维持监测以来峰值。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>② 霍尔木兹通航量时间序列（环比）</h2>
+  <div class="chart-box"><canvas id="transitChart"></canvas></div>
+  <div class="legend">单位：艘/日。反映逐日环比变化，通航持续处于 5 月以来最低区间（约 6 艘/日）。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>③ 战争险费率时间序列</h2>
+  <div class="chart-box"><canvas id="warRiskChart"></canvas></div>
+  <div class="legend">单位：船体价值 %/航次。今日约 10%，维持本轮冲突新高。</div>
+</div>
+
+<footer>
+  数据源：新华社、央视新闻、中新社、央广网、环球网、财联社、腾讯新闻、CGTN、Reuters、Bloomberg、Al Jazeera、CNBC、FT、Kpler、Rystad Energy、ENOC、Marsh、Lloyd's List、hormuzstraitmonitor 等<br>
+  本报告由 WorkBuddy 自动生成 · 仅供信息参考，不构成任何投资建议
+</footer>
+
+</div>
+
+<script>
+const dates = ['8/30','8/31','9/1','9/2','9/3','9/4','9/5','9/6','9/7','9/8','9/9','9/10','9/11'];
+const scores = [85,87,89,88,90,90,91,91,94,93,95,96,96];
+const transit = [6,10,4,4,4,4,2,6,7,6,6,6,6];
+const warRisk = [8.0,8.1,8.2,8.3,8.4,8.5,8.6,8.75,8.75,8.75,10.0,10.0,10.0];
+
+Chart.defaults.font.family = "-apple-system,'PingFang SC','Microsoft YaHei',sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.color = '#5b6472';
+
+const common = {responsive:true, maintainAspectRatio:false, interaction:{mode:'index',intersect:false}};
+
+new Chart(document.getElementById('scoreChart'), {
+  type:'line',
+  data:{labels:dates, datasets:[{
+    label:'紧张度评分', data:scores, borderColor:'#d92632', backgroundColor:'rgba(217,38,50,.12)',
+    fill:true, tension:.35, pointRadius:4, pointBackgroundColor:scores.map((v,i)=>i===scores.length-1?'#d92632':'#ffffff'),
+    pointBorderColor:'#d92632', pointBorderWidth:2
+  }]},
+  options:{...common, scales:{y:{min:70,max:100,suggestedMin:70,suggestedMax:100,title:{display:true,text:'评分 (0-100)'}}},plugins:{tooltip:{callbacks:{label:c=>'评分: '+c.parsed.y}}}}
+});
+
+new Chart(document.getElementById('transitChart'), {
+  type:'line',
+  data:{labels:dates, datasets:[{
+    label:'通航量(艘/日)', data:transit, borderColor:'#e88a1a', backgroundColor:'rgba(232,138,26,.12)',
+    fill:true, tension:.35, pointRadius:4, pointBackgroundColor:transit.map((v,i)=>i===transit.length-1?'#e88a1a':'#ffffff'),
+    pointBorderColor:'#e88a1a', pointBorderWidth:2
+  }]},
+  options:{...common, scales:{y:{beginAtZero:true,title:{display:true,text:'艘/日'}}},plugins:{tooltip:{callbacks:{label:c=>'通航: '+c.parsed.y+' 艘'}}}}
+});
+
+new Chart(document.getElementById('warRiskChart'), {
+  type:'line',
+  data:{labels:dates, datasets:[{
+    label:'战争险费率(%)', data:warRisk, borderColor:'#2f6fed', backgroundColor:'rgba(47,111,237,.12)',
+    fill:true, tension:.35, pointRadius:4, pointBackgroundColor:warRisk.map((v,i)=>i===warRisk.length-1?'#2f6fed':'#ffffff'),
+    pointBorderColor:'#2f6fed', pointBorderWidth:2
+  }]},
+  options:{...common, scales:{y:{min:7,max:11,title:{display:true,text:'% / 航次'}}},plugins:{tooltip:{callbacks:{label:c=>'费率: '+c.parsed.y+'%'}}}}
+});
+</script>
+</body>
+</html>

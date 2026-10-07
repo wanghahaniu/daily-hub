@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="HDQWHho26fFZ06j1M5gFW0">
+<head data-page-node-id="Pck6OwkDWu3h0xyIdwEUxf">
+<meta charset="UTF-8" data-page-node-id="RELmSKwwBeKbIKjwyK4P9u">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="n3rdAGKWVBtMoTQlRox7iX">
+<title>期货看板每日总结 · 2026-09-10</title>
+<style>
+  :root{
+    --bg:#f2f4f7; --card:#ffffff; --line:#e5e8ee;
+    --ink:#1c2430; --ink2:#5b6675; --ink3:#8a94a3;
+    --red:#d92d20; --red-d:#b42318; --red-bg:#fef1f0;
+    --green:#16855a; --green-bg:#ecfdf3;
+    --amber:#b45309; --amber-bg:#fffaeb;
+    --blue:#1d4ed8; --blue-bg:#eff6ff;
+    --navy:#0d1b33;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:15px}
+  .wrap{max-width:1060px;margin:0 auto;padding:18px 16px 60px}
+
+  /* ===== 头部 ===== */
+  header{background:linear-gradient(135deg,#0d1b33 0%,#16305e 60%,#1d3f7a 100%);color:#fff;border-radius:16px;padding:26px 28px 22px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(217,45,32,.28),transparent 70%)}
+  header::before{content:"";position:absolute;right:90px;bottom:-90px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.06),transparent 70%)}
+  .hd-top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;position:relative;z-index:1}
+  .tag{font-size:11.5px;letter-spacing:.12em;color:#9fb3d9;text-transform:uppercase}
+  h1{font-size:25px;font-weight:800;margin:4px 0 2px;letter-spacing:.5px}
+  h1 em{font-style:normal;color:#ff6b5e}
+  .hd-sub{font-size:13px;color:#c3d0e6;display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px}
+  .hd-sub b{color:#fff}
+  .chip{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:3px 11px;font-size:12.5px;color:#e6edf8;white-space:nowrap}
+  .chip.red{background:rgba(217,45,32,.35);border-color:rgba(255,120,110,.5)}
+  .chip.green{background:rgba(22,133,90,.4);border-color:rgba(110,231,183,.5)}
+  .chip.down b{color:#ff9a8f}
+  .cnum{font-weight:800;font-size:14px}
+
+  /* ===== 三大判断 ===== */
+  .verdict{margin-top:16px}
+  .vtitle{font-size:15px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:7px;margin:0 0 10px 2px}
+  .vtitle .ln{flex:1;height:2px;background:linear-gradient(90deg,#d92d20,transparent)}
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .vcard{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:15px 16px;box-shadow:0 1px 3px rgba(16,24,40,.05)}
+  .vcard .vt{display:flex;align-items:center;gap:7px;font-weight:800;font-size:14.5px;margin-bottom:7px}
+  .vt i{font-style:normal;width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#fff;flex:none}
+  .vt.red i{background:linear-gradient(135deg,#e04b3d,#b42318)}
+  .vt.amber i{background:linear-gradient(135deg,#f59e0b,#b45309)}
+  .vt.green i{background:linear-gradient(135deg,#2fb07e,#0e7a4e)}
+  .vcard p{font-size:13px;color:var(--ink2)}
+  .vcard p b{color:var(--ink)}
+  .vcard .hl{background:var(--red-bg);color:var(--red-d);border-radius:6px;padding:0 5px;font-weight:700}
+  .vcard .hlg{background:var(--green-bg);color:var(--green);border-radius:6px;padding:0 5px;font-weight:700}
+  .vcard .hla{background:var(--amber-bg);color:var(--amber);border-radius:6px;padding:0 5px;font-weight:700}
+
+  /* ===== 小节通用 ===== */
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:16px;box-shadow:0 1px 3px rgba(16,24,40,.05)}
+  .sec-h{display:flex;align-items:center;gap:9px;margin-bottom:13px;flex-wrap:wrap}
+  .sec-no{width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex:none}
+  .n-red{background:linear-gradient(135deg,#e04b3d,#b42318)}
+  .n-green{background:linear-gradient(135deg,#2fb07e,#0e7a4e)}
+  .n-amber{background:linear-gradient(135deg,#f59e0b,#b45309)}
+  .n-blue{background:linear-gradient(135deg,#4f7df0,#1d4ed8)}
+  .n-navy{background:linear-gradient(135deg,#3b5578,#0d1b33)}
+  .sec-h h2{font-size:18px;font-weight:800;color:var(--ink)}
+  .sec-h .hint{font-size:12px;color:var(--ink3);font-weight:400}
+  .sec-sub{font-size:13px;color:var(--ink2);background:#f8fafc;border:1px dashed #d8dfe8;border-radius:8px;padding:7px 12px;margin-bottom:13px}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{font-size:12px;color:var(--ink3);text-align:left;font-weight:700;padding:6px 10px;border-bottom:1.5px solid var(--line);letter-spacing:.03em}
+  td{padding:8px 10px;border-bottom:1px solid #eef1f5;vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafbfd}
+  .score{font-weight:800;white-space:nowrap}
+  .score.up{color:var(--red-d)}
+  .score.dn{color:var(--green)}
+  .name{font-weight:700}
+  .sub{color:var(--ink3);font-size:12px}
+  .cell-tag{display:inline-block;font-size:11.5px;font-weight:700;border-radius:5px;padding:1px 8px;white-space:nowrap}
+  .t-red{background:var(--red-bg);color:var(--red-d)}
+  .t-green{background:var(--green-bg);color:var(--green)}
+  .t-amber{background:var(--amber-bg);color:var(--amber)}
+  .t-blue{background:var(--blue-bg);color:var(--blue)}
+  .t-gray{background:#f1f3f6;color:#4a5568}
+  .note-bar{margin-top:12px;background:var(--amber-bg);border-left:4px solid var(--amber);border-radius:8px;padding:9px 14px;font-size:13px;color:#7a4a0e}
+  .note-bar b{color:var(--amber)}
+  .note-bar.blue{background:var(--blue-bg);border-left-color:var(--blue);color:#1e40af}
+  .note-bar.blue b{color:var(--blue)}
+
+  /* ===== 转折组行 ===== */
+  .group-row td:first-child{width:190px}
+  .grp-title{font-weight:800;font-size:13px;line-height:1.4}
+
+  /* ===== 重点观察卡片（龙头回踩/熊头遇压）===== */
+  .watch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .wcard{border:1px solid var(--line);border-radius:10px;padding:11px 13px;background:#fff;position:relative}
+  .wcard .w-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+  .wcard .w-name{font-weight:800;font-size:14px}
+  .wcard .w-sub{color:var(--ink3);font-size:11.5px}
+  .wcard p{font-size:12.8px;color:var(--ink2)}
+  .wcard p b{color:var(--ink)}
+  .lvl{font-size:11px;font-weight:800;border-radius:999px;padding:2px 9px;white-space:nowrap}
+  .L1{background:var(--red-bg);color:var(--red-d);border:1px solid #f6c9c5}
+  .L2{background:var(--amber-bg);color:var(--amber);border:1px solid #f3d9a8}
+  .L3{background:var(--green-bg);color:var(--green);border:1px solid #bfe6d4}
+  .L4{background:#f1f3f6;color:#4a5568;border:1px solid #e2e5ea}
+  .rule{font-size:12px;color:var(--ink2);background:#f8fafc;border-left:3px solid var(--blue);padding:6px 12px;border-radius:0 8px 8px 0;margin-bottom:13px}
+  .rule b{color:var(--blue)}
+
+  /* ===== 提示清单 ===== */
+  ol.tips{list-style:none;counter-reset:t}
+  ol.tips li{counter-increment:t;position:relative;padding:9px 12px 9px 44px;border:1px solid var(--line);border-radius:10px;margin-bottom:8px;font-size:13.5px;background:#fff}
+  ol.tips li::before{content:counter(t);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  ol.tips li b{color:var(--ink)}
+  .kw{font-weight:800}
+  .kw.r{color:var(--red-d)} .kw.g{color:var(--green)} .kw.a{color:var(--amber)} .kw.b{color:var(--blue)}
+
+  footer{margin-top:18px;font-size:11.5px;color:var(--ink3);background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px}
+  footer b{color:var(--ink2)}
+
+  @media(max-width:820px){
+    .vgrid{grid-template-columns:1fr}
+    .watch-grid{grid-template-columns:1fr}
+    .group-row td:first-child{width:auto;display:block}
+    table,.grp-scroll{overflow-x:auto}
+    h1{font-size:21px}
+  }
+</style>
+</head>
+<body data-page-node-id="dmfSM8gXqFFVYkgH9qqsPT">
+<div class="wrap" data-page-node-id="ftSBKzTb0lXBietE1W08p7">
+
+  <!-- ================= 头部 ================= -->
+  <header data-page-node-id="bEk3X5Iv88GjP6YDlEVtRl">
+    <div class="hd-top" data-page-node-id="MFynMWVS6fv2z3mEuwu0DE">
+      <span class="tag" data-page-node-id="olyH0MtrTOGm4RP0YP3ikT">Futures Dashboard · Daily Briefing</span>
+    </div>
+    <h1 data-page-node-id="zJydcJ4D47jzr7q4V7RhNG">期货看板每日总结 <em data-page-node-id="VSk5Par18k9fzudFJifxqh">· 09-10 作战地图</em></h1>
+    <div class="hd-sub" data-page-node-id="hbY1h0Xf4XEEFvP6sPgJ9e">
+      <span data-page-node-id="alfFnH8ice16GcZc4LCEJH">📅 2026-09-10（周四）</span>
+      <span data-page-node-id="hsbb8UiTPO8YLBMGLIHBZw">数据基准：<b data-page-node-id="8crGmfwwUY559pBqNlAQ52">09-09（周三）日盘收盘</b>（1d 17:30 / 4h 15:36 生成）</span>
+      <span data-page-node-id="Z7d08qYzGeh5lTC1MdRipl">对比基准：09-08（1d 42多 / 7空，4h 40多 / 8空）</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative;z-index:1" data-page-node-id="Phj8swFDsIFu5EzkffnUCW">
+      <span class="chip red" data-page-node-id="GxxIKDQgQA05vugIpRCGVx">1d 多头 <b class="cnum" data-page-node-id="0VllVKHMvfgS7qB38PuA4B">40</b></span>
+      <span class="chip green" data-page-node-id="OQETD1vxndfoZHbw2aIPS4">1d 空头 <b class="cnum" data-page-node-id="qDmXgoqC4EZjLLvxVwkCPT">7</b></span>
+      <span class="chip down" data-page-node-id="BDGrlDBnIqGzOCzuMsn3YO">4h 多头 40 → <b class="cnum" data-page-node-id="fVjnzkPA2XrCe90rsJE8uH">34</b></span>
+      <span class="chip" data-page-node-id="B9pTf2EuMhiPbSFjPWihb4">多转空确认 1 + 预警 1</span>
+      <span class="chip" data-page-node-id="3Y7Sx4RkClvsPL1EsZA3nB">空转多 0（未确认）</span>
+      <span class="chip" data-page-node-id="93ZZEdMFkwBJLfDCSd34mW">回踩支撑 34 / 遇压 5</span>
+      <span class="chip" style="background:rgba(255,190,60,.22);border-color:rgba(255,200,90,.5)" data-page-node-id="ckEeMEY16STcETBfJKqsBj">⚠️ 09-09 夜盘未纳入，开盘先看隔夜</span>
+    </div>
+  </header>
+
+  <!-- ================= 三大核心判断 ================= -->
+  <div class="verdict" data-page-node-id="89rQzzIoQqFY8lMA88uPjR">
+    <div class="vtitle" data-page-node-id="qdYemlxLxsZecbfOiSEOk7">🎯 今日核心判断 <span class="ln" data-page-node-id="RVQU8X8V1S8gVIZV9ytUdI"></span></div>
+    <div class="vgrid" data-page-node-id="trJCDGL9NCCYwp8uRBrjV4">
+      <div class="vcard" data-page-node-id="0gIpCw4TtFY4YIKAJTjNSO">
+        <div class="vt red" data-page-node-id="4i9SQsBR6VWSnVXgLtWNqx"><i data-page-node-id="f5SNzCUB0EMNaOoc7kagY0">▲</i>多头主场没变 —— 这是回踩，不是转熊</div>
+        <p data-page-node-id="ziEz4G80I5ULh5t1okPVpc">日线 40 多 vs 7 空趋势完好。09-09 只是<b data-page-node-id="9n3HhNP8Dn7ZgYwRCWkl02">「4h 普跌回踩日」</b>：4h 多头 40→34，单日 6 个品种平多（<b data-page-node-id="jbbMJGbEMqrImFcDLWJS86">p 棕榈 / y 豆油 / RM 菜粕 / UR 尿素 / ao 氧化铝 / sp 纸浆</b>），全部落在「日线仍持多」上 → <span class="hlg" data-page-node-id="6WrnfUWo8AMSTZafU4t7vv">洗盘 / 分化</span>，别把回踩当反转。</p>
+      </div>
+      <div class="vcard" data-page-node-id="cOlbHsUBqqfkvXhBiJhKoO">
+        <div class="vt amber" data-page-node-id="yCpZ3GjuaLECT5exbyDChG"><i data-page-node-id="3lXNU8fL44Tkcp7aTL3CPT">⚠</i>真正的折返只有 2 只</div>
+        <p data-page-node-id="WrABLwuzilVZU4ev3eu7WO"><b data-page-node-id="6PE1ekz2MXJdoHG4Mmtc0D">ao 氧化铝</b>（1d＋4h 同日 09-09 双落袋）、<b data-page-node-id="qwzBKO73VXKKtEMjZxAMYi">SF 硅铁</b>（1d 09-09 平多，4h 9/07 已平）—— 唯二「离场级别完整」。反抽是<span class="hla" data-page-node-id="hwFURZh4xjpiqyqATlT4JB">减多 / 观望区</span>，不是接多区；等 SK 反手或直接放弃。</p>
+      </div>
+      <div class="vcard" data-page-node-id="hNjugGXamk3b0ncDu7UHOm">
+        <div class="vt green" data-page-node-id="u54GDH152TC9P5UM40xViM"><i data-page-node-id="0ZkWDoImnskzK07CzVjub3">▼</i>空头侧唯一新动作</div>
+        <p data-page-node-id="wPyYwE05f6LhT8l1956lpy"><b data-page-node-id="EwTeTYpjOwEGZ3g3N9obOd">au 黄金</b> 4h 09-09 开空 → 双级别新熊成型（1d 9/07 已空）；<b data-page-node-id="abpYmlGrCESgbGesBt7Gqq">lh 生猪</b> 第 3 次触压后收破 KK（11855）→ <span class="hl" data-page-node-id="trYQ1jfTWjr6FzKokDHKdh">下杀确认</span>。注意：<b data-page-node-id="kEJdIDoOiisBuQKCzpXo4V">ag 白银只是双级别平多观望（POS=0），不是空头，别追。</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= 一、看多主线 ================= -->
+  <section data-page-node-id="sBdETWKdQbwFJZF0pgGCa3">
+    <div class="sec-h" data-page-node-id="LCebYyCePPzLHgIBPvgozr"><span class="sec-no n-red" data-page-node-id="YJetg6UZYI3I5aEPHRNlvu">一</span><h2 data-page-node-id="YOP1reN1Hx04uHCZ2JAnkG">看多主线</h2><span class="hint" data-page-node-id="dU8BF2fRFgAa6qVI8KnuCr">日线多头 40 只 · 09-09 无新开多</span></div>
+
+    <table data-page-node-id="Z47ZWqqIOa8ibWTPFaNwzS">
+      <tr data-page-node-id="vwltokzI7JAFbI1oVutA1D"><th style="width:110px" data-page-node-id="M3Pe61ImkuPJkfyA1c1Qtu">梯队</th><th data-page-node-id="uCZQYVuY0gAGORO3uDlO4R">品种（日线 score）</th><th data-page-node-id="Ral7yBvKdKHEP8YFCSSmLj">状态</th></tr>
+      <tr data-page-node-id="8H60kL1mxHzs6gAzGEQZ5j">
+        <td data-page-node-id="95QztM2q4x70eBQpWZybOf"><span class="cell-tag t-red" data-page-node-id="yHU7DYQGFaWfxvvXbUNwzj">龙头</span></td>
+        <td data-page-node-id="1jHiEDqEsbS9uXQYYDpuEo"><b class="name" data-page-node-id="cXvtJAIjE3AevQ0KluR5nE">bu 沥青</b> <span class="score up" data-page-node-id="1HGm1Fp1SWKlM0z1sFtDUK">+12.55</span> ／ <b class="name" data-page-node-id="N2OxGgbUv3msrT4tZLqvUD">sc 原油</b> <span class="score up" data-page-node-id="knua4nivFfS8Wtds7COTOY">+11.71</span></td>
+        <td data-page-node-id="Kk7Vf4uUf2MfeI3QLYBHxv">09-09 无回踩，继续沿上轨走强，<b data-page-node-id="wdpZavPrcjGUFQBNNwqGBA">趋势最硬</b>，回踩即低吸区</td>
+      </tr>
+      <tr data-page-node-id="A8RzvwlcvjYagInDiZK0VY">
+        <td data-page-node-id="nls3RCggrvC4ET4eC4Morb"><span class="cell-tag t-red" data-page-node-id="0e0hLFySsTAz5IT2HoA41w">能化中军</span></td>
+        <td data-page-node-id="Vwq6nQwfZHmP2QiG67eqPR">MA <span class="score up" data-page-node-id="MED7bXDTU4OalAqINBMawR">9.13</span>、pg <span class="score up" data-page-node-id="fA9rkikNY2FBiB0zhBg7Bk">8.75</span>、bz <span class="score up" data-page-node-id="wn5Tfp5Kao19ylwN9sJ0yc">8.01</span>、eg <span class="score up" data-page-node-id="ZMAOIPOihwAohsBNCLRHzT">7.45</span>、eb <span class="score up" data-page-node-id="5uaNs3CFMmvi75IT0eRBU7">7.02</span>、PL <span class="score up" data-page-node-id="CGEx4SqckRwkF0To2ERtUI">6.41</span>、PX <span class="score up" data-page-node-id="4HCkSnzyafZo3i2k0lTHa1">5.91</span>、fu <span class="score up" data-page-node-id="jq0J8XA9ObShlyHQxYd497">5.25</span>、PR <span class="score up" data-page-node-id="BOwkmEwUguChIJQyBrxXja">4.90</span>、pp <span class="score up" data-page-node-id="WARu9MHzoGOkqpNOERc9Wf">4.87</span>、l <span class="score up" data-page-node-id="ddODoiRl4fwapGEEAP13Iz">4.79</span>、PF <span class="score up" data-page-node-id="G0DK7wLkwqPWywPRhwlYI2">4.69</span></td>
+        <td data-page-node-id="BKmRwiICCK9myfweNQ4dIm">整条化工链共振未散</td>
+      </tr>
+      <tr data-page-node-id="GxF9z6iRBfkgOfjx9RCbLB">
+        <td data-page-node-id="vozg4aANiDhGOoiFjOz3iy"><span class="cell-tag t-red" data-page-node-id="k2rMGAoZexDJvfKv9RQeuB">黑色系</span></td>
+        <td data-page-node-id="WmKLkImWnq950Rp179053O">jm 焦煤 <span class="score up" data-page-node-id="pF2tRsDYNAKVA71Pih19L3">5.75</span>、j 焦炭 <span class="score up" data-page-node-id="ZbhVK4OJkxYFUBUvfrmftH">5.02</span>、i 铁矿 <span class="score up" data-page-node-id="9o0sSYfxwX5UCYNqi7q9LJ">1.69</span>、hc <span class="score up" data-page-node-id="cSJLgs3nDsDj1PYwDA7lSu">1.20</span></td>
+        <td data-page-node-id="K0kFFncWrP6iCW0GbogQey">双焦日线仍在，但 4h 未翻多 → 见第四节 <b data-page-node-id="xEQbgj6ppmazOpjBMF8o28">临界突破位</b></td>
+      </tr>
+      <tr data-page-node-id="rpFW3sNUCBQVFhXXMf6XYm">
+        <td data-page-node-id="eLmIzjx1I7JTsnH8IhAt3G"><span class="cell-tag t-red" data-page-node-id="FsnpQo28qbnOcyRCnvrYla">橡胶系</span></td>
+        <td data-page-node-id="DnIDxdJUqrHl9NcfFPztQw">nr <span class="score up" data-page-node-id="gv0dFRFRB7zOxNinP8D97X">6.67</span>、ru <span class="score up" data-page-node-id="9a2u0HkA2WE5BAYA7QXV2D">5.02</span>、br <span class="score up" data-page-node-id="KXcx6v3hvIFsPzj07p4NG4">4.56</span></td>
+        <td data-page-node-id="9hvGR2Be4CHr35spISIiM2">nr 回踩 5 次不破 → <b data-page-node-id="rjRFk0ShKPh9MUyqKsWNry">最健康的多头</b></td>
+      </tr>
+      <tr data-page-node-id="kpaACDMQN2GANg4sMsdCDP">
+        <td data-page-node-id="AQJJeuepIoTC3m3bjpWPCk"><span class="cell-tag t-red" data-page-node-id="vd8qxMRM8fnppN0IyIycqF">粕/油脂/其他</span></td>
+        <td data-page-node-id="F32od9X1td5XHZ20DaBRKx">m / y / b / RM / p 温和多；zn <span class="score up" data-page-node-id="iViTo7Wo5okGBPICo9QHQZ">3.32</span>、cu <span class="score up" data-page-node-id="CccbNXpVMl559EXmYLfXLQ">1.64</span>、al <span class="score up" data-page-node-id="GNjtdgnLyoY2A0hcZuFFkO">0.17</span></td>
+        <td data-page-node-id="7GLfCMnXXhQ0R5m1TzGBD2">有色内部分化：<b data-page-node-id="NHwvHCqSnfX0WsIwgG7md5">铜锌铝多，锡空、贵金属转空</b></td>
+      </tr>
+    </table>
+
+    <div class="note-bar" data-page-node-id="sor4eaembnlsAg6ATxk8h0">📌 <b data-page-node-id="kRWeaaXJXUwi0R2tmX8V8s">09-09 新变化</b>：日线<b data-page-node-id="oAyfVhWTyr6CKZouuXtxP5">无新开多</b>（上日新多的 TA / ec / lu / a 仍在）；<b data-page-node-id="WQAT879SBb1FTbYo4txSZL">硅铁 SF611、氧化铝 ao2610 当日平多离场</b> —— 唯一两个从多头名单消失的品种（↓看第三节）。</div>
+  </section>
+
+  <!-- ================= 二、看空主线 ================= -->
+  <section data-page-node-id="dHLAgFHKx4grxrLxeI4C8g">
+    <div class="sec-h" data-page-node-id="jVp2VUYkVQynUI42xKeXmy"><span class="sec-no n-green" data-page-node-id="1Vs0HWICInSM3QQ5p97tzU">二</span><h2 data-page-node-id="uSWd4B5pFAqeEUUYUAlb2x">看空主线</h2><span class="hint" data-page-node-id="JTRS6HS5ZQqoCu3YyHTKL6">日线空头 7 只 · 一只没少</span></div>
+
+    <table data-page-node-id="drHTvJSaOuq7O21NjNzz7b">
+      <tr data-page-node-id="qfqvVfShupDncPuz09Dl3b"><th style="width:190px" data-page-node-id="yBJuJJwoDPyGQTa4e9bPJ3">品种（score）</th><th data-page-node-id="S9yizgYPG33yfWBE9d1aWb">状态</th><th style="width:90px" data-page-node-id="HnF0NACUXC8VNoMrXMy5Qh">性质</th></tr>
+      <tr data-page-node-id="LEELODhtAPiWq4POjJKpve">
+        <td data-page-node-id="IOBSCtXkKtYJvjQYIJpxuA"><b class="name" data-page-node-id="Ba04oUgjPS40ETzzvtKFJU">CJ 红枣</b> <span class="score dn" data-page-node-id="cAh3MKAiCcNWc8tWDV9DdP">-10.45</span></td>
+        <td data-page-node-id="CE2BWFZRBXuIpcY3QYNAxs">老熊王，6/10 空单持有至今；09-09 微弹收 7945，仍在压力带下方</td>
+        <td data-page-node-id="ETILIY7MfwQDww7moHF3mw"><span class="cell-tag t-green" data-page-node-id="Pl6va2HPLyq2f8SzSa2bxQ">老熊 · 持有</span></td>
+      </tr>
+      <tr data-page-node-id="kd0lbvYmLJPGEn0mC98Phn">
+        <td data-page-node-id="03iWiCVWI1H2f4wIKAm0zf"><b class="name" data-page-node-id="20wAewEPtzNPLhHld03nNQ">LC 碳酸锂</b> <span class="score dn" data-page-node-id="mu9Tzq5oAtupPZYRKoRhPz">-2.91</span></td>
+        <td data-page-node-id="CeAEDI0kWHAVO56zAhmWJK">9/04 开空，<b data-page-node-id="HjrJpsZLg526nr8A4E3AVV">续跌至 142000</b>（较 09-08 再跌约 1%）→ <b data-page-node-id="eIZP5YyovllVXBvZakDIXw">空头最顺的一只</b></td>
+        <td data-page-node-id="RHrA0EYzlcEfiYZsLRngUs"><span class="cell-tag t-green" data-page-node-id="Bkj44Hi5K61pSz7CQHsWRC">趋势空 · 持有</span></td>
+      </tr>
+      <tr data-page-node-id="nf3efmRiDy30hdPOZqh6zw">
+        <td data-page-node-id="efaWBZpA3QDa2BwKAShb48"><b class="name" data-page-node-id="SA38ypFB7qGwUUzoQ3xjrB">ss 不锈钢</b> <span class="score dn" data-page-node-id="PgxeFIk4Ll3jaFzeWVqUY5">-2.81</span></td>
+        <td data-page-node-id="A5K3MYyveUrCbVa33SlCPG">老空持有，无新变化</td>
+        <td data-page-node-id="Pk7bMkPpGMsP28YuWdvZDY"><span class="cell-tag t-green" data-page-node-id="vP1iG8CHDKR0uWg6PVYlC7">趋势空 · 持有</span></td>
+      </tr>
+      <tr data-page-node-id="gJCG9sGUvxUek4AZGBbcr9">
+        <td data-page-node-id="1lyrZWoFBwTmaZY2GyTxt0"><b class="name" data-page-node-id="zc7FDXs7GIFvghjAIExY6t">lh 生猪</b> <span class="score dn" data-page-node-id="Ez8LHXeABlN03IjFWdoNKw">-1.74</span></td>
+        <td data-page-node-id="A0cO8bAMjdEzVMO9w1HQpM"><b data-page-node-id="hbmC85fGNKZYC2MDp7GXVq">09-09 第 3 次触压后收破压力下沿 KK（11855，收 11730）→ 反弹结束、下杀确认</b></td>
+        <td data-page-node-id="W4WQt3l817kpQ3E2mGHndp"><span class="cell-tag t-green" data-page-node-id="wCLUce7JJEIGBLFK5JPg7s">破位 · 续拿</span></td>
+      </tr>
+      <tr data-page-node-id="julVQTlDAQLLcyxRRbHqQc">
+        <td data-page-node-id="qfIJopnzZ8BgncewQ2Cgq7"><b class="name" data-page-node-id="JQpkFYCGzMqrCFEHPKve7L">au 黄金</b> <span class="score up" data-page-node-id="ZVYQkcgJqxCxtoC5foO0uh">0.01</span></td>
+        <td data-page-node-id="J81dEFakdMTD5kXkX7i2nG"><b data-page-node-id="qBQQBEOCBENgBBlqFBODHE">双级别新熊</b>：1d 9/07 开空 ＋ 4h 9/09 11:30 也开空（09-09 唯一主动加空）</td>
+        <td data-page-node-id="aIq6Qc3W2bLCxJaEqaRpPR"><span class="cell-tag t-red" style="color:#b45309;background:var(--amber-bg)" data-page-node-id="68wwQEyY9D6cHdhjtcy9ME">新熊 · 观察</span></td>
+      </tr>
+      <tr data-page-node-id="limOX1ifZoG3mJkLXEeNFg">
+        <td data-page-node-id="m0Yf2T54UCbnLa8CSKgH37"><b class="name" data-page-node-id="8qD7NJP3pQyVrqY6aCwKj3">588000 科创50 / sn 锡</b></td>
+        <td data-page-node-id="BvZOxedcFgG6xkkXra3cES">空单持有中，均处遇压状态（↓第五节）</td>
+        <td data-page-node-id="ati7D9xaq4vJZ1EbpWEwDq"><span class="cell-tag t-green" data-page-node-id="zfqdybGDXSe3Fz7ZAhfyR6">遇压 · 持有</span></td>
+      </tr>
+    </table>
+
+    <div class="note-bar" data-page-node-id="MTtASkBouh83YEO9qgwVCC">⚠️ <b data-page-node-id="YAGYpBoWJtVA6D0IDUGj4c">白银 ag 注意别误判</b>：它是「双级别平多观望」（1d 9/02、4h 9/08 已平仓未反手，POS=0）。贵金属里真正动手做空的是 <b data-page-node-id="BuExGdUPuXPzzL6YYJ6R4r">au</b>，不是 ag —— 别提前空 ag。</div>
+  </section>
+
+  <!-- ================= 三、转折关注 ================= -->
+  <section data-page-node-id="LzhB8Eq1aAXTL5WQcNQvEk">
+    <div class="sec-h" data-page-node-id="ZnIlixq7joC0RlFESo2B9U"><span class="sec-no n-amber" data-page-node-id="ST8M1t6EYyBW4FbsxBtFzP">三</span><h2 data-page-node-id="VA29B5dwXNl2OxdQ6DdTwp">转折关注</h2><span class="hint" data-page-node-id="13dSDkAjjrImC4TYe2weGF">⚠️ 4h 转折一律用日线裁决，别单独信 4h</span></div>
+
+    <p style="font-weight:800;font-size:14px;margin-bottom:8px" data-page-node-id="uY1NPAPsfYeRjVJOyd3Ri8">① 日线级（权威信号）</p>
+    <table style="margin-bottom:6px" data-page-node-id="FhRPKtS7yXGe5GEsbwz0do">
+      <tr data-page-node-id="5f88qYj4Cj3iFyXlqaGP0S"><th style="width:200px" data-page-node-id="7wjGBNx4Z2DH6dQKw5wFey">信号</th><th data-page-node-id="C3cwXgvQlnrHV0UmXnDXwX">品种</th><th data-page-node-id="u2yq9jpNDpaD6Np2EAgKHB">说明</th></tr>
+      <tr data-page-node-id="liJmzp0fZ2WzeGwnAzXPAM">
+        <td data-page-node-id="kFZsUwAEHJoXoFyGfygkuW"><span class="cell-tag t-green" data-page-node-id="BVMRDXpFRjzBg9b99nL05G">多转空 · 已确认</span></td>
+        <td data-page-node-id="iUOAZ6eDyKCO6wITyof7eP"><b class="name" data-page-node-id="EmAAIu42er6Y9EkX85T97S">LC 碳酸锂</b><br data-page-node-id="p4xQSGelbbfE10gI3GDuMm"><span class="sub" data-page-node-id="VrYOYHKicYWspUDbE50tt2">9/02 转 · 9/03 确认 · 9/04 开空</span></td>
+        <td data-page-node-id="uiVBfPSqqbeCKry2Dn6Mpp">持续下杀中，最顺空</td>
+      </tr>
+      <tr data-page-node-id="uBLWD25DsP6pELCiEGp5um">
+        <td data-page-node-id="9BpWgYvyrGA9H5MC6utlpl"><span class="cell-tag t-amber" data-page-node-id="m4Zz4fVjTGoRHBksrgjCTO">多转空预警（新）</span></td>
+        <td data-page-node-id="4zogRaHwPr0xtEBJzhiSMS"><b class="name" data-page-node-id="PdupAJfAzVUbpoe5NHfPUE">SA 纯碱</b><br data-page-node-id="QyjqfUyP8MtvVF6EBGkAmI"><span class="sub" data-page-node-id="Up7jI1l9HODMqN8ljhwCvT">日线 BK@08-31 仍在手（POS=1）</span></td>
+        <td data-page-node-id="4UfDdHbH2aZiCMgMnLGQpH"><b data-page-node-id="2wNjK5TOAJJpDvSJubJyJ7">09-09 首挂「红转蓝预警」＋ 4h 9/07 夜已平多 → 双级别转弱进行时</b>；日线 EE≈<b data-page-node-id="dGw64DwYWbDzriJ9nuBLsW">1070</b>，跌破才确认转空，否则只是回踩</td>
+      </tr>
+      <tr data-page-node-id="3ERP5gNQMmYb87VEcknN4Z">
+        <td data-page-node-id="65h1J1tN2xw11U5ZdWoDYc"><span class="cell-tag t-gray" data-page-node-id="2T0qd1wgFBLBwGpcY39nBW">空转多 0</span></td>
+        <td data-page-node-id="97fkvzdFmEvmNcBnKwq0eb">—</td>
+        <td data-page-node-id="5DmF0OxMTNEKJZWSuQRmOc">v PVC 的 9/01 BK 仍在，只是退出提醒窗口，<b data-page-node-id="B9GDmsTM70HmeZzCz8FGiy">别误读为失效</b></td>
+      </tr>
+    </table>
+
+    <p style="font-weight:800;font-size:14px;margin:16px 0 8px" data-page-node-id="sRrE2O8RwJJOxdBgFRozhq">② 4h 多转空 14 只 → 日线裁决 <span class="sub" data-page-node-id="IS0i4NMPboccJRUelcU5KX">（09-09 当日新增 4：UR / ao / p / sp）</span></p>
+    <table data-page-node-id="kpyt4Bfjn6AXYMCprP8Wgd">
+      <tr data-page-node-id="htGhVlAahwGs5bCLp2jI3F"><th style="width:190px" data-page-node-id="mTOZKvcDkBloAvpycQWUNc">分组</th><th data-page-node-id="OVpDinThYvlcYJs2A4ACCZ">品种</th><th data-page-node-id="2gaNe8fMf4wvyrK1PolVWM">结论</th></tr>
+      <tr class="group-row" data-page-node-id="1tDnhq2GXfceOiP60JnKuC">
+        <td data-page-node-id="7Yz4SS55Q6Q4c5b7SfyTVo"><span class="cell-tag t-amber" data-page-node-id="wLWuigphoHWinTYE4cEYZz">双级别真折返</span></td>
+        <td data-page-node-id="pmf3IxARADZqMhnzW0DPGt"><b data-page-node-id="4Qgym8zDAOCirWCn3LaaEq">ao 氧化铝</b>（1d+4h 同日 09-09 平多）<br data-page-node-id="GFFQGGQDqIyVgI0SnBnMEX"><b data-page-node-id="kC3UA2ap2qMTGP4UYPdZAO">SF 硅铁</b>（1d 09-09 平多＋4h 9/07 已平）</td>
+        <td data-page-node-id="gJ7OdOS6e7yVznQiyePFFq">唯二「离场级别完整」。<b data-page-node-id="mAPpTwGv6L9nrj2mMVpUMZ">反抽勿当回踩接多</b>，等 SK 信号或放弃</td>
+      </tr>
+      <tr class="group-row" data-page-node-id="0XQ05oS4OTUuOpdXGkdgbs">
+        <td data-page-node-id="bc9rvZ7ipYJdxCxhpXJUM9"><span class="cell-tag t-blue" data-page-node-id="YDufBB8nHK8H4SzCvN1D7H">日线仍持多<br data-page-node-id="cHJ9FU6y3M4P8R50DL17Rv">= 回踩非做空</span></td>
+        <td data-page-node-id="jekkaBMyEfVt2ZA9BLIsV6"><b data-page-node-id="8W0Zn9zO7USrlOFlNWYCCD">p 棕榈 / y 豆油 / RM 菜粕</b>（4h 09-08夜~09-09 平多）<br data-page-node-id="jro7VgHpHcN0AgoLGmAPc1"><b data-page-node-id="DrC6dt3g08PjNcBDPZkqC2">UR 尿素</b>（4h 09-09 平多）</td>
+        <td data-page-node-id="HCNIUf3vj2wtzNVtWaecM8">油脂粕＋尿素 4h 集体洗盘。<b data-page-node-id="3NHgO0Z2Ewt65gOWhyGCmb">日线收盘其实不弱</b>（豆油/菜粕收在上轨上方）→ 多单以日线 EE 定去留，<b data-page-node-id="XkBiCa2uUnZ8ezmkq3cfzA">别追空</b></td>
+      </tr>
+      <tr class="group-row" data-page-node-id="0cPr3dNYuAzlOCs1Ey2Xn1">
+        <td data-page-node-id="21MLyG15JRtahiEOyMVfZM"><span class="cell-tag t-gray" data-page-node-id="uBId9Y0bJtlSwrwXqYsHMo">老信号（数日内已离场）</span></td>
+        <td data-page-node-id="nRMFiBHjytsvzWNqXDV6RD">hc / c / SM / PS / ag / 000016 / 000852 / IM2609 等</td>
+        <td data-page-node-id="BN1hLSd09EJVEpmOODcKFQ">弱势/观望品种，反弹勿追</td>
+      </tr>
+    </table>
+
+    <p style="font-weight:800;font-size:14px;margin:16px 0 8px" data-page-node-id="LCp39n5f4z9t7oc05Whf1S">③ 4h 空转多 6 只 → 日线裁决</p>
+    <table data-page-node-id="oGaVUJYC8OOqmTNuDsOWTH">
+      <tr data-page-node-id="GClGxJB1mcMDjghhrFIBM2"><th style="width:190px" data-page-node-id="lm79A9MuxhcBqz9CVnt6Xw">分组</th><th data-page-node-id="BFCdWgAAjE23cDeYTZHOcx">品种</th><th data-page-node-id="TyJC5cE66faGT9FwxGaNXK">结论</th></tr>
+      <tr class="group-row" data-page-node-id="oHMAWupszNOnvPMCD4JjUq">
+        <td data-page-node-id="7Hdvi2cUwwZIpfv60uv3Ul"><span class="cell-tag t-blue" data-page-node-id="n1cO5AmyQSWXmURiEVEjlv">4h 已开多 · 等日线 BK</span></td>
+        <td data-page-node-id="hnJtHEcMBBmkKiWYJ2FKj5">OI 菜籽油（4h 9/07 BK）、jd 鸡蛋（4h 9/07 BK）</td>
+        <td data-page-node-id="A0bliBCCPTRQc7tdsP64RW">转折未确认，<b data-page-node-id="cRo2U80cGGP9KpbVAu5N32">别提前抢</b>，等日线 BK 再跟</td>
+      </tr>
+      <tr class="group-row" data-page-node-id="XDFK36PpGrEcLH90NTrOVG">
+        <td data-page-node-id="xmMsfmVbEjNgPmz0geC2Qb"><span class="cell-tag t-gray" data-page-node-id="25w0jTFDF5GPUZUZhO6O2f">仅 BP 平空 · 未开多</span></td>
+        <td data-page-node-id="GkSQStDB0NVmJASGKftzP4">AP 苹果、PK 花生、ni 镍、<b data-page-node-id="O0ZVyrCGexDW6nhBfQH6rE">sn 锡</b></td>
+        <td data-page-node-id="vdB55Njw9bEDVCBYC2N93C">空头衰竭信号 ≠ 翻多。<b data-page-node-id="Gfd2wMDLzXYA0WFWlBZiSZ">sn 日线仍是空头 → 这是反弹不是反转（加空区）</b></td>
+      </tr>
+      <tr class="group-row" data-page-node-id="sRvnE7bxgS3QLU4tiFdGfO">
+        <td data-page-node-id="DrjAlNljUbFr2G3YHkRRE2"><span class="cell-tag t-amber" data-page-node-id="AvAwyNX1Q4N8A9AiU65ZgM">4h 空头反抽预警（新）</span></td>
+        <td data-page-node-id="FxcEN7pTbxCtBHtfY0mqnh"><b data-page-node-id="l4oam9zpEPzMTxhf0EjrKq">CJ 红枣、au 黄金</b></td>
+        <td data-page-node-id="KxlIGL87S5boOECOnJ22qN">老空/新空遇 4h 反抽，<b data-page-node-id="4BIIJ4PhpcHE6gBmOQrPyg">防空头被挤</b>（↓第五节）</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ================= 四、龙头回踩 ================= -->
+  <section data-page-node-id="KF0zHdpdy3NVw4RQPdkEof">
+    <div class="sec-h" data-page-node-id="1mTDbgm4BrBWbWmWOsA23H"><span class="sec-no n-red" data-page-node-id="kyk5EpoSNaJwuJgczTpQC7">四</span><h2 data-page-node-id="ZZ2RPBKtzPLl7jXBqbwNFV">龙头回踩 & 强弱观察</h2><span class="hint" data-page-node-id="JiZ9VWzJVg2F6Ui5NAMD0e">👀 多单持有者重点看</span></div>
+    <div class="rule" data-page-node-id="ZIGMkybpNhJnsB0UA4IyRN">规则：日线趋势完好 ＋ 回踩不破 = <b data-page-node-id="5Zy6uoiydyGFdvNEGugHAy">持有 / 低吸，不是卖点</b>；跌破日线 EE 才谈离场；4h 重新 BK = 回踩结束信号。</div>
+    <div class="watch-grid" data-page-node-id="GMjg5UxI9qUDWuCDrMCnUc">
+      <div class="wcard" data-page-node-id="qdCC1UYcCwQT6vZ6Bs7rAr">
+        <div class="w-head" data-page-node-id="Y8cOcYUVtOPm1J4gSFYeRo"><span class="w-name" data-page-node-id="C1BCApGPi5SOshaWUOL48i">bu 沥青 / sc 原油</span><span class="lvl L1" data-page-node-id="0YXldUVmkH2ALuzCuwdjXu">龙头 · 最强</span></div>
+        <p data-page-node-id="AlBxEGou3nf3rRz8qMYuvM">09-09 <b data-page-node-id="Nle75bDLNX9WItYDv9Dja0">根本没回踩</b>（回踩记录停在 9/07、9/02），收 5225 / 741.5 续强。别在远离均线处追高，<b data-page-node-id="Sk8fW2d1SUkAR9Bs3ltDsQ">等回踩再低吸</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="kLR8x8V7MLoPnabfefBvpU">
+        <div class="w-head" data-page-node-id="Q8IhwtIJsGgZFpWoLlxxkK"><span class="w-name" data-page-node-id="3EPHsUQTRzFywopzLHDs1Z">fu 燃料油</span><span class="lvl L3" data-page-node-id="4SoZZAF2dwOYpTgOKWTwek">回踩结束 ✅</span></div>
+        <p data-page-node-id="iSwm47FkLZmh55Bs4TzhOC">1d 盘中第 5 次回踩支撑，但 <b data-page-node-id="Wq3Z4jiGFZgJIFBsrbJeXk">4h 09-09 11:30 重新 BK</b> → 短线止稳确认，回踩组里的<b data-page-node-id="RL2fvPVuEajfehP3yDPDr3">正面样板</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="gee3auUeTGJMwEqxx1BTjJ">
+        <div class="w-head" data-page-node-id="RpFC052Lnmr16avb7hwn9V"><span class="w-name" data-page-node-id="JVVkxOFdkBFYAF3RLS0SEw">jm 焦煤 / j 焦炭</span><span class="lvl L2" data-page-node-id="cPtni0o33rVIGI6B6O6VqT">临界突破位 ⚠️</span></div>
+        <p data-page-node-id="w1RnHA2cTolpnv9bA0ZJBQ">日线多单持有，但 4h 自 8/31~9/2 平多后<b data-page-node-id="BEc7DcTe66zZruPuqBTCAr">至今未重新 BK</b>。09-09 盘中回踩（jm DD≈1648 / j DD≈2153）后收在日线上方压力沿（jm PP≈1660 / j PP≈2162，j 收 2160.5 已贴 PP）。<b data-page-node-id="DRcUCKhw85sbC3i5RKCN5y">突破需 4h 重新 BK；向下破日线 EE（jm 1609 / j 2112）才谈转弱 —— 二选一临界点</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="6ENrFZAigt04pwK0unYDHd">
+        <div class="w-head" data-page-node-id="jOFOPrGEVPXR6IB14qclg1"><span class="w-name" data-page-node-id="8jC1ftJMFnE9S3wSyqOx18">UR 尿素</span><span class="lvl L2" data-page-node-id="4RCQEiABOey054aX4eHZei">回踩组最危险 🚨</span></div>
+        <p data-page-node-id="tfBEiIRfibOKneMqU9aSFU">日线收盘 1802 距日线 EE 1798.7 <b data-page-node-id="vIlNWOhNtLDBj0f8HudgYM">只剩 0.2%</b>，4h 又刚平多 → 贴 EE 的品种，<b data-page-node-id="OqB6xpHYPY23WtaBIKtOpZ">破位就是日线级别确认</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="WJt94uVhIqiYMbaZsx4Hdy">
+        <div class="w-head" data-page-node-id="xEig3H1rEw0Qwim6Q2KC5O"><span class="w-name" data-page-node-id="bSyrM7nw2ZdN9zE8vOWvGG">p / y / RM 油脂粕</span><span class="lvl L4" data-page-node-id="Ps9Ud6QndBcW4gys09pjpe">4h 洗盘观察</span></div>
+        <p data-page-node-id="AzBXyQSXKLx5NfKQmYHRPj">4h 集体转弱，但日线收盘站上轨 → 洗盘概率大；<b data-page-node-id="3QPKBlTJmsqDt4phM4qnw1">棕榈已第 5 次回踩</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="x8lnAMDDNj4BV8wDRN57La">
+        <div class="w-head" data-page-node-id="MsrUuFjqEPhU2t6UcCARaQ"><span class="w-name" data-page-node-id="t7JY4U8pX10847HsSCsdpv">SA 纯碱</span><span class="lvl L2" data-page-node-id="3SUYTaIfGmqDQiiYQIe9D5">生死线 EE 1070</span></div>
+        <p data-page-node-id="y7lLSGTNctBZLRiUaIViTo">日线首挂红转蓝预警（见第三节），<b data-page-node-id="1crDnInCYgL9dQQP5UMaX2">EE 1070 是生死线</b>，跌破才确认转空。</p>
+      </div>
+      <div class="wcard" data-page-node-id="6XbcNWx28wF716Ku9aE3kN">
+        <div class="w-head" data-page-node-id="6sRyqxGR5BjDO7vbakgSJm"><span class="w-name" data-page-node-id="FZ9pE9pCtmwjjOL7oeWMDf">ec 欧线</span><span class="lvl L2" data-page-node-id="fWWSgtfODHtQNBZYMHJxT2">追高警示 ⚠️</span></div>
+        <p data-page-node-id="W0RC90EFxunBCiB2cOkv7v">9/08 日线新 BK，09-09 <b data-page-node-id="KmFafk8QEI4YjELuKjJ1YV">立刻跌破 DD（1920）</b> → 新多没站稳、4h 也没共振，<b data-page-node-id="crNvJYhxoQBxHCFTmIrmCL">别追</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="jnQvoErxCbdASysOtHwux9">
+        <div class="w-head" data-page-node-id="taeJAiVVG9YrbSRahFGe8e"><span class="w-name" data-page-node-id="u4wgAFoSndpfo8MhKv4lKS">nr / ru / br 橡胶系</span><span class="lvl L3" data-page-node-id="oVnqQu9c4hqiZMQgMcqbLu">全组健康 ✅</span></div>
+        <p data-page-node-id="RMsImwsV279mblhANYVC7F">nr 第 5 次回踩不破，ru 4h 9/04 已重新 BK → 最健康多头。</p>
+      </div>
+      <div class="wcard" data-page-node-id="EvCWWtHHG4OVehoJIwfTRQ">
+        <div class="w-head" data-page-node-id="TKF79AJUpLT9lLhSShQdgp"><span class="w-name" data-page-node-id="QLnAdpSBFf8SAZ7stGbzzN">TA / lu / a / v / SH</span><span class="lvl L3" data-page-node-id="4OfEDyoxkgiCtD6xKEGgVS">新多稳住 ✅</span></div>
+        <p data-page-node-id="iKIWkAFlDlO2TcByiHAeVG">9/08 前后新开多：TA 双级别共振、v 已 4 次回踩不破 → 稳。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 五、熊头遇压 ================= -->
+  <section data-page-node-id="8D5x1Fiu29nB0DK27fOWOc">
+    <div class="sec-h" data-page-node-id="pjvkOf4aR3N9ImqpafFDWb"><span class="sec-no n-green" data-page-node-id="wQCt2kyzGJIl2FB89UqkDL">五</span><h2 data-page-node-id="VFPfbLInZmmG98YRJVtFQV">熊头遇压</h2><span class="hint" data-page-node-id="0EVDtkrg1VGgyPj2HPFXxl">👀 空单持有者重点看</span></div>
+    <div class="rule" data-page-node-id="Qs8aOL3ORJHbumYBtmRmJs">规则：熊头反弹到压力带 = <b data-page-node-id="k0xRMPEp5x7CYqYvmp1gBx">空单持有 / 加空区</b>；站上 PP 防反抽，跌破前低才是加速。</div>
+    <div class="watch-grid" data-page-node-id="BOQFk4B7C3J53agSEOwPxS">
+      <div class="wcard" data-page-node-id="IXMiEVmP5G3nvBbB63cxtu">
+        <div class="w-head" data-page-node-id="zf6AtnF2VDzQX7tGyHFo5Q"><span class="w-name" data-page-node-id="MRgJO9XVdtnPV0Dn3U7rhX">lh 生猪</span><span class="lvl L1" data-page-node-id="2Z5r1L33Mtsn4z6A1EHeSe">下杀确认 🔻</span></div>
+        <p data-page-node-id="m1Kfv1XuRyMfBTwa7jevDt">09-09 第 3 次触压（9/01、9/08、9/09）后 <b data-page-node-id="53BOpNqJNqNtGr8caYgDka">收破压力下沿 KK 11855（收 11730）→ 反抽失败、空头续跌确认</b>，空单拿稳。</p>
+      </div>
+      <div class="wcard" data-page-node-id="SsTPo4OMZeU3VQgNc2FJHM">
+        <div class="w-head" data-page-node-id="gQdQGq7TLlWs0ddX5dUNPZ"><span class="w-name" data-page-node-id="z0TBfDtQ6ssDvXeyctArdP">sn 锡</span><span class="lvl L3" data-page-node-id="B2DunkiKOA8EHETeXOkXyo">反弹进压力带</span></div>
+        <p data-page-node-id="UVjUcJkEQF9BUDewL2MjQw">09-09 第 3 次触压，反弹已进入 KK 417437 – PP 419917 带内（收 418250）→ 空头舒适区。<b data-page-node-id="nAqABp6bXXDVxzj9h3IC9i">站上 PP≈42 万防反抽</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="xQeGC0F8LCjHBST47pwWRs">
+        <div class="w-head" data-page-node-id="NCEGNofYKGI1K39OjvLw5I"><span class="w-name" data-page-node-id="jmzlPtLOQh739LohXM2CAU">au 黄金（新熊头）</span><span class="lvl L2" data-page-node-id="sJjbNw07AZhdRZC0dkQyMW">首触压考验</span></div>
+        <p data-page-node-id="B4dZJUOA2DCF7UpCWMNUoY">09-09 首触压（KK 951.5 / PP 958.6，收 952.2），4h 同步 SK ＋ 反抽预警 → 双级别新空第一道考验，<b data-page-node-id="ECEwqEUOqjx3pjkr4EA7xr">压回下破则空头趋势展开</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="ie5yXz6MUwWZOjz2Gua6et">
+        <div class="w-head" data-page-node-id="DDFmHcR5OX3o18JBKEw7oG"><span class="w-name" data-page-node-id="MlaAurThSCuTwimFy9tqtP">CJ 红枣（老熊王）</span><span class="lvl L2" data-page-node-id="KiArYugBbj93LtfymPHZbh">4h 反抽预警 ⚠️</span></div>
+        <p data-page-node-id="vaJ965lipN8fcEOdmHzloW">1d 第 2 次触压（8/28、9/08）后 09-09 微弹收 7945，<b data-page-node-id="8u7Zp91rXpNE268KxQc2MH">4h 挂反抽预警</b> → 空单拿稳但<b data-page-node-id="BSejaiVgNYQzwdeHdIV6Nd">防短挤</b>；站上 PP≈8065 减仓防反抽。</p>
+      </div>
+      <div class="wcard" data-page-node-id="QjxPcOPBzRI0m6bu6TK0Bz">
+        <div class="w-head" data-page-node-id="gDGyT3xMMs1IhSvCWHHayl"><span class="w-name" data-page-node-id="gxbsG1i5MYs1sYXWLuYzF6">588000 科创50ETF</span><span class="lvl L4" data-page-node-id="rnB8HtSxpdRzKwsYaMQCZE">连续 5 日贴压</span></div>
+        <p data-page-node-id="eJLBlJ2mrlLVqDkzJuqNfR">日线＋4h 双空，最弱势盘整，<b data-page-node-id="p2pSlrNggHEDyh5o3Bd5Y3">别抄底</b>。</p>
+      </div>
+      <div class="wcard" data-page-node-id="pmR3sHRMBwrrAeRCB8JXOW">
+        <div class="w-head" data-page-node-id="7BeYWNmUjRkQt7V1WRffb9"><span class="w-name" data-page-node-id="12uvcpazfzE6Ai9SViw9Pr">LC 碳酸锂</span><span class="lvl L1" data-page-node-id="6LeHCyZk78pDiHyeE7h7y8">无压直接跌 · 最顺空</span></div>
+        <p data-page-node-id="FvHhuqrZ7ZKym3AMV8YjrO">不遇压、直接阴跌（收 142000）。离场/反手都看它<b data-page-node-id="Civia6F8NcUFmSB1gADk0E">破 14 万整数关</b>。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 六、今日提示 ================= -->
+  <section data-page-node-id="hhRv1FuBfHYsHeTkp52kkm">
+    <div class="sec-h" data-page-node-id="4miUjwp555AEpZOssArcpJ"><span class="sec-no n-navy" data-page-node-id="NWeqVhIJBIpBBl7cOaK2fn">六</span><h2 data-page-node-id="baFLHTHBHB84Gz0538vnW5">09-10 操作提示</h2><span class="hint" data-page-node-id="BripmGnNneCSndeHkHJQEW">最简版</span></div>
+    <ol class="tips" data-page-node-id="5nYWXvSBJywvrCv0C1X0nV">
+      <li data-page-node-id="BpDmrPf1b0Rh6eO9AHMnF0"><b class="kw r" data-page-node-id="IjwRvJTAQlA9nsH9C2qPqL">多单</b>：bu / sc 拿着<b data-page-node-id="5GgShDohcYhzaFYgjOgoRN">等回踩加仓</b>；fu 4h 已止稳可留意；油脂粕（p/y/RM）与尿素的 4h 转弱 <b class="kw a" data-page-node-id="orhb6neVD0MjEovdCySh35">以日线 EE 定去留，别追空</b>。</li>
+      <li data-page-node-id="EDTrPDqmqTqDeYSWdZlxFx"><b class="kw a" data-page-node-id="j70Z5F9v9QvF4kNNklL6Dr">别把回踩当转势</b>：ao / SF 除外 —— 它俩是日线级离场，反抽是<b data-page-node-id="FQsE5dySychlPHDgpKtGkb">减多 / 观望区</b>，不是接多区。</li>
+      <li data-page-node-id="bliWOtGyaswWFsDPkbFuKk"><b class="kw b" data-page-node-id="3JuqTbUuQWBnkVWAzLuwEl">双焦</b>：日线临界突破位，<b data-page-node-id="eaGNOa94Os0Mva9hBwpqG4">等 4h 重新 BK 再跟多</b>，别在压力沿追；跌破 jm EE 1609 / j EE 2112 则多头逻辑破坏。</li>
+      <li data-page-node-id="JvWFHwMOCQ19LwANiBaaun"><b class="kw g" data-page-node-id="7KNU4ftSXBb835k0HbGCFZ">空单</b>：lh 已破位续拿、LC 最顺、sn / au / CJ 在压力带下方持有；<b data-page-node-id="UFTaCaKduohGofMU33ehYH">CJ / au 4h 有反抽预警，别加空等回压</b>；ag 观望未反手，别提前空。</li>
+      <li data-page-node-id="tSh7nfihLodBIi2ieD1q6o"><b class="kw" data-page-node-id="cJF2ZWRQYHf7YsxSm4Xe89">今天重点盯</b>：SA 纯碱 <b data-page-node-id="JEDeXHKDzaFDEdxgVNdh5f">EE 1070</b>（转空确认？）、UR <b data-page-node-id="EXfy1JbG6DtDMwovtnXuOl">EE 1798</b>（回踩破位？）、双焦能否 4h 翻多、au / lh 下杀力度、CJ 反抽能否压回。</li>
+      <li data-page-node-id="PqForI95cVMCh94nq9dIpm"><b class="kw a" data-page-node-id="FsSyC8LZPLJFbB6iW9Ue1B">⚠️ 数据基准 09-09 日盘收盘</b>：09-09 夜盘未含（尤其贵金属 au 夜盘反应），开盘先看隔夜跳空方向再执行。</li>
+    </ol>
+  </section>
+
+  <footer data-page-node-id="ceHieELRkGkiYjhlQ0J16C">
+    <b data-page-node-id="EFqvpV8fKqSammFmlXQvBB">口径说明</b>：1d POS=1 多头 / POS=-1 空头；多转空 = 红转蓝（确认 = 开空 SK）；空转多 = 蓝转红（确认 = 开多 BK）；回踩支撑 = 9 根内触碰 DD/EE，遇压 = 9 根内触碰 KK/PP；4h 转折一律以日线趋势为最终裁决。数据源：http://110.42.220.207:8000 期货筛选看板（米筐 RQData 240 分钟 K 线）。
+  </footer>
+
+</div>
+</body>
+</html>

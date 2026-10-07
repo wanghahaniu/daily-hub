@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美伊局势日报 · 2026-09-07</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1c2333; --sub:#5b6472;
+    --line:#e6e9ef; --red:#d63031; --red-bg:#fdeaea; --red-border:#f3b4b4;
+    --green:#0a8f5c; --green-bg:#e6f6ee; --amber:#e67e22; --blue:#2f6fed;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.6;padding:24px 16px 60px;}
+  .wrap{max-width:1080px;margin:0 auto;}
+  .head{background:linear-gradient(135deg,#1c2333,#2b3450);color:#fff;border-radius:16px;padding:28px 30px;position:relative;overflow:hidden;}
+  .head .date{font-size:14px;opacity:.85;letter-spacing:.5px;}
+  .head h1{font-size:26px;margin:8px 0 4px;font-weight:700;}
+  .head .sub{font-size:14px;opacity:.8;}
+  .score-box{position:absolute;right:28px;top:24px;text-align:center;}
+  .score-num{font-size:64px;font-weight:800;line-height:1;color:#ff6b6b;}
+  .score-label{font-size:13px;opacity:.85;margin-top:4px;}
+  .badge{display:inline-block;font-size:12px;padding:3px 10px;border-radius:20px;font-weight:600;margin-top:6px;}
+  .badge.red{background:#ff6b6b;color:#1c2333;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:18px;}
+  .card h2{font-size:18px;margin:0 0 4px;font-weight:700;}
+  .card .desc{font-size:13px;color:var(--sub);margin:0 0 14px;}
+  .score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+  .score-item{background:#fafbfc;border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center;}
+  .score-item .dim{font-size:12px;color:var(--sub);margin-bottom:6px;}
+  .score-item .w{font-size:11px;color:#98a1b0;}
+  .score-item .v{font-size:30px;font-weight:800;color:var(--ink);}
+  .score-item.hot .v{color:var(--red);}
+  .formula{background:#fff7ec;border:1px solid #f4dcb8;border-radius:10px;padding:12px 16px;font-size:13px;color:#7a5a1e;margin-top:14px;}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top;}
+  th{background:#f2f4f8;font-weight:600;color:var(--ink);white-space:nowrap;}
+  .tag{display:inline-block;padding:1px 7px;border-radius:5px;font-size:12px;font-weight:600;white-space:nowrap;}
+  .t-red{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border);}
+  .t-green{background:var(--green-bg);color:var(--green);border:1px solid #b7e4cf;}
+  .t-gray{background:#eef0f4;color:#5b6472;border:1px solid #dde1e8;}
+  .t-hot{background:#fdeaea;color:#d63031;border:1px solid #e9a3a3;}
+  .sensitive{background:var(--red-bg);border-left:4px solid var(--red);padding:6px 10px;border-radius:6px;margin:4px 0;}
+  .sensitive b{color:var(--red);}
+  .time{color:#98a1b0;font-size:12px;}
+  .chart-box{position:relative;height:300px;margin-top:10px;}
+  .chart-box.sm{height:260px;}
+  .legend-row{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--sub);margin-top:8px;}
+  .moM{font-weight:700;color:var(--amber);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr;}.score-grid{grid-template-columns:1fr 1fr;}.score-num{font-size:48px;}}
+  .footer{font-size:12px;color:#98a1b0;margin-top:22px;text-align:center;}
+  .hl{background:#fff3cd;padding:0 4px;border-radius:3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="head">
+    <div class="date">美伊局势每日监测报告 · 数据截至 2026-09-07 08:54 (GMT+8)</div>
+    <h1>美伊局势日报</h1>
+    <div class="sub">重点监测：双方高层言论 · 军事行动 · 霍尔木兹通航量 · 战争险/保险市场</div>
+    <div class="score-box">
+      <div class="score-num">94</div>
+      <div class="score-label">综合紧张度 / 100</div>
+      <span class="badge red">🔴 极度紧张 · 红色警戒</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>一、评分框架（今日综合 94 分）</h2>
+    <p class="desc">评分公式：军事冲突 30% + 高层言论威胁度 20%（一般言论 50% + 敏感威胁 50%）+ 霍尔木兹通航中断 25% + 战争险/市场 25%</p>
+    <div class="score-grid">
+      <div class="score-item hot"><div class="dim">军事冲突烈度<br><span class="w">权重 30%</span></div><div class="v">95</div></div>
+      <div class="score-item"><div class="dim">高层言论威胁度<br><span class="w">权重 20%</span></div><div class="v">92.5</div></div>
+      <div class="score-item"><div class="dim">霍尔木兹通航中断<br><span class="w">权重 25%</span></div><div class="v">93</div></div>
+      <div class="score-item hot"><div class="dim">战争险 / 市场<br><span class="w">权重 25%</span></div><div class="v">95</div></div>
+    </div>
+    <div class="formula">
+      <b>言论维度拆解：</b>一般言论 <b>88</b> 分（50%）＋ 敏感威胁 <b>97</b> 分（50%）＝ 92.5 分。<br>
+      <b>综合计算：</b>0.30×95 ＋ 0.20×92.5 ＋ 0.25×93 ＋ 0.25×95 ＝ <b>94.0 / 100</b>（较昨日 91 分上升 3 分）
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>二、每日紧张度评分走势</h2>
+      <p class="desc">连续历史序列（8/30 起回溯估算，此后每日累积真实评分）</p>
+      <div class="chart-box"><canvas id="chScore"></canvas></div>
+    </div>
+    <div class="card">
+      <h2>三、霍尔木兹通航量（环比）</h2>
+      <p class="desc">大宗商品船每日通航艘次（环比，不跟战前比）</p>
+      <div class="chart-box"><canvas id="chTransit"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>四、战争险费率时间序列</h2>
+    <p class="desc">战争险附加保费 AWRP（占船体价值 %，估算口径，环比）</p>
+    <div class="chart-box sm"><canvas id="chWar"></canvas></div>
+    <div class="legend-row">
+      <span>📈 当前 AWRP 约 <b>8.75%</b>（正常基线 0.15%，约 <b>58 倍</b>）；straits.live 口径约 <b>40× normal</b>，环比仍处极端高位。</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>五、倒序时间序列 · 美伊对比表</h2>
+    <p class="desc">类别标签：🔴 军事冲突/威胁升级 ｜ 🟢 降温/缓和 ｜ ⚪ 声明/一般言论；严重项加 ⚠️ 并加粗；重点标注带具体时间</p>
+    <table>
+      <thead>
+        <tr><th style="width:74px;">日期</th><th style="width:38%;">美国（言论/行动）</th><th style="width:42%;">伊朗（言论/行动）</th><th style="width:90px;">类别</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>9/7</b><br><span class="time">周一</span></td>
+          <td>⚪ <b>能源部长赖特</b>（9/6）称霍尔木兹 7 天平均出口近 <b>900 万桶/日</b>、"可能达战前流量 2/3+"；美国劳工节休市，暂无新增军事行动。</td>
+          <td>⚪ 暂无新增言论；"禁区"声明待落地。<br>⚪ 与阿曼的船舶通行图协议"未来几天签署"。</td>
+          <td><span class="tag t-gray">⚪ 声明</span></td>
+        </tr>
+        <tr>
+          <td><b>9/6</b><br><span class="time">周日</span></td>
+          <td>🔴 <b>美军中央司令部</b>（9/6）通报海上封锁已迫使 <b>92 艘商船改道</b>、3 艘丧失航行能力、登检 2 艘；<br>⚪ 发言人 Hawkins 否认伊朗袭击无人艇"<b>完全是谎言</b>"；<br>⚪ 能源部长赖特称伊朗核计划、海空军"已到头"。</td>
+          <td>🔴 <b>最高国安会秘书雷扎伊</b>（9/6 IRIB）宣布未来几天设霍尔木兹"<b>禁区</b>"，进入船只列制裁名单 <span class="tag t-hot">⚠️⚠️ 💥经济命脉</span>；<br>🔴 <b>议长卡利巴夫</b>（9/6 议会）："<b>对等回应时代已结束</b>"，将"更迅速、更猛烈、更痛苦"回应 <span class="tag t-red">⚠️</span>；<br>🔴 总参谋长阿卜杜拉希称美误判伊会投降"<b>不会实现</b>"；<br>🔴 军方警告若美继续封锁将升级打击美军舰。</td>
+          <td><span class="tag t-red">🔴 升级</span></td>
+        </tr>
+        <tr>
+          <td><b>9/5</b><br><span class="time">周六</span></td>
+          <td>🔴 <b>美军摧毁 3 艘伊朗油轮</b>（哈尔克岛 M/T Downy、贾斯克 M/T Stark 1、阿曼湾 M/T Kylo）<span class="tag t-hot">⚠️⚠️ 🛢️能源设施</span>；<br>🔴 <b>中央司令部司令库珀</b>（9/5）："若你们向两艘船开火，就击毁你们 3 艘船" <span class="tag t-red">⚠️</span>；<br>🔴 <b>防长赫格塞思</b>（9/5 @PeteHegseth）："若伊朗向美国船只开火，我们将<b>击沉他们的油轮</b>" <span class="tag t-hot">⚠️⚠️ 🛢️能源设施</span>。</td>
+          <td>🔴 <b>革命卫队</b>（9/5）向美航母＋驱逐舰发射<b>多枚弹道导弹</b>（美称规避无伤亡；伊称击中并迫其撤离）<span class="tag t-red">⚠️</span>；<br>🔴 革命卫队海军打击 3 艘"未经授权航线"油轮＋3 艘美关联船只；<br>⚪ 外交部谴责美袭击伊商船"<b>战争罪</b>"。</td>
+          <td><span class="tag t-red">🔴 冲突</span></td>
+        </tr>
+        <tr>
+          <td><b>9/4</b><br><span class="time">周五</span></td>
+          <td>🔴 <b>特朗普</b>（9/4 白宫）：美军"可能很快"打击<b>镐山核设施</b> <span class="tag t-hot">⚠️⚠️ ☢️核</span>。</td>
+          <td>🟢 <b>佩泽希齐扬</b>提议若美重返 6 月谅解备忘录，愿采取对等步骤。</td>
+          <td><span class="tag t-red">🔴 升级</span></td>
+        </tr>
+        <tr>
+          <td><b>9/3</b><br><span class="time">周三</span></td>
+          <td>🔴 美军对伊导弹/无人机袭击基地后实施回应性打击。</td>
+          <td>🔴 伊朗发射导弹＋无人机袭击科威特、阿联酋美军基地。</td>
+          <td><span class="tag t-red">🔴 冲突</span></td>
+        </tr>
+        <tr>
+          <td><b>9/2</b><br><span class="time">周二</span></td>
+          <td>⚪ 特朗普提议将海峡改名后又撤回；🟢 无新增交火。</td>
+          <td>🔴 伊朗将 56 艘"盟国关联"油轮列入黑名单。</td>
+          <td><span class="tag t-gray">⚪ 声明</span></td>
+        </tr>
+        <tr>
+          <td><b>9/1</b><br><span class="time">周一</span></td>
+          <td>🔴 美军启动"<b>油轮换油轮</b>"政策，首次打击 2 艘伊朗政府油轮。</td>
+          <td>⚪ 无重大军事回应。</td>
+          <td><span class="tag t-red">🔴 冲突</span></td>
+        </tr>
+        <tr>
+          <td><b>8/31</b><br><span class="time">周日</span></td>
+          <td>🔴 美军打击拉腊克岛革命卫队火箭发射器（约一个月来首次打击伊境内目标）。</td>
+          <td>🔴 伊朗袭击沙特超级油轮 Sidr（<b>2 名菲籍船员遇难</b>）及韩国 Senegal Prosperity。</td>
+          <td><span class="tag t-red">🔴 冲突</span></td>
+        </tr>
+        <tr>
+          <td><b>8/30</b><br><span class="time">周六</span></td>
+          <td>🔴 美军恢复对伊攻击（本轮战事重燃）。</td>
+          <td>🔴 伊朗反击海湾国家军事目标。</td>
+          <td><span class="tag t-red">🔴 冲突</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>六、敏感威胁双重标注 + 评分（言论维度 50% 权重）</h2>
+    <p class="desc">涉及核设施/纳坦兹/镐山、哈尔克岛、油轮舰队/炼油厂/终端、经济命脉的威胁，统一归入"言论"维度，⚠️⚠️ 双重标注 + 标签，红色高亮</p>
+    <table>
+      <thead><tr><th style="width:80px;">威胁方</th><th>威胁对象 / 内容</th><th style="width:110px;">标签</th><th style="width:150px;">时间</th><th style="width:70px;">严重度</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>美国</b></td>
+          <td><div class="sensitive"><b>特朗普威胁打击镐山核设施</b> — "一旦情况不妙，我们就会打击他们"</div></td>
+          <td><span class="tag t-hot">⚠️⚠️ ☢️核</span></td>
+          <td>9/4 白宫</td>
+          <td><b style="color:#d63031;">极高</b></td>
+        </tr>
+        <tr>
+          <td><b>美国</b></td>
+          <td><div class="sensitive"><b>防长赫格塞思"击沉全部油轮"</b> — 针对油轮舰队的灭性威胁</div></td>
+          <td><span class="tag t-hot">⚠️⚠️ 🛢️能源设施</span></td>
+          <td>9/5 @PeteHegseth</td>
+          <td><b style="color:#d63031;">极高</b></td>
+        </tr>
+        <tr>
+          <td><b>美国</b></td>
+          <td><div class="sensitive"><b>美军摧毁 3 艘伊朗油轮</b>（含哈尔克岛附近）— 直接打击能源出口设施</div></td>
+          <td><span class="tag t-hot">⚠️⚠️ 🛢️能源设施</span></td>
+          <td>9/5 CENTCOM</td>
+          <td><b style="color:#d63031;">极高</b></td>
+        </tr>
+        <tr>
+          <td><b>伊朗</b></td>
+          <td><div class="sensitive"><b>伊朗宣布设霍尔木兹"禁区"</b> — 进一步封锁全球能源经济命脉</div></td>
+          <td><span class="tag t-hot">⚠️⚠️ 💥经济命脉</span></td>
+          <td>9/6 雷扎伊 IRIB</td>
+          <td><b style="color:#d63031;">极高</b></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="formula">
+      <b>敏感威胁子项评分：97 / 100</b>（占言论维度 50% 权重）——四项均触及最高级别敏感目标（核设施、能源设施、经济命脉），且均有具体落地时间与高层背书。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>七、关键数据速览（环比口径）</h2>
+    <table>
+      <thead><tr><th>指标</th><th>最新值</th><th>环比变化</th><th>来源口径</th></tr></thead>
+      <tbody>
+        <tr><td>霍尔木兹通航量</td><td>约 4 艘/日（1 VLCC＋3 散货）</td><td class="moM">9/1 环比 -60%（4 vs 10）；此后低位持平</td><td>Kpler / 路透 / Windward</td></tr>
+        <tr><td>战争险费率 AWRP</td><td>约 8.75%（正常 0.15%）</td><td class="moM">环比持续攀升至极端高位（~58×）</td><td>HormuzStraitMonitor / straits.live</td></tr>
+        <tr><td>单船战争险报价</td><td>VLCC 从 $25 万 → $1000 万</td><td class="moM">环比大幅走高</td><td>straits.live</td></tr>
+        <tr><td>布伦特原油</td><td>$96.28 → $96.91</td><td class="moM">周涨 +7.6%~8.6%</td><td>Reuters / 汇通财经</td></tr>
+        <tr><td>WTI 原油</td><td>$91.48 → $92.03</td><td class="moM">周涨 +9.3%~10.4%</td><td>Reuters / GulfNews</td></tr>
+        <tr><td>美零售柴油均价</td><td>$5.85/加仑（历史新高）</td><td class="moM">环比持续走高</td><td>Reuters</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    本报告由自动化监测任务生成 · 数据来源：新华社/央视/环球时报/财联社、CGTN、Reuters、BBC、AFP、Al Jazeera、Kpler、HormuzStraitMonitor、straits.live、Region Alert、Maritime News 等<br>
+    报告仅供研究参考，不构成投资或决策建议。
+  </div>
+
+</div>
+
+<script>
+const labels = ['8/30','8/31','9/1','9/2','9/3','9/4','9/5','9/6','9/7'];
+const score =  [85,87,89,88,90,90,91,91,94];
+const transit =[6,10,4,4,4,4,4,4,4];
+const war =    [8.0,8.1,8.2,8.3,8.4,8.5,8.6,8.75,8.75];
+
+Chart.defaults.font.family = '-apple-system,"PingFang SC","Microsoft YaHei",sans-serif';
+Chart.defaults.color = '#5b6472';
+
+new Chart(document.getElementById('chScore'),{
+  type:'line',
+  data:{labels:labels,datasets:[{
+    label:'紧张度评分',data:score,borderColor:'#d63031',backgroundColor:'rgba(214,48,49,.12)',
+    fill:true,tension:.3,pointRadius:4,pointBackgroundColor:'#d63031',
+    pointRadius:ctx=> ctx.dataIndex===score.length-1?7:4,
+    pointBackgroundColor:ctx=> ctx.dataIndex===score.length-1?'#ff0000':'#d63031'
+  }]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:c=>`评分 ${c.parsed.y}/100`}}},
+    scales:{y:{min:70,max:100,ticks:{callback:v=>v},title:{display:true,text:'评分 (0-100)'}},
+      x:{title:{display:true,text:'日期'}}}}
+});
+
+new Chart(document.getElementById('chTransit'),{
+  type:'bar',
+  data:{labels:labels,datasets:[{
+    label:'通航量（艘/日）',data:transit,backgroundColor:transit.map((v,i)=> i===1?'#0a8f5c':'#2f6fed'),
+    borderRadius:4
+  }]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:c=>`通航量 ${c.parsed.y} 艘/日`}}},
+    scales:{y:{beginAtZero:true,title:{display:true,text:'艘/日'}},
+      x:{title:{display:true,text:'日期'}}}}
+});
+
+new Chart(document.getElementById('chWar'),{
+  type:'line',
+  data:{labels:labels,datasets:[{
+    label:'战争险费率 AWRP (%)',data:war,borderColor:'#e67e22',backgroundColor:'rgba(230,126,34,.12)',
+    fill:true,tension:.3,pointRadius:4,pointBackgroundColor:'#e67e22'
+  }]},
+  options:{responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:c=>`AWRP ${c.parsed.y}%`}}},
+    scales:{y:{title:{display:true,text:'AWRP (%)'}},
+      x:{title:{display:true,text:'日期'}}}}
+});
+</script>
+</body>
+</html>

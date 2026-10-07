@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美伊局势日报 · 2026-09-24</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a1d24; --sub:#5b6472; --line:#e6e8ee;
+    --red:#d92632; --green:#1a9e6c; --amber:#e88a1a; --blue:#2f6fed;
+    --red-bg:#fdeaea; --green-bg:#e7f7f0; --gray-bg:#f0f2f5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:20px 14px 60px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{background:linear-gradient(135deg,#a60d1e 0%,#d92632 60%,#e88a1a 130%);color:#fff;border-radius:16px;padding:26px 28px;margin-bottom:18px;box-shadow:0 8px 24px rgba(217,38,50,.18)}
+  header .kicker{font-size:13px;opacity:.9;letter-spacing:2px}
+  header h1{font-size:26px;margin:6px 0 4px;font-weight:700}
+  header .date{font-size:14px;opacity:.95}
+  .scorebox{display:flex;align-items:center;gap:18px;margin-top:16px;flex-wrap:wrap}
+  .score-num{font-size:52px;font-weight:800;line-height:1}
+  .score-meta{font-size:14px;opacity:.95}
+  .score-meta b{font-size:16px}
+  .card{background:var(--card);border-radius:14px;padding:20px 22px;margin-bottom:16px;box-shadow:0 1px 3px rgba(20,24,40,.06);border:1px solid var(--line)}
+  .card h2{font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .card h2 .bar{width:5px;height:18px;background:var(--red);border-radius:3px;display:inline-block}
+  .one-line{background:var(--red-bg);border:1px solid #f5c6cb;border-radius:10px;padding:14px 16px;font-size:15px;color:#8c1320;font-weight:600}
+  .muted{color:var(--sub);font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+  .metric{background:var(--gray-bg);border-radius:10px;padding:12px 14px;text-align:center}
+  .metric .v{font-size:22px;font-weight:700;color:var(--red)}
+  .metric .k{font-size:12px;color:var(--sub);margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{border:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+  th{background:#f2f4f7;font-weight:600;white-space:nowrap}
+  .t-date{white-space:nowrap;font-weight:600;color:#333}
+  .tag-red{color:var(--red);font-weight:700}
+  .tag-green{color:var(--green);font-weight:700}
+  .tag-gray{color:#8a93a2;font-weight:700}
+  .warn{color:var(--red);font-weight:800}
+  .double-warn{background:var(--red-bg);border-left:4px solid var(--red);border-radius:6px;padding:10px 12px;margin:8px 0}
+  .double-warn .tag{display:inline-block;font-weight:800;font-size:12px;padding:2px 8px;border-radius:4px;margin-right:6px}
+  .tag-nuke{background:#fff;color:var(--red);border:1px solid var(--red)}
+  .tag-oil{background:#fff;color:#b3541e;border:1px solid #b3541e}
+  .tag-econ{background:#fff;color:#7a1f9e;border:1px solid #7a1f9e}
+  .chart-box{position:relative;height:280px;margin-top:6px}
+  .chart-box.tall{height:300px}
+  .legend{font-size:12px;color:var(--sub);margin-top:6px}
+  .pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:20px;margin:2px 3px 2px 0}
+  .pill.r{background:var(--red-bg);color:var(--red)}
+  .pill.g{background:var(--green-bg);color:var(--green)}
+  .pill.o{background:#fdf0e0;color:var(--amber)}
+  footer{color:var(--sub);font-size:12px;text-align:center;margin-top:20px}
+  .score-table td:first-child{white-space:nowrap}
+  @media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}header h1{font-size:22px}.score-num{font-size:42px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">US–IRAN SITUATION DAILY · 美伊局势每日监测</div>
+  <h1>美伊局势日报</h1>
+  <div class="date">2026年9月24日 星期四 · 数据截至 9/24 早间（北京时间），覆盖 9/23 全天 + 9/24 凌晨动态</div>
+  <div class="scorebox">
+    <div class="score-num">92<span style="font-size:24px;font-weight:600">/100</span></div>
+    <div class="score-meta"><b>极度紧张 · 红色警戒</b><br>较昨日 90 反弹 2 分，连续第 16 日处于 90 分以上极端高位；「联大间接会谈」外交窗口与「商船遭导弹致死 + 谈判终止」军事反扑剧烈拉锯</div>
+  </div>
+</header>
+
+<div class="card">
+  <h2><span class="bar"></span>核心结论（一句话）</h2>
+  <div class="one-line">9/22 纽约联大间接会谈（阿拉格齐与威特科夫/库什纳约 3 小时、卡塔尔居中）与伊朗「60 天地区停火 + 分阶段重开霍尔木兹 + 解除封锁」路线图，本构成近七个月最大外交窗口；但 9/23 局势急转——伊朗最高国安会秘书雷扎伊 15:25 UTC 宣布「谈判已结束」、除非美满足全部条件否则海峡「无限期关闭」，约 40 分钟后 IRGC 反舰导弹击中阿联酋籍货轮 MV CAPE DAO 致 1 名印度籍船员死亡（本轮首次对商船的致死攻击），鲁比奥更指控伊朗「蓄意轰炸美驻科威特大使馆」（未证实）；布伦特 9/23 大涨 3.86% 重新站上 103 美元。综合紧张度 92、较昨日 90 反弹 2 分，仍处极端高位。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>今日评分明细（0–100）</h2>
+  <div class="grid">
+    <div class="metric"><div class="v">93</div><div class="k">军事冲突（30%）</div></div>
+    <div class="metric"><div class="v">88</div><div class="k">高层言论威胁度（20%）</div></div>
+    <div class="metric"><div class="v">97</div><div class="k">霍尔木兹通航中断（25%）</div></div>
+    <div class="metric"><div class="v">89</div><div class="k">战争险/市场（25%）</div></div>
+  </div>
+  <table class="score-table" style="margin-top:14px">
+    <tr><th style="width:26%">维度</th><th style="width:18%">评分</th><th style="width:14%">权重</th><th>说明</th></tr>
+    <tr><td>军事冲突烈度</td><td><b>93</b></td><td>30%</td><td>动能反扑：9/23 IRGC 反舰导弹击中阿联酋籍货轮 MV CAPE DAO 致 1 名印度籍船员死亡（本轮首次对商船的致死攻击，约 16:03 UTC）；UKMTO 报一货轮遭不明投射物、2 人伤亡、弃船起火漂流；鲁比奥指控伊朗「蓄意轰炸美驻科威特大使馆」（未证实，若属实为对美主权设施直接攻击）</td></tr>
+    <tr><td>高层言论威胁度</td><td><b>88</b></td><td>20%</td><td>一般言论 83 × 50% + 敏感威胁 93 × 50%（见下方敏感威胁明细；联大会晤压缩「一般言论」，但「谈判已结束 + annihilate + 无限期关闭」推高敏感威胁）</td></tr>
+    <tr><td>霍尔木兹通航中断</td><td><b>97</b></td><td>25%</td><td>海峡第 207 天关闭，最近 24h 仅约 1 艘过境（正常日均 60 艘的 1.7%），环比 9/23 的 2 艘 -50%；约 450 艘湾内等待（油轮 180/散货 150/其他 120），雷扎伊宣布「无限期关闭」</td></tr>
+    <tr><td>战争险/市场</td><td><b>89</b></td><td>25%</td><td>战争险 AWRP 反弹至约 9%（攻击后重新定价、环比 8% 回升）；布伦特 9/23 大涨 3.86% 至 103.08 美元重新站上 100、WTI 92.16（+1.81%）、穆尔班 113.10（+4.06%）；美 10Y 国债 5.11%（2007 年来最高）</td></tr>
+    <tr><td style="font-weight:800;color:var(--red)">综合紧张度</td><td style="font-weight:800;color:var(--red);font-size:18px">92</td><td>100%</td><td>= 93×0.3 + 88×0.2 + 97×0.25 + 89×0.25 ≈ 92.0</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>⚠️⚠️ 敏感威胁双重标注（统一归入「言论」维度 · 敏感威胁子项占 50%）</h2>
+  <div class="double-warn"><span class="tag tag-econ">💥经济命脉</span><b>特朗普 9/22 联大讲话：「要么达成协议、要么我迅速摧毁（annihilate）伊斯兰共和国」</b>——在第 81 届联大一般性辩论中抛出「重大决定」：「是与伊朗达成协议、让它重建为中东乃至世界最伟大的国家之一，还是我迅速摧毁（annihilate）伊斯兰共和国、永不给它杀害摧毁人民与国家之机？」；同时要求对伊「彻底经济孤立」、称协议达成后油价将「暴跌」。政权存续级威胁摆上台面。<span class="muted">（9/22，纽约联合国总部）</span></div>
+  <div class="double-warn"><span class="tag tag-econ">💥经济命脉</span><b>伊朗最高国安会秘书雷扎伊 9/23 15:25 UTC：「谈判已结束」、霍尔木兹「无限期关闭」</b>——电视采访中否认纽约「谈判」、称仅经中间人转达 7 项条件；强调除非美停止「海上封锁与侵略行动」、解除制裁、同意各战线停火、解冻资产并接受伊方航道安排，否则海峡不重开；并警告「不容忍美在南部部署/起飞军机」的军事或宣传动作。<span class="muted">（9/23，德黑兰/纽约）</span></div>
+  <div class="double-warn"><span class="tag tag-oil">🛢️能源设施</span><b>IRGC 9/23 约 16:03 UTC 反舰导弹击中阿联酋籍货轮 MV CAPE DAO，致 1 名印度籍船员死亡</b>——多段视频与报道称 IRGC 反舰导弹击中该船，本轮冲突首次对商船造成人员死亡；与雷扎伊「无限期关闭」声明仅相隔约 40 分钟，构成「口头封锁 + 动能执法」双重施压，直击美关键海湾伙伴（阿联酋）。<span class="muted">（9/23，霍尔木兹海峡）</span></div>
+  <div class="double-warn"><span class="tag tag-econ">💥经济命脉</span><b>鲁比奥 9/23：伊朗「今晨向商船开火」并「蓄意轰炸美驻科威特大使馆」</b>——在华盛顿对记者指控（约 15:43–16:03 UTC），称「闻所未闻、竟然轰炸我方驻科威特使馆」；此说法政治色彩浓、尚未获独立证实，若属实即对美主权设施直接攻击、将显著压缩白宫克制空间。同日另称特朗普仍愿达成「让伊朗繁荣」的协议。<span class="muted">（9/23，华盛顿）</span></div>
+  <div class="double-warn"><span class="tag tag-nuke">☢️核</span><b>核红线延续：佩泽希齐扬 9/23 联大「伊朗要的是核能、不是核弹」；特朗普「绝不允伊朗获核武器」</b>——佩泽希齐扬在联大称「霍尔木兹不得用于运送对抗伊朗的武器」「伊朗需要核能而非核弹」；美方鲁比奥则指协议前景受伊朗「核野心」阻碍、若继续将面临「大麻烦」。核议题仍为双方战略底线与最终摊牌点。<span class="muted">（9/23，纽约/华盛顿）</span></div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>倒序时间序列 · 美伊对比表</h2>
+  <table>
+    <tr><th style="width:13%">日期</th><th style="width:38%">美国（言论/行动）</th><th style="width:38%">伊朗（言论/行动）</th><th style="width:11%">类别</th></tr>
+    <tr>
+      <td class="t-date">9/23 约16:03 UTC</td>
+      <td>🔴 <b>⚠️ 鲁比奥</b> 15:43–16:03 UTC 指控伊朗「今晨向商船开火」+「蓄意轰炸美驻科威特大使馆」（重大升级指控，未独立证实）</td>
+      <td>🔴 <b>⚠️⚠️ IRGC 反舰导弹击中阿联酋籍货轮 MV CAPE DAO</b>（🛢️），致 1 名印度籍船员死亡；UKMTO 另报一货轮遭不明投射物、2 人伤亡、弃船起火漂流</td>
+      <td class="tag-red">🔴 军事冲突</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/23 15:25 UTC</td>
+      <td>—</td>
+      <td>🔴 <b>⚠️⚠️ 最高国安会秘书雷扎伊</b>：「谈判已结束」，除非美满足全部条件否则霍尔木兹「无限期关闭」（💥）</td>
+      <td class="tag-red">🔴 威胁升级</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/23 联大</td>
+      <td>⚪ <b>鲁比奥</b>：特朗普仍愿达成「让伊朗成为伟大繁荣国家」的协议，但受核野心+支持恐怖主义阻碍、「有多种选项」（含军事）；美代表在佩泽希齐扬演讲时中途离场</td>
+      <td>⚪ <b>佩泽希齐扬</b> 联大演讲：手持哈梅内伊遗像+150 名学童照片，「我们只自卫、不是恐怖分子」「我们没跪下」，愿对话谈判但「不接受武力语言」；伊朗需核能而非核弹</td>
+      <td class="tag-gray">⚪ 声明</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/23</td>
+      <td>⚪ <b>美财政部</b> 9/23 起对伊民航实施二级制裁（贝森特警告国际机场/供油商/票务/地勤恐失美元通道）；⚪ 鲁比奥称伊朗协议「需长期艰苦努力」</td>
+      <td>⚪ <b>巴加埃</b>：与美互动经卡塔尔调解、会谈「非新意」；国内强硬派议员抨击阿拉格齐「与侵略者会面」，总统派以 AI 图「受伤战士」回击</td>
+      <td class="tag-gray">⚪ 声明</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/22 纽约</td>
+      <td>🟢 <b>威特科夫+库什纳</b> 与伊朗外长阿拉格齐会晤约 3 小时（卡塔尔/巴基斯坦/埃及调解），特朗普称「非常好的会谈」、近期再谈；但拒绝在伊朗示好前解除海上封锁</td>
+      <td>🟢 <b>伊朗提出「路线图」</b>：地区停火（最多 60 天）+ 分阶段重开霍尔木兹 + 结束美封锁 + 停止袭击阿拉伯邻国；但 9/23 雷扎伊否认「谈判」、仅转达 7 项条件</td>
+      <td class="tag-green">🟢 缓和/降温</td>
+    </tr>
+    <tr>
+      <td class="t-date">9/22 联大</td>
+      <td>🔴 <b>⚠️⚠️ 特朗普</b>：要求对伊「彻底经济孤立」、「要么达成协议、要么我迅速摧毁（annihilate）伊斯兰共和国」（💥）；称协议达成后油价「暴跌」</td>
+      <td>—</td>
+      <td class="tag-red">🔴 威胁升级</td>
+    </tr>
+  </table>
+  <div class="muted" style="margin-top:8px">类别：🔴=军事冲突/威胁升级　🟢=降温/缓和　⚪=声明/一般言论　⚠️=严重项（加粗）　⚠️⚠️=敏感威胁（红色高亮，见上）</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>📈 每日紧张度评分走势（标注今日 92 分）</h2>
+  <div class="chart-box"><canvas id="chartScore"></canvas></div>
+  <div class="legend">8/30 起连续序列，今日 92 分较昨日 90 反弹 2 分，连续第 16 日处于 90+ 极端高位（监测以来峰值区间 94–96）。「联大间接会谈」本已压制市场维度，但 9/23「谈判已结束 + 商船遭致死导弹攻击 + 使馆轰炸指控」令四维度齐涨，总分自外交拐点重新上翘。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>🛳️ 霍尔木兹海峡通航量时间序列（艘/日 · 环比）</h2>
+  <div class="chart-box"><canvas id="chartTransit"></canvas></div>
+  <div class="legend">最近 24h 仅约 1 艘过境（正常日均 60 艘的 1.7%，环比 9/23 的 2 艘 -50%），叠加雷扎伊「无限期关闭」与 9/23 货轮遭致死攻击，通航进一步冻结；straitofhormuz 引 IMF PortWatch：约 3 艘/日（7 日均值，约战前 74 艘基线的 3%）。约 450 艘湾内抛锚等待（油轮 180/散货 150/其他 120）。独立追踪口径与美方口径（CENTCOM/鲁比奥）仍显著分歧。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>💹 战争险费率时间序列（AWRP 船体价值 %）</h2>
+  <div class="chart-box"><canvas id="chartAWRP"></canvas></div>
+  <div class="legend">战争险 AWRP 反弹至约 9%（9/23 货轮致死攻击 + 「无限期关闭」后重新定价，环比 8% 回升；战前正常约 0.15%）；hormuzstraitmonitor 报「EXTREME」、附加保费 6%、VLCC 即期 280 WS（+460% vs 战前 50 WS）；straitofhormuz 报战争险约 15× 平时（劳合社口径峰值曾 40×）。IMO 统计截至 9/16 霍尔木兹周边已核实 80 起商船遇袭、至少 22 名海员死亡。</div>
+</div>
+
+<div class="card">
+  <h2><span class="bar"></span>今日关键数据速览</h2>
+  <table>
+    <tr><th style="width:24%">指标</th><th style="width:30%">今日值</th><th>变化/说明</th></tr>
+    <tr><td>霍尔木兹通航量</td><td><b>约 1 艘/日</b></td><td>最近 24h（正常日均 60 艘的 1.7%），环比 9/23 的 2 艘 -50%；IMF PortWatch 7 日均值约 3 艘</td></tr>
+    <tr><td>等待过境船只</td><td><b>约 450 艘</b></td><td>油轮 180 / 散货 150 / 其他 120，湾内抛锚等待</td></tr>
+    <tr><td>战争险 AWRP</td><td><b>约 9%（反弹）</b></td><td>攻击后重新定价，环比 8% 回升；战前正常 0.15%</td></tr>
+    <tr><td>VLCC 即期租金</td><td><b>280 WS（+460%）</b></td><td>vs 战前 50 WS；附加保费 6%（EXTREME）</td></tr>
+    <tr><td>布伦特原油</td><td><b>103.08 美元（+3.86%）</b></td><td>9/23 收，重新站上 100；WTI 92.16（+1.81%）、穆尔班 113.10（+4.06%）、上海原油 730 元/桶（+5.02%）</td></tr>
+    <tr><td>美 10 年期国债</td><td><b>5.11%</b></td><td>9/23，2007 年以来最高；美元指数 101.10</td></tr>
+    <tr><td>商船遇袭累计</td><td><b>80 起 / ≥22 海员死</b></td><td>IMO 截至 9/16 核实口径（本轮冲突）</td></tr>
+    <tr><td>谈判动态</td><td><b>9/22 纽约间接会谈</b></td><td>阿拉格齐-威特科夫/库什纳约 3 小时；9/23 雷扎伊称「谈判已结束」</td></tr>
+    <tr><td>战争持续时间</td><td><b>第 207 天</b></td><td>自 2/28 海峡关闭声明起算</td></tr>
+  </table>
+</div>
+
+<footer>
+  数据来源：新华社、央视新闻、中新网、澎湃新闻、财联社、腾讯新闻、路透社、美联社、The National、Gulf News、KSAT、WANA、Hürriyet Daily News、JNS、hamerintel、hormuzstraitmonitor、straitofhormuz.report、IMF PortWatch、UKMTO、Lloyd's/LMA、IMO · 本报告为自动化监测摘要，仅供参考，不构成投资建议。<br>
+  手机查看入口：https://wanghahaniu.github.io/us-iran-daily/
+</footer>
+
+</div>
+
+<script>
+const dates = ['8/30','8/31','9/1','9/2','9/3','9/4','9/5','9/6','9/7','9/8','9/9','9/10','9/11','9/12','9/13','9/14','9/15','9/16','9/17','9/18','9/19','9/20','9/21','9/22','9/23','9/24'];
+const scores = [85,87,89,88,90,90,91,91,94,93,95,96,96,96,96,95,95,95,95,94,92,92,91,91,90,92];
+const transit = [6,10,4,4,4,4,2,6,7,6,6,6,6,6,7,6,6,4,4,4,12,10,2,2,2,1];
+const awrp = [8.0,8.1,8.2,8.3,8.4,8.5,8.6,8.75,8.75,8.75,10.0,10.0,10.0,8.5,9.0,8.5,8.5,9.0,9.5,7.5,8.5,10.0,10.0,8.0,8.0,9.0];
+
+const baseOpt = {
+  responsive:true, maintainAspectRatio:false,
+  plugins:{legend:{display:false}},
+  scales:{
+    x:{ticks:{font:{size:10},maxRotation:0,autoSkip:true,maxTicksLimit:10},grid:{display:false}},
+    y:{ticks:{font:{size:11}},grid:{color:'#eceef2'}}
+  }
+};
+
+new Chart(document.getElementById('chartScore'), {
+  type:'line',
+  data:{labels:dates,datasets:[{
+    data:scores, borderColor:'#d92632', backgroundColor:'rgba(217,38,50,.12)',
+    fill:true, tension:.3, pointRadius:2, pointBackgroundColor:'#d92632',
+    pointRadius:function(c){return c.dataIndex===25?6:2;},
+    borderWidth:2
+  }]},
+  options:Object.assign({}, baseOpt, {
+    scales:Object.assign({}, baseOpt.scales, {y:{min:80,max:100,ticks:{font:{size:11}},grid:{color:'#eceef2'}}}),
+    plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:function(c){return '紧张度评分：'+c.raw+'/100';}}},
+      annotation:false
+    }
+  })
+});
+
+new Chart(document.getElementById('chartTransit'), {
+  type:'line',
+  data:{labels:dates,datasets:[{
+    data:transit, borderColor:'#2f6fed', backgroundColor:'rgba(47,111,237,.10)',
+    fill:true, tension:.3, pointRadius:2, pointBackgroundColor:'#2f6fed', borderWidth:2
+  }]},
+  options:Object.assign({}, baseOpt, {
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return '通航量：'+c.raw+' 艘/日';}}}}
+  })
+});
+
+new Chart(document.getElementById('chartAWRP'), {
+  type:'line',
+  data:{labels:dates,datasets:[{
+    data:awrp, borderColor:'#e88a1a', backgroundColor:'rgba(232,138,26,.10)',
+    fill:true, tension:.3, pointRadius:2, pointBackgroundColor:'#e88a1a', borderWidth:2
+  }]},
+  options:Object.assign({}, baseOpt, {
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return 'AWRP：'+c.raw+'%';}}}}
+  })
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美伊局势日报 · 2026-10-04</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#1a1a1a; --sub:#666;
+    --red:#c0392b; --green:#27ae60; --amber:#e67e22; --blue:#2980b9;
+    --line:#e5e7eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.6;padding:16px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  .hero{background:linear-gradient(135deg,#8e0e0e,#c0392b);color:#fff;border-radius:16px;
+    padding:22px 20px;margin-bottom:16px;}
+  .hero .date{font-size:14px;opacity:.9;}
+  .hero h1{font-size:24px;margin:6px 0 2px;}
+  .hero .score{font-size:52px;font-weight:800;line-height:1;}
+  .hero .score span{font-size:16px;font-weight:500;opacity:.9;}
+  .hero .tag{display:inline-block;background:rgba(255,255,255,.2);border-radius:20px;
+    padding:3px 12px;font-size:13px;margin-top:10px;}
+  .card{background:var(--card);border-radius:14px;padding:18px;margin-bottom:16px;
+    box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .card h2{font-size:18px;margin-bottom:12px;padding-left:10px;border-left:4px solid var(--red);}
+  .card h2.green{border-color:var(--green);}
+  .card h2.blue{border-color:var(--blue);}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  th,td{border:1px solid var(--line);padding:8px 9px;text-align:left;vertical-align:top;}
+  th{background:#fafafa;font-weight:600;}
+  .sev{font-weight:800;}
+  .warn{color:var(--red);font-weight:800;}
+  .dwarn{color:#8e0e0e;font-weight:800;background:#fdeaea;}
+  .red{color:var(--red);} .green{color:var(--green);} .amber{color:var(--amber);}
+  .lbl{display:inline-block;font-size:11.5px;border-radius:4px;padding:1px 6px;margin:1px 2px;
+    background:#f0f0f0;color:#444;font-weight:600;}
+  .lbl.red{background:#fdeaea;color:#c0392b;}
+  .lbl.green{background:#e8f8ee;color:#27ae60;}
+  .lbl.blue{background:#e8f1fa;color:#2980b9;}
+  .subgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;}
+  .subgrid .box{background:#fafafa;border-radius:10px;padding:10px;text-align:center;}
+  .subgrid .box b{display:block;font-size:22px;}
+  .subgrid .box small{color:var(--sub);font-size:12px;}
+  .chartbox{position:relative;height:250px;margin-top:10px;}
+  .note{font-size:12px;color:var(--sub);margin-top:10px;}
+  .section-title{font-size:15px;font-weight:700;margin:14px 0 6px;}
+  .foot{text-align:center;color:var(--sub);font-size:12px;margin:18px 0 8px;}
+  .qr{text-align:center;margin-top:12px;}
+  @media(max-width:480px){
+    .subgrid{grid-template-columns:repeat(2,1fr);}
+    .hero .score{font-size:44px;}
+    table{font-size:12px;}
+    th,td{padding:6px 5px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="date">美伊局势日报 · 每日监测</div>
+    <h1>2026年10月4日</h1>
+    <div class="score">89<span>/100</span></div>
+    <div class="tag">🔴 极度紧张 · 红色警戒</div>
+  </div>
+
+  <div class="card">
+    <h2>综合紧张度评分拆解</h2>
+    <table>
+      <tr><th>维度</th><th>权重</th><th>得分</th><th>贡献</th></tr>
+      <tr><td>军事冲突烈度</td><td>30%</td><td>89</td><td>26.7</td></tr>
+      <tr><td>高层言论威胁度</td><td>20%</td><td>86</td><td>17.2</td></tr>
+      <tr><td style="padding-left:20px;color:#888">　一般言论 (50%)</td><td>—</td><td>84</td><td>—</td></tr>
+      <tr><td style="padding-left:20px;color:#888">　敏感威胁 (50%)</td><td>—</td><td>88</td><td>—</td></tr>
+      <tr><td>霍尔木兹通航中断</td><td>25%</td><td>92</td><td>23.0</td></tr>
+      <tr><td>战争险 / 市场</td><td>25%</td><td>87</td><td>21.75</td></tr>
+      <tr style="background:#fdeaea;"><td class="sev">综合评分</td><td>—</td><td class="sev" style="font-size:18px;color:#8e0e0e;">89</td><td class="sev">88.65 → 89</td></tr>
+    </table>
+    <div class="note">较昨日（10/1，89 分）持平，连续处于 90 分附近极端高位区间。评分采用：军事冲突30% + 高层言论20%（一般言论50%+敏感威胁50%）+ 通航中断25% + 战争险/市场25%。</div>
+  </div>
+
+  <div class="card">
+    <h2>① 每日紧张度评分走势</h2>
+    <div class="chartbox"><canvas id="scoreChart"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>② 霍尔木兹通航量时间序列（艘/日 · 环比口径）</h2>
+    <div class="chartbox"><canvas id="transitChart"></canvas></div>
+    <div class="note">口径说明：9/20 起切换至克普勒/独立追踪口径；最新官方 IMF PortWatch 9/27 仅 1 艘（战前约 1%），美方宣称"铁桶封锁下几乎恢复战前流量"，独立追踪与美方口径持续显著分歧（美军护航"暗航"令真实流量高于 AIS 计数）。</div>
+  </div>
+
+  <div class="card">
+    <h2>③ 战争险费率时间序列（AWRP %）</h2>
+    <div class="chartbox"><canvas id="premiumChart"></canvas></div>
+    <div class="note">最新：40.0× 战前（约 +3900%），单艘 VLCC 过境战争险约 $1000 万；6 家 P&I 俱乐部撤回承保；劳合社 JWC 名单稳定。红海延布港关联油轮费率升至船值约 3%、吉赞以南最高 7%。</div>
+  </div>
+
+  <div class="card">
+    <h2>倒序时间序列 · 美伊对比表</h2>
+    <table>
+      <tr><th>日期</th><th>美国（言论/行动）</th><th>伊朗（言论/行动）</th><th>类别</th></tr>
+
+      <tr>
+        <td>10/4</td>
+        <td>
+          <span class="lbl red">🔴</span> <span class="dwarn">⚠️⚠️ 赫格塞思（美防长，10/4 Quantico/对记者）：特朗普保留"所有选项"、伊朗或面临"艰难方式"；"伊朗<u>永远不会、永远不会、永远不会拥有核武器</u>"（☢️核）；宣称美对霍尔木兹封锁"铁桶般（ironclad）"、通航"几乎恢复战前水平"</span>
+        </td>
+        <td>
+          <span class="lbl blue">⚪</span> 阿拉格齐（外长，10/4 德黑兰使节会议）：伊朗已对美提议作出答复；<span class="warn">⚠️ 若敌人再选军事路径将"更猛烈回击"</span>；重申"七天计划"若获接受 7 天内重开霍尔木兹、愿走外交路径
+        </td>
+        <td>⚪ / 🔴</td>
+      </tr>
+
+      <tr>
+        <td>10/4</td>
+        <td>
+          <span class="lbl red">🔴</span> <span class="dwarn">⚠️⚠️ 特朗普（10/3 白宫外/得州 Denton）：伊朗已被"摧毁（decimated）"、"要么轻松方式、要么艰难方式"；战争"很快结束"；⚠️ 威胁若阿曼在伊核谈判中"挡道"将<span class="sev">轰炸阿曼（美盟友）</span>；拒绝延长美伊谅解备忘录（MoU）"不"（💥经济命脉）</span>
+        </td>
+        <td>
+          <span class="lbl blue">⚪</span> 卡利巴夫（议长/首席谈判代表，10/4）：美已通过中间人提出"一些建议"，但<span class="warn">"单方面要求的时代已结束"</span>；<span class="sev">满足伊斯兰堡备忘录七项条件前霍尔木兹"绝不会开放"</span>；"边打边谈"
+        </td>
+        <td>🔴</td>
+      </tr>
+
+      <tr>
+        <td>10/3</td>
+        <td>
+          <span class="lbl blue">⚪</span> 美方（10/3）：将两名"未按要求离境"的伊朗驻联合国代表团成员驱逐出境
+        </td>
+        <td>
+          <span class="lbl red">🔴</span> <span class="dwarn">⚠️⚠️ IRGC 海军（10/3，法尔斯通讯社）：过去 5 天对至少 7 艘"违规"油轮采取行动——2 艘科威特船（Al FUNTAS、KAZIMAH III）、3 艘阿联酋船（SINBAD、MERSIN PROSPERITY、AL RUWAIS）；周五 2 艘爆炸（1 艘入口、1 艘出口）（🛢️能源设施）</span><br>
+          <span class="lbl red">🔴</span> <span class="warn">⚠️ 格什姆岛（10/3 傍晚）：防空系统两次启动、至少 1 架飞行器被击落，居民发现防空导弹助推器</span>
+        </td>
+        <td>🔴</td>
+      </tr>
+
+      <tr>
+        <td>10/3</td>
+        <td>
+          <span class="lbl blue">⚪</span> 俄常驻维也纳代表乌里扬诺夫（10/3）：强烈驳斥美"放弃伊朗核计划"主张，重申伊朗和平利用核能的"不可剥夺权利"
+        </td>
+        <td>
+          <span class="lbl blue">⚪</span> IRGC 发言人穆赫比（10/3，Defa Press）：特朗普应"从也门汲取教训"、接受伊朗条件；美"16 个月未达目标"；另一 IRGC 将领称导弹工业已达"成熟"
+        </td>
+        <td>⚪</td>
+      </tr>
+
+      <tr>
+        <td>10/3</td>
+        <td>
+          <span class="lbl blue">⚪</span> 沙特（10/3）：准备对也门胡塞发动大规模攻势、夺回曼德海峡，或动员超 10 万也门政府军 + 沙特空袭
+        </td>
+        <td>
+          <span class="lbl blue">⚪</span> 佩泽希齐扬（总统，10/3 X）：政府已采取"新安排"应对"经济战"；⚠️ 指控美及对手欲切断伊朗"经济命脉"、施压伊朗人民
+        </td>
+        <td>⚪</td>
+      </tr>
+
+      <tr>
+        <td>10/3</td>
+        <td>
+          <span class="lbl green">🟢</span> G7（法国爱丽舍宫 10/2）：协调经国际能源署释放 1 亿桶战略石油储备，缓解能源市场压力
+        </td>
+        <td>
+          <span class="lbl blue">⚪</span> 伊朗外交部（10/4）：未讨论 IAEA 核查人员返回一事；美提议与先前类似、聚焦核问题，德黑兰希望聚焦霍尔木兹
+        </td>
+        <td>🟢 / ⚪</td>
+      </tr>
+
+      <tr>
+        <td>10/3</td>
+        <td>
+          <span class="lbl red">🔴</span> 胡塞武装（10/3 晚）：为回应沙特空袭，以多枚弹道导弹+无人机袭击利雅得阿美石油设施，现场火光浓烟
+        </td>
+        <td>
+          <span class="lbl red">🔴</span> 沙特（10/3）：阿美利雅得南设施起火，消防车/救护车到场；胡塞与沙特官方均暂未正式回应
+        </td>
+        <td>🔴</td>
+      </tr>
+    </table>
+    <div class="note">类别标签：🔴=军事冲突/威胁升级　🟢=降温/缓和　⚪=声明/一般言论；⚠️ 严重项加粗；⚠️⚠️ = 敏感威胁（☢️核 / 🛢️能源设施 / 💥经济命脉）红色高亮。</div>
+  </div>
+
+  <div class="card">
+    <h2>敏感威胁专项（⚠️⚠️ 双重标注 · 统一归入"言论"维度）</h2>
+    <table>
+      <tr><th>时间</th><th>主体</th><th>威胁内容</th><th>标签</th></tr>
+      <tr><td>10/4</td><td>赫格塞思</td><td class="dwarn">"伊朗永远不会拥有核武器"、保留"所有选项"</td><td><span class="lbl red">☢️核</span></td></tr>
+      <tr><td>10/3-4</td><td>特朗普</td><td class="dwarn">威胁轰炸阿曼盟友、"艰难方式"、拒绝延长 MoU</td><td><span class="lbl red">💥经济命脉</span></td></tr>
+      <tr><td>10/3</td><td>IRGC 海军</td><td class="dwarn">5 天打击 7 艘"违规"油轮（含 2 艘科威特、3 艘阿联酋）</td><td><span class="lbl red">🛢️能源设施</span></td></tr>
+      <tr><td>10/4</td><td>卡利巴夫</td><td class="dwarn">"七项条件满足前霍尔木兹绝不开放"</td><td><span class="lbl red">💥经济命脉</span></td></tr>
+      <tr><td>10/3</td><td>胡塞武装</td><td class="dwarn">弹道导弹+无人机袭击利雅得阿美石油设施</td><td><span class="lbl red">🛢️能源设施</span></td></tr>
+    </table>
+    <div class="note">敏感威胁子项评分：88（占"高层言论威胁度"维度 50% 权重）。核议题延续（赫格塞思"三个永不"）、能源设施（油轮+阿美遇袭）、经济命脉（特朗普威胁盟友+卡利巴夫关峡）三线均处高位。</div>
+  </div>
+
+  <div class="card">
+    <h2>关键数据面板</h2>
+    <div class="subgrid">
+      <div class="box"><b>1 艘</b><small>通航（IMF PortWatch 9/27，战前 1%）</small></div>
+      <div class="box"><b>40.0×</b><small>战争险（战前倍数）</small></div>
+      <div class="box"><b>$102.25</b><small>布伦特（10/3 收，周跌近2%）</small></div>
+      <div class="box"><b>$91.11</b><small>WTI（10/3 收，-1.9%）</small></div>
+    </div>
+    <div class="section-title">今日 3–5 条关键动态</div>
+    <ol style="padding-left:20px;font-size:13.5px;">
+      <li><span class="warn">特朗普"要么轻松要么艰难"+威胁轰炸阿曼盟友</span>，拒绝延长 MoU——美方姿态重回极限施压。</li>
+      <li><span class="warn">IRGC 5 天打击 7 艘"违规"油轮</span>（2 科威特+3 阿联酋+2 艘爆炸），格什姆岛防空交火击落 1 飞行器。</li>
+      <li>赫格塞思重申核红线"三个永不"、宣称美封锁"铁桶般"、通航"几乎恢复战前"——与独立追踪严重分歧。</li>
+      <li>伊朗"边打边谈"：卡利巴夫称满足七项条件前霍尔木兹"绝不开放"，阿拉格齐称已对美提议答复、若再遭军事路径将"更猛烈回击"。</li>
+      <li>G7 协调释放 1 亿桶战略储备；OPEC+ 延长减产至 2027 年一季度末，油价周线回落（布伦特周跌近2%）。</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>市场与宏观</h2>
+    <table>
+      <tr><th>指标</th><th>数值</th><th>备注</th></tr>
+      <tr><td>布伦特原油</td><td>$102.25（10/3 收，-0.06%）</td><td>周累跌近 2%；盘中高点 $102.90</td></tr>
+      <tr><td>WTI 原油</td><td>$91.11（10/3 收，-1.9%）</td><td>周累跌 1.4%；布伦特-WTI 价差扩至 $11+</td></tr>
+      <tr><td>伊朗里亚尔</td><td>≈270 万/美元</td><td>再创历史新低；伊朗央行拟售 $20 亿支撑</td></tr>
+      <tr><td>伊朗通胀</td><td>≈73%</td><td>（一说 301% 为特朗普引述口径，存争议）</td></tr>
+      <tr><td>OPEC+</td><td>延长减产至 2027 Q1 末</td><td>托底油价</td></tr>
+    </table>
+  </div>
+
+  <div class="foot">
+    数据源：新华社/央视/央广/人民网/路透/BBC/Al Jazeera/straits.live/新华网<br>
+    本报告为自动化监测摘要，非投资建议 · 瑞安（Ryan）生成
+  </div>
+
+</div>
+
+<script>
+const DARK = '#666';
+function makeLine(ctx, labels, data, highlightIdx, color, fillColor){
+  return new Chart(ctx, {
+    type:'line',
+    data:{
+      labels:labels,
+      datasets:[{
+        data:data, borderColor:color, backgroundColor:fillColor,
+        borderWidth:2.5, fill:true, tension:.3,
+        pointRadius:function(c){return c.dataIndex===highlightIdx?5:0;},
+        pointBackgroundColor:color,
+      }]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      plugins:{legend:{display:false},
+        tooltip:{callbacks:{label:(c)=>c.parsed.y}}},
+      scales:{
+        x:{ticks:{maxTicksLimit:10,font:{size:10},color:DARK},grid:{display:false}},
+        y:{beginAtZero:false,ticks:{font:{size:10},color:DARK},grid:{color:'#eee'}}
+      }
+    }
+  });
+}
+
+// ① 评分走势
+const sLabels=['8/30','8/31','9/1','9/2','9/3','9/4','9/5','9/6','9/7','9/8','9/9','9/10','9/11','9/12','9/13','9/14','9/15','9/16','9/17','9/18','9/19','9/20','9/21','9/22','9/23','9/24','9/25','9/26','9/27','9/28','9/29','9/30','10/1','10/4'];
+const sData=[85,87,89,88,90,90,91,91,94,93,95,96,96,96,96,95,95,95,95,94,92,92,91,91,90,92,91,89,90,90,89,89,89,89];
+makeLine(document.getElementById('scoreChart'), sLabels, sData, sData.length-1, '#c0392b', 'rgba(192,57,43,.12)');
+
+// ② 通航量（艘/日）
+const tLabels=['9/1','9/2','9/3','9/4','9/5','9/6','9/7','9/8','9/9','9/10','9/11','9/12','9/13','9/14','9/15','9/16','9/17','9/18','9/19','9/20','9/21','9/22','9/23','9/24','9/25','9/26','9/27','9/28','9/29','9/30','10/1','10/4'];
+const tData=[4,4,4,4,2,6,7,6,6,6,6,6,6,7,6,6,4,4,4,12,10,2,2,2,1,12,9,9,3,5,8,17,1];
+makeLine(document.getElementById('transitChart'), tLabels, tData, tData.length-1, '#2980b9', 'rgba(41,128,185,.12)');
+
+// ③ 战争险 AWRP（%）
+const pLabels=['9/1','9/2','9/3','9/4','9/5','9/6','9/7','9/8','9/9','9/10','9/11','9/12','9/13','9/14','9/15','9/16','9/17','9/18','9/19','9/20','9/21','9/22','9/23','9/24','9/25','9/26','9/27','9/28','9/29','9/30','10/1','10/4'];
+const pData=[8.6,8.75,8.75,8.75,10.0,10.0,10.0,8.5,9.0,8.5,8.5,9.0,9.5,7.5,8.5,10.0,10.0,8.0,8.0,9.0,8.5,8.5,8.5,8.5,8.5,10.0,10.0,10.0,10.0,10.0,10.0,10.0];
+makeLine(document.getElementById('premiumChart'), pLabels, pData, pData.length-1, '#e67e22', 'rgba(230,126,34,.12)');
+</script>
+</body>
+</html>

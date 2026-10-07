@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>铜市日报 · 2026-09-13</title>
+<style>
+  :root{
+    --bg:#0f141b; --bg-grad:#0b0f16; --panel:#151c26; --panel2:#1a2230; --border:#242e3c;
+    --txt:#e9edf4; --sub:#98a4b6; --muted:#667184;
+    --up:#e5484d; --down:#2fb875; --orange:#f5a623; --accent:#f5a623; --gold:#e8b84b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:radial-gradient(1200px 600px at 50% -100px, #26221a 0%, var(--bg-grad) 55%);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; padding:40px 20px 70px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{text-align:center;margin-bottom:34px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:10px}
+  .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.5}
+  header h1{font-size:34px;font-weight:800;letter-spacing:1px;color:var(--txt);margin-bottom:6px}
+  header h1 .dot{color:var(--orange)}
+  header .src{color:var(--sub);font-size:12.5px;line-height:1.9}
+  header .src .pill{display:inline-block;padding:1px 9px;border-radius:20px;background:rgba(245,166,35,.12);color:var(--orange);border:1px solid rgba(245,166,35,.3);font-size:11px;margin:0 3px}
+
+  .hero{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+  .hero .kpi{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 22px;text-align:center;min-width:150px;flex:1;transition:transform .18s ease,border-color .18s ease}
+  .hero .kpi:hover{transform:translateY(-3px);border-color:var(--orange)}
+  .hero .kpi .v{font-size:24px;font-weight:800;color:var(--up);letter-spacing:.5px}
+  .hero .kpi .v.orange{color:var(--orange)}
+  .hero .kpi .l{font-size:12px;color:var(--sub);margin-top:4px}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.22)}
+  .card h2{font-size:18px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+  .card h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#f5a623,#d88a0e);color:#1a1206;font-size:14px;font-weight:800;box-shadow:0 2px 8px rgba(245,166,35,.3)}
+  .card h2 .hint{font-size:11.5px;color:var(--muted);font-weight:400;margin-left:auto}
+
+  .reason{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;padding:12px 14px;border-radius:11px;background:var(--panel2);border:1px solid transparent;transition:border-color .15s}
+  .reason:hover{border-color:var(--border)}
+  .reason .idx{flex:0 0 28px;height:28px;border-radius:8px;background:rgba(245,166,35,.16);color:var(--orange);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+  .reason .txt{font-size:14.5px;color:#d2d9e4}
+  .reason .txt b{color:var(--orange)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  thead th{color:var(--sub);font-weight:600;background:var(--panel2);font-size:12px;letter-spacing:.3px;position:sticky;top:0}
+  tbody tr{transition:background .12s}
+  tbody tr:hover{background:rgba(255,255,255,.02)}
+  td b{color:var(--txt)}
+  td .tm{font-variant-numeric:tabular-nums;color:var(--sub)}
+
+  .tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;font-weight:600;white-space:nowrap;line-height:1.5}
+  .tag-up{background:rgba(229,72,77,.14);color:#ff7a7e;border:1px solid rgba(229,72,77,.42)}
+  .tag-down{background:rgba(47,184,117,.14);color:#4fd699;border:1px solid rgba(47,184,117,.42)}
+  .tag-neu{background:rgba(152,164,182,.12);color:var(--sub);border:1px solid var(--border)}
+  .tag-strong{background:rgba(229,72,77,.22);color:#ff7a7e;border:1px solid var(--up);font-weight:700}
+  .tag-gold{background:rgba(232,184,75,.14);color:var(--gold);border:1px solid rgba(232,184,75,.4)}
+
+  .quote{border-left:4px solid var(--orange);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#c9d0dc;margin:16px 0 4px}
+  .quote b{color:var(--orange)}
+  .quote.gold{border-left-color:var(--gold)}
+  .quote.gold b{color:var(--gold)}
+
+  .inst-card{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;border-radius:11px;background:var(--panel2);border:1px solid var(--border);margin-bottom:12px}
+  .inst-card .org{flex:0 0 130px;font-size:13px;font-weight:800;color:var(--orange);line-height:1.5}
+  .inst-card .org .d{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+  .inst-card .view{font-size:13.5px;color:#d2d9e4}
+  .inst-card .view b{color:var(--orange)}
+
+  .zsxq{display:flex;flex-direction:column;gap:14px}
+  .z-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative}
+  .z-card .z-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .z-card .z-badge{font-size:11px;font-weight:700;padding:3px 11px;border-radius:6px;background:rgba(232,184,75,.16);color:var(--gold);border:1px solid rgba(232,184,75,.35);letter-spacing:.5px}
+  .z-card .z-group{font-size:13px;font-weight:700;color:var(--txt)}
+  .z-card .z-time{font-size:11px;color:var(--muted);margin-left:auto}
+  .z-card p{font-size:13.5px;color:#ccd4e0;line-height:1.8}
+  .z-card p b{color:var(--gold)}
+  .z-card p .c-blue{color:#54a8ff}
+
+  .verdict{background:linear-gradient(135deg,#1a2230,#141a24);border:1px solid #2a3550}
+  .verdict .main{font-size:15.5px;font-weight:700;color:var(--txt);margin-bottom:16px;padding:16px 18px;background:var(--panel2);border-radius:11px;border-left:4px solid var(--orange);line-height:1.8}
+  .verdict .main b{color:var(--orange)}
+  .verdict ul{padding-left:4px;font-size:13.5px;color:#c9d0dc;list-style:none}
+  .verdict li{margin-bottom:11px;padding-left:22px;position:relative;line-height:1.75}
+  .verdict li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--orange)}
+  .verdict li b{color:var(--up)}
+  .verdict li b.down{color:var(--down)}
+  .verdict li b.gold{color:var(--gold)}
+  .verdict li .k{font-weight:700;color:var(--txt)}
+
+  .footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:14px;line-height:1.9}
+
+  @media (max-width:640px){
+    body{padding:24px 12px 50px}
+    .card{padding:20px 16px}
+    header h1{font-size:26px}
+    .hero .kpi{min-width:130px;padding:12px 14px}
+    .hero .kpi .v{font-size:20px}
+    .inst-card .org{flex-basis:90px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Copper Daily</div>
+    <h1>铜市日报<span class="dot"> · </span>2026.09.13</h1>
+    <div class="src">
+      <span class="pill">华尔街见闻</span><span class="pill">market-delta 实时快讯</span><span class="pill">Wind 海外机构</span><span class="pill">知识星球</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="kpi"><div class="v" style="color:var(--down)">$14,052</div><div class="l">伦铜周五收（盘中破14,000收回）</div></div>
+    <div class="kpi"><div class="v orange" style="color:var(--down)">108,663</div><div class="l">沪铜 2610（-2.45%）</div></div>
+    <div class="kpi"><div class="v">80-120元</div><div class="l">现货升水（收窄）</div></div>
+    <div class="kpi"><div class="v">$15,000</div><div class="l">海外机构目标价中枢</div></div>
+  </div>
+
+  <!-- 一、核心结论 -->
+  <div class="card">
+    <h2><span class="no">一</span>核心结论：周末消化期铜价的 5 个核心逻辑</h2>
+    <div class="reason"><div class="idx">1</div><div class="txt"><b>高位整固、支撑有效</b>——伦铜周五收 14,052 美元/吨，盘中一度跌破 14,000 后收回，短线支撑验证，回调属健康换手而非趋势逆转。</div></div>
+    <div class="reason"><div class="idx">2</div><div class="txt"><b>矿端负增长主线未变</b>——摩根士丹利称全球矿山供应自 2017 年以来首次年度萎缩；智利连续两个季度下调全年产量预期（-2.6%），供给刚性锁死未来弹性。</div></div>
+    <div class="reason"><div class="idx">3</div><div class="txt"><b>关税虹吸仍在强化</b>——高盛上调美国铜库存累积预期至 90 万吨（原 55 万吨），美国以外缺口从 6 万吨扩至 64 万吨，"非美短缺"从预期走向现实。</div></div>
+    <div class="reason"><div class="idx">4</div><div class="txt"><b>机构目标价锚定 15,000</b>——花旗年底 15,000（超预期 17,000）、瑞银年底 15,000/未来几季 15,500，共识未因回调松动。</div></div>
+    <div class="reason"><div class="idx">5</div><div class="txt"><b>但短线新增利空</b>——下周铜陵有色解禁 132.07 亿元（21.4 亿股），叠加美国 8 月核心 CPI 环比 0.3% 超预期、10 月加息概率 67.4%，宏观逆风压制反弹空间。</div></div>
+  </div>
+
+  <!-- 二、海外机构观点 -->
+  <div class="card">
+    <h2><span class="no">二</span>近 5 天海外机构观点 <span class="hint">Wind 财经新闻</span></h2>
+    <div class="inst-card"><div class="org">花旗<span class="d">9/9</span></div><div class="view">短期目标 <b>14,500</b>（9/7 盘中已触及），6-12 个月看高 <b>15,000</b>；若制造业/AI/数据中心超预期可冲 <b>17,000</b>。</div></div>
+    <div class="inst-card"><div class="org">瑞银<span class="d">9/9</span></div><div class="view">缺口 2026 年 21.9 万吨→2027 年 37.9 万吨，年底 <b>15,000</b>、未来几季 <b>15,500</b>。</div></div>
+    <div class="inst-card"><div class="org">高盛<span class="d">9/9</span></div><div class="view">2026 年底 <b>13,735</b> 维持；美国库存累积 <b>90 万吨</b>（原 55），美以外缺口 6 万→64 万吨。</div></div>
+    <div class="inst-card"><div class="org">摩根士丹利<span class="d">9/8</span></div><div class="view">矿山供应持平或略降，<b>2017 年以来首次年度萎缩</b>。</div></div>
+    <div class="inst-card"><div class="org">Wood Mackenzie<span class="d">9/11</span></div><div class="view"><b>13,200-13,800</b> 美元。</div></div>
+    <div class="inst-card"><div class="org">CRU<span class="d">9/11</span></div><div class="view">美国以外市场<b>最多供需平衡</b>。</div></div>
+    <div class="quote gold">海外机构共识：目标价集中在 <b>14,000-15,500 美元</b>，花旗看高至 17,000；分歧不在"缺不缺"，而在"当前回调是换手还是趋势结束"。</div>
+  </div>
+
+  <!-- 三、知识星球深度观点 -->
+  <div class="card">
+    <h2><span class="no">三</span>知识星球深度观点 <span class="hint">近期时效</span></h2>
+    <div class="zsxq">
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">小牛研报纪要</span><span class="z-group">非美供给紧张进一步强化</span><span class="z-time">2026-09-08</span></div>
+        <p>国金金属：智利 8 月出口走弱叠加美国持续吸铜，<b>非美供给紧张进一步强化</b>。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">Orange 期权</span><span class="z-group">铜近月隐波低估</span><span class="z-time">2026-09-09</span></div>
+        <p>铜外盘/远月升波、近月降波，<b>近月隐波低估</b>，可双买做多铜波动率；叠加周五 CPI 对有色影响，<b>做多隐含波动率</b>而非裸多方向。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、今日实时快讯 -->
+  <div class="card">
+    <h2><span class="no">四</span>今日（9/13）实时快讯与时间线 <span class="hint">数据截止 18:00</span></h2>
+    <table>
+      <thead><tr><th style="width:70px">时间</th><th>事件</th><th style="width:92px">标签</th></tr></thead>
+      <tbody>
+      <tr><td class="tm">16:16</td><td>下周 29 股解禁，<b>铜陵有色解禁 132.07 亿元</b>（21.4 亿股定向增发机构配售）</td><td><span class="tag tag-down">利空·解禁</span></td></tr>
+      <tr><td class="tm">15:48</td><td>金安国纪澄清：覆铜板产品纳入英伟达/华为供应链<b>不实</b>，尚在实验室研发</td><td><span class="tag tag-down">利空·澄清</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键价格：伦铜 LME 三月合约 <b>$14,052/吨</b>（周五收）；周末无交易，快讯以宏观与个股公告为主。</div>
+  </div>
+
+  <!-- 五、昨天参照 -->
+  <div class="card">
+    <h2><span class="no">五</span>上周五（9/11）发生了什么（背景参照）</h2>
+    <table>
+      <thead><tr><th style="width:120px">时间/事件</th><th>内容</th></tr></thead>
+      <tbody>
+      <tr><td><b>伦铜回调</b></td><td>收 14,052，盘中破 14,000 收回</td></tr>
+      <tr><td><b>沪铜</b></td><td>2610 合约收 108,663（-2.45%）</td></tr>
+      <tr><td><b>现货升水</b></td><td>收窄至 80-120 元</td></tr>
+      <tr><td><b>美国 CPI</b></td><td>8 月核心 CPI 环比 0.3% 超预期，10 月加息概率 67.4%</td></tr>
+      <tr><td><b>关税政策</b></td><td>白宫对精炼铜关税仍犹豫，盛宝汉森称"打破单边看涨"</td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键参照：上周五铜的主线是"深度回调 + 关税降温 + 加息升温"，周末进入整固消化期，下周聚焦铜陵有色解禁与美联储议息。</div>
+  </div>
+
+  <!-- 六、逻辑对比 -->
+  <div class="card">
+    <h2><span class="no">六</span>核心逻辑增强 vs 削弱对比</h2>
+    <table>
+      <thead><tr><th>核心逻辑</th><th>9/11 状态</th><th>9/13 状态</th><th style="width:92px">变化</th></tr></thead>
+      <tbody>
+      <tr><td><b>矿端供给收缩</b></td><td>大摩首次年度萎缩</td><td>逻辑延续，未变</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>关税套利 + Comex 囤积</b></td><td>白宫关税犹豫</td><td>高盛上调美国库存 90 万吨</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>海外机构目标价</b></td><td>锚定 15,000</td><td>花旗/瑞银维持 15,000-17,000</td><td><span class="tag tag-neu">持平 →</span></td></tr>
+      <tr><td><b>中国现货抢货/资金</b></td><td>涨停潮暂歇</td><td>周末无交易</td><td><span class="tag tag-neu">持平 →</span></td></tr>
+      <tr><td><b>宏观逆风</b></td><td>加息 67.4%</td><td>核心 CPI 超预期，加息维持高位</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>短期解禁压力</b></td><td>无</td><td>铜陵有色 132 亿解禁</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>整体净影响</b></td><td colspan="2" style="text-align:center">—</td><td><span class="tag tag-strong">短期整固偏空，中长期供给逻辑增强</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">对比判断：上周五市场在"关税降温 + 加息升温"中深度回调，周末进入无交易的整固消化期；供给端逻辑（矿端负增长 + 关税虹吸）持续强化，但宏观逆风与下周解禁构成短期压制，铜价进入"高位换手、等待方向"阶段。</div>
+  </div>
+
+  <!-- 七、综合结论 -->
+  <div class="card verdict">
+    <h2><span class="no">七</span>综合结论</h2>
+    <div class="main">今日铜的运行主线 = <b>供给硬约束（矿端负增长 + 关税虹吸）未变</b>，但短期进入"加息预期 + 解禁压力"的整固消化期。</div>
+    <ul>
+      <li><span class="k">方向</span>：中长期多头、短线整固；伦铜 14,000 为关键支撑。</li>
+      <li><span class="k">海外机构共识</span>：目标价 15,000-15,500 美元，花旗看高至 17,000；"AI + 新能源 + 供给刚性"三重逻辑支撑。</li>
+      <li><span class="k">星球视角</span>：小牛（非美供给紧张强化）；Orange（近月隐波低估，<b class="gold">双买做多波动率</b>，而非裸多方向）。</li>
+      <li><span class="k">风险点</span>：铜陵有色 132 亿解禁；10 月加息概率 67.4%；关税落地后美国库存回流，14,000 若失守或引发技术性抛压。</li>
+      <li><span class="k">下周关键</span>：美联储 9/15-16 议息、铜陵有色解禁、伦铜能否守稳 14,000。</li>
+      <li><span class="k">操作倾向</span>：回调不破 14,000 视为健康调整，逢低布局；解禁 + 议息前控制仓位。</li>
+    </ul>
+  </div>
+
+  <div class="footer">生成时间：2026-09-13 18:10 · 数据截止 18:00<br>数据源：华尔街见闻 · market-delta 实时快讯 · Wind 财经新闻（海外机构观点） · 知识星球（小牛研报纪要 / Orange 期权）</div>
+</div>
+</body>
+</html>

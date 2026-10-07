@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日市场分析笔记 · 2026-09-19</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: linear-gradient(180deg, #eef1f8 0%, #f6f4fb 100%);
+    color: #2b2b3a; line-height: 1.75; padding: 24px 14px 40px;
+  }
+  .page { max-width: 760px; margin: 0 auto; }
+
+  .header {
+    background: linear-gradient(135deg, #4a5cf5 0%, #7b4ff0 55%, #a94fd8 100%);
+    border-radius: 18px; padding: 30px 28px 26px; color: #fff;
+    box-shadow: 0 10px 30px rgba(108, 92, 231, .25);
+  }
+  .header h1 { font-size: 26px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+  .header .sub { margin-top: 10px; font-size: 13.5px; opacity: .92; }
+  .header .tags { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .header .tags span {
+    background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35);
+    padding: 3px 12px; border-radius: 999px; font-size: 12.5px;
+  }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 16px; }
+  .stat {
+    background: #fff; border-radius: 14px; padding: 14px 12px; text-align: center;
+    box-shadow: 0 4px 14px rgba(60,60,120,.07);
+  }
+  .stat .n { font-size: 24px; font-weight: 800; color: #5b4fd6; line-height: 1.2; }
+  .stat .l { font-size: 11.5px; color: #8a8a9c; margin-top: 3px; }
+
+  .card {
+    background: #fff; border-radius: 16px; padding: 22px 24px;
+    margin-top: 18px; box-shadow: 0 4px 16px rgba(60,60,120,.07);
+  }
+  .card-title {
+    font-size: 18px; font-weight: 700; display: flex; align-items: center; gap: 9px;
+    padding-bottom: 12px; margin-bottom: 14px; border-bottom: 2px dashed #e6e6f2;
+  }
+  .card-title .ico { font-size: 20px; }
+  .card-title .src { margin-left: auto; font-size: 11.5px; font-weight: 400; color: #9a9aae; }
+
+  .hl-red   { color: #e0492f; font-weight: 700; }
+  .hl-green { color: #1c9c54; font-weight: 700; }
+  .hl-blue  { color: #3563e9; font-weight: 700; }
+  .hl-purple{ color: #8a5cf6; font-weight: 700; }
+  .hl-orange{ color: #e07b1f; font-weight: 700; }
+  b { font-weight: 700; }
+  mark { background: #fff1a8; padding: 0 4px; border-radius: 4px; font-weight: 600; color:#5a4a00; }
+
+  ul.dl { list-style: none; margin-top: 8px; }
+  ul.dl li { font-size: 14px; padding: 5px 0 5px 20px; position: relative; color: #43435a; }
+  ul.dl li::before { content: "▸"; position: absolute; left: 2px; color: #8a5cf6; font-weight: 700; }
+
+  .mini { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+  .mini-box {
+    border-radius: 10px; padding: 11px 14px; font-size: 13.2px; background: #f7f6fd;
+    border-left: 4px solid #8a5cf6;
+  }
+  .mini-box .k { font-size: 11.5px; color: #8a8a9c; display: block; }
+  .mini-box .v { font-size: 16px; font-weight: 800; color: #5b4fd6; }
+
+  .takeaway {
+    margin-top: 14px; border-radius: 10px; padding: 12px 16px; font-size: 14px;
+    background: #f4f0fe; border: 1px solid #ddd0fa; color: #5b3ea8;
+  }
+  .takeaway b { color: #7a3fd0; }
+  .takeaway.warn { background: #fdf1e3; border-color: #f5d9b0; color: #9a5b0e; }
+  .takeaway.warn b { color: #c46a00; }
+  .takeaway.danger { background: #fdecea; border-color: #f6c6bd; color: #b03020; }
+  .takeaway.danger b { color: #d03517; }
+  .takeaway.calm { background: #eef4fd; border-color: #c9daf6; color: #2b54a8; }
+  .takeaway.calm b { color: #1c56b8; }
+  .takeaway.good { background: #e9f8ef; border-color: #bfe6cd; color: #157a41; }
+  .takeaway.good b { color: #0f7a3d; }
+
+  .chain { display: flex; flex-direction: column; margin-top: 10px; }
+  .chain-item { display: flex; align-items: flex-start; gap: 12px; position: relative; padding-bottom: 14px; }
+  .chain-item::before {
+    content: ""; position: absolute; left: 15px; top: 34px; bottom: 0; width: 2px; background: #e8d9fb;
+  }
+  .chain-item:last-child::before { display: none; }
+  .chain-icon {
+    flex: 0 0 32px; height: 32px; border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 15px; background: #f1ebfd; border: 1px solid #ddd0fa;
+  }
+  .chain-item .txt { flex: 1; font-size: 13.8px; color: #4a4a5c; padding-top: 4px; }
+  .chain-item .txt b { color: #2b2b3a; }
+
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+  .vs-box { border-radius: 12px; padding: 14px 16px; font-size: 13.6px; }
+  .vs-box h4 { font-size: 14.5px; margin-bottom: 8px; }
+  .vs-box ul { list-style: none; }
+  .vs-box li { padding: 4px 0 4px 18px; position: relative; }
+  .vs-box li::before { content: "·"; position: absolute; left: 4px; font-weight: 900; }
+  .vs-a { background: #fdecea; border: 1px solid #f3c2b8; }
+  .vs-a h4 { color: #c03a24; } .vs-a li::before { color: #e0563c; }
+  .vs-b { background: #e8f7ee; border: 1px solid #bfe6cd; }
+  .vs-b h4 { color: #157a41; } .vs-b li::before { color: #2ebd6e; }
+  .vs-c { background: #fdf1e3; border: 1px solid #f3d9b0; }
+  .vs-c h4 { color: #b96a12; } .vs-c li::before { color: #e09a3e; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 13.3px; }
+  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #eeeef6; }
+  th { background: #f6f5fc; color: #5b4fd6; font-size: 12.5px; }
+  td.num { font-weight: 700; color: #2b2b3a; }
+
+  .summary {
+    margin-top: 20px; border-radius: 18px; padding: 24px;
+    background: linear-gradient(135deg, #4a5cf5 0%, #7b4ff0 60%, #a94fd8 100%);
+    color: #fff; box-shadow: 0 10px 30px rgba(108,92,231,.25);
+  }
+  .summary h2 { font-size: 19px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .sum-item {
+    background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28);
+    border-radius: 12px; padding: 13px 15px; font-size: 13.3px;
+  }
+  .sum-item h4 { font-size: 14.5px; margin-bottom: 5px; }
+  .sum-item p { opacity: .93; }
+
+  .footer-tags { margin-top: 18px; text-align: center; font-size: 12.5px; color: #8a8a9c; }
+  .footer-tags span { display: inline-block; margin: 3px 5px; padding: 3px 12px; background: #eceaf6; border-radius: 999px; color: #6d5fb8; }
+
+  @media (max-width: 560px) {
+    .mini, .vs, .sum-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 头部 -->
+  <div class="header">
+    <h1>📊 今日市场分析笔记</h1>
+    <div class="sub">2026年9月19日（周六）· AI 瓶颈转移 / 存储 5.5 倍 / 财政与利率双重挤压</div>
+    <div class="tags">
+      <span>#瓶颈转移</span><span>#CoWoS扩产</span><span>#DRAM 5.5倍</span><span>#光纤超级周期</span><span>#财政缺口</span><span>#AI融资缺口</span>
+    </div>
+  </div>
+
+  <!-- 总览 -->
+  <div class="stats">
+    <div class="stat"><div class="n">5</div><div class="l">有效星球</div></div>
+    <div class="stat"><div class="n">34</div><div class="l">今日新帖</div></div>
+    <div class="stat"><div class="n">40</div><div class="l">精读正文</div></div>
+    <div class="stat"><div class="n">12</div><div class="l">主题分区</div></div>
+  </div>
+
+  <!-- 1 头条：瓶颈转移 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🔥</span>头条：AI 硬件的瓶颈正在「转移」而非「消失」<span class="src">研报平权 · 09-19 14:03 / 404K 14:11</span></div>
+    <ul class="dl">
+      <li>CoWoS 供需缺口<b>收窄至约 10%</b>——但卡点立刻转移到 <span class="hl-purple">2nm 先进制程晶圆 + 复杂载板</span>。摩根大通：行业 CoWoS 年产能 2028 年扩至 <b>345.5 万片</b>，台积电月产能达 <b>22.5 万片</b>。</li>
+      <li>出货节奏现在看<b>欣兴电子、景硕科技的复杂载板良率</b>；头部供应商载板良率目前<span class="hl-red">仅约 50%</span>，若 2026Q4 流片受阻，英特尔 EMIB-T 这种「降本 50%」的分流方案就落不了地。</li>
+      <li>大尺寸芯片散热翘曲倒逼 <b>3D SoIC</b>：台积电 2028 年末月产能拉到 <b>7 万片</b>，但每 100 万颗加速器需约 1 万片基础层产能，<mark>底层逻辑芯片一有缺陷，整颗加速器就交付不了</mark>。</li>
+      <li>封装 capex：台积电 + 日月光 + 安靠从 2023 年 47 亿美元 → <b>2027 年 211 亿美元</b>；CoWoS 月产能 2027 年底超 <b>250 kwpm</b>。</li>
+      <li>SpaceX CFO 访谈印证：AI 链第一个瓶颈是<b>「明年的芯片供应量」</b>，其次是电力（电力公司预计增速仅约 1%、涡轮叶片受限，SpaceX 已自行精密铸造叶片）；内存行业年增约 30%，而 SpaceX 要三位数增长——<span class="hl-red">「恐怕行不通」</span>，TerraFab 转向内存，2029 年后才有意义成果。</li>
+    </ul>
+    <div class="takeaway">
+      <b>一句话：</b>市场担心「云厂砍 capex」，但<b>先进封装扩产本身就在创造设备订单</b>。真正的风险从「有没有产能」变成<mark>「良率与底层晶圆缺陷率能不能跟上」</mark>——这是更细、更难跟踪的卡点。
+    </div>
+  </div>
+
+  <!-- 2 存储 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">💾</span>存储：涨势放缓，但价格一点没跌<span class="src">404K · 09-19 15:34</span></div>
+    <div class="mini">
+      <div class="mini-box"><span class="k">64GB DDR5 RDIMM 合约价</span><span class="v">$1,500</span></div>
+      <div class="mini-box"><span class="k">一年前（2025Q3）</span><span class="v">$270</span></div>
+      <div class="mini-box"><span class="k">累计涨幅</span><span class="v">5.5 倍</span></div>
+      <div class="mini-box"><span class="k">汇丰预测 2027Q2</span><span class="v">$1,739</span></div>
+    </div>
+    <ul class="dl">
+      <li>环比涨幅曲线：2026Q1 <b>+90~95%</b> → Q2 <b>+53~63%</b> → Q3 <span class="hl-orange">放缓至 +13~18%</span>，汇丰预计后续仅 +8%、+5%。<mark>涨幅在收敛，绝对价格仍在创新高</mark>。</li>
+      <li><b>实际报价与模型几乎完全吻合</b>——汇丰对 2026Q3 的预测是 $1,495，9 月 15 日现货报 $1,500。</li>
+      <li>驱动：AI 服务器需求 + 晶圆产能持续转向 HBM，挤压传统 RDIMM；长协限制了一部分上涨空间，但<b>短缺本身并未缓解</b>，超大规模云商仍在累库应对持续到 2027 年的紧张。</li>
+      <li>日本数据佐证（7 月）：<b>存储器产值同比 +407.6%</b> 至 14.38 亿美元，其中<span class="hl-red">均价跳涨 404%</span>——纯价格驱动。</li>
+    </ul>
+    <div class="takeaway warn">
+      <b>关键反问：</b>如果 Q3 涨幅只剩 13~18%、模组价已到 $1,500，要走到 2027Q2 的 $1,739，<b>是否还需要 HBM 再次挤占同一批设备？</b>——这是判断存储超级周期能否延续的核心变量。
+    </div>
+  </div>
+
+  <!-- 3 半导体设备/国产链 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🏭</span>半导体设备：存储接过扩产接力棒<span class="src">研报平权 · 09-19 12:02 / 08-18 10:02</span></div>
+    <div class="mini">
+      <div class="mini-box"><span class="k">中国晶圆设备支出 2027E</span><span class="v">$558亿</span></div>
+      <div class="mini-box"><span class="k">2028E（大摩）</span><span class="v">$686亿</span></div>
+      <div class="mini-box"><span class="k">中国占全球设备需求</span><span class="v">25%~28%</span></div>
+      <div class="mini-box"><span class="k">万润 EPS 2026→2028</span><span class="v">27.71→77.90</span></div>
+    </div>
+    <ul class="dl">
+      <li><b>长江存储</b>拟 A 股募资 330 亿元、其中 208 亿投产线升级，3 号厂设备本土化率 <b>60%</b>；<b>长鑫存储</b>每年新增 10 万片 12 英寸月产能，重心在合肥——直接锁定刻蚀/沉积设备订单。</li>
+      <li><b>北方华创</b>：2026Q2 受零部件交付延迟 + 先进制程研发拖累，大摩把 2026 营业利润预测<span class="hl-red">下调 18% 至 71.85 亿元</span>（利润率 14.3%），但 2027 年<span class="hl-green">反弹 65% 至 118.28 亿元</span>。</li>
+      <li><b>屹唐股份</b>：Q2 营收同比 -17% 至 10.94 亿元，比高盛预期低 11%，<b>卡在上游原材料短缺而非订单</b>。</li>
+      <li>设备价值量提升：面板级 CoPoS（2027 验证 / 2028 量产，需整合 4+ 加速器与 10+ HBM 堆栈）让设备 ASP <b>+10~15%</b>，每千片月产能对应设备收入从 550 万 → <b>600~630 万美元</b>。</li>
+      <li>CPO 增量：万润在光纤阵列单元/光引擎耦合设备占 <b>50%+ 份额</b>，2028 年出货 300 台、贡献 54 亿新台币，毛利率维持 <b>50~55%</b>。</li>
+      <li><b>中巨芯</b>开放日：六氟化钨产能 600~800 吨/年（海外占 40%），2028 年存量业务收入目标 20~25 亿、27/28 复合增速约 40%；定增主攻 7nm/5nm 高端电子级硫酸（衢州 +6 万吨、沧州 +6 万吨）。</li>
+    </ul>
+    <div class="takeaway danger">
+      <b>风险：</b>美国拟议法案可能限制<b>浸没式光刻、TSV 沉积、低温刻蚀</b>出口许可；万润 2024 年 <b>88% 收入来自前三大客户</b>——客户集中 + 出口管制是共同软肋。
+    </div>
+  </div>
+
+  <!-- 4 算力/数据中心 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🖥️</span>算力：短期交付被卡，下半年国产放量反弹<span class="src">404K · 09-19 17:07 / 研报平权 10:02</span></div>
+    <table>
+      <tr><th>指标</th><th>数值</th><th>含义</th></tr>
+      <tr><td>2026H1 新增智算算力</td><td class="num">595 EFLOPS（放缓）</td><td>芯片缺货卡交付</td></tr>
+      <tr><td>2026H2 预计新增</td><td class="num">800 EFLOPS（回升）</td><td>国产硬件出货提速</td></tr>
+      <tr><td>全年预订量</td><td class="num">约 5 GW</td><td>入驻需求下调至 3GW</td></tr>
+      <tr><td>机房 H1 用电量</td><td class="num">49.4 TWh，+44%</td><td>真实消耗没降温</td></tr>
+      <tr><td>H100 服务器月租</td><td class="num">5万 → 10万元</td><td>供需仍极紧俏</td></tr>
+      <tr><td>行业在运容量</td><td class="num">28GW(2025) → 43GW(2028)</td><td>批发运营商受益</td></tr>
+    </table>
+    <ul class="dl">
+      <li>世纪互联批发收入占比 2025 年 35% → 2028 年 <b>57%</b>，批发业务利润 CAGR 约 <b>38%</b>。</li>
+      <li><b>中国 Token 消耗</b>：2024 年初约 1000 亿/日 → 2025 年底 100 万亿 → 2026 年 3 月<span class="hl-red">突破 140 万亿，两年增长超 1000 倍</span>；摩根大通预计 2025-2030 中国推理 Token 需求 CAGR <b>约 330%</b>——驱动力是<b>智能体取代单轮问答</b>（多轮推理 + 长上下文 + 反复调工具）。</li>
+      <li><b>低电价是中国的核心筹码</b>：工业电价 56 美元/MWh，<span class="hl-green">远低于美国 82、印度 94、日本 139、欧洲 194</span>；乌兰察布/贵阳/庆阳/中卫集群 0.33~0.37 元/度，新疆接近 0.32 元。<mark>用低电价抵消芯片能效劣势</mark>。</li>
+      <li><b>韩国 5GW 隐忧</b>：五大运营商 5 年建 5GW，但 KEPCO 中长期供电规划满足不了全部缺口；三星 SDS 独扛硬件折旧、KT/LG U+ 收稳定租金、Naver 拉博枫 90 亿美元外资。若 2029-30 集中通电而 AI 落地不及预期，<span class="hl-red">算力泛滥会打崩 Token 售价</span>。</li>
+    </ul>
+    <div class="takeaway">
+      <b>结构判断：</b>中国在全球 AI 利润份额仍仅 <b>11%</b>，但结构在变——电力环节 <b>42%</b>、AI 基建 19%、实体 AI 15%、半导体 9%，而<span class="hl-red">AI 应用份额反而降至约 6%</span>。中国靠<b>制造 + 基建</b>承接 AI 投资潮，还没在模型软件端形成同等规模的高利润。
+    </div>
+  </div>
+
+  <!-- 5 AI 软件与变现 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">💻</span>AI 变现：估值撕裂，抽成被摊薄<span class="src">研报平权 08:01 / 06:01 · 404K 17:32</span></div>
+    <div class="vs">
+      <div class="vs-box vs-a">
+        <h4>😣 被压制的</h4>
+        <ul>
+          <li>亚马逊 EV/EBITDA <b>11.0×</b>、Meta <b>10.1×</b></li>
+          <li>Salesforce 4 日跌超 8%，YTD -5.4%</li>
+          <li>优步/Chewy 等标品零售缺视觉壁垒，<b>最易被比价切流</b></li>
+          <li>科技股动量策略 6M 波动率 <b>88%</b>（十年最高）</li>
+        </ul>
+      </div>
+      <div class="vs-box vs-b">
+        <h4>💪 有护城河的</h4>
+        <ul>
+          <li>谷歌仍保有 <b>3% 估值溢价</b></li>
+          <li>Booking / 爱彼迎：非标实时房源 + 视觉决策，<b>智能体难绕开</b></li>
+          <li>对冲基金 9 月<b>买入软件、减持半导体</b>（高盛主经纪）</li>
+          <li>创科实业毛利率创纪录 <b>42.9%</b></li>
+        </ul>
+      </div>
+    </div>
+    <ul class="dl">
+      <li><b>抽成塌方</b>：谷歌搜索有效变现率约 <b>33%</b>，而早期 AI 智能体交易费率仅约 <b>3%</b>——横向智能体切入 30 万亿美元消费支出，<mark>传统平台的高抽成会被迅速摊薄</mark>。</li>
+      <li>自建智能体（Meta Muse）基准情景仅贡献 13 亿美元收入 / 0.35 美元 EPS，乐观情景才能到 200 亿美元；前提是<b>免费额度减少后用户留存</b>。</li>
+      <li><b>北美互联网估值裂口</b>：EV/EBITDA 12.4×（较 5 年均值折价 9%），EV/Sales 却达 <b>4.9×</b>——市场为每 1 美元收入给高溢价，但不信利润能兑现。</li>
+      <li>全额计入股权激励后，数字媒体 2026 EV/EBITDA 中位数<span class="hl-red">上修 36%</span>（Snap +207%），出行共享 +44%。</li>
+      <li>Salesforce：2030 财年目标 630 亿美元（高于一致预期 614 亿），瑞银目标价 240→260 美元，但警告<b>增长高度集中在后期</b>；Dreamforce 现场全球系统故障加剧执行力担忧。</li>
+    </ul>
+  </div>
+
+  <!-- 6 光纤 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🌐</span>光纤：AI 算力光纤超级周期确认<span class="src">小牛研报纪要 · 09-19 15:56</span></div>
+    <ul class="dl">
+      <li><b>国内强验证</b>：0918 电信 2026 室外 G.657A2 光缆集采落地，头部四大家<span class="hl-red">全部顶格报价</span>，单家中标 100 万+ 芯公里；折算裸纤 <b>220 元</b>直接对标散纤市价——<mark>集采价抹平零售价，现货紧缺、无议价空间</mark>。</li>
+      <li><b>产能结构极致优化</b>：Q3 普通 652D 占比已不足 10%，全部倾斜高毛利 657 特种纤；Q4 集中交付运营商大单，高端特种纤缺货加剧。</li>
+      <li><b>海外超级长单</b>：Verizon 与康宁签 <b>2027-2032 六年数十亿美元</b>长约，锁定 <b>8000 万英里</b>高密度光纤，专项用于 AI 长途骨干走廊。</li>
+      <li><b>供给刚性锁死</b>：预制棒扩产周期 18~24 个月，新增产能最快 2027H2 释放；全球 DCI 交付周期拉长至 <b>12~24 个月</b>，诺基亚、谷歌订单高增但交付严重受限。</li>
+    </ul>
+    <div class="takeaway good">
+      <b>逻辑升级：</b>需求从 IDC 内部互联扩散至<b>全国、全球长途骨干 DCI</b>，海内外同步缺货 + 同步涨价 + 同步长单锁定。关注长飞光纤 A+H、长盈通、亨通/中天/烽火、俊知集团、通鼎互联。<br>
+      <b>交叉验证：</b>Avicean 氮化镓 MicroLED 光互连实测 8 Gbps / 5 米 300 通道，定位替代高功耗有源铜缆（10 米内机柜 scale-up 与芯片级 scale-in）。
+    </div>
+  </div>
+
+  <!-- 7 中国宏观 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🇨🇳</span>中国：财政缺口收窄，但内需与地产仍在磨底<span class="src">财经图集 · 09-19 周末特辑 / 09-18 早</span></div>
+    <table>
+      <tr><th>指标</th><th>数值</th><th>方向</th></tr>
+      <tr><td>8 月一般公共预算收入</td><td class="num">1.29 万亿，+4.68%</td><td class="hl-green">改善</td></tr>
+      <tr><td>1-8 月收支差额</td><td class="num">-2.48 万亿（去年 -3.11 万亿）</td><td class="hl-green">收窄</td></tr>
+      <tr><td>1-8 月土地出让收入</td><td class="num">1.38 万亿，<span class="hl-red">-28.6%</span></td><td class="hl-red">恶化</td></tr>
+      <tr><td>1-8 月证券交易印花税</td><td class="num"><span class="hl-red">+82.0%</span></td><td>交易火爆</td></tr>
+      <tr><td>1-8 月国内消费税 / 契税</td><td class="num">-14.0% / -14.2%</td><td class="hl-red">内需弱</td></tr>
+      <tr><td>施工项目计划总投资</td><td class="num">累计 -5.3%，<span class="hl-red">历年同期首次转负</span></td><td class="hl-red">新开工意愿弱</td></tr>
+      <tr><td>16-24 岁失业率（8月）</td><td class="num">18.9%（+1.0pct）</td><td class="hl-red">恶化</td></tr>
+      <tr><td>8 月铜材 / 铝材产量</td><td class="num">-8.2% / -0.3%</td><td class="hl-red">高价挤压</td></tr>
+      <tr><td>秦皇岛动力煤</td><td class="num">约 980 元/吨，2023/10 以来新高</td><td class="hl-orange">节前补库</td></tr>
+    </table>
+    <ul class="dl">
+      <li><b>财政支出结构</b>：科学技术 +9.0%、卫生健康 +3.8%、社保就业 +2.6% 领先；<span class="hl-red">节能环保 -15.8%、文旅 -9.6%、交通运输 -5.8%</span> 垫底。</li>
+      <li><b>REITs 供给过剩</b>：约 30 只待批、计划募资 904 亿元，储备规模相当于现有 89 只 REITs 总市值的 <b>约 40%</b>，但资产经营转弱 + 投资者偏好科技股——<mark>盘活地方资产的渠道可能反噬</mark>。</li>
+      <li><b>31 省工业</b>：25 正 6 负（上月 24 正 7 负），西藏 +24.8%、安徽 +12.9% 领涨，海南 -20.2%、山西 -18.2% 垫底。但<b>固投正增长仅 3 省</b>（上月 5 省）。</li>
+      <li><b>人民币升破 6.7</b>，创 2023 年 1 月以来新高，中间价连续 8 日上调。但大摩提醒：CFETS 指数仍低于 2022 年高点，<b>大幅升值会加重价格下行压力、压缩出口企业利润</b>，持久调整要靠居民收入与社保。</li>
+      <li><b>外资</b>：1-8 月实际使用外资 4799.5 亿元 <span class="hl-red">-5.3%</span>，但高技术产业 2002.6 亿元 <span class="hl-green">+35.1%</span>、占比升至 41.7%；8 月单月 +6.1% 转正。</li>
+      <li><b>顺差高度集中欧美</b>：前 8 月全球顺差仅增 200 亿美元，但对欧盟 +455 亿、对美 +140 亿——<mark>中欧贸易更易成为关税/补贴/市场准入的目标</mark>。</li>
+    </ul>
+  </div>
+
+  <!-- 8 全球宏观 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🌍</span>全球：利率的驱动力已经换了<span class="src">财经图集 · 09-19 / 09-18</span></div>
+    <div class="chain">
+      <div class="chain-item"><div class="chain-icon">📌</div><div class="txt"><b>美债长端已脱离美联储</b>：1988-2021 十年期收益率累计变化几乎全发生在议息会议前后三日窗口内，<b>2022 年后这一关系明显断裂</b>——财政赤字、国债供给、通胀、期限溢价取代政策声明成为主导。</div></div>
+      <div class="chain-item"><div class="chain-icon">📈</div><div class="txt"><b>自然利率被财政推高</b>：美国 10 年期实际自然利率从 2010-15 年约 1.6% 升至 2026Q2 近 <b>2.6%</b>，对应名义约 4.7%（市场约 4.8%）。<mark>财政因素现在是 +1 个百分点的推力</mark>，公众持有联邦债务占 GDP 从 79% 升至逾 100%。</div></div>
+      <div class="chain-item"><div class="chain-icon">💸</div><div class="txt"><b>外资偏好反转</b>：截至 2026 年 6 月的一年，外资流入美股相当于 GDP 的 <b>2.8%</b>，<span class="hl-red">超过流入美债的 2%</span>——本世纪首次（除金融危机和疫情短暂阶段）。</div></div>
+      <div class="chain-item"><div class="chain-icon">🏗️</div><div class="txt"><b>AI 基建削弱紧缩效果</b>：住宅建筑就业自 2024/9 回落，但非住宅建筑较 2020/6 增约 <b>55 万人</b>（>住宅 40 万），重型土木 +15 万。<mark>科技巨头靠现金流投资，对利率不敏感——货币紧缩的地产传导链被切断</mark>。</div></div>
+      <div class="chain-item"><div class="chain-icon">⚠️</div><div class="txt"><b>欧洲尾部风险抬升</b>：法国 10Y 较德债利差 <b>100bp</b>（2012 欧债危机以来最高），兴业认为 120bp 不遥远；英国 30Y 升至近 <b>6%</b>（1998 年来最高），236 亿英镑财政缓冲或消耗约 160 亿。</div></div>
+      <div class="chain-item"><div class="chain-icon">🏦</div><div class="txt"><b>日本 7:2 加息 25bp 至 1.25%</b>，距上次仅三个月——1990 年以来最短间隔；德国 8 月 PPI <b>+4.6%</b>（2023/4 来最快）；欧元区 CPI <b>3.2%</b> 追平两年半高点。</div></div>
+    </div>
+    <div class="takeaway warn">
+      <b>美国就业的「白领化」衰退：</b>22-34 岁大学学历劳动者失业率高于自身 2003 年以来<b>约七成时期</b>（STEM 职业约六成），而无大学学历同龄人仅高于约两成。<mark>AI 替代初级办公室工作 + 大学毕业生供给增加</mark>，压力集中在白领；建筑、维修、制造反而缺人。
+    </div>
+  </div>
+
+  <!-- 9 AI 融资风险 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">💰</span>AI 融资：5.5 万亿缺口 + 信用风险独立重估<span class="src">财经图集 09-19 / 404K 15:23</span></div>
+    <div class="mini">
+      <div class="mini-box"><span class="k">2026-30 AI+数据中心资金需求</span><span class="v">$5.5 万亿</span></div>
+      <div class="mini-box"><span class="k">企业现金流可覆盖</span><span class="v">仅 $1 万亿</span></div>
+      <div class="mini-box"><span class="k">投资级债券 / 另类资本</span><span class="v">$2.1万亿 / $1.4万亿</span></div>
+      <div class="mini-box"><span class="k">科技巨头 5Y CDS</span><span class="v">约 100bp（银行 50bp）</span></div>
+    </div>
+    <ul class="dl">
+      <li><b>CDS 分化是关键信号</b>：若科技公司利差扩大只是因为发债激增后交易商对冲，与之密切相关的<b>银行利差本应同步上升</b>，但两者明显分化——说明市场重定价的是<span class="hl-red">科技信用基本面本身</span>（举债扩产、杠杆上升、自由现金流转负、芯片与数据中心折旧能否换来回报）。</li>
+      <li><b>CRWV 案例</b>：普通公司债利率 8.5~9.75%，9/18 定价的 37 亿美元可转债<span class="hl-green">仅 2.875%</span>（转股价 97.85 美元，溢价 22.5%）。代价是股本最多膨胀 <b>13.2%</b>；若全部转股 + ATM 售满，股数从 5.5154 亿 → 约 6.2435 亿股。<mark>用股权稀释换低票息</mark>。</li>
+      <li>利率取区间上限、溢价取下限，规模从 30 亿增至 37 亿——<b>全部落在对买方有利的一端</b>，反映需求之旺。</li>
+      <li><b>私募信贷接盘</b>：美国私募信贷规模逼近 <b>6000 亿美元</b>，2020 年以来新增主要来自永久存续、非公开交易的 BDC（2026Q1 已超 3000 亿），<span class="hl-red">流动性风险从银行体系转移到基金产品</span>。</li>
+      <li><b>高利率改变融资期限</b>：9 月上半月 30 年以上债券仅占高评级发行量约 5%（年初至今约 10%，2020 年来同期最低）；花旗 120 亿美元发债认购达 400 亿。</li>
+    </ul>
+    <div class="takeaway danger">
+      <b>反身性风险：</b>AI 资本开支的回报缓冲仍厚（Alphabet ROIC <b>42.3%</b> vs WACC 9.9%；微软/Meta/亚马逊也有 11~17pct 差距），但<span class="hl-red">甲骨文仅 11.1% vs 9.7%</span>，扩张更依赖借款、对利率最敏感——一旦融资成本再上台阶，分化会非常剧烈。
+    </div>
+  </div>
+
+  <!-- 10 大宗 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🛢️</span>大宗商品：油、铜、煤、气<span class="src">财经图集 09-19 / 09-18 晚</span></div>
+    <div class="vs">
+      <div class="vs-box vs-c">
+        <h4>🛢️ 原油：高利润不换产量</h4>
+        <ul>
+          <li>七大油企 + 沙特阿美 2026Q2 合计盈利 <b>910 亿美元</b>（同比翻倍）</li>
+          <li>但新增利润主要用于<b>还债与分红</b>：当季削减净债务 360 亿（近 20%）</li>
+          <li>IEA：资本开支没随现金流上升 → <b>供应紧张延续</b></li>
+          <li>霍尔木兹即便重开，复产需 <b>1 周至 3 个月</b>；补库需求支撑油价</li>
+          <li>美国 SPR 上周仅释放 40 万桶（3 月来最慢），<b>调控能力接近极限</b></li>
+        </ul>
+      </div>
+      <div class="vs-box vs-b">
+        <h4>🔶 铜 / 煤 / 气</h4>
+        <ul>
+          <li>LME 铜反弹 1.8% 至 <b>$14,491.5/吨</b>，洋山港现货升水升至 <b>约 $100/吨</b>（实物需求改善）</li>
+          <li>美银：现货约 6.5 美元/磅，按 EV/EBITDA 隐含 <b>7.67 美元</b>（已计入上涨）；按 P/NAV 隐含 <b>6.21 美元</b>（长期仍折让）</li>
+          <li>秦皇岛动力煤约 <b>980 元/吨</b>，2023/10 来新高</li>
+          <li>高盛下调 2027 美气价至 <b>$2.80</b>，2031 或破 $4</li>
+          <li>GE Vernova 固定式燃气设备订单 320 亿 → <b>450 亿美元</b>（2026）</li>
+        </ul>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>值得注意：</b>全球大型油企勘探圈地面积超 <b>30 万平方公里</b>（2006 年来最高，常态不足 10 万），先用 AI + 地质数据筛选目标以保留期权——现有油田自然衰减或使 2040 年全球日产量减少 <b>3100 万桶</b>。
+    </div>
+  </div>
+
+  <!-- 11 A股医药材料 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">💊</span>A 股个股：医药与半导体材料<span class="src">小牛研报纪要 · 09-19 15:57 / 15:56</span></div>
+    <ul class="dl">
+      <li><b>恒瑞医药（中信建投，维持买入）</b>：2023 年以来 13 笔对外许可、总额超 <b>420 亿美元</b>；2026 年 5 月与 BMS 达成 <b>152 亿美元</b>全球战略合作（Co-Co 模式）。2026H1 创新药收入占比升至 <b>63.2%</b>、全年预计 66.1%，30 款潜力新药市场空间超 400 亿美元。<br>
+      预测 2026-28 营收 326.2/359.9/411.3 亿元，归母净利 <b>92.5/97.6/115.7 亿元</b>；2026-28 复合增速 22%+，创新药占比 2028 年升至 80.9%。</li>
+      <li><b>中巨芯</b>：六氟化钨 600~800 吨/年（海外占 40%，中央硝子代理），短平快项目计划提至 800 吨/年；明确否认「因日资股权无法扩产」传言。大基金持股 26.4%，2027/28 每年减持不超总股本 2%。</li>
+      <li><b>日本元器件分化（7月）</b>：存储产值 +407.6%、刚性模组基板 +52.4%；而<span class="hl-red">分立器件 -15.3%</span>、陶瓷电容出货 +24.5% 但产值 -7.4%（走量降价）。</li>
+    </ul>
+  </div>
+
+  <!-- 12 商品期权 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">📉</span>商品期权实战：波动率的日历价差艺术<span class="src">Orange期权 · 09-18</span></div>
+    <ul class="dl">
+      <li><b>碳酸锂 2611 P110000</b>（9/18）：进场 770（两手）→ 最高 1530 → 出场 1120，<span class="hl-green">实际 +45.45%</span>（最大可达 +98.7%，回撤 50%）。逻辑：日线降波上涨到压力位 → 小时/15 分钟破位放量下跌 → OpenVlab 升波下跌共振。<b>反思：翻倍时手动止盈更合理，25% 止损换 100% 盈利、盈亏比 1:5。</b></li>
+      <li><b>白银日历价差（经典案例）</b>：博弈事件落地后近月隐波崩塌，用远月对冲。中途近月隐波再飙升 → 加仓 + 用<span class="hl-blue">便宜的铜双买</span>对冲 Vega/Gamma（银隐波 59 vs 铜 15）。结果近远月价差如期收敛。<mark>核心理念：先把风险防住再想收益</mark>。</li>
+      <li><b>沥青/燃油对角组合</b>：沥青卖近月平值认购、买远月（吃近远月隐波回归）；燃油反向买近卖远做多 Gamma，两者<b>互相抵消 Gamma 敞口</b>。</li>
+      <li><b>铜</b>：隐波 12-13 时做末日轮双买（彩票仓位，买入即接受归零）；9/18 如期升波、隐波 > 实波，<span class="hl-orange">止盈一边</span>，等下周一再进场做 Gamma Scalping。</li>
+      <li><b>09-18 复盘要点</b>：中证 1000 短期看降波上涨、到 8/17 高点附近再做多波动率；鸡蛋看跌价差可加卖 Put 做比例沽；能化情绪回落，除沥青外关注弱势品种反弹做看跌价差；多晶硅可做看跌价差；棕榈持有 1:2 权利金平衡比例购。</li>
+      <li><b>小哈一号实盘</b>：初始 2000 元 → 现 2564 元。心得：小资金最大问题不是品种少，而是<span class="hl-red">「不把止损当回事」和「双击翻倍后心态失衡」</span>。</li>
+    </ul>
+  </div>
+
+  <!-- 底部总结 -->
+  <div class="summary">
+    <h2>🧠 一句话总结</h2>
+    <div class="sum-grid">
+      <div class="sum-item">
+        <h4>📌 市场现状</h4>
+        <p>AI 硬件瓶颈从「封装产能」转移到「2nm 晶圆 + 载板良率 + 底层缺陷率」；存储涨幅收敛但价格仍创新高（$1,500，5.5 倍）。</p>
+      </div>
+      <div class="sum-item">
+        <h4>🏭 产业逻辑</h4>
+        <p>中国靠<b>低电价 + 制造基建</b>承接 AI 投资（电力环节全球利润 42%），但 AI 应用份额仅 6%；光纤、封装设备、存储扩产是当前最硬的确定性。</p>
+      </div>
+      <div class="sum-item">
+        <h4>⚠️ 关键风险</h4>
+        <p>AI 融资缺口 5.5 万亿美元争夺全球资本，科技巨头 CDS 独立飙至 100bp；美债长端已脱离联储、由财政主导；施工项目计划投资首次转负。</p>
+      </div>
+      <div class="sum-item">
+        <h4>🎯 操作提示</h4>
+        <p>结构性机会优先于方向性押注：光纤/封装设备/存储链有基本面，软件与标品零售面临 AI 智能体抽成压缩；商品端以波动率价差为主、控制彩票仓位。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-tags">
+    <span>#瓶颈转移</span><span>#CoWoS</span><span>#3D SoIC</span><span>#DRAM</span><span>#半导体设备</span><span>#光纤超级周期</span><span>#Token 1000倍</span><span>#低电价</span><span>#财政缺口</span><span>#AI融资缺口</span><span>#私募信贷</span><span>#波动率价差</span><span>#2026.9.19</span>
+  </div>
+
+</div>
+</body>
+</html>

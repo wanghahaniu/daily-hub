@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知识星球每日总结 · 2026-09-07</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --card:#ffffff; --ink:#1a1f2e; --muted:#5b6478;
+    --brand:#2b59ff; --brand-soft:#e8efff; --accent:#d83a3a;
+    --gold:#b8830b; --green:#1f8b4c; --orange:#e97a17; --purple:#7c3aed;
+    --line:#e6eaf2; --shadow:0 2px 12px rgba(20,30,60,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
+    line-height:1.7;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:32px 24px 80px}
+  /* Hero */
+  .hero{background:linear-gradient(135deg,#1a2755 0%,#2b59ff 100%);
+    color:#fff;border-radius:18px;padding:36px 40px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-80px;top:-80px;width:240px;height:240px;
+    background:rgba(255,255,255,.08);border-radius:50%}
+  .hero h1{margin:0 0 8px;font-size:28px;letter-spacing:.5px}
+  .hero .date{font-size:14px;opacity:.85;margin-bottom:20px}
+  .summary-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}
+  .stat{background:rgba(255,255,255,.12);border-radius:12px;padding:14px 16px;
+    backdrop-filter:blur(6px)}
+  .stat .v{font-size:24px;font-weight:700;line-height:1.2}
+  .stat .l{font-size:12px;opacity:.85;margin-top:4px}
+  /* Section */
+  section{margin-top:36px}
+  .sec-h{display:flex;align-items:center;gap:10px;margin:0 0 18px}
+  .sec-h .tag{display:inline-block;padding:4px 10px;border-radius:6px;font-size:12px;
+    font-weight:600;color:#fff}
+  .sec-h h2{margin:0;font-size:20px;color:var(--ink)}
+  .sec-h .sub{color:var(--muted);font-size:13px;margin-left:auto}
+  /* Cards grid */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media (max-width:760px){.grid{grid-template-columns:1fr}.summary-row{grid-template-columns:repeat(2,1fr)}}
+  .card{background:var(--card);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);
+    border:1px solid var(--line);transition:transform .15s}
+  .card:hover{transform:translateY(-2px)}
+  .card h3{margin:0 0 6px;font-size:15.5px;color:var(--ink);line-height:1.45}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:12px;color:var(--muted);
+    margin:4px 0 10px}
+  .meta .src{background:var(--brand-soft);color:var(--brand);padding:2px 8px;
+    border-radius:4px;font-weight:600}
+  .meta .time::before{content:"🕒"}
+  .body{font-size:13.8px;color:#2a3142}
+  .body ul{margin:6px 0 0;padding-left:18px}
+  .body li{margin:3px 0}
+  .highlight{background:linear-gradient(transparent 60%, #fff3a8 60%);font-weight:600}
+  .key{color:var(--accent);font-weight:700}
+  .num{color:var(--brand);font-weight:700}
+  .pill{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11.5px;
+    margin-right:4px;font-weight:600}
+  .pill.ai{background:#ede9fe;color:#6d28d9}
+  .pill.semi{background:#fef3c7;color:#b45309}
+  .pill.opt{background:#dcfce7;color:#15803d}
+  .pill.macro{background:#fee2e2;color:#b91c1c}
+  .pill.report{background:#dbeafe;color:#1d4ed8}
+  .pill.chart{background:#fce7f3;color:#be185d}
+  .pill.tactic{background:#e0e7ff;color:#4338ca}
+  .pill.finance{background:#cffafe;color:#0e7490}
+  /* Big card for top takeaways */
+  .takeaway{background:linear-gradient(135deg,#fff8e1 0%,#fff 60%);border-left:4px solid var(--gold);
+    border-radius:12px;padding:18px 22px;margin-bottom:14px}
+  .takeaway h4{margin:0 0 8px;font-size:15px;color:#7c5500}
+  .takeaway p{margin:4px 0;font-size:13.5px;color:#3a3a3a}
+  /* Footer */
+  footer{margin-top:60px;text-align:center;color:var(--muted);font-size:12px}
+  .note{background:#f8f9fc;border-radius:10px;padding:14px 18px;color:var(--muted);
+    font-size:12.5px;margin-top:30px;border:1px dashed var(--line)}
+  /* Color tags for groups */
+  .g-yan{background:var(--purple)}
+  .g-orange{background:var(--orange)}
+  .g-liu{background:var(--accent)}
+  .g-404k{background:var(--green)}
+  .g-niu{background:var(--brand)}
+  .g-fin{background:#0e7490}
+  .g-old{background:#64748b}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>📚 知识星球每日总结</h1>
+    <div class="date">2026 年 9 月 7 日（周一） · 由瑞安自动汇总</div>
+    <div class="summary-row">
+      <div class="stat"><div class="v">7</div><div class="l">覆盖星球数</div></div>
+      <div class="stat"><div class="v">66</div><div class="l">拉取最新帖子（每球10）</div></div>
+      <div class="stat"><div class="v">6</div><div class="l">今日仍在更新</div></div>
+      <div class="stat"><div class="v">5</div><div class="l">主题分类</div></div>
+    </div>
+  </header>
+
+  <!-- Top Takeaways -->
+  <section>
+    <div class="sec-h">
+      <span class="tag" style="background:var(--gold)">⭐ 今日要点</span>
+      <h2>主线速览</h2>
+    </div>
+    <div class="takeaway">
+      <h4>① AI 算力军备竞赛升级：算力即"基础设施第二幕"</h4>
+      <p>英伟达2027起对 Grace Blackwell / Vera Rubin 服务器涨价 <b>15%+</b>，意味着 GPU 周边环节（调度、编排、网络、HBM、冷却、推理）ROI 全面提升。
+      404K 透露 <span class="key">Anthropic 累计锁定14.8GW / 合计5000亿美元投资</span>，但仍落后 OpenAI 的30GW 锁仓水平；两实验室IPO前夜打响"史上最昂贵一战"。</p>
+    </div>
+    <div class="takeaway">
+      <h4>② 存储短缺延伸至2028，三星电子H1半导体利润占公司99.7%</h4>
+      <p>野村给出三星目标价 <b>67万韩元</b>（现价25万），KB证券预测 H2 营业利润同比 +<span class="key">587%</span>。买方关键观察窗口已切换到 <b>LTA（长期供应协议）</b> 条款，百度、阿里开始要签5年期合同。DRAM Q3 合约价仍预计环比 +13~18%，短缺的终点不在季报数据降温，而在晶圆实际到货。</p>
+    </div>
+    <div class="takeaway">
+      <h4>③ 刘煜辉四句策略：弃硬切软、弃大求小、弃债切金、弃抱团雨露均沾</h4>
+      <p>判断剩余四个月常态是"地量寻底+情绪窗口"，1-7月极致结构让半导体/锂电筹码从集中变为派发（虹吸变成血包）。哑铃策略相对有效：大票看大金融/互金券券，小票看本事炒题材。AGI 闯关成败决定美股是"通向 AGI 的船票"还是"飞刀"。</p>
+    </div>
+    <div class="takeaway">
+      <h4>④ 商品分化：煤炭受政策控温压制 vs 油料/油脂偏多</h4>
+      <p>发改委、山西、甘其毛都口岸三线联动"煤炭要降温"，焦煤盘面贴水、蒙煤通关恢复构成利空。机构/外资继续加多 <b>豆粕</b>，生猪 c12600 买入认购 654万；棕榈可做跨月价差组合。Orange今日观点偏中性，原文以图片承载（详见星球）。</p>
+    </div>
+    <div class="takeaway">
+      <h4>⑤ 中际旭创半年报炸裂：营收 +182% / 净利 +242%</h4>
+      <p>AI 数据中心 800G/1.6T 高速光模块放量是核心驱动；客户能见度延伸至 2027，高盛首次覆盖 H 股给予"买入"目标价 <b>3267港元</b>。研报平权当日的核心叙事就是围绕"光模块龙头增长与现金流考验"展开，单芯收入翻倍不靠拼数量、博通30GW 框架计入 2GW 占比。</p>
+    </div>
+  </section>
+
+  <!-- AI / Semi / Optics -->
+  <section>
+    <div class="sec-h">
+      <span class="tag g-404k">404K Semi-Ai · AI 与半导体</span>
+      <h2>AI 算力 / 半导体 / 光模块</h2>
+      <span class="sub">2026-09-07</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <h3>5170 亿美元仍然不够？Anthropic vs OpenAI 算力军备赛</h3>
+        <div class="meta">
+          <span class="src">404K Semi-Ai · 梭哈怪</span>
+          <span class="time">20:34</span>
+        </div>
+        <div class="body">
+          <span class="pill ai">AI 算力</span>
+          <ul>
+            <li>Anthropic 11个月累计锁定 <span class="num">14.8GW</span> 算力、累计投入 <b>5000亿美元</b></li>
+            <li>亚马逊+谷歌提供 11GW（3000亿美元），微软对 Anthropic 投入 300亿美元换 1GW</li>
+            <li>OpenAI 2030 已锁定 <b>30GW</b>，合作伙伴为甲骨文、CRWV、微软</li>
+            <li>ARR：Anthropic 650亿美元 vs OpenAI 400亿美元</li>
+            <li>两家实验室IPO前夕打响" <span class="key">史上最昂贵一战</span>"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>"AI 时代核心瓶颈是发热"——半导体散热战争</h3>
+        <div class="meta">
+          <span class="src">404K Semi-Ai · 梭哈怪</span>
+          <span class="time">18:50</span>
+        </div>
+        <div class="body">
+          <span class="pill semi">散热 / HBM</span>
+          <ul>
+            <li>英伟达 GPU 功耗 3 年涨 3 倍：<b>A100 400W → H100 700W → B200 1200W</b></li>
+            <li>下一代 Rubin Ultra 预计最高 <span class="key">3600W</span></li>
+            <li>四大玩家解法：台积电 <b>TIM-less + 微通道</b>；AMD <b>无顶盖 + 石墨烯</b>；三星 HBM5 散热通路块 HPB；SK海力士 <b>iHBM 热阻-30%</b></li>
+            <li>HBM 16层训练 +18% / 推理 +32%，但热量反噬性能</li>
+            <li>核心结论：<span class="highlight">谁能散出热量，谁才算真正造出了芯片</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>DRAM 营收爆发 ≠ 出货量爆发：短缺还在路上</h3>
+        <div class="meta">
+          <span class="src">404K Semi-Ai · 梭哈怪</span>
+          <span class="time">18:37</span>
+        </div>
+        <div class="body">
+          <span class="pill semi">DRAM 周期</span>
+          <ul>
+            <li>Q2 营收是"价格暴涨"拉动，bit 出货几乎没有增长</li>
+            <li>Agent 工作负载带来 RDIMM 需求 + 供应商库存历史低位</li>
+            <li>Q3 合约价预计环比 +<b>13~18%</b>，部分买家下调大容量规格</li>
+            <li>PC/手机已无法再承受新一轮大幅涨价</li>
+            <li>新建洁净室进度滞后，<span class="highlight">短缺终点不在季报数据降温，而在晶圆实际到货</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>三星 + 台积电 COUPE：CPO 演进指向"有源平台"</h3>
+        <div class="meta">
+          <span class="src">404K Semi-Ai · 梭哈怪</span>
+          <span class="time">19:00</span>
+        </div>
+        <div class="body">
+          <span class="pill semi">先进封装</span>
+          <ul>
+            <li>三星硅光代工服务定于 <span class="num">2027年</span> 推出，配套 PDK 与器件库</li>
+            <li>CPO 路线：<b>PIC → EIC 堆叠 → 时域测试 → 完整光学引擎</b></li>
+            <li>Q1 已拿下某大型光模块厂商项目，下半年量产；博通为潜在客户</li>
+            <li>重点关注 2027 PDK 与混合键合良率，<span class="highlight">良率才是真正门槛</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>从 GPU 数量转向"每张 GPU 营收"：AI 投资第二幕</h3>
+        <div class="meta">
+          <span class="src">研报平权 · 梭哈怪</span>
+          <span class="time">16:40</span>
+        </div>
+        <div class="body">
+          <span class="pill ai">AI 投资逻辑</span>
+          <ul>
+            <li>英伟达 2027 起对 Grace Blackwell / Vera Rubin 部分大客户涨价 <span class="key">15%+</span></li>
+            <li>服务器占 AI 数据中心建设成本 <b>50%+</b></li>
+            <li>当 GPU 60% → 80% 利用率的价值被定价，"再多买10万张"的逻辑被颠覆</li>
+            <li>受益方向：<span class="highlight">调度 / 编排 / 网络 / 内存带宽 / 存储 / 冷却 / 能效 / 推理优化</span></li>
+            <li>赚钱的不会只有英伟达</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>中际旭创（300308）：大摩 1205元估值背书</h3>
+        <div class="meta">
+          <span class="src">研报平权 · 梭哈怪</span>
+          <span class="time">16:01</span>
+        </div>
+        <div class="body">
+          <span class="pill ai">光模块龙头</span>
+          <ul>
+            <li>大摩给出 1205元估值（高盛 H 股目标价 <span class="num">3267港元</span>）</li>
+            <li>2026H1 营收 <b>417.78 亿</b>（+182%）、归母净利 <b>136.51 亿</b>（+242%）</li>
+            <li>客户能见度延伸至 2027，取决于 1.6T 及更高速产品量产进度</li>
+            <li>同日研报"光模块收入翻倍不靠拼数量：单芯…"是核心注释</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>"存储器供应短缺持续至 2028" 三星重估逻辑</h3>
+        <div class="meta">
+          <span class="src">研报平权 · 梭哈怪</span>
+          <span class="time">12:51</span>
+        </div>
+        <div class="body">
+          <span class="pill semi">存储周期</span>
+          <ul>
+            <li>三星 Q2 营业利润 89.5万亿韩元，<b>半导体占比 99.7%</b></li>
+            <li>野村目标价 <b>67万韩元</b>（现价 25万）；KB证券 <b>60万</b>，预测 H2 营业利润 +<span class="key">587%</span></li>
+            <li>新产线完工→量产需 3年+，因此"短缺的依据是时间而非需求"</li>
+            <li>百度、阿里开始要求签 <b>5年期 LTA</b></li>
+            <li>Galaxy/家电业务因存储涨价而利润下滑，<span class="highlight">利润过于集中在单一业务</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>诠欣（6205.TW）：车载与网通连接器过渡</h3>
+        <div class="meta">
+          <span class="src">研报平权 · 梭哈怪</span>
+          <span class="time">17:16</span>
+        </div>
+        <div class="body">
+          <span class="pill ai">连接器</span>
+          <ul>
+            <li>智能驾驶推动单车摄像头 <b>7→15 颗</b>，直接带动车载连接器用量</li>
+            <li>管理预期 2027 连接器线收入中双位数增长，汽车与网通占比分别 ~40% / ~25%</li>
+            <li>2028 出货基于 EML 的 1.6T/3.2T XPO 产品</li>
+            <li>主要竞争对手：<span class="key">安费诺、泰科电子</span></li>
+            <li>光学集成加深：台积电 COUPE 演进指向有源平台（详见 404K 晚报 PDF）</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Macro / Strategy -->
+  <section>
+    <div class="sec-h">
+      <span class="tag g-liu">刘煜辉之宏观高维 + Orange期权</span>
+      <h2>宏观策略 / 商品期权</h2>
+      <span class="sub">2026-09-07</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <h3>周末腾讯会议总结：今年最后四个月策略四句话</h3>
+        <div class="meta">
+          <span class="src">刘煜辉之宏观高维 · 云在青天水在瓶（精华贴）</span>
+          <span class="time">18:54</span>
+        </div>
+        <div class="body">
+          <span class="pill macro">A 股策略</span>
+          <ul>
+            <li>1-7月日均量 3万亿已萎缩至 <b>2万亿以下</b>，地量寻底会持续</li>
+            <li>情绪窗口集中在：9月中秋前、11月中旬到12月中旬</li>
+            <li>1-7月极致结构导致半导体硬科技和锂电筹码结构很差，<span class="key">虹吸变成血包</span></li>
+            <li>哑铃策略相对有效——大票看 <b>大金融/互金券券</b>，小票看本事炒题材</li>
+            <li>策略四句话：
+              <span class="highlight">弃硬切软，弃大求小，弃债切金，弃抱团容量求雨露均沾</span>
+            </li>
+            <li>AGI 闯关："快速闯过去是船票，闯不过去是飞刀，至少是金融的 shock"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Mag7 与费半形成"无缝连接"与长期利率同涨</h3>
+        <div class="meta">
+          <span class="src">刘煜辉之宏观高维（精华贴）</span>
+          <span class="time">09-04</span>
+        </div>
+        <div class="body">
+          <span class="pill macro">美股定价逻辑</span>
+          <ul>
+            <li>产业规律：<b>谁想靠 AI 暴利，谁就得死</b></li>
+            <li>算力与 token 必然走向 infra（白菜价），市场已开始定价</li>
+            <li>AI 硬件市值见顶是均值回归，不是泡沫破裂</li>
+            <li>新交易策略：<span class="highlight">short 费半 + long 云厂</span></li>
+            <li>长期看，吃掉 AI 红利的是"在白菜价算力之上做出杀手级应用的人"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>剩下四个月，场内资本赌四个事</h3>
+        <div class="meta">
+          <span class="src">刘煜辉之宏观高维（精华贴）</span>
+          <span class="time">09-01</span>
+        </div>
+        <div class="body">
+          <span class="pill tactic">资金博弈</span>
+          <ul>
+            <li>① 美国长期通胀预期不失控（厄尔尼诺、原油…）</li>
+            <li>② 美联储不加息</li>
+            <li>③ 大厂不出 capex 减速指引</li>
+            <li>④ 中期选举川不溃败</li>
+            <li><span class="highlight">四件事必须同时成立</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Orange 今日说：豆粕偏多、生猪偏多、焦煤偏空</h3>
+        <div class="meta">
+          <span class="src">Orange期权 · Orange先生</span>
+          <span class="time">10:35</span>
+        </div>
+        <div class="body">
+          <span class="pill opt">基本面/资金面</span>
+          <ul>
+            <li>基本面：<b>巴西大豆进口成本继续 +135~143元/吨</b>（利多）</li>
+            <li>基本面：9 月全国主要油厂大豆压榨量近 1000万吨（中性偏空）</li>
+            <li>基本面：<b>焦煤盘面贴水，蒙煤通关数有所恢复</b>（利空）</li>
+            <li>资金面：生猪 2701c12600 买入认购期权 654万（偏利多）</li>
+            <li>资金面：焦煤 2610P1600 平仓 1000万（利空）</li>
+            <li>资金面：<span class="key">机构/外资继续加多豆粕</span>（利多）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>煤炭行情要降温：三线联动</h3>
+        <div class="meta">
+          <span class="src">Orange期权 · 宏观基本面大事件</span>
+          <span class="time">08:59</span>
+        </div>
+        <div class="body">
+          <span class="pill opt">煤炭/能化</span>
+          <ul>
+            <li>发改委周末开会讨论保供弹性优化方案，允许适度突破核定产能上限 <span class="key">+20%弹性空间</span></li>
+            <li>山西下半年工业/GDP 压力大，" <b>把产量搞上去再说</b>"</li>
+            <li>甘其毛都口岸已做好下周日均通关 <b>1000车+</b> 工作准备</li>
+            <li>结论：今日复盘里 Orange 提示能化板块" <b>先观望为主</b>"</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Orange 复盘：棕榈跨月价差、橡胶止盈、鸡蛋止盈</h3>
+        <div class="meta">
+          <span class="src">Orange期权 · Orange技术君</span>
+          <span class="time">18:01</span>
+        </div>
+        <div class="body">
+          <span class="pill opt">今日复盘</span>
+          <ul>
+            <li>棕榈：有备兑可继续拿；考虑跨月价差组合（卖近月高行权价购 + 买远月低行权价购）</li>
+            <li>天然橡胶：<b>加速升波破新高，已布局的止盈离场</b></li>
+            <li>鸡蛋：1:1.5 看涨价差临近最大收益点，<b>考虑止盈离场</b></li>
+            <li>中证 1000：收敛后关注做多 gamma 机会，<span class="key">主观偏多</span></li>
+            <li>锡：起波可考虑延时看涨价差</li>
+            <li>多晶硅：看跌价差近月到期离场；等破位后反弹背离时进场</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Research Reports -->
+  <section>
+    <div class="sec-h">
+      <span class="tag g-niu">小牛研报纪要</span>
+      <h2>研究纪要 / 个股观点</h2>
+      <span class="sub">2026-09-07</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <h3>通信十五五规划落地，光纤光缆迎 AI 新周期</h3>
+        <div class="meta">
+          <span class="src">小牛研报纪要 · niu</span>
+          <span class="time">20:22</span>
+        </div>
+        <div class="body">
+          <span class="pill report">光通信</span>
+          <ul>
+            <li>十五五信息基础设施累计投资 <b>3.8万亿元</b>，2030 智能算力达 <span class="num">9800 EFLOPS</span></li>
+            <li>重点：400G+超高速传输、1.6T 光传输、10G 光网络</li>
+            <li>移动 26-27 普通光缆集采价格突破 <b>80 元/km</b>（部分 83元）</li>
+            <li>需求 6922万芯公里未被供应承诺覆盖，<span class="highlight">光纤进入景气周期</span></li>
+            <li>重点推荐 <b>亨通光电</b>：光纤涨价 + AI 光纤需求 + 海外拓展 + 800G/1.6T 高速光模块放量</li>
+            <li>2026H1：<b>营收 420.26亿（+31%）/ 归母净利 31.2亿（+93%）/ 光通信业务 +130%</b></li>
+            <li>目标市值 <span class="key">3000亿</span>，较当前近翻倍空间</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>瑞可达 AI 业务放量拐点：AEC/FAU/NPO 三条腿</h3>
+        <div class="meta">
+          <span class="src">小牛研报纪要 · niu · 华福汽车</span>
+          <span class="time">20:34</span>
+        </div>
+        <div class="body">
+          <span class="pill report">连接器</span>
+          <ul>
+            <li>AEC：Q2 交付 2万根，<b>Q3 10万根，Q4 40万根</b>；2027全年预计 <span class="key">180万根</span>，毛利率 30%+</li>
+            <li>核心客户腾讯→Q4 开始供货 xAI→明年 Meta 起量</li>
+            <li>FAU：切入 AAOi、索尔斯、XC；2026Q4 规模化收入，<b>2027 年预计 15亿</b>（毛利率 30%+）</li>
+            <li>NPO Socket：2027H2 开始批量交付，规模 <b>千万级</b></li>
+            <li>主张" <span class="highlight">买在分歧，卖在共识</span>"，关注订单能见度方向</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>迪安诊断（300244）：控股迪谱诊断切入 AI4S</h3>
+        <div class="meta">
+          <span class="src">小牛研报纪要 · niu</span>
+          <span class="time">20:38</span>
+        </div>
+        <div class="body">
+          <span class="pill report">医药</span>
+          <ul>
+            <li>1.49亿收购迪谱 48.1% 股权，对应估值 <b>3.1亿</b></li>
+            <li>穿透后持有 68.7%，纳入合并报表</li>
+            <li>检验立项指南中质谱加收项达 <b>44项</b>（近四成）</li>
+            <li>壁垒：国内首款通用型核酸质谱注册证 + 首台（套）认定</li>
+            <li>耳聋基因、C8 等核心产品已获三类证，<span class="key">即将进入盈利通道</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>陕西煤业 26M8：原煤产销同环比双升</h3>
+        <div class="meta">
+          <span class="src">小牛研报纪要 · 国联民生能源 周泰</span>
+          <span class="time">20:37</span>
+        </div>
+        <div class="body">
+          <span class="pill report">煤炭/电力</span>
+          <ul>
+            <li>26年8月煤炭产量 <b>1502万吨</b>（同比 +5.00%，环比 +5.11%）</li>
+            <li>自产煤销量 1349万吨（同比 +4.58%，环比 +0.97%）</li>
+            <li>1-8月产量 <span class="num">12048万吨</span>（+4.02%）</li>
+            <li>8月发电量 47.88亿千瓦时（同比 -8.61%，环比 +6.52%）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>腾讯 26M8 跟踪：广告+20%、WorkBuddy 起量</h3>
+        <div class="meta">
+          <span class="src">小牛研报纪要 · 国海证券 陈梦竹</span>
+          <span class="time">20:37</span>
+        </div>
+        <div class="body">
+          <span class="pill report">互联网</span>
+          <ul>
+            <li>游戏：国内大盘 yoy +8%（手游+8%/端游+9%）；王者荣耀 64亿（+4%）；和平精英 24亿（+2%）</li>
+            <li>三角洲行动双端 <b>26 亿（+49%）</b>，DAU 均值 4780 万</li>
+            <li>广告：<b>26M8 yoy +20%</b>；视频号 +40%、视频号 DAU 6.8亿、时长 76 分钟；朋友圈 +13%、搜一搜 +35%</li>
+            <li>WorkBuddy：8月 <b>DAU 521万（C端 428万/B端 94万）/ 总收入 1.4亿（环比+25%）</b>；2027 收入目标 40-50亿</li>
+            <li>混元模型调用份额升至 <span class="key">80%+</span>（6月 45% → 7月 62%）</li>
+            <li>2026~2027 non-gaap 利润 <b>2666/2746 亿</b>（yoy +3%/+3%），CapEx 2000/2500亿，对应当前估值 <b>13.1/12.7x</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>外资研报速递（大摩）：中际旭创、特斯拉、SEMICON Taiwan</h3>
+        <div class="meta">
+          <span class="src">小牛研报纪要 · 小多多 · 大摩</span>
+          <span class="time">20:42</span>
+        </div>
+        <div class="body">
+          <span class="pill report">大摩观察</span>
+          <ul>
+            <li>《ABF 基板风险》：对南亚电路板、欣兴电子 ABF 供给份额风险</li>
+            <li>《特斯拉：难以落地的产品发布》</li>
+            <li>《关于 SPE 的七大辩论》——半导体资本设备</li>
+            <li><b>《中际旭创：光学领域领先的 AI 赋能企业；具备显著增长潜力》</b></li>
+            <li>《2026 年中国台湾半导体展核心要点：我们还需要更多》</li>
+            <li>另有 Bernstein《阿里巴巴 AI 资本开支/回购/资金需求自下而上建模》</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FinGraph -->
+  <section>
+    <div class="sec-h">
+      <span class="tag g-fin">财经图集 · FinGraph</span>
+      <h2>每日全球财经图集</h2>
+      <span class="sub">2026-09-07 早/晚</span>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <h3>🇨🇳 中国：上市公司盈利 +26%，股价背离</h3>
+        <div class="meta">
+          <span class="src">FinGraph 早报</span>
+          <span class="time">07:41</span>
+        </div>
+        <div class="body">
+          <span class="pill finance">A股盈利</span>
+          <ul>
+            <li>Q2 中国境内上市公司整体利润 <b>+26%</b>（五年最佳）</li>
+            <li>但沪深300 本季度 -9%、<span class="key">科创50 -29%</span></li>
+            <li>8家中央金融企业拟合计增资 <b>3600亿元</b> 补充核心一级资本</li>
+            <li>上海原油重回溢价（高于布伦特 <span class="num">5.17美元</span>），国内买家恢复采购</li>
+            <li>鸿海 8月营收 <b>+52%至 9218亿新台币</b>（AI 服务器驱动）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🇺🇸 美国：就业反弹 + AI 基建岗位 +100 万</h3>
+        <div class="meta">
+          <span class="src">FinGraph 早报</span>
+          <span class="time">07:41</span>
+        </div>
+        <div class="body">
+          <span class="pill finance">美经济</span>
+          <ul>
+            <li>8月非农 <b>+16.2万</b>（预期 +5.6 万），5个月新高</li>
+            <li>平均时薪 yoy +3.1%，<span class="key">2021年5月以来最低</span></li>
+            <li>新增就业中 <b>女性占 98%</b>（+15.8万），性别差创纪录</li>
+            <li>AI 基建相关岗位较趋势多 +<span class="num">32万</span>，电气设备制造时薪 yoy +13%</li>
+            <li>AI 累计创造约 <b>100 万岗位</b>，超过同期 ~20 万相关裁员</li>
+            <li>共和党选民经济信心 6个月内 <span class="key">疫情以来最快下滑</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🇺🇸 美股：标普 Q3 盈利预期上修 +1.2%</h3>
+        <div class="meta">
+          <span class="src">FinGraph 早报</span>
+          <span class="time">07:41</span>
+        </div>
+        <div class="body">
+          <span class="pill finance">美股</span>
+          <ul>
+            <li>标普 Q3 EPS 预期 88.64 → <b>89.69 美元</b></li>
+            <li>改善集中在 <b>能源（+11.8%）/ IT（+3.0%）/ 金融（+2.1%）</b>，材料 -9.1%</li>
+            <li>纳斯达克 Q2 超半数成分股盈利 +<span class="num">20%+</span>，整体盈利 +80% 创 2010 年新高</li>
+            <li>10y20y 远期收益率重回 <b>5%+</b>（2000年代中期以来高位）</li>
+            <li>401(k) 百万美元账户 Q2 +<span class="key">19%</span> 至 76.9 万（2023 年底以来最大增幅）</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🇨🇳 中国：六张网 25 万亿 + 中际旭创业绩爆发</h3>
+        <div class="meta">
+          <span class="src">FinGraph 晚报</span>
+          <span class="time">17:34</span>
+        </div>
+        <div class="body">
+          <span class="pill finance">中国宏观</span>
+          <ul>
+            <li>美国银行预计 2026-2030 中国" <b>六张网</b>" 新增投资 <span class="num">25万亿元</span></li>
+            <li>水网 6.5万亿 + 新型电网 5.5万亿 + 算力网 4万亿</li>
+            <li>8月外储 <b>3.438万亿</b>（超预期），连续 <span class="key">22个月增持黄金</span>（升至 7673万盎司 / 3500.8亿美元）</li>
+            <li>中国垄断美国 7 月生物柴油/可持续航燃原料进口（环比 +<span class="key">83%至 33.8万吨</span>）</li>
+            <li>香港 8月外储 4429亿美元，<b>隔夜 HIBOR +82bp 至 3.05%</b>（银债冻结资金）</li>
+            <li>中际旭创业绩：营收 +<span class="num">182.49%</span>，归母净利 +<span class="num">241.70%</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🇪🇺 欧洲：盈利改善 + 德国工业 -1.1%</h3>
+        <div class="meta">
+          <span class="src">FinGraph 晚报</span>
+          <span class="time">17:34</span>
+        </div>
+        <div class="body">
+          <span class="pill finance">欧洲</span>
+          <ul>
+            <li>花旗：欧洲未来 12 个月 EPS 持续上调，<span class="key">2022 以来最长</span></li>
+            <li>但 22 家机构中仅 7 家增持欧股（年初 10 家）</li>
+            <li>德国 7月工业产出 <b>-1.1%</b>（汽车 -9.2%），年内第 4 次下滑</li>
+            <li>希腊：2027 大选前推 <b>20亿欧元</b> 刺激；DBRS 评级展望上调</li>
+            <li>爱尔兰：2025 住宅竣工 +<span class="num">20.4%</span>，但房价仍被高估约 17%</li>
+            <li>葡萄牙：<b>惠誉上调评级 A → A+</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>🌏 亚太 / 全球：日元干预 + 粮食价格新高</h3>
+        <div class="meta">
+          <span class="src">FinGraph 晚报</span>
+          <span class="time">17:34</span>
+        </div>
+        <div class="body">
+          <span class="pill finance">亚太全球</span>
+          <ul>
+            <li>日本 8 月外储 <b>-796 亿美元</b>（史上最大单月降幅），降至 1.208 万亿</li>
+            <li>日本 7/30-8/26 投入 <span class="key">15.4 万亿日元</span>（约 987亿美元）干预</li>
+            <li>日本领先经济指数初值 <b>117.9</b>（2014.1 以来最高）</li>
+            <li>韩元升至 ~<span class="num">1345</span>；1-8 月韩国半导体出口 +169.6%</li>
+            <li>印度银行过剩资金 <b>10.5 万亿卢比</b>（创纪录）</li>
+            <li>伊朗原油出口 <span class="key">-100%</span>（战前 vs 8 月）；沙特/卡塔尔 -48%</li>
+            <li>联合国粮农组织食品价格指数 <b>+1.9%</b> 至 133.3（2022.11 以来最高）</li>
+            <li>CTA 在 G10 国债期货净空头仓位 <span class="key">创历史新高</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Stalled Group -->
+  <section>
+    <div class="sec-h">
+      <span class="tag g-old">隔壁老王爱博弈</span>
+      <h2>策略博弈（已停滞）</h2>
+      <span class="sub">最后更新 2026-03-12</span>
+    </div>
+    <div class="note">
+      <b>⚠️ 星球状态：</b>本月最新动态仍停留在 2026年3月，距今已超过 5 个月未更新。
+      历史近期主题为"最近的一些见闻与想法"、"再说下黄色"等博弈策略复盘，逻辑仍以 A 股低波品种（股指 / 农产品 / 农系）+ 低参与 LC 为主。
+      建议及时确认星主是否仍在活跃，或视需要调整关注列表。
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section>
+    <div class="sec-h">
+      <span class="tag" style="background:#64748b">⚙ 数据说明</span>
+      <h2>采集与归类</h2>
+    </div>
+    <div class="note">
+      本次覆盖 <b>7 个已开通 Skill 权限的星球</b>：研报平权、Orange期权、刘煜辉之宏观高维、404K Semi-Ai、小牛研报纪要、财经图集、隔壁老王爱博弈。<br>
+      每个星球拉取最近 <b>10 条帖子</b>，共 <b>70 条原始数据</b>，按主题归并为 5 大类（AI 半导体 / 宏观策略 / 商品期权 / 研究纪要 / 全球财经）。<br>
+      其他 17 个星球因「 <b>未开通 Skill 权限</b>」已按规则跳过。<br>
+      <span style="color:var(--muted)">仅读取内容做总结，无任何写入或评论操作 · Token 等敏感信息均未出现在报告中。</span>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 瑞安 · 知识星球每日总结 · 仅供个人投资参考，不构成投资建议
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="WaoBcSnPKekBALRAOk1R1B">
+<head data-page-node-id="wq20zbS2TYCEJqaI82yDqt">
+<meta charset="UTF-8" data-page-node-id="8euZn3CrYvxbeubfDGo9yc">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="7xqrjsLB0gu3RgLmAK85Xh">
+<title>原油日报 · 2026-09-10</title>
+<style>
+  :root{
+    --bg:#0f141b; --bg-grad:#0b0f16; --panel:#151c26; --panel2:#1a2230; --border:#242e3c;
+    --txt:#e9edf4; --sub:#98a4b6; --muted:#667184;
+    --up:#e5484d; --down:#2fb875; --blue:#54a8ff; --gold:#e8b84b; --accent:#4da3ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:radial-gradient(1200px 600px at 50% -100px, #1a2534 0%, var(--bg-grad) 55%);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; padding:40px 20px 70px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{text-align:center;margin-bottom:34px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:10px}
+  .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.5}
+  header h1{font-size:34px;font-weight:800;letter-spacing:1px;color:var(--txt);margin-bottom:6px}
+  header h1 .dot{color:var(--accent)}
+  header .src{color:var(--sub);font-size:12.5px;line-height:1.9}
+  header .src .pill{display:inline-block;padding:1px 9px;border-radius:20px;background:rgba(77,163,255,.12);color:var(--blue);border:1px solid rgba(77,163,255,.3);font-size:11px;margin:0 3px}
+
+  .hero{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+  .hero .kpi{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 22px;text-align:center;min-width:150px;flex:1;transition:transform .18s ease,border-color .18s ease}
+  .hero .kpi:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .hero .kpi .v{font-size:24px;font-weight:800;color:var(--up);letter-spacing:.5px}
+  .hero .kpi .v.blue{color:var(--blue)}
+  .hero .kpi .l{font-size:12px;color:var(--sub);margin-top:4px}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.22)}
+  .card h2{font-size:18px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+  .card h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#4da3ff,#2f7fd6);color:#fff;font-size:14px;font-weight:800;box-shadow:0 2px 8px rgba(77,163,255,.35)}
+  .card h2 .hint{font-size:11.5px;color:var(--muted);font-weight:400;margin-left:auto}
+
+  .reason{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;padding:12px 14px;border-radius:11px;background:var(--panel2);border:1px solid transparent;transition:border-color .15s}
+  .reason:hover{border-color:var(--border)}
+  .reason .idx{flex:0 0 28px;height:28px;border-radius:8px;background:rgba(77,163,255,.16);color:var(--blue);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+  .reason .txt{font-size:14.5px;color:#d2d9e4}
+  .reason .txt b{color:var(--blue)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  thead th{color:var(--sub);font-weight:600;background:var(--panel2);font-size:12px;letter-spacing:.3px;position:sticky;top:0}
+  tbody tr{transition:background .12s}
+  tbody tr:hover{background:rgba(255,255,255,.02)}
+  td b{color:var(--txt)}
+  td .tm{font-variant-numeric:tabular-nums;color:var(--sub)}
+
+  .tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;font-weight:600;white-space:nowrap;line-height:1.5}
+  .tag-up{background:rgba(229,72,77,.14);color:#ff7a7e;border:1px solid rgba(229,72,77,.42)}
+  .tag-down{background:rgba(47,184,117,.14);color:#4fd699;border:1px solid rgba(47,184,117,.42)}
+  .tag-neu{background:rgba(152,164,182,.12);color:var(--sub);border:1px solid var(--border)}
+  .tag-strong{background:rgba(229,72,77,.22);color:#ff7a7e;border:1px solid var(--up);font-weight:700}
+  .tag-gold{background:rgba(232,184,75,.14);color:var(--gold);border:1px solid rgba(232,184,75,.4)}
+
+  .quote{border-left:4px solid var(--blue);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#c9d0dc;margin:16px 0 4px}
+  .quote b{color:var(--blue)}
+  .quote.gold{border-left-color:var(--gold)}
+  .quote.gold b{color:var(--gold)}
+
+  .inst-card{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;border-radius:11px;background:var(--panel2);border:1px solid var(--border);margin-bottom:12px}
+  .inst-card .org{flex:0 0 120px;font-size:13px;font-weight:800;color:var(--blue);line-height:1.5}
+  .inst-card .org .d{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+  .inst-card .view{font-size:13.5px;color:#d2d9e4}
+  .inst-card .view b{color:var(--blue)}
+
+  .zsxq{display:flex;flex-direction:column;gap:14px}
+  .z-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative}
+  .z-card .z-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .z-card .z-badge{font-size:11px;font-weight:700;padding:3px 11px;border-radius:6px;background:rgba(232,184,75,.16);color:var(--gold);border:1px solid rgba(232,184,75,.35);letter-spacing:.5px}
+  .z-card .z-group{font-size:13px;font-weight:700;color:var(--txt)}
+  .z-card .z-time{font-size:11px;color:var(--muted);margin-left:auto}
+  .z-card p{font-size:13.5px;color:#ccd4e0;line-height:1.8}
+  .z-card p b{color:var(--gold)}
+  .z-card p .c-blue{color:var(--blue)}
+
+  .verdict{background:linear-gradient(135deg,#1a2230,#141a24);border:1px solid #2a3550}
+  .verdict .main{font-size:15.5px;font-weight:700;color:var(--txt);margin-bottom:16px;padding:16px 18px;background:var(--panel2);border-radius:11px;border-left:4px solid var(--up);line-height:1.8}
+  .verdict .main b{color:var(--up)}
+  .verdict ul{padding-left:4px;font-size:13.5px;color:#c9d0dc;list-style:none}
+  .verdict li{margin-bottom:11px;padding-left:22px;position:relative;line-height:1.75}
+  .verdict li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--blue)}
+  .verdict li b{color:var(--up)}
+  .verdict li b.down{color:var(--down)}
+  .verdict li b.gold{color:var(--gold)}
+  .verdict li .k{font-weight:700;color:var(--txt)}
+
+  .footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:14px;line-height:1.9}
+
+  @media (max-width:640px){
+    body{padding:24px 12px 50px}
+    .card{padding:20px 16px}
+    header h1{font-size:26px}
+    .hero .kpi{min-width:130px;padding:12px 14px}
+    .hero .kpi .v{font-size:20px}
+    .inst-card .org{flex-basis:90px}
+  }
+</style>
+</head>
+<body data-page-node-id="FNR2uam6rLLMTYKrzG3M8f">
+<div class="wrap" data-page-node-id="9iRFWfNKaxA5X6d8FkRp4Y">
+  <header data-page-node-id="weuc6Hz5OElO4MMpeqCogS">
+    <div class="eyebrow" data-page-node-id="Br5h4Z1DVERFMR4wYaAio1">Crude Oil Daily</div>
+    <h1 data-page-node-id="3HhQOpje3X2p892y8t258L">原油日报<span class="dot" data-page-node-id="yr2X1yAWCUwUe9V3KUC10O"> · </span>2026.09.10</h1>
+    <div class="src" data-page-node-id="P5UGZEKxtenEYQr2i5CwbA">
+      <span class="pill" data-page-node-id="ah6D21rRpDIUQDb2cFvVqn">华尔街见闻</span><span class="pill" data-page-node-id="IabGawHsVWC4ap05cpOq8F">market-delta 实时快讯</span><span class="pill" data-page-node-id="FFACJZ2lfYSSCGTQFBdzzJ">Wind 海外机构</span><span class="pill" data-page-node-id="TRIuz8pGzNjdMo1yBiDNxh">知识星球</span>
+    </div>
+  </header>
+
+  <div class="hero" data-page-node-id="vMrNU4ezHn4ieP4YFBvAGW">
+    <div class="kpi" data-page-node-id="uS16Sp7iIHSjqTqmTgkKdC"><div class="v" data-page-node-id="04kW7thXwQZNLlVUwZgjnC">$101.21</div><div class="l" data-page-node-id="tCCIzxDHaPIzjAT6W8Bk9P">布伦特收盘（+3.4%）</div></div>
+    <div class="kpi" data-page-node-id="JYqPYkc97Ok7swYkpTXGzY"><div class="v blue" data-page-node-id="QERHJX5Zu5jFqfOvXyLl8L">$96.05</div><div class="l" data-page-node-id="Zysgpac59gmXqroz47600S">WTI（+3.3%）</div></div>
+    <div class="kpi" data-page-node-id="7JiC3qfGkJVB1JCKogrKdp"><div class="v" data-page-node-id="9fgN1XOjA51PAkEn9RkDnT">+6.44%</div><div class="l" data-page-node-id="jdV4FM6evxAppfZk07K5vh">SC 国内原油</div></div>
+    <div class="kpi" data-page-node-id="ZkCwkxRJbh3ZXOf9NQjEuy"><div class="v" data-page-node-id="0SgCrDZ30QdNbbMlLZvfmo">-4亿桶</div><div class="l" data-page-node-id="EhlkQuESGnY9IHKCYpQOvk">全球库存年内降幅</div></div>
+  </div>
+
+  <!-- 一、核心结论 -->
+  <div class="card" data-page-node-id="Uc9V1Lx6SzwKr9QMgHmHFj">
+    <h2 data-page-node-id="SLVaDXTxs5BP753w2FV2Ex"><span class="no" data-page-node-id="wj82LmWuBEHxkW0rnyeIk1">一</span>核心结论：今日看多原油的 5 个最核心理由</h2>
+    <div class="reason" data-page-node-id="Y9JhGSSy15r1t7zn8BBe5J"><div class="idx" data-page-node-id="DXEvogHH7f2rCpusP3ogwJ">1</div><div class="txt" data-page-node-id="UHHHHqtFRHTF712C9pSFqt"><b data-page-node-id="bXXguQiIM1IXtedDdptpu9">布油突破 101 美元、创 5/22 以来最高收盘</b>——布伦特原油结算 101.21 美元/桶（+3.4%），盘中最高 101.58，为 7/24 以来首次站上 100 美元；WTI 96.05 美元/桶（+3.3%）；上海 SC 原油收 769 元/桶（+6.44%），内外盘共振上行。</div></div>
+    <div class="reason" data-page-node-id="g8iFaNBg1rDS8BqWPrDeCC"><div class="idx" data-page-node-id="XJuA9sRgY2L6Upe42chW1N">2</div><div class="txt" data-page-node-id="BhqCzClmob2Ay5LpAui8CY"><b data-page-node-id="DNo0zR1JArHwUXoUd5m4sp">美伊"海上互袭" + 胡塞"袭沙特"双线升级</b>——美军摧毁 5 艘伊朗油轮（4 艘阿曼湾 + 1 艘哈尔克岛）；伊朗革命卫队称打击波斯湾内 2 艘美军舰 + 8 艘油轮；胡塞武装同日袭击沙特 4 座城市能源设施（73 人受伤），冲突烈度再升级。</div></div>
+    <div class="reason" data-page-node-id="0Kht4VZDG6deE5Ju5AETKM"><div class="idx" data-page-node-id="YhJhwLd9f4tyKDDZDVA3PD">3</div><div class="txt" data-page-node-id="dsLiuPn0AedlPaz2pddxCf"><b data-page-node-id="GmpmDHARKlIuTIGiJUuGg7">沙特出口骤降三分之一、OPEC 产量断崖下滑</b>——沙特 8 月产量 698 万桶/日（-112 万桶，5 月来最低），实测出口 303 万桶/日（13 年最低）；OPEC 8 月产量骤降 90 万桶/日至 1,991 万桶/日，中东 8 月停产量升至 670 万桶/日。</div></div>
+    <div class="reason" data-page-node-id="qvfT5bpIbEGEqheJKXuB6W"><div class="idx" data-page-node-id="ScM9dtjuTji9WbbyhcDna6">4</div><div class="txt" data-page-node-id="iXYWcUMhyIFoubVuzCIVYe"><b data-page-node-id="BayP5tBdLdl2WxRXhxUEEG">全球库存以"战争速度"消耗</b>——EIA 上调 2026 布油均价至 91 美元（+5%）；今年以来全球石油库存已降约 4 亿桶且年底继续去库；美国 SPR 2.90 亿桶创 1982 年来最低、Vortexa 统计海上石油较 7 月中减少 1.5 亿桶。</div></div>
+    <div class="reason" data-page-node-id="WoFA1qcNIyE3d8s7cjtFE9"><div class="idx" data-page-node-id="lGKkaVpn5xvT4uGNcHmgbl">5</div><div class="txt" data-page-node-id="QTOoser7zEmiv75P3c37AF"><b data-page-node-id="aMK9Tir035KNOGyD0ApgaB">成品油"硬短缺" + 海外机构集体上修</b>——美国柴油 5.94 美元/加仑创历史新高、汽油 4.22 美元/加仑，EIA 预计 Q4 柴油冲 5.55 美元、本月库存降至 20 多年最低；高盛警告布油可冲 120 美元、美银看 95-120/150、汇丰 90/85、大摩 Q4 100。</div></div>
+  </div>
+
+  <!-- 二、海外机构观点 -->
+  <div class="card" data-page-node-id="dve2isCydr26Fx0G3NOqvk">
+    <h2 data-page-node-id="CQaY7v65KQsJyODU9zu8e7"><span class="no" data-page-node-id="CrB7cumuTFmuohzzyaghiZ">二</span>近 5 天海外机构观点 <span class="hint" data-page-node-id="cV2GnMo3BQTdL15VU9g8RE">Wind 财经新闻</span></h2>
+    <div class="inst-card" data-page-node-id="2GsJL5Tm8BQaGfEr3iHLk0"><div class="org" data-page-node-id="opIoSDA5ZZTYHhhhEZIazS">EIA<span class="d" data-page-node-id="Kz4Hz8ZeNsAcK00wnZyHve">9/9</span></div><div class="view" data-page-node-id="bBXbirSsx1ejnEQjf3qD8A">上调 2026 布油现货均价至 <b data-page-node-id="tDMsTDOlwnDhhalJchc7ip">91 美元</b>（+5%）、WTI 84.65 美元；2027 布油 74 美元；全球库存已降 4 亿桶，中东停产量 8 月 670 万桶/日。</div></div>
+    <div class="inst-card" data-page-node-id="daTeZxZqUBlKFyEuNBzS27"><div class="org" data-page-node-id="qPMaJ6YPqVkiv88WGuJsfF">高盛<span class="d" data-page-node-id="Go7qSPT7bqIaTryD5Jf5J2">Struyven · 9/9</span></div><div class="view" data-page-node-id="bms7IpoqQKrTW9jGmViEUT">基准 12 月布油/WTI <b data-page-node-id="mVYquyiNuF1VvAjHwzUY6E">85/80 美元</b>；近期升级显著提高布油冲 <b data-page-node-id="jC8HaPaDhinINCEihk16tv">120 美元</b>风险情景概率（油轮持续遇袭、出口无法恢复）。</div></div>
+    <div class="inst-card" data-page-node-id="9RDKZ69CQLWRLeORoMPUj8"><div class="org" data-page-node-id="QkjydSul3UJt8tqEn5Lk21">汇丰<span class="d" data-page-node-id="W1cyGtQ5EyXEdXWhWSRitk">Fustier · 9/8</span></div><div class="view" data-page-node-id="HNF0k3w3G2Sl9qE2iELXtx">2026 布油 80→<b data-page-node-id="jUtheMPclfeHFzJ49LyNh5">90 美元</b>（Q4 95）、2027 65→<b data-page-node-id="EEJUPqASZIjMQwfhpO94fx">85 美元</b>；"霍尔木兹中断成新常态"。</div></div>
+    <div class="inst-card" data-page-node-id="BpQtGBgqBbuVVDhMuD1foR"><div class="org" data-page-node-id="Pp4AjUwIWsdMqoMXSGYCMK">美国银行<span class="d" data-page-node-id="vGdDpR7AM7LObtG5RgSW6N">9/8</span></div><div class="view" data-page-node-id="HxNoM1jGKXCNTSfSR0GXZD">小规模冲突延续至年底布油 <b data-page-node-id="mgdNMzaKj1XakZ2vic3CRg">95-120 美元</b>；重大设施受损最高可飙 <b data-page-node-id="3f83XdDMRB2G3ERc4Db3b5">150 美元</b>。</div></div>
+    <div class="inst-card" data-page-node-id="V2GEBpJ5b4l8Kiysnnx44g"><div class="org" data-page-node-id="CrF9wo6oURQim1H1XNUuTB">摩根士丹利<span class="d" data-page-node-id="1ON3xRoeJ7hXgDMCQ1JdZH">8/23</span></div><div class="view" data-page-node-id="5KzlOF99v6dZe5TrQcrkgV">上调 2026 Q4 布油至 <b data-page-node-id="mkn0IBSpaicZTI6BqgbSpH">100 美元</b>、2027 Q1 至 95 美元。</div></div>
+    <div class="inst-card" data-page-node-id="Si9HTOxmMl2jMnKQxyaTgZ"><div class="org" data-page-node-id="xPRpuHowIBSfFWY4aCbDTr">摩根大通<span class="d" data-page-node-id="TheABP1DGhlGypO1LHp6JH">Kaneva · 9/9</span></div><div class="view" data-page-node-id="dLU1lPCvhBAz6zFeQ15hm6">"永久冲突"情景霍尔木兹实质关闭，明年布油均值仍 <b data-page-node-id="eIQDBIx0ZcW6c1tGsewbib">87 美元</b>；基准（和平）情景 63 美元。</div></div>
+    <div class="inst-card" data-page-node-id="vPmAIMKhk7sQdv0C60oVW3"><div class="org" data-page-node-id="NQ65DRdEYrHaW6GBU3OWPv">TD 证券<span class="d" data-page-node-id="TGSOPlDUa345ZPDgnxcBI8">McKay · 9/9</span></div><div class="view" data-page-node-id="pnqsBHezwNJioRY6TxZIfB">暗船流量企稳缓解缺口，但市场整体仍偏紧；新一轮袭击 + 中国采购活跃或再趋紧。</div></div>
+    <div class="inst-card" data-page-node-id="eVAWtTf76HmjtOJPUQfVUu"><div class="org" data-page-node-id="7whSRZAUitPtPrIPaeQwyT">Jeff Currie<span class="d" data-page-node-id="1cSsAiEyuARtjarZOgmQtH">Abaxx · 9/9</span></div><div class="view" data-page-node-id="bnmv3CTMHLWmRE8mXBvRjk">"这不是一次性冲击，而是结构性变化"，能源安全溢价还将进一步扩大。</div></div>
+    <div class="quote gold" data-page-node-id="bgFgwc0xnIeqHsvpDquWpq">海外机构共识：油价目标从"布油 85"集体向 <b data-page-node-id="pGQThhJvnrX5D5RJlCc3sF">90-120 美元</b>上修、美银极端看 150；一致提示 <b data-page-node-id="H72d9Ny8BAqRlnSidFsLF6">成品油/天然气比原油更短缺</b>，但摩根大通提示"永久冲突"情景下明年均价也仅 87 美元。</div>
+  </div>
+
+  <!-- 三、知识星球深度观点 -->
+  <div class="card" data-page-node-id="LHABiOBsE4dVRGWtzsUxJ9">
+    <h2 data-page-node-id="LFnRgGFYZCwynCoLEftg0g"><span class="no" data-page-node-id="ECeGieBaAUNWyBCdZy1JcM">三</span>知识星球深度观点 <span class="hint" data-page-node-id="3zTYVVIqddNPGpVMZOtJQC">近期时效</span></h2>
+    <div class="zsxq" data-page-node-id="jaE5oiMsMPt6C6CGJxN0YK">
+      <div class="z-card" data-page-node-id="p6HSHJM5lU0xTwMfp0qPyl">
+        <div class="z-head" data-page-node-id="07IFCBxOhwFBkedPKPC88u"><span class="z-badge" data-page-node-id="nF1WFIATHA2dwJD4fFRGB0">小牛研报纪要</span><span class="z-group" data-page-node-id="jB07ULwAbdWokTDeZpceS5">看 Q4 油价冲 110 美元</span><span class="z-time" data-page-node-id="3MBWV53IWUqHI01yoeAZaY">2026-09-09</span></div>
+        <p data-page-node-id="T7eyeNF7hHAhtMJIoH6bcj">"继续推荐宝丰能源、中国海油等受益油价上涨标的"；自 8 月下旬<b data-page-node-id="kQf98HQOVNWbX2cHiZUQ98">完全是原油多头</b>，看 Q4 油价冲上 <b data-page-node-id="hxyjPYibGEW3BvPqwLNEi5">110 美元/桶</b>，核心是 OECD 战略储备不够、美国商业库存超预期下降。</p>
+      </div>
+      <div class="z-card" data-page-node-id="ibYGMfuAtMXo0majfBdeAz">
+        <div class="z-head" data-page-node-id="fX96N3COshkdeps2vyvpDF"><span class="z-badge" data-page-node-id="xCXB3G9CCbeWCobxV52P6I">小牛研报纪要</span><span class="z-group" data-page-node-id="lESeybN3jbAcZ30AEjJkQD">布油突破 100 美元概念股汇总</span><span class="z-time" data-page-node-id="rsjHFKlrsXRXnHTNTObNn1">2026-09-09</span></div>
+        <p data-page-node-id="M508M1T52ir7wSR0Bstzju">布伦特原油突破 100 美元，原油概念股汇总（当日盘面梳理）。</p>
+      </div>
+      <div class="z-card" data-page-node-id="wf9Rx0co03IbYL8D9UI8Ea">
+        <div class="z-head" data-page-node-id="MQCuvo5H35mBgBO9YndSWi"><span class="z-badge" data-page-node-id="Zp6m3RrFYEBkmsF7CfuEWp">Orange 期权</span><span class="z-group" data-page-node-id="FXzHoABrXo264nKeSxL8nC">原油期权"定价错误"</span><span class="z-time" data-page-node-id="whRoN6SDEpWfs2A59gETrB">2026-09-08</span></div>
+        <p data-page-node-id="zoUFhhAT49ItUy8Jv1XFBj">原油末日轮存在<span class="c-blue" data-page-node-id="fYpeTAUIC4Qyd9ZPMHepH9">定价错误</span>：外盘隐波没大跌、内盘跌太多，<b data-page-node-id="ic5s0PbzE13XrvcukDNSN5">双买原油做多 Gamma + 双卖 LPG/沥青对冲</b>，赚"波动率修复"而非预测方向。</p>
+      </div>
+      <div class="z-card" data-page-node-id="21dtyhW3TizGQ0H0S1wntO">
+        <div class="z-head" data-page-node-id="jDREyCHHUGYfhfr6X9Er4G"><span class="z-badge" data-page-node-id="IXW4jDAjjTpQmCJEzJiRHs">刘煜辉之宏观高维</span><span class="z-group" data-page-node-id="GIEWQX5f7Q54wsUEUSUXtM">海峡控制权的"最后一博"</span><span class="z-time" data-page-node-id="NFIxiPGhWK4eVG1aRBB7sT">中长期框架</span></div>
+        <p data-page-node-id="HRBJLEd1rlJjQZWB0CjnJF">油是<b data-page-node-id="Il1fkuR3zTnDU2GogHH7Nc">高概率</b>的，为<b data-page-node-id="r3CYlhcdykckOebriRXaVp">海峡控制权最后一博</b>；顺则中枢不回 70、不顺则 150/200 皆有可能；但中长期"金油比回不去""中国能源基站在石油对立面"——勿做长线多油。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、今日实时快讯 -->
+  <div class="card" data-page-node-id="sLlI1kpO8PAIgRJ7X0ujqI">
+    <h2 data-page-node-id="VFtd5u8ptTSG17gTmPo4lP"><span class="no" data-page-node-id="dpbidnSCx3SUTaZDu18BWN">四</span>今日（9/10）实时快讯与时间线 <span class="hint" data-page-node-id="X50rcYPcMuOOe6OUNA9ywV">数据截止 20:30</span></h2>
+    <table data-page-node-id="oE7Fzy9svTjd7OSWrRlDn4">
+      <thead data-page-node-id="x3RIBRdvZtYWvNRKFLZT5I"><tr data-page-node-id="V6f22dMzTRhtQhXPXzn7Yr"><th style="width:70px" data-page-node-id="OJkBDkqcN7fogfXkR6xVfY">时间</th><th data-page-node-id="NPmKCJGvT4DuqyJBXeIOl3">事件</th><th style="width:92px" data-page-node-id="7gNTcpORiI10do4OgvtBGs">标签</th></tr></thead>
+      <tbody data-page-node-id="x5H6ACn40JZUdMbuuILwEp">
+      <tr data-page-node-id="0zdWjDRPat7j17AGbNL4sV"><td class="tm" data-page-node-id="B65cDHgohnUAXw6yHzT9Bc">收盘</td><td data-page-node-id="PH4kXYfL8q70dWLhDRYwvB"><b data-page-node-id="OFRZPjoZZsuprSMPIQDX29">上海 SC 原油收 769 元/桶（+6.44%）</b>；布油 101.21（+3.4%）、WTI 96.05（+3.3%）</td><td data-page-node-id="G8bYBZOVG1SYQDEM2Ldrb2"><span class="tag tag-up" data-page-node-id="SEELmZwTA7qdKcSZSumEDH">破百</span></td></tr>
+      <tr data-page-node-id="NjTUElbzSUVSgvuQGr2wgO"><td class="tm" data-page-node-id="AazpkWeYRdS6Ai4GpIxLvV">清晨</td><td data-page-node-id="AryHAYeyQMSs7YzE0G2Ffe">伊媒：<b data-page-node-id="wEHzAC54HikEZLprj5pyBW">伊朗锡里克地区多地遭炮弹袭击</b>；特朗普称"中期选举结束战争即终结"</td><td data-page-node-id="5B2bPcV00vTrLpG14zMf91"><span class="tag tag-up" data-page-node-id="17xzHEMzml2O79Z2Hs7a8w">冲突升级</span></td></tr>
+      <tr data-page-node-id="I60F9AVAohJYeMmpuximaZ"><td class="tm" data-page-node-id="xHEc1H4qDnywDufEnbvnFI">凌晨</td><td data-page-node-id="oT3IAnLIDYMgoYed0CCnqE">格什姆岛、贾斯克南部海域传出爆炸声；伊朗公布新的海上限制区域（延伸至恰巴哈尔）</td><td data-page-node-id="gVDwkfC1mNsiiWWEt5OyGE"><span class="tag tag-up" data-page-node-id="EQKNPLNBzSwJtith2Nfocj">地缘扩散</span></td></tr>
+      <tr data-page-node-id="e0RRSxEHrPJSlULJqzgIsW"><td class="tm" data-page-node-id="y2SP2J35BdXg9rvlTIdz8k">09:30</td><td data-page-node-id="PKLpvwzA3BV7vo9MWWEfGh"><b data-page-node-id="HOHeRGTUmom1ECaqAZhfC9">EIA 上调今明两年油价预测</b>：2026 布油 91 美元（+5%）、全球库存降 4 亿桶</td><td data-page-node-id="DZJLgvDlxAHurK7C5farUE"><span class="tag tag-up" data-page-node-id="AnPDEd85z3jvlOQvfigiPt">机构上修</span></td></tr>
+      <tr data-page-node-id="f1mDmbjRF9PSmhmyNI784b"><td class="tm" data-page-node-id="rVX4dGiX1MGDENUj0N8hmK">隔夜</td><td data-page-node-id="IzIeRFK0IT5matE6o3OPlS"><b data-page-node-id="8vli8FkuvUxm8JY6qaLX4Q">美军摧毁 5 艘伊朗油轮</b>（4 艘阿曼湾 + 1 艘哈尔克岛）；伊朗革命卫队称打击 2 艘美军舰 + 8 艘油轮</td><td data-page-node-id="8y9VdFWSnbgvFJZZimoM40"><span class="tag tag-up" data-page-node-id="g6bpOw6sH163FCC5h7FRBM">海上互袭</span></td></tr>
+      <tr data-page-node-id="NzXqpU685buOxqLxawSSKb"><td class="tm" data-page-node-id="BEvNWWOqrN5jWdpx5HLDSG">隔夜</td><td data-page-node-id="H4y0YEReAkcyfedZntVLOy"><b data-page-node-id="jXEaERBxEPwRsYLrldqe1r">胡塞武装袭击沙特 4 座城市能源设施（73 伤）</b>；沙特联军空袭也门 54 次</td><td data-page-node-id="NI3Y0Hga7LhvNxzRYGDkHn"><span class="tag tag-up" data-page-node-id="d7jtG7rcXx50rhzzeOdd2Q">沙特遭袭</span></td></tr>
+      <tr data-page-node-id="HzgFA936F6YddbqzuQBfj2"><td class="tm" data-page-node-id="Nn0F65oUfAEv5AEYpvC11x">数据</td><td data-page-node-id="CDEojgJHJm2NCWiGaFY3Xa"><b data-page-node-id="KaGfvosu22xkGcVZFQzHc2">OPEC 8 月产量 -90 万桶/日至 1,991 万桶</b>；沙特产量 698 万桶/日、出口 303 万桶/日（13 年最低）</td><td data-page-node-id="9vQY771kOo7fNDU1I3xoDD"><span class="tag tag-up" data-page-node-id="kPBlOxEa3lIRXrnOTEhgZs">供给收缩</span></td></tr>
+      <tr data-page-node-id="gOhfy0rhQSrT0inQSV4GNh"><td class="tm" data-page-node-id="4LIHCB7toKT2LhQMEfeUzb">数据</td><td data-page-node-id="6HHk8g2BTLTCD8wINfzJg1">欧洲天然气升破 80 欧元/兆瓦时（2023/1 来最高）；美国柴油 5.94 美元/加仑历史新高</td><td data-page-node-id="S57JqkL92iIl7yDm1JozRW"><span class="tag tag-up" data-page-node-id="Afyw7GRxHUkiElckOHprv8">能源外溢</span></td></tr>
+      <tr data-page-node-id="p1MzUsKFqaPlZAXsUIUUGo"><td class="tm" data-page-node-id="EYwfC6TPYLXh2bMeDLGrDb">数据</td><td data-page-node-id="Lg7HraEYZEuihmfnFCoeGD">美国 SPR 2.90 亿桶（1982 来最低）；Vortexa：海上石油较 7 月中 -1.5 亿桶</td><td data-page-node-id="dPhVlHB4rsIEQexTgAeE2u"><span class="tag tag-up" data-page-node-id="MmHmGRIfhXHlz8eMKN74B2">库存告急</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote" data-page-node-id="IdnhQhUxVoXMmYQ2zFeUCb">关键价格：布油 101.21 美元/桶（+3.4%，5/22 以来最高收盘）/ WTI 96.05 美元/桶 / 上海 SC 原油 769 元/桶（+6.44%）。</div>
+  </div>
+
+  <!-- 五、昨天参照 -->
+  <div class="card" data-page-node-id="ppjXvWuGTjHmqhnZVVuocT">
+    <h2 data-page-node-id="lkcRPSaJpcQ3dHKj93b17x"><span class="no" data-page-node-id="EovzPRkBoCBzoFp2cMDw8Z">五</span>昨天（9/9）发生了什么（背景参照）</h2>
+    <table data-page-node-id="FCQjG01nxzNtoL3aRYmpAF">
+      <thead data-page-node-id="HUX2Gzj4NUxqF8VAerQfCQ"><tr data-page-node-id="37Q2lC2Wnnro0E5hFkcmFz"><th style="width:120px" data-page-node-id="JHVkhKDfDbA5gQuqUHxhSQ">时间/事件</th><th data-page-node-id="GBufDYJdP6nphHE44ZoLZ8">内容</th></tr></thead>
+      <tbody data-page-node-id="e05zS1Je6nRLxQh2RHRbN2">
+      <tr data-page-node-id="W4FkaAYwLvRrImTr1qrrpG"><td data-page-node-id="yBq44GleJGnCcA6sTdDWvK"><b data-page-node-id="jkKfmLzXoM3rjKc7wEXjXL">美伊互袭</b></td><td data-page-node-id="rqywNsXahwC9TU7l00v6Yl">美袭哈尔克岛附近 5 艘伊朗油轮；伊朗弹道导弹打击美军 DDG-119/53 驱逐舰 + 约旦基地，另打 8 艘油轮</td></tr>
+      <tr data-page-node-id="QhdpxlZQCEIKQTKXcc9OKK"><td data-page-node-id="Z1vYNuydDmlngs2owGNyN6"><b data-page-node-id="yHJGOp0vocFwFDDlmtuhhB">布油破百</b></td><td data-page-node-id="X1M2z2cRIw4DnbGYtRWK93">布油盘中突破 100 美元（7/24 首次）报 100.44（+2.57%）、WTI 95.03；夜盘 SC +5.18%</td></tr>
+      <tr data-page-node-id="tCKLtDfCQ9OAlRZWKX3OB5"><td data-page-node-id="wtJ9dRx2FlgREb0s7tQHqD"><b data-page-node-id="KDqMIHa4R7JZ0Kdk5zdzc2">胡塞袭沙特</b></td><td data-page-node-id="Kx6Xs1OBwzwVrL1ur8ztMT">胡塞袭击沙特南部四城（艾卜哈、贾赞、奈季兰），70 多人受伤、多处能源设施起火</td></tr>
+      <tr data-page-node-id="m43i0jgzjF8yFgJA518X9Z"><td data-page-node-id="XBGzOzRfdAZgOdQEeQn9K9"><b data-page-node-id="qA5wBP2ACkjMfHZGBUy6kn">机构上修</b></td><td data-page-node-id="pKyHi7MJRYwBMQlvK2Ipv9">美银看 95-120/150、汇丰 90/85、摩根大通"永久冲突"87</td></tr>
+      </tbody>
+    </table>
+    <div class="quote" data-page-node-id="WzG1Imtps6XSGcw6uzMESO">关键参照：昨天是"美伊全面海上互袭 + 布油盘中破百"的冲突升级，今天是"胡塞再袭沙特 4 城 + 美军摧毁 5 油轮 + 布油 101.21 创 5/22 最高收盘 + EIA 集体上修"的进一步升温，地缘烈度与库存消耗同步加速。</div>
+  </div>
+
+  <!-- 六、逻辑对比 -->
+  <div class="card" data-page-node-id="8BhuGpE3v5oTODoDYkE8ni">
+    <h2 data-page-node-id="WX3QqCqiLzDq18c4B7DIhY"><span class="no" data-page-node-id="sCmixmhLQ4u6uklVIWcqlU">六</span>核心逻辑增强 vs 削弱对比</h2>
+    <table data-page-node-id="Q5JkZ5i1bm0Q4KdJEa9621">
+      <thead data-page-node-id="2wRaJ3ULPfzI6teNe3rl96"><tr data-page-node-id="YuRIOUtaNDUgrhakF3jBLW"><th data-page-node-id="b2g5uvjSmyNF1nq9kismBh">核心逻辑</th><th data-page-node-id="MzHXh8JkjUwkzlE83hac3f">9/9 状态</th><th data-page-node-id="SuC4G80Xf9TI2l5p6gXXes">9/10 状态</th><th style="width:92px" data-page-node-id="eoSWNjxhKn6DdirUS6laKB">变化</th></tr></thead>
+      <tbody data-page-node-id="NfeV5V7TEyRU92SZwEMzq0">
+      <tr data-page-node-id="OHCAa3OJdOMDWV3Nil04L2"><td data-page-node-id="WOkF9ShTCd5L2XsNgNF69P"><b data-page-node-id="SbJNzqV8BR60zhP78hpSSp">霍尔木兹地缘风险溢价</b></td><td data-page-node-id="286onVGuR2bnQPMtgFQdKW">美袭 5 油轮 + 伊打军舰/8 油轮</td><td data-page-node-id="YmvlDDc2pmxmZSvtos6YyC">胡塞袭沙特 4 城 + 美伊继续互袭 + 布油 101.21 破百</td><td data-page-node-id="xsC4YP9ywOzsb4hoSHHX1F"><span class="tag tag-up" data-page-node-id="LTQGizFcvxGY4SNk5U5qQY">增强 ↑↑</span></td></tr>
+      <tr data-page-node-id="qm0ZM1F2I3nwVwF5FogqZl"><td data-page-node-id="Bvorzuw1tqyKgZA0CbxmSx"><b data-page-node-id="leiaWtTt4PFV7Bgf3MBxyD">沙特供给侧扰动</b></td><td data-page-node-id="V6P0XLgOgIopppTyoDMpfO">沙特空袭也门、启动条约</td><td data-page-node-id="bwixIz56SDgYLnaNbsfGGV">沙特出口降至 303 万桶/日（13 年最低）、产量 -112 万桶</td><td data-page-node-id="477tDBN0gJ5S1HufuRfXlM"><span class="tag tag-up" data-page-node-id="lDPsahrkY4Fac0Ac0vlGrD">增强 ↑</span></td></tr>
+      <tr data-page-node-id="cSYHNBSuIGIq4mwkACGk9W"><td data-page-node-id="0dCw3r3T93VSDu15w8iLtL"><b data-page-node-id="VLc01CeRyiHjwDUgwzMfUu">成品油真实短缺</b></td><td data-page-node-id="cKwXTBIK0srI6bVMG5BEmz">裂解价差 105 美元/桶</td><td data-page-node-id="IiUsM7whebrIGOb3jPVYZD">柴油 5.94 历史新高、EIA 柴油 Q4 上调 14% 至 5.55</td><td data-page-node-id="6nCeBP0HJaQatvMdzmRQA1"><span class="tag tag-up" data-page-node-id="yDeaUEIfKnusuiMRlT5Hfh">增强 ↑</span></td></tr>
+      <tr data-page-node-id="sE5pThNdAbcwoIsZC0QbtH"><td data-page-node-id="wIr6WaMCa6FGI5teakhb40"><b data-page-node-id="9ptlSwtuK1sad9dTk2ThMj">运输/保险成本</b></td><td data-page-node-id="ZDaIXXVkI0zRzNbDOfxdAs">海湾保险费率 5-6%</td><td data-page-node-id="z5G3a5BKMqeepXmqpKl3j8">保险费率维持高位、暗船流量不确定性上升</td><td data-page-node-id="m4Uh42gXEKyqZy8NRYn3Up"><span class="tag tag-up" data-page-node-id="kdoQPtGGuIIFsJeqxUlNzl">增强 ↑</span></td></tr>
+      <tr data-page-node-id="eNyWG8hATlDCaFbcIC0ffn"><td data-page-node-id="1UA1cqskoFCePmhoUH3M9K"><b data-page-node-id="KuRAoBdVwhz3rTvgZE4MCr">海外机构预期</b></td><td data-page-node-id="WcE3PLGK62aGCTXjGBXJ2k">美银 150、汇丰 90、摩通 87</td><td data-page-node-id="IPdDqtTT6EakxDJEuirLcV">EIA 上调 91 美元、高盛 120 情景概率提升</td><td data-page-node-id="G2bPQi7tsM0shNbWFCQ70S"><span class="tag tag-up" data-page-node-id="U1zV9VHbiTiOeGNcCT80AS">增强 ↑</span></td></tr>
+      <tr data-page-node-id="5ucfEutMZYAfIQVO2aEwDo"><td data-page-node-id="SIvZq0RIDHipZKDEpyx7Qi"><b data-page-node-id="wCJdtD6o0JgKNzVEqOFqhd">供给收缩（OPEC）</b></td><td data-page-node-id="N7mCo0Hl0IbExUI9Lde6IV">OPEC 8 月产量下滑</td><td data-page-node-id="wmWEITYw3iIr8D8ShJNfyA">OPEC 产量 -90 万桶至 1,991 万、中东停产量 670 万桶/日</td><td data-page-node-id="f4BhJV3GaynPsUsSV0etPm"><span class="tag tag-up" data-page-node-id="AoO3K5IImi5ky0IqChVwpC">增强 ↑</span></td></tr>
+      <tr data-page-node-id="sdVkjSunimOqB2GkuDGpIQ"><td data-page-node-id="ZhHt0reGVGQyirRC1aWEGD"><b data-page-node-id="75FTl29HKeE1xb0V9PZXpb">库存消耗</b></td><td data-page-node-id="eurXlDTK6gRXQrHWvBXGQX">战略储备 1982 最低</td><td data-page-node-id="Zi5SfUiVkaPyzBqgMvGhBW">全球库存 -4 亿桶、海上石油 -1.5 亿桶、SPR 2.9 亿桶</td><td data-page-node-id="1Q8Z1X9A61HJQRN9uCAX3F"><span class="tag tag-up" data-page-node-id="s3xtF0pZboMZSrhBRAfpvF">增强 ↑</span></td></tr>
+      <tr data-page-node-id="97daLur7lh8dxbUTqeHUr0"><td data-page-node-id="2bhEBD2dqrUPUNLldjazRR"><b data-page-node-id="R2MIwDd6TKbwy9WwjClgTt">中国需求弹性</b></td><td data-page-node-id="IBIfEmwhx88tbYBnWF7OLQ">净进口同比 -30%</td><td data-page-node-id="kNfBU0q4dRXhKmRqHAPoah">9 月中国采购回暖、道明证券称"中国更积极入市"</td><td data-page-node-id="Dd4pDyCWD1k2nvennn8eLF"><span class="tag tag-up" data-page-node-id="J9wUmQObzTwBsb7Z2UErOE">增强 ↑</span></td></tr>
+      <tr data-page-node-id="2UGeqrJKa7NJV6dDYa6UWt"><td data-page-node-id="Mbciyk5vDuOvnZyzERTzdB"><b data-page-node-id="foM3xMBkHo3jUMKfVslwfF">停火/缓和信号</b></td><td data-page-node-id="vBLWqOyfTvBRdhpwY9Hrgn">美俄停火、盘中回吐</td><td data-page-node-id="1Ct3Ycae1nlB7EcC7xEU9F">特朗普称"选举后战争终结"、伊朗誓言"升级打击"</td><td data-page-node-id="ET2C2TastYYhd92j389YRB"><span class="tag tag-down" data-page-node-id="ZQ3c7oPo2Z0QAXGHU2VWf9">削弱 ↓</span></td></tr>
+      <tr data-page-node-id="49fu7HgDMNTGs5zJDwOkeq"><td data-page-node-id="aUweLRBxLumSrjIwDvXbdR"><b data-page-node-id="TXiZTawVBz686fSkmWf1EL">加息压制 vs 通胀</b></td><td data-page-node-id="ZZdcKx7WmB1gANReE6vgig">9 月加息 60%</td><td data-page-node-id="IWCdHMzganlwj5TD7Cu4uJ">加息概率 62%、美债 10Y 逼近 4.8%，油价仍破百</td><td data-page-node-id="UN4Q9hb7Cgg5eoCbVnGbz6"><span class="tag tag-neu" data-page-node-id="p3EqhMSOGbzwhFsdRAb6Jx">持平 →</span></td></tr>
+      <tr data-page-node-id="C54KAzKOUABToApVgOFduv"><td data-page-node-id="4dNHVfxxGK09O6xibg2bWl"><b data-page-node-id="72wdPb2ONBFdYd8RCKfmpl">整体净影响</b></td><td colspan="2" style="text-align:center" data-page-node-id="D8Fp3h7bem4N5CaujEFZ85">—</td><td data-page-node-id="dmgZh3Ai4SSW1uhNzO9Uq3"><span class="tag tag-strong" data-page-node-id="ZsDnwLhNBvYcB7I4wlXNlw">地缘利多 &gt;&gt; 缓和利空</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote" data-page-node-id="jANTPmTt9aES7GJTvodyxo">对比判断：昨天是"美伊海上互袭 + 布油盘中破百"，今天进一步升级为"胡塞再袭沙特 + 美军摧毁 5 油轮 + 布油 101.21 创 5/22 最高收盘 + OPEC 产量断崖 + 全球库存 4 亿桶消耗 + EIA 集体上修"；削减端（美俄停火、特朗普"选举后战争终结"）仍在但被冲突烈度与库存消耗完全覆盖，净影响显著增强。</div>
+  </div>
+
+  <!-- 七、综合结论 -->
+  <div class="card verdict" data-page-node-id="uAousfen08CiEw2G7DfMvL">
+    <h2 data-page-node-id="TOW1sAAl3qiCpLFkjKcrvz"><span class="no" data-page-node-id="FfRsuNIyFSMzH0xiCQt1tB">七</span>综合结论</h2>
+    <div class="main" data-page-node-id="ffS1p3jXvq8TtVhLDDDXta">今日原油的运行主线 = <b data-page-node-id="1kOUqK0xQSLrpWxSpLl2ty">美伊海上互袭 + 胡塞袭沙特双线升级</b>（美摧毁 5 油轮、伊打军舰/油轮、胡塞袭 4 城）+ 布油 101.21 创 5/22 最高收盘 + OPEC 产量断崖下滑 + 全球库存以战争速度消耗 + <b data-page-node-id="2JCGDmda4ACNqajUlMp7u3">海外机构集体上修</b>。</div>
+    <ul data-page-node-id="gJpBeChYUL7kp7j6q722hC">
+      <li data-page-node-id="oxJVPrfeUjEBCQ92QUuUuG"><span class="k" data-page-node-id="AG31G5MKHd2cQOk8qCUjJj">方向</span>：地缘溢价 + 库存消耗双主导，强势看多；布油站稳 100 上方，海外机构目标价向 90-120 上修。</li>
+      <li data-page-node-id="Jlv6JiDlMnMnB49UHgNvmp"><span class="k" data-page-node-id="pvxIHX22159Qiuc0AGOEE9">海外机构共识</span>：成品油/天然气比原油更短缺——高盛建议<b data-page-node-id="k6WfB0TythN2VTBUwzKJEy">做多天然气/柴油而非原油</b>、EIA 柴油 Q4 上调 14%；但摩根大通提示"永久冲突"情景下明年均价也仅 87 美元。</li>
+      <li data-page-node-id="REsYO1vqC433PthNWMbQBV"><span class="k" data-page-node-id="lRg9WjU9EnevZoFg4cn4OG">星球视角（小牛）</span>：自 8 月下旬"完全是原油多头"，看 Q4 冲 <b class="gold" data-page-node-id="6efh2uwPBqJjFq5AqCtV9b">110 美元</b>，核心是 OECD 战略储备不够；刘煜辉提示短线"海峡最后一博"偏强但中长期"去油化"是天花板，勿做长线多油。</li>
+      <li data-page-node-id="TGNPcCAtZ8IwA7M7wjdHBv"><span class="k" data-page-node-id="HyC5bsdU9l0p2sV8d5ZCOf">期权视角（Orange）</span>：隐波存在<b class="gold" data-page-node-id="GArVYNijs6mRCDmwCuYcyd">定价错误</b>，倾向双买原油 + 双卖 LPG/沥青的波动率套利，而非裸多方向。</li>
+      <li data-page-node-id="gdEzXnNeAe5PFxYxAEzPeD"><span class="k" data-page-node-id="19KjNXOGPgcdoH6vYr7ti9">风险点</span>：短线高度依赖地缘事件，可被"停火/协议"瞬间回吐（特朗普"选举后战争终结"言论已现）；9/15-16 美联储议息（加息 62%）、美债 10Y 逼近 4.8% 压制；CPI 若超预期 → 加息 → 美元走强 → 油价回吐。</li>
+      <li data-page-node-id="HMzeBcTEuFD1mVzNGYV7dq"><span class="k" data-page-node-id="YFF2awL7sb5q3TeyiMHOQq">下周关键</span>：美伊是否进一步互袭出口设施与军舰、胡塞是否再袭沙特、伊朗-阿曼协议是否签署、周五美国 CPI、EIA/API 原油库存。</li>
+      <li data-page-node-id="iD1JqDyF1Bm8AKRM3yk2Dc"><span class="k" data-page-node-id="DCQJsehZYKHL0XENFS9a2o">操作倾向</span>：地缘事件型交易，严控仓位 + 紧盯新闻流；趋势上顺势偏多，但不在 101 美元上方追多。</li>
+    </ul>
+  </div>
+
+  <div class="footer" data-page-node-id="GmWppmP2NQDK5B4sMbYg5l">生成时间：2026-09-10 21:00 · 数据截止 20:30<br data-page-node-id="sR6zm9hj25I9AWvOsGoFm2">数据源：华尔街见闻 · market-delta 实时快讯 · Wind 财经新闻（海外机构观点） · 知识星球（小牛研报纪要 / Orange 期权 / 刘煜辉之宏观高维）</div>
+</div>
+</body>
+</html>

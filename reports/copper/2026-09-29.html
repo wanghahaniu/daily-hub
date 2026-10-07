@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>铜市日报 · 2026-09-29</title>
+<style>
+  :root{
+    --bg:#0f141b; --bg-grad:#0b0f16; --panel:#151c26; --panel2:#1a2230; --border:#242e3c;
+    --txt:#e9edf4; --sub:#98a4b6; --muted:#667184;
+    --up:#e5484d; --down:#2fb875; --orange:#f5a623; --accent:#f5a623; --gold:#e8b84b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:radial-gradient(1200px 600px at 50% -100px, #26221a 0%, var(--bg-grad) 55%);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; padding:40px 20px 70px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{text-align:center;margin-bottom:34px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:10px}
+  .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.5}
+  header h1{font-size:34px;font-weight:800;letter-spacing:1px;color:var(--txt);margin-bottom:6px}
+  header h1 .dot{color:var(--orange)}
+  header .src{color:var(--sub);font-size:12.5px;line-height:1.9}
+  header .src .pill{display:inline-block;padding:1px 9px;border-radius:20px;background:rgba(245,166,35,.12);color:var(--orange);border:1px solid rgba(245,166,35,.3);font-size:11px;margin:0 3px}
+
+  .hero{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+  .hero .kpi{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 22px;text-align:center;min-width:150px;flex:1;transition:transform .18s ease,border-color .18s ease}
+  .hero .kpi:hover{transform:translateY(-3px);border-color:var(--orange)}
+  .hero .kpi .v{font-size:24px;font-weight:800;color:var(--up);letter-spacing:.5px}
+  .hero .kpi .v.orange{color:var(--orange)}
+  .hero .kpi .l{font-size:12px;color:var(--sub);margin-top:4px}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.22)}
+  .card h2{font-size:18px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+  .card h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#f5a623,#d88a0e);color:#1a1206;font-size:14px;font-weight:800;box-shadow:0 2px 8px rgba(245,166,35,.3)}
+  .card h2 .hint{font-size:11.5px;color:var(--muted);font-weight:400;margin-left:auto}
+
+  .reason{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;padding:12px 14px;border-radius:11px;background:var(--panel2);border:1px solid transparent;transition:border-color .15s}
+  .reason:hover{border-color:var(--border)}
+  .reason .idx{flex:0 0 28px;height:28px;border-radius:8px;background:rgba(245,166,35,.16);color:var(--orange);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+  .reason .txt{font-size:14.5px;color:#d2d9e4}
+  .reason .txt b{color:var(--orange)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  thead th{color:var(--sub);font-weight:600;background:var(--panel2);font-size:12px;letter-spacing:.3px;position:sticky;top:0}
+  tbody tr{transition:background .12s}
+  tbody tr:hover{background:rgba(255,255,255,.02)}
+  td b{color:var(--txt)}
+  td .tm{font-variant-numeric:tabular-nums;color:var(--sub)}
+
+  .tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;font-weight:600;white-space:nowrap;line-height:1.5}
+  .tag-up{background:rgba(229,72,77,.14);color:#ff7a7e;border:1px solid rgba(229,72,77,.42)}
+  .tag-down{background:rgba(47,184,117,.14);color:#4fd699;border:1px solid rgba(47,184,117,.42)}
+  .tag-neu{background:rgba(152,164,182,.12);color:var(--sub);border:1px solid var(--border)}
+  .tag-strong{background:rgba(229,72,77,.22);color:#ff7a7e;border:1px solid var(--up);font-weight:700}
+  .tag-gold{background:rgba(232,184,75,.14);color:var(--gold);border:1px solid rgba(232,184,75,.4)}
+
+  .quote{border-left:4px solid var(--orange);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#c9d0dc;margin:16px 0 4px}
+  .quote b{color:var(--orange)}
+  .quote.gold{border-left-color:var(--gold)}
+  .quote.gold b{color:var(--gold)}
+
+  .inst-card{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;border-radius:11px;background:var(--panel2);border:1px solid var(--border);margin-bottom:12px}
+  .inst-card .org{flex:0 0 130px;font-size:13px;font-weight:800;color:var(--orange);line-height:1.5}
+  .inst-card .org .d{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+  .inst-card .view{font-size:13.5px;color:#d2d9e4}
+  .inst-card .view b{color:var(--orange)}
+
+  .zsxq{display:flex;flex-direction:column;gap:14px}
+  .z-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative}
+  .z-card .z-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .z-card .z-badge{font-size:11px;font-weight:700;padding:3px 11px;border-radius:6px;background:rgba(232,184,75,.16);color:var(--gold);border:1px solid rgba(232,184,75,.35);letter-spacing:.5px}
+  .z-card .z-group{font-size:13px;font-weight:700;color:var(--txt)}
+  .z-card .z-time{font-size:11px;color:var(--muted);margin-left:auto}
+  .z-card p{font-size:13.5px;color:#ccd4e0;line-height:1.8}
+  .z-card p b{color:var(--gold)}
+  .z-card p .c-blue{color:#54a8ff}
+
+  .verdict{background:linear-gradient(135deg,#1a2230,#141a24);border:1px solid #2a3550}
+  .verdict .main{font-size:15.5px;font-weight:700;color:var(--txt);margin-bottom:16px;padding:16px 18px;background:var(--panel2);border-radius:11px;border-left:4px solid var(--orange);line-height:1.8}
+  .verdict .main b{color:var(--orange)}
+  .verdict ul{padding-left:4px;font-size:13.5px;color:#c9d0dc;list-style:none}
+  .verdict li{margin-bottom:11px;padding-left:22px;position:relative;line-height:1.75}
+  .verdict li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--orange)}
+  .verdict li b{color:var(--up)}
+  .verdict li b.down{color:var(--down)}
+  .verdict li b.gold{color:var(--gold)}
+  .verdict li .k{font-weight:700;color:var(--txt)}
+
+  .footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:14px;line-height:1.9}
+
+  @media (max-width:640px){
+    body{padding:24px 12px 50px}
+    .card{padding:20px 16px}
+    header h1{font-size:26px}
+    .hero .kpi{min-width:130px;padding:12px 14px}
+    .hero .kpi .v{font-size:20px}
+    .inst-card .org{flex-basis:90px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Copper Daily</div>
+    <h1>铜市日报<span class="dot"> · </span>2026.09.29</h1>
+    <div class="src">
+      <span class="pill">华尔街见闻</span><span class="pill">market-delta 实时快讯</span><span class="pill">Wind 海外机构</span><span class="pill">知识星球</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="kpi"><div class="v orange">$14,478</div><div class="l">伦铜隔夜收盘（-1.05%）</div></div>
+    <div class="kpi"><div class="v orange">109,260</div><div class="l">沪铜主力（-0.16%）</div></div>
+    <div class="kpi"><div class="v orange">$22,050</div><div class="l">德银 2027Q2 目标价</div></div>
+    <div class="kpi"><div class="v orange">$15,000</div><div class="l">海外机构目标价中枢</div></div>
+  </div>
+
+  <!-- 一、核心结论 -->
+  <div class="card">
+    <h2><span class="no">一</span>核心结论：今日看多铜的 5 个最核心理由</h2>
+    <div class="reason"><div class="idx">1</div><div class="txt"><b>德银超级看多接力"流动性危机"主线</b>——德银分析师 Daniel Ghali 9/28 喊出 2027Q2 铜价 <b>22,050 美元/吨（较当前 +50%）</b>，2027 年均价 20,900、2028 年 18,500；核心逻辑从"矿山供应瓶颈"转向"自由流通库存枯竭"——美国囤铜（年底约 130 万吨锁定美仓）+ 亚洲补库，若趋势延续 2028 年底可自由流通现货或接近归零，"历史性金属争夺战"。</div></div>
+    <div class="reason"><div class="idx">2</div><div class="txt"><b>矿端供应约束再加码</b>——智利 Centinela 铜矿罢工风险上升、Escondida 事故后罢工预期升温；ICSG 数据显示上半年全球铜精矿产量同比 -13 万吨；Sprott 预警 2026 年全球矿产铜将现 2017 年以来首次年度萎缩；TC 持续下行、硫酸价格连降，冶炼转入亏损叠加检修，国内精铜产量恢复偏慢。</div></div>
+    <div class="reason"><div class="idx">3</div><div class="txt"><b>库存持续去化、现货升水仍在高位</b>——上期所仓单与 LME 铜库存同步回落并维持年内低位（LME 铜库存 251,350 吨）；长江现货 1#铜 111,570 元/吨仍显著高于期价，升水结构支撑价格。</div></div>
+    <div class="reason"><div class="idx">4</div><div class="txt"><b>中美经贸缓和与关税决策窗口共振</b>——第八轮中美经贸磋商落地"300 亿对 300 亿"对等降税（超 90% 产品免加征关税）；美国精炼铜关税进入最后决策窗口期，一旦落地或兑现，关税虹吸逻辑（COMEX-LME 溢价）可能再度强化。</div></div>
+    <div class="reason"><div class="idx">5</div><div class="txt"><b>机构目标价中枢上移、分歧只在于时点</b>——花旗 3 个月 14,500/年内 15,000、瑞银 2027 缺口 37.9 万吨（较 2026 的 21.9 万吨 +73%）看 15,000、德银 22,050 为最激进；分歧不在"缺不缺"，而在"自由流通库存枯竭 vs 高价诱发铝替代"的速度。</div></div>
+  </div>
+
+  <!-- 二、海外机构观点 -->
+  <div class="card">
+    <h2><span class="no">二</span>近 5 天海外机构观点 <span class="hint">Wind 财经新闻</span></h2>
+    <div class="inst-card"><div class="org">德意志银行<span class="d">Daniel Ghali · 9/28</span></div><div class="view">2027Q2 铜价 <b>22,050 美元</b>（+50%），"历史性金属争夺战"；2027 均价 20,900、2028 年 18,500；主线从"需求繁荣"转向"流动性危机"。</div></div>
+    <div class="inst-card"><div class="org">花旗<span class="d">9/22</span></div><div class="view">3 个月目标 <b>14,500 美元</b>、年内看向 15,000；供应约束主导定价，矿山供应风险 + 废铜疲软继续支撑。</div></div>
+    <div class="inst-card"><div class="org">瑞银<span class="d">9/26</span></div><div class="view">2027 缺口上调至 <b>37.9 万吨</b>（较 2026 的 21.9 万吨 +73%），12 月看 15,000 美元。</div></div>
+    <div class="inst-card"><div class="org">美银 BofA<span class="d">9/26</span></div><div class="view">上调 2026 铜均价 11% 至 <b>11,313 美元/吨</b>，理由为矿端大面积扰动。</div></div>
+    <div class="inst-card"><div class="org">高盛<span class="d">9/26</span></div><div class="view">维持 2026 年底 <b>13,735 美元/吨</b>；下修矿山供应 35 万吨、非美缺口 64 万吨。</div></div>
+    <div class="inst-card"><div class="org">摩根士丹利<span class="d">9/26</span></div><div class="view">2027 年缺口约 <b>60 万吨</b>；矿山产量持平或略降。</div></div>
+    <div class="quote gold">海外机构共识：目标价中枢从"15,000-15,500"上移至 <b>15,000-22,050 美元</b>（德银为超级看多极端值），共识转向"自由流通库存流动性危机"，分歧仅在于高价何时触发铝替代、以及 2027 年缺口收敛速度。</div>
+  </div>
+
+  <!-- 三、知识星球深度观点 -->
+  <div class="card">
+    <h2><span class="no">三</span>知识星球深度观点 <span class="hint">近期时效</span></h2>
+    <div class="zsxq">
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">小牛研报纪要</span><span class="z-group">长江金属：铜难趋势下行、长期中枢上行</span><span class="z-time">9/26（9/27发布）</span></div>
+        <p>短期加息预期升温压制铜铝，但"本轮美国通胀更多源自供给矛盾导致的<b>『油通胀』</b>，与需求景气相关度存疑，一旦美伊冲突结束，通胀预期便可缓和"；"铜关税 + 基本面支撑下，铜铝商品亦难趋势下行"。长期"逆全球化下各国资源争夺加剧，铜铝周期节奏未改、<b>价格中枢上行</b>"，权益端"立足长远、择机布局"。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">刘煜辉之宏观高维</span><span class="z-group">铜短线交易"需求衰退"</span><span class="z-time">中长期框架</span></div>
+        <p>铜短线交易的是<b>供给冲击下的需求衰退</b>，尤其是美国 AI 基建 capex 坍塌的可能——短线几乎与油<b>强负相关</b>，若 AI capex 承压，铜价阶段性回撤风险需警惕。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">Orange 期权</span><span class="z-group">节前效应、高位观望</span><span class="z-time">9/28</span></div>
+        <p>原油如期大降波、波动率套利兑现；有色板块暂无当日新策略，沿用"<b>高位先观望</b>"基调（需结合节前效应）。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、今日实时快讯 -->
+  <div class="card">
+    <h2><span class="no">四</span>今日（9/29）实时快讯与时间线 <span class="hint">数据截止 18:00</span></h2>
+    <table>
+      <thead><tr><th style="width:70px">时间</th><th>事件</th><th style="width:92px">标签</th></tr></thead>
+      <tbody>
+      <tr><td class="tm">全天</td><td>德银：2027Q2 铜价 <b>22,050 美元</b>、进入"历史性金属争夺战"，自由流通库存或 2028 年底枯竭</td><td><span class="tag tag-up">机构超级看多</span></td></tr>
+      <tr><td class="tm">隔夜</td><td>伦铜收 <b>14,478 美元/吨（-1.05%）</b>、COMEX 期铜 6.566 美元/磅（-1.93%）、沪铜主力 109,260 元/吨（-0.16%）</td><td><span class="tag tag-down">高位回调</span></td></tr>
+      <tr><td class="tm">隔夜</td><td>ICSG：上半年全球铜精矿产量同比 -13 万吨，精炼铜过剩约 11.4 万吨（较去年收窄）</td><td><span class="tag tag-up">供应趋紧</span></td></tr>
+      <tr><td class="tm">早评</td><td>SHMET：智利 <b>Centinela 铜矿罢工风险上升</b>、国常会提出研究储备提振内需政策举措</td><td><span class="tag tag-up">供应扰动</span></td></tr>
+      <tr><td class="tm">早评</td><td>国信期货：市场避险情绪较高，铜价延续回调；长假前下游备货进入尾声、刚需采购为主、高升水下移</td><td><span class="tag tag-down">节前避险</span></td></tr>
+      <tr><td class="tm">早评</td><td>全球三大交易所铜库存合计 100.74 万吨，显性库存仍偏高；上期所仓单与 LME 库存维持年内低位</td><td><span class="tag tag-neu">库存分化</span></td></tr>
+      <tr><td class="tm">宏观</td><td>中美第八轮经贸磋商落地"300 亿对 300 亿"对等降税，美国精炼铜关税进入最后决策窗口</td><td><span class="tag tag-gold">关税窗口</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键价格：伦铜 LME 三月合约 <b>$14,478/吨</b>（-1.05%，高位震荡）；长江现货 1#铜 111,570 元/吨仍显著升水。</div>
+  </div>
+
+  <!-- 五、昨天参照 -->
+  <div class="card">
+    <h2><span class="no">五</span>昨天（9/28）发生了什么（背景参照）</h2>
+    <table>
+      <thead><tr><th style="width:120px">时间/事件</th><th>内容</th></tr></thead>
+      <tbody>
+      <tr><td><b>德银超级看多</b></td><td>德银 Ghali 9/28 电邮报告：2027Q2 铜价 22,050 美元（+50%），可立即获得库存降至"前所未有的低位"，主线"从需求繁荣转向流动性危机"</td></tr>
+      <tr><td><b>美股盘前</b></td><td>美股三大股指期货齐跌，英伟达宣布回购授权增加 1500 亿美元（至 2350 亿）；10Y 美债 5.23%、30Y 5.53% 续创 2007/2004 新高</td></tr>
+      <tr><td><b>沙特管道</b></td><td>沙特东西向输油管道完成修复、输送量约 350 万桶/日，海外原油发运恢复</td></tr>
+      <tr><td><b>调解会谈</b></td><td>调解方本周将分别与美国、伊朗会谈，聚焦伊朗联大间隙提出的"7 天提案"修订版</td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键参照：昨天铜主线是"德银超级看多 + 美债收益率创新高压制风险资产"，今日延续为"高位震荡回调 + 长假前避险减仓"，同一高位区间内的消化整固，而非趋势反转。</div>
+  </div>
+
+  <!-- 六、逻辑对比 -->
+  <div class="card">
+    <h2><span class="no">六</span>核心逻辑增强 vs 削弱对比</h2>
+    <table>
+      <thead><tr><th>核心逻辑</th><th>9/28 状态</th><th>9/29 状态</th><th style="width:92px">变化</th></tr></thead>
+      <tbody>
+      <tr><td><b>自由流通库存流动性危机</b></td><td>德银首次喊出"库存枯竭"</td><td>德银 22,050 目标价持续发酵、被市场热议</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>矿端供应约束</b></td><td>Escondida 事故、TC 历史新低</td><td>Centinela 罢工风险上升、ICSG 精矿 -13 万吨</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>机构目标价上修</b></td><td>德银 22,050 独家喊出</td><td>花旗/瑞银/美银/高盛/大摩集体锚定 15,000-22,050</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>关税虹吸</b></td><td>关税决策窗口临近</td><td>中美 300 亿对等降税落地、关税决策窗口逼近</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>长假避险减仓</b></td><td>高升水高位</td><td>备货尾声、高升水下移、减仓 1000 余手</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>宏观逆风（美债/美元）</b></td><td>10Y 5.23% 新高</td><td>10Y 5.24% 续创 2007 新高、美元 101、10 月加息 70%</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>高价诱发铝替代</b></td><td>德银预警"终将发生"</td><td>当前价格尚不足以触发大规模替代</td><td><span class="tag tag-neu">持平 →</span></td></tr>
+      <tr><td><b>整体净影响</b></td><td colspan="2" style="text-align:center">—</td><td><span class="tag tag-strong">供给约束 &gt; 宏观逆风，高位震荡</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">对比判断：昨日市场刚进入"德银超级看多"的发酵期，今天已经推进到"机构目标价集体上修 + Centinela 罢工风险 + ICSG 精矿减产"的验证阶段；供给端逻辑（库存枯竭、矿端约束、机构上修、关税窗口）全面加强，唯一转弱的是长假前避险减仓与宏观逆风（美债 2007 新高、10 月加息 70%），铜价呈"高位震荡、供给约束 &gt; 宏观逆风"格局。</div>
+  </div>
+
+  <!-- 七、综合结论 -->
+  <div class="card verdict">
+    <h2><span class="no">七</span>综合结论</h2>
+    <div class="main">今日铜的运行主线 = <b>德银"流动性危机"超级看多接力</b> + 矿端供应约束持续兑现（Centinela/Escondida 罢工风险）+ 长假前避险减仓构成高位震荡。</div>
+    <ul>
+      <li><span class="k">方向</span>：高位震荡偏强，短期回调整固不改上行趋势；伦铜 14,478 仍处历史高位区。</li>
+      <li><span class="k">海外机构共识</span>：目标价中枢 15,000-22,050（德银极端值），共识从"缺口大小"转向"自由流通库存枯竭速度"。</li>
+      <li><span class="k">星球视角</span>：小牛-长江金属"油通胀不具需求基础、铜难趋势下行、长期中枢上行"；刘煜辉"短线铜交易需求衰退、与油强负相关"。</li>
+      <li><span class="k">风险点</span>：长假前减仓避险、美债收益率 2007 新高 + 10 月加息 70%、高价诱发铝替代、关税决策若不及预期。</li>
+      <li><span class="k">下周关键</span>：美国精炼铜关税决策落地与否、国庆长假后国内复市表现、美联储 10 月加息路径。</li>
+      <li><span class="k">操作倾向</span>：多单底仓持有，节前适当减仓规避长假风险，回调不破关键支撑视为健康调整。</li>
+    </ul>
+  </div>
+
+  <div class="footer">生成时间：2026-09-29 18:00 · 数据截止 18:00<br>数据源：华尔街见闻 · market-delta 实时快讯 · Wind 财经新闻（海外机构观点） · 知识星球（小牛研报纪要 / 刘煜辉之宏观高维 / Orange 期权）</div>
+</div>
+</body>
+</html>

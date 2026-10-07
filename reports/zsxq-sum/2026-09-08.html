@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日市场分析笔记 · 2026-09-08</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: #f4f5fb;
+    color: #1f2330;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+    background: #f4f5fb;
+  }
+
+  /* ===== Header ===== */
+  .header {
+    background: linear-gradient(135deg, #5b3df5 0%, #8a5cf6 50%, #a16bff 100%);
+    color: #fff;
+    padding: 28px 24px 24px 24px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 6px 20px rgba(91, 61, 245, 0.18);
+  }
+  .header .label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    margin-bottom: 6px;
+  }
+  .header h1 {
+    margin: 0 0 6px 0;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 14px;
+    opacity: 0.92;
+    margin-bottom: 14px;
+  }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chip {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  /* ===== Summary Banner ===== */
+  .summary {
+    margin: -18px 16px 0 16px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px 18px;
+    box-shadow: 0 6px 18px rgba(31,35,48,0.06);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .summary .sum-item {
+    flex: 1 1 30%;
+    text-align: center;
+    min-width: 90px;
+  }
+  .summary .num {
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #5b3df5, #a16bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .summary .desc {
+    font-size: 12px;
+    color: #6b7185;
+    margin-top: 2px;
+  }
+
+  /* ===== Section ===== */
+  .section {
+    margin: 24px 16px 0 16px;
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1f2330;
+    margin: 0 0 12px 0;
+  }
+  .section-title .emoji {
+    font-size: 22px;
+  }
+  .section-title .tag {
+    font-size: 11px;
+    font-weight: 600;
+    background: #ebe3ff;
+    color: #5b3df5;
+    padding: 3px 8px;
+    border-radius: 8px;
+    margin-left: auto;
+  }
+
+  /* ===== Card ===== */
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 14px rgba(31,35,48,0.05);
+  }
+  .card h3 {
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2330;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card .source {
+    font-size: 11px;
+    color: #8b91a5;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #e5e7f1;
+    padding-bottom: 8px;
+  }
+  .card .source .planet {
+    display: inline-block;
+    background: #f0eaff;
+    color: #5b3df5;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .card .source .time {
+    color: #8b91a5;
+  }
+  .card p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #2d3144;
+  }
+  .card ul {
+    margin: 8px 0;
+    padding-left: 18px;
+  }
+  .card ul li {
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #2d3144;
+  }
+  .card strong {
+    color: #5b3df5;
+    font-weight: 700;
+  }
+  .highlight {
+    background: linear-gradient(transparent 60%, #fff39b 60%);
+    font-weight: 600;
+    padding: 0 2px;
+  }
+
+  /* ===== Big Stat Cards ===== */
+  .stat-row {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  .stat-card {
+    flex: 1 1 30%;
+    background: linear-gradient(135deg, #f6f3ff, #ffffff);
+    border: 1px solid #e7e2ff;
+    border-radius: 12px;
+    padding: 12px 10px;
+    text-align: center;
+    min-width: 90px;
+  }
+  .stat-card .num {
+    font-size: 22px;
+    font-weight: 800;
+    color: #5b3df5;
+  }
+  .stat-card .unit {
+    font-size: 12px;
+    color: #6b7185;
+    margin-top: 2px;
+  }
+  .stat-card.warn .num { color: #e94848; }
+  .stat-card.warn { background: linear-gradient(135deg, #fff3f3, #ffffff); border-color: #ffd6d6; }
+  .stat-card.up .num { color: #d9534f; }
+  .stat-card.up { background: linear-gradient(135deg, #fff5f5, #ffffff); border-color: #ffd6d6; }
+  .stat-card.down .num { color: #2a9d4a; }
+  .stat-card.down { background: linear-gradient(135deg, #f3fff6, #ffffff); border-color: #d6f5e1; }
+
+  /* ===== Bull vs Bear ===== */
+  .bullbear {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  .bullbear .col {
+    flex: 1;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .bullbear .bull {
+    background: linear-gradient(180deg, #fff5f5, #ffe5e5);
+    border-left: 4px solid #e94848;
+    color: #4a1212;
+  }
+  .bullbear .bear {
+    background: linear-gradient(180deg, #f3fff6, #e0f7e6);
+    border-left: 4px solid #2a9d4a;
+    color: #11331e;
+  }
+  .bullbear h4 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .bullbear ul { margin: 0; padding-left: 16px; }
+  .bullbear li { margin: 3px 0; font-size: 12.5px; }
+
+  /* ===== Timeline ===== */
+  .timeline {
+    margin: 10px 0;
+    padding-left: 8px;
+    border-left: 3px solid #ebe3ff;
+  }
+  .timeline .event {
+    position: relative;
+    padding: 6px 0 10px 18px;
+    font-size: 13.5px;
+    color: #2d3144;
+  }
+  .timeline .event:before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #5b3df5;
+    box-shadow: 0 0 0 3px #f4f5fb;
+  }
+  .timeline .event .time {
+    color: #8b91a5;
+    font-size: 12px;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+
+  /* ===== Numbered Steps ===== */
+  .steps {
+    counter-reset: step;
+    margin: 8px 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 6px 0 6px 36px;
+    font-size: 13.5px;
+    color: #2d3144;
+    line-height: 1.65;
+  }
+  .steps li:before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #5b3df5, #a16bff);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 26px;
+  }
+
+  /* ===== Quote ===== */
+  .quote {
+    border-left: 3px solid #5b3df5;
+    padding: 6px 12px;
+    margin: 10px 0;
+    font-size: 13px;
+    color: #4a4e63;
+    background: #f6f3ff;
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* ===== Bottom Quadrant ===== */
+  .quadrant {
+    margin: 32px 16px 0 16px;
+    background: linear-gradient(135deg, #5b3df5 0%, #8a5cf6 50%, #a16bff 100%);
+    border-radius: 20px;
+    padding: 22px 18px;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(91,61,245,0.28);
+  }
+  .quadrant h2 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .quadrant .sub {
+    font-size: 12px;
+    opacity: 0.85;
+    margin-bottom: 14px;
+  }
+  .quad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .quad-item {
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 12px;
+    padding: 12px 12px;
+    backdrop-filter: blur(4px);
+  }
+  .quad-item h4 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    font-weight: 700;
+    opacity: 0.95;
+  }
+  .quad-item p {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+    opacity: 0.95;
+  }
+
+  /* ===== Footer note ===== */
+  .footer {
+    text-align: center;
+    color: #8b91a5;
+    font-size: 11px;
+    margin: 24px 16px 0 16px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="label">KNOWLEDGE PLANET · DAILY DIGEST</div>
+    <h1>📊 今日市场分析笔记</h1>
+    <div class="date">2026 年 9 月 8 日 · 周二 · 17:00 自动生成</div>
+    <div class="chips">
+      <span class="chip">#AI半导体</span>
+      <span class="chip">#光模块</span>
+      <span class="chip">#宏观策略</span>
+      <span class="chip">#商品期权</span>
+      <span class="chip">#研报纪要</span>
+      <span class="chip">#全球财经</span>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <div class="sum-item">
+      <div class="num">6</div>
+      <div class="desc">已开通权限星球</div>
+    </div>
+    <div class="sum-item">
+      <div class="num">51+</div>
+      <div class="desc">抓取最新帖</div>
+    </div>
+    <div class="sum-item">
+      <div class="num">5</div>
+      <div class="desc">主题分组</div>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- SECTION 1: AI 半导体 / 光模块 -->
+  <!-- ============================= -->
+  <div class="section">
+    <h2 class="section-title">
+      <span class="emoji">🧠</span> AI 半导体与光通信
+      <span class="tag">研报平权 · 404K Semi-Ai</span>
+    </h2>
+
+    <!-- Card: 中际旭创 -->
+    <div class="card">
+      <h3>🛰️ 中际旭创：业绩大爆发，估值跑赢 CPO 变革的关键期</h3>
+      <div class="source">
+        <span class="planet">研报平权</span>
+        <span class="time">2026-09-08 12:20</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">417.78</div><div class="unit">亿元 H1 营收</div></div>
+        <div class="stat-card up"><div class="num">+182%</div><div class="unit">同比</div></div>
+        <div class="stat-card warn"><div class="num">3267</div><div class="unit">港元 高盛H股目标</div></div>
+      </div>
+
+      <ul>
+        <li>2026H1 营收 <strong>417.78 亿</strong>（同比 +182.49%），归母净利 <strong>136.51 亿</strong>（+241.70%），AI 数据中心 800G / 1.6T 高速光模块加速放量。</li>
+        <li>综合均价从 2025 年的 <strong>245 美元/只</strong>跳升至 2026 年的 <strong>566 美元/只</strong>，老规格单价下滑被高端放量完全抵消。</li>
+        <li>大摩目标价 <strong>1205 元</strong>，2026 / 2028 净利预测 343 亿 / 922 亿；高盛首次覆盖 H 股，给予 <strong>"买入"</strong>评级，目标价 <strong>3267 港元</strong>。</li>
+        <li>风险点：基准情景 CPO 大规模应用在 2027H2-2028；<span class="highlight">悲观情景若 2027H1 提前替代</span>，模块降价快于成本降幅将吃掉毛利。</li>
+      </ul>
+    </div>
+
+    <!-- Card: CPO + HDD + 存储 -->
+    <div class="card">
+      <h3>🔬 半导体产业链：从存储涨价到算力网络的利润兑现</h3>
+      <div class="source">
+        <span class="planet">研报平权 / 404K Semi-Ai</span>
+        <span class="time">2026-09-08 10:00~16:59</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card"><div class="num">+15%</div><div class="unit">HDD Q3 涨幅</div></div>
+        <div class="stat-card up"><div class="num">+259%</div><div class="unit">DRAM 7月均价同比</div></div>
+        <div class="stat-card up"><div class="num">+344%</div><div class="unit">NAND 7月均价同比</div></div>
+      </div>
+
+      <ul>
+        <li><strong>CPO 正式进入量产</strong>：Insertion 1 测试单颗耗时超 10 分钟，Insertion 2 测试系统造价数百万美元，电-光混合键合带来 30 分钟级测试时间。</li>
+        <li><strong>HDD 创历史新高</strong>：希捷、西数全年基本售罄，DIY 玩家最先感受供应紧张；NAND 产能转 AI/HBM 推升 SSD 价格。</li>
+        <li><strong>闪迪长协锁定</strong>：8 份长单锁住 2027 财年 50% / 2028 财年 66% 出货量，毛利率 ≥80%；花旗给 9x PE，目标价 <strong>2100 美元</strong>；Q4 毛利率指引 83-85%。</li>
+        <li><strong>三星 60-70% 产能纳入绑定**</strong>，含定金 + 保底价 + 提货承诺，对冲降价周期。</li>
+        <li><strong>WSTS 7 月半导体销售 1420 亿</strong>，环比 -10% 全部来自存储出货波动（DRAM/NAND 比特出货 -23%/-22%），剔除存储后环比持平；2026E 1.73 万亿、2027E 突破 2 万亿美元。</li>
+      </ul>
+    </div>
+
+    <!-- Card: 英特尔 + 三星 + CPU TAM -->
+    <div class="card">
+      <h3>🏭 High-NA EUV：英特尔 / 三星竞速，12 英寸光掩模时代</h3>
+      <div class="source">
+        <span class="planet">404K Semi-Ai</span>
+        <span class="time">2026-09-08 16:29 · 16:49</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">100万+</div><div class="unit">片英特尔 High-NA 晶圆</div></div>
+        <div class="stat-card"><div class="num">2370亿$</div><div class="unit">2030 CPU TAM</div></div>
+        <div class="stat-card warn"><div class="num">+73%</div><div class="unit">CPU TAM 上调</div></div>
+      </div>
+
+      <ul>
+        <li>英特尔 High-NA 处理晶圆从 2025/2 月 3 万片增至 2026/9 月 <strong>100 万+ 片</strong>，超过阿斯麦全部其他 High-NA 机台总和。</li>
+        <li>英特尔主推 <strong>6×12 英寸光掩模</strong>，恢复单次曝光 26×33mm 全视场，扭转 6×6 拼接带来的 175 → 125 wph 吞吐下降。</li>
+        <li>三星加入 ASML 大尺寸光掩模联盟，目标 <strong>2028 年实现 High-NA DRAM</strong>，存储行业首例。</li>
+        <li>花旗将 2030 年 CPU TAM 从 <strong>1370 亿</strong>上调至 <strong>2370 亿美元</strong>（CAGR 52%），其中 Agentic CPU 1230 亿占 52%；AMD / Arm 出货量 CAGR 31% / 26%。</li>
+      </ul>
+    </div>
+
+    <!-- Card: OpenAI vs Anthropic IPO + SaaS -->
+    <div class="card">
+      <h3>💼 AI 资本运作：OpenAI / Anthropic 抢投资级评级，SaaS 反而逆袭</h3>
+      <div class="source">
+        <span class="planet">404K Semi-Ai</span>
+        <span class="time">2026-09-08 16:17 · 16:26</span>
+      </div>
+
+      <div class="bullbear">
+        <div class="bull col">
+          <h4>📈 多头：SaaS 抢 SI 份额</h4>
+          <ul>
+            <li>每位员工营收（SaaS）大幅跃升</li>
+            <li>Persistent / LTIMindtree 兑现大单</li>
+            <li>Snowflake / SAP 抗替代性强</li>
+          </ul>
+        </div>
+        <div class="bear col">
+          <h4>📉 空头：AI 双雄仍未盈利</h4>
+          <ul>
+            <li>自由现金流均为负</li>
+            <li>评级机构仍视为投机级</li>
+            <li>依赖英伟达 1050 亿信贷</li>
+          </ul>
+        </div>
+      </div>
+
+      <ul>
+        <li>OpenAI 与 Anthropic 计划 IPO 前寻求投资级评级，可进入 <strong>11.7 万亿美元</strong>企业债市场；英伟达目前为 OpenAI 俄亥俄数据中心提供约 <strong>1050 亿</strong>信贷支持。</li>
+        <li>CLSA 印度 IT 报告结论：SaaS 未被 AI 杀死，反而抢 SI 市场份额；RPE（人均营收）才是胜负手。</li>
+      </ul>
+    </div>
+
+    <!-- Card: 美股半导体设备 2Q26 -->
+    <div class="card">
+      <h3>🛠️ 美股半导体设备 2Q26：夏季 -18%，后市何去何从？</h3>
+      <div class="source">
+        <span class="planet">404K Semi-Ai</span>
+        <span class="time">2026-09-08 16:59</span>
+      </div>
+
+      <ul>
+        <li>智能体 AI 推动 CPU/GPU 配比从 1:8（训练）→ 1:1 以上（推理），AMD Venice 受益最显著，英特尔 Diamond Rapids 跟进。</li>
+        <li>头部云厂商 2026-2028 资本开支 <strong>+106% / +56% / +33%</strong>；台积电 2026 资本开支上调至 <strong>600-640 亿美元</strong>。</li>
+        <li>2028 年全球半导体设备支出 <strong>2570 / 2860 亿</strong>（基准/乐观）；科磊、泛林先进封装收入增速 >70%，订单能见度延至 2027H2。</li>
+        <li>二季度 EPS 上修幅度从一季度 15% 放缓至 5%，主因 PC/手机（42% 占比）因内存成本承压；但数据中心（34%）需求旺盛、汽车工业（21%）持续复苏。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- SECTION 2: 宏观策略 -->
+  <!-- ============================= -->
+  <div class="section">
+    <h2 class="section-title">
+      <span class="emoji">🧭</span> 宏观策略：四季度路线图
+      <span class="tag">刘煜辉之宏观高维</span>
+    </h2>
+
+    <div class="card">
+      <h3>🌐 AI 智能奇点闯关 vs 高资本成本长期化</h3>
+      <div class="source">
+        <span class="planet">刘煜辉之宏观高维</span>
+        <span class="time">2026-09-07 18:54 周末腾讯会议纪要</span>
+      </div>
+
+      <div class="quote">
+        <strong>一句话总结：</strong>"西大看运气，东大希望看到西大运气不好的 Dlio 超级周期 shock。"
+      </div>
+
+      <ul>
+        <li>今年剩下四个月 <span class="highlight">没有大行情</span>，市场常态是交易 momentum 衰退（1-7 月日均 3 万亿 → 现 < 2 万亿），地量寻底持续。</li>
+        <li>情绪窗口只在 <strong>9 月中秋前</strong> + <strong>11 月中旬-12 月中旬</strong>，其他时间情绪难做。</li>
+        <li>1-7 月极致结构导致半导体硬科技 + 锂电筹码结构很差，7-8 月冲击消耗了一两万亿，<span class="highlight">"虹吸如今变成血包"</span>。</li>
+        <li>衰退交易市况只有 <strong>哑铃策略</strong>有效：大的看大金融 / 互金 / 券券，小的炒题材小妖票；半导体锂电每次反弹都是减损机会，没经验不要参与。</li>
+      </ul>
+
+      <h4 style="font-size:14px; margin: 12px 0 4px 0;">四句话策略</h4>
+      <ol class="steps">
+        <li><strong>弃硬切软</strong>：硬科技 → 软件 / 服务</li>
+        <li><strong>弃大求小</strong>：大票 → 小票 / 题材</li>
+        <li><strong>弃债切金</strong>：债券 → 黄金</li>
+        <li><strong>弃抱团容量</strong>求雨露均沾</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- SECTION 3: 研报纪要 -->
+  <!-- ============================= -->
+  <div class="section">
+    <h2 class="section-title">
+      <span class="emoji">📑</span> A 股研报纪要 / 股池速递
+      <span class="tag">小牛研报纪要</span>
+    </h2>
+
+    <!-- Card: 9月8日复盘 -->
+    <div class="card">
+      <h3>📈 9 月 8 日 A 股复盘：成交 2 万亿，11 大板块轮动</h3>
+      <div class="source">
+        <span class="planet">小牛研报纪要</span>
+        <span class="time">2026-09-08 15:55</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">+0.20%</div><div class="unit">沪指</div></div>
+        <div class="stat-card down"><div class="num">-0.52%</div><div class="unit">深成指</div></div>
+        <div class="stat-card down"><div class="num">-1.15%</div><div class="unit">创业板</div></div>
+        <div class="stat-card down"><div class="num">-1.52%</div><div class="unit">科创50</div></div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">2万亿</div><div class="unit">沪深京成交</div></div>
+        <div class="stat-card warn"><div class="num">+8.42%</div><div class="unit">焦炭月涨幅</div></div>
+        <div class="stat-card up"><div class="num">+103.9%</div><div class="unit">1-8月芯片出口</div></div>
+      </div>
+
+      <div class="timeline">
+        <div class="event"><span class="time">化肥/农药</span>尿素上调至 1750-1820 元/吨，单日涨 50-150 元；华昌化工、和邦生物、川发龙蟒涨停</div>
+        <div class="event"><span class="time">农牧饲渔</span>泰国糖 26-27 榨季或 < 1000 万吨；鱼粉因秘鲁配额大降暴涨；中粮糖业、粤桂股份涨停</div>
+        <div class="event"><span class="time">传媒</span>国家版权局"十五五"规划；中信出版、博瑞传播、中国出版涨停</div>
+        <div class="event"><span class="time">CRO</span>BD 交易活跃，药企研发资金充裕；永安药业、东亚药业涨停</div>
+        <div class="event"><span class="time">光纤/6G</span>工信部"十五五"，400G+ 高速传输、100G 光网下沉；华脉科技、三孚股份涨停</div>
+        <div class="event"><span class="time">房地产</span>北京楼市满月，新房 +10.3%、二手房 +4.1%；我爱我家、深物业 A 涨停</div>
+        <div class="event"><span class="time">煤炭</span>焦炭基准价 2125 元/吨，月涨 8.42%；云煤能源、黑猫股份涨停</div>
+        <div class="event"><span class="time">铜</span>LME 铜突破 <strong>14530 美元/吨</strong>创历史新高；精艺股份涨停</div>
+        <div class="event"><span class="time">CPO/光模块</span>高盛上调全球光模块预测 2026/27/28 至 <strong>677/1314/1485 亿美元</strong>，较此前 +33%/+81%/+115%；华盛昌涨停</div>
+      </div>
+    </div>
+
+    <!-- Card: 美格智能 + 摩尔线程 -->
+    <div class="card">
+      <h3>🪐 国产算力新势力：摩尔线程 + 美格智能切入光通信</h3>
+      <div class="source">
+        <span class="planet">小牛研报纪要</span>
+        <span class="time">2026-09-08 15:37</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">+147%</div><div class="unit">摩尔线程H1营收</div></div>
+        <div class="stat-card up"><div class="num">+87%</div><div class="unit">美格海外收入</div></div>
+        <div class="stat-card"><div class="num">18.8%</div><div class="unit">美格 Q2 毛利率</div></div>
+      </div>
+
+      <ul>
+        <li><strong>摩尔线程</strong>：解禁股 2577 万股（5.48%）抛压大幅下降；H1 收入 17.36 亿（+147%）；"花港"架构新产品年内上市；上游代工产能可匹配。</li>
+        <li><strong>美格智能</strong>：拟出资 7000 万（持股 70%）设立美格光芯，切入光器件 / 光引擎 / 光模块；Q2 营收 11 亿（+23%）创新高，Q2 毛利率 18.8%（+1.3pct）；与高通长期合作端侧 AI 算力。</li>
+        <li>2026-2028 营收预测 49 / 61 / 72 亿，净利 2.1 / 2.9 / 3.4 亿，PE 68/49/42 倍，维持"买入"。</li>
+      </ul>
+    </div>
+
+    <!-- Card: 宁王 + 华新 + 储能 -->
+    <div class="card">
+      <h3>🔋 锂电 / 储能 / 建材：宁王价值底，储能 8 月再提速</h3>
+      <div class="source">
+        <span class="planet">小牛研报纪要</span>
+        <span class="time">2026-09-08 15:36</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">950亿</div><div class="unit">宁王26E净利</div></div>
+        <div class="stat-card up"><div class="num">+114%</div><div class="unit">储能1-8月中标</div></div>
+        <div class="stat-card warn"><div class="num">3.9%</div><div class="unit">宁王27E股息率</div></div>
+      </div>
+
+      <ul>
+        <li><strong>宁德时代</strong>：26E 业绩 950 亿、27E 1150-1200 亿，PE 仅 13x；连续 3 年分红 50%，27E 股息率 <strong>3.9%</strong>；拟回购 200-400 亿注销。乘用车换电站 27 年累计 5000 座，重卡"十横八纵"高速网络，储能从电池延伸至系统集成 / AIDC。</li>
+        <li><strong>储能</strong>：8 月国内招中标 70GWh（+120%）；1-8 月累计 377GWh（+120%）；系统 0.59 元/Wh、EPC 0.94 元/Wh。维持 26 年 300GWh 装机预期，关注阳光电源、海博思创、宁德、亿纬、鹏辉。</li>
+        <li><strong>华新建材</strong>：菲律宾水泥价 6/7 月 +1.2%/+1.9%；尼日利亚 50kg 装水泥 15000 奈拉；海外熟料产能从 4.83 万吨/日→8.15 万吨/日；26-28 年 37/48/60 亿，H 股 PE 仅 6.4/5.1 倍。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- SECTION 4: 全球财经 -->
+  <!-- ============================= -->
+  <div class="section">
+    <h2 class="section-title">
+      <span class="emoji">🌏</span> 全球财经图集
+      <span class="tag">财经图集 (FinGraph)</span>
+    </h2>
+
+    <div class="card">
+      <h3>🇨🇳 中国宏观数据</h3>
+      <div class="source">
+        <span class="planet">财经图集</span>
+        <span class="time">2026-09-07 早 / 09-08 早</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">3600亿</div><div class="unit">8家央企增资</div></div>
+        <div class="stat-card up"><div class="num">+26%</div><div class="unit">Q2 上市公司净利</div></div>
+        <div class="stat-card"><div class="num">3298亿</div><div class="unit">券商H1营收</div></div>
+      </div>
+
+      <ul>
+        <li><strong>中金统计</strong>：2026Q2 A 股上市公司净利同比 <strong>+26%</strong>，增速高于 Q1，创五年最佳；但沪深 300 本季 -9%、科创 50 -29%，盈利与股价背离（科创 50 / 沪深 300 上季已涨 76% / 12%，利好提前反映）。</li>
+        <li><strong>8 家中央金融企业</strong>合计增资 3600 亿（财政部 3000 亿 + 中国烟草 600 亿）。</li>
+        <li><strong>150 家券商</strong>H1 营收 3298.10 亿、净利 1386.64 亿；自营 + 公允价值变动 1130.97 亿，代理买卖净收入 1041.35 亿。</li>
+        <li><strong>上海原油</strong>主力回升至 100 美元以上，溢价布伦特 <strong>5.17 美元</strong>，5 月以来首次，中国炼厂补库。</li>
+        <li><strong>8 月挖掘机销量</strong>1.97 万台（+19.3%），出口 1.17 万台（+32.7%），1-8 月累计 19.16 万台（+24.2%）。</li>
+        <li><strong>中国 AI 三大实验室估值 1600 亿$</strong>，vs 美国 2.05 万亿$（差 10 倍+）；美企 2026 AI 资本开支 8000 亿$，中国仅 1000 亿$。</li>
+        <li><strong>外储</strong>3.438 万亿美元，超预期；央行连续 22 个月增持黄金至 7673 万盎司。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🇺🇸 美国宏观数据</h3>
+      <div class="source">
+        <span class="planet">财经图集</span>
+        <span class="time">2026-09-07 ~ 09-08</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">+16.2万</div><div class="unit">8月非农</div></div>
+        <div class="stat-card warn"><div class="num">3.1%</div><div class="unit">8月时薪同比</div></div>
+        <div class="stat-card up"><div class="num">+1.2%</div><div class="unit">Q3 EPS 上修</div></div>
+      </ul>
+
+      <ul>
+        <li>8 月非农 <strong>+16.2 万</strong>，创 5 个月新高，远超预期 5.6 万；失业率 4.1%；时薪同比 3.1%（2021/5 来最低）。</li>
+        <li>非农净增 <strong>98% 由女性贡献</strong>（+15.8 万），男性仅 +4000，性别差距历史最大。</li>
+        <li>标普 Q3 EPS 上修 <strong>+1.2%</strong>（88.64 → 89.69），连续两季上修（过去 5 年同期平均下调 1.7%）。</li>
+        <li>Q3 EPS 上修集中在能源 +11.8%、信息技术 +3.0%、金融 +2.1%、工业 +1.1%；材料 -9.1%。</li>
+        <li>10y20y 远期收益率从 2020 年 1.5% 升至 5%+，2000 年代中期以来高位。</li>
+        <li><strong>VIX 与标普 500 反向联动</strong>降至历史第 4 百分位，第 2 百分位相关性，靠 VIX 判断避险情绪已不可靠。</li>
+        <li>公用事业板块仅 26% 成分股站上 200 日均线，2024/2 以来最低；10 年期美债收益率较公用事业股息率高 1.84pct（2007 来最大）。</li>
+        <li>数据中心需求从科技龙头扩散至制造业，72 个制造业子行业就业扩散指数创 2022/12 以来新高。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🌐 全球 & 大宗商品</h3>
+      <div class="source">
+        <span class="planet">财经图集</span>
+        <span class="time">2026-09-07 ~ 09-08</span>
+      </div>
+
+      <ul>
+        <li><strong>LME 铜</strong>突破 <strong>14530 美元/吨</strong>创历史新高（年内 +17%，过去 12 月 +47%）；美国可能扩大铜进口关税，纽约铜溢价走扩。</li>
+        <li><strong>铁矿石</strong>突破 100 美元/吨（101.10 美元），中国钢厂国庆前补库 + 9 月建筑活动回暖。</li>
+        <li><strong>鸿海 8 月营收</strong>9218 亿新台币（+52%），延续 7 月 +54%，AI 服务器订单驱动；Q3 预期 +37%。</li>
+        <li><strong>日本央行</strong>史上最大规模干预（15.4 万亿日元 / 987 亿美元），外储月减 796 亿$（-6.18%），可能卖出部分美债筹资。</li>
+        <li><strong>韩元</strong>升至 1345（2024/10 以来最强），韩国 1-8 月累计出口 7094 亿$，1-8 月半导体出口 +169.6%。</li>
+        <li><strong>欧元区 Q2 GDP</strong>环比 +0.6%（上修自 +0.4%），受爱尔兰上修至 +10.2% 推动；欧央行本周加息预期升温。</li>
+        <li><strong>CTA 净空头</strong>在 G10 国债期货创历史新高（超 2018 前值）；全球超额流动性跌至负值，标普 500 仍两位数涨幅，<span class="highlight">危险背离</span>。</li>
+        <li><strong>泰国糖</strong>26/27 榨季或 < 1000 万吨（降 17%），纽约原糖 8 月涨 20%（2010 来最大单月）。</li>
+        <li>联合国粮农组织 8 月食品价格指数 133.3（+1.9%），2022/11 以来最高。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- SECTION 5: 商品期权 -->
+  <!-- ============================= -->
+  <div class="section">
+    <h2 class="section-title">
+      <span class="emoji">📊</span> 商品期权实战策略
+      <span class="tag">Orange 期权</span>
+    </h2>
+
+    <div class="card">
+      <h3>🛢️ 原油 Gamma 战：双买 + 双卖 LPG</h3>
+      <div class="source">
+        <span class="planet">Orange 期权</span>
+        <span class="time">2026-09-08 09:41 · 11:23 · 13:51</span>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-card up"><div class="num">+4%</div><div class="unit">原油隐波午后</div></div>
+        <div class="stat-card down"><div class="num">-1%</div><div class="unit">LPG 隐波</div></div>
+        <div class="stat-card warn"><div class="num">3000+</div><div class="unit">单组获利</div></div>
+      </div>
+
+      <div class="quote">
+        <strong>Orange 核心理念</strong>：交易不是赌，是找定价错误的点去修复。末日轮原油双买风险大，要对冲 Vega 才不纯赌。
+      </div>
+
+      <ol class="steps">
+        <li><strong>9:41 双买原油 + 双卖 LPG/沥青</strong>：外盘原油隐波没跌、内盘跌太多（末日轮），做多 Gamma；LPG/沥青没怎么跌用来对冲。</li>
+        <li><strong>11:23 修复中</strong>：原油隐波回升、LPG 隐波回落；1 小时内单组获利 <strong>1500</strong>。</li>
+        <li><strong>13:51 Gamma 爆发</strong>：原油隐波再涨 4%，LPG 跌 1%，双买原油 + 双卖 LPG 单组 <strong>3000+</strong>，可获利走人。</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h3>🥚 鸡蛋期权：平值日历价差</h3>
+      <div class="source">
+        <span class="planet">Orange 期权</span>
+        <span class="time">2026-09-08 10:26</span>
+      </div>
+
+      <ul>
+        <li>鸡蛋期权不符合 <strong>根号 T 原则</strong>：近月隐含波动率低了、远月反而贵了。</li>
+        <li>操作：<span class="highlight">买入近月认购 + 卖出远月认购</span>（平值日历价差），做多方向 + 做多波动率。</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>🧮 09.07 复盘 · 09.08 计划</h3>
+      <div class="source">
+        <span class="planet">Orange 期权</span>
+        <span class="time">2026-09-07 18:01 · 09-08 10:13</span>
+      </div>
+
+      <div class="timeline">
+        <div class="event"><span class="time">股指</span>中证 1000 等待收敛后突破，偏多一些，关注做多波动</div>
+        <div class="event"><span class="time">有色</span>贵金属企稳走强做看涨价差；锡价格起波做延时看涨价差</div>
+        <div class="event"><span class="time">油脂</span>棕榈做跨月价差组合（卖近月高行权价 + 买远月低行权价）</div>
+        <div class="event"><span class="time">鸡蛋/生猪</span>鸡蛋 1:1.5 购涨价差临近最大收益点，可止盈</div>
+        <div class="event"><span class="time">能化</span>观望</div>
+        <div class="event"><span class="time">多晶硅</span>看跌价差近月到期离场，等横盘破位反弹背离进场</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================= -->
+  <!-- BOTTOM QUADRANT: 一句话总结 -->
+  <!-- ============================= -->
+  <div class="quadrant">
+    <h2>🎯 一句话总结</h2>
+    <div class="sub">FOUR-QUADRANT VIEW · 2026-09-08</div>
+    <div class="quad-grid">
+      <div class="quad-item">
+        <h4>📊 市场现状</h4>
+        <p>A 股沪指 +0.20% 收红，创业/科创 -1% 上下，成交近 2 万亿。芯片出口 1-8 月 +103.9% 创纪录，但 Q2 上市公司净利 +26% 与股价背离，呈现"业绩兑现 vs 估值消化"拉锯。</p>
+      </div>
+      <div class="quad-item">
+        <h4>🏭 产业主线</h4>
+        <p>AI 算力第二幕：从 GPU 数量 → 每张 GPU 营收兑现；存储锁长协、CPU TAM 上调至 2370 亿$、CPO 量产、光模块 2028 年看 1485 亿$；中际旭创 H1 营收 +182% 全面验证。</p>
+      </div>
+      <div class="quad-item">
+        <h4>⚠️ 关键风险</h4>
+        <p>1）CPO 替代节点若 2027H1 提前，光模块毛利被吃；2）"AI 智能奇点" 闯关失败 = 金融 shock；3）CTA 国债净空头历史新高 + 全球流动性转负 = 美股估值反转风险。</p>
+      </div>
+      <div class="quad-item">
+        <h4>🛡️ 散户避雷</h4>
+        <p>刘煜辉四句话：弃硬切软、弃大求小、弃债切金、弃抱团容量；半导体/锂电每次反弹减损，不参与未经验证的"AI 新概念"小票；宁王 13x PE、3.9% 股息率已现价值底。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    📌 数据来源：知识星球（研报平权 / Orange 期权 / 刘煜辉之宏观高维 / 404K Semi-Ai / 小牛研报纪要 / 财经图集）<br>
+    ⏰ 生成于 2026-09-08 17:00 · 仅供内部参考，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>

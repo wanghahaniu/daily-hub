@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美伊局势日报 · 2026-09-28</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#ffffff; --ink:#1a1d24; --sub:#5b6472;
+    --red:#d92c2c; --green:#1f9d55; --amber:#e07b00; --line:#e6e8ee;
+    --nuclear:#c81e1e; --energy:#d97706; --economy:#b91c1c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:14px;max-width:920px;margin:0 auto}
+  .head{background:linear-gradient(135deg,#1a1d24,#2b3a55);color:#fff;border-radius:16px;padding:22px 20px;margin-bottom:16px}
+  .head .date{font-size:13px;opacity:.8;letter-spacing:.5px}
+  .head h1{font-size:22px;margin:6px 0 4px}
+  .head .score-line{display:flex;align-items:baseline;gap:10px;margin-top:8px}
+  .head .score{font-size:48px;font-weight:800;color:#ff6b5e}
+  .head .score-tag{font-size:15px;color:#ffb3ab}
+  .head .verdict{font-size:13px;margin-top:6px;opacity:.92}
+  .card{background:var(--card);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .card h2{font-size:17px;margin-bottom:12px;padding-left:10px;border-left:4px solid #2b3a55}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:8px 7px;border:1px solid var(--line);vertical-align:top;text-align:left}
+  th{background:#f0f2f6;font-weight:600}
+  .severe{font-weight:700;color:var(--red)}
+  .sensitive{background:#fdeaea;font-weight:700;color:var(--economy)}
+  .tag{display:inline-block;font-size:12px;padding:1px 7px;border-radius:10px;white-space:nowrap}
+  .t-red{background:#fde8e8;color:#c81e1e}.t-green{background:#e6f6ec;color:#1f9d55}.t-gray{background:#eef0f4;color:#5b6472}
+  .t-nuc{background:#fde0e0;color:#c81e1e}.t-ene{background:#fdf0e0;color:#d97706}.t-eco{background:#fbe3e3;color:#b91c1c}
+  .subhead{font-size:14px;font-weight:700;margin:12px 0 6px;color:#2b3a55}
+  .kpi{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+  .kpi .box{flex:1;min-width:130px;background:var(--card);border-radius:12px;padding:12px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+  .kpi .v{font-size:24px;font-weight:800}
+  .kpi .l{font-size:12px;color:var(--sub);margin-top:2px}
+  .chart-wrap{position:relative;height:260px;margin-top:8px}
+  .note{font-size:12px;color:var(--sub);margin-top:8px}
+  .legend{font-size:12px;color:var(--sub);margin-top:6px}
+  .verdict-box{border-left:4px solid var(--red);background:#fff5f5;padding:12px 14px;border-radius:8px;font-size:14px}
+  ul{margin:6px 0 6px 18px;font-size:13px}
+  li{margin-bottom:5px}
+</style>
+</head>
+<body>
+  <div class="head">
+    <div class="date">美伊局势日报 · 倒序时间序列</div>
+    <h1>美伊局势综合监测</h1>
+    <div class="score-line">
+      <div class="score">90</div>
+      <div class="score-tag">/ 100 · 极度紧张 · 红色警戒</div>
+    </div>
+    <div class="verdict">较昨日 90 持平，连续第 20 日处于 90 分附近极端高位。外交窗口在特朗普拒绝「七天计划」后收窄，但双方均释放「一周内重启谈判」信号；IRGC 捕获第二艘美军无人潜航器，通航维持近零、战争险维持 40× 峰值。</div>
+  </div>
+
+  <div class="kpi">
+    <div class="box"><div class="v" style="color:#d92c2c">90</div><div class="l">军事冲突 (30%)</div></div>
+    <div class="box"><div class="v" style="color:#e07b00">87</div><div class="l">高层言论 (20%)</div></div>
+    <div class="box"><div class="v" style="color:#b91c1c">94</div><div class="l">霍尔木兹通航 (25%)</div></div>
+    <div class="box"><div class="v" style="color:#5b6472">88</div><div class="l">战争险/市场 (25%)</div></div>
+  </div>
+
+  <div class="card">
+    <h2>① 倒序时间序列 · 美伊对比表</h2>
+    <table>
+      <thead><tr><th style="width:70px">日期</th><th>美国（言论/行动）</th><th>伊朗（言论/行动）</th><th style="width:90px">类别</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>9/27</td>
+          <td>特朗普接受 Axios 电话采访：<span class="severe">预计美伊将在接下来一周内重启谈判</span>，称「一直在考虑」是否恢复对伊军事打击；美军正协助从海峡运出「大量石油」（9/27 美东）</td>
+          <td>外长阿拉格齐接受 NBC 采访：<span class="severe">「已为战事重开做好充分准备」</span>，同时「随时准备外交接触」，正等调解方转达美最终立场（9/27 德黑兰）</td>
+          <td><span class="tag t-gray">⚪ 言论</span></td>
+        </tr>
+        <tr>
+          <td>9/27</td>
+          <td>—</td>
+          <td class="sensitive"><span class="tag t-nuc">☢️ 核</span> <span class="tag t-ene">🛢️ 能源设施</span> IRGC 海军声明：<span class="severe">捕获第二艘美军「Remus 600 / Mk18 Mod2 Kingfish」先进无人潜航器</span>，称海峡「处于封锁状态」，将持续果断应对「危险及未经授权通行」（9/27 约 13:53–14:00 UTC）⚠️⚠️</td>
+          <td><span class="tag t-red">🔴 军事</span></td>
+        </tr>
+        <tr>
+          <td>9/27</td>
+          <td>—</td>
+          <td class="sensitive">IRGC 发言人穆赫比（X 发帖）：海峡「不仅是关闭的，更是 IRGC 海军猎捕美军水下资产的猎场」，称捕获为「情报战利品」（9/27）⚠️⚠️ <span class="tag t-eco">💥 经济命脉</span></td>
+          <td><span class="tag t-red">🔴 威胁</span></td>
+        </tr>
+        <tr>
+          <td>9/26</td>
+          <td class="sensitive">特朗普白宫公开<span class="severe">拒绝伊朗「七天计划」</span>：称美「完全控制」海峡、「大量石油流出」、地图标注「Trump Strait」；WSJ 引美官员称其<span class="severe">预计 11 月中期选举后恢复对伊轰炸</span>（9/26）⚠️⚠️ <span class="tag t-eco">💥</span></td>
+          <td>总统佩泽希齐扬：<span class="severe">「不再信任与美对话」</span>（每轮谈判后美均袭击+制裁）；霍尔木兹关闭是「自然反应」，愿协助沙特-胡塞和谈（9/26）</td>
+          <td><span class="tag t-gray">⚪ 言论</span></td>
+        </tr>
+        <tr>
+          <td>9/26</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td>9/26</td>
+          <td>沙特主导多国联军：<span class="severe">拦截胡塞向利雅得发射 2 架无人机 + 向海米斯穆谢特 2 枚弹道导弹</span>；沙特利雅得学校 9/27 通知停课一周转线上（9/26–27）</td>
+          <td>胡塞武装：<span class="severe">向利雅得、海米斯穆谢特（空军基地）发射弹道导弹+无人机</span>，称仅为「大规模升级前的小规模演练」（9/26）</td>
+          <td><span class="tag t-red">🔴 军事</span></td>
+        </tr>
+        <tr>
+          <td>9/27</td>
+          <td>—</td>
+          <td>胡塞武装：过去 24h 遭沙特空袭 26 次（5 省）；沙特袭塔伊兹致 <span class="severe">7 死 40 伤</span>；9/3 升级以来累计 67 死 107 伤（9/27）</td>
+          <td><span class="tag t-red">🔴 军事</span></td>
+        </tr>
+        <tr>
+          <td>9/26</td>
+          <td>沙特外长费萨尔（联大）：<span class="severe">霍尔木兹须恢复至「2/28 战前状态」</span>，反对任何一方将水道作施压工具；俄外长拉夫罗夫：愿协助稳定霍尔木兹；阿曼外长：继续努力保障海峡航行安全（9/26 联大）</td>
+          <td>—</td>
+          <td><span class="tag t-green">🟢 缓和</span></td>
+        </tr>
+        <tr>
+          <td>9/28</td>
+          <td>地区消息人士：<span class="severe">美伊最早 28 日举行新一轮间接对话</span>，卡塔尔等斡旋；分歧核心——伊方求通航+解除封锁，美方要求伊在核问题上让步（9/28）</td>
+          <td>—</td>
+          <td><span class="tag t-green">🟢 缓和</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="legend">图例：🔴=军事冲突/威胁升级 · 🟢=降温/缓和 · ⚪=声明/一般言论 · ⚠️=严重项（加粗）· ⚠️⚠️=敏感威胁（红色高亮）</div>
+  </div>
+
+  <div class="card">
+    <h2>② 敏感威胁专项（统一归入「言论」维度，占言论 50% 权重）</h2>
+    <table>
+      <thead><tr><th style="width:160px">威胁</th><th>主体</th><th>类型</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr class="sensitive"><td>预计中期选举后恢复轰炸</td><td>特朗普（WSJ）</td><td><span class="tag t-eco">💥 经济命脉</span></td><td>9/26 私下告知幕僚，若协议不成 11/3 后恢复对伊空袭</td></tr>
+        <tr class="sensitive"><td>「完全控制海峡」+拒绝七天计划</td><td>特朗普</td><td><span class="tag t-eco">💥 经济命脉</span></td><td>9/26 白宫公开，海峡实际近零通航、双方口径分歧</td></tr>
+        <tr class="sensitive"><td>捕获美军无人潜航器、宣称「封锁」</td><td>IRGC 海军</td><td><span class="tag t-ene">🛢️ 能源设施</span></td><td>9/27 捕获 Remus 600（本月第二艘），强化海峡控制</td></tr>
+        <tr class="sensitive"><td>「封锁到满足 7 条件」</td><td>IRGC 穆赫比</td><td><span class="tag t-eco">💥 经济命脉</span></td><td>9/27 称海峡为「猎场」、不满足条件不停止</td></tr>
+        <tr class="sensitive"><td>「已做好战事重开准备」</td><td>阿拉格齐</td><td><span class="tag t-eco">💥 经济命脉</span></td><td>9/27 NBC 采访，称取决于特朗普选择</td></tr>
+        <tr class="sensitive"><td>胡塞袭利雅得+海米斯穆谢特</td><td>胡塞武装</td><td><span class="tag t-ene">🛢️ 能源设施</span></td><td>9/26 弹道导弹+无人机，沙特拦截</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>③ 霍尔木兹通航 & 战争险（环比口径）</h2>
+    <div class="subhead">通航量</div>
+    <p style="font-size:13px">straits.live（9/27 2314Z）：IMF PortWatch 最近公布日 9/20 仅 <b>1 艘</b>（战前 85 艘/日的约 1%）；7 日均 <b>3.1 艘</b>（战前约 3%，环比持平低位）；危机压力指数 88（极端）。美军方宣称「周五晚 2200 万桶通过」，与独立追踪显著分歧。约 65 艘受制裁船舶在湾内 AIS。</p>
+    <div class="subhead">战争险 / 保险</div>
+    <p style="font-size:13px">战争险维持 <b>40.0× 战前</b>（+3900%），单艘 VLCC 过境保险约 <b>1000 万美元</b>；6 家 P&I 撤回承保；劳合社 JWC 列名区域稳定。美能源部长 Wright 确认美军正护航油气/化肥货船过境。</p>
+    <div class="subhead">市场</div>
+    <p style="font-size:13px">布伦特 9/27 收约 <b>$104.32</b>（+1.93%）、WTI <b>$92.41</b>；中东现货溢价显著（Dubai $114.36）；黄金 <b>$4320/oz</b>（+0.80%，避险）。</p>
+  </div>
+
+  <div class="card">
+    <h2>④ 每日紧张度评分走势</h2>
+    <div class="chart-wrap"><canvas id="chart1"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>⑤ 霍尔木兹通航量（环比）</h2>
+    <div class="chart-wrap"><canvas id="chart2"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>⑥ 战争险费率走势</h2>
+    <div class="chart-wrap"><canvas id="chart3"></canvas></div>
+  </div>
+
+<script>
+const dates = ["8/30","8/31","9/1","9/2","9/3","9/4","9/5","9/6","9/7","9/8","9/9","9/10","9/11","9/12","9/13","9/14","9/15","9/16","9/17","9/18","9/19","9/20","9/21","9/22","9/23","9/24","9/25","9/26","9/27","9/28"];
+const scores = [85,87,89,88,90,90,91,91,94,93,95,96,96,96,96,95,95,95,95,94,92,92,91,91,90,92,91,89,90,90];
+const traffic = [6,10,4,4,4,4,2,6,7,6,6,6,6,6,7,6,6,4,4,4,12,10,2,2,2,1,12,9,9,3];
+const wr = [8.0,8.1,8.2,8.3,8.4,8.5,8.6,8.75,8.75,8.75,10.0,10.0,10.0,8.5,9.0,8.5,8.5,9.0,9.5,7.5,8.5,10.0,10.0,8.0,8.0,9.0,8.5,8.5,8.5,8.5];
+
+const base = {responsive:true, maintainAspectRatio:false, plugins:{legend:{display:false}}, scales:{x:{grid:{display:false},ticks:{font:{size:9}}},y:{grid:{color:'#eef0f4'}}}};
+
+new Chart(document.getElementById('chart1'), {
+  type:'line',
+  data:{labels:dates,datasets:[{data:scores,borderColor:'#d92c2c',backgroundColor:'rgba(217,44,44,.12)',fill:true,tension:.3,pointRadius:1.5,pointBackgroundColor:'#d92c2c'}]},
+  options:{...base,plugins:{legend:{display:false},annotation:{}},scales:{...base.scales,y:{...base.scales.y,min:80,max:100,ticks:{font:{size:9}}},x:{...base.scales.x}}}
+});
+
+new Chart(document.getElementById('chart2'), {
+  type:'bar',
+  data:{labels:dates,datasets:[{data:traffic,backgroundColor:'#2b6cb0',borderRadius:2}]},
+  options:{...base,scales:{...base.scales,y:{...base.scales.y,ticks:{font:{size:9}}},x:{...base.scales.x}}}
+});
+
+new Chart(document.getElementById('chart3'), {
+  type:'line',
+  data:{labels:dates,datasets:[{data:wr,borderColor:'#e07b00',backgroundColor:'rgba(224,123,0,.12)',fill:true,tension:.3,pointRadius:1.5,pointBackgroundColor:'#e07b00'}]},
+  options:{...base,scales:{...base.scales,y:{...base.scales.y,ticks:{font:{size:9}}},x:{...base.scales.x}}}
+});
+</script>
+</body>
+</html>
