@@ -72,11 +72,11 @@ fi
 git -c user.name="wanghahaniu" -c user.email="wanghahaniu@users.noreply.github.com" \
     commit -q -m "日报更新 $(date +%Y-%m-%d)"
 
-# 网络抖动时重试。判断成功与否要看 git 的退出码，不能靠 grep 输出（成功时 stderr 为空）
+# 网络抖动时重试。判断成功与否看 git 退出码（成功时 stderr 为空，不能靠 grep 输出判断）
 push_retry() {
-  local i out
+  local refspec="$1" i out
   for i in 1 2 3; do
-    if out=$(git push origin "$@" 2>&1); then
+    if out=$(git push origin "${refspec}" 2>&1); then
       return 0
     fi
     echo "    第${i}次失败：$(echo "$out" | grep -viE '^warning|^remote:|^Receiving|^Resolving|^Counting|^Compressing|^Writing' | head -1)"
@@ -84,7 +84,7 @@ push_retry() {
   done
   return 1
 }
-push_retry origin main&& echo "  ✓ main 已推送" || echo "  ⚠️ main 推送失败，请重跑"
-push_retry origin main:gh-pages --force && echo "  ✓ gh-pages 已推送（Pages 靠它更新）" || echo "  ⚠️ gh-pages 推送失败，页面不会更新，请重跑"
+push_retry "main"            && echo "  ✓ main 已推送" || echo "  ⚠️ main 推送失败，请重跑"
+push_retry "main:gh-pages"   && echo "  ✓ gh-pages 已推送（Pages 靠它更新）" || echo "  ⚠️ gh-pages 推送失败，页面不会更新，请重跑"
 
 echo "  等 30-60 秒后刷新 https://wanghahaniu.github.io/daily-hub/"
