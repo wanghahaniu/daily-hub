@@ -12,3 +12,5 @@ _trash/
 
 # 临时隔离目录（手工排错用，不入库）
 _trash/
+_orphan/
+_trash_reports/

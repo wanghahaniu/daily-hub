@@ -84,42 +84,36 @@ ui=[i for i in m['items'] if i['key']=='us-iran']
 print(f"  紧张度 {sum(1 for i in ui if i.get('tension'))}/{len(ui)} 篇")
 PYEOF
 
-echo "[3/4] 校验 reports 目录与索引一致..."
-NC=$(find reports -type f -name '*.html' | wc -l)
-NCIDX=$("$PY" -c "import json;print(len(json.load(open('manifest.json',encoding='utf-8'))['items']))")
-if [ "$NC" != "$NCIDX" ]; then
-  # 自愈：按 manifest 记录的路径保留，多余的（历史副本 / 已删除日报的残留）一律清掉。
-  # 逐个 try，Windows 上被占用的文件跳过下轮再清。
-  echo "  ⚠ 目录 $NC 份 ≠ 索引 $NCIDX 条，按索引自愈清理..."
-  "$PY" - <<'CLEANEOF'
-import json,os
+echo "[3/4] 校验索引与文件一致..."
+"$PY" - <<'CHKEOF'
+import json,os,sys
 m=json.load(open('manifest.json',encoding='utf-8'))
-keep=set()
-for it in m['items']:
-    if it.get('url'):
-        keep.add(os.path.normpath(os.path.join('reports', it['url'])))
-base='reports'
-n=0
-for root,_,files in os.walk(base):
+its=m['items']
+miss=[i['url'] for i in its if i.get('url') and not os.path.exists(i['url'])]
+keep={os.path.normpath(i['url']) for i in its if i.get('url')}
+extra=0
+for root,_,files in os.walk('reports'):
     for fn in files:
-        if not fn.endswith('.html'): continue
-        p=os.path.normpath(os.path.join(root,fn))
-        if p not in keep:
-            try:
-                os.remove(p); n+=1
-            except OSError:
-                pass
-print(f'  已清理多余文件 {n} 个')
-CLEANEOF
-  NC2=$(find reports -type f -name '*.html' | wc -l)
-  if [ "$NC2" != "$NCIDX" ]; then
-    echo "  ✗ 自愈后仍不一致：目录 $NC2 / 索引 $NCIDX，请检查"
-    exit 1
-  fi
-  echo "  ✓ 已自愈（$NC2 份）"
-else
-  echo "  ✓ 一致（$NC 份）"
-fi
+        if fn.endswith('.html') and os.path.normpath(os.path.join(root,fn)) not in keep:
+            extra+=1
+if miss or extra:
+    print(f'  ⚠ 缺失 {len(miss)} 份 / 未收录残留 {extra} 份，移入_orphan 隔离...')
+    os.makedirs('_orphan',exist_ok=True)
+    for root,_,files in os.walk('reports'):
+        for fn in files:
+            if not fn.endswith('.html'): continue
+            p=os.path.normpath(os.path.join(root,fn))
+            if p in keep: continue
+            try: os.replace(p, os.path.join('_orphan', os.path.basename(root)+'_'+fn))
+            except OSError: pass
+    miss2=[i['url'] for i in its if i.get('url') and not os.path.exists(i['url'])]
+    if miss2:
+        print(f'  ✗ 仍有{len(miss2)} 份缺失：{miss2[:3]}')
+        sys.exit(1)
+    print(f'  ✓ 已隔离 {extra} 份，现一致（{len(its)} 份）')
+else:
+    print(f'  ✓ 一致（{len(its)} 份全部就位，无残留）')
+CHKEOF
 
 echo "[4/4] 提交并推送（main + gh-pages 双分支）..."
 git add -A
