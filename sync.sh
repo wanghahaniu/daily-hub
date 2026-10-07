@@ -88,10 +88,38 @@ echo "[3/4] 校验 reports 目录与索引一致..."
 NC=$(find reports -type f -name '*.html' | wc -l)
 NCIDX=$("$PY" -c "import json;print(len(json.load(open('manifest.json',encoding='utf-8'))['items']))")
 if [ "$NC" != "$NCIDX" ]; then
-  echo "  ✗ reports/ 有 $NC 份但索引 $NCIDX 条，不一致，请检查"
-  exit 1
+  # 自愈：按 manifest 记录的路径保留，多余的（历史副本 / 已删除日报的残留）一律清掉。
+  # 逐个 try，Windows 上被占用的文件跳过下轮再清。
+  echo "  ⚠ 目录 $NC 份 ≠ 索引 $NCIDX 条，按索引自愈清理..."
+  "$PY" - <<'CLEANEOF'
+import json,os
+m=json.load(open('manifest.json',encoding='utf-8'))
+keep=set()
+for it in m['items']:
+    if it.get('url'):
+        keep.add(os.path.normpath(os.path.join('reports', it['url'])))
+base='reports'
+n=0
+for root,_,files in os.walk(base):
+    for fn in files:
+        if not fn.endswith('.html'): continue
+        p=os.path.normpath(os.path.join(root,fn))
+        if p not in keep:
+            try:
+                os.remove(p); n+=1
+            except OSError:
+                pass
+print(f'  已清理多余文件 {n} 个')
+CLEANEOF
+  NC2=$(find reports -type f -name '*.html' | wc -l)
+  if [ "$NC2" != "$NCIDX" ]; then
+    echo "  ✗ 自愈后仍不一致：目录 $NC2 / 索引 $NCIDX，请检查"
+    exit 1
+  fi
+  echo "  ✓ 已自愈（$NC2 份）"
+else
+  echo "  ✓ 一致（$NC 份）"
 fi
-echo "  ✓ 一致（$NC 份）"
 
 echo "[4/4] 提交并推送（main + gh-pages 双分支）..."
 git add -A
