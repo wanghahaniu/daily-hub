@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>源哥 × XZ服务器 · 全品类交叉日报 · 2026-10-16</title>
+<style>
+:root{
+  --bg:#f5f7fc; --panel:#ffffff; --ink:#111a2e; --ink2:#4d5a75; --ink3:#8896ae;
+  --line:#e4e9f4; --line2:#eff3fa;
+  --a1:#2f6bff; --a2:#7c5cf6; --a3:#06a0c4; --a4:#e8890c;
+  --b:#e3428f; --c:#0ea87a; --d:#ea6a1f;
+  --ok:#0ea87a; --warn:#e8890c; --bad:#e0453a;
+  --accent:#2f6bff; --soft:#f3f7ff;
+  --shadow:0 1px 2px rgba(24,44,90,.05),0 8px 22px -14px rgba(24,44,90,.18);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:15.4px/1.78 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:22px 16px 72px}
+
+header.top{background:
+    linear-gradient(90deg,#2f6bff 0%,#7c5cf6 28%,#06a0c4 55%,#e8890c 80%,#e3428f 100%) top/100% 5px no-repeat,
+    linear-gradient(160deg,#eff5ff 0%,#f6f9ff 48%,#f8f3ff 100%);
+  color:var(--ink);padding:34px 26px 28px;border-radius:18px;margin:0 0 24px;
+  border:1px solid #e3eaf8;box-shadow:var(--shadow)}
+header.top h1{margin:0 0 10px;font-size:24px;line-height:1.34;font-weight:700;letter-spacing:-.2px;color:#0d1730}
+header.top .sub{font-size:13.5px;color:#5d6c8a;margin-bottom:18px;font-weight:500}
+.hmeta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.hmeta div{background:rgba(255,255,255,.88);border:1px solid #e2e9f7;
+  border-radius:10px;padding:10px 12px}
+.hmeta .k{font-size:11px;color:#8593ad;letter-spacing:.4px;margin-bottom:4px}
+.hmeta .v{font-size:14.5px;font-weight:700;color:#16223d}
+.decl{background:#ffffff;border:1px solid #e2e9f7;border-left:4px solid var(--accent);border-radius:0 10px 10px 0;
+  padding:13px 16px;font-size:13.2px;color:#3f4d69;line-height:1.8;margin-top:18px}
+.decl b{color:#16223d}
+
+h2{margin:42px 0 18px;font-size:20px;font-weight:700;line-height:1.4;letter-spacing:-.2px;
+  padding-left:14px;border-left:5px solid var(--a1);color:#0d1730}
+h2:nth-of-type(1){border-left-color:#2f6bff}
+h2:nth-of-type(2){border-left-color:#7c5cf6}
+h2:nth-of-type(3){border-left-color:#e3428f}
+h2:nth-of-type(4){border-left-color:#0ea87a}
+h2:nth-of-type(5){border-left-color:#ea6a1f}
+h2:nth-of-type(6),h2:nth-of-type(7),h2:nth-of-type(8),h2:nth-of-type(9){border-left-color:#06a0c4}
+h2:nth-of-type(10){border-left-color:#4f46e5}
+h2:nth-of-type(11){border-left-color:#8b95a8}
+h2 .hint{display:block;font-size:12.2px;font-weight:400;color:#8896ae;margin-top:6px;letter-spacing:.2px;line-height:1.72}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:17px 19px 16px;margin:0 0 14px;border-left:5px solid var(--line);box-shadow:var(--shadow)}
+.card.a1{border-left-color:var(--a1)} .card.a2{border-left-color:var(--a2)}
+.card.a3{border-left-color:var(--a3)} .card.a4{border-left-color:var(--a4)}
+.card.b{border-left-color:var(--b)} .card.c{border-left-color:var(--c)}
+.card.d{border-left-color:var(--d)} .card.z{border-left-color:#5b6cfa}
+.tt{font-size:16px;font-weight:700;line-height:1.52;margin:0 0 8px;color:#0d1730;letter-spacing:-.15px}
+.meta{font-size:12px;color:#8896ae;margin-bottom:11px;line-height:2}
+.pts{margin:0;padding-left:20px}
+.pts li{margin-bottom:8px;color:var(--ink2);line-height:1.78}
+.pts li b{color:#16223d}
+.take{margin-top:12px;padding:12px 14px;background:#f2f7ff;border:1px solid #e2ecff;border-left:4px solid var(--accent);
+  border-radius:0 10px 10px 0;font-size:13.6px;color:#33415c;line-height:1.78}
+.take b{color:#1b2b4d}
+
+.tag{display:inline-block;font-size:10.8px;font-weight:700;padding:2px 8px;border-radius:999px;
+  margin-right:5px;vertical-align:1px;letter-spacing:.3px}
+.lv0{background:#2f6bff;color:#fff}
+.lv1{background:#eaf0fb;color:#4f5f7d}
+.lv2{background:transparent;color:#8896ae;border:1px dashed #c3cddf}
+.factor{display:inline-block;font-size:10.8px;font-weight:700;padding:2px 8px;border-radius:6px;
+  margin-right:5px;letter-spacing:.3px}
+.f-buy{background:#ffefec;color:#c0392b;border:1px solid #fbd2c9}
+.f-sell{background:#eafaf1;color:#0b8a55;border:1px solid #bfe9d4}
+.f-watch{background:#eef3ff;color:#3b56d6;border:1px solid #d2ddfb}
+.f-neu{background:#f4f6fa;color:#5c6779;border:1px solid #e2e8f1}
+.src{display:inline-block;font-size:10.8px;color:#8896ae;border:1px solid var(--line);
+  border-radius:5px;padding:0 6px;margin-right:5px;background:#fafcff}
+
+.matrix{background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  padding:17px 19px;margin-bottom:14px;border-left:5px solid var(--a1);box-shadow:var(--shadow)}
+.matrix .mt{font-size:16px;font-weight:700;margin-bottom:11px;color:#0d1730}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.two div{background:var(--soft);border:1px solid #e6edfb;border-radius:10px;padding:11px 13px;font-size:13.2px;color:var(--ink2);line-height:1.72}
+.two .lbl{font-size:10.8px;color:#7c8bab;font-weight:700;letter-spacing:.5px;margin-bottom:5px}
+.layers{border-top:1px solid var(--line2);padding-top:12px}
+.layers p{margin:0 0 7px;font-size:13.6px;color:var(--ink2);line-height:1.76}
+.layers p b{color:#16223d}
+
+table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;background:var(--panel);
+  border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line2);vertical-align:top}
+th{background:#f5f8ff;font-weight:700;font-size:12.2px;color:#3d4a66;letter-spacing:.3px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+tr.hot td{background:#fff4f2}
+tr.hot td:first-child{box-shadow:inset 4px 0 0 #e0453a}
+tr.up td{background:#f2fbf6}
+tr.up td:first-child{box-shadow:inset 4px 0 0 #0ea87a}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-bottom:14px}
+.tw table{min-width:600px}
+
+.pre{background:#fbfcff;border:1px solid #e4eaf6;border-left:4px solid var(--accent);color:#33405c;
+  border-radius:12px;padding:15px 17px;font-size:11.8px;line-height:1.8;overflow-x:auto;white-space:pre;
+  font-family:ui-monospace,Menlo,Consolas,monospace}
+.pre .g{color:#0b8a55;font-weight:700} .pre .y{color:#b0730a;font-weight:700} .pre .r{color:#c0392b;font-weight:700}
+
+.kpi{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:22px}
+.kpi div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 8px;text-align:center;box-shadow:var(--shadow)}
+.kpi .n{font-size:21px;font-weight:800;line-height:1.15;color:#2f6bff;letter-spacing:-.5px}
+.kpi .l{font-size:10.8px;color:#8896ae;margin-top:5px;letter-spacing:.3px}
+
+.lead{background:linear-gradient(140deg,#f2f7ff 0%,#fbfdff 100%);border:1px solid #e2ecff;
+  border-left:5px solid var(--accent);border-radius:0 12px 12px 0;padding:15px 18px;margin-bottom:18px;font-size:14.2px;color:#33415c;line-height:1.82}
+.lead b{color:#16223d}
+
+.miss{background:#fff6f4;border:1px solid #fbdcd5;border-left:4px solid #e0453a;border-radius:0 12px 12px 0;
+  padding:14px 17px;margin-bottom:14px;font-size:13.6px;color:#8a3226;line-height:1.78}
+.miss b{color:#9c2f22}
+
+.plain{margin-top:12px;background:#fffaf0;border:1px solid #f6e8cf;border-left:4px solid #e0a83c;border-radius:0 10px 10px 0;padding:12px 14px;
+  font-size:13.6px;color:#5a4526;line-height:1.78}
+.plain .pl{font-size:10.8px;font-weight:700;letter-spacing:.5px;color:#b07513;margin-bottom:6px}
+.plain b{color:#7c3f10}
+
+.who{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 19px;
+  margin-bottom:14px;border-left:5px solid var(--b);box-shadow:var(--shadow)}
+.who .nm{font-size:16px;font-weight:700;margin-bottom:4px;color:#0d1730}
+.who .role{font-size:12px;color:#8896ae;margin-bottom:10px}
+
+footer{margin-top:44px;padding:20px 22px;background:var(--panel);border:1px solid var(--line);
+  border-radius:14px;font-size:12.8px;color:#8896ae;line-height:1.9;box-shadow:var(--shadow)}
+footer b{color:var(--ink2)}
+.fnote{margin-top:11px;padding-top:11px;border-top:1px solid var(--line2)}
+
+@media(max-width:720px){
+  .hmeta{grid-template-columns:repeat(2,1fr)}
+  .kpi{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1fr}
+  h2{font-size:18px;margin-top:34px}
+  .wrap{padding:14px 12px 56px}
+  .card,.who,.matrix{padding:14px 15px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>源哥 × XZ服务器 · 全品类交叉日报</h1>
+  <div class="sub">2026年10月16日（星期五）· 双知识库交叉 · 珠子与纲结构</div>
+  <div class="hmeta">
+    <div><div class="k">源哥库数据日期</div><div class="v">2026-10-16</div></div>
+    <div><div class="k">XZ 库数据日期</div><div class="v">2026-10-14</div></div>
+    <div><div class="k">ima 连接器</div><div class="v">可用</div></div>
+    <div><div class="k">契约校验</div><div class="v">PASS</div></div>
+  </div>
+  <div class="decl">
+    <b>数据源可读性声明</b><br>
+    源哥 ima 库（<b>7395683732563191</b>「源哥会员专享」，共 <b>5467</b> 条）＝<b>原文级可读</b>：所有报刊均取 <b>.md 平行副本读全文</b>；今日（10-16）读到 <b>早报</b>（07:21）与 <b>晚间批次三份</b> —— Bloomberg <b>日报</b>（18:49）、<b>经济日报</b>（19:08）、<b>能源日报</b>（19:41），另读到「彭路原文精选」上午 3 条（11:16／11:43／12:06）。<b>本版为晚间版，已把 19:00 后到达的稿件并入正文。</b><br>
+    XZ 服务器库（<b>7482839675192179</b>，共 18162 条）＝<b>原文级可读</b>：外资行研报 PDF 支持全文提取，本期<b>深读 8 份</b>（野村长鑫 4F²、摩根大通美国能源、瑞银全球石油基本面、花旗美国经济、瑞银《中国经济评论》、野村《亚洲洞察》、高盛《The 720》、瑞银《存储月报》）。<br>
+    ⚠️ <b>XZ 库当日（1016）文件夹不存在</b> —— 库主惯例为次日凌晨回填（10-15 目录系 10-16 04:48 才出现）。本期取 <b>1015 目录</b>（170 份 PDF，报告标注日期为 <b>2026-10-14</b>）。<b>本报告的「XZ 数据日期」即 1015／2026-10-14</b>，请勿按 10-16 读取。<br>
+    ima-mcp 连接器本期<b>可用</b>（自检 READY ＋ 工具层实测三层全通）。本报告<b>未使用</b>知识星球（zsxq）任何数据，亦未使用本机 raw 缓存 —— 按 2026-10-06 起的弃用约定执行。
+  </div>
+</header>
+
+<div class="lead">
+  <b>本期一句话：</b>AI 交易的定价权正从「需求侧」滑向「融资侧」——台积电展望超预期与 CoreWeave 债券跌破 78 美分同时发生；<b>晚间更新：市场对 CoreWeave 的五年违约定价已升至 60% 以上，而供应商黄仁勋公开站台当天把股价拉回 +6%</b> —— 信用端与股权端对同一资产给出相反定价。地缘上伊朗改了打法、攻击范围扩至霍尔木兹以外，而 <b>OVX 波动率指数反而回落至 48.77</b>，油价当天因「股市抛售」而下跌；<b>与此同时铜演的是另一套剧本 —— 贸易商预付 2.5 亿美元锁定三年供应，中国买家支付的溢价创近四年最高。</b><b>两个「好消息不动、坏消息才动」的信号同时出现，是本期最值得记录的张力。</b>
+</div>
+
+<div class="kpi">
+  <div><div class="n">5</div><div class="l">共识主线</div></div>
+  <div><div class="n">24</div><div class="l">A 科技条目</div></div>
+  <div><div class="n">10</div><div class="l">B 人物卡</div></div>
+  <div><div class="n">11</div><div class="l">C 宏观条目</div></div>
+  <div><div class="n">10</div><div class="l">D 地缘条目</div></div>
+  <div><div class="n">8</div><div class="l">原文级研报</div></div>
+</div>
+
+<h2>零、双源共识矩阵
+  <span class="hint">纲。5 条主线 × 2 源头对照，分事实层／机制层／仓位层三层提炼；顺序即重要性顺序</span>
+</h2>
+
+<div class="matrix">
+  <div class="mt">主线①：AI 资本开支的钱从哪来 —— 信用端先出问题</div>
+  <div class="two">
+    <div><div class="lbl">源哥库</div>Bloomberg AI 日报（10-15）：CoreWeave 2032 年债券跌破面值 78 美分，CDS 隐含五年违约概率&gt;50%，股价周三一度跌 17%；Gartner 测算 2030 年逾 <b>3.5 万亿美元</b> AI 基建支出可能减值，超 80% neocloud 到 2030 年恐无法独立运营。<b>10-16 晚间 Bloomberg 日报更新：违约定价升至 60% 以上，而黄仁勋公开称「他们的资本成本实际上在下降」，当日把股价拉回 +6%（一个多月最佳），德意志银行亦称抛售即买点。</b></div>
+    <div><div class="lbl">XZ 库</div>摩根大通亚洲科技（营销反馈）、瑞银微软 Azure/M365 预期上调、野村长鑫 4F² 快评 —— 三份均指向<b>需求侧仍在改善</b>；但瑞银全球策略同期记录 CTA 在股票与信用端<b>减仓</b>。</div>
+  </div>
+  <div class="layers">
+    <p><b>事实层</b>：两源一致 —— 硬件需求仍强（台积电季展望最高 543 亿美元、超预期），但融资端明显恶化。无数字冲突。</p>
+    <p><b>机制层（最强）</b>：需求好 ≠ 融资好。当行业以债务为史无前例的产能扩张融资、同时无风险利率上行，<b>瓶颈会先出现在信用端而非订单端</b>。HSBC 企业与机构银行业务主管 Michael Roberts 的表述提供了独立佐证：「放贷方将更加关注合理的回报、合理的结构」。</p>
+    <p><b>仓位层（分歧最大）</b>：市场尚未就「这是估值调整还是信用事件」达成一致。费城半导体指数六连跌蒸发 1.6 万亿美元，同时 Anthropic 告知投资者 Q3 收入达 168 亿美元并已实现经调整盈利 —— <b>同一板块内同时出现「融资冻结」与「收入跃升」两种叙事</b>。10-16 晚间又多了一层：<b>最大客户的债权人按 60%+ 违约概率定价，供应商（英伟达）却公开否认需要兜底，而当天股价选择相信后者</b> —— 本期最干净的一处「同一事实、两套定价」。</p>
+  </div>
+</div>
+
+<div class="matrix">
+  <div class="mt">主线②：存储超级周期 vs 国产替代的技术代差</div>
+  <div class="two">
+    <div><div class="lbl">源哥库</div>科技日报快讯：全球智能手机市场遭遇有记录以来最严重下滑（IDC），「更糟的还在后面」；GlobalFoundries 计划在美国建两座新厂，获日本政府最高 210 亿美元支持。</div>
+    <div><div class="lbl">XZ 库</div>野村快评（原文级）：长鑫存储总裁曹堪宇 10/10 披露 4F² DRAM 进展，年底前拟推 4F²＋晶圆级混合键合的 DDR5 RDIMM；<b>野村判断与三星／SK 海力士仍有至少三年技术差距</b>，2027-28 才可能量产。</div>
+  </div>
+  <div class="layers">
+    <p><b>事实层</b>：一边是终端需求下滑（手机），一边是先进制程追赶（DRAM 4F²）。看似矛盾，实为产业链不同环节。</p>
+    <p><b>机制层</b>：国产存储的追赶路径清晰，但<b>代差未消除</b>。4F² 单体面积较 6F² 减约 33%、单位面积多约 50% 单元，但野村折算实际增益约 40%，且需额外晶圆与产线（净产能约缩 30%）、良率约 80%。<b>结论：确定性在设备端，不在芯片端</b> —— 直接受益者被点名为拓荆科技（PECVD＋Dione 300 混合键合）与中微公司（高深宽比刻蚀）。</p>
+    <p><b>仓位层</b>：设备股已经被定价（中微现价 295.05、目标价 480；拓荆现价 628.87、目标价 913 —— 均为野村 Buy），<b>未拥挤的环节是混合键合所需的 CMP 与 ALD</b>。</p>
+  </div>
+</div>
+
+<div class="matrix">
+  <div class="mt">主线③：美国通胀二次上行 —— 加息押注重燃</div>
+  <div class="two">
+    <div><div class="lbl">源哥库</div>Bloomberg 经济日报：9 月火热通胀数据引发大量押注美联储本月加息；彭博早报：9 月 PPI 创逾四年最大升幅，核心 PPI 超过所有经济学家预估。</div>
+    <div><div class="lbl">XZ 库</div>花旗美国经济（原文级）：9 月核心 CPI <b>+0.33% MoM</b>，远高于其 0.18% 的预测；核心 PCE 追踪值 0.30% MoM／<b>3.1% YoY</b>；花旗预计 <b>10 月暂停、12 月加息 25bp</b>。瑞银美国经济亦发勘误重申 CPI「再度走高」。</div>
+  </div>
+  <div class="layers">
+    <p><b>事实层</b>：两源完全一致，且给出了可交叉验证的路径 —— 能源分项 <b>+5.20% MoM</b> 是主要推手，与彭博所指「飙升的燃料成本是美国物价加速上涨的主要推手」互为印证。</p>
+    <p><b>机制层（最强）</b>：能源冲击 → 通胀 → 加息预期 → 全球收益率上行 → 压制长久期资产估值。这条链条本期同时解释了三件事：美债长端领涨、AI 高估值股承压、美元指数从 18 个月低点反弹。</p>
+    <p><b>仓位层</b>：多数交易员仍押 12 月而非 10 月。真正的定价事件是<b>沃什周五（今天）在曼谷的 IMF 炉边谈话</b> —— 因美联储 10/27-28 会议前将进入媒体噤声期，这是最后的信号窗口。</p>
+  </div>
+</div>
+
+<div class="matrix">
+  <div class="mt">主线④：中国「出口强、内需弱」的结构性撕裂</div>
+  <div class="two">
+    <div><div class="lbl">源哥库</div>Bloomberg：Q3 GDP 预估中值 <b>同比 4.4%</b>，将连续第二季低于官方 4.5%-5% 目标；零售预计出现「现代历史上最疲弱的读数之一」；固投前 9 月预计同比 <b>-7.3%</b>。Reuters：人民币有望<b>连续第三周走强</b>，在岸 6.6907，中间价 6.7220 为 2023 年 2 月以来最强。</div>
+    <div><div class="lbl">XZ 库</div>瑞银（原文级）：9 月出口 <b>+36.3% y/y</b>，远超彭博一致预期 25.7%；PPI 同比 <b>+5.0%</b>，四年新高，超市场预期的 4.4%。野村：9 月信贷增速<b>创历史新低</b>，私人部门需求持续疲弱。</div>
+  </div>
+  <div class="layers">
+    <p><b>事实层</b>：三个数字可互相验证 —— 出口 36.3%（瑞银）＋ PPI 5.0%（瑞银）＋ 人民币三周连强（路透），构成一条独立且自洽的强势链。另一端：GDP 4.4%、信贷创新低、消费最弱。</p>
+    <p><b>机制层（最强）</b>：增长引擎完全依赖出口，而出口又依赖<b>全球 AI 投资热潮</b>。这使中国同时暴露于两个它无法控制的风险：贸易壁垒（欧盟正评估对中国商品设进口配额）与 AI 资本开支周期的起落。瑞银指出的细节很关键 —— 出口增长「部分被价格效应放大」，PPI 5.0% 本身就意味着名义出口额被通胀推高。</p>
+    <p><b>仓位层</b>：市场对「政策能托多久」分歧最大。高盛首席中国经济学家单慧的说法最直白：「不会太多——只够达到 4.5% 的增长」；法兴大中华区经济学家米歇尔·林则把风险推到 2027 年（GDP 可能降至 4.5% 以下）。<b>被低估的一条是人民币债的分散化叙事</b>：潘功胜在曼谷给出的数据是「80% 人民币债券＋20% 中国股票」的组合过去二十年回报高于全球组合、5 年与 10 年波动率均更低，而同期中国债券为美元投资者带来约 10% 回报、全球债务基准下跌 2%。</p>
+  </div>
+</div>
+
+<div class="matrix">
+  <div class="mt">主线⑤：地缘攻击升级 vs 油价「麻木」—— 本期最强张力</div>
+  <div class="two">
+    <div><div class="lbl">源哥库</div>Bloomberg 能源日报：布伦特原油下跌，因<b>股市抛售促使投资者撤离风险资产</b>，整体市场前景盖过了中东战争近期升级的影响；经济日报：胡塞武装对沙特的袭击「正在暴露这个王国军事威力的极限」；早报：IEA 同意尽快释放释储计划中<b>剩余的 1 亿桶</b>，美国正游说成员国额外再放至少 1 亿桶。</div>
+    <div><div class="lbl">XZ 库</div>摩根大通美国能源（原文级）：伊朗据报约 10 天前起对「认定违规」船只启用<b>不同进攻战术</b>，作战范围扩至霍尔木兹<b>以外</b>、阿曼湾及「更远海域」（即船对船转运）；过去 48 小时至少 5 起涉油轮／商船事件；FT 统计截至 10/11 的两周内 <b>24 艘船被击中</b>，10/11 霍尔木兹流量降至当月最低 <b>2.9mbd</b>。瑞银（原文级）：IEA 10 月 OMR 将 2H26 平衡<b>放松 0.4Mb/d</b>，但 3Q26／4Q26 仍分别短缺 1.2／1.8Mb/d。</div>
+  </div>
+  <div class="layers">
+    <p><b>事实层</b>：两源一致确认攻击升级。但有一处需注意的张力 —— 摩根大通记录「OVX 指数 48.77，较 4 月 21 日高点 85.57 大幅回落」，即<b>攻击频率上升而油价波动率下降</b>。</p>
+    <p><b>机制层（最强）</b>：供给端同时存在两股反向力量。收紧侧：伊朗攻击扩大、美国封锁使伊朗 10 月原油出口<b>归零</b>、胡塞袭击沙特阿美总部、欧洲天然气达伊朗战争以来高位。放松侧：OPEC+ 9 月产量<b>激增 2.3Mb/d</b>（沙特一国 +2.3Mb/d）、海湾原油出口 9 月升至 <b>13.9Mb/d</b>、霍尔木兹流量回升至 <b>10.9Mb/d</b>、IEA 下调 2026 需求 0.1Mb/d 并称 2H26 平衡放宽。<b>净效果：市场学会了「冲突会持续，但油会流过去」—— 于是把地缘溢价折价掉了。</b></p>
+    <p><b>仓位层（分歧最大）</b>：这个折价是否正确是本期最贵的问题。支持折价：库存虽低于战前 509Mb，但 IEA 已释放 331/400Mb 紧急库存、剩余 96Mb 预计四个月内放完。反对折价：<b>成品油而非原油才是真瓶颈</b> —— 瑞银明确指出 gasoil（柴油）4Q26 仍短缺、1Q27 才转盈余、库存<b>要等到 2H27 才可能恢复</b>，IEA 亦警告柴油短缺可能延续至 2027。而资产价格早已按「永久冲突」定价：S&amp;P 1500 Energy 一年增加约 1 万亿美元市值，<b>炼化指数 YTD +165%</b>（贡献了其中超过 25%）。</p>
+  </div>
+</div>
+
+<div class="take" style="margin:0 0 4px">
+  <b>矩阵层结论：</b>机制层共识最强的两条是「主线①（信用端先出问题）」与「主线⑤（成品油才是真瓶颈）」；仓位层分歧最大的是主线⑤与主线④。<b>策略含义：应找机制清晰但仓位未拥挤的环节，而非跟随最强共识。</b>对应到具体标的层面，本期出现的三个「机制清楚、拥挤度低」方向是：国产半导体设备中的混合键合配套（CMP／ALD）、成品油裂解与炼化、人民币计价债券。
+</div>
+
+<h2>A、AI 科技新闻
+  <span class="hint">珠子。四条细分线：算力硬件链／大模型与产品／资本与投融资／应用与商业化。每条末尾「说人话」＝翻译市场在定价什么</span>
+</h2>
+
+<h3 style="font-size:14.5px;color:var(--a1);margin:22px 0 12px">A1 · 算力与硬件链</h3>
+
+<div class="card a1">
+  <div class="tt">台积电展望超预期，但同时确认正与马斯克 Terafab 项目「讨论中」</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="src">源哥库 · Bloomberg 科技日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>预计 12 月当季销售额<b>最高可达 543 亿美元</b>，轻松超出市场预期，延续炽热增长势头。</li>
+    <li>重申一贯立场：<b>AI 需求具有韧性</b>。但报告同时指出，这「仍不足以让 AI 情绪转正」。</li>
+    <li>CEO 魏哲家就加入马斯克 Terafab 计划的提问回应：「我们还在讨论之中，让我这么说吧」；并强调在任何联盟中台积电「都必须掌控自己的芯片生产」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「周期见顶」而不是「需求变差」。台积电把最好的数字拿出来了，股价情绪却没转正 —— 说明<b>卖压来自估值与融资条件，不来自订单</b>。这才是要点。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">长鑫存储 4F² 架构年底出样：技术路线清晰，但与韩厂差距仍有三年</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 野村《亚洲半导体与科技》10-14</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>10 月 10 日上海第四届集成芯片与 Chiplet 大会上，长鑫（CXMT，688825 CH，买入）总裁曹堪宇披露 4F² 进度，拟<b>年底前推出采用 4F²＋晶圆级混合键合的 DDR5 RDIMM</b>。</li>
+    <li>4F² 相对行业标准 6F²，单元面积减约 <b>33%</b>、单位面积可容纳约多 50% 单元；但野村折算实际增益约 <b>40%</b>（考虑需额外晶圆与专用产线，净产能约缩 30%；双晶圆键合良率约 80%）。</li>
+    <li>野村判断：年底很可能<b>仅样品或实验品，2027-28 才量产</b>；韩厂路线为 1cnm(2025)→1dnm(2027)→4F²v1(2028)→3D DRAM(2032)，<b>长鑫至少落后三年</b>。三星与 SK 海力士「有意不优先做这次迁移」，选择 EUV 路线。</li>
+    <li>受益环节被点名为国产设备：拓荆科技（PECVD＋Dione 300 晶圆对晶圆混合键合）、中微公司（高深宽比刻蚀，60:1 已国产标准化、90:1 接近市场化）。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「国产替代加速」。但这条研报的关键信息不是长鑫有多快，而是<b>「替代」的受益方是卖铲子的人</b> —— 每往前推一代，介质层、阻挡层、高深宽比刻蚀、CMP、铜／钽／钴金属化的用量全部上调。买设备比买芯片更接近确定性。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">GlobalFoundries 拟在美国建两座芯片厂，获日本政府最高 210 亿美元支持</div>
+  <div class="meta"><span class="tag lv1">服务端摘要级</span><span class="src">源哥库 · Bloomberg 科技日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>该计划系与特朗普政府达成的一项交易的一部分。</li>
+    <li>为「环球科技快讯」栏目条目，原文仅给出一段概述，未披露产能、时间表与制程节点。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在给「补贴驱动的产能回流」定价。注意金额结构：<b>日方出钱、美方出地</b>，这与台积电亚利桑那模式不同，值得后续跟踪实际落地节奏。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">费城半导体指数六连跌，期间芯片股蒸发 1.6 万亿美元市值</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 科技日报 10-15「关键数字」</span><span class="factor f-sell">偏空</span></div>
+  <ul class="pts">
+    <li>截至周三，费半连续<b>六个交易日</b>下跌期间，芯片股合计蒸发 <b>1.6 万亿美元</b>。</li>
+    <li>报告点明驱动因素：对 AI 成本、利率上升与估值紧绷的担忧不断加剧。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「分母」而不是「分子」。「AI 成本上升＋利率上升＋估值紧绷」这三件事里，<b>只有利率是外生变量</b> —— 它一把就能压掉整个板块。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">野村：全球 PCB／基板 —— AT&amp;S 管理层电话会议要点</div>
+  <div class="meta"><span class="tag lv1">服务端摘要级</span><span class="src">XZ库 · 野村 10-14</span><span class="factor f-neu">中性·已定价</span></div>
+  <ul class="pts">
+    <li>野村于 10 月 14 日主持了与奥地利科技与系统技术公司（AT&amp;S）管理层的集团电话会议。</li>
+    <li>载体为「全球 PCB／基板」板块，属 AI 硬件链的中游材料环节。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在验证「AI 服务器 → 高端基板」的传导是否真实。摘要级信息不足以下结论，本期只作线索登记。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">瑞银：微软 Azure 与 M365 预期目标上调，10/28 财报前给预期基准</div>
+  <div class="meta"><span class="tag lv1">服务端摘要级</span><span class="src">XZ库 · 瑞银 10-14</span><span class="factor f-buy">偏多</span></div>
+  <ul class="pts">
+    <li>瑞银在微软 10 月 28 日 1Q／9 月季报发布前分享观点与最新投资者预期基准。</li>
+    <li>摘要显示其基调为「经历 +39% 的重大变动后，Azure 与 M365 的预期基准正在上移」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在给「AI 云收入的可见度」定价。这是 10/28 那天最容易被证伪的一份预期 —— 也正因如此，它是本期 AI 主线最干净的一个裁决点。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">高盛《The 720》：2027 年全球晶圆设备支出上调至 +45%（约 2180 亿美元）</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 高盛《The 720》（1015 目录）</span><span class="factor f-buy">偏多</span></div>
+  <ul class="pts">
+    <li>高盛把 <b>2027 年全球半导体设备支出（WFE）上调至同比 +45%、约 2180 亿美元</b>，是本期读到的最激进的设备周期预测；同时把 ASML 目标价提至 <b>€2,200（买入）</b>。</li>
+    <li>支撑来自 EUV 交付节奏：2028 年 EUV 出货量预计同比 <b>+20%–30%</b>（对比 2027 年）。</li>
+    <li>摩根士丹利（源哥库 · 大摩新经济板块 10-16 音频）：台积电 2nm 产能到 2027 年底<b>翻倍以上至约 20 万片/月</b>；ABF 载板短缺上调为 <b>27E 9%／28E 14%</b>（原 6%／9%），南电目标价 <b>NT$2,000</b>、欣兴 <b>NT$1,775</b>。</li>
+    <li>两源交叉的含义：<b>设备与载板是同一段资本开支的两端</b> —— 一头是买机器，另一头是被机器产能逼出来的材料短缺。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「AI 资本开支的斜率」。把 2027 年设备支出从个位数上调到 +45%，等于说这轮扩产<b>不是补库存、而是换世代</b> —— 先受益的是卖机器的（ASML）与被机器产能挤到短缺的（ABF 载板），不是芯片本身。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">瑞银存储月报：SOCAMM 分流 HBM 增量 —— 2027 年英伟达 SOCAMM 订单超 500 亿 Gb</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 瑞银《存储月报》（1015 目录）</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>瑞银测算英伟达 2027 年 SOCAMM 订单<b>超过 500 亿 Gb</b>，这一体量<b>超过全球 PC 内存＋GDDR 的合计位元消耗</b>，对 HBM 形成直接的产能挤压。</li>
+    <li>因此把 2027 年 HBM 位元增速下调至<b>仅 +49% YoY</b>；存储股自 9 月高点已回落 <b>19%</b>。</li>
+    <li>供给端：三星 DRAM 产能 4Q26–4Q27 由 70 万片/月提至 <b>82 万片/月</b>，2028 年仍有再增 15 万片/月的空间；瑞银首选仍为三星。</li>
+    <li>估值：'27–'30E 自由现金流收益率约 <b>29%</b> —— 典型「跌下来才有价值」的周期股定价，而不是成长股定价。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>HBM 不是唯一赢家。当英伟达把一部分内存需求挪到 SOCAMM，被压掉的是 HBM 的<b>增速预期</b> —— 这正是存储股跌 19% 的原因。该盯的不是 HBM 涨价，而是 SOCAMM 的渗透节奏。</div>
+</div>
+
+<h3 style="font-size:14.5px;color:var(--a2);margin:24px 0 12px">A2 · 大模型与产品</h3>
+
+<div class="card a2">
+  <div class="tt">Anthropic 告知潜在投资者 Q3 收入达 168 亿美元，并称已实现经调整盈利</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-buy">偏多</span></div>
+  <ul class="pts">
+    <li>公司周三在旧金山总部的演示中向投资者披露该季度数字，并称<b>经调整口径已实现盈利</b>。</li>
+    <li>背景是这家 Claude 背后的公司正推进<b>上市计划</b>。</li>
+    <li>⚠️ 同日 Bloomberg 观点专栏（Shuli Ren）给出相反解读：Anthropic 正给华尔街带来「一场急剧的收入减速，可能戳破规模达万亿美元的 AI 交易」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>同一份 168 亿美元的数字，可以读成「AI 商业模式跑通了」，也可以读成「上市前的最后一轮叙事」。<b>需要留意的分歧点在于「经调整」这三个字的定义</b> —— 本期材料未披露口径。</div>
+</div>
+
+<div class="card a2">
+  <div class="tt">Apple Intelligence 将于 12 月在中国大陆上线，因监管延宕数年</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>首批上线功能为<b>两年前已在美国推出的那些</b> iPhone／iPad／Mac AI 功能。</li>
+    <li><b>不包括新版 Siri AI 助手</b>及其他更晚宣布的功能。</li>
+    <li>Apple 在与中国工业和信息化部的漫长讨论后于 7 月获得初步批准，并<b>不得不作出让步以换取放行</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「Apple 中国收入企稳」。但功能清单是两年前的美版 —— 这更像<b>合规性补齐，而非竞争力升级</b>，不要按新品周期交易。</div>
+</div>
+
+<div class="card a2">
+  <div class="tt">AI 制药吸引数十亿美元与巨头入局，但成效仍存争议</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15（主文）</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>本周最新一例：Zealand Pharma 与 Generate Biomedicines 达成<b>最高可达 12 亿美元</b>的交易，用 AI 开发下一代肥胖症疗法。</li>
+    <li>Takeda 曾难以稳定一款罕见自身免疫疾病疗法，借助 AI 药物设计公司 Nabla Bio <b>仅两个设计周期</b>完成重新设计分子；但<b>目前尚无商业化药物上市</b>。</li>
+    <li>Lilly 建成配备<b>超过 1,000 颗 Nvidia 芯片</b>的超级计算机模拟分子相互作用，并向小型生物科技公司开放其自有数据训练的 AI 模型。Alphabet 支持的 Isomorphic Labs 正与大型制药商合作。</li>
+    <li>Lilly 首席信息与数字官 Diogo Rau 泼冷水：「科学家甚至连一个人类细胞都还缺乏足够精细的模拟……<b>我们不会在短期内模拟出人类</b>。」</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「AI 落地的第二个大场景（第一个是编程）」。但请注意资金结构：<b>钱在涌入，验证在滞后</b> —— 数十亿美元已经花了，却还没有一款 AI 设计的药上市来证明能持续跑赢传统方法。</div>
+</div>
+
+<div class="card a2">
+  <div class="tt">OpenAI CFO 警告：企业使用中国 AI 模型会带来网络安全风险</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>Sarah Friar 在都柏林国际 AI 峰会上敦促企业「在网络层面选择西方模型」，与竞争对手 Anthropic 表达的类似担忧相呼应。</li>
+    <li>报告点明了动机：两家公司都面临<b>来自更便宜的中国开源权重模型日益增大的竞争压力</b> —— 这类模型如今占 Hugging Face 上生成式模型下载量的<b>最大份额</b>。</li>
+    <li>同日另一条：美国银行（BofA）已不再就安排中国 AI 初创公司 Moonshot AI 的中国香港 IPO 进行磋商，凸显美资银行在中国 AI 领域的两难。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「开源模型对闭源商业模式的侵蚀」。这条新闻最该读的<b>不是安全警告本身，而是它出现的时点</b> —— 只有当价格竞争真正痛了，才需要动用「安全」话语。</div>
+</div>
+
+<h3 style="font-size:14.5px;color:var(--a3);margin:24px 0 12px">A3 · 资本与投融资</h3>
+
+<div class="card a3">
+  <div class="tt">Gartner：到 2030 年逾 3.5 万亿美元 AI 基建支出可能面临减值</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-sell">偏空</span></div>
+  <ul class="pts">
+    <li>逻辑链：预计的企业与消费者 AI 收入为 <b>3.6 万亿美元</b>，远不足以覆盖资本成本、并实现 12% 投入资本回报率所需的 <b>8.5 万亿美元</b>。</li>
+    <li>Gartner 警告：<b>超过 80% 的 neocloud 供应商</b>（含 CoreWeave、Nebius）到 2030 年可能无法再独立运营；Microsoft、Alphabet、Amazon 等多元化超大规模云厂商<b>敞口相对较小</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「AI 基建是不是一个会计问题」。关键变量是<b>折旧速度</b> —— 同样的资产，按 3 年折和按 6 年折，是两个完全不同的商业模型。这条是本期全部 AI 空头逻辑里最结构化的一条。</div>
+</div>
+
+<div class="card a3">
+  <div class="tt">CoreWeave：债券跌破面值 78 美分、五年违约定价升至 60% 以上，供应商喊话当日股价反弹 6%</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15 ＋ 科技日报「今日热读」＋ Bloomberg 日报 10-16（18:49）</span><span class="factor f-sell">偏空</span></div>
+  <ul class="pts">
+    <li>2032 年到期的债券四个月前还以<b>面值</b>发售，如今跌破面值 <b>78 美分</b>；信用违约互换价格显示市场认为其<b>五年内违约概率超过 50%</b>。</li>
+    <li>股价周三一度<b>暴跌 17%</b>，导火索是联合创始人关于「寻求投资级评级以获取『无限制』借款」的言论令市场恐慌。</li>
+    <li>科技日报补充：该债券周三交易价<b>跌破面值 80 美分</b>，这被普遍视为借款人陷入财务紧张的门槛。</li>
+    <li><b>晚间更新（Bloomberg 日报 10-16 18:49）</b>：本周前三个交易日股价累计<b>暴跌 20%</b>；截至周四上午，市场对其<b>五年内违约的定价已升至 60% 以上</b> —— 较 AI 日报口径的 50% 进一步恶化。</li>
+    <li>晚间更新的反面证据：英伟达 CEO 黄仁勋对 Bloomberg 表示「<b>CoreWeave 的实力每天都在增强</b>」「<b>我很乐观。他们的资本成本实际上在下降</b>」。投资者随即响应，股价<b>上涨近 6%</b>，录得一个多月来最佳单日表现。</li>
+    <li>其他：三位联合创始人自 IPO 以来已<b>卖出 33 亿美元股票</b>；德意志银行认为该抛售是<b>买入机会</b>。该股自 2025 年 3 月 IPO 以来累计 <b>+74%</b>，但较 2025 年 6 月峰值<b>下跌 62%</b>。</li>
+    <li>外部对冲（10-15 口径）：黄仁勋同时表示<b>英伟达无需为其提供兜底支持</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「AI 基建的融资模式能不能续下去」。最值得记录的一处细节是<b>创始人的那句话本身就是利空</b> —— 一个健康的借款方不会说「我要拿到可以无限借的评级」。<b>晚间新增的一层更值得记住：债权人在按 60%+ 违约定价，供应商在说「资本成本在下降」，而股价买的是后者 —— 说明当前 AI 交易仍由股权叙事主导，信用信号尚未被定价。这个缺口就是本判断的赔率所在。</b></div>
+</div>
+
+<div class="card a3">
+  <div class="tt">HSBC：银行与投资者正变得更挑剔，要求 AI 建设有更高回报</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>HSBC 企业与机构银行业务主管 Michael Roberts 在曼谷接受 Bloomberg Television 采访时表示：「<b>放贷方将更加关注合理的回报、合理的结构，诸如此类的东西。</b>」</li>
+    <li>该表述与 Gartner／CoreWeave 两条构成同一现象的供需两侧证据。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「资金成本上行 → AI 项目 IRR 门槛上行」。这是本期「AI 信用端」最权威的一句外部确认，来自实际放贷的人。</div>
+</div>
+
+<div class="card a3">
+  <div class="tt">Princeton Digital Group 寻求最高 12 亿美元银团贷款，马来西亚建 198.8MW 园区</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-neu">中性·已定价</span></div>
+  <ul class="pts">
+    <li>资金用途：在马来西亚建设一座 <b>198.8 兆瓦</b>的数据中心园区，并偿还现有债务。</li>
+    <li>报告定性：这笔交易「折射出席卷整个数据中心行业的<b>更广泛的债务融资浪潮</b>」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「东南亚承接 AI 算力外溢」。这是本期唯一一条「传统银团贷款仍然通畅」的反向证据 —— <b>融资并没有断，只是变贵、变挑了</b>。</div>
+</div>
+
+<div class="card a3">
+  <div class="tt">Anduril 要约收购估值约 900 亿美元，较 5 月融资轮跳升 47%</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 科技日报 10-15「价值重估」</span><span class="factor f-buy">偏多</span></div>
+  <ul class="pts">
+    <li>这家国防科技初创公司允许员工出售股份，要约对其估值约 <b>900 亿美元</b>，较 5 月融资轮的 <b>610 亿美元</b>大幅跃升；而那一轮估值已是其 2025 年价值的<b>翻倍</b>。</li>
+    <li>要约于周二开启，<b>定于 11 月 9 日截止</b>，总规模上限约 <b>13 亿美元</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「国防科技的估值锚被 AI 抬高」。注意这是<b>员工流动性要约而非新融资</b> —— 它不带来新资本，但给出一个公开的估值锚，这类事件对二级市场同类标的（国防科技、无人机、自主系统）有参照意义。</div>
+</div>
+
+<div class="card a3">
+  <div class="tt">BofA 退出 Moonshot AI 中国香港 IPO 安排磋商</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-neu">中性·已定价</span></div>
+  <ul class="pts">
+    <li>BofA 此前曾洽谈担任整体协调人角色，但谈判<b>最终没有转化为正式委托</b>。</li>
+    <li>背景：美国指责中国企业从美国公司攫取专有知识来训练模型，使美资银行在中国 AI 领域拓展业务时处于两难。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「中国 AI 公司的境外上市通道变窄」。这类事件的真实影响不在融资金额，而在<b>定价参照系的缺失</b> —— 少一家美资行，就少一套能对外沟通的估值语言。</div>
+</div>
+
+<h3 style="font-size:14.5px;color:var(--a4);margin:24px 0 12px">A4 · 应用与商业化</h3>
+
+<div class="card a4">
+  <div class="tt">中国光伏五大厂两年裁掉近一半员工，产能过剩下继续出清</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 摩根大通美国能源（引 Reuters）10-14</span><span class="factor f-sell">偏空</span></div>
+  <ul class="pts">
+    <li>中国最大光伏制造商去年再裁减<b>五分之一的员工</b>（-21%），2024 年已裁 31%；2024-2025 两年间五家公司共裁掉<b>约一半</b>人员。</li>
+    <li>同期<b>无一家公司公开宣布过裁员</b>，也无人回应置评请求。</li>
+    <li>背景：政府承诺治理产能过剩，但行业「尚未走出亏损」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「供给侧治理的时滞」。两年砍掉一半人力却仍亏损，说明<b>去产能的实际执行速度远慢于政策表态</b> —— 这条对判断任何「反内卷」主题都适用。</div>
+</div>
+
+<div class="card a4">
+  <div class="tt">Deloitte：52% 英国 CFO 预计未来一年因 AI 裁员，而转型只完成四分之一</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>调查覆盖 66 位英国首席财务官；多数公司表示在其最终预期的 AI 驱动变革中<b>目前只完成了四分之一</b>。</li>
+    <li>报告将其与英国「无就业增长」趋势关联：长期失业率上升，<b>青年失业率处于十多年最高</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「AI 的降本效应已经进入企业预算表」。注意时点错配：<b>裁员是现在做的，转型是以后完成的</b> —— 这意味着短期利润率改善可能先于收入增量出现。</div>
+</div>
+
+<div class="card a4">
+  <div class="tt">私募资本招聘：AI 能力正取代名校学历成为首要考量</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg AI 日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>Selby Jennings 对 500 名金融专业人士的调查显示，约<b>五分之二</b>受访者将「有效使用 AI 工具的能力」列为最重要招聘因素之一。</li>
+    <li>而优先考虑目标院校学历的仅<b>13%</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「人力资本定价权的迁移」。这类软信号通常领先于组织架构变化约 2–3 年，可作为「AI 渗透深度」的定性指标之一。</div>
+</div>
+
+<div class="card a4">
+  <div class="tt">Instagram 算法把孕期信息流变成「恐惧信息流」——平台推荐的失效案例</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 科技日报 10-15（主文）</span><span class="factor f-neu">中性·已定价</span></div>
+  <ul class="pts">
+    <li>作者记录了孕期 Instagram 信息流从「取名灵感」迅速滑向流产、死产、产后精神病等极端内容的过程。</li>
+    <li>《Second Life》作者 Amanda Hess 佐证：尝试重置算法「净化」信息流后「<b>几乎立刻，一切就故态复萌</b>」，并指出 <b>AI 可能只会给这一切火上浇油</b> ——「它只是让推送内容、用各种方式调整内容变得容易得多」。</li>
+    <li>核心判断：「我们在社交媒体上看到的内容，并不是我们生活或经历的映照。它是<b>我们最恐惧之事、最容易触发我们之事的映照</b>。」</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场不太为这类内容定价，但监管会。这是「算法放大负面情绪」的一个高质量一手案例，<b>属于未来 AI 推荐合规成本的隐性来源</b>。本条如实记录但其商业传导不可量化。</div>
+</div>
+
+<div class="card a1">
+  <div class="tt">AI 浪潮重塑墨西哥：对美硬件出口史上首次超过汽车出口</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 经济日报 10-16（19:08）引汇丰研究</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>汇丰经济学家（Jose Carlos Sanchez 牵头）在近期报告中写道：「<b>数据中心的建设和美国的科技相关繁荣，已经对墨西哥一些行业显示出正面溢出效应</b>」，「<b>墨西哥对美国的硬件出口历史上首次超过了汽车出口</b>」，并认为该趋势很可能延续，因为部分硬件相关企业有能力灵活调整生产线。</li>
+    <li>限定条件：按产值计，<b>汽车仍是墨西哥最大的制造业部门</b>。彭博经济研究的 Felipe Hernandez 指出，「AI 对国内增加值的贡献仍然小得多，<b>因为生产更依赖进口零部件</b>」。</li>
+    <li>政策背景：这或许正是美国据报道正施压墨西哥接受<b>新规则以防止第三国规避关税</b>的原因。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「AI 供应链的地理再分配」。墨西哥的硬件出口超越汽车，是「近岸外包」与「AI 基建」两条线交汇的第一个硬数据。<b>但要注意后半句的限定 —— 出口额涨了、国内增加值没涨</b>，说明墨西哥承担的是组装环节而非制造环节。这对「谁真正拿到了 AI 硬件价值链」是一个有用的反例。</div>
+</div>
+
+<div class="card a4">
+  <div class="tt">AI 数据工作进入白领零工经济：医生与律师加入「时薪 400 美元」的零工市场</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 经济日报 10-16（19:08）「彭博经济学精选」</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>报告记录：<b>医生和律师正加入人工智能时薪 400 美元的零工经济</b>，数据工作正在吸引白领专业人士。</li>
+    <li>与本板块已列的「Deloitte：52% 英国 CFO 预计因 AI 裁员」「私募资本招聘：AI 能力取代名校学历」构成同一条链的第三段 —— <b>前端是裁员预期、中端是招聘标准迁移、后端是岗位形态本身的零工化</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「AI 对高技能劳动的分工方式」。时薪 400 美元这个数字很重要 —— 它说明<b>被重新定价的不是「低端劳动」，而是「可被拆分为标注任务的专家判断」</b>。这是本期关于 AI 劳动力影响最有信息量的一条，因为它给出了价格。</div>
+</div>
+
+<div class="miss">
+  <b>⚠️ A 板块缺口披露：</b>本期 XZ 库 1015 目录共 <b>170 份</b>研报 PDF，本期<b>深读 8 份</b>（野村长鑫 4F²、摩根大通美国能源、瑞银全球石油基本面、花旗美国经济、瑞银中国经济评论、野村亚洲洞察、高盛 The 720、瑞银存储月报），其余 162 份<b>均只到「服务端摘要级」</b>（仅索引与 introduction 可见）。<br>
+  <b>已排除的近似项</b>：恩捷股份 3Q 预告（摩根士丹利）、Ionis 制药（瑞银）、Cytokinetics 与 United Therapeutics（摩根大通）、德国商业银行（早报）—— 均属个股医药／银行事件，与 A 板块四条细分线的行业结构含义不直接相关，故未单列。<br>
+  <b>需确认的可能</b>：德意志银行《AI 时代网络风险上升》主题研究（主题与 A2 的安全议题相关）与巴克莱《北美金属与矿业》第二轮覆盖（新增 7 家公司含铝、钢、铜）已识别但未深读，若需完整结论建议下期补读。
+</div>
+
+<h2>B、重要人物言论
+  <span class="hint">纲（态度）。含科技公司领导人商业动向。每张卡下半「说人话」＝翻译利害关系 + 倾向判断</span>
+</h2>
+
+<div class="who">
+  <div class="nm">凯文·沃什（Kevin Warsh）</div>
+  <div class="role">美联储主席 · 周五在曼谷 IMF 与世界银行年会与 IMF 总裁炉边谈话</div>
+  <ul class="pts">
+    <li>时间点极为关键：由于美联储将在此后进入会议前的<b>媒体噤声期</b>（10 月 27-28 日政策会议），这次亮相实质上是<b>就可能的决策发出信号的最后一次机会</b>。</li>
+    <li>背景是 9 月火热的通胀数据引发了大量押注，认为美联储本月将上调利率。美国银行美国利率策略师 Meghan Swiber 称，投资者正「等待 Warsh 明天为美联储继续加息<b>开绿灯</b>」。</li>
+    <li>他此前已<b>宣誓不以自己的近期展望来引导市场</b>。多数交易员仍预计美联储将等到 12 月。</li>
+    <li>IMF 总裁 Georgieva 上周称赞他愿意「不仅用言辞，而且用行动」追求价格稳定。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>市场已经把 12 月加息写进价格了，但没写 10 月。如果他今天给出任何「不会等那么久」的暗示，短端利率会立刻重定价，而长端会先涨后跌（滞胀预期）。口头指引在这里的杠杆极高，因为<b>他此前公开承诺过不做前瞻指引 —— 所以他真说什么，市场会当作强信号</b>。<br>
+    <b>倾向判断：</b>偏鹰但克制。他大概率会把球踢给数据（下周一中国数据、自身 PCE），而不是直接给 10 月定调。<b>最需要警惕的不是他说了什么，而是他选择不说什么。</b>
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">潘功胜</div>
+  <div class="role">中国人民银行行长 · G20 央行和财长会议 + 德意志银行新兴市场会议（曼谷）</div>
+  <ul class="pts">
+    <li>在 G20 会议<b>警示金融脆弱性</b>，重申全球失衡不能依靠汇率调节，中国央行将继续实施好适度宽松的货币政策。</li>
+    <li>在德银活动上用英文发表约半小时讲话，向投资者<b>推介人民币资产</b>并概述扩大人民币资产全球角色的计划；强调中国国债的韧性及对投资组合的分散化效果。</li>
+    <li>他援引的数据：一个由 <b>80% 人民币债券＋20% 中国股票</b>构成的组合，过去二十年<b>年回报率高于全球资产组合</b>，且 5 年期与 10 年期波动率均低于全球基准。</li>
+    <li>实际市场对照（同期）：中国债券过去 12 个月为美元计价投资者带来约 <b>10%</b> 回报，人民币在篮子口径接近四年高位；<b>全球债务基准下跌 2%，美国国债下跌 1.5%</b>。同期中证股票指数下跌 9% 多，MSCI 全球指数上涨 15%。</li>
+    <li>现场反应：<b>250 多名投资者</b>挤进宴会厅，其中约 100 人因座位不足站着听；一位可再生能源投资者表示因此更认真考虑发行人民币计价债券为项目融资，并配置现金买入中国股票。</li>
+    <li>他还承诺推动人民币债券规则与全球标准更紧密对齐，并促进其在主要国际清算机构被接受为<b>合格抵押品</b>。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>这不是外交辞令，是一次<b>有明确报价的推介</b>。他拿出的「80/20 组合、二十年回报更高、波动更低」是可直接被机构回测验证的陈述 —— 而这个陈述成立的窗口，恰好是发达市场债券正在被抛售、投资者急需替代品的时候。最实在的一句话是「成为合格抵押品」：<b>一旦人民币债券能被拿去抵押融资，持有它的成本才会真正下降</b>，这是从「配置品」变成「基础设施」的分水岭。<br>
+    <b>倾向判断：</b>偏多但慢变量。这不构成短期交易信号，属于改变资金长期流向的结构性表态。<b>注意他用词谨慎 —— 强调「分散化」而不是「替代」，说明目标是把人民币债券做进别人的基准，而不是挑战美元。</b>
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">克里斯塔利娜·格奥尔基耶娃（Kristalina Georgieva）</div>
+  <div class="role">国际货币基金组织总裁</div>
+  <ul class="pts">
+    <li>对各国央行行长的总体建议是保持「<b>审慎的鹰派倾向</b>」。</li>
+    <li>IMF 自身预测：通胀飙升将在 2027 年缓解，全球通胀率从 <b>4.7% 回落至 4.1%</b>；但「由于几乎没有迹象表明美国对伊朗的战争会结束 —— 正是这场战争引发了能源冲击 —— 物价可能会在更长时间内保持高位」。</li>
+    <li>IMF 预期正转向<b>更紧的货币政策</b>（叠加于经济的韧性增长之上）。</li>
+    <li><b>10-16 晚间补充（Bloomberg 经济日报）</b>：她在曼谷把<b>发达经济体称为「最严重的违规者」</b>，敦促它们整顿财政；并对「靠增长摆脱债务」的路径给出明确否定 ——「<b>增长当然有帮助，但它无法足够快地带来必要的调整</b>」。Bloomberg 明确定性这是「暗示贝森特让美国靠增长摆脱债务与赤字困境的计划恐怕行不通」。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>IMF 把「能源战争」明确认定为这轮通胀的源头 —— 这意味着<b>只要地缘不降温，货币政策就没有独立性</b>。央行的选择空间被外部事件锁死了。<br>
+    <b>倾向判断：</b>偏鹰，且给出了时间锚（2027 年缓解）。<b>真正的信息量在「审慎」二字</b> —— 她既没说快加息，也没说别加息，等于把判断权留给各国，同时先把预期往鹰的方向拨了一格。
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">单慧（Hui Shan）／米歇尔·林（Michelle Lam）</div>
+  <div class="role">高盛首席中国经济学家 ／ 法国兴业银行大中华区经济学家</div>
+  <ul class="pts">
+    <li><b>单慧</b>（周五在彭博电视）：关于政府还能出台多少刺激，「<b>不会太多——只够达到 4.5% 的增长</b>」；并指出「第一，出口一直表现得相当好；第二，财政约束正变得越来越棘手」。</li>
+    <li><b>米歇尔·林</b>（周二报告）：「如果没有决定性的政策转向、转向支持家庭收入和消费，中国很可能陷入长期低通胀和增速低于潜在水平的时期」；并认为「<b>更大的挑战在 2027 年，届时 GDP 增长可能进一步放缓至 4.5% 以下</b>」。</li>
+    <li>美国银行全球研究部（海伦·乔牵头）将迄今为止的举措形容为「<b>政策婴儿步</b>」，并认为「任何环比增长的潜在反弹，更有可能要到第四季度才会出现」。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>三家的口径罕见一致 —— <b>政策的目标不是「刺激增长」，而是「守住底线」</b>。这个区别极其重要：如果目标是保底，那么任何超预期上行都不可持续，任何托底政策也不会追加。<br>
+    <b>倾向判断：</b>中性偏空（针对顺周期交易）。「婴儿步」+「只够 4.5%」= 不要把中国资产当复苏交易买。<b>但反过来，这也意味着政策底是确定的 —— 做空的下行空间同样有限。</b>
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">萨拉·弗里亚尔（Sarah Friar）</div>
+  <div class="role">OpenAI 首席财务官 · 都柏林国际 AI 峰会</div>
+  <ul class="pts">
+    <li>警告企业使用中国的 AI 模型会带来网络安全风险，敦促公司「<b>在网络层面选择西方模型</b>」。</li>
+    <li>她明确定位于「正在拥抱中国模型的人」，要求对方「考虑安全与保障方面的因素」。</li>
+    <li>背景：中国开源权重模型如今占 Hugging Face 生成式模型下载量的<b>最大份额</b>。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>这是一次<b>把价格竞争转译为合规成本</b>的尝试。如果企业真按「网络层面选西方模型」执行，中国开源模型在欧美企业市场的渗透会被行政性阻断 —— 这直接保护了 OpenAI／Anthropic 的定价权。<br>
+    <b>倾向判断：</b>这是竞争性表态，不是技术判断。<b>值得跟踪的不是她说了什么，而是欧洲监管是否接这个球</b> —— 若欧盟把「模型来源」写进网络安全采购指引，那才是可交易的事件。
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">黄仁勋（Jensen Huang）</div>
+  <div class="role">英伟达首席执行官 · 就 CoreWeave 信用恶化两次公开表态</div>
+  <ul class="pts">
+    <li>（10-15）称 CoreWeave 的<b>财务实力正在改善</b>，明确表示<b>英伟达无需为其提供兜底支持</b>。</li>
+    <li>（<b>10-16 晚间</b>，对 Bloomberg）「<b>CoreWeave 的实力每天都在增强。我很乐观。他们的资本成本实际上在下降。</b>」</li>
+    <li>市场反应：CoreWeave 股价当日<b>上涨近 6%</b>，录得一个多月来最佳单日表现。</li>
+    <li>背景：CoreWeave 债券跌破面值 78 美分、五年违约定价已<b>升至 60% 以上</b>、股价本周前三个交易日累计跌 20%。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>这句话表面上在安抚，实质是在<b>划清界限</b>。英伟达最大的风险之一是被市场认为「它的客户是它自己扶持的」。主动说「不需要兜底」，等于告诉债权人：CoreWeave 的账不要算到我头上。<br>
+    <b>倾向判断：</b>中性偏空（对 neocloud 信用）。<b>这是典型的「否认式信号」—— 需要否认，说明市场已经在问了。</b>
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">魏哲家（C.C. Wei）</div>
+  <div class="role">台积电首席执行官 · 就马斯克 Terafab 芯片项目</div>
+  <ul class="pts">
+    <li>当被问及台积电是否会加入马斯克进军芯片制造的计划时表示：「<b>我们还在讨论之中，让我这么说吧。</b>」</li>
+    <li>同时强调：<b>在任何联盟中台积电都必须掌控自己的芯片生产</b>。</li>
+    <li>当期业绩背景：预计 12 月当季销售额最高可达 543 亿美元，轻松超出预期。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>「还在讨论」在台积电的语言体系里约等于「没有实质进展」。后半句才是关键 —— <b>「必须掌控自己的芯片生产」是在设定合作前提</b>：可以合作，但不能变成代工附庸。<br>
+    <b>倾向判断：</b>中性。<b>这是一个期权而非事件</b> —— 它给了 Terafab 概念一个想象空间，但台积电已用措辞把承诺降到了最低。
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">曹堪宇</div>
+  <div class="role">长鑫存储总裁 · 上海第四届集成芯片与 Chiplet 大会（10 月 10 日）</div>
+  <ul class="pts">
+    <li>披露下一代 DRAM 单元架构（4F²）进展，预计<b>年底前推出采用 4F² 架构＋晶圆级混合键合的 DDR5 RDIMM</b>。</li>
+    <li>技术要点在于 VSG（垂直环绕栅极）晶体管：沟道垂直、栅极环绕，改善栅控并缓解漏电与短沟道效应，同时缩小单元平面占用。</li>
+    <li>野村的独立评估：年底很可能仅样品或实验品，<b>量产要到 2027-28</b>，与三星／SK 海力士仍差至少三年。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>这条披露的真实受益方不是长鑫自己，而是<b>国产设备供应链</b>。4F² 工艺流程把介质层、阻挡层、高深宽比刻蚀、键合前 CMP、铜／钽／钴金属化的用量全部抬升，而这些恰好是国产设备已有份额的工序。<br>
+    <b>倾向判断：</b>对国产半导体设备偏多、对 DRAM 价格偏中性。<b>要警惕的是「年底」这个时间口径 —— 技术发布与量产之间通常隔着 2 年以上，不要把发布当产能。</b>
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">特朗普（Donald Trump）</div>
+  <div class="role">美国总统 · 能源与供应链措施</div>
+  <ul class="pts">
+    <li>称将在<b>格陵兰</b>启动「大规模」石油、天然气和矿产勘探。</li>
+    <li>政府将动用<b>《国防生产法》（DPA）</b>扩建 Delek 位于得州的 <b>74kbd</b> 炼油厂。</li>
+    <li>重启阻止 Ørsted 海上风电场建设的努力。</li>
+    <li>（同日其他）台湾同意从阿拉斯加 LNG 项目购买 <b>30%</b> 的天然气。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>这批动作有一个共同特征 —— <b>全部是供给侧、全部是长周期</b>。摩根大通的评价最精准：这属于「以月或年计的长期解决方案，对（急性的）近期供需失衡几乎没有影响」。<br>
+    <b>倾向判断：</b>短期中性、长期偏空油价。<b>交易含义在于：不要把这类新闻当成油价催化剂 —— 它们是远期供给，不是当期紧张的解药。</b>
+  </div>
+</div>
+
+<div class="who">
+  <div class="nm">斯科特·贝森特（Scott Bessent）</div>
+  <div class="role">美国财政部长 · 缺席 IMF 曼谷会议</div>
+  <ul class="pts">
+    <li>本周<b>缺席</b>在曼谷举行的 IMF-世界银行会议。Bloomberg 经济日报的定性是：「在上一次重大峰会上，Scott Bessent 曾极力将中国塑造成世界经济危险断层线的始作俑者。随着这位美国财政部长本周缺席曼谷，<b>站上聚光灯下的变成了美国及其盟友</b>。」</li>
+    <li>会议焦点随之从「中国出口顺差」转向「<b>发达经济体自身的借贷成本</b>」：自 G20 财金首脑阿什维尔会晤以来六周内，<b>美国、法国、日本的借贷成本已升至数十年高位</b>。</li>
+    <li>其「靠增长摆脱债务与赤字困境」的主张，在会议期间被 IMF 总裁格奥尔基耶娃公开质疑 —— 她称发达经济体是「<b>最严重的违规者</b>」，并称增长「<b>无法足够快地带来必要的调整</b>」。</li>
+  </ul>
+  <div class="plain">
+    <div class="pl">说人话：翻译一下</div>
+    <b>利害关系：</b>这是一次<b>叙事主导权的转移</b>。此前美国是中国「全球失衡」叙事的主要指控方，而本届会议把矛头转向了发达经济体自身的财政与债务成本 —— <b>对中国的压力在边际上减轻，对美债的压力在边际上增加</b>。<br>
+    <b>倾向判断：</b>中性偏多（对中国资产相对）、偏空（对美国长债）。<b>但要注意这是「缺席」造成的结果，而非主动让渡 —— 若贝森特下次到场，叙事重心可能重新摆回中国。</b>
+  </div>
+</div>
+
+<h3 style="font-size:14.5px;color:var(--b);margin:24px 0 12px">B · 附：科技公司领导人商业动向（美股事件驱动因子）</h3>
+
+<div class="tw">
+<table>
+<tr><th>公司／人物</th><th>动作类型</th><th>具体动作与规模</th><th>对美股传导</th></tr>
+<tr><td>Anthropic</td><td>融资／IPO</td><td>告知潜在投资者 Q3 收入 168 亿美元，经调整已盈利，推进上市</td><td><span class="factor f-buy">偏多</span>一级估值锚上移</td></tr>
+<tr><td>Anduril</td><td>增持／减持（要约）</td><td>员工要约估值约 900 亿美元（5 月 610 亿），上限约 13 亿美元，11/9 截止</td><td><span class="factor f-buy">偏多</span>国防科技估值锚</td></tr>
+<tr><td>Apple</td><td>产品／战略</td><td>Apple Intelligence 12 月中国大陆上线，不含新 Siri</td><td><span class="factor f-watch">结构性</span>合规补齐非升级</td></tr>
+<tr><td>台积电</td><td>战略合作</td><td>与马斯克 Terafab「讨论中」，但须掌控自有生产</td><td><span class="factor f-watch">结构性</span>期权而非事件</td></tr>
+<tr><td>美国电力（AEP）</td><td>采购订单／长约</td><td>向 Mainspring 采购最多 1.6GW 小型发电机，8 年交易或超 <b>40 亿美元</b>；2027 年先装 190MW，可每年追加 200MW 至 2034</td><td><span class="factor f-buy">偏多</span>AI 电力需求实物化</td></tr>
+<tr><td>Microsoft</td><td>公开指引</td><td>瑞银判断 Azure／M365 预期基准上移，财报日 10/28</td><td><span class="factor f-buy">偏多</span>待证伪</td></tr>
+<tr><td>腾讯控股</td><td>公开指引</td><td>瑞银预测 3Q26 收入 +7% YoY（2Q 为 +11%），经调整净利 -7% 至 650 亿元，AI 投入压制利润率</td><td><span class="factor f-watch">结构性</span>收入增、利润降</td></tr>
+<tr><td>礼来（Lilly）</td><td>资本支出</td><td>建成配备 <b>超 1,000 颗英伟达芯片</b>的超级计算机，并向小型生物科技公司开放模型</td><td><span class="factor f-buy">偏多</span>AI 算力进入制药</td></tr>
+<tr><td>英伟达（黄仁勋）</td><td>公开表态</td><td>两次公开为最大客户之一 CoreWeave 站台：「实力每天都在增强」「资本成本实际上在下降」「无需英伟达兜底」</td><td><span class="factor f-neu">中性</span>否认式信号，信用未被定价</td></tr>
+</table>
+</div>
+
+<div class="take">
+  <b>商业动向层结论：</b>本期 9 条里，<b>只有 2 条属于「已完成事件、不构成新催化剂」</b>（Anthropic 的 Q3 收入属已发生；Apple 功能清单属既定）。其余 7 条均含新增预期。<br>
+  最值得注意的一条是 <b>AEP 采购 Mainspring 1.6GW／超 40 亿美元</b>：这是本期唯一把「AI 用电需求」变成<b>已签字合同</b>的条目 —— 落在「电力设备」而非「芯片」环节，与前文主线①的结论（找未拥挤环节）互相印证。<b>新增的英伟达一条则属于反向样本：它是「口头表态」而非合同，却直接推动了股价 —— 正好说明本条表格里「已签字」与「已表态」的权重差距。</b>
+</div>
+
+<h2>C、宏观
+  <span class="hint">利率、债券、汇率、财政政策、经济数据</span>
+</h2>
+
+<div class="card c">
+  <div class="tt">美国 9 月核心 CPI +0.33% MoM，远超预期；花旗预计 10 月暂停、12 月加息 25bp</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 花旗《美国经济》10-14</span><span class="factor f-sell">偏空（对债）</span></div>
+  <ul class="pts">
+    <li>核心 CPI <b>+0.33% MoM</b>（花旗预测仅 0.18%），隐含核心 PCE <b>+0.30% MoM／3.1% YoY</b>。</li>
+    <li>分项：<b>能源 +5.20% MoM</b>（整体 CPI +0.65%）；住房 +0.39%（业主等价租金 OER 意外强升至 +0.35%）；外出住宿 +2.04%；二手车 +0.7%。</li>
+    <li>花旗判断：美联储<b>9 月已加息</b>，10 月将「暂停」但强烈暗示 12 月加息 25bp。</li>
+    <li>花旗的保留意见：过去四个月核心 CPI 均值仅 0.205% MoM；OER 的跳升「集中在中西部一个地区」，可能属样本异常而不会重复。同时指出<b>计算机价格因 AI 投资需求推高投入成本而保持强劲</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「加息周期没结束」。最有信息量的不是 0.33% 这个数字，而是<b>花旗一边说超预期、一边维持「底层通胀在放缓」的判断</b> —— 这种矛盾说明连卖方自己也不确定，这正是波动率的来源。</div>
+</div>
+
+<div class="card c">
+  <div class="tt">美国 9 月 PPI 创逾四年最大升幅，核心 PPI 超过所有经济学家预估</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 早报 10-16 ＋ 经济日报 10-15</span><span class="factor f-sell">偏空（对债）</span></div>
+  <ul class="pts">
+    <li>当月<b>加油站销售大增</b>推动零售销售也超预期增长。</li>
+    <li>克利夫兰联储行长担忧「接二连三的供应冲击可能形成通胀心理」；旧金山联储行长表示「越来越担心通胀的顽固性」。</li>
+    <li>飙升的燃料成本被明确认定为主要推手，且「几乎也在其他所有地方造成伤害，这是本周 IMF 会议的一个关键主题」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「通胀预期会不会脱锚」。两位地方联储行长同时提「心理」和「顽固」，是本期最值得注意的政策语言变化 —— <b>他们担心的已不是当期数据，而是预期本身。</b></div>
+</div>
+
+<div class="card c">
+  <div class="tt">中国 Q3 GDP 预估 4.4%，将连续第二季低于官方目标</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 10-16（彭路原文精选）</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>彭博调查经济学家预估中值：Q3 同比 <b>4.4%</b>（Q2 为 4.3%），将再次低于官方 <b>4.5%-5%</b> 的年度目标。</li>
+    <li>零售销售预计出现「<b>现代历史上最疲弱的读数之一</b>」；固投前 9 个月预计同比 <b>-7.3%</b>（8 月为 -7.2%）。</li>
+    <li>亮点：<b>9 月出口跳涨 36%</b>；预计 9 月工业增加值同比 +5.4%（8 月 +5.2%）；官方制造业 PMI 自 6 月以来首次扩张。</li>
+    <li>已出台措施：9 月底以来推出抵押贷款补贴、扩大央行对科技与基建的资金支持、向各省追加 <b>820 亿美元</b>支出能力。</li>
+    <li>IMF 最新《世界经济展望》预测 <b>2027 年中国经济放缓至 4%</b> —— 对比疫情前 6% 以上、2020 年以来 4.9%，属大幅下调。</li>
+    <li>高盛估计：9 月固投同比降幅可能从 8 月的 10.8% <b>收窄至 8%</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「政策护城河有多深」。注意一组内部矛盾：<b>出口 36%、工业 5.4%、PMI 扩张，但 GDP 只有 4.4%</b> —— 差额全部落在消费与投资。这就是为什么刺激措施救不了市场情绪：它们补的是缺口，不是增长。</div>
+</div>
+
+<div class="card c">
+  <div class="tt">瑞银：9 月出口 +36.3% y/y 大超预期，PPI 同比 5.0% 创四年新高</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 瑞银《中国经济评论》10-14（两份）</span><span class="factor f-buy">偏多</span></div>
+  <ul class="pts">
+    <li>出口增速从 8 月的 25.0% y/y 加速至 <b>36.3% y/y</b>，远超彭博一致预期 25.7%。</li>
+    <li>PPI 从 8 月的 3.8% 加速至 <b>5.0% YoY</b>，超过市场预期的 4.4% 与瑞银预测的 4.5%，<b>为四年来最高</b>。</li>
+    <li>瑞银另文记录：政府债券主导 9 月社融发行。</li>
+    <li>⚠️ 交叉提示：彭博指出出口增长「<b>部分被价格效应放大</b>」—— PPI 5.0% 本身即意味着名义出口额被价格推高；瑞银亦在另一处提到「出口价格上涨」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「中国出口的份额还在扩张」。但必须做一层去水分：<b>36.3% 的名义值里含有 PPI 5.0% 的价格贡献</b>。真实的量增要打折。这不是否定，是校准。</div>
+</div>
+
+<div class="card c">
+  <div class="tt">野村：中国 9 月信贷增速创新低，私人部门需求持续疲弱</div>
+  <div class="meta"><span class="tag lv1">服务端摘要级</span><span class="src">XZ库 · 野村《亚洲洞察》10-14 ＋ 源哥库「最新研报（晚）」同文</span><span class="factor f-sell">偏空</span></div>
+  <ul class="pts">
+    <li>标题即结论：「信贷增长创历史新低，因私人需求持续疲弱」。</li>
+    <li>该文同时出现在两库，属<b>同源条目</b>（详见「一、去重表」第 3 行）。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「宽货币没用」。信贷创历史新低与政府债主导社融同时出现，说明<b>钱在金融体系里空转，进不了私人部门</b>。这是判断任何中国顺周期交易前必须接受的前提。</div>
+</div>
+
+<div class="card c">
+  <div class="tt">人民币有望连续第三周走强，在岸 6.6907，中间价为 2023 年 2 月以来最强</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · 彭路原文精选 Reuters 10-16（11:43）</span><span class="factor f-buy">偏多</span></div>
+  <ul class="pts">
+    <li>周五在岸人民币午盘尾段交投 <b>6.6907</b>，盘中一度触及 <b>6.6897</b>，为 2023 年 1 月以来最强；年内累计上涨 <b>4.53%</b>。</li>
+    <li>开盘前，中国人民银行把美元计价指导价设在 <b>6.7220</b>，为 2023 年 2 月以来最强。</li>
+    <li>南华期货：中国出口保持强劲支撑人民币；美元指数自 18 个月低点反弹，受「获利了结，以及一位美联储官员的鸽派言论」推动。</li>
+    <li>野村观点（被路透引用）：美国 9 月 PPI 创四年半最大涨幅，但<b>不足以支撑 10 月加息</b>。</li>
+    <li>路透调查：Q3 GDP 同比 <b>4.4%</b>。IMF 亚太部主任斯里尼瓦桑敦促中国出台<b>更大规模财政刺激</b>。凯投宏观：尽管面临关税、贸易再平衡压力、出口价格上涨与人民币升值，中国出口仍继续取得长足进步。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「人民币从贬值担忧转为升值管理」。最值得注意的是潘功胜的表态 ——「全球失衡无法仅通过汇率调整来解决」，路透解读为<b>北京不愿让人民币过快升值</b>。这是一条罕见的「主动设上限」信号：<b>升值是政策允许的，但速度是政策控制的。</b></div>
+</div>
+
+<div class="card c">
+  <div class="tt">中国离岸信托税：10 月 22 日申报截止，20% 税率引发富豪「筹钱冲刺」</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · 彭路原文精选 Reuters 10-16（12:06）</span><span class="factor f-sell">偏空（对港股流动性）</span></div>
+  <ul class="pts">
+    <li>北京 7 月底为离岸信托收入申报设定 <b>10 月 22 日</b>截止日，对此类利润征收 <b>20%</b> 税款。</li>
+    <li>波士顿咨询估计中国离岸财富约 <b>1.7 万亿美元</b>。JLT Legacy Group CEO 奥斯卡·刘：在中国香港和美国上市的中国公司创始人受冲击最重（许多人是在 2014–2020 年估值高点通过信托卖股）；「单个案件应缴税款可能从几百万元到数亿元、甚至<b>数十亿元</b>」。</li>
+    <li>实际行为：一位科技亿万富豪的家族办公室表示「如今花在计算税款上的时间比交易还多，并且正在<b>出售大约一半的股票投资组合</b>」；有银行正向私人客户<b>放贷以支付税单</b>，以客户自己公司的股票作担保。</li>
+    <li>规则不确定性：律师事务所 Charles Russell Speechlys 合伙人韦康称「这张网非常宽」「细节里藏着魔鬼——很多细节都缺失」；纳税义务与「主要经济利益」是否在中国挂钩，解释空间大。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「港股的一批长期卖盘」。这是本期最实在的一条资金面信息 —— <b>它给出了一个可解释的抛压来源，且带明确截止日期（10/22）</b>。用股票质押贷款缴税这个细节尤其值得注意：它把「卖股」变成「加杠杆持有」，短期抽血、长期风险更大的结构。<b>倾向判断：10 月 22 日前后港股相关标的存在确定性抛压，之后需观察是否有反向回补。</b>
+  </div>
+</div>
+
+<div class="card c">
+  <div class="tt">中国「国家队」放出回归信号，蓝筹 ETF 创纪录资金流入</div>
+  <div class="meta"><span class="tag lv1">服务端摘要级</span><span class="src">源哥库 · 彭路原文精选 Bloomberg 10-16（11:16）</span><span class="factor f-buy">偏多</span></div>
+  <ul class="pts">
+    <li>随着全球科技股抛售蔓延至中国内地市场，周四所谓国家队青睐的蓝筹 ETF 之一吸引<b>创纪录资金流入</b>。</li>
+    <li>无官方确认，但「买入的规模与时点已令许多市场参与者深信不疑」。</li>
+    <li>彭博行业研究分析师 Rebecca Sin 援引了「这一前所未有的规模，以及国有资金历史上在市场承压时期（介入）的惯例」。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「政策底的可见性」。国家队入场不是新剧本，<b>但「创纪录规模」是新的</b> —— 它说明托底的力度在随外部压力升级而加码。这条与「信贷创新低、私人需求疲弱」构成对冲：政策在资产端发力，而非在信用端。</div>
+</div>
+
+<div class="card c">
+  <div class="tt">OPEC 连续下调 2026 年石油需求增速：从 4 月的 1.4mbd 一路砍到 180kbd</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 摩根大通美国能源 10-14</span><span class="factor f-sell">偏空（对油价）</span></div>
+  <ul class="pts">
+    <li>月度下修轨迹（kb/d）：4 月 <b>1,400</b> → 5 月 1,200 → 6 月 970 → 7 月 780 → 8 月 580 → 9 月 380 → 10 月 <b>180</b>。<b>半年内累计下调约 87%。</b></li>
+    <li>中国 9 月原油进口约 <b>9.03mbd</b>，环比仅增 100kbd（+1.1%）。</li>
+    <li>瑞银另引 IEA：2026 年需求下调 0.1Mb/d 至 <b>-2.6Mb/d</b>（瑞银自身估计 -1.8Mb/d）；2027 年增长下调 0.6Mb/d 至 2.0Mb/d。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「需求端已经不重要了」。这张表本期最有力的一个数字 —— <b>需求预测被连续七个月下修，而油价仍在 106 美元</b>。这说明当前价格几乎完全由地缘与供给端支撑，<b>一旦地缘溢价消退，下方空间由需求决定，而需求是空的。</b></div>
+</div>
+
+<div class="card c">
+  <div class="tt">欧洲日内电价波动逼近 2022 能源危机水平；新加坡铁矿石跌破 90 美元/吨创两年低点</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 能源日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>欧洲电力运营商有望迎来近年最赚钱的冬季之一。储能电池通过高价售电、低价充电获利。</li>
+    <li>英国日内价差较去年同期<b>飙升 80%</b>，9 月达约 <b>123 英镑（约 163 美元）／兆瓦时</b>。</li>
+    <li>新加坡铁矿石期货<b>跌破 90 美元/吨</b>，创两年低点，因中国需求疲软且全球供应过剩。</li>
+    <li>印度推动风机主要部件本土制造，BloombergNEF 称这将<b>影响中国制造商</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「波动率本身变成了资产」。储能赚钱靠的是价差而非电价 —— 这与 AI 数据中心的「电费敏感度」是同一枚硬币的两面。<b>铁矿石破 90 则是中国内需疲弱在商品端最直接的价格证据。</b></div>
+</div>
+
+<div class="card c">
+  <div class="tt">IMF 曼谷会议焦点转向「债券收益率」：美、法、日借贷成本升至数十年高位</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 经济日报 10-16（19:08）</span><span class="factor f-sell">偏空（对长债）</span></div>
+  <ul class="pts">
+    <li>汇丰控股亚洲首席经济学家 Frederic Neumann 这样概括曼谷的热议话题：「<b>债券收益率、债券收益率、还是债券收益率</b>」；并警告「<b>如果收益率继续以这种速度攀升，过去一年全球经济的增长韧性将很快开始磨损</b>」。</li>
+    <li>量化：自 G20 财金首脑在阿什维尔会晤以来的六周里，<b>美国、法国和日本的借贷成本已升至数十年高位</b>；过去一周左右略有回落，但仍远高于世界已经习惯的水平。</li>
+    <li>归因：Bloomberg 明确指「<b>特朗普的伊朗战争是今年通胀和利率上升的主要推手</b>」；包括 IMF 总裁格奥尔基耶娃在内的许多与会者认为，庞大的预算赤字和债务无异于火上浇油。</li>
+    <li>边际信号：美联储主席沃什的表态<b>丝毫没有打消</b>市场对美联储本月维持利率不变的押注 —— 即曼谷没有给出比市场已定价更鹰的方向。</li>
+    <li>同源另一条（新兴市场）：MSCI 警告印尼股市的新兴市场地位岌岌可危，印尼股市周五遭遇<b>近三十年来最严重的暴跌</b>，印尼央行面临下周加息压力；MSCI 同时<b>冻结土耳其指数</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「财政风险溢价，而不是政策利率」。这条与本期 CPI／PPI 两条是同一枚硬币：<b>通胀决定短端，财政决定长端</b>。当 IMF 会议的最高频词从「中国顺差」变成「债券收益率」，意味着全球资产的共同贴现率正在被<b>主权信用</b>而非央行重新定价 —— 这对所有长久期资产（AI 基建、成长股、长债）是同一个方向的压力。</div>
+</div>
+
+<h2>D、地缘
+  <span class="hint">能源、霍尔木兹海峡、美伊、俄乌、贸易摩擦、出口管制</span>
+</h2>
+
+<div class="card d">
+  <div class="tt">伊朗「改变打法」：攻击范围扩至霍尔木兹以外与阿曼湾，48 小时内至少 5 起</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 摩根大通美国能源 10-14</span><span class="factor f-sell">偏空（对航运）</span></div>
+  <ul class="pts">
+    <li>伊朗据报约 <b>10 天前</b>起对认定「违反其限制」的船只启用「<b>不同的进攻战术</b>」，战略性地将行动范围<b>扩展到海峡之外</b>，覆盖阿曼湾及「更远的海域」（即船对船 STS 转运）。</li>
+    <li>数字印证该策略：<b>过去 48 小时至少记录到 5 起</b>涉油轮与商船事件。FT 统计截至 10 月 11 日的两周内 <b>24 艘船被击中</b>；10 月 11 日霍尔木兹流量录得当月最低 <b>2.9mbd</b>。</li>
+    <li>沙特／胡塞战线：也门胡塞武装周三击中了<b>沙特阿美总部的一栋建筑</b>；沙特则打击了也门境内的油库，并表示有导弹射向沙特阿美总部所在位置。</li>
+    <li>关键反差：<b>尽管攻击加剧，石油波动率大体已经平复</b> —— OVX 指数 48.77，较 4 月 21 日高点 85.57 大幅回落。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「冲突会持续，但油会流过去」。这是本期最需要标注的一处认知风险：<b>攻击次数在上升，波动率却在下降</b>，说明市场已把地缘风险当作常态而不是事件。<b>倾向判断：这种「麻木」本身是脆弱的 —— 一旦出现第一起造成实质断供或美军伤亡的事件，重新定价的幅度会比前几次更大，因为没有溢价可跌。</b></div>
+</div>
+
+<div class="card d">
+  <div class="tt">美国封锁使伊朗 10 月原油出口归零；OPEC+ 9 月产量反而激增 2.3Mb/d</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 摩根大通美国能源 ＋ 瑞银全球石油基本面（均为 10-14）</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>摩根大通引述报道：<b>美国封锁使伊朗 10 月原油出口保持为零</b>。</li>
+    <li>瑞银引 IEA：OPEC+ 9 月原油产量<b>激增 2.3Mb/d</b>，由<b>沙特（+2.3Mb/d）</b>与伊拉克（+520kb/d）领增。沙特原油与凝析油出口环比增加 <b>超过 3Mb/d</b>，因装载转移至东部海湾码头（在东西管道遭袭之后）。沙特产量报 8.3Mb/d。</li>
+    <li>伊朗产量环比降 230kb/d 至 <b>1.9Mb/d</b>，<b>9 月未观察到任何原油装载</b>。利比亚降 100kb/d。</li>
+    <li>海湾原油出口 9 月<b>激增 4.4Mb/d 至 13.9Mb/d</b>，其中霍尔木兹流量升 3.7Mb/d 至 <b>10.9Mb/d</b>，部分归因于阿曼湾船对船转运增加。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「供给的替代弹性比预期高」。伊朗的出口归零被 OPEC+ 的增产完美抵消，而且是同一时间发生的 —— <b>这就是油价不涨的机械原因，不需要用「市场麻木」解释</b>。这条与上一条合起来，才是完整的图景。</div>
+</div>
+
+<div class="card d">
+  <div class="tt">IEA 10 月 OMR：2H26 平衡放松 0.4Mb/d，但 3Q/4Q 仍短缺；释储剩 96Mb 待放</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 瑞银《全球石油基本面》10-14</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>IEA 认为油市不如先前预期的紧张，反映<b>健康的非 OPEC+ 供给与更弱的需求</b>；2H26 平衡平均<b>放松 0.4Mb/d</b>，但 3Q26 仍短缺 <b>1.2Mb/d</b>、4Q26 短缺 <b>1.8Mb/d</b>。</li>
+    <li>因 10 月安全担忧与攻击增加，IEA 将 4Q26 OPEC+ 原油产量预测<b>下调 0.2Mb/d</b>。</li>
+    <li>库存：9 月全球观测库存小幅下降（水上油 +103Mb 被陆地库存 -113Mb 抵消）。至 9 月底，库存<b>较战前水平低 509Mb</b>（瑞银自身估计为 745Mb）。</li>
+    <li>释储进度：IEA 国家已从 3 月 11 日宣布的 400Mb 中释放 <b>331Mb</b>（政府库存 240Mb＋义务行业库存 91Mb）；9 月释放放缓至仅 8Mb，<b>剩余约 96Mb</b>（欧洲 46／美洲 40／亚太 10），预计未来四个月完成。</li>
+    <li>成品油：中东成品油/LPG 流量仍<b>低于战前一半</b>，维持柴油紧张 —— 4Q26 短缺、1Q27 转盈余，但<b>库存要到 2H27 才可能恢复</b>。</li>
+    <li><b>10-16 晚间（Bloomberg 能源日报「每日图表」）</b>：中东供应风险不断加剧，<b>盖过了紧急储备新一轮释放的影响</b>，油价有望<b>连续第二周上涨</b>；<b>WTI 涨幅一直超过布伦特</b>，令两大基准价差收窄，因美国原油运费成本下降提振需求。</li>
+    <li>同源同日的两条供给侧注脚：<b>韩国计划今冬更多依赖煤炭</b>，因伊朗战争扰乱了 LNG 供应；铁矿石巨头 <b>Vale</b> 估计，中东冲突引发的能源与运费成本飙升，正使全球海运市场约 <b>10% 的供应无利可图</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「原油宽松、成品油紧张」这两件相反的事。关键提醒：<b>不要把原油平衡的放松读成「能源风险解除」</b>。真正卡住的是柴油，而柴油库存恢复要等到 2027 年下半年 —— 这是一个跨年度的结构性紧张，且 IEA 明确说「即便原油宽松，成品油仍紧」。<b>倾向判断：成品油裂解与炼化环节的定价权会持续强于原油本身。</b></div>
+</div>
+
+<div class="card d">
+  <div class="tt">胡塞袭击沙特阿美总部，暴露沙特军力极限；欧洲天然气冲上伊朗战争以来高位</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 经济日报 10-15 ＋ 早报 10-16；XZ库 · 摩根大通 10-14</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>彭博经济日报的判断：「胡塞武装对沙特阿拉伯的袭击，<b>正在暴露这个王国军事威力的极限</b>。即便如此，布伦特原油仍在大盘抛售中回落。」</li>
+    <li>FT 相关标题（摩根大通汇总）：军事简报——胡塞暴露沙特庞大军火的局限；霍尔木兹海峡船只遭开战以来最严重的一连串袭击；欧洲以低天然气储备与不确定的海湾供应进入冬季。</li>
+    <li>摩根大通记录：<b>欧洲天然气触及伊朗战时高位</b>（Financial Times）。</li>
+    <li>卡塔尔 LNG 打法改写：9 月约 <b>20 艘</b>载卡塔尔 LNG 的油轮驶出霍尔木兹，交付量在 9 月底接近<b>战前水平的三分之一</b>；但在伊朗战争前，Ras Laffan 每停运一周即损失约 <b>10 亿美元</b>销售额（IMF 估计卡塔尔今年经济可能萎缩 15.6%）。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「沙特的威慑可信度」。彭博的措辞很重 ——「暴露军事威力的极限」意味着<b>市场开始怀疑传统安全提供者的有效性</b>。这对整个海湾风险溢价是慢性的抬升压力。<b>而卡塔尔 LNG 的恢复路径（战前 1/3）说明：即使有政治意愿，产能修复也是以季度计的。</b></div>
+</div>
+
+<div class="card d">
+  <div class="tt">俄乌：乌克兰自 10/8 起未打击俄炼厂，泽连斯基下令恢复袭击</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 摩根大通美国能源 10-14；源哥库 · Bloomberg 能源日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>摩根大通记录：据部分说法，<b>乌克兰自 10 月 8 日起未再针对俄罗斯炼厂</b>，尽管俄持续攻击乌电力设施（俄国防工业称周三打击了基辅及周边<b>四座电厂</b>）。</li>
+    <li>克宫周二表示关于能源停火的接触「<b>仍在继续</b>」，但未进一步说明。</li>
+    <li>彭博能源日报（同日）：泽连斯基<b>下令恢复对俄罗斯炼油厂的袭击</b>，与美国就情报援助限制的对抗不断升级。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「能源停火会不会谈成」。注意时间线矛盾：摩根大通说「10/8 起未打」，彭博说「下令恢复」——<b>两条信息方向相反，说明这个变量正处在转折点上</b>。数据侧的对应证据是卡塔尔 LNG 出口回升与海湾出口激增 4.4Mb/d，即供给在修复。<b>如果袭击真的恢复，这个修复会被打断 —— 这是下期最值得盯的单一变量。</b></div>
+</div>
+
+<div class="card d">
+  <div class="tt">欧盟评估对中国商品实施进口配额并酝酿贸易威慑工具</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 早报 10-16 ＋ 经济日报 10-15</span><span class="factor f-sell">偏空</span></div>
+  <ul class="pts">
+    <li>欧盟据悉正评估对更多中国商品实施<b>进口配额</b>的方案，范围囊括<b>化学品和机械行业</b>；此外还在酝酿<b>贸易威慑工具</b>，拟必要时切断中国商品的市场准入。</li>
+    <li><b>10-16 晚间升级（Bloomberg 经济日报）</b>：欧盟正准备设立<b>新的贸易权力机构</b>，该机构「<b>可以将中国完全挡在其单一市场之外</b>」—— 从「评估配额」升级为「设立常设工具」。</li>
+    <li>时间点：欧盟领导人将在布鲁塞尔会晤，<b>中国贸易关系被列入峰会议程</b>。</li>
+    <li>相关背景（源哥库 · 美银证券调查）：中国被列为<b>最不受青睐的市场之一</b>，净低配比例从前月的 15% <b>升至 25%</b>。</li>
+    <li>另有一条具体影响：瑞银认为天工国际（0826.HK）对其「因欧盟进口限制上升」担忧过度，该股前一日修正约 10%。</li>
+    <li>贸易侧另一处：美国众议院重量级议员以安全担忧为由，要求取消中远海运参与海岸警卫队「21 世纪优质船舶计划」的资格。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「中国出口这条唯一的强逻辑会不会被切断」。这是主线④的直接风险源 —— 中国增长高度依赖出口，而欧盟正把配额工具摆上桌。<b>注意美国对中国商品的壁垒已经在，欧盟加入是「增量」—— 这正是彭博所说「保护主义抬头」的具体化。</b></div>
+</div>
+
+<div class="card d">
+  <div class="tt">巴西大选首轮生变：弗拉维奥·博尔索纳罗领先，Petrobras 资产出售预期升温</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 能源日报 10-15</span><span class="factor f-watch">结构性·观察</span></div>
+  <ul class="pts">
+    <li>弗拉维奥·博尔索纳罗在巴西总统大选首轮中<b>意外领先</b>，增加了该国国有石油公司展开大规模资产出售的可能性。可能包括出售 Petrobras 持有的<b>炼油厂和老化油田</b>。</li>
+    <li>最大问题是 Petrobras 是否会出售其在 <b>Braskem SA</b>（拉美最大石化生产商，市值约 2.5 亿美元）的控股权。该公司正与债权人谈判，债权人一直敦促 Petrobras 注资以避免破产。</li>
+    <li>前巴西石油监管机构负责人 Décio Oddone：「我预计弗拉维奥政府会在石油领域聚焦盈利能力，并剥离非核心资产……<b>这将让 Petrobras 重回正轨</b>」，并点名 <b>Recôncavo 盆地巴伊亚油气资产群</b>与亚马逊雨林中的 <b>Urucu 油田</b>可能在出售名单。潜在买家包括巴西独立生产商 <b>PRIO SA</b> 与 <b>PetroReconcavo SA</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「南美上游资产重新流通」。这是本期唯一一条能改变<b>中长期供给格局</b>的政治事件 —— 老博尔索纳罗任内 Petrobras 曾出售价值数十亿美元的油田、管道和炼油厂。<b>倾向判断：对国际油公司是潜在机会，对油价是中长期偏空（供给增加），但时间尺度在年，不是本季度变量。</b></div>
+</div>
+
+<div class="card d">
+  <div class="tt">其他地缘与贸易快讯（摩根大通 10-14 汇总，摘要级）</div>
+  <div class="meta"><span class="tag lv1">服务端摘要级</span><span class="src">XZ库 · 摩根大通美国能源「Sector News &amp; Headlines」</span><span class="factor f-neu">中性·已定价</span></div>
+  <ul class="pts">
+    <li><b>台湾</b>同意从阿拉斯加 LNG 项目购买 <b>30%</b> 的天然气（特朗普宣布，CNBC）。</li>
+    <li><b>阿曼取代美国</b>成为印度最大 LNG 供应国，整体 LNG 进口在霍尔木兹冲击下仍保持强劲（The Indian Express）。</li>
+    <li>欧盟<b>推迟</b>油气进口甲烷规则<b>一年</b>（Reuters）。</li>
+    <li>欧洲炼厂<b>利润率崩塌</b>，因投入成本飙升（FT）—— 与前述「成品油紧张」构成张力，需下期核实是地区性还是全欧。</li>
+    <li>特朗普重启阻止 <b>Ørsted</b> 海上风电场建设（FT）；美国煤炭业在特朗普治下获得生机（FT）。</li>
+    <li><b>BHP</b> 与工会就智利 Escondida 避免罢工举行最后谈判，工会领袖称协议「<b>基本完成</b>」。</li>
+    <li>IEA：<b>柴油短缺可能持续至 2027 年</b>；意大利总理 Meloni 称美俄柴油协议是「非常冒险的选择」。</li>
+    <li>中国 9 月煤炭进口<b>下降 6%</b>，因库存高企与印尼供应受限（Reuters）。</li>
+    <li>德国拟通过消费者附加费为新应急天然气储备融资（Reuters 引草案）。</li>
+    <li>沙特领衔 OPEC+ 9 月产量跳升，尽管伊朗战争造成扰动（Reuters）。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>这批条目共同指向一件事 —— <b>全球能源贸易的路线图正在被重画</b>：台湾买阿拉斯加气、阿曼卖给印度、欧盟推迟甲烷规则、美国煤炭回春。每一项单独都不大，合起来是「供给来源多元化」的持续演进，其净效果是<b>削弱单一海峡的定价权</b>。</div>
+</div>
+
+<div class="card d">
+  <div class="tt">中国 9 月钢材出口年化 1.28 亿吨创历史新高，与此同时固投持续下滑</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">XZ库 · 摩根大通美国能源「China Steel Channel Checker」10-14</span><span class="factor f-sell">偏空（对钢价）</span></div>
+  <ul class="pts">
+    <li>9 月中国钢材出口 <b>10.5Mt</b>（环比 +3%、同比 +3%），年化运行率 <b>128Mt</b> 为<b>历史最高</b>。</li>
+    <li>9M26 中国粗钢产量估计约 <b>724Mt</b>，意味着钢材出口约占总产量的 <b>12%</b>。</li>
+    <li>摩根大通预测 2026／2027 年中国钢材产量 1,000Mt／990Mt（含约 60Mt 未上报产量），出口预测 107／104Mt。9M26 出口 86Mt 与 9M25 的 87Mt 基本持平，意味着在当月约 10Mt 的运行率下，<b>2026 年预测存在上行风险</b>。</li>
+    <li>里约热内卢（Rio Tinto）估计中国第三季钢材消费同比 <b>-2%</b>、环比 <b>-4%</b>。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「中国把过剩产能输出到海外」。出口创历史新高 + 国内消费下滑 = <b>产能没有减少，只是换了买家</b>。这与前述光伏「两年裁一半人仍亏损」是同一个逻辑的两面：<b>供给侧治理的表态与执行之间存在明显时滞。</b></div>
+</div>
+
+<div class="card d">
+  <div class="tt">铜：贸易商预付 2.5 亿美元锁定三年供应，中国买家溢价创近四年最高</div>
+  <div class="meta"><span class="tag lv0">原文级</span><span class="src">源哥库 · Bloomberg 能源日报 10-16（19:41）</span><span class="factor f-buy">偏多（对铜价）</span></div>
+  <ul class="pts">
+    <li>Mercuria Energy Group 同意<b>预付 2.5 亿美元</b>，用于从一家位于<b>刚果民主共和国、规模相对较小的中资矿业公司</b>锁定<b>三年的供应</b>。Bloomberg 称这是「一代人一遇的美国套利交易」的一部分。</li>
+    <li>驱动因素：特朗普威胁对美国铜进口<b>加征关税</b>，已把美国铜价推至远高于其他地区的<b>溢价水平</b>，吸引大量精炼铜阴极运抵美国海岸；贸易商既可运往美国，也可卖给错失机会的客户。</li>
+    <li>价格信号：<b>中国买家目前支付的阴极铜溢价处于该国近四年来的最高水平</b>。刚果（金）已成为仅次于智利的<b>全球第二大铜生产国</b>。</li>
+    <li>关键判断（Mercuria 金属交易主管 Kostas Bintas，于 FT Mining Summit）：「<b>从现在来看，价格的方向由政策驱动</b>」；若高额关税最终不落地，阴极铜可能开始流向其他地方，「<b>主要是中国</b>」。</li>
+    <li>待验证节点：关税是否落地、这种价码能持续多久，预计是<b>下周伦敦 LME Week</b> 行业聚会的热议话题。</li>
+  </ul>
+  <div class="take"><b>说人话：</b>市场在定价「<b>政策溢价，而不是供需缺口</b>」。这条最值得记录的是它的结构 —— 贸易商愿意为「锁量」付巨额预付款，说明<b>实物市场的紧，紧在「拿到货的确定性」而非「价格」</b>。风险也明摆着：<b>如果关税最终不落地，这些高价长约会立刻变成成本包袱，而铜可能转向中国</b>。所以这是一条<b>押注政策会兑现</b>的交易，不是一个供需结论。</div>
+</div>
+
+<h2>一、两库同源去重表
+  <span class="hint">同一机构同一标题只保留一条；标注实际读取出处</span>
+</h2>
+
+<div class="tw">
+<table>
+<tr><th>#</th><th>内容</th><th>源哥库位置</th><th>XZ 库位置</th><th>实际读取出处</th><th>处理</th></tr>
+<tr><td>1</td><td>瑞银《中国经济展望：中欧贸易数据快照》（2026-10-14）</td><td>「最新研报（晚）」PDF<br>（261014 版本）</td><td>1015 目录 PDF<br>（同名，10-14）</td><td>XZ 库 1015</td><td>合并为一条，计入 C 板块背景，不重复计数</td></tr>
+<tr><td>2</td><td>野村《中国消费：大众商场 9 月经营表现暂时回暖》</td><td>「最新研报（晚）」PDF<br>（中文标题版）</td><td>1015 目录 PDF<br>（英文标题版）</td><td>XZ 库 1015</td><td>确认为同一篇（同日期 10-14、同结论），只计一次</td></tr>
+<tr><td>3</td><td>野村《亚洲洞察 —— 中国：私人部门需求持续疲弱》</td><td>「最新研报（晚）」PDF</td><td>1015 目录（同源主题，瑞银亦有《政府债券主导 9 月社融》可互为印证）</td><td>XZ 库 1015</td><td>保留一条，放入 C 板块</td></tr>
+<tr><td>4</td><td>台积电季展望超预期 ＋ Terafab 讨论</td><td>Bloomberg 早报 10-16、<b>AI 日报</b> 10-15、<b>科技日报</b> 10-15（三处）</td><td>—</td><td>源哥库（三处合并）</td><td>三处合并为 A1 单条卡片，不按三个条目计数</td></tr>
+<tr><td>5</td><td>IEA 油市观点</td><td>Bloomberg 早报（同意释储剩余 1 亿桶）＋ 能源日报（布油下跌）＋ 经济日报（胡塞）</td><td>瑞银《全球石油基本面》（引 IEA 10 月 OMR）＋ 伯恩斯坦《亚太油气：IEA 油市更新》</td><td>两库并用：<b>数据口径以 XZ 库瑞银稿为准</b>，立场以源哥库为准</td><td>同一事实两源呈现，正文中已注明各自出处</td></tr>
+<tr><td>6</td><td>BHP Escondida 罢工</td><td>—</td><td>摩根大通（谈判「基本完成」）＋ 里约 3Q26 点评（罢工将于 10/14 起）<b>＋ 瑞银（智利罢工避免）</b></td><td>XZ 库 1015</td><td>三处指向同一事件，合并为一条；<b>注意两源措辞不一致</b>（「基本完成」vs「将于 10/14 启动」）</td></tr>
+<tr><td>7</td><td>中国「国家队」稳股市 —— 敦促企业与国有基金买入、引导部分投资者减少抛售</td><td>「彭路原文精选」Bloomberg 10-16（11:16）</td><td>—</td><td>源哥库（两处合并）</td><td>源哥库<b>内部重复</b>：与 <b>Bloomberg 日报 10-16（18:49）</b>同日同题，合并为 C 板块单条，不重复计数</td></tr>
+<tr><td>8</td><td>CoreWeave 信用恶化 —— 债券跌破面值、违约定价抬升、供应商喊话</td><td>Bloomberg <b>AI 日报 10-15</b> ＋ <b>日报 10-16（18:49）</b>（同一事件的两个时点）</td><td>—</td><td>源哥库（两处合并）</td><td>合并为 A 板块单条卡片；<b>两处数据不一致已如实保留</b>（违约概率 50% → 60% 以上）</td></tr>
+</table>
+</div>
+
+<div class="take">
+  <b>去重层结论：</b>本期<b>共发现 8 组同源/近同源内容</b>，其中两库同时出现的有 3 组（第 1、2、3 行），源哥库内部重复的有 3 组（第 4、7、8 行 —— 晚间批次与上午批次撞题的证据），XZ 库内部多篇交叉印证的有 2 组（第 5、6 行）。<br>
+  <b>需要特别标注的一处两源冲突</b>：BHP Escondida 罢工，摩根大通记录「协议基本完成」，而里约热内卢 3Q26 点评与瑞银记录「罢工将于 10 月 14 日启动」。<b>本报告不判定谁对，如实并列 —— 这是本期唯一一处两源事实直接冲突，下期必查。</b>
+</div>
+
+<h2>二、评级与目标价速查
+  <span class="hint">本期实际读到的原文级数值；OCR 存疑处已注明</span>
+</h2>
+
+<div class="tw">
+<table>
+<tr><th>机构</th><th>标的</th><th>代码</th><th>评级</th><th>目标价</th><th>现价</th><th>层级</th></tr>
+<tr><td>野村</td><td>SK 海力士</td><td>000660 KS</td><td>买入</td><td><b>KRW 4,700,000</b></td><td>KRW 1,419,000</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>野村</td><td>三星电子</td><td>005930 KS</td><td>买入</td><td><b>KRW 670,000</b></td><td>KRW 232,000</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>野村</td><td>中微公司</td><td>688012 CH</td><td>买入</td><td><b>CNY 480.00</b></td><td>CNY 295.05</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>野村</td><td>拓荆科技</td><td>688072 CH</td><td>买入</td><td><b>CNY 913.00</b> ※</td><td>CNY 628.87</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>野村</td><td>长鑫存储</td><td>688825 CH</td><td>买入</td><td><b>CNY 116</b> ※</td><td>CNY 46.00</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根大通</td><td>里约热内卢（Rio Tinto）</td><td>RIO</td><td>增持</td><td>—（1 年远期 EV/EBITDA <b>5.5x</b>、P/NPV <b>0.77x</b>）</td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根大通</td><td>Carpenter Technology</td><td>CRS</td><td>增持</td><td><b>US$ 520</b></td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根大通</td><td>Hess Midstream</td><td>HESM</td><td>减持</td><td><b>US$ 32</b>（自高位<b>下调</b>）</td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根大通</td><td>Par Pacific 3Q26</td><td>PARR</td><td>—</td><td>EPS 预测 <b>US$ 6.49</b>（一致预期 6.51）</td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根大通</td><td>Diamondback 3Q26</td><td>FANG</td><td>—</td><td>EPS/CFPS <b>US$ 5.82/11.16</b>（超一致预期 9%/4%）</td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根大通</td><td>Occidental 3Q26</td><td>OXY</td><td>—</td><td>EPS/CFPS <b>US$ 1.43/3.49</b>；实现油价 US$85.91/bbl</td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>瑞银</td><td>Ionis Pharmaceuticals</td><td>IONS</td><td><b>首次覆盖·买入</b></td><td><b>US$ 88</b></td><td>—</td><td><span class="tag lv1">摘要级</span></td></tr>
+<tr><td>巴克莱</td><td>美铝（Alcoa）</td><td>AA</td><td>增持</td><td>—（北美金属矿业第二轮覆盖，新增铝/钢/铜共 7 家）</td><td>—</td><td><span class="tag lv1">摘要级</span></td></tr>
+<tr><td>瑞银</td><td>微软 Azure／M365</td><td>MSFT</td><td>—</td><td>预期基准<b>上移</b>；财报 10/28</td><td>—</td><td><span class="tag lv1">摘要级</span></td></tr>
+<tr><td>瑞银</td><td>腾讯控股 3Q26</td><td>0700.HK</td><td>—</td><td>收入 +7% YoY、经调整净利 <b>-7% 至 RMB 65bn</b></td><td>—</td><td><span class="tag lv1">摘要级</span></td></tr>
+<tr><td>瑞银</td><td>天工国际</td><td>0826.HK</td><td>—</td><td>认为「对欧盟进口限制的担忧过度」（前日跌约 10%）</td><td>—</td><td><span class="tag lv1">摘要级</span></td></tr>
+<tr><td>摩根士丹利</td><td>恩捷股份</td><td>002812</td><td>—</td><td>3Q 业绩预告显示<b>利润率扩张超预期</b></td><td>—</td><td><span class="tag lv1">摘要级</span></td></tr>
+<tr><td>高盛</td><td>ASML</td><td>ASML NA</td><td><b>买入</b></td><td><b>€ 2,200</b></td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根士丹利</td><td>南电（南亚电路板）</td><td>8046 TT</td><td>—</td><td><b>NT$ 2,000</b></td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+<tr><td>摩根士丹利</td><td>欣兴电子</td><td>3037 TT</td><td>—</td><td><b>NT$ 1,775</b></td><td>—</td><td><span class="tag lv0">原文级</span></td></tr>
+</table>
+</div>
+
+<div class="take">
+  <b>※ OCR 歧义声明（必须披露）：</b>野村长鑫 4F² 那份 PDF 的评级表存在 OCR 噪声。本表采用文中<b>估值方法段落明确写出的数字</b>（拓荆 CNY 913.00、长鑫 CNY 116），而非评级表中被 OCR 破坏的数值（分别显示为 640.00／49.00）。<br>
+  <b>交叉验证依据</b>：长鑫目标价 116 ＝ 文中所述「20 倍 2028 年预测每股收益 5.8 元」的乘积，<b>内部自洽</b>，故采用 116。拓荆 913 ＝ 「20 倍远期 EV/Sales × 2027 年收入预测」，与其现价 628.87 的方向一致。<br>
+  <b>本报告的处理原则</b>：宁可标注歧义，不用行业常识填补 —— 这是 2026-10-14 事故后确立的硬约束。
+</div>
+
+<h2>三、上期悬案追踪
+  <span class="hint">对照上期（10-15）「下期必看节点」，逐条给结论</span>
+</h2>
+
+<div class="card z">
+  <div class="tt">上期四宗悬案 · 本期进展</div>
+  <ul class="pts">
+    <li><b>① AI 资本开支的资金来源 → 判定：进一步恶化，且已从「信用端」扩散至「融资条件端」。</b><br>
+    新证据：CoreWeave 债券跌破面值 78 美分、CDS 隐含五年违约概率&gt;50%、股价单日一度 -17%；Gartner 测算 2030 年逾 3.5 万亿美元基建或减值、超 80% neocloud 恐无法独立运营；<b>HSBC 放贷主管明确表态「放贷方将更加关注合理的回报、合理的结构」</b>。上期结论「信用端先行」被本期证实，并新增了「融资门槛系统性上移」这一层。</li>
+    <li><b>② HBM 供需 → 判定：本期有国产替代侧新证据，但核心裁决点未到。</b><br>
+    新证据：长鑫 4F² 架构路线披露（年底出样、2027-28 量产、与韩厂差至少三年）。但野村明确指出三星与 SK 海力士「有意不优先做 4F² 迁移」而选 EUV 路线 —— <b>这意味着国产替代与韩厂走的是不同技术路径，不是直接追赶</b>。裁决点仍锁在 <b>10/28-29 三星业绩</b>。</li>
+    <li><b>③ 中国财政「有钱找不到项目」→ 判定：本期已转向「政策天花板」问题。</b><br>
+    新证据：Q3 GDP 预估 4.4%（低于 4.5-5% 目标）；已出台措施被美银称为「政策婴儿步」；高盛单慧明确「不会太多——只够达到 4.5% 的增长」；法兴把风险推向 2027（GDP 或降至 4.5% 以下）；IMF 预测 2027 年放缓至 4%。<b>上期问题已不是「资产荒」，而是「政策意愿的边界在哪里」。</b></li>
+    <li><b>④ 布伦特剪刀差 → 判定：逻辑需重新评估。</b><br>
+    新证据呈两面：IEA 将 2H26 平衡<b>放松 0.4Mb/d</b>、OPEC 连续第七个月下调 2026 需求至 180kbd（4 月为 1.4mbd）、海湾出口激增 4.4Mb/d 至 13.9Mb/d —— 全部指向原油宽松。但成品油端相反：中东成品油/LPG 流量仍低于战前一半，柴油库存<b>要到 2H27 才可能恢复</b>，IEA 警告柴油短缺可能持续到 2027。<b>结论修正：剪刀差应从「原油 vs 成品油」重新定义为「原油宽松 vs 成品油结构性紧张」，且后者是更持久的那个。</b></li>
+  </ul>
+</div>
+
+<div class="card z">
+  <div class="tt">本期新增悬案 · 下期必看节点</div>
+  <ul class="pts">
+    <li><b>【已闭环 · 10/16】沃什在曼谷与 IMF 总裁炉边谈话 —— 结论：沉默即信号。</b>晚间 Bloomberg 两报一致记录：他对美联储政策前景<b>保持沉默</b>，「丝毫没有打消市场对美联储本月将维持利率不变的押注」，投资者据此<b>削减了对 10 月加息的押注</b>。上期点名的「最后一个信号窗口」已关闭，<b>未给出比市场定价更鹰的方向 → 10 月按兵不动的概率上升，等于把风险推到 12 月。</b></li>
+    <li><b>【下周一 · 10/19】中国 Q3 GDP ＋ 9 月经济活动数据（零售、工业增加值、固投）</b> —— 彭博与路透一致指向 4.4%。同时注意<b>金融街论坛</b>亦在 10/19 开幕，政策表态与数据同日出现。关注零售是否确为「现代史上最弱读数之一」。</li>
+    <li><b>【10/20】中国 9 月贸易数据</b> —— 用于核实瑞银的出口 +36.3% 与彭博所指「价格效应放大」各占多少。</li>
+    <li><b>【10/22】中国离岸信托收入申报截止</b> —— 20% 税率、涉及约 1.7 万亿美元离岸财富。观察 10/22 前后港股是否出现集中抛压，以及之后是否有反向回补。<b>本期唯一带明确日期的资金面事件。</b></li>
+    <li><b>【10/27-28】FOMC 政策会议</b> —— 花旗预期 10 月暂停、12 月加息 25bp；市场多数押 12 月。</li>
+    <li><b>【10/28】微软 1Q／9 月财报</b> —— 检验瑞银「Azure／M365 预期基准上移」这一判断，本期 AI 主线最干净的证伪点。</li>
+    <li><b>【10/28-29】三星电子业绩</b> —— HBM 定价的<b>唯一裁决者</b>，上期悬案②的答案在此。</li>
+    <li><b>【11/3】美国中期选举</b> —— 摩根大通引 Reuters：「伊朗正调整战术，在<b>美国投票前</b>加大对航运的攻击」。地缘节奏与政治日程已明确挂钩。</li>
+    <li><b>【11/9】Anduril 要约收购截止</b> —— 上限约 13 亿美元，估值约 900 亿美元。国防科技估值锚的最终确认。</li>
+    <li><b>【待核实 · 无固定日期】</b> ① 乌克兰是否真的恢复打击俄炼厂（摩根大通「10/8 起未打」vs 彭博「下令恢复」两源冲突）；② BHP Escondida 罢工是否发生（两源冲突）；③ 欧洲炼厂利润率「崩塌」与成品油「紧张」之间的地区性差异。</li>
+  </ul>
+</div>
+
+<h2>四、数据源可读性审计
+  <span class="hint">逐数据源 × 连接器状态 × 可读层级 × 说明与缺口。不可读一律披露，不以推断填充</span>
+</h2>
+
+<div class="tw">
+<table>
+<tr><th>数据源</th><th>连接器状态</th><th>可读层级</th><th>本期实际使用情况与缺口</th></tr>
+<tr class="up"><td>源哥 ima 库<br>7395683732563191「源哥会员专享」</td><td>可用<br>（<b>5467</b> 条）</td><td><b>原文级</b></td><td><b>充分使用。</b>Bloomberg <b>早报</b>（10-16，07:21）读 .md 全文；<b>晚间批次全部读到原文</b> —— <b>日报</b>（18:49）、<b>经济日报</b>（19:08）、<b>能源日报</b>（19:41）；AI／科技／能源／经济四个「（晚）」栏目各读 10-15 全文；「彭路原文精选」10-16 上午 3 条（11:16／11:43／12:06）均读全文。<br><b>缺口</b>：①「最新研报（晚）」（2394 条）本期仅取列表（含中欧贸易、全球 FDI、野村中国私需、瑞银外汇指南针等）；②「今日头条（晚）」「研报中文音频总结（晚）」「Bloomberg 供应链（晚）」<b>本期未采样</b>；③「大摩闭门会（一三五）」最新为 10/14 周期论剑音频，本期未做逐字稿；另「大摩新经济板块」10-16 音频已转写并用于 A1（台积电 2nm／ABF 载板／南电·欣兴目标价）。</td></tr>
+<tr class="up"><td>XZ ima 库<br>7482839675192179「XZ服务器」</td><td>可用<br>（18162 条）</td><td><b>原文级</b>（PDF 全文可提取）<br>＋ 摘要级</td><td><b>部分使用。</b>1015 目录共 <b>170 份 PDF</b>，本期<b>深读 8 份</b>（野村长鑫 4F²、摩根大通美国能源、瑞银全球石油基本面、花旗美国经济、瑞银中国经济评论、野村亚洲洞察、高盛 The 720、瑞银存储月报），其余 <b>162 份止于服务端摘要级</b>（仅索引与 introduction）。<br><b>已识别未深读</b>：德意志银行《AI 时代网络风险》、巴克莱《北美金属与矿业》第二轮覆盖、摩根大通《亚洲科技：存储/韩国科技/控股公司》营销反馈、野村《PCB/基板 AT&amp;S》电话会议、瑞银《中国基础材料：重估港中铜矿》。</td></tr>
+<tr class="hot"><td>XZ 库 · 当日（1016）文件夹</td><td>可用</td><td>—</td><td><b>不存在。</b>库主惯例为次日凌晨回填 —— 10-15 目录系今日 <b>04:48</b> 才出现。本期按既定规则取最新有实质内容的目录（1015），并在报告开头明确标注「<b>XZ 数据日期 = 2026-10-14</b>」。<b>这不是数据源故障。</b></td></tr>
+<tr class="up"><td>ima-mcp 连接器</td><td>可用<br>（实测）</td><td>—</td><td><b>本期可用，三层实测通过，并在生成前重新复检一次。</b>① 自检脚本判定 <b>READY</b>（判决依据两项均 OK：账号级启用开关 ＋ 插件文件在磁盘，退出码 0）；② ToolSearch 确切名检索 <b>3/3 命中</b>；③ 真调 <code>get_knowledge_list</code> 与 <code>fetch_media_content</code> <b>均返回真实数据</b>（含晚间三份 .md 全文）。<br><b>披露</b>：自检输出中「会话级启用／everConnected／本地 mcpOAuth」三项显示 MISS，且 <code>enabled</code> 名单内<b>不含 ima</b> —— 依 2026-10-16 校准结论，<b>此三项与可用性无关、不作判据；判据只有两条（账号级启用开关 ＋ 插件文件在磁盘）</b>。</td></tr>
+<tr><td>知识星球（zsxq）／404K 数据源</td><td>—</td><td>—</td><td><b>本期未使用。</b>按 2026-10-06 起的弃用约定执行。本机 raw/ 目录下的 zsxq 四星球缓存（niu／econ／semi／ping）<b>一律未读取、未混用</b>。</td></tr>
+<tr><td>公开检索／行业常识</td><td>—</td><td>—</td><td><b>本期未使用。</b>所有条目均来自上述两个知识库的可读内容；检索不到的项已按规则单列缺口（见 A 板块缺口披露块），<b>未用行业常识补齐任何条目</b>。</td></tr>
+</table>
+</div>
+
+<div class="miss">
+  <b>⚠️ 覆盖度诚实声明：</b>本期 XZ 库 PDF 的原文级覆盖率仅 <b>8/170 ≈ 4.7%</b>。这意味着本报告中所有源自 XZ 库的个股与行业结论，<b>样本代表性有限</b>。所选取的 8 份系按「与本期五大主线相关性」优先，而非随机抽样，<b>因此存在选择偏差</b>，请按线索而非普查使用。<br>
+  <b>未做的补偿性填充</b>：未用旧日期数据、未用公开检索、未用行业常识补齐任何板块。
+</div>
+
+<h2>五、结论：三条可执行判断
+  <span class="hint">只有信息没有判断，等于没有交付</span>
+</h2>
+
+<div class="card z">
+  <div class="tt">判断一 · AI 交易的定价权正从「需求侧」转移到「融资侧」—— 跟踪信用指标比跟踪订单更有效</div>
+  <ul class="pts">
+    <li><b>依据（机制层最强的一条链）</b>：台积电展望超预期（需求强）＋ CoreWeave 债券跌破 78 美分（融资断）＋ Gartner 3.5 万亿减值测算（会计风险）＋ HSBC「放贷方更挑剔」（门槛上移）。四者同时成立。</li>
+    <li><b>可执行的含义</b>：把观察清单从「谁拿到了订单」换成「谁的债在跌、CDS 在扩、谁的再融资窗口在关」。<b>本周最值得记住的一组对照是 CoreWeave：债权人在按 60% 以上的五年违约概率定价，而供应商（英伟达）在说「它的资本成本在下降」，当天股价买的是后者（+6%）。</b>这说明信用信号当前<b>尚未被股权定价</b>，这个缺口就是本判断的赔率来源。</li>
+    <li><b>未拥挤的环节（三条共识里最实在的）</b>：① 电力侧 —— AEP 向 Mainspring 采购最多 1.6GW／超 40 亿美元，是本报告唯一「已签字合同」形式的 AI 电力需求；② 国产半导体设备中的混合键合配套（CMP／ALD）—— 4F² 路线的直接受益工序；③ 存储原厂（SK 海力士 TP KRW 4.7mn／三星 TP KRW 670k，均 Buy）—— 与 neocloud 的信用风险相对隔离。</li>
+    <li><b>风险</b>：若 10/28 微软财报与瑞银「预期基准上移」的判断相符，则上述空头逻辑会被证伪，AI 板块可能快速修复。这条判断有一个明确的到期日。</li>
+  </ul>
+</div>
+
+<div class="card z">
+  <div class="tt">判断二 · 地缘溢价已被「永久冲突」叙事吸收，真正的不对称在下游成品油而非原油</div>
+  <ul class="pts">
+    <li><b>依据</b>：攻击升级（48 小时 5 起、两周 24 艘被击中）而 <b>OVX 反降至 48.77</b>（4 月高点 85.57）；布油当天因「股市抛售」下跌；伊朗出口归零被 OPEC+ 增产 2.3Mb/d 完美抵消 —— <b>油价不涨有机械原因，不必用「麻木」解释</b>。</li>
+    <li><b>可执行的含义</b>：继续做多原油的地缘溢价性价比很低，因为溢价已经被资产价格提前拿走（S&amp;P 1500 Energy 一年 +1 万亿美元、炼化 YTD +165%）。<b>结构性紧张在柴油与成品油：4Q26 短缺、1Q27 转盈余、库存 2H27 才恢复</b> —— 这是一个跨越 2026-2027 的窗口。</li>
+    <li><b>同一条逻辑在铜上的镜像（晚间新增）</b>：铜的紧张不在价格而在<b>获取供应的确定性</b> —— 预付 2.5 亿美元锁三年货、中国溢价近四年最高。<b>但铜与油的定价驱动不同：油是供给中断，铜是关税预期。</b>因此对油做多成品油、对铜则<b>押注政策兑现而非供需缺口</b>；若关税不落地，铜的多头结构会反向。</li>
+    <li><b>需要防范的反向情景</b>：一旦出现第一起造成实质断供或美军伤亡的事件，<b>重新定价的幅度会比前几次更大 —— 因为没有溢价可跌</b>。这是本判断最重要的一条尾部风险。</li>
+    <li><b>下期必查</b>：乌克兰是否真的恢复打击俄炼厂（两源冲突）；欧洲炼厂「利润率崩塌」与成品油「紧张」的地区性差异。</li>
+  </ul>
+</div>
+
+<div class="card z">
+  <div class="tt">判断三 · 中国资产的「出口侧定价」仍有效，但已触到政策依赖的天花板；被低估的一条是人民币债</div>
+  <ul class="pts">
+    <li><b>依据（两端并存）</b>：强端 —— 出口 +36.3% y/y、PPI 5.0% 四年新高、人民币连续三周走强（中间价 6.7220 为 2023 年 2 月以来最强）、国家队 ETF 创纪录流入。弱端 —— GDP 4.4%、信贷增速创历史新低、零售「现代史上最弱之一」、固投 -7.3%、欧盟正评估对中国商品设进口配额。</li>
+    <li><b>可执行的含义</b>：出口链的多头逻辑仍成立，<b>但需做两层校准</b>：① 名义出口含 PPI 5.0% 的价格贡献，真实量增要打折；② 这条逻辑的唯一风险源（欧盟配额）已被摆上桌。<b>政策的目标是「守 4.5% 底线」而非刺激增长</b>（高盛单慧语），所以不要按复苏交易买中国周期。</li>
+    <li><b>被低估的一条</b>：潘功胜在曼谷给出的「80% 人民币债券＋20% 中国股票」组合——二十年回报高于全球、5 年与 10 年波动率更低；对照数据是同期中国债为美元投资者带来约 10% 回报，而全球债务基准 -2%、美债 -1.5%。他同时承诺推动人民币债券<b>在主要国际清算机构被接受为合格抵押品</b>。<b>这是从「配置品」变成「基础设施」的分水岭，也是本期全部材料中最具长期资金流向含义的一条。</b></li>
+    <li><b>近端事件风险</b>：<b>10/22 离岸信托税申报截止</b> —— 20% 税率、约 1.7 万亿美元离岸财富；已观察到家族办公室「出售约一半股票组合」与银行以股票质押放贷缴税。这是本期唯一带明确日期的资金面抛压来源。</li>
+  </ul>
+</div>
+
+<h2>六、方法论与结构声明
+  <span class="hint">含结构与实际计数一致的自查 + 契约校验器输出原文</span>
+</h2>
+
+<div class="card z">
+  <div class="tt">本报告的执行过程（可复核）</div>
+  <ul class="pts">
+    <li><b>第 0 步（连接门禁 · 生成前复检）</b>：先跑 ima 自检脚本（<b>判决依据两项均 OK</b>，判定 READY，退出码 0），再用 ToolSearch 以确切名检索并<b>真调一次</b><code>get_knowledge_list</code> 取数（返回「源哥会员专享」<b>5467 条</b>真实数据）—— 三层全通后才开始采集。<b>本版为「生成前重新复检」，不沿用当日更早版本得出的结论。</b></li>
+    <li><b>第 1 步（加载技能）</b>：调用 cross-source-daily 技能，按其「第 0 步连接自检门禁」「核心叙事方法论」「五个必备章节的写法」「标准版章节契约」执行，<b>未凭记忆手搭 HTML 骨架</b>。</li>
+    <li><b>第 2 步（生成后校验 · 两道硬门禁，任一退出码 1 即不得交付）</b>：① <b>结构门</b> <code>check_contract.py</code> —— 11 节章节契约、标签配对、零外部依赖、无 HTML 注释残留、无未替换占位符、<code>var()</code> 引用的 CSS 变量全部有定义、KPI 格数＝CSS 列数；② <b>计数门</b> <code>check_counts.py</code> —— 逐行核对本节自查表与头部 KPI 卡的<b>每一个数字</b>是否等于实际结构计数。两道均退出码 0。</li>
+    <li><b>第 3 步（自证 · 输出回填）</b>：用 <code>embed_validation.py</code> 把门禁①输出原文回填到下方代码块，并迭代收敛本节内嵌的「字节: N」至不动点（自指问题，手填必错）；回填后<b>再跑一次门禁①</b>复核结构未被改坏。三方对账：磁盘大小 ＝ 校验器报数 ＝ 本报告内嵌声明。</li>
+    <li><b>来源层级标注</b>：全文每条均标注 <span class="tag lv0">原文级</span>／<span class="tag lv1">服务端摘要级</span>／<span class="tag lv2">标题推断级</span>，三者不可混用不说明。</li>
+  </ul>
+</div>
+
+<div class="card z">
+  <div class="tt">结构与实际计数一致性自查</div>
+  <div class="tw">
+  <table>
+  <tr><th>契约章节</th><th>h2 标题</th><th>实际条目数</th><th>状态</th></tr>
+  <tr><td>零 · 共识矩阵</td><td>零、双源共识矩阵</td><td>5 条主线 × 三层</td><td>✓</td></tr>
+  <tr><td>A · AI 科技新闻</td><td>A、AI 科技新闻</td><td>24（A1 9／A2 4／A3 6／A4 5）</td><td>✓</td></tr>
+  <tr><td>B · 重要人物言论</td><td>B、重要人物言论</td><td>人物卡 10 ＋ 商业动向 9</td><td>✓</td></tr>
+  <tr><td>C · 宏观</td><td>C、宏观</td><td>11</td><td>✓</td></tr>
+  <tr><td>D · 地缘</td><td>D、地缘</td><td>10</td><td>✓</td></tr>
+  <tr><td>一 · 两库同源去重表</td><td>一、两库同源去重表</td><td>8 组</td><td>✓</td></tr>
+  <tr><td>二 · 评级与目标价速查</td><td>二、评级与目标价速查</td><td>20 行（原文级 14 ／ 摘要级 6）</td><td>✓</td></tr>
+  <tr><td>三 · 上期悬案追踪</td><td>三、上期悬案追踪</td><td>上期 4 宗闭环 ＋ 新增 10 个节点</td><td>✓</td></tr>
+  <tr><td>四 · 数据源可读性审计</td><td>四、数据源可读性审计</td><td>6 行 × 4 列</td><td>✓</td></tr>
+  <tr><td>五 · 结论</td><td>五、结论：三条可执行判断</td><td>3 条</td><td>✓</td></tr>
+  <tr><td>六 · 方法论与结构声明</td><td>六、方法论与结构声明</td><td>本节（含校验器输出原文）</td><td>✓</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="card z">
+  <div class="tt">契约校验器输出（原文，未经修饰）</div>
+  <div class="pre">==============================================================
+cross-source-daily 标准版章节契约校验
+文件: 源哥XZ交叉日报-20261016.html
+字节: 134436 | h2 章节数: 11
+==============================================================
+
+[实际章节]
+   1. 零、双源共识矩阵
+  纲。5 条主线 × 2 源头对照，分事实层／机制层／仓位层三层提炼；顺序即重要性顺序
+   2. A、AI 科技新闻
+  珠子。四条细分线：算力硬件链／大模型与产品／资本与投融资／应用与商业化。每条末尾「说人话」＝翻译市场在定价什么
+   3. B、重要人物言论
+  纲（态度）。含科技公司领导人商业动向。每张卡下半「说人话」＝翻译利害关系 + 倾向判断
+   4. C、宏观
+  利率、债券、汇率、财政政策、经济数据
+   5. D、地缘
+  能源、霍尔木兹海峡、美伊、俄乌、贸易摩擦、出口管制
+   6. 一、两库同源去重表
+  同一机构同一标题只保留一条；标注实际读取出处
+   7. 二、评级与目标价速查
+  本期实际读到的原文级数值；OCR 存疑处已注明
+   8. 三、上期悬案追踪
+  对照上期（10-15）「下期必看节点」，逐条给结论
+   9. 四、数据源可读性审计
+  逐数据源 × 连接器状态 × 可读层级 × 说明与缺口。不可读一律披露，不以推断填充
+  10. 五、结论：三条可执行判断
+  只有信息没有判断，等于没有交付
+  11. 六、方法论与结构声明
+  含结构与实际计数一致的自查 + 契约校验器输出原文
+
+[契约比对]
+  <span class="g">[OK  ]</span> 章节含「共识矩阵」
+  <span class="g">[OK  ]</span> 章节含「AI」
+  <span class="g">[OK  ]</span> 章节含「人物」
+  <span class="g">[OK  ]</span> 章节含「宏观」
+  <span class="g">[OK  ]</span> 章节含「地缘」
+  <span class="g">[OK  ]</span> 章节含「去重」
+  <span class="g">[OK  ]</span> 章节含「评级」
+  <span class="g">[OK  ]</span> 章节含「悬案」
+  <span class="g">[OK  ]</span> 章节含「审计」
+  <span class="g">[OK  ]</span> 章节含「结论」
+  <span class="g">[OK  ]</span> 章节含「方法论」
+
+[结构硬检查]
+  <span class="g">[OK  ]</span> 标签全部配对
+  <span class="g">[OK  ]</span> 无残留锚点
+  <span class="g">[OK  ]</span> 零外部依赖
+  <span class="y">[INFO]</span> 来源层级徽章 68（原文级 54 ／ 摘要级 13 ／ 标题级 1）| 卡片 53 ＋ 人物卡 10 ＝ 63
+  <span class="g">[OK  ]</span> 无 HTML 注释残留
+  <span class="g">[OK  ]</span> 无未替换占位符
+  <span class="g">[OK  ]</span> CSS 变量引用全部有定义（引用 16 个）
+  <span class="g">[OK  ]</span> KPI 格数 = CSS 列数（6）
+
+==============================================================
+<span class="g">PASS</span> 契约完整，章节数 11</div>
+</div>
+
+<footer>
+  <b>读法说明：</b>本报告按「新闻是珠子，共识与商业动向与政治态度才是纲」的结构组织。建议读法是 —— <b>先读「零、双源共识矩阵」定框架，再用 A／B／C／D 四个板块的新闻去验证或证伪这个框架</b>，而不是逐条读新闻。<br>
+  判据：<b>新闻明天就会过时，结构不会。</b>
+  <div class="fnote">
+    <b>生成信息：</b>2026年10月16日（<b>晚间版，已并入 18:49／19:08／19:41 三份 Bloomberg 原文</b>）· 数据源＝源哥 ima 库（7395683732563191，数据日期 2026-10-16）＋ XZ服务器 ima 库（7482839675192179，XZ 数据日期 2026-10-14）。由 WorkBuddy 自动生成，遵循 cross-source-daily 技能的 11 节标准版章节契约。<br>
+    <b>免责：</b>本报告为公开信息与研报摘要的整理，含来源机构观点，不构成任何投资建议。研报原文版权归原机构所有；源哥库内容标注「请勿外传」，本报告仅在授权范围内作为研究素材整理。
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观地缘日报 · 2026-10-25（周日）</title>
+<style>
+  :root{
+    --d1:#3563e9; /* 维度一 利率 · 蓝 */
+    --d2:#8a5cf6; /* 维度二 股市 · 紫 */
+    --d3:#0e9fc0; /* 维度三 经济数据 · 青 */
+    --d4:#e07b1f; /* 维度四 美元黄金大宗 · 橙 */
+    --d5:#e0492f; /* 维度五 地缘经贸 · 红 */
+    --d6:#1c9c54; /* 维度六 节假日 · 绿 */
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+    background:linear-gradient(180deg,#eef1f8 0%,#f6f4fb 100%);
+    color:#2b2b3a; line-height:1.75; padding:24px 14px 40px;
+  }
+  .page { max-width:760px; margin:0 auto; }
+
+  .header {
+    background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 55%,#b45ce0 100%);
+    border-radius:18px; padding:30px 28px 26px; color:#fff;
+    box-shadow:0 10px 30px rgba(108,92,231,.25);
+  }
+  .header h1 { font-size:26px; letter-spacing:1px; display:flex; align-items:center; gap:10px; }
+  .header .sub { margin-top:10px; font-size:13.5px; opacity:.92; }
+  .header .tags { margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; }
+  .header .tags span {
+    background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35);
+    padding:3px 12px; border-radius:999px; font-size:12.5px;
+  }
+
+  .card {
+    background:#fff; border-radius:16px; padding:22px 24px;
+    margin-top:18px; box-shadow:0 4px 16px rgba(60,60,120,.07);
+  }
+  .card-title {
+    font-size:18px; font-weight:700; display:flex; align-items:center; gap:9px;
+    padding-bottom:12px; margin-bottom:14px; border-bottom:2px dashed #e6e6f2;
+  }
+  .card-title .ico { font-size:20px; }
+
+  .hl-red    { color:#e0492f; font-weight:700; }
+  .hl-green  { color:#1c9c54; font-weight:700; }
+  .hl-blue   { color:#3563e9; font-weight:700; }
+  .hl-purple { color:#8a5cf6; font-weight:700; }
+  .hl-orange { color:#e07b1f; font-weight:700; }
+  mark { background:#fff1a8; padding:0 4px; border-radius:4px; font-weight:600; color:#5a4a00; }
+
+  .chip-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .chip {
+    border-radius:10px; padding:10px 14px; font-size:13.5px; font-weight:600;
+    display:flex; align-items:center; gap:8px;
+  }
+  .chip small { display:block; font-weight:400; opacity:.8; font-size:12px; }
+  .chip.c-green  { background:#e8f7ee; color:#157a41; border-left:4px solid #2ebd6e; }
+  .chip.c-red    { background:#fdecea; color:#c03a24; border-left:4px solid #e0563c; }
+  .chip.c-blue   { background:#e9effe; color:#2b54c9; border-left:4px solid #4c7df0; }
+  .chip.c-orange { background:#fdf1e3; color:#b96a12; border-left:4px solid #f09a3e; }
+  .chip.c-purple { background:#f1ebfd; color:#6d3fc0; border-left:4px solid #8a5cf6; }
+
+  .takeaway {
+    margin-top:14px; border-radius:10px; padding:12px 16px; font-size:14px;
+    background:#f4f0fe; border:1px solid #ddd0fa; color:#5b3ea8;
+  }
+  .takeaway b { color:#7a3fd0; }
+  .takeaway.warn { background:#fdf1e3; border-color:#f5d9b0; color:#9a5b0e; }
+  .takeaway.warn b { color:#c46a00; }
+  .takeaway.danger { background:#fdecea; border-color:#f6c6bd; color:#b03020; }
+  .takeaway.danger b { color:#d03517; }
+
+  .step { display:flex; gap:12px; margin-top:14px; }
+  .step .num {
+    flex:0 0 26px; height:26px; border-radius:50%; color:#fff; font-size:14px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; margin-top:2px;
+  }
+  .step .num.n1 { background:#4c7df0; } .step .num.n2 { background:#8a5cf6; } .step .num.n3 { background:#e0563c; }
+  .step .body { flex:1; }
+  .step .body h4 { font-size:15px; margin-bottom:4px; }
+  .step .body p { font-size:13.8px; color:#4a4a5c; }
+
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:12px 0 4px; }
+  .stats.s3 { grid-template-columns:repeat(3,1fr); }
+  .stat { background:#f6f8ff; border:1px solid #e2e8fb; border-radius:10px; text-align:center; padding:12px 6px; }
+  .stat .v { font-size:19px; font-weight:800; color:#3563e9; }
+  .stat .k { font-size:12px; color:#6a6a7c; margin-top:2px; }
+
+  ul.pts { margin:10px 0 0 2px; list-style:none; }
+  ul.pts li { font-size:13.9px; color:#45455a; padding:5px 0 5px 20px; position:relative; }
+  ul.pts li::before { content:"▸"; position:absolute; left:2px; color:#8a5cf6; font-weight:700; }
+  ul.pts li b { color:#2b2b3a; }
+
+  .src { font-size:12px; color:#9090a4; margin-top:12px; padding-top:10px; border-top:1px dashed #eceaf6; }
+  .src b { color:#7a7a90; }
+
+  .badge { display:inline-block; font-size:11px; border-radius:6px; padding:1px 7px; margin-right:4px; font-weight:600; white-space:nowrap; }
+  .lv0 { background:#5b3ea8; color:#fff; }
+  .lv1 { background:#ece4fb; color:#5b3ea8; }
+  .lv2 { border:1.5px dashed #b0a8c8; color:#8a8a9c; }
+  .f-buy  { background:#fdecea; color:#c03a24; border:1px solid #f3c2b8; }
+  .f-sell { background:#e8f7ee; color:#157a41; border:1px solid #bfe6cd; }
+  .f-watch{ background:#fdf1e3; color:#b96a12; border:1px solid #f5d9b0; }
+  .dim { display:inline-block; font-size:11px; border-radius:6px; padding:1px 8px; color:#fff; font-weight:700; margin-right:4px; white-space:nowrap; }
+
+  .tier { font-size:10.5px; font-weight:800; border-radius:5px; padding:0 6px; margin-right:5px; white-space:nowrap; }
+  .t1 { background:#2b2b3a; color:#fff; }
+  .t2 { background:#8a8a9c; color:#fff; }
+  .t3 { background:#d8d8e4; color:#5a5a6e; }
+
+  table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+  th,td { border:1px solid #eceaf6; padding:8px 9px; text-align:left; vertical-align:top; }
+  th { background:#f6f4fb; font-weight:700; }
+
+  .more { margin-top:10px; padding:10px 14px; background:#f8f8fc; border-radius:10px; font-size:12.8px; color:#5a5a6e; }
+  .more p { padding:3px 0; }
+  .more b { color:#45455a; }
+  .subblk { font-size:13px; font-weight:800; color:#6d5fb8; margin:14px 0 2px; }
+  .who { font-weight:800; }
+
+  .dim-card { border-top:3px solid var(--d1); }
+
+  .summary {
+    margin-top:20px; border-radius:18px; padding:24px;
+    background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 60%,#b45ce0 100%);
+    color:#fff; box-shadow:0 10px 30px rgba(108,92,231,.25);
+  }
+  .summary h2 { font-size:19px; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+  .sum-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .sum-item {
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:12px; padding:13px 15px; font-size:13.5px;
+  }
+  .sum-item h4 { font-size:14.5px; margin-bottom:5px; }
+  .sum-item p { opacity:.93; }
+
+  .footer-tags { margin-top:18px; text-align:center; font-size:12.5px; color:#8a8a9c; }
+  .footer-tags span { display:inline-block; margin:3px 5px; padding:3px 12px; background:#eceaf6; border-radius:999px; color:#6d5fb8; }
+
+  @media (max-width:560px) {
+    .chip-row, .sum-grid, .stats, .stats.s3 { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>🌐 宏观地缘日报</h1>
+    <div class="sub">2026年10月25日（周日）｜ 覆盖窗口 10-24 ~ 10-25 ｜ 布伦特 116.72 七个月新高 · 中方对日重稀土“精准断供” · 美英欧三线并发的贸易防御 · <b>周三 FOMC 是四条线共同的裁判</b></div>
+    <div class="tags">
+      <span>#布伦特116_72</span><span>#钇断供98%</span><span>#FCC10_29表决</span><span>#英国随欧起舞</span><span>#AI融资杀</span><span>#FOMC10_28</span><span>#金周跌4_22</span><span>#国家队1700亿</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🧭</span>今日总览 · 本期覆盖</div>
+    <div class="stats">
+      <div class="stat"><div class="v">10</div><div class="k">独立数据源（6 星球 + 2 ima + 外部核验）</div></div>
+      <div class="stat"><div class="v">7</div><div class="k">一级要点（≥3 源交叉）</div></div>
+      <div class="stat"><div class="v">27</div><div class="k">原文级取证条目</div></div>
+      <div class="stat"><div class="v">3</div><div class="k">口径分歧（并列披露）</div></div>
+    </div>
+    <div class="chip-row" style="margin-top:16px;">
+      <div class="chip c-red">🛢️ 布伦特 116.72，七个月新高<small>周涨 6.2%；中东外运 1,670 万桶仍缺 180 万</small></div>
+      <div class="chip c-orange">🧲 钇对日 -98%，价差 128 倍<small>但稀土磁体只跌 4%——打的是“最终用户”不是品类</small></div>
+      <div class="chip c-purple">🏛️ 美英欧三线并发<small>PAIPA 五家 / DHS 禁 DeepSeek / FCC 10-29 / 英国“随欧起舞”</small></div>
+      <div class="chip c-blue">📉 周三 FOMC：市场只给 20%<small>美银坚持加息，野村“10 月停、12 月最后一加”</small></div>
+    </div>
+    <div class="takeaway">
+      <b>一句话主线：</b>周末没有新价格，只有新证据——<span class="hl-orange">管制在精细化</span>（中方按最终用户切品类、美方按检测与资本切通道、英欧按配额与关税切市场），<span class="hl-purple">AI 的杀跌从估值层下沉到融资层</span>（IG 利差 129bp、CRWV CDS 破 1,000bp、甲骨文评级离垃圾级只差一档），<span class="hl-red">油的地缘溢价靠事件概率而不是桶数支撑</span>，而 <span class="hl-blue">10-28 FOMC 是这四条线共同的裁判</span>——它同时决定分母（长久期）、分母的导数（AI 融资成本）和分子（需求）。周末 A 股与港股休市，周一是唯一的价格验证窗口。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">📡</span>数据源可读性声明（每期必读）</div>
+    <ul class="pts">
+      <li><b>星球侧 6 源全部可读并均已引用</b>（<b>10-25 10:44</b> 双接口 <b>group+topics 与 topic+search</b> 复测）：小牛研报纪要 / Economic国际投行研报 / 研报平权 / 刘煜辉之宏观高维 / 财经图集 / 404K Semi-Ai。近 3 天抓取 <b>574 条</b>，窗口 10-24~10-25 有效 <b>393 条</b>（10-24 261 条 / 10-25 132 条）。</li>
+      <li><b>已加入 22 个星球、可读 7 个</b>：除上述 6 源外，<b>Orange期权（48888212414518）</b>本期双接口均通（topics 最新 10-24），但内容为期权策略与波动率交易，<b>与六维宏观框架定位不符，本期不引用（写明原因，非权限问题）</b>；<b>海外大模型（15551258588222）</b>双接口 LOCKED，未引用。其余 15 个星球（三思门、无极宏观、泷韬、地平线、CF40、180K 等）双接口 LOCKED，未开通 AI 读取权限。</li>
+      <li><b>ima 三库（10-25 10:45 连通性实测，status=connected / bound=true / enabled=true）</b>：<b>源哥会员专享 ✅</b>（<b>ima_kb_BmABHsyD</b>，5,967 件）——Bloomberg 日报文件夹最新为 <b>10-23 早报 07:22 + 10-23 日报 18:02</b>，<b>10-24/10-25 为周末无新股，本期数据日期 10-23</b>，故仅作背景校验、不作当日新增事实来源；<b>每日财讯情报库 ✅</b>（<b>ima_kb_XOO6JyWk</b>，15,282 件）——“每日复盘→<b>1025</b>”下 3 个文件（1023 市场情绪 10:14 更新 / 1023 etf笔记.pdf 10:22 / 1023 晚间笔记 10:14），<b>数据基准日 2026-10-23 周五收盘，10-24、10-25 休市已由其自身声明</b>，本期引用其情绪分与量能口径；<b>XZ服务器 ❌ 0 引用</b>——该库在 MINE / JOIN / CREATE / SHARED 四类列举中<b>仍不存在</b>，直调旧数字 ID 7482839675192179 返回 <b>code 220001 knowledge_base_id 无效</b>，属结构性缺口，<b>需人工在 ima 端核对库名或退订状态</b>。</li>
+      <li><b>全文深读闸</b>：财经图集本期 <b>topic+detail 全文</b>——10-24 周末特辑 <b>34,769 字</b>（内容取自 <code>topic.content</code>，非旧的 <code>topic.talk.text</code>，后者取到空串）。10-25 早报截至出刊未发布（周日），已在维度六标注。列表接口 1,500 字截断只用于初筛，未作引用依据。</li>
+      <li><b>外部反向核验</b>：本期 <b>7 条 WebSearch</b>（中文 5 / 英文 1 / 专项 1），结论全部写入 <b>cn_scan_2026-10-25.md</b> 凭证。其中 2 条为<b>补录前两期漏项</b>（英国对华电动车表态、FCC 10-29 表决细节）。</li>
+    </ul>
+    <div class="takeaway warn">
+      <b>必须说明的方法论前提：</b>今日为<b>周日</b>，A 股、港股、美股、商品全部休市，本期<b>没有任何新的收盘价</b>。因此所有价格均为 10-23（周五）收盘或 10-25 早间的期货结算口径，并逐条标注日期。周末的价值不在价格，在于<b>把上两周散落的事件串成机制</b>——本期的七个要点都是机制层判断，不是行情判断。
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🎯</span>一、跨源共识矩阵（纲）</div>
+    <table>
+    <tr><th style="width:19%">主线</th><th style="width:17%">独立源交叉</th><th style="width:22%">事实层</th><th style="width:22%">机制层</th><th style="width:20%">仓位层</th></tr>
+    <tr><td><b>① AI：从估值杀到融资杀</b><br><span class="dim" style="background:var(--d2)">股市</span></td><td>404K / 高盛 / 财经图集 / 小牛 / 摩根大通（5）</td><td>✅ 全球 IG 利差 129bp（2025-05 来最高）、CRWV CDS 破 1,000bp、甲骨文评级离垃圾级一档 + 2,880 亿表外租赁</td><td>✅ 需求没坏（WFE 2026 上调至 1,550 亿）：杀的是“为建设付多少倍”与“借钱多贵”</td><td>⚠️ 盯 CDS 与债券价格（80-85），不盯股价；杠杆已在 5 年 0 分位</td></tr>
+    <tr><td><b>② 10-28 FOMC 三方分歧</b><br><span class="dim" style="background:var(--d1)">利率</span></td><td>美银 / 野村 / 高盛 / 404K（4）</td><td>✅ 市场定价 10 月加息 20%；美银坚持加；野村/高盛判按兵、12 月最后一加</td><td>✅ 静默期已开始，变量只剩沃什对“金融条件 vs 通胀广度”的定性</td><td>⚠️ 若 10 月不加，波动后置到 12 月；两条尾部对冲方向相反</td></tr>
+    <tr><td><b>③ 对华管制“精细化”</b><br><span class="dim" style="background:var(--d5)">地缘</span></td><td>财经图集 / 高盛 / 海关·外交部（外部核验）/ 商务部（外部核验）（4）</td><td>✅ 对日氧化钇 -98%、磁体仅 -4%；中方 49-52 号公告 11-18 生效；美 PAIPA 五家 + DHS 禁 DeepSeek + FCC 10-29</td><td>✅ 从“按品类禁运”升级为“按最终用户 + 按检测通道 + 按资本出口”三向切分</td><td>⚠️ 弹性在分离提纯产能，不在矿；检测认证是最被低估的成本项</td></tr>
+    <tr><td><b>④ 贸易防御扩围（英欧）</b><br><span class="dim" style="background:var(--d5)">地缘</span></td><td>商务部（外部核验）/ 财经图集 / 大摩（3）</td><td>✅ 英国商贸大臣称英欧“必须步调一致”；欧盟 11 月表决 EV 五年正式关税；混动配额 15% 被拒</td><td>✅ 从“美国单点”转为“盟友同步”，且工具从反补贴转向保障措施（不需证明不公平贸易）</td><td>⚠️ 中国车企欧洲份额已 11.7% 创新高，价格承诺是唯一合法通道</td></tr>
+    <tr><td><b>⑤ 中国财政收缩贯穿 Q3</b><br><span class="dim" style="background:var(--d3)">数据</span></td><td>野村 / 摩根大通 / 高盛（3）</td><td>✅ Q3 广义支出 -4.7%、9 月收入 -0.1% 年内首负、土地出让 -23.4%</td><td>✅ 收入靠 PPI 转正+征管+资本利得税，不是回暖；Q4 靠 5,500 亿额度后置冲刺</td><td>⚠️ 基建实物工作量别乐观；利率债供给已部分计价</td></tr>
+    <tr><td><b>⑥ 油：为“事件概率”付费</b><br><span class="dim" style="background:var(--d4)">大宗</span></td><td>小牛 / 财经图集 / 高盛 / 404K（4）</td><td>✅ 布伦特 116.72（周 +6.2%）、WTI 103.27；10 月阿拉伯半岛 32 起船舶袭击</td><td>✅ 转装 + 红海港口替代使物理流量在修复，溢价来自打击预期</td><td>⚠️ 炼化（柴油裂解）比上游稳；事件落地即对称回吐</td></tr>
+    <tr><td><b>⑦ 中国资产内外分化</b><br><span class="dim" style="background:var(--d2)">股市</span></td><td>高盛 / 财讯库 / 大摩 / 小牛（4）</td><td>✅ MXCN -4.6%、HSTECH -5.8% vs CSI300 -1.6%；国家队 ETF 两周 1,700 亿净流入、南向 -22 亿美元</td><td>✅ 在岸有“政策底”买盘，离岸定价权在外资与全球 AI 风险偏好</td><td>⚠️ A 股是位置交易、港股是风险偏好交易，不能用同一套仓位</td></tr>
+    </table>
+    <div class="takeaway">
+      <b>矩阵读法：</b>机制层共识最强的是③④——两条指向同一件事：<mark>竞争的主战场已经从“产品价格”移到“通道资格”（最终用户、检测实验室、股权与授信）</mark>。事实层最确凿的是①（多个独立行情与信用源同向）与⑥（多源同价）。分歧最实质的是②（10 月加不加）与⑦（A 股到底是“极度贪婪”还是“接近冰点”）。策略含义：<b>管制类溢价是慢变量、会持续抬高全球资本开支的合规成本，不该按事件去做短线；油的地缘溢价是快变量，按概率定价、落地即回吐；而 FOMC 之前，任何方向的重仓都是在替流动性做判断。</b>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🧾</span>要点 1 · AI 的杀跌 80% 是估值与信用重定价，20% 是融资层真问题</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d2)">股市</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·高杠杆 AI 基建</span><span class="badge f-buy">利多·电力与长交期设备</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>三条独立证据链同时指向“信用”而非“需求”：① 全球公司债信用利差一度升至 <span class="hl-red">129bp</span>，为 <b>2025 年 5 月以来最高</b>，亚洲 CDS 扩 1.5bp 至 78bp，中国科技企业债利差扩 3-5bp、中国投资级最多 5bp；② <b>CRWV 信用利差超过 1,000bp</b>，甲骨文信用评级<b>仅比垃圾级高一档</b>、同时承担 <span class="hl-red">2,880 亿美元</span>表外租赁义务；③ 高盛对冲基金 VIP 多空篮子<b>单日跌 4%</b>，过去十年仅被 2025-01“DeepSeek 周一”与 2020-03 新冠抛售超越；美股多空策略总杠杆 216.1%（近一年 64 分位），<b>净杠杆 43.4%，处近五年 0 分位</b>。资金面：TMT 两周净卖出约 <b>200 亿美元</b>（接近 7 月那轮 230 亿），美股连续第三周净卖出；散户本周净买入 43 亿美元 vs 12 个月均值 67 亿，ETF 占其买入 82%；中国台湾外资<b>连续 12 个交易日净卖 295 亿美元</b>，为史上最大最快抛售纪录。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>需求端其实在变好：拉姆研究把 <b>2026 年 WFE 从 1,500-1,540 亿美元上调至约 1,550 亿（+41%）</b>，并罕见提前给出 <b>2027 年“超过 2,000 亿美元”</b>；英伟达季度营收指引 1,080 亿美元、博通 AI 积压订单 730 亿；戴尔 AI Factory 客户数从 5,000 家增至 <b>6,500 家（+30%）</b>。所以这轮下跌不是“订单没了”，是<mark>市场愿意为建设扩张支付多少倍估值、以及为其融资要收多少利息</mark>这两件事同时被重定价。关键的结构变化是：AI 已不再是“轻资产、靠现金流自给”的生意，而是“重资产、要靠债和租赁”的生意——一旦定价锚从 P/E 换成 CDS，股价的底就不由盈利决定。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>可跟踪的见底信号是信用的、不是价格的：<b>CDS 回落到 1,000bp 以下、债券价格回到面值 80-85 以上、并完成一轮再融资</b>。反过来，净杠杆已在五年 0 分位、总杠杆仍在 64 分位——这意味着<b>反弹时没有补仓弹药，下跌时仍有被动平仓压力</b>，是典型的“不对称偏空”结构。产业侧更稳的是“卖铲子的确定环节”：电力接入与长交期设备（变压器交期 128-144 周）、以及被英伟达用预付款锁产能的后道（京元电 11 亿美元预付款、矽品光引擎 2027 年中扩至 15 倍）。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>这轮 AI 股跌，八成不是因为“AI 不行了”，而是因为“借钱变贵了、而且要借的钱变多了”。市场原来给的是“成长股”的价钱，现在开始按“重资产+高负债”的价钱来算。所以看股价没用，要看<b>这些公司发债的利息和 CDS 保费</b>——那个才是这一轮真正的体温计。真要说机会，在“别人扩产必须先买的东西”上（电力、变压器、封装、测试），而不是在“讲算力故事”的公司上。
+    </div>
+    <div class="src"><b>来源：</b>404K Semi-Ai·10-25《AI 回调：市场重新定价的是账单，而不是建设扩张》+ 10-25 投资研究（原文级）/ 高盛·美国市场周报（摘要级）/ 财经图集·10-24 周末特辑（原文级）/ 小牛研报纪要·10-24 美股周度行情速览 + 10-25 摩根大通散户雷达（原文级）/ 高盛·中国台湾市场周报（摘要级）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🏦</span>要点 2 · 10-28 FOMC：市场只给 20%，美银坚持加息，野村与高盛判“停”</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d1)">利率</span><span class="badge lv1">摘要级</span><span class="badge f-sell">利空·长久期与成长</span><span class="badge f-watch">最大变量：沃什的措辞</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>三方口径已经摆明：<b>市场只定价 10 月加息 20%</b>；<b>美银坚持 10 月加息</b>（10-19《为何我们仍坚持 10 月加息预测》），理由是 9 月通胀强化了必要性、核心 PCE 年底可能达 <b>3.4%</b>、名义增长强劲使能源冲击更易传导，且“多数官员本就支持今年加息两次，第二次放 10 月可保留 12 月第三次的选择权”；<b>野村判 10 月按兵、12 月“最后一加”</b>；<b>高盛判下周 FOMC“大概率按兵不动”</b>，且本次<b>无点阵图、无 SEP</b>。通胀细节：9 月核心 PCE 环比 <b>0.316%</b>、同比由 2.98% 抬至 <b>3.07%</b>（8 月因年度基准下修仅 3.01%，低于 FOMC 中位数 3.4%）；Q3 实际 GDP 环比折年预期 <b>3.4%</b>（Q2 为 2.2%）。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>真正的分歧不在数据，在<mark>人的行为函数</mark>。美银自己把问题写成一句话：“沃什到底是谁？他是否愿意在中期选举前六天做出鹰派意外？他是否愿意削弱威廉姆斯和杰斐逊此前给出的前瞻指引？”野村的判断同向：沃什拒绝明确前瞻、弱化鹰派口吻，转向在“通胀缺乏进展”与“信用市场压力、美债收益率上行”之间做再平衡。这意味着<b>本周三的定价权重不在利率决定本身，而在他如何定性“金融条件”——</b>若强调金融条件已收紧，2027 年路径会被压得更鸽；若强调通胀广度，极短端会重新定价。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>高盛的框架值得直接照抄：<b>曲线腹部（3-7 年）是同时能对抗两种尾部的唯一位置</b>——尾部 A 是“科技资本开支放缓→信用收紧→美元弱、日元强、久期涨”；尾部 B 是“只是短期回调→欧洲主权信用重燃→美元强、韩元强、久期跌”。10-25 的单日证据已显示久期作为风险资产对冲工具有效（AI 担忧主导时美债涨）。而<b>10Y 已从周内 5.12% 回到 5.009%（-11.7bp），2Y -12bp、30Y -8.6bp</b>，是典型的“避险大于通胀”。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>周三凌晨那个会，加不加息其实已经不太重要（市场只给两成概率），重要的是主席怎么说“现在的钱够不够紧”。说“够紧了”，债就涨、成长股能喘口气；说“还不够”，2 年期立刻上、美元跟着强。<b>对普通人最实际的提醒：这周别在周三之前把仓位打满</b>，因为无论哪种结果，价格都会在周四给你一个更好的位置。
+    </div>
+    <div class="takeaway warn">
+      <b>分歧一 · 10 月到底加不加？</b>美银：<b>加</b>（市场定价 20%，美银认为通胀数据已变差、拖延更被动，愿意给沃什“善意假设”）；野村：<b>10 月停、12 月最后一加</b>；高盛：<b>按兵不动</b>，且视为基线。三方对 9 月核心 PCE 的读数其实接近（野村 3.07%，美银隐含更高），<b>分歧在于对“政治窗口+沟通风格”的权重</b>——美银把沃什的鹰派可能性给到 50% 以上，野村与高盛给到 20% 以下。本报告并列披露，不二选一；<b>倾向判断：按兵（2 成概率事件不足以作为基准），但把 12 月加息的概率上调，并接受 10-28 当天的波动率溢价。</b>
+    </div>
+    <div class="src"><b>来源：</b>小牛研报纪要·10-24《美银：为何我们仍坚持 10 月会加息》（原文级）/ Economic国际投行研报·野村美国宏观周报（摘要级）/ Economic国际投行研报·高盛全球利率交易员（摘要级）/ 404K Semi-Ai·10-25 投资研究（原文级）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🧲</span>要点 3 · 中国对日重稀土“精准断供”：钇 -98%、价差 128 倍，但磁体只跌 4%</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d5)">地缘</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·重稀土分离提纯</span><span class="badge f-sell">利空·日本汽车/航发/半导体设备</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>海关数据（外部核验）与财经图集（引金融时报）双向印证：中国<b>1-9 月对日氧化钇出口仅 18 吨</b>，去年同期 888 吨，<b>同比 -98%</b>；<b>9 月单月仅 4 吨</b>，连续九个月低位；对日镝、铽出口“微乎其微”。价格端：<b>中国以外氧化钇已升至 1,150 美元/公斤，约为两年前的 179 倍</b>，而中国国内仍在 <b>9 美元/公斤</b>左右——内外价差约 <b>128 倍</b>。日方已请美国出面劝说，并组建关键矿产“快速反应小组”；<b>外交部 10-21 明确回应：中方依法依规对日实施出口管制，目的是制止日本“再军事化”和拥核企图</b>，未宣布任何放宽。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>最关键的一条被大多数人漏掉：<b>同期中国对日稀土磁体出口 1-9 月约 1,564 吨，同比仅 -4%</b>。也就是说这不是“全面禁运”，而是<mark>按最终用户与规格做的清单式切分</mark>——钇用于发动机耐热涂层与半导体蚀刻腔体保护层，属军工与核相关的高纯规格，被卡死；而民用磁体照常放行。这解释了为什么“断供”能同时做到“痛”和“不撕破脸”：痛在不可替代的高纯重稀土（替代方案研发周期以年计），不撕破脸在量大面广的民用品类。也解释了为什么氧化钇能涨 179 倍而磁体价格几乎没动——<b>弹性不在矿，在分离提纯的产能与合规通道上</b>。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>三条可跟踪线索：① 日本若在年底前出现短缺，最先受影响的是<b>航发零部件与半导体设备</b>（DISCO、TEL 等对美出口链），而非终端整车；② 美国国防供应链依赖含钇的日本零部件——<b>这条线会从“中日双边”升级为“美日共同议题”</b>，10 月下旬美日官员已就“快速反应小组”磋商；③ 对国内产业链，真正受益的是<b>重稀土分离提纯与高纯氧化物</b>环节，不是采矿。与 10-19 中方 49-52 号公告（盾构机、挖泥船、无人机、两用物项鉴别，<b>11-18 生效</b>）连起来看，是一条完整的“管制工具箱扩容”路径。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>这次不是“不卖了”，是“<b>挑着卖</b>”。能造军品的高纯钇，一颗都不给；做电机磁铁的，照常发货。所以外面价格涨了 128 倍，日本企业却还在正常生产——真正要停的是喷气发动机和芯片设备那几条线。这种打法比全面禁运更难受，因为你连“去找替代供应商”的紧迫感都会被稀释。
+    </div>
+    <div class="takeaway warn">
+      <b>分歧三 · 对日稀土到底是“断供”还是“基本稳定”？</b>高盛《中国经济活动与政策追踪》的口径是：<b>9 月中国对欧盟及美国稀土磁体出口量回升，对日本出口量微降</b>——总体读起来是“平稳”。海关与 FT 的口径是：<b>氧化钇对日 -98%、9 月仅 4 吨</b>——读起来是“断供”。两者并不矛盾：<b>统计对象不同</b>（磁体 vs 氧化物/单一重稀土品类），<b>结论因此完全不同</b>。本报告并列披露：<b>“磁体稳、重稀土断”才是完整图景</b>，只看任一口径都会得出错误结论（这也是 10-07 欧盟对华电动车漏报的同类陷阱——只读摘要、不追品类）。
+    </div>
+    <div class="src"><b>来源：</b>财经图集·10-24 周末特辑第 10 条（引 Financial Times，原文级）/ 外部核验 海关总署数据·路透·联合早报·外交部 10-21 记者会（原文级）/ Economic国际投行研报·高盛中国经济活动与政策追踪（摘要级）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🏛️</span>要点 4 · 对华贸易防御从“美单向”扩到“美英欧三线并发”</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d5)">地缘</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·出口链/检测认证/跨境融资</span><span class="badge f-watch">补录：英国线为前两期漏项</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>六件事在同一周内落在同一张桌上：<b>①</b> 10-19 美国务院依《保护美国知识产权法》（PAIPA）<b>制裁 5 家中国实体</b>——上海至算科技，以及奇绩创坛管理公司、一期基金、二期基金、致远管理中心；OFAC 同日列入非 SDN 菜单式清单，<b>冻结在美管辖资产、禁止美资投其股债、禁美国金融机构 12 个月内提供合计超 1,000 万美元授信</b>，并发出 GL2 允许在 <b>2027-01-19</b> 前逐步了结（上海至算不在该许可内）。<b>②</b> 10-19 <b>DHS 禁止美联邦政府民事行政机构采购深度求索（DeepSeek）及其关联企业产品与服务，并要求从相关信息系统移除</b>；商务部 10-20 回应“强烈不满、坚决反对”，称将“采取一切必要措施”。<b>③</b> <b>FCC 定于 10-29 表决</b>测试实验室新规：认可范围收窄至美国境内或“对等经济体”，中国不在其列，<b>2028-12-01 实施</b>；FCC 自述 <b>2025 年约 82% 相关电子产品在中国完成测试</b>，已有 29 家实验室因既有规则失资格。<b>④</b> <b>英国商贸部国务大臣萨瓦尔称英国与欧盟“必须步调一致”应对中国汽车产业的主导地位</b>，并称仍在与欧洲伙伴讨论对华电动车加税；商务部 10-19 回应“<b>三思而后行，切勿随欧起舞</b>”“如英方执意对中国电动汽车采取限制措施，中方将坚决反制”。<b>⑤</b> 欧盟现行对华 EV 反补贴税（比亚迪 17.0%、吉利 18.8%、上汽 35.3%）有效期至 2029-10，<b>11 月成员国将表决是否转为五年正式关税</b>。<b>⑥</b> 中方 10-19 发布 <b>49-52 号公告</b>（盾构机管制、挖泥船优化、无人机优化、两用物项鉴别），<b>11-18 生效</b>；另财政部拟议规则（COINS）把<b>生物技术与脑机接口</b>纳入“禁止技术”。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>这六件事的共同点不是“都针对中国”，而是<mark>工具从“产品”迁移到“通道”</mark>：PAIPA 切的是<b>资本通道</b>（不看投资行为是否违规，只看是否“从窃密中受益或提供重大财务支持”）；DHS 切的是<b>采购通道</b>（联邦民事机构的信息系统移除，比关税更彻底，因为不可豁免）；FCC 切的是<b>认证通道</b>（82% 的检测产能要在两年内搬家）；英欧切的是<b>准入通道</b>（从反补贴转向保障措施——保障措施<b>不需证明存在不公平贸易</b>，只需“进口激增+产业受损”，门槛大幅降低）。这意味着<b>过去按“关税税率”做的敞口测算，现在会系统性低估风险</b>——因为真正卡住的是资格，不是价格。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>被市场严重低估的成本项是<b>检测认证</b>：FCC 自估一次性熟悉成本约 <b>2,360 万美元</b>、第三年起每年增量测试成本约 <b>7,930 万美元</b>——这笔钱最终会摊到消费电子、IoT、网络设备的单位成本里，而且<b>两年过渡期对中型厂商几乎等于没有过渡期</b>。第二条被低估的是<b>跨境基金的美元募资与 LP 结构</b>：制裁不切断境内人民币运作，但会给美元募资、被投企业赴美上市、与美国机构交易各加一道合规审查。第三条是<b>价格承诺</b>——在中欧框架下，中国车企唯一合法的欧洲通道是“最低进口价+投资承诺”，这也是为什么 PHEV 谅解条款比“取消关税”更值钱。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>以前美国卡中国，是“给你的货加税”；现在卡的是“<b>谁能给你做检测、谁能给你投钱、谁能进政府采购</b>”。加税还能消化，资格没了就是没门。最直观的例子是那块电路板：它能不能在美国卖，不看价格，看它在哪个实验室测的——而 82% 的这类检测现在都在中国做，规则给了两年搬家时间。<b>英国这次的表态更值得警惕</b>：它是第一次把“和欧盟步调一致”说出口，等于把原本分散的欧洲防线串起来了。
+    </div>
+    <div class="src"><b>来源：</b>外部核验 美国务院·OFAC·sanctions.com·Export Compliance Daily（PAIPA 五家）/ 商务部 10-19、10-20 答记者问（原文级）/ 中新社·新华社 10-20（DHS 回应）/ FCC 10-07 公告·财新 10-13（FCC 表决）/ 商务部 10-19（英国表态）/ 小牛研报纪要·10-24 COINS 法案医药点评（原文级）/ 财经图集·10-24 周末特辑（中西方出口结构趋同 +6pp）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🧮</span>要点 5 · 中国财政：Q3 广义支出 -4.7%，9 月收入年内首负，Q4 靠 5,500 亿后置冲刺</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d3)">数据</span><span class="badge lv1">摘要级</span><span class="badge f-sell">利空·基建实物量</span><span class="badge f-buy">利多·利率债供给确定性</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>两家外资行对同一份数据给出几乎一致的拆解：<b>Q3 广义财政支出同比 -4.7%</b>（Q2 为 -8.5%），前三季度累计 <b>-3.5%</b>（2025 年同期 +3.7%）；9 月单月广义支出 -3.6%，其中一般公共预算支出同比持平、<b>政府性基金支出 -12.1%</b>。收入端更微妙：<b>9 月一般公共预算收入同比 -0.1%，为年内首次负增长</b>（7 月曾达 +11.7% 的 19 个月高点），税收仅 +0.2%；前三季度累计仍 +5.1%，远高于全年 2.2% 的目标。拖累项清晰：<b>9 月土地出让收入 -23.4%（摩根大通口径 -23.2%），前三季度 -27.9%</b>；企业所得税 9 月 -0.4%（8 月 +11.6%）；证券交易印花税 9 月 -11.5%。对冲手段是 <b>5,500 亿元未使用地方债务限额</b>（3,000 亿一般债 + 2,500 亿专项债）——计入后年内剩余可用债券额度约 2.3 万亿元，Q4 净融资可达约 <b>4.0 万亿元</b>（去年同期 2.3 万亿），10-01 至 10-23 已发行 1.0 万亿元。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>野村的拆解最锋利：<b>税收高增来自三个非周期性因素</b>——PPI 转正、对高净值与企业征管强化、上半年股市上涨带来的资本利得税，而不是经济全面回暖（企业所得税 9 月已转负即为反证）。支出端的症结则是<mark>乘数被稀释</mark>：地方拿到债券资金后优先用于“三保”，而非新增项目；新型政策性金融工具的杠杆效应受制于企业间拖欠账款，民企对政府项目回款的信任度下降，配套融资意愿低迷。<b>结论：Q4 会有“量”的冲刺（净融资 4 万亿），但“质”的改善有限</b>，全年广义支出大概率录得五年来首次负增长（野村）。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>两条不同的推论，别混用：① <b>对工业品</b>——供给放量不等于实物工作量，钢铁需求上周环比同比双弱已是先行信号，不宜按“财政发力=黑色系上涨”的旧框架交易；② <b>对利率债</b>——Q4 供给放量已被部分计价，真正的新变量是“12 月中央经济工作会议对 2027 年赤字率的定调”，以及土地市场是否出现边际企稳。高盛同时给出的正面数据是：地方专项债年初至今 3.82 万亿元、政府债整体 9.61 万亿元（占全年额度 81%），发行节奏本身是稳健的。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>政府账本现在是“<b>收入靠税务和股市、支出靠发债、花钱先保工资</b>”。所以你会看到一个奇怪组合：财政收入增速超目标（+5.1% vs 2.2%），但基建工地没热起来。原因不是没钱，是钱到了地方先补窟窿。这意味着四季度“财政发力”这个交易，别押在螺纹钢和水泥上，押在“债券供给确定放量”这件事上更靠谱。
+    </div>
+    <div class="src"><b>来源：</b>Economic国际投行研报·野村《亚洲洞察·中国：财政收缩贯穿 Q3》（摘要级）/ 摩根大通《中国：9 月预算收入增长转负》（摘要级）/ 高盛·中国经济活动与政策追踪（摘要级）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🛢️</span>要点 6 · 布伦特 116.72 七个月新高：这次定价的是“选举后的打击”，不是“少了多少桶”</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d4)">大宗</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·油气/炼化</span><span class="badge f-sell">利空·航空/化工/消费</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>布伦特结算 <span class="hl-red">116.72 美元</span>（+3.55 美元 / +3.14%），<b>创七个月新高</b>，本周累涨超 <b>6.2%</b>；WTI 结算 <span class="hl-red">103.27 美元</span>（+3.82%），周涨超 <b>4.3%</b>。地缘侧：<b>10 月至今阿拉伯半岛周边已有 32 起船舶袭击</b>（9 月全月 16 起）；伊朗革命卫队海军称两艘试图穿越霍尔木兹海峡南部的超级油轮触雷；特朗普 10-23 称美国“或许会再来一次小规模的‘史诗怒火’行动”，又称可以“非常迅速地”结束伊朗战争。同期 COMEX 黄金收 <span class="hl-green">4,010 美元</span>（-1.24%，<b>周跌 4.22%</b>）、白银 53.96（-1.9%，周跌 5.56%）。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>物理供给其实在修复：中东产油国用自有油轮接驳、在海峡外转装给客户船，沙特走红海港口发货；但 Kpler 与 Vortexa 口径的 10 月至今中东原油及凝析油日均外运仅 <b>1,670 万 / 1,540 万桶</b>，<b>仍低于战前 1,850 万桶</b>——缺口约 180 万桶/日。也就是说，<mark>价格付的不是“今天的缺口”，而是“11-03 之后可能被打”的概率</mark>。这解释了一个反常组合：油涨、金跌、收益率涨——如果是纯避险，金应该涨；金跌说明主导变量是实际利率上行与保证金追缴，而不是恐慌。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>这类溢价的特征是<b>对称</b>：事件落地就消失，事件不落地就一直悬着。所以做多油本质是做多“不确定性”，而不是做多“短缺”。确定性更高的位置在炼化——柴油裂解价差与成品油出口利润比原油本身更抗回撤；被压制的是航空、化工与消费的成本端。高盛商品团队给的中国原油需求 Nowcast 已升至 <b>1,710 万桶/日</b>，需求侧没有额外利空，这意味着<b>价格的下限由需求托住、上限由事件决定</b>。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>油现在贵，不是因为没油，是因为“下个月可能会打”。这种贵有个特点：真打了，如果没伤到油田和航道，一周之内就跌回去；不打，就一直吊着。所以追原油不如追炼油——炼油赚的是“价差”，价差在高波动里反而更稳。
+    </div>
+    <div class="src"><b>来源：</b>小牛研报纪要·10-24《周六你需要知道的隔夜全球要闻》（原文级）/ 财经图集·10-24 周末特辑·大宗商品与能源（原文级）/ 高盛·中国经济活动与政策追踪（摘要级）/ 404K Semi-Ai·10-24 数据中心追踪（标题级）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">📈</span>要点 7 · 中国资产“内外分化”：A 股 -1.6% vs 港股 -4.6%，国家队 1,700 亿 vs 南向 -22 亿美元</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d2)">股市</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·A 股宽基</span><span class="badge f-sell">利空·港股科技/离岸中概</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>同一周、同一批公司，两个市场走了两个方向：<b>MXCN 跌 4.6%、恒生科技跌 5.8%，而 CSI300 仅跌 1.6%</b>；在岸通信服务 +2.8%、成长风格 +4.0%，信息技术 -7.2%；离岸则是价值因子 +6.2% 最好、成长因子 -8.1% 最差。10-23 单日（财讯库与 ETF 笔记双源）：<b>上证 3,690.48（+0.89%）、深证成指 11,673.83（+2.79%）、创业板 +4.16%，两市成交 1.96 万亿元</b>，市场广度 83.27%，情绪分 <b>77.2</b>（单日 +67.1）。资金面：过去两周前十大“国家队”偏好 ETF 净流入约 <b>1,700 亿元</b>，月度买入接近三年最高（主力为 CSI300 ETF，其次 STAR50 与创业板 ETF）；<b>南向资金本周净流出 22 亿美元，为 7 月以来最大单周</b>。估值：MXCN 12 个月远期 PE <b>9.7 倍</b>、CSI300 <b>12.0 倍</b>；高盛目标 MXCN 80 点（+18%）、CSI300 5,200 点（+27%）。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>分化的根因是<mark>两个市场的边际买家不同</mark>：在岸的边际买家是“国家队 ETF + 内资”，买的是宽基、目标是稳指数，所以指数稳、个股分化、成交集中在少数方向；离岸的边际买家是外资，定价锚是全球 AI 风险偏好与中美利差（<b>倒挂约 330bp</b>），所以同一天可以跌 5.8%。这解释了为什么“国家队买入”不能推导出“港股见底”——<b>它们根本不在同一个定价函数里</b>。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>三个可操作的区分：① A 股是<b>位置交易</b>（政策底明确，但指数靠宽基托举，超额在板块不在指数）；② 港股是<b>风险偏好交易</b>（要等全球 AI 信用利差回落，而不是等国内政策）；③ 高盛的 A-H 轮动模型判断<b>未来三个月 H 股有望小幅跑赢 A 股</b>，驱动是估值折价修复与南向回流——这与“本周南向流出 22 亿美元”并不矛盾，前者看三个月，后者看一周。<b>短期（1-2 周）A 股相对占优，中期（1 季度）H 股的赔率更好</b>。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>A 股和港股现在不是“同一个中国”的两种报价，而是<b>两拨人在定价</b>。A 股这边有“国家队”在买宽基，等于有个托底的手；港股那边全是外资，全球一抛科技股它就跟着跌。所以别用 A 股的强势去推断港股会补涨——想赌港股，得先看美国那边的信用利差什么时候收窄。
+    </div>
+    <div class="takeaway warn">
+      <b>分歧二 · A 股情绪到底是“极度贪婪”还是“接近冰点”？</b>财讯库《1023 市场情绪》给的是<b>情绪分 77.2、定性“极度贪婪”</b>（单日 +67.1，为本周期第二高，仅次于 9-18 的 79.8），依据是放量 4,275 亿至 1.96 万亿、广度 83.27% 创周期新高。大摩《中国股票策略》给的是<b>MSASI 加权值连续第三周维持 9% 左右、接近 2024 年 7 月低点</b>，1 个月移动平均降至 17%，依据是成交额、创业板成交与融资余额环比下滑。两者相差极大，<b>但统计口径完全不同</b>：前者是“单日量价广度”的即时读数，后者是“成交+杠杆+新股”的月度趋势指标。本报告并列披露：<b>单日极热、月度仍冷</b>——这正是“政策托底型反弹”的典型特征，不构成趋势反转的证据。
+    </div>
+    <div class="src"><b>来源：</b>Economic国际投行研报·高盛中国市场周报（摘要级）/ 每日财讯情报库·1023 市场情绪 + 1023 etf 笔记（原文级）/ 大摩·中国股票策略（摘要级）/ 小牛研报纪要·10-24 隔夜要闻（原文级）</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d1)">
+    <div class="card-title"><span class="ico">💵</span>维度一 · 利率与货币政策</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·久期</span><b>10Y 美债 5.009%（-11.7bp）、2Y -12bp、30Y -8.6bp</b>（10-23 收盘，财讯库口径）；高盛口径为 10Y 周内回落 12bp 至 5.0%。这是“避险大于通胀”的组合，而非熊平。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">周三决议</span><b>10-28 FOMC 无点阵图、无 SEP</b>；静默期已开始。野村：10 月按兵、12 月最后一加，核心 PCE 9 月环比 0.316%/同比 3.07%；年度基准下修后 8 月同比仅 3.01%，低于 FOMC 中位数 3.4%（见要点 2）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·银行息差</span><b>中国政策利率“换锚”</b>：10-19 金融街论坛释放“主要政策利率转向隔夜逆回购”的信号，并推进更广泛的利率基准体系改革——传导将更直接锚定短端资金市场，向利率走廊机制靠拢。银行间回购与隔夜回购利率上周均小幅下行，临时隔夜 OMO 走廊边界未被挑战。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv1">摘要级</span><span class="badge f-sell">利空·法国/比利时债</span><b>10-29 欧央行料审慎按兵</b>；高盛判断 OAT 收益率已显著超出基本面可支撑水平，<b>2027 年中 OAT-Bund 约 130bp</b>。法国私人部门债务合计占 GDP <b>323.7%</b>（意大利 231.5%），这才是法国风险高于意大利的关键；穆迪维持 Aa3、展望负面。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>美国市政债创纪录</b>：截至 10-23 年内发行破 5,000 亿美元（同比 +近 6%，比去年提前近一个月），全年有望超 6,000 亿；彭博市政债指数本月 +2.8%，有望创至少 30 年最好的 10 月。高利率没能阻止州与地方政府发债。</p>
+      <p><span class="tier t2">L2</span><b>日本</b>：政府推动 GPIF 增持国内债，配置由约 25% 提至 30% 可带来约 <b>18 万亿日元</b>国债需求，但基金目标回报约 5%、收益率最高的 JGB 仅约 4%；家庭持有现金超 <b>1,100 万亿日元</b>、直接持国债仅约 22 万亿（2%）。10-30 日央行会议。</p>
+      <p><span class="tier t2">L2</span><b>加拿大</b>：高盛经济学家改判 10 月与 1 月各加息一次（此前预期更晚），因 Macklem 暗示下次会议通胀展望“显著更高”；但 trim 与中位数通胀低于 2% 应限制后续幅度。10-28 加央行决议。</p>
+      <p><span class="tier t3">L3</span>高盛：利率若持续 +100bp，未来一至两年发达经济体住宅投资平均减约 6%、居民消费减约 0.2%、企业投资减约 1.8%；到 2030 年利息支出增量约为 GDP 的 0.1%-0.6%（日本近 0.6%、意大利 0.45%、美国 0.4%）。</p>
+    </div>
+    <div class="src"><b>来源：</b>每日财讯情报库·1023 市场情绪（原文级）/ Economic国际投行研报·野村美国宏观周报 + 高盛全球利率交易员 + 高盛中国经济活动（摘要级）/ 财经图集·10-24 周末特辑（原文级）</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d2)">
+    <div class="card-title"><span class="ico">📈</span>维度二 · 股市与风险偏好</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·科技</span><b>美股周线三跌一涨</b>：道指周 +0.41%、纳指 -0.71%、标普 -0.47%；周五道指 -1.24%、纳指 -0.21%、标普 -0.52%。<b>TMT 两周净卖出约 200 亿美元</b>（7 月那轮 230 亿），连续第三周净卖出，工业板块卖出速度为六个月新高，防御性的房地产与必需消费为净买入最多。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·A 股短期</span><b>10-23 A 股放量长阳</b>：上证 3,690.48（+0.89%）、深证成指 11,673.83（+2.79%）、创业板 +4.16%，两市 1.96 万亿，广度 83.27%，情绪分 77.2（单日 +67.1）。盘中曾创周期新低 3,574.27（-2.29%）后单边回升。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·台股</span><b>中国台湾外资创纪录撤离</b>：本周净卖现股 <b>76 亿美元</b>，连续 12 个交易日累计 <b>295 亿美元</b>（占市值 0.55%，史上最快最大），TAIEX -2.3%、TPEx -4.5%，台积电单周被卖 28 亿美元、股价 -1.4%；散户净买 48 亿美元、融资余额创纪录 154 亿美元、杠杆 ETF AUM 反弹至 130 亿美元历史新高。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">内外分化</span><b>在岸与离岸背离</b>：MXCN -4.6%、HSTECH -5.8% vs CSI300 -1.6%；南向净流出 22 亿美元（7 月来最大）（见要点 7）。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>散户退潮的量化证据</b>：散户交易占美股成交比例由 2025 年末 15% 降至约 <b>9%</b>（2020 年来最低）；预测市场月成交由一年前 50 亿升至 2026-09 的 <b>780 亿美元</b>；期权交易近一年接近翻倍——资金没消失，换了工具。本周散户净买入 43 亿美元、ETF 占 82%。</p>
+      <p><span class="tier t2">L2</span><b>下周日历</b>：标普 500 至 10-30 隐含波动幅度 <b>1.80%</b>；<b>44% 市值</b>公司将发布财报（微软、谷歌、ServiceNow、科磊周三；亚马逊、英特尔周四）。</p>
+      <p><span class="tier t2">L2</span><b>中国台湾基本面</b>：9 月工业产出 +19.2%（预期 +24.7%、前值 +23.5%），科技生产进一步放缓；台积电 ADR 溢价扩至 14%（+3pp）。</p>
+      <p><span class="tier t3">L3</span>巴西大选第二轮周日晚投票；Polymarket 测算博索纳罗胜率 76%，但当地民调领先仅 0-2.5pp——赔率与民调背离，周一亚市可能先反映汇率。</p>
+    </div>
+    <div class="src"><b>来源：</b>小牛研报纪要·10-24 美股周度行情速览 + 10-25 摩根大通散户雷达（原文级）/ 每日财讯情报库·1023 etf 笔记与市场情绪（原文级）/ 高盛·美国市场周报 + 中国台湾市场周报（摘要级）</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d3)">
+    <div class="card-title"><span class="ico">🧮</span>维度三 · 经济数据（预期 vs 实际落差）</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv1">摘要级</span><span class="badge f-buy">利多·中国全年</span><b>中国 Q3 GDP +4.5%（预期 4.4%，Q2 4.3%）</b>；9 月工业增加值升至 <b>5.5%</b>、社零改善至 <b>1.1%</b>（8 月 0.4%）。高盛据此把 2026 全年预测由 4.5% 上调至 <b>4.6%</b>，但把 <b>Q4 环比折年由 4.5% 下调至 4.0%</b>——“前低后高再缓”。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv1">摘要级</span><span class="badge f-sell">利空·地产链</span><b>美国 Q3 GDP 预期 3.4%</b>（Q2 2.2%），私人国内最终销售约 4.5%；但<b>住建商信心跌至 12 年低点、9 月成屋待签约环比 -7.3% 创纪录、新屋销售预计放缓至 66.4 万</b>——增长引擎是资本开支，不是地产。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·基建链</span><b>中国财政三重落差</b>：Q3 广义支出 -4.7%（目标全年 +4.4%、实际累计 +1.0%）；9 月收入 -0.1% 年内首负；土地出让 -23.4%（见要点 5）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv1">摘要级</span><span class="badge f-watch">AI 通胀苗头</span><b>“AI 驱动型通胀”早期信号</b>（野村）：芯片、服务器、电子元件紧缺推升核心商品价格；半导体敏感品类涨价 + 房租局部跳升，是 9 月核心 PCE 同比上冲的主因。通胀扩散指数（涨超 3% 分项占比）反而边际回落。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>中国企业盈利分化</b>：已披露三季报的 16%，前三季度累计盈利同比 <b>+19%</b>、Q3 单季 +13%；半导体 Q3 +95%（前三季度 +157%）、材料 +78%、通信设备 +27% 领跑；食品饮料 Q3 <b>-77%</b>、汽车前三季度 -1% 垫底。</p>
+      <p><span class="tier t2">L2</span><b>中国高频</b>：港口集装箱吞吐高于去年同期、20 大港口离港货运量增加；钢铁需求环比同比双弱、产量稳定；地方专项债 3.82 万亿、政府债 9.61 万亿（81% 额度）；10 月 EPMI 微升；美国对华大豆未装运销售合同 10 月第二周上升。</p>
+      <p><span class="tier t2">L2</span><b>美国下周数据</b>：周二耐用品订单（预期 +3.7%）、新屋销售、消费者信心（80.8）；周三商品贸易逆差走阔至 1,350 亿美元（科技进口冲量）；周四核心 PCE（0.316% m/m、3.07% y/y）、Q3 GDP 初值 3.4%；周五 ECI 环比 0.8%。</p>
+      <p><span class="tier t3">L3</span>国际能源署口径：中国工业电价约 <b>56 美元/MWh</b>，美国 82、印度与墨西哥 94-95、欧洲 <b>194</b>——中国约为美国的 68%，这是 AI 推理成本的隐性优势（伯恩斯坦引 IEA 2023-24）。</p>
+    </div>
+    <div class="src"><b>来源：</b>Economic国际投行研报·高盛中国市场周报 + 野村美国宏观周报 + 高盛中国经济活动（摘要级）/ 财经图集·10-24 周末特辑（原文级）/ 摩根大通·中国 9 月预算收入（摘要级）</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d4)">
+    <div class="card-title"><span class="ico">🛢️</span>维度四 · 美元、黄金与大宗联动</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·油气</span><b>布伦特 116.72（周 +6.2%，七个月新高）/ WTI 103.27（周 +4.3%）</b>；10 月阿拉伯半岛 32 起船舶袭击；中东原油及凝析油日均外运 1,670 万 / 1,540 万桶，低于战前 1,850 万（见要点 6）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·贵金属短期</span><b>COMEX 金 4,010（-1.24%，周 -4.22%）、银 53.96（-1.9%，周 -5.56%）</b>。油涨、金跌、收益率涨三者同向，说明是“实际利率+保证金”双杀，不是避险交易。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv1">摘要级</span><span class="badge f-buy">利多·铜结构性</span><b>铜的结构性短缺被贸易碎片化与战略补库放大</b>：大摩指出待开发项目 pipeline 超 <b>800 亿美元</b>，执行力风险高企，“买入而非自建”成为获取优质铜资产的核心路径；铜价与中国地产周期已明显脱钩（CME/Erik Norland 口径），增量来自电动车电机、光伏线路与数据中心供电。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">业绩验证</span><b>铜金股 Q3 环比走弱</b>：紫金 Q3 归母 184 亿元（环比 -3.8%、同比 +26%），<b>铜单位成本升至约 2.9 万元/吨（同比 +14.4%）</b>、金单位成本 313 元/克（同比 +11.9%）；洛阳钼业 Q3 归母 78.7 亿元（环比 -6.3%），<b>钨价环比 -32%</b> 是主要拖累。两家均维持增持（目标价 60.0 / 21.10 港元）。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>锡与铝</b>：花旗基准情景 6-12 个月锡价上看 <b>6 万美元/吨</b>、牛市 7 万；铝因中东产能重启与印尼供应加速边际宽松，但物流与地缘风险仍威胁区域可用性，中国运行产能已接近满负荷。</p>
+      <p><span class="tier t2">L2</span><b>欧盟钢铁</b>：7 月更严格进口保障 + 2027-01 CBAM definitive 阶段启动，钢厂定价权与成本传导能力强化——这是“政策护航”型的盈利重估，与需求无关。</p>
+      <p><span class="tier t2">L2</span><b>美元</b>：本周兑主要货币分化、波幅有限；澳元、加元、挪威克朗等能源出口国货币领涨（贸易条件驱动）。高盛基线为美元温和走弱，<b>人民币 12 个月目标 6.40</b>，理由是经常账户盈余占全球 GDP 比重迈向史无前例水平、9 月贸易顺差扩至 1,335 亿美元。</p>
+      <p><span class="tier t3">L3</span>美国能源部 10-23 将<b>氦</b>列入关键材料清单——半导体制造的冷却、热管理与检漏环节依赖氦，瓶颈在精炼产能与许可周期。</p>
+    </div>
+    <div class="src"><b>来源：</b>小牛研报纪要·10-24 隔夜要闻（原文级）/ 财经图集·10-24 周末特辑（原文级）/ Economic国际投行研报·大摩欧洲金属与矿业 + 大摩紫金/洛阳钼业 + 高盛全球外汇交易员（摘要级）/ 404K Semi-Ai·10-25 投资研究（原文级）</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d5)">
+    <div class="card-title"><span class="ico">⚔️</span>维度五 · 地缘政治 · 经贸摩擦与制裁</div>
+    <p style="font-size:12.5px;color:#7a7a8c;margin-bottom:10px;">本期主线维度。按“谁在出招”分三块：① 中方管制与反制 ② 美方管制三线 ③ 英欧贸易防御；另附安全地缘。</p>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·日本高端制造</span><b>① 中方对日重稀土精准断供</b>：1-9 月对日氧化钇 <b>18 吨（-98%）</b>、9 月仅 4 吨；对日镝、铽近乎为零；但<b>对日稀土磁体 1,564 吨仅 -4%</b>。海外氧化钇 1,150 美元/公斤 vs 国内 9 美元/公斤。外交部 10-21：管制目的是<b>制止日本“再军事化”和拥核企图</b>（见要点 3）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">11-18 生效</span><b>② 中方出口管制“装备化”四连发</b>：10-19 商务部会同相关部门发布 <b>49-52 号公告</b>——<b>盾构机</b>等物项实施出口管制、优化调整<b>挖泥船</b>、优化调整<b>无人机</b>、进一步优化<b>两用物项质疑与鉴别</b>，均 <b>11-18</b> 起实施。另修订《中国禁止出口限制出口技术目录》（10-16）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·跨境融资</span><b>③ 美方 PAIPA 制裁 5 家中国实体</b>（10-19）：上海至算科技 + 奇绩创坛管理公司/一期/二期/致远。OFAC 列非 SDN 菜单式清单，<b>冻结在美管辖资产、禁止美资投其股债、禁 12 个月内超 1,000 万美元授信</b>；GL2 允许 2027-01-19 前逐步了结（上海至算不在内）。奇绩创坛 10-20 声明<b>否认投资上海至算</b>，与国务院事实清单不一致——事实认定存在争议。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·AI 出海</span><b>④ DHS 禁 DeepSeek 联邦采购</b>（10-19）：禁止美联邦政府民事行政机构采购<b>深度求索（DeepSeek）及关联企业</b>产品与服务，并要求<b>从相关机构信息系统移除</b>。商务部 10-20：“强烈不满、坚决反对”，指其为“泛化国家安全概念”，并称将“采取一切必要措施”维护权益。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·检测认证</span><b>⑤ FCC 10-29 表决</b>：测试实验室新规要求实验室位于美国境内或“对等经济体”，<b>中国不在其列</b>，<b>2028-12-01</b> 实施；FCC 自述 2025 年约 <b>82%</b> 相关电子产品在中国完成测试，已有 <b>29 家</b>实验室因既有规则失资格。同步表决国际电信运营商安全监管最终规则（外资持股申报门槛 5%）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·汽车出口</span><b>⑥ 英国“随欧起舞”</b>：英国商贸部国务大臣<b>萨瓦尔</b>称英国与欧盟“必须步调一致”应对中国在汽车产业的主导地位，并称仍在与欧洲伙伴讨论<b>对华电动车加征关税</b>。商务部 10-19 回应：“<b>三思而后行，切勿随欧起舞</b>”“如英方执意采取限制措施，中方将<b>坚决反制</b>”。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">11 月表决</span><b>⑦ 欧盟对华 EV 关税进入关键窗口</b>：现行反补贴税 <b>比亚迪 17.0%、吉利 18.8%、上汽 35.3%</b>，有效期至 2029-10；欧盟曾要求中国自愿将混动车份额限制在约 15%，<b>10-07 通报成员国中方已拒绝</b>，转而研究保障措施（配额 + 超配额附加税）；<b>11 月成员国表决是否转为五年正式关税</b>。中国品牌欧洲份额 8 月已达 <b>11.7%</b> 创新高。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv1">摘要级</span><span class="badge f-sell">利空·生物医药 BD</span><b>⑧ 美对华资本管制“技术化”</b>：财政部 COINS 拟议规则新增<b>生物技术</b>，并把列明活动纳入“禁止技术”；<b>纯现金 license-out、二级市场交易、CRO/CDMO 服务不受影响</b>，受影响的是美国 VC/PE 投中国 biotech 未上市股权、可转债与附带董事席位或利润权的融资、许可+股权/合资。<b>仍为草案，未生效</b>。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>安全地缘</b>：特朗普 10-23 称美国“或许会再来一次小规模的‘史诗怒火’行动”，又称可“非常迅速地”结束伊朗战争；伊朗革命卫队海军称两艘试图穿越霍尔木兹海峡南部的超级油轮触雷；<b>俄军宣布 10-27 起在赫尔松方向停火并实行“静默状态”</b>，佩斯科夫称正协调奥列什基市停火期限。英国海事贸易行动办公室：10 月阿拉伯半岛周边 <b>32 起</b>船舶袭击（9 月全月 16 起）。</p>
+      <p><span class="tier t2">L2</span><b>结构性背景</b>：中西方出口结构相似度较 2007 年上升约 <b>6 个百分点</b>（美国外交关系协会），2023 年以来机械与运输设备、尤其电动车的重叠迅速扩大——这是“贸易防御会持续加码”的底层原因，不是一次性事件。</p>
+      <p><span class="tier t2">L2</span><b>中国稀土磁体出口的区域差</b>：9 月对欧盟及美国出口量回升、对日本微降（高盛口径）——与海关氧化钇口径对照，说明管制是<b>分品类、分最终用户</b>的，不是全面禁运。</p>
+      <p><span class="tier t3">L3</span>待验证日程：<b>11-10</b> 稀土管制“暂停期”到期是否续期；<b>11-18</b> 中方 49-52 号公告生效；<b>12-01</b> 若 FCC 规则通过则进入两年过渡（2028-12-01 执行）。</p>
+    </div>
+    <div class="takeaway warn">
+      <b>本期补录说明：</b>英国对华电动车表态（10-19）、FCC 10-29 表决细节（10-07 公告）两条，经本期外部核验确认属<b>前两期未覆盖的漏项</b>，按增量补录流程在本维度与要点 4 补入，未整篇重做。漏报原因：两条均为“监管硬新闻”，首发于部委官网与境外媒体，<b>投研型星球通常不转载</b>——这正是硬门禁要求“源内扫描 + 外部反查”双做的原因。
+    </div>
+    <div class="src"><b>来源：</b>外部核验 海关总署·路透·联合早报·外交部·商务部·中新社·FCC·财新·sanctions.com（原文级）/ 财经图集·10-24 周末特辑（原文级）/ 小牛研报纪要·10-24~10-25（原文级）/ Economic国际投行研报·高盛中国经济活动 + 大摩欧洲金属与矿业（摘要级）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🗣️</span>关键人物言论（说人话版 · 按内容归口）</div>
+    <ul class="pts">
+      <li><b>特朗普</b>（美，10-23）：“我们或许会再来一次小规模的‘<b>史诗怒火</b>’行动，又或者伊朗会选择妥协”“美国可以<b>非常迅速地</b>结束伊朗战争，问题是我们想结束它，还是让它慢慢枯萎”。<span class="dim" style="background:var(--d5)">归口：安全地缘</span> → 说人话：<b>他在给油价两个选项——打一下，或者不打但一直悬着；两个选项都让溢价不消失。</b></li>
+      <li><b>毛宁</b>（中国外交部，10-21）：就日本钇库存仅够数月、已请美斡旋，回应“中方<b>依法依规</b>对日本实施出口管制，目的是制止日本‘<b>再军事化</b>’和拥核企图”，并称维护关键矿产全球产供链稳定立场未变。<span class="dim" style="background:var(--d5)">归口：经贸摩擦与出口管制</span> → 说人话：<b>没有松口，反而把管制目的说得更明确——这不是贸易问题，是安全问题。</b></li>
+      <li><b>商务部新闻发言人</b>（10-19 / 10-20）：对英国“<b>三思而后行，切勿随欧起舞</b>…如英方执意对中国电动汽车采取限制措施，中方将<b>坚决反制</b>”；对美国土安全部禁 DeepSeek“<b>强烈不满、坚决反对</b>…将采取一切必要措施”。<span class="dim" style="background:var(--d5)">归口：经贸摩擦与制裁</span> → 说人话：<b>对英国是“劝阻+威胁”，对美国是“定性+保留反制”，等级不同。</b></li>
+      <li><b>沃什（Warsh，美联储主席）</b>：拒绝明确前瞻指引，弱化鹰派口吻，转而在“通胀缺乏进展”与“信用市场压力、美债收益率上行”之间做再平衡。<span class="dim" style="background:var(--d1)">归口：维度一（利率）</span> → 说人话：<b>他不给答案，只给条件——所以周三要听的是他更在意哪一边。</b></li>
+      <li><b>萨瓦尔</b>（英国商贸部国务大臣，近日）：英国与欧盟“<b>必须步调一致</b>”，共同应对中国在汽车产业占据的主导地位；仍在与欧洲伙伴讨论对华电动车加征关税。<span class="dim" style="background:var(--d5)">归口：经贸摩擦</span> → 说人话：<b>这是英国第一次公开把自己和欧盟的关税讨论绑在一起，等于自愿放弃“独立第三方”的位置。</b></li>
+      <li><b>马斯克 / SPCX</b>（10-23 财报会）：SPCX 预计 2026 年底算力达 2-3GW、<b>2027 年新增约 10GW（总量至 13GW，远超此前 5-10GW 指引）</b>；确认 SPCX 与 TSLA 已成立特别委员会探讨合并（需股东批准）。<span class="dim" style="background:var(--d2)">归口：维度二（股市/科技资本开支）</span> → 说人话：<b>在所有人担心 AI 资本开支过度时，最激进的那家还在上调——这是分歧的源头，也是信用的风险点。</b></li>
+    </ul>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d6)">
+    <div class="card-title"><span class="ico">📅</span>维度六 · 节假日 / 季节性（固定小栏目）</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">休市</span><b>10-24（周六）、10-25（周日）A 股、港股、美股、商品全部休市</b>；<b>10-26（周一）A 股恢复交易</b>，是本期所有周末信息的第一个价格验证窗口。今日所有价格均为 10-23 收盘或 10-25 早间期货结算口径。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">央行超级周</span><b>10-28 美联储 + 加拿大央行；10-29 欧央行；10-30 日本央行</b>——四家央行在三个交易日内落地，且<b>10-28 FOMC 无点阵图/SEP</b>，措辞权重高于决议本身。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">财报高峰</span><b>本周为三季报最集中一周：标普 500 有 44% 市值的公司披露</b>（微软、谷歌、ServiceNow、科磊周三；亚马逊、英特尔周四），10-28~10-29 检验 AI 变现成效；标普 500 至 10-30 隐含波动 1.80%。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">政治日历</span><b>巴西大选第二轮 10-25（周日）投票</b>；美国中期选举 <b>11-03</b>（Polymarket：众院民主党 92%、参院 68%、两院同色 67%，Cook 10-23 把 19 个众院席向民主党方向调整）；<b>10-28 距中期选举仅 6 天</b>——这是美银判断“美联储不敢造意外”的核心依据。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>已登记待验证日程</b>：<b>11-10</b> 稀土管制“暂停期”到期；<b>11-18</b> 中方 49-52 号公告生效（盾构机/挖泥船/无人机）；<b>12-01</b> FCC 新规若通过进入过渡期（2028-12-01 执行）；<b>12-21</b> 标普道琼斯风格分类新规生效，将带动至少 <b>3,750 亿美元</b>被动资金调仓。</p>
+      <p><span class="tier t2">L2</span><b>中国日程</b>：10-26 起三季报密集（华大基因电话会 10-26 15:30）；发改委承诺公布<b>扩大内需五年规划</b>（细节未披露）；证监会首批 <b>18 只主动管理 ETF</b> 已获批、首只 10-23 挂牌；港交所港股现金市场 <b>T+1 结算</b>咨询结论已发布。财经图集 10-25 早报截至出刊未发布（周日休刊）。</p>
+      <p><span class="tier t3">L3</span>消费季：中国双十一预售放量期；海外下一轮消费数据锚点为 <b>11-27 感恩节 / 黑色星期五</b>。</p>
+    </div>
+    <div class="src"><b>来源：</b>小牛研报纪要·10-24 美股周度行情速览 + 10-25 华泰固收中期选举日更（原文级）/ 每日财讯情报库·1023 复盘（原文级）/ Economic国际投行研报·野村美国宏观周报日历 + 高盛中国市场周报（摘要级）/ 财经图集·10-24 周末特辑（原文级）</div>
+  </div>
+
+  <div class="summary">
+    <h2>🎯 一句话总结 · 四象限</h2>
+    <div class="sum-grid">
+      <div class="sum-item">
+        <h4>🧲 管制在精细化</h4>
+        <p>中方用“分品类、分最终用户”切稀土（钇 -98% 但磁体仅 -4%），美方用“检测、采购、资本”三把刀切通道（FCC 82%、DHS 移除、PAIPA 五家），英欧用“配额与保障措施”切市场。共同点：卡的是资格，不是价格——按关税税率做的敞口测算会系统性低估风险。</p>
+      </div>
+      <div class="sum-item">
+        <h4>💳 AI 在融资层见底之前不会真见底</h4>
+        <p>需求端还在上调（WFE 2026 +41%、2027 破 2,000 亿；英伟达指引 1,080 亿），但 IG 利差 129bp、CRWV CDS 破 1,000bp、甲骨文离垃圾级一档。见底信号是 CDS 回落与再融资完成，不是股价反弹；净杠杆已在五年 0 分位，反弹没有弹药。</p>
+      </div>
+      <div class="sum-item">
+        <h4>🛢️ 油在给“概率”定价</h4>
+        <p>布伦特 116.72 创七个月新高、周涨 6.2%，但中东外运 1,670 万桶仍只比战前少 180 万——物理在修复，溢价来自“11-03 后可能被打”。这类溢价对称：落地即回吐。跟炼化比跟原油稳，因为赚的是价差不是方向。</p>
+      </div>
+      <div class="sum-item">
+        <h4>⚖️ 周三 FOMC 是共同裁判</h4>
+        <p>市场只给 10 月加息 20%，美银坚持加、野村与高盛判停。真正变量是沃什如何定性“金融条件”。它同时决定分母（长久期）、分母的导数（AI 融资成本）与分子（需求）。在此之前，任何方向的重仓都是在替流动性做判断。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🔍</span>数据源可读性审计（每期必附 · 检测时点 2026-10-25 10:44 / 10:45）</div>
+    <table>
+    <tr><th style="width:23%">数据源</th><th style="width:10%">状态</th><th style="width:17%">可读层级</th><th style="width:50%">引用情况 / 说明与缺口</th></tr>
+    <tr><td>小牛研报纪要（星球）</td><td>✅</td><td>原文级（全文帖）</td><td>引用 11 次。窗口内 10-24 隔夜要闻、10-24 美股周度行情、10-25 散户雷达、10-24 美银加息、10-24 COINS 点评、10-25 华泰固收中期选举日更为主要事实来源。</td></tr>
+    <tr><td>Economic国际投行研报（星球）</td><td>✅</td><td>摘要级（翻译精华全文）</td><td>引用 12 次。<b>10-25 01:39-01:48 集中放量</b>，本期读全文：野村美国宏观周报、高盛全球利率交易员、高盛中国市场周报、高盛中国经济活动、大摩欧洲金属与矿业、高盛美国市场周报、高盛全球外汇交易员、野村亚洲洞察·中国、摩根大通中国预算收入、大摩紫金/洛阳钼业/寒武纪、伯恩斯坦寒武纪、高盛中芯国际。</td></tr>
+    <tr><td>财经图集（星球）</td><td>✅</td><td><b>原文级（全文深读）</b></td><td>引用 18 次。<b>10-24 周末特辑 34,769 字 topic+detail 全文读完</b>（33 条 Key Takeaways、中国 12 条 / 美国 6 条 / 欧洲 6 条 / 英国 5 条 / 亚太 4 条 / 全球 2 条 / AI 4 条 / 大宗 1 条）。10-25 早报截至出刊未发布（周日）。信息密度最高的单一来源。</td></tr>
+    <tr><td>研报平权（星球）</td><td>✅</td><td>摘要级</td><td>引用 2 次。78 条，偏科技产业（存储、数据中心在建规模、甲骨文订单），宏观占比低，本期用于要点 1 的产业侧校验。</td></tr>
+    <tr><td>刘煜辉之宏观高维（星球）</td><td>✅</td><td>原文级</td><td>引用 2 次。13 条，观点型（流动性救市四步），本期用于框架参照，未作事实依据。</td></tr>
+    <tr><td>404K Semi-Ai（星球）</td><td>✅</td><td>原文级 + 正文抽样</td><td>引用 6 次。96 条，本期质量最高的一篇是 10-25《AI 回调：市场重新定价的是账单，而不是建设扩张》（六层产业链逐层拆解），以及 10-25 投资研究（英伟达锁产能、戴尔 AI Factory、氦入关键材料）、10-25 08:08 DeepSeek 单位经济性。已实测抽样，<b>不沿用“偏半导体、宏观密度低”的旧结论</b>。</td></tr>
+    <tr><td>源哥会员专享（ima）</td><td>✅</td><td>原文级</td><td>引用 2 次。库 ID <b>ima_kb_BmABHsyD</b>，5,967 件；Bloomberg 日报文件夹最新为 <b>10-23 早报 07:22 + 10-23 日报 18:02</b>，<b>10-24/10-25 周末无新股，数据日期 10-23</b>，仅作背景校验（AI 抛售性质、SK 海力士放弃 Solidigm 上市），<b>不作当日新增事实来源</b>。</td></tr>
+    <tr><td>每日财讯情报库（ima）</td><td>✅</td><td>原文级</td><td>引用 3 次。库 ID <b>ima_kb_XOO6JyWk</b>，15,282 件；“每日复盘→<b>1025</b>”下 3 个文件（<b>1023 市场情绪</b> 10:14 更新 / <b>1023 etf 笔记.pdf</b> 10:22 / 1023 晚间笔记 10:14），<b>数据基准日 2026-10-23 周五收盘</b>（10-24、10-25 休市由其自身声明）。情绪分 77.2 与四项分解、1.96 万亿量能校验为本期要点 7 与分歧二的核心底稿。</td></tr>
+    <tr><td>XZ 服务器（ima）</td><td>❌</td><td>不可读</td><td><b>0 引用</b>。四类枚举（MINE / JOIN / CREATE / SHARED）均<b>无该库</b>，旧数字 ID 7482839675192179 报 <b>code 220001 knowledge_base_id 无效</b>。属结构性缺口，<b>需人工在 ima 端核对库名/退订状态</b>——已连续第四次 0 引用，不再归因为“连接器开关回退”。</td></tr>
+    <tr><td>Orange期权（星球）</td><td>⚠️ 可读</td><td>原文级</td><td><b>0 引用，写明原因</b>：内容为期权策略与波动率交易（最新 10-24），与六维宏观框架定位不符，非权限问题。</td></tr>
+    <tr><td>海外大模型（星球）</td><td>❌</td><td>LOCKED</td><td><b>0 引用</b>。topics 与 search 双接口均报错（code 14210 体验到期 / LOCKED）。</td></tr>
+    <tr><td>外部反向核验（WebSearch）</td><td>✅</td><td>原文级</td><td><b>7 条查询</b>全部命中：稀土/氧化钇对日、PAIPA 五家、商务部反制与 49-52 号公告、DHS 禁 DeepSeek、英国表态、FCC 10-29、欧盟 EV 关税与 11 月表决。结论已录入 <b>cn_scan_2026-10-25.md</b>。</td></tr>
+    </table>
+    <div class="takeaway warn">
+      <b>本期两处结构性缺口，如实登记：</b>① <b>XZ 服务器库第四次 0 引用</b>——四类枚举中不存在，属账号侧库名/订阅状态问题，需人工核对；② <b>源哥库周末无新股</b>（最新 10-23），本期缺少“盘前 lv0”源，隔夜与盘前事实主要依赖小牛隔夜要闻与外部核验，已逐条标注日期。<b>两项都未用旧数据冒充当日数据。</b>
+    </div>
+  </div>
+
+  <div class="footer-tags">
+      <span>#宏观地缘日报</span><span>#2026-10-25</span><span>#布伦特116_72</span><span>#钇断供98%</span><span>#FCC10_29</span><span>#英国随欧起舞</span><span>#FOMC10_28</span><span>#AI融资杀</span><span>#国家队1700亿</span><span>#双闸校验</span>
+  </div>
+  <div style="text-align:center;font-size:12px;color:#8a8a9c;margin-top:10px;line-height:1.9;">瑞安 · 自动化出刊 ｜ 数据窗口 10-24 ~ 10-25 ｜ 校验：validate_daily.py + cn_gate.py 双闸 PASS ｜ 仅供内部研究，不构成投资建议
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>铜市日报 · 2026-10-19</title>
+<style>
+  :root{
+    --bg:#0f141b; --bg-grad:#0b0f16; --panel:#151c26; --panel2:#1a2230; --border:#242e3c;
+    --txt:#e9edf4; --sub:#98a4b6; --muted:#667184;
+    --up:#e5484d; --down:#2fb875; --orange:#f5a623; --accent:#f5a623; --gold:#e8b84b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:radial-gradient(1200px 600px at 50% -100px, #26221a 0%, var(--bg-grad) 55%);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; padding:40px 20px 70px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{text-align:center;margin-bottom:34px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:10px}
+  .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.5}
+  header h1{font-size:34px;font-weight:800;letter-spacing:1px;color:var(--txt);margin-bottom:6px}
+  header h1 .dot{color:var(--orange)}
+  header .src{color:var(--sub);font-size:12.5px;line-height:1.9}
+  header .src .pill{display:inline-block;padding:1px 9px;border-radius:20px;background:rgba(245,166,35,.12);color:var(--orange);border:1px solid rgba(245,166,35,.3);font-size:11px;margin:0 3px}
+
+  .hero{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+  .hero .kpi{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 22px;text-align:center;min-width:150px;flex:1;transition:transform .18s ease,border-color .18s ease}
+  .hero .kpi:hover{transform:translateY(-3px);border-color:var(--orange)}
+  .hero .kpi .v{font-size:24px;font-weight:800;color:var(--up);letter-spacing:.5px}
+  .hero .kpi .v.orange{color:var(--orange)}
+  .hero .kpi .v.green{color:var(--down)}
+  .hero .kpi .l{font-size:12px;color:var(--sub);margin-top:4px}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.22)}
+  .card h2{font-size:18px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+  .card h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#f5a623,#d88a0e);color:#1a1206;font-size:14px;font-weight:800;box-shadow:0 2px 8px rgba(245,166,35,.3)}
+  .card h2 .hint{font-size:11.5px;color:var(--muted);font-weight:400;margin-left:auto}
+
+  .reason{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;padding:12px 14px;border-radius:11px;background:var(--panel2);border:1px solid transparent;transition:border-color .15s}
+  .reason:hover{border-color:var(--border)}
+  .reason .idx{flex:0 0 28px;height:28px;border-radius:8px;background:rgba(245,166,35,.16);color:var(--orange);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+  .reason .txt{font-size:14.5px;color:#d2d9e4}
+  .reason .txt b{color:var(--orange)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  thead th{color:var(--sub);font-weight:600;background:var(--panel2);font-size:12px;letter-spacing:.3px;position:sticky;top:0}
+  tbody tr{transition:background .12s}
+  tbody tr:hover{background:rgba(255,255,255,.02)}
+  td b{color:var(--txt)}
+  td .tm{font-variant-numeric:tabular-nums;color:var(--sub)}
+
+  .tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;font-weight:600;white-space:nowrap;line-height:1.5}
+  .tag-up{background:rgba(229,72,77,.14);color:#ff7a7e;border:1px solid rgba(229,72,77,.42)}
+  .tag-down{background:rgba(47,184,117,.14);color:#4fd699;border:1px solid rgba(47,184,117,.42)}
+  .tag-neu{background:rgba(152,164,182,.12);color:var(--sub);border:1px solid var(--border)}
+  .tag-strong{background:rgba(229,72,77,.22);color:#ff7a7e;border:1px solid var(--up);font-weight:700}
+  .tag-gold{background:rgba(232,184,75,.14);color:var(--gold);border:1px solid rgba(232,184,75,.4)}
+
+  .quote{border-left:4px solid var(--orange);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#c9d0dc;margin:16px 0 4px}
+  .quote b{color:var(--orange)}
+  .quote.gold{border-left-color:var(--gold)}
+  .quote.gold b{color:var(--gold)}
+
+  .inst-card{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;border-radius:11px;background:var(--panel2);border:1px solid var(--border);margin-bottom:12px}
+  .inst-card .org{flex:0 0 130px;font-size:13px;font-weight:800;color:var(--orange);line-height:1.5}
+  .inst-card .org .d{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+  .inst-card .view{font-size:13.5px;color:#d2d9e4}
+  .inst-card .view b{color:var(--orange)}
+
+  .zsxq{display:flex;flex-direction:column;gap:14px}
+  .z-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative}
+  .z-card .z-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .z-card .z-badge{font-size:11px;font-weight:700;padding:3px 11px;border-radius:6px;background:rgba(232,184,75,.16);color:var(--gold);border:1px solid rgba(232,184,75,.35);letter-spacing:.5px}
+  .z-card .z-group{font-size:13px;font-weight:700;color:var(--txt)}
+  .z-card .z-time{font-size:11px;color:var(--muted);margin-left:auto}
+  .z-card p{font-size:13.5px;color:#ccd4e0;line-height:1.8}
+  .z-card p b{color:var(--gold)}
+  .z-card p .c-blue{color:#54a8ff}
+
+  .verdict{background:linear-gradient(135deg,#1a2230,#141a24);border:1px solid #2a3550}
+  .verdict .main{font-size:15.5px;font-weight:700;color:var(--txt);margin-bottom:16px;padding:16px 18px;background:var(--panel2);border-radius:11px;border-left:4px solid var(--orange);line-height:1.8}
+  .verdict .main b{color:var(--orange)}
+  .verdict ul{padding-left:4px;font-size:13.5px;color:#c9d0dc;list-style:none}
+  .verdict li{margin-bottom:11px;padding-left:22px;position:relative;line-height:1.75}
+  .verdict li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--orange)}
+  .verdict li b{color:var(--up)}
+  .verdict li b.down{color:var(--down)}
+  .verdict li b.gold{color:var(--gold)}
+  .verdict li .k{font-weight:700;color:var(--txt)}
+
+  .footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:14px;line-height:1.9}
+
+  @media (max-width:640px){
+    body{padding:24px 12px 50px}
+    .card{padding:20px 16px}
+    header h1{font-size:26px}
+    .hero .kpi{min-width:130px;padding:12px 14px}
+    .hero .kpi .v{font-size:20px}
+    .inst-card .org{flex-basis:90px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Copper Daily</div>
+    <h1>铜市日报<span class="dot"> · </span>2026.10.19</h1>
+    <div class="src">
+      <span class="pill">华尔街见闻</span><span class="pill">market-delta 实时快讯</span><span class="pill">Wind 海外机构</span><span class="pill">知识星球</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="kpi"><div class="v">$14,449</div><div class="l">伦铜收盘（+89）</div></div>
+    <div class="kpi"><div class="v orange">109,770</div><div class="l">沪铜主力收盘（+0.29%）</div></div>
+    <div class="kpi"><div class="v green">-241.51</div><div class="l">SMM 进口铜精矿指数</div></div>
+    <div class="kpi"><div class="v green">-976</div><div class="l">上期所仓单日变动（吨）</div></div>
+  </div>
+
+  <!-- 一、核心结论 -->
+  <div class="card">
+    <h2><span class="no">一</span>核心结论：今日看多铜的 5 个最核心理由</h2>
+    <div class="reason"><div class="idx">1</div><div class="txt"><b>矿端硬约束 + 冶炼减产形成"双紧"</b>——铜精矿现货 TC 降至 <b>-231.68 美元/吨</b> 再创历史新低、连续 32 周下滑；国内冶炼利润承压（9 月亏损 4129 元/吨），部分炼厂主动减产，SMM 预计 10 月电解铜产量降至 108.47 万吨年内低点。</div></div>
+    <div class="reason"><div class="idx">2</div><div class="txt"><b>海外机构三个月内二次上修目标价</b>——BMI 将 2026 铜均价从 12,700 上调至 <b>13,500 美元（+800）</b>、麦格理 13,573、BMO 13,619，机构预期同向移动本身就在重塑市场心理，定价锚点从短期波动转向长期供给约束。</div></div>
+    <div class="reason"><div class="idx">3</div><div class="txt"><b>供给扰动边际缓解但不改短缺底色</b>——Centinela 罢工结束、Escondida 达成初步协议，短期供应溢价消退；但智利 2026 产量预计下滑 2.6% 至 527 万吨、BHP 下调 2027 财年产量指引，矿端供给弹性仍被锁死。</div></div>
+    <div class="reason"><div class="idx">4</div><div class="txt"><b>需求引擎从电力切换至 AI + 电网双轮</b>——26 年 1-7 月全球样本铜需求同比 <b>+3.45%</b>（中国 +2.51%、海外八区 +5.62%，印度 +22.92%、印尼 +67.52%），上半年铜元素供需缺口超 7%。</div></div>
+    <div class="reason"><div class="idx">5</div><div class="txt"><b>AI 材料链涨价共振</b>——建滔第 8 次提价（2116 以下薄布板料 +15%）、沪电/生益科技 Q3 净利润预增 101%-181%、三井金属 MicroThin 载体铜箔占全球 98% 份额，电子布→CCL→铜箔涨价链传导顺畅。</div></div>
+  </div>
+
+  <!-- 二、海外机构观点 -->
+  <div class="card">
+    <h2><span class="no">二</span>近 5 天海外机构观点 <span class="hint">Wind 财经新闻</span></h2>
+    <div class="inst-card"><div class="org">BMI（惠誉方案）<span class="d">10/14</span></div><div class="view">上调 2026 铜均价至 <b>13,500 美元</b>（+800），2027 起转缺口，2035 缺口扩至 170 万吨。</div></div>
+    <div class="inst-card"><div class="org">麦格理<span class="d">10/17</span></div><div class="view">2026 均价 <b>13,573 美元</b>，2027 上调 14% 至 12,750；称铜价"已脱离基本面"、走势高度二元。</div></div>
+    <div class="inst-card"><div class="org">BMO 蒙特利尔银行<span class="d">10/17</span></div><div class="view">2026 均价 <b>13,619 美元</b>，预计美国 11 月中期选举前不出关税决议。</div></div>
+    <div class="inst-card"><div class="org">ICSG 国际铜研究小组<span class="d">10/15</span></div><div class="view">2026 过剩 <b>10.4 万吨</b>、2027 扩至 36.8 万吨，矿端 2027 增速抬升至 3.1%。</div></div>
+    <div class="inst-card"><div class="org">盛宝银行<span class="d">Ole Hansen · 10/17</span></div><div class="view">铜价受"供应担忧缓解 + 通胀数据强劲"双重压力，出现获利回吐。</div></div>
+    <div class="quote gold">海外机构共识：目标价集中在 <b>13,500-13,600 美元</b>，短线上调但分歧在"美国 150-200 万吨铜库存有多少是过剩供应"；矿端扰动是长期锚，ICSG 过剩预期是短期冷水。</div>
+  </div>
+
+  <!-- 三、知识星球深度观点 -->
+  <div class="card">
+    <h2><span class="no">三</span>知识星球深度观点 <span class="hint">近期时效</span></h2>
+    <div class="zsxq">
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">小牛研报纪要</span><span class="z-group">国盛有色：铜矿扰动+冶炼减产</span><span class="z-time">2026-10-18</span></div>
+        <p>铜矿扰动与冶炼减产，铜价<b>易涨难跌</b>。本周全球铜库存环比 +5.4 万吨（SHFE +2.8、社会 +2.2、LME -0.8、COMEX +0.4）；国内冶炼利润承压、部分炼厂释放明确减产信号。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">小牛研报纪要</span><span class="z-group">Centinela 罢工结束</span><span class="z-time">2026-10-19</span></div>
+        <p>安托法加斯塔 Centinela 铜矿两工会接受薪酬方案、<b>结束 10/7 启动、持续约 10 天的罢工</b>；公司称罢工期间维持正常生产，但工会称关键设备操作员 50%+ 停工、生产影响可能 11 月才显现。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">小牛研报纪要</span><span class="z-group">PCB/铜箔涨价链 Q3 业绩兑现</span><span class="z-time">2026-10-18</span></div>
+        <p>沪电净利预增 101%-110%、生益科技 164%-181%，二线板厂利润弹性接棒；上游电子布、铜箔、覆铜板供应偏紧，<b>建滔第 8 次提价 15%</b>，为后续顺价提供支撑。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">研报平权</span><span class="z-group">三井金属 MicroThin 铜箔</span><span class="z-time">2026-10-16</span></div>
+        <p>三井金属 MicroThin 载体铜箔占全球 <b>98% 份额</b>，产品从存储基板切入 800G/1.6T 光模块，铜箔利润占比预计 2029 财年突破 60%。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、今日实时快讯 -->
+  <div class="card">
+    <h2><span class="no">四</span>今日（10/19）实时快讯与时间线 <span class="hint">数据截止 15:52</span></h2>
+    <table>
+      <thead><tr><th style="width:70px">时间</th><th>事件</th><th style="width:92px">标签</th></tr></thead>
+      <tbody>
+      <tr><td class="tm">15:52</td><td>上期所仓单日报：铜 <b>35,410 吨，-976</b>；铝 -5,235、锌 -1,299、铅 -3,844</td><td><span class="tag tag-up">库存去化</span></td></tr>
+      <tr><td class="tm">15:10</td><td>美精铜 6.6125 +0.59%；伦铜 14,449 +89；美元指数 101.82 +0.04%</td><td><span class="tag tag-up">海外联动</span></td></tr>
+      <tr><td class="tm">15:03</td><td><b>沪铜主力收 109,770 +320（+0.29%）</b>；沪镍 +1,820、沪锡 +2,610</td><td><span class="tag tag-up">收盘数据</span></td></tr>
+      <tr><td class="tm">14:32</td><td>前三季度 GDP 同比 +4.6%；一线新房价格环比 +0.1% 连续两月上涨</td><td><span class="tag tag-neu">宏观数据</span></td></tr>
+      <tr><td class="tm">08:57</td><td>铜精矿 TC 创历史新低，冶炼厂"倒贴买矿"为何不停产</td><td><span class="tag tag-down">供给预警</span></td></tr>
+      <tr><td class="tm">08:15</td><td>机构警告：到 2035 年铜需求翻倍但供应短缺约 30%（30 座一级铜矿产量）</td><td><span class="tag tag-up">长期缺口</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键价格：伦铜 <b>$14,449/吨</b>（+89）；沪铜主力 <b>109,770 元/吨</b>（+0.29%）；长江现货 1#铜 <b>110,820 元/吨</b>（+230），升水收窄至 850 元/吨。</div>
+  </div>
+
+  <!-- 五、昨天参照 -->
+  <div class="card">
+    <h2><span class="no">五</span>昨天（10/18）发生了什么（背景参照）</h2>
+    <table>
+      <thead><tr><th style="width:120px">时间/事件</th><th>内容</th></tr></thead>
+      <tbody>
+      <tr><td><b>伦铜高位回落</b></td><td>伦铜 10/17 收 14,436 美元/吨（-0.83%），本周先扬后抑，美国 9 月 CPI 超预期致铜价高位承压</td></tr>
+      <tr><td><b>铜库存变化</b></td><td>伦铜 22.5 万吨（-3.26%）、纽铜 79 万短吨（+0.52%）、沪铜 7.4 万吨（+25.91%）；国内社库 11.31 万吨（+11.98%）</td></tr>
+      <tr><td><b>Escondida 协议</b></td><td>BHP 旗下全球最大铜矿 Escondida 达成避免罢工初步协议，供应溢价消退，铜价从三周高点回落</td></tr>
+      <tr><td><b>ICSG 数据修正</b></td><td>ICSG 上调 2026 过剩量至 10.4 万吨、2027 维持 36.8 万吨，矿端 2027 增速抬升至 3.1%</td></tr>
+      <tr><td><b>TC 历史新低</b></td><td>9 月底现货铜精矿加工费 TC 降至 -231.68 美元/吨，连续 32 周下滑、再创历史新低</td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键参照：昨天铜主线是"高位回落 + ICSG 过剩预期浇冷水"，今日是"罢工收场 + 机构目标价二次上修 + 冶炼减产兑现"，供给约束逻辑未变、短线博弈加剧。</div>
+  </div>
+
+  <!-- 六、逻辑对比 -->
+  <div class="card">
+    <h2><span class="no">六</span>核心逻辑增强 vs 削弱对比</h2>
+    <table>
+      <thead><tr><th>核心逻辑</th><th>10/18 状态</th><th>10/19 状态</th><th style="width:92px">变化</th></tr></thead>
+      <tbody>
+      <tr><td><b>矿端供给收缩</b></td><td>智利 2026 产量 -2.6%</td><td>Centinela 罢工结束、Escondida 协议</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>冶炼减产</b></td><td>9 月冶炼亏损 4129 元/吨</td><td>10 月减产成主动驱动、产量年内低点</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>海外机构预期</b></td><td>BMI 上调至 13500</td><td>麦格理/BMO 同步看 13573/13619</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>库存（伦铜）</b></td><td>LME 连续八日下降</td><td>伦铜 22.5 万吨 -3.26%</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>库存（沪铜/社库）</b></td><td>节后累库</td><td>沪铜 +25.91%、社库 +11.98%</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>ICSG 过剩预期</b></td><td>2026 过剩 10.4 万吨</td><td>2027 扩至 36.8 万吨</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>AI/铜箔需求</b></td><td>建滔 15% 提价</td><td>三井金属 98% 份额、PCB 业绩兑现</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>整体净影响</b></td><td colspan="2" style="text-align:center">—</td><td><span class="tag tag-neu">多空交织 ↑↓</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">对比判断：昨日是"过剩预期 + 罢工缓解"的利空主导，今日则是"机构二次上修 + 冶炼减产兑现 + AI 材料链涨价"的利多对冲；矿端硬约束与库存去化是长期锚，但 ICSG 过剩预期与节后累库是短线压制，铜价进入高位再平衡阶段。</div>
+  </div>
+
+  <!-- 七、综合结论 -->
+  <div class="card verdict">
+    <h2><span class="no">七</span>综合结论</h2>
+    <div class="main">今日铜的运行主线 = <b>供给硬约束的长期锚</b> + 海外机构目标价二次上修 + 冶炼减产兑现，被 ICSG 过剩预期与节后累库短线压制，多空再平衡、高位震荡。</div>
+    <ul>
+      <li><span class="k">方向</span>：高位震荡，趋势仍偏多，但短线供给扰动（罢工收场）+ 过剩预期压制上方空间。</li>
+      <li><span class="k">海外机构共识</span>：目标价 13,500-13,600 美元，长期"供给刚性 + AI/电网需求"支撑，分歧在 2027 年缺口收敛速度。</li>
+      <li><span class="k">星球视角</span>：国盛有色"铜矿扰动 + 冶炼减产，易涨难跌"；海亮股份"百万吨底盘上的单位价值量提升"切换估值锚；PCB/铜箔涨价链 Q3 业绩全面兑现。</li>
+      <li><span class="k">风险点</span>：美国 9 月 CPI 超预期推升加息预期、美元走强压制；ICSG 2027 过剩 36.8 万吨的远期冷水；沪铜社库 +25.91% 的节后累库；14,600 上方历史阻力区。</li>
+      <li><span class="k">下周关键</span>：美国 232 铜关税决策落地、10 月 FOMC 会议、中国 8 月铜进口数据、伦铜能否站稳 14,500。</li>
+      <li><span class="k">操作倾向</span>：逢回调布局多头，回调不破 14,200 视为健康调整；短期 110,000-111,200 元区间高抛低吸。</li>
+    </ul>
+  </div>
+
+  <div class="footer">生成时间：2026-10-19 20:55（收盘版）· 数据截止 15:52<br>数据源：华尔街见闻 · market-delta 实时快讯 · Wind 财经新闻（海外机构观点） · 知识星球（小牛研报纪要 / 研报平权 / 404K Semi-Ai）</div>
+</div>
+</body>
+</html>

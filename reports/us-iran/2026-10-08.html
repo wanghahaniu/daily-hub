@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美伊局势日报 · 2026-10-08 · 紧张度 88</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1a1d24; --sub:#5b6270; --line:#e6e8ee;
+  --red:#c62828; --green:#2e7d32; --amber:#b26a00; --blue:#1565c0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding:12px;max-width:760px;margin:0 auto}
+.card{background:var(--card);border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+h1{font-size:21px;margin-bottom:4px}
+h2{font-size:17px;margin:4px 0 12px;color:var(--ink)}
+.meta{color:var(--sub);font-size:13px;margin-bottom:10px}
+.score-banner{background:linear-gradient(135deg,#b71c1c,#c62828);color:#fff;border-radius:14px;padding:20px;text-align:center;margin-bottom:14px}
+.score-big{font-size:52px;font-weight:800;line-height:1}
+.score-label{font-size:14px;opacity:.92;margin-top:6px}
+.score-sub{font-size:12px;opacity:.8;margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.sub-box{background:rgba(255,255,255,.14);border-radius:10px;padding:10px;text-align:center}
+.sub-box .n{font-size:20px;font-weight:700}
+.sub-box .t{font-size:11px;opacity:.85}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th,td{border:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+th{background:#f0f2f6;font-weight:600;font-size:12px}
+.tag{display:inline-block;padding:1px 7px;border-radius:10px;font-size:11px;font-weight:600;white-space:nowrap}
+.r{background:#fdecea;color:var(--red)}
+.g{background:#e8f5e9;color:var(--green)}
+.w{background:#eceff1;color:#546e7a}
+.sensitive{background:#c62828;color:#fff;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:700}
+.sensitive-row{background:#fff0f0}
+.sensitive-row td{background:#fff0f0}
+strong.warn{color:var(--red)}
+.badge{display:inline-block;padding:1px 6px;border-radius:6px;font-size:10px;font-weight:700;margin-left:3px}
+.b-nuke{background:#4a148c;color:#fff}
+.b-energy{background:#e65100;color:#fff}
+.b-econ{background:#b71c1c;color:#fff}
+.chart-box{height:260px;position:relative;margin-top:6px}
+.note{font-size:11.5px;color:var(--sub);margin-top:6px}
+ul{padding-left:18px}
+li{margin-bottom:5px;font-size:13.5px}
+.keyline{font-size:13.5px;margin-bottom:6px}
+.time{color:var(--sub);font-size:11px}
+.divider{height:1px;background:var(--line);margin:14px 0}
+.footer{text-align:center;color:var(--sub);font-size:11px;padding:10px 0 20px}
+</style>
+</head>
+<body>
+
+<div class="score-banner">
+  <div class="score-label">美伊局势综合紧张度评分</div>
+  <div class="score-big">88<span style="font-size:22px">/100</span></div>
+  <div class="score-sub">极度紧张 · 红色警戒 · 较昨日 86 上升 2 分</div>
+  <div class="grid">
+    <div class="sub-box"><div class="n">90</div><div class="t">军事冲突 30%</div></div>
+    <div class="sub-box"><div class="n">85.5</div><div class="t">高层言论 20%</div></div>
+    <div class="sub-box"><div class="n">88</div><div class="t">通航中断 25%</div></div>
+    <div class="sub-box"><div class="n">86</div><div class="t">战争险/市场 25%</div></div>
+  </div>
+  <div class="score-sub" style="margin-top:10px">高层言论维度：一般言论 83 × 50% + 敏感威胁 88 × 50% = 85.5</div>
+</div>
+
+<div class="card">
+  <h2>一、今日核心动态（10/7–10/8）</h2>
+  <ul>
+    <li><strong>🔴 10 月已 9 起油轮遇袭</strong>：UKMTO 本月迄今报告霍尔木兹海峡 9 起袭击，相当于整个 9 月在霍尔木兹+波斯湾合计报告量的一半；10/7 又报一起海峡内发射物击中致发动机舱起火。海事情报公司 Marisks 统计过去一周至少 7 艘商船遇袭。<span class="time">（路透/环球市场播报，10/7）</span></li>
+    <li><strong class="warn">⚠️⚠️ 纳格迪宣称「霍尔木兹已关闭、完全控制」</strong>：IRGC 总司令顾问穆罕默德·礼萨·纳格迪 10/7 称「霍尔木兹海峡处于关闭状态，伊朗武装部队对其拥有完全控制权」，将很快关闭沿阿曼海岸南部航道等「非法航道」（系炸毁岩石开辟的走私通道），持续到伊朗「正当诉求」得到满足为止。<span class="time">（伊朗媒体/央视，10/7）</span></li>
+    <li><strong>⚪ CENTCOM 反驳「关闭」说法</strong>：美军中央司令部 10/7 称纳格迪「海峡已关闭/完全控制」说法不实，目前海峡交通畅通，包括 2000 万桶原油在内的商业货物与能源物资正由此运输，美国及其地区伙伴「显然掌控」该海峡。<span class="time">（央视新闻客户端，10/7）</span></li>
+    <li><strong>🔴 鲁比奥「伊朗完全失去海峡控制」</strong>：国务卿鲁比奥 10/7 访问雅典时称伊朗已「完全失去对霍尔木兹海峡的控制」，「现在流出的石油几乎和冲突爆发前一样多」。<span class="time">（中新网，10/7）</span></li>
+    <li><strong class="warn">⚠️⚠️ 特朗普「必须收尾，好方式或没那么好的方式」</strong>：10/7 离开白宫前对记者称战争将「很快以一种方式或另一种方式结束」、油价将大幅回落；10/6 马里兰 Anduril 活动称军事行动「必须收尾」，将以「好方式或没那么好的方式」决定，称伊朗军事「已被有效瘫痪」。<span class="time">（路透/Gulf News，10/7）</span></li>
+    <li><strong class="warn">⚠️⚠️ 万斯「实质性削减铀浓缩能力才能结束战事」</strong>：副总统万斯 10/7 称伊朗必须「实质性、有意义的」削减铀浓缩能力才能满足美方要求结束冲突，质疑伊朗若无意拥核为何生产 60% 丰度燃料；称美方不确定伊朗文职领导层在最高层被清除后握有多少决策权。<span class="time">（路透，10/7）</span></li>
+    <li><strong>🔴 佩泽希齐扬「全面战争」</strong>：伊朗总统 10/7 将局势定性为「全面战争」（all-out war），强调经济韧性；军方公开威胁若侦测到迫近的敌方打击将实施先发制人行动。<span class="time">（Hamer Intelligence，10/7）</span></li>
+    <li><strong>⚪ 伊朗「绝不放弃铀浓缩权利」</strong>：伊朗高级官员 10/7 回应万斯称美方「诉求与想法」与伊朗存在分歧，美承认伊朗拥有浓缩铀权利是伊朗「红线」、绝不让步，但细节可未来讨论。<span class="time">（新浪财经/新华社，10/7）</span></li>
+    <li><strong>⚪ 阿拉格齐已提交详细方案</strong>：伊朗外长阿拉格齐称已通过调解方向美方提交含伊方条件的详细提案（围绕「七天计划」重建信任+重开霍尔木兹）；外交部发言人巴加埃称美方反提议与既往立场差异不大、主要聚焦核议题。<span class="time">（sawti.eu/路透，10/7）</span></li>
+    <li><strong>🔴 胡塞袭沙特机场</strong>：胡塞 10/6 晚袭击沙特阿卜哈、吉赞两座机场；军事发言人叶海亚·萨雷亚 10/7 称过去 24h 沙特对也门 6 省发动 156 次空袭，本轮累计 1798 次。<span class="time">（新浪财经，10/7）</span></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>二、敏感威胁清单（⚠️⚠️ 双重标注）</h2>
+  <ul>
+    <li class="sensitive-row" style="padding:8px;border-radius:8px"><span class="sensitive">⚠️⚠️</span> <strong class="warn">纳格迪「霍尔木兹关闭/完全控制/关闭非法航道」</strong> <span class="badge b-econ">💥经济命脉</span> — 10/7 宣称对全球最核心石油咽喉的完全控制权，并威胁关闭南部走私航道。</li>
+    <li class="sensitive-row" style="padding:8px;border-radius:8px"><span class="sensitive">⚠️⚠️</span> <strong class="warn">特朗普「好方式/没那么好的方式收尾」</strong> <span class="badge b-econ">💥经济命脉</span> — 10/6–10/7 暗示外交或强化军事二选一，威胁以武力方式强行收尾。</li>
+    <li class="sensitive-row" style="padding:8px;border-radius:8px"><span class="sensitive">⚠️⚠️</span> <strong class="warn">万斯「实质性削减铀浓缩能力」</strong> <span class="badge b-nuke">☢️核</span> — 10/7 将停火与削减核浓缩硬挂钩，质疑 60% 丰度燃料的军事意图。</li>
+    <li class="sensitive-row" style="padding:8px;border-radius:8px"><span class="sensitive">⚠️⚠️</span> <strong class="warn">佩泽希齐扬「全面战争」+ 军方「先发制人」</strong> <span class="badge b-econ">💥经济命脉</span> — 10/7 总统定性全面战争，军方威胁对迫近打击实施先发制人。</li>
+    <li class="sensitive-row" style="padding:8px;border-radius:8px"><span class="sensitive">⚠️⚠️</span> <strong class="warn">10 月 9 起油轮遇袭</strong> <span class="badge b-energy">🛢️能源设施</span> — 10/7 又一艘油轮发动机舱起火，IRGC 系统化袭船持续，本月密度为 9 月全月一半。</li>
+  </ul>
+  <div class="note">敏感威胁子项（☢️核 / 🛢️能源设施 / 💥经济命脉）统一归入「高层言论威胁度」维度，占该维度 50% 权重。</div>
+</div>
+
+<div class="card">
+  <h2>三、倒序时间序列 · 美伊对比表</h2>
+  <table>
+    <thead><tr><th>日期</th><th>美国（言论/行动）</th><th>伊朗（言论/行动）</th><th>类别</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>10/7</strong></td>
+        <td><strong>CENTCOM</strong>：否认伊朗「海峡关闭/完全控制」说法，称 2000 万桶原油正通过、美及伙伴掌控海峡。<br><strong>鲁比奥</strong>（雅典）：伊朗「完全失去海峡控制」，石油流出几乎回到战前。<br><strong>特朗普</strong>：战争将「很快以一种方式或另一种方式结束」、油价将大跌。</td>
+        <td><strong>纳格迪（IRGC 顾问）</strong>：<strong class="warn">⚠️ 霍尔木兹已关闭、武装部队完全控制</strong>，将关闭南部「非法走私航道」，持续到诉求满足。<br><strong>佩泽希齐扬</strong>：<strong class="warn">⚠️ 定性「全面战争」</strong>；军方威胁<strong class="warn">⚠️ 先发制人</strong>。<br><strong>高级官员</strong>：绝不放弃铀浓缩权利（红线）。<br><strong>阿拉格齐</strong>：已提交详细提案（七天计划+重开海峡）。</td>
+        <td><span class="tag r">🔴 冲突/威胁</span></td>
+      </tr>
+      <tr>
+        <td><strong>10/7</strong></td>
+        <td><strong>万斯</strong>：<strong class="warn">⚠️ 伊朗须「实质性」削减铀浓缩能力才能结束战事</strong>，质疑 60% 丰度。</td>
+        <td>—</td>
+        <td><span class="tag r">🔴 威胁升级</span></td>
+      </tr>
+      <tr>
+        <td><strong>10/7</strong></td>
+        <td>—</td>
+        <td><strong>IRGC</strong>：<strong class="warn">⚠️ 10/7 海峡内又一油轮遭发射物击中、发动机舱起火</strong>（UKMTO 本月第 9 起）。</td>
+        <td><span class="tag r">🔴 军事冲突</span></td>
+      </tr>
+      <tr>
+        <td><strong>10/6 晚</strong></td>
+        <td><strong>胡塞</strong>（与沙特对抗）：<strong class="warn">⚠️ 袭击阿卜哈、吉赞两机场</strong>。</td>
+        <td>—</td>
+        <td><span class="tag r">🔴 冲突外溢</span></td>
+      </tr>
+      <tr>
+        <td><strong>10/6</strong></td>
+        <td><strong>特朗普</strong>（马里兰）：<strong class="warn">⚠️ 军事行动「必须收尾」</strong>，「好方式或没那么好的方式」；称伊朗军事已被「有效瘫痪」。</td>
+        <td><strong>巴加埃</strong>：美方反提议与既往立场差异不大、聚焦核议题，执行顺序仍存分歧。</td>
+        <td><span class="tag r">🔴 威胁升级</span></td>
+      </tr>
+      <tr>
+        <td><strong>10/5</strong></td>
+        <td><strong>万斯</strong>：伊朗袭击部分船只但未阻断油气流动，美仍愿达成协议、正与佩泽希齐扬和阿拉格齐接触。</td>
+        <td>—</td>
+        <td><span class="tag g">🟢 降温/缓和</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note">🔴=军事冲突/威胁升级 · 🟢=降温/缓和 · ⚪=声明/一般言论；严重项加 ⚠️ 并加粗。时间均为新闻发出时间/日期。</div>
+</div>
+
+<div class="card">
+  <h2>四、霍尔木兹通航量 & 战争险/保险</h2>
+  <ul>
+    <li><strong>通航量（环比）</strong>：IRGC 顾问 Mir Ahmadi 称每日仅约 10 艘过境（战前 125 艘/日）；Kpler 显示中东原油出口 9/30 七日移动平均 1830 万桶/日（接近战前 1800 万）、9 月有 14 天超战前；但霍尔木兹周流量降至 1030 万桶/日（约战前 74%）。约 40% 出口经沙特东西管道+阿联酋管道绕行，剩余依赖「AIS 暗航」穿梭油轮（9/23–30 周 119 次过境、37% 关闭 AIS）。<strong>今日环比记 10 艘/日（暗航不计数，实际更高）</strong>。</li>
+    <li><strong>战争险/保险</strong>：霍尔木兹过境战争险为船体价值 5–10%（$1 亿超级油轮单次保费 $500 万–1000 万）；AWRP 维持约 9.0% 高位（战前 0.15%，约 60×）。中东→中国 VLCC 运费飙至 $130 万/天（纪录新高，去年均值约 $6 万/天）。</li>
+    <li><strong>市场</strong>：布伦特 10/7 收 $101.10（+0.55%）、WTI $89.23（-0.23%）、Murban $106.40（+0.20%）；布伦特–WTI 价差扩至 $11.87（战争溢价纯体现）。G7 释放 1 亿桶柴油+原油紧急库存，沙特下调亚洲官价，沙特东西管道恢复至 580 万桶/日。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>五、三图</h2>
+  <h3 style="font-size:14px;color:var(--sub)">① 每日紧张度评分走势</h3>
+  <div class="chart-box"><canvas id="scoreChart"></canvas></div>
+  <div class="divider"></div>
+  <h3 style="font-size:14px;color:var(--sub)">② 霍尔木兹通航量（艘/日，环比）</h3>
+  <div class="chart-box"><canvas id="transitChart"></canvas></div>
+  <div class="divider"></div>
+  <h3 style="font-size:14px;color:var(--sub)">③ 战争险费率 AWRP（%）</h3>
+  <div class="chart-box"><canvas id="warChart"></canvas></div>
+</div>
+
+<div class="card">
+  <h2>六、评分框架说明</h2>
+  <ul>
+    <li>军事冲突 30% + 高层言论威胁度 20%（一般言论 50% + 敏感威胁 50%）+ 霍尔木兹通航中断 25% + 战争险/市场 25%</li>
+    <li>今日分项：军事冲突 90、高层言论 85.5（一般 83 + 敏感 88）、通航中断 88、战争险/市场 86。</li>
+    <li>综合 = 90×0.30 + 85.5×0.20 + 88×0.25 + 86×0.25 = <strong>87.6 ≈ 88</strong></li>
+    <li style="color:var(--sub);font-size:12px">评分采用「近一周增量比较」：军事冲突上调至 90（10 月 9 起袭击、密度较 9 月翻倍）；敏感威胁上调至 88（新增「全面战争」「海峡关闭」「先发制人」三大措辞升级）；通航维持高位 88（暗航流量回升系美护航+绕行+释储的人为结果，不代表紧张下降）；战争险 86（VLCC 运费 $130 万/天创纪录新高）。</li>
+  </ul>
+</div>
+
+<div class="footer">美伊局势日报 · 2026-10-08 生成 · 数据源：路透/法新社/UKMTO/CENTCOM/新华社/央视/中新网/Kpler/Marisks/Hamer/FT<br>评分由自动化模型综合多源情报测算，仅供信息参考</div>
+
+<script>
+const dates=["8/30","8/31","9/1","9/2","9/3","9/4","9/5","9/6","9/7","9/8","9/9","9/10","9/11","9/12","9/13","9/14","9/15","9/16","9/17","9/18","9/19","9/20","9/21","9/22","9/23","9/24","9/25","9/26","9/27","9/28","9/29","9/30","10/1","10/4","10/5","10/6","10/7","10/8"];
+const scores=[85,87,89,88,90,90,91,91,94,93,95,96,96,96,96,95,95,95,95,94,92,92,91,91,90,92,91,89,90,90,89,89,89,89,88,87,86,88];
+const transits=[6,10,4,4,4,4,2,6,7,6,6,6,6,6,7,6,6,4,4,4,12,10,2,2,2,1,12,9,9,3,5,8,17,1,3,3,4,10];
+const awrp=[8.0,8.1,8.2,8.3,8.4,8.5,8.6,8.75,8.75,8.75,10.0,10.0,10.0,8.5,9.0,8.5,8.5,9.0,9.5,7.5,8.5,10.0,10.0,8.0,8.0,9.0,8.5,8.5,8.5,8.5,8.5,10.0,10.0,10.0,9.5,9.0,9.0,9.0];
+
+Chart.defaults.color="#5b6270";
+Chart.defaults.font.family="-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif";
+
+new Chart(document.getElementById('scoreChart'),{
+  type:'line',
+  data:{labels:dates,datasets:[{label:'紧张度评分',data:scores,borderColor:'#c62828',backgroundColor:'rgba(198,40,40,.12)',fill:true,tension:.3,pointRadius:1.5,pointBackgroundColor:'#c62828'}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{min:60,max:100}}}
+});
+
+new Chart(document.getElementById('transitChart'),{
+  type:'line',
+  data:{labels:dates,datasets:[{label:'通航量(艘/日)',data:transits,borderColor:'#1565c0',backgroundColor:'rgba(21,101,192,.12)',fill:true,tension:.3,pointRadius:1.5,pointBackgroundColor:'#1565c0'}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}}
+});
+
+new Chart(document.getElementById('warChart'),{
+  type:'line',
+  data:{labels:dates,datasets:[{label:'AWRP(%)',data:awrp,borderColor:'#b26a00',backgroundColor:'rgba(178,106,0,.12)',fill:true,tension:.3,pointRadius:1.5,pointBackgroundColor:'#b26a00'}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{min:0,max:12}}}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>源哥 × XZ服务器 · 全品类交叉日报 · 2026-10-14</title>
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --ink:#1b1f27; --ink2:#4b5563; --ink3:#7b8794;
+  --line:#e4e7ec; --line2:#eef1f5;
+  --ai:#3b6fe0; --ai-bg:#eef3fe;
+  --hw:#7a4fd6; --hw-bg:#f3eefe;
+  --mdl:#0e9f8a; --mdl-bg:#e8f8f5;
+  --cap:#d9822b; --cap-bg:#fdf3e6;
+  --app:#c2557a; --app-bg:#fdeef3;
+  --who:#2f6f8f; --who-bg:#eaf4f9;
+  --mac:#4a7c3f; --mac-bg:#edf6e9;
+  --geo:#b0453c; --geo-bg:#fceeed;
+  --warn:#c9922b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;padding:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:900px;margin:0 auto;padding:0 14px 60px}
+header.top{
+  background:linear-gradient(135deg,#1e2a44 0%,#2d3d63 55%,#3a4d7a 100%);
+  color:#fff;padding:26px 22px 22px;border-radius:0 0 18px 18px;margin:0 -14px 18px;
+  box-shadow:0 4px 18px rgba(30,42,68,.18);
+}
+header.top h1{margin:0 0 8px;font-size:22px;line-height:1.35;letter-spacing:.3px}
+header.top .sub{font-size:13px;color:#c3cde3;line-height:1.8}
+header.top .sub b{color:#fff}
+.badgebar{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.badge{
+  font-size:11.5px;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.14);
+  color:#eaf0fb;border:1px solid rgba(255,255,255,.18);white-space:nowrap;
+}
+.badge b{color:#fff;font-weight:600}
+
+/* 声明块 */
+.declare{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--ai);
+  border-radius:10px;padding:16px 18px;margin:0 0 20px;
+}
+.declare h2{margin:0 0 10px;font-size:15px;color:var(--ink);display:flex;align-items:center;gap:7px}
+.declare h2::before{content:"📋";font-size:15px}
+.declare ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink2);line-height:1.85}
+.declare li{margin-bottom:3px}
+.declare .tag{font-weight:600}
+.lv1{color:#0b7a5e;background:#e6f7f1;border-radius:4px;padding:0 5px;font-size:12px}
+.lv2{color:#8a6a12;background:#fdf6e3;border-radius:4px;padding:0 5px;font-size:12px}
+.lv3{color:#8a5050;background:#fdeeec;border-radius:4px;padding:0 5px;font-size:12px}
+
+/* KPI 概览 */
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:0 0 22px}
+.kpi .k{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.kpi .k .n{font-size:22px;font-weight:700;color:var(--ink);line-height:1.2}
+.kpi .k .l{font-size:12px;color:var(--ink3);margin-top:4px}
+.kpi .k.a{border-top:3px solid var(--ai)}
+.kpi .k.b{border-top:3px solid var(--hw)}
+.kpi .k.c{border-top:3px solid var(--mdl)}
+.kpi .k.d{border-top:3px solid var(--geo)}
+
+/* 板块标题 */
+.sec{margin:30px 0 14px;display:flex;align-items:center;gap:10px}
+.sec .bar{width:6px;height:24px;border-radius:3px;flex:0 0 auto}
+.sec h2{margin:0;font-size:18px;letter-spacing:.3px}
+.sec .cnt{font-size:12px;color:var(--ink3);margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:2px 10px}
+
+/* 卡片 */
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+.card h3{margin:0 0 9px;font-size:15.5px;line-height:1.5;display:flex;flex-wrap:wrap;align-items:baseline;gap:7px}
+.card h3 .src{font-size:11px;font-weight:500;color:#fff;border-radius:5px;padding:2px 7px;white-space:nowrap}
+.card p{margin:0 0 8px;font-size:14px;color:var(--ink2)}
+.card p:last-child{margin-bottom:0}
+.card ul{margin:6px 0 0;padding-left:17px;font-size:13.8px;color:var(--ink2);line-height:1.75}
+.card li{margin-bottom:4px}
+.card li b{color:var(--ink)}
+
+/* 细分色带 */
+.sub-hw{border-left:4px solid var(--hw)}
+.sub-hw h3 .src{background:var(--hw)}
+.sub-mdl{border-left:4px solid var(--mdl)}
+.sub-mdl h3 .src{background:var(--mdl)}
+.sub-cap{border-left:4px solid var(--cap)}
+.sub-cap h3 .src{background:var(--cap)}
+.sub-app{border-left:4px solid var(--app)}
+.sub-app h3 .src{background:var(--app)}
+.sub-who{border-left:4px solid var(--who)}
+.sub-who h3 .src{background:var(--who)}
+.sub-mac{border-left:4px solid var(--mac)}
+.sub-mac h3 .src{background:var(--mac)}
+.sub-geo{border-left:4px solid var(--geo)}
+.sub-geo h3 .src{background:var(--geo)}
+
+.subhead{font-size:13px;font-weight:600;color:var(--ink3);margin:16px 0 8px;padding-left:2px;letter-spacing:.5px}
+.subhead span{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:7px;vertical-align:middle}
+
+/* 数值高亮 */
+.up{color:#c0392b;font-weight:600}
+.down{color:#1e8449;font-weight:600}
+.num{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+
+/* 人物言论卡 */
+.who-card{background:linear-gradient(135deg,#f7fbfd 0%,#eef6fa 100%);border:1px solid #d7e7f0;border-left:4px solid var(--who);border-radius:12px;padding:15px 18px;margin-bottom:12px}
+.who-card .who{font-size:14.5px;font-weight:700;color:var(--who);display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.who-card .who .role{font-size:11.5px;font-weight:500;color:#5c7a8c;background:#fff;border:1px solid #d7e7f0;border-radius:20px;padding:1px 9px}
+.who-card p{margin:0 0 7px;font-size:13.8px;color:#2c4653;line-height:1.75}
+.who-card p:last-child{margin-bottom:0}
+
+/* 表格 */
+.tbl{width:100%;border-collapse:collapse;font-size:12.8px;margin-top:8px;background:#fff;border-radius:8px;overflow:hidden}
+.tbl th{background:#f2f4f8;color:var(--ink);font-weight:600;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.tbl td{padding:7px 10px;border-bottom:1px solid var(--line2);color:var(--ink2);vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td b{color:var(--ink)}
+
+/* 去重表 */
+.dedup{font-size:12.5px}
+.dedup .ok{color:#0b7a5e;font-weight:600}
+
+/* 审计 */
+.audit{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:14px}
+.audit h2{margin:0 0 12px;font-size:16px}
+.audit .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line2);font-size:13px}
+.audit .row:last-child{border-bottom:none}
+.audit .row .lbl{color:var(--ink3);flex:0 0 132px}
+.audit .row .val{color:var(--ink);flex:1}
+.pill{font-size:11.5px;border-radius:20px;padding:2px 9px;font-weight:600}
+.pill.g{background:#e6f7f1;color:#0b7a5e}
+.pill.y{background:#fdf6e3;color:#8a6a12}
+.pill.r{background:#fdeeec;color:#a13c34}
+
+footer{margin-top:28px;padding:16px 4px 0;border-top:1px solid var(--line);font-size:12px;color:var(--ink3);line-height:1.8}
+footer b{color:var(--ink2)}
+@media(max-width:600px){
+  header.top h1{font-size:19px}
+  .kpi{grid-template-columns:repeat(2,1fr)}
+  .card{padding:14px 15px}
+  .audit .row .lbl{flex:0 0 100%}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <h1>源哥 × XZ服务器 · 全品类交叉日报</h1>
+  <div class="sub">
+    <b>数据日期：2026-10-13</b>（源哥库）／<b>2026-10-13</b>（XZ 库）· 发布：2026-10-14 · <b>修正版</b><br>
+    源哥会员专享（原文级）＋ 果果的研究星球 · XZ服务器（外资行研报每日合集，原文级）
+  </div>
+  <div class="badgebar">
+    <span class="badge">原文级 <b id="bag-lv1">42</b> 条</span>
+    <span class="badge">服务端摘要级 <b id="bag-lv2">0</b> 条</span>
+    <span class="badge">标题推断级 <b id="bag-lv3">0</b> 条</span>
+    <span class="badge">两库同源去重 <b>8</b> 组</span>
+  </div>
+</header>
+
+<div class="declare">
+  <h2>数据源可读性声明</h2>
+  <ul>
+    <li><span class="tag">数据源构成：</span>① 源哥 ima 知识库（会员专享，含早报/日报/科技日报/能源日报/经济日报及外资研报汇总帖）；② ima「XZ服务器」库（果果的研究星球，外资行研报每日合集，PDF 原文级）。<b>本任务自 2026-10-06 起已弃用知识星球 404K 数据源，本期未访问 zsxq。</b></li>
+    <li><span class="tag">本次连接状态：</span>ima-mcp 连接器<b>本次可用</b>（前两期 10-11 / 10-13 曾不可用，本期已恢复），两库目录均可正常拉取。</li>
+    <li><span class="tag">XZ 数据日期：</span>库内 <b>1014 文件夹不存在</b>，最新有效目录为 <b>1013（86 份 PDF）</b>，故 XZ 侧数据日期取 <b>2026-10-13</b>；源哥库数据日期同为 <b>2026-10-13</b>。两库日期一致，无需回退。</li>
+    <li><span class="tag">来源层级定义（三者不可混用）：</span><span class="lv1">原文级</span> 已读到正文／逐字稿或图片 OCR 含实质数据；<span class="lv2">服务端摘要级</span> 仅拿到索引与 introduction；<span class="lv3">标题推断级</span> 仅有文件名。</li>
+    <li><span class="tag">去重规则：</span>同一机构同一标题（如大摩闭门会、存储周期主题、中欧汽车贸易）两库同时出现时只保留一条，并标注实际读取出处（<b>源哥库 / XZ库</b>）。</li>
+    <li><span class="tag">颜色约定：</span>每个细分主题固定色相（算力硬件＝紫、大模型＝青、资本＝橙、应用＝玫红、人物＝蓝、宏观＝绿、地缘＝红）；涨跌不以红绿区分，正负以填充透明度表达。</li>
+  </ul>
+</div>
+
+<div class="kpi">
+  <div class="k a"><div class="n">45%→90%</div><div class="l">企业已用开源权重模型 → 3 年后（大摩 CIO 调查）</div></div>
+  <div class="k b"><div class="n">$2.0万亿</div><div class="l">全球大宗商品未平仓合约价值（+3% WoW）</div></div>
+  <div class="k c"><div class="n">6.6956</div><div class="l">野村模型预测美元/人民币中间价（-357 pips）</div></div>
+  <div class="k d"><div class="n">13%→9%</div><div class="l">新能源汽车出口退税率下调（2027-04-01 生效）</div></div>
+</div>
+<div class="sec"><div class="bar" style="background:var(--ai)"></div><h2>零 · 双源共识矩阵</h2><span class="cnt">五维对照</span></div>
+
+<div class="card" style="border-left:4px solid var(--ai)">
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:10px">五条主线维度 × 两源头对照，每维分<b>事实层 / 机制层 / 仓位层</b>三层提炼。<b>机制层共识最强，仓位层分歧最大</b> —— 策略含义是「找未拥挤的环节」，而非跟随最强共识。</p>
+  <table class="tbl">
+    <tr><th style="width:15%">主线维度</th><th style="width:30%">事实层（数字是否一致）</th><th style="width:30%">机制层（能否串因果链）</th><th style="width:25%">仓位层（谁已 priced in）</th></tr>
+
+    <tr>
+      <td><b>① AI 存储超级周期</b></td>
+      <td>两源一致：三星 3Q26E 营业利润 <b>800 亿美元</b>超英伟达 640 亿；美光 HBM4E 交换比 4:1、2027 量产。XZ 库（大摩存储专题）与源哥库（美光电话会、GS HBF）表述吻合。</td>
+      <td><b>因果链最清晰：</b>AI 推理内存密集 → HBM/HBF 需求 → NAND 晶圆消耗（HBF 乐观情景占 9% 产能）→ 供给紧张延续至 2027。GS 补充「HBF 可降推理成本约 30%」。</td>
+      <td><b>分歧最大：</b>三星/海力士股价较峰值 <b>-35%</b>、峰值 P/E 仅 3–4 倍，市场拒绝为「这次不同」付全价；美银称「做多半导体」 crowding 从 82% 回落至 45%。</td>
+    </tr>
+
+    <tr>
+      <td><b>② AI 资本开支可持续性</b></td>
+      <td>订单侧全线超预期（英伟达：2027 年 70%–100% 增长仍被需求消化）；资金侧预警（美银 FMS：<b>30% 预计 6 个月内现 AI capex 削减</b>，上月仅 14%）。</td>
+      <td><b>机制出现张力：</b>需求端「土地/电力/机柜壳体」硬约束（英伟达自述）vs 融资端「AI 超大规模企业 capex 被 39% 视为系统性信用事件首要来源」（美银）。</td>
+      <td><b>背离扩大：</b>科技超配升至净 37%（2020/8 以来最高），但「AI 泡沫」为第二大尾部风险（23%）。<b>本期最值得跟踪的信号。</b></td>
+    </tr>
+
+    <tr>
+      <td><b>③ 中国存储竞争冲击</b></td>
+      <td>源哥库（GS 中国晨会）：长鑫存储年底推 4F² DDR5，密度提升 <b>30%–50%</b>；XZ 库（大摩存储）：长鑫预计占中国 HBM 市场 20%、长江存储全球 NAND 市占 12–13%。</td>
+      <td><b>两库互补成链：</b>国产 DRAM/NAND 加速 → 海外存储股情绪冲击 → 但美光自述「技术领先长鑫 2–3 代」→ 短期份额冲击 &lt; 情绪冲击。</td>
+      <td><b>已充分定价（情绪侧）：</b>长鑫消息已引发韩国存储股抛售、彭博归因；A 股长鑫自身收跌 2.79%，显示「叙事先行、基本面未变」。</td>
+    </tr>
+
+    <tr>
+      <td><b>④ 中欧汽车贸易</b></td>
+      <td>三源一致：10/9 达成共识，混动对欧出口四年内减半；出口退税 <b>13%→9%</b>（2027-04-01）。GS/JPM/花旗/Bernstein 数字互洽（EU 1–7 月自华混动 +172%）。</td>
+      <td><b>机制共识：</b>从「关税悬崖风险」转为「VER 软上限」，不确定性出清 → Bernstein 定义为「清盘事件」；本土产能（比亚迪比率 1.0）成对冲核心。</td>
+      <td><b>分歧在消化方式：</b>Bernstein 熊市情景净利 <b>-27%</b>；东吴/花旗认为成本转嫁后影响可控（单车约承担 1500 元）。<b>悲观已定价、乐观未定价。</b></td>
+    </tr>
+
+    <tr>
+      <td><b>⑤ 原油与运费冲击</b></td>
+      <td>两源一致：布伦特 <b>$106.7</b>、GS 隐含风险溢价 <b>$24/桶</b>；全球原油运费 <b>$30/桶</b>（去年 $4）。JPM 数据佐证：能源 OI +$470 亿、净多头 -$108 亿。</td>
+      <td><b>机制转向明确：</b>驱动力从「原油短缺」转为「<b>原油运输成本飙升</b>」（GS/JPM 同述）；成品油出口占比从 50% 骤降至 28%，柴油成政策焦点。</td>
+      <td><b>分歧在可持续性：</b>停火叙事（俄乌能源停火 + 霍尔木兹谈判）vs 物理供给（俄炼厂低 30%、油轮触雷）。GS 荐 S-Oil 防御（Buy）、IOC 卖出。</td>
+    </tr>
+  </table>
+  <p style="margin-top:10px;font-size:13.5px;color:var(--ink2)"><b>矩阵结论：</b>机制层共识最强的是①存储因果链与⑤运费传导；<b>仓位层分歧最大的是②AI 资本开支</b> —— 订单超预期与融资/政治许可恶化首次出现明确背离。<b>策略含义：在「订单已验证」的环节之外，优先找尚未拥挤的供给侧节点（成熟制程产能、模拟芯片、电源架构），而非追随已涨 9 倍的存储共识。</b></p>
+</div>
+
+<div class="sec"><div class="bar" style="background:var(--ai)"></div><h2>A · AI 科技新闻</h2><span class="cnt">23 条</span></div>
+
+<div class="subhead"><span style="background:var(--hw)"></span>算力与硬件链</div>
+
+<div class="card sub-hw">
+  <h3>英伟达电话会：需求持续远超供给，「土地/电力/机柜壳体」成新瓶颈<span class="src">原文级 · 源哥库</span></h3>
+  <p>英伟达 CFO Colette Kress 与 IR 副总裁 Toshiya Hari 出席投资者会议，核心增量在于把<b>「土地、电力、机柜壳体」</b>定义为耐久、可流转复用的一类资产，并指出该环节约束已导致部分客户拿不到全部申请的 GPU。</p>
+  <ul>
+    <li>即便在 <b>2027 年 70%–100% 增长</b>的乐观情景下，公司认为需求仍足以消化全部可供给产能；约束加剧时还可从旧厂区升级改造中获益。</li>
+    <li>HBM 供货「情况良好」，愿意协助客户优化 GPU/CPU 内存采购；客户若自主决策 HBM 委托加工需提前大量规划。</li>
+    <li><b>开源模型：</b>认为开源竞争力正逐步追平前沿闭源模型，多数 token 由开源模型生成但变现仍集中闭源；自研开源模型性能正逼近前沿。</li>
+    <li><b>GPU 融资：</b>GPU 已成为适合开展融资的资产类别，当前交易普遍设约 <b>25% 残值担保</b>，管理层希望下调；有大量买方愿承接过剩算力资产。长期路径可类比飞机/按揭/汽车金融。</li>
+    <li>超大规模云与 neocloud 非互斥，AWS 仍需大量新增算力；Anthropic 已同时部署 Blackwell 与 Hopper，并以更高价格续签采购承诺。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>美光电话会：HBM4E 交换比例升至 4:1，1-gamma 产能占比过半<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>位元供给：制程迭代增益收窄、高速场景裸片尺寸变大、高密度 DRAM 模块 TSV 面积损耗、数据中心倾斜带来更多 ECC 比特开销；<b>20% 出头的位元供给增速只是阶段性判断</b>。</li>
+    <li>HBM3E 交换比例 <b>3:1</b>，HBM4E 提升至 <b>4:1</b>，HBM4E 将于 <b>2027 年量产爬坡</b>。</li>
+    <li>NAND 预计份额连续第五年提升；退出移动消费级市场，聚焦数据中心与 PC；新加坡厂扩产 NAND。</li>
+    <li>中国业务：<b>1-gamma 节点产能占比 &gt;50%</b>，EUV 已满产；1-delta 节点 2027H2 启动。技术相比长鑫存储<b>领先 2–3 代</b>；2027 年中国营收占比为个位数。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>亚德诺（ADI）：AI 需求外溢至工业，800V 架构 2028 年大规模普及<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>工业业务连续四季度增长，航空防务与半导体测试设备高景气；<b>工业板块 50%–60% 营收仍未回到前期高点</b>，复苏空间大。</li>
+    <li>电源与数据中心：借收购 Empower 在垂直电源、尤其 <b>800V 架构</b>占据有利位置，预计 2028 年大规模普及。</li>
+    <li>测算<b>每吉瓦新增 IT 算力对应模拟芯片市场 10–15 亿美元</b>，未来五年合计约 100GW 新增数据中心基础设施上线。</li>
+    <li>晶圆厂在调涨对应工艺节点报价，ADI 可向下游传导；内部产能利用率已到最优水平。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>大摩：OCP 大会应厘清 800V 争议——不是「全面推迟」，而是分步推进<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>原生 800V 机柜已右移至 <b>2028 年（Feynman 世代）</b>；<b>Rubin Ultra 仍采用 54V 直流</b>，Kyber 不再是其规划机架形态。</li>
+    <li>但 800V <b>侧挂电源单元（sidecar）已按计划出货</b>，英伟达预计 2027 年推出 Power Center，生态参与公司已扩至 <b>80 家以上</b>。</li>
+    <li>估值：800V 股票群 EV/NTM 从 GTC 后 +50% 回落至约 <b>6.5 倍</b>（接近 GTC 前），而 NTM 销售增长率从 12% 加速至 <b>27%</b>，一致预期 NTM 收入上调约 11%，无一下调。</li>
+    <li>受益标的：ADI、TXN、安森美、Wolfspeed、Navitas；更大影响是拉动成熟制程产能利用率，该行预判明年或现成熟制程短缺。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>大摩存储专题：常规周期与超级周期的博弈——「容易赚的钱阶段已过」<span class="src">原文级 · XZ库+源哥库（同源去重）</span></h3>
+  <ul>
+    <li>三星 3Q26E 营业利润 <b>800 亿美元</b>，超英伟达（640 亿美元），创科技公司盈利历史新高；但三星与海力士股价较各自高点<b>回落 35%</b>，按峰值盈利算远期 P/E 仅 <b>3–4 倍</b>（历史峰值 4 倍）。</li>
+    <li>本轮 $/Gb 几乎是历史峰值 <b>7 倍</b>；存储股自 2025 年 9 月已涨 <b>9 倍</b>，亚洲存储股平均盈利上调幅度达 432%。</li>
+    <li>终结超级周期的可能不是 AI 需求走弱，而是<b>供给追上或需求消化</b>；2027 年前价格料维持坚挺。</li>
+    <li>中国变量：长鑫（CXMT）快速扩张 DRAM 与 HBM3，预计占中国 HBM 市场 <b>20%</b>；长江存储全球 NAND 市占约 <b>12–13%</b>，月产能 20 万片，国产设备占比 45%。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>UBS《SemiBytes》3Q26 前瞻：LRCX / TXN / WDC 三连看<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li><b>LRCX</b>（10/21 盘后，Buy，PT $435）：FQ2:27 上修，12 月季度营收约 <b>$9B</b>（高于 Street $450M，+13% QoQ）；C2026 WFE 上调至约 <b>$150B</b> 高位（UBSe $158B）。</li>
+    <li><b>TXN</b>（10/21，PT $380）：CQ3 约 $6.05B/$2.48；CQ4 指引 -4% QoQ、营收 $5.8–5.9B（Street $5.7B）；数据中心 CQ3/CQ4 分别 <b>+73%/+75%</b>。</li>
+    <li><b>WDC</b>（10/22）：Sept Q 高于 Street，FQ2 营收/EPS <b>$5.03B/$5.93</b>（Street $4.56B/$4.76），毛利率 +550bps 至 <b>63.5%</b>。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>UBS：全球电池供应链专家会——AIDC 与电池（UPS / BBU / BESS 三线）<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>UPS 市场约 <b>+20–25% YoY</b>，向 800V DC 转型仍保持 <b>&gt;15% CAGR</b>，交期 30–35 周，价格同比 <b>+10%</b>。</li>
+    <li>电池占 UPS 系统价值约 <b>15%</b>；BBU 用于服务器（OCP + AI GPU/ASIC 机架），600kW–1MW/rack 时电池移入灰空间池化；BESS 用于长时储能、替代柴油。Samsung SDI 买入。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>台积电：加深美国产业生态参与，2027/28 资本开支上调至 $900亿/$1050亿<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>继亚利桑那 2650 亿美元投资后，正评估<b>得州新一轮扩产</b>；参考亚利桑那首厂从宣布到大规模量产耗时约 4.5 年，得州实质产出最早 2029–2030 年。</li>
+    <li>3Q26 前瞻：7–9 月营收合计 <b>1.5 万亿新台币（约 $467 亿）</b>，超指引上限，高于市场一致预期 3%；毛利率预计 66.9%。2026 资本开支预估 <b>$630 亿</b>。</li>
+    <li>汇丰重申买入、目标价上调至 <b>3800 新台币</b>；维持 2026/2027 CAPEX 预期 $640 亿/$850 亿。10/15 举行财报电话会。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>微软自研芯片路线：Maia 300 将担纲主力推理，2027 年多吉瓦级部署<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>Maia 300 每兆瓦推理吞吐较领先 GPU 方案高 <b>40%</b>；满配 96 加速器机架下 token 吞吐为 Maia 200 的<b>最高 7 倍</b>。</li>
+    <li>Maia 200 已承载生产级负载（含 Microsoft Copilot），GitHub Copilot 与 Microsoft Foundry 预计 2026 年底前接入。小芯片架构提升每瓦 HBM 带宽。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>联发科 TPU：v8t 放量在途，v9 流片 11 月初、v10 望向 2029–2030 年 $500–600 亿<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>v8t 进展符合预期，<b>2026Q4 销售额超 $20 亿</b>，2027 年预估可达 <b>$180 亿</b>。</li>
+    <li>v9（N2 工艺 + EMIB-T）目标 11 月初完成流片；Ibiden 良率改善优于计划，已达约 50% 量产目标。</li>
+    <li>v10 面向 2029H1 放量，联发科仍是谷歌主要 ASIC 供应商，TPU 销售额有望在 <b>2029–2030 年突破 $500–600 亿</b>。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>JPM 中国台湾 ODM：四季度服务器供应与 PC 需求下行风险升温<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>新云客户对 <b>GB300</b> 需求旺盛、ODM 直供渗透提升；部分云厂为更优 TCO 转向 <b>VR200</b>，计划 2027Q1 更大规模量产。</li>
+    <li>NVL72 机柜 3Q26 出货环比 <b>+18%</b>；Q4 VR 机柜出货仍有限（约 <b>7000 台</b>），2027Q1 重新回暖。</li>
+    <li>PC：笔记本 ODM 3Q26 组装量环比 <b>-17%</b>，Q4 预计再降约 <b>8%</b>。</li>
+    <li>偏好排序：纬创＝广达云储 &gt; 广达 &gt; 鸿海 &gt; 和硕 &gt; 英业达 &gt; 仁宝；PC 端联想 &gt; 华硕 &gt; 微星。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>GS：高性能 NAND（HBF）有望打破 AI「内存墙」，TAM 400–1500 亿美元<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>到 2030 年在 GPU 渗透率 15%–50% 假设下，HBF 潜在 TAM 达 <b>400–1500 亿美元</b>；可降低推理吞吐整体成本约 <b>30%</b>，为超大规模云省下数千亿美元资本开支。</li>
+    <li>乐观情景下 2028 年末 HBF 比特出货量占全球 NAND 约 4%，但消耗约 <b>9% 全球 NAND 晶圆产能</b>（类 HBM/DRAM 格局）。</li>
+    <li>看好<b>闪迪（Buy）与 SK 海力士（Buy）</b>技术领先，三星（Buy）位置有利；<b>美光（中性）非直接受益方</b>。替代路线：铠侠 XL-Flash、三星 zNAND-O。</li>
+  </ul>
+</div>
+
+<div class="card sub-hw">
+  <h3>GS 核能观察：全球反应堆追踪 10 月版 + 3Q26 预览<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>北美/欧洲/亚洲最新进展：Google 与 Georgia Power uprate、OPG Pickering 翻新、Crane Clean Energy Center 重启过环评。</li>
+    <li>Constellation 与 Amazon 就 Calvert Cliffs 投资约 <b>$30 亿</b> 加 <b>190MW</b>；美韩 AP1000/APR1400 合作；DOE 向 Vistra 提供贷款加约 <b>102MW</b>。</li>
+  </ul>
+</div>
+
+<div class="subhead"><span style="background:var(--mdl)"></span>大模型与产品</div>
+
+<div class="card sub-mdl">
+  <h3>字节世界模型临近发布：张一鸣亲自督战，0.05 秒实时生成虚拟空间<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>影视飓风 Tim 在抖音《2026 美好奇妙夜》现场公开演示，底层基于 <b>Seedance 视频大模型</b>迭代，核心能力是文字生成可自由探索、可实时交互的三维虚拟世界。</li>
+    <li>初步指向直播、短剧与轻量游戏；<b>世界模型被列为字节 2026 年 AI 四大重点方向之首</b>，仅需约 0.05 秒延迟即可实时生成可交互虚拟空间。</li>
+    <li>关联标的：丝路视觉（字节渲染计算客户）、凡拓数创、掌趣科技。</li>
+  </ul>
+</div>
+
+<div class="card sub-mdl">
+  <h3>智谱发布 GLM-Legal：垂类专业模型再进一步<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>基于 <b>GLM-5.3-Flash</b>，采用「领域中期训练 + 强化学习」，已开放 API 申请，后续接入 AutoClaw。</li>
+    <li>Harvey LAB 覆盖 24 个法律领域，全任务通过率达 <b>19.2%</b>（较基座 +12.5pct、较 Kimi K3 高 6.3pct）；LegalBench 86.2、PLawBench 77.3。</li>
+    <li>单任务成本约 <b>$0.15</b>，为同等评测水平最低价；按年底 30 亿美元 ARR 指引测算约 <b>12.6x P/ARR</b>。</li>
+  </ul>
+</div>
+
+<div class="card sub-mdl">
+  <h3>腾讯混元路线图：Hy4 正式版 10 月中下旬、下一代原生多模态 11–12 月<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>Hy4 preview 8/28 发布并开源；正式版（<b>770B 总参数 / 49B 激活</b>）预计 10 月中下旬发布，能力超智谱 GLM-5.3。</li>
+    <li>下一代原生多模态版本（<b>1T+ 参数</b>）预计 11–12 月，重点增强游戏开发、Agent、代码能力，有望超 Kimi K3。</li>
+    <li>微信「小微」灰测比例已达 <b>10%</b>、覆盖约 1 亿用户。</li>
+  </ul>
+</div>
+
+<div class="card sub-mdl">
+  <h3>开源权重模型在企业端：本地部署成新趋势（大摩 3Q26 CIO 调查三连）<span class="src">原文级 · XZ库+源哥库</span></h3>
+  <ul>
+    <li><b>采用率：</b>约 <b>45%</b> 企业已使用开源权重模型，3 年后升至约 <b>90%</b>；当前承载 8% AI 负载，3 年后 19%。营收 &gt;$150 亿超大型公司 3 年后采纳率 95%、负载 25%。</li>
+    <li><b>中国模型：</b>多数美企愿在美国本土基础设施上部署中国开源模型（Pinterest、Match 已引用）；主要顾虑是地缘与业务连续性风险，而非「看到数据」。</li>
+    <li><b>本地部署：</b>ATT 开源模型支撑 40% 员工 AI 查询、拟升至 60%–70%；Nutanix 投 $2000 万自建集群覆盖 80% 业务；45% 硬件专家认为未来 12 个月部分 AI 负载回流本地。</li>
+  </ul>
+</div>
+
+<div class="subhead"><span style="background:var(--cap)"></span>资本与投融资</div>
+
+<div class="card sub-cap">
+  <h3>大摩存储超级周期与「AI 泡沫」定价：板块涨 9 倍后，一致预期已按「前所未有转折」定价<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>AI 服务器内容量变化：<b>GPU 约占 Vera Rubin 集群成本一半，内存 29%，网络/电源/散热 23%</b>；向多机架扩展时网络价值量显著提升。</li>
+    <li>美银基金调查呼应：最拥挤交易「做多全球半导体」占比 45%（较 7 月峰值 82% 回落）；<b>30% 预计 6 个月内出现 AI 资本开支削减</b>（上月仅 14%）。</li>
+  </ul>
+</div>
+
+<div class="card sub-cap">
+  <h3>美银：Salesforce 上调至买入，「AI 去中介化」担忧反转<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>评级由 Underperform 上调至 <b>Buy</b>，目标价 $160 → <b>$285</b>（当前 $229.13）。核心反转：大型企业不太可能替换承载核心业务逻辑的平台，<b>AI 反而加深依赖</b>。</li>
+    <li>目标价基于 <b>16 倍</b> 2027E EV/FCF（此前 9 倍，同业中位数 15 倍）。</li>
+  </ul>
+</div>
+
+<div class="subhead"><span style="background:var(--app)"></span>应用与商业化</div>
+
+<div class="card sub-app">
+  <h3>腾讯 3Q26 数据跟踪：国内游戏稳健、广告高增、WorkBuddy 环比 +18%<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li><b>游戏：</b>Q3 国内大盘流水 YoY 约 +9%（手游 +8% / 端游 +11%）。《王者荣耀》176 亿（+4%）、《和平精英》65 亿（-2%）、《三角洲行动》双端 84 亿（<b>+50%</b>，国庆峰值 DAU 5800 万）。</li>
+    <li><b>广告：</b>26Q3 YoY 约 <b>+19%–20%</b>；视频号广告 +40%、朋友圈 +13%、小程序 +15%；AIM+ 计划数渗透率升至 60%。</li>
+    <li><b>AI&amp;云：</b>腾讯云 Q3 YoY +20–25%；<b>WorkBuddy 9 月日均交互 DAU 613 万，MAU 2140 万，总收入 1.61 亿（环比 +18%）</b>，付费企业数 13,320 家。</li>
+    <li>观点：预计 26Q3 收入 YoY +9%、经调整净利润 <b>-3%</b>，下半年或现单季度利润转负；26–27 年经调整净利 2660/2754 亿元，资本开支假设 2000/2500 亿。</li>
+  </ul>
+</div>
+
+<div class="card sub-app">
+  <h3>JPM 阿里：AI 比市场预期更早自我造血，12 月季度云 + AI 盈亏交叉<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>下调 27/28 财年非 GAAP EPS 9%/10%，上调 27 财年非 GAAP EBITDA 8%；目标价下调至 <b>$200 / 195 港币</b>，维持增持。</li>
+    <li>核心判断：<b>12 月季度阿里云 EBITDA 将首次超过 AI 模型与应用业务亏损</b>。预计云 9 月季度收入 +53%，EBITDA 利润率 11.6% → 12.4%。</li>
+    <li>即时零售亏损约 <b>92 亿元</b>，大幅低于一年前 350 亿元；预测本财年不再进行新一轮股权融资。</li>
+  </ul>
+</div>
+
+<div class="card sub-app">
+  <h3>JPM 中国科技与亚太互联网卖方评论：开源压力渗入专有 ARR，内存是最大分歧交易<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>US/UK 100+ 场会议反馈：模型层 ROIC 仍是未知；超大规模/neocloud 融资持续性存疑；<b>内存是最大分歧交易（亚洲情绪更负面）</b>；最易路演标的为 substrate/OSAT/TSMC/SPE。</li>
+    <li>半导体 3Q26 预览「beat-and-raise」延续，首选 <b>AVGO / MRVL</b>。</li>
+    <li>新闻：腾讯拟发 <b>≥$45 亿</b> 美债/离岸人民币债扩 AI（H1 capex 翻倍至 RMB963 亿）；Microsoft Maia 300（8×HBM4/加速器，96 加速器/机架）；Meta Muse Wonder 模型；Intel CEO 力挺开源 AI。</li>
+  </ul>
+</div>
+
+<div class="card sub-app">
+  <h3>美银互联网路演：AI 代理（Agentic）风险定价成头号议题<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>互联网板块年内平均股价下跌 <b>11%</b>，估值压缩为主因（2027E EV/EBITDA 收缩 10%、P/E 收缩 12%）；当前 11 倍 EV/EBITDA，显著低于 15 倍五年均值。</li>
+    <li>四大担忧：AI 代理颠覆风险、资本开支攀升与融资需求、产能价值与云增长可持续性、AI 相关 IPO 与资金分流。</li>
+    <li>美银估算 <b>Meta 2027 年 capex 预期超 $2000 亿，Amazon 与 Google 均超 $3000 亿</b>，明年可能需融资 $200–700 亿。</li>
+  </ul>
+</div>
+<div class="sec"><div class="bar" style="background:var(--who)"></div><h2>B · 重要人物言论</h2><span class="cnt">6 条</span></div>
+
+<div class="who-card">
+  <div class="who">Marc Zuckerberg（扎克伯格）<span class="role">Meta 创始人兼 CEO</span></div>
+  <p><b>「未来进一步增加支出以加快模型开发。」</b>Meta 发布新模型 <b>Muse Wonder</b> 之际作出上述表态，暗示资本开支将继续加码。</p>
+  <p>延伸：「Muse」的发布同时成为美银互联网路演中<b>头号讨论议题</b>——投资者担忧代理式 AI 使用将挤占独立 App 流量。</p>
+</div>
+
+<div class="who-card">
+  <div class="who">张一鸣<span class="role">字节跳动创始人</span></div>
+  <p><b>亲自督战世界模型开发。</b>据产业端信息，世界模型被列为字节 2026 年 AI 四大重点方向之首，仅需约 <b>0.05 秒</b>延迟即可实时生成可交互的虚拟空间。</p>
+</div>
+
+<div class="who-card">
+  <div class="who">吴清<span class="role">中国证监会主席</span></div>
+  <p>定于 <b>10 月 19 日</b>在北京<b>金融街论坛</b>开幕式发表主旨演讲。高盛交易台指出，市场关注点正前置到 10 月 19–22 日论坛，将其视为潜在政策催化窗口。</p>
+</div>
+
+<div class="who-card">
+  <div class="who">Beth Hammack（哈马克）<span class="role">克利夫兰联储主席</span></div>
+  <p><b>「主张对货币政策小步快调」</b>，以保持通胀预期稳定、避免日后大幅纠偏。同期市场定价联储 2026 年剩余累计<b>加息幅度 20bp</b>。</p>
+</div>
+
+<div class="who-card">
+  <div class="who">Zelensky（泽连斯基）与 Trump（特朗普）<span class="role">乌克兰总统 / 美国总统</span></div>
+  <p>泽连斯基<b>威胁继续对俄远程打击</b>；特朗普则<b>批评俄乌双方均违反「能源停火」</b>，地缘能源风险溢价维持高位。</p>
+</div>
+
+<div class="who-card">
+  <div class="who">Intel CEO<span class="role">英特尔首席执行官</span></div>
+  <p>公开<b>力挺开源 AI</b>，对 DeepSeek / Kimi / GLM 的采用进展评价为「<b>very fast</b>」。</p>
+</div>
+<div class="sec"><div class="bar" style="background:var(--mac)"></div><h2>C · 宏观</h2><span class="cnt">10 条</span></div>
+
+<div class="card sub-mac">
+  <h3>GS《Global Markets Daily》：10Y 美债年内升超 100bp，政策路径重估解释约 70%<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>10Y 美债收益率年内累计上行 <b>超 100bp</b>，较美伊冲突前夕的年内低点攀升 <b>130bp</b>；最近一轮抛售主要由<b>长端远期合约</b>驱动。</li>
+    <li>5y5y 远期收益率处于 <b>5.5%–5.6%</b>，高出 GS 公允价值 40–50bp，接近一倍标准差低估；<b>政策利率预期上修贡献长端涨幅约 70%（约 55bp）</b>。</li>
+    <li>AI 相关支出与借贷预期通过直接与间接渠道支撑更高的长端收益率公允价值；建议转为<b>多美债久期</b>（year-end 10Y 4.75%）。</li>
+    <li>债券基金在抛售期间持续削减久期敞口，已处极端低配，历史看此类仓位后 1–2 季度收益率倾向下行。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>GS《GOAL Kickstart》：估值重置后三季度财报前不对称性改善<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>资产配置调整：<b>3 个月股票上调至超配（OW）、信用下调至低配（UW）；12 个月债券上调至超配</b>，战术性上调现金至超配。</li>
+    <li>过去三个月 MSCI AC 全球 2026 年 EPS 预期上调 7%，美国 +7%，亚洲（除日本）+12%，欧洲持平；<b>AI 基础设施受益股预计贡献标普 500 三季度 EPS 增长逾半数</b>。</li>
+    <li>隐含相关性处历史最低十分位，抑制指数波动率；推荐「杠铃策略」——全球科技 + 精选利率敏感/高股息/低波动。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>美银全球基金经理调查（第 10 版）：现金水位 3.9%，6% 是股债轮动阈值<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>现金水位降至 <b>3.9%</b> 低位；<b>37% 投资者表示 10Y 美债收益率达 6.0% 将促使从股票转向债券</b>，19% 已在行动。</li>
+    <li>经济增长预期四个月来首次转负（净 4% 预计未来 12 个月走弱）；净 47% 预期「繁荣」情景（2022 年 2 月以来最高）；「不着陆」占比降至 50%。</li>
+    <li>最大尾部风险：「债券收益率无序上升」（31%）与「<b>AI 泡沫</b>」（23%）；系统性信用事件最可能来源为「AI 超大规模企业资本开支」（39%）。</li>
+    <li>科技板块超配升至净 37%（2020 年 8 月以来最高）；<b>银行配置单月骤降 21 个百分点</b>（2023 年 3 月以来最大降幅）。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>野村 USD/CNY 中间价模型预测：6.6956（较前值 -357 pips）<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>模型预测中间价 <b>6.6956</b>，较前值 -357 pips、较前官方收盘 +26 pips；含<b>逆周期因子 6.7111</b>（-202 pips）。</li>
+    <li>日历提示：11 月中 PBoC 货政报告、<b>11/18–19 深圳 APEC</b>、12 月中中央经济工作会议、12/10–12 迈阿密 G20、12 月底政治局会议。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>德银：PBoC 人民币声明解读——政策驱动重估「极不可能」<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>PBoC <b>反驳「中国顺差主要反映币值低估」</b>，称 IMF EBA 框架的解读为「misinterpretation」；顺差主要由<b>通胀差异带来的价格优势</b>与<b>数十年制造业产能/效率提升</b>驱动。</li>
+    <li>关键结论：<b>不将人民币升值视为缩减外部失衡的主要工具，政策驱动的重估仍极不可能</b>；市场力量作用增强；对冲比率 17 年 18% → 26 年 35%。</li>
+    <li>交易策略：维持<b>做空 USD/CNH（via option）</b>。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>花旗中国宏观展望：2026 周期性企稳，2027「保四」<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>预测：实际 GDP 2026 年 <b>4.6%</b>、2027 年 <b>4.1%</b>；PPI 2026 年 2.8% / 2027 年 0.4%；CPI 2026 年 1.0% / 2027 年 0.6%。</li>
+    <li>贸易：出口 2026 年 +20.0% / 2027 年 +8.0%；贸易顺差 2026 年 <b>12480 亿美元</b>、2027 年 12160 亿美元。</li>
+    <li>财政货币：预算赤字率 2026 年 4.0% / 2027 年 4.5%；广义政府赤字率 2026 年 10.6% / 2027 年 11.9%；7 天逆回购 2026 年末 1.40% / 2027 年末 1.20%；<b>美元兑人民币 2026 年末 6.6、2027 年末 6.5</b>。</li>
+    <li>结构：中国持有 2023 年全球 AI 专利 <b>69.7%</b>（美国 14.2%）；IT 服务单项到 2027 年规模即可超越地产行业。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>花旗中国经济：节后财政举措落地，「当前部署是关键」<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>黄金周人均消费支出<b>跌至四年来最低</b>；财政部 10/9 宣布回收 <b>5500 亿元</b>未使用地方债额度（相当于 GDP 0.4%，超出市场预期 5000 亿）：3000 亿一般债 + 2500 亿专项债。<br></li>
+    <li>判断：已规划政策规模足以支撑增长目标，年内预计无更大动作（预算修订/追加额度/政策利率调降），<b>焦点转向交付执行</b>；2027 年「9·24」式政策转向概率极高。</li>
+    <li>房地产：重点城市黄金周销售大幅超预期，二手销售同比 <b>+53%</b>、一手 <b>+41%</b>，但持续性待观察。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>GS 中国房地产周报（第 41 周）：成交量延续涨势，5 城落地「828」细则<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>9 月竣工面积同比降幅约 <b>-25% 至 -29%</b>，预计 2026 全年竣工同比 <b>-15%</b>；9 月新开工同比约 <b>-25% 至 -29%</b>（8 月 -31%）。</li>
+    <li>贝壳 3Q26 新房+二手 GTV 预计同比 +6%（新房 -8% / 二手房 <b>+11%</b>）。</li>
+    <li>估值：离岸/在岸覆盖标的分别较 2026 年末 NAV <b>折价 40% / 12%</b>，对应 P/B 0.4 倍 / 0.5 倍，处历史周期谷底；维持华润置地、中海地产超配。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>伯恩斯坦亚洲科技策略 4Q26：估值重置，坚守优质与价值<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>亚洲科技 YTD 市值加权回报 <b>85%</b>、等权 40%，十五年来首次连续四年强劲；但估值自 5 月峰值 <b>36 倍前瞻 P/E 回调 50% 至 18 倍</b>，低于十年均值 0.7 个标准差。</li>
+    <li>半导体及设备估值与盈利双重支撑；互联网显现盈利复苏早期信号。<b>建议坚守优质标的而非直接押注动量/成长</b>。</li>
+  </ul>
+</div>
+
+<div class="card sub-mac">
+  <h3>高盛中国晨会简报 GS CHINA OPEN：情绪偏弱，金融街论坛成政策催化窗口<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>市场情绪偏弱，<b>A 股银行走强、科技承压</b>；资金关注点前置到 10/19–22 金融街论坛。</li>
+    <li>存储：长鑫存储年底前推 <b>4F² 新架构 DDR5 服务器内存</b>，存储密度提升 <b>30%–50%</b>，叙事集中于「中国存储竞争冲击」。</li>
+    <li>业绩预告：精测电子前三季度净利 10–21 亿元（<b>+18766%~22073%</b>）；源杰科技 Q3 净利 4.03–4.53 亿元（<b>+579%~660%</b>）。</li>
+  </ul>
+</div>
+<div class="sec"><div class="bar" style="background:var(--geo)"></div><h2>D · 地缘</h2><span class="cnt">9 条</span></div>
+
+<div class="card sub-geo">
+  <h3>GS 原油追踪：柴油成市场与政策焦点，高运费扩大原油价差<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>布伦特月初至今上涨近 <b>$10/桶</b>，持续稳居三位数；基于扩展公允价值模型，<b>当前布伦特隐含 24 美元/桶的风险溢价</b>。</li>
+    <li>波斯湾总出口接近 <b>23mb/d</b>（周环比 -200 万桶/日）；成品油出口占比从两周前近 50% 的 2025 年均值骤降至 <b>28%</b>。</li>
+    <li><b>运费极端化：</b>全球平均原油运费达 <b>$30/桶</b>（去年同期仅 $4），中东航线高达 <b>$35/桶</b>；穆尔班对巴士拉溢价从 2 月的 $2/桶暴增至 <b>$43/桶</b>。</li>
+    <li>柴油：美国商业库存同比 <b>-14%</b>、中国显性库存 <b>-11%</b>；全球柴油出口同比锐减 140 万桶/日（-20%）。IEA 成员将于周三讨论 1 亿桶 SPR 释放细节。</li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>GS 亚洲炼油：应对运费冲击——S-Oil 防御性最佳<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>S-Oil（Buy）最受保护：现货运费敞口仅 <b>50%</b>，与 Aramco 战略关系下 7/8 月着陆成本仅 Dubai FOB +$2–3/bbl。</li>
+    <li>Aramco 11 月亚洲 OSP 下调至基准 <b>-$5/bbl</b>（环比 -3）；中国买家将到岸成本封顶 <b>US$110–120/bbl</b>（FOB 折扣船货约 $75–85/bbl，吸收约 $35/bbl 运费）。</li>
+    <li>评级：S-Oil Buy TP 220,000；Reliance Buy 1,870；PTTGC Buy 59；Thai Oil Buy 80；Sinopec Neutral 4.10；HPCL Neutral 325；<b>IOC Sell 105</b>。</li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>GS 能源：按石油公司量化运输成本——美国及北海生产商受益最大<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>高运费环境下，<b>美国与北海生产商受益最大，亚洲炼油商受创最重</b>——炼厂优先选择就近原油以节省长途运费，进一步拉大区域价差。</li>
+    <li>Dated Brent 对同品质 WTI 溢价达 <b>$40/桶</b>、对迪拜溢价 $24/桶。</li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>JPM 大宗商品持仓与流向：OI 破 2 万亿美元，净投资者仓位 -9% WoW<span class="src">原文级 · XZ库+源哥库</span></h3>
+  <ul>
+    <li>跟踪商品 OI 价值 <b>+3% WoW（+$600 亿）至 $2.003 万亿</b>，能源 +$470 亿；能源 OI <b>+5% WoW 至 $9400 亿</b>。</li>
+    <li>净投资者仓位 <b>-9% WoW（-$220 亿）至 $2230 亿</b>：能源净多头 -$108 亿（迪拜原油 -$114 亿）；基本金属净多头 -$97 亿（铜 -$50 亿、铝 -$20 亿）；贵金属净多头 -$29 亿（金 -$32 亿）。</li>
+    <li>驱动已从原油短缺转向<b>原油运输成本飙升</b>；<b>欧洲炼厂利润再度转负，减产风险上升</b>。</li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>中欧贸易：混动车达成「共识」——出口配额换稀土快车道<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>10/9 第二次 TIC 部长会达成 <b>16 点成果清单</b>；就混动车贸易达成理解（WTO 合规），Šefčović 称可使中国对欧混动出口<b>四年内减半以上</b>。</li>
+    <li>EU 1–7 月自华混动进口 <b>378,426 辆（+172% YoY）</b>，中国份额 41.3%（7 月 51.7%）；PHEV 217,764（+164%）、HEV 160,662（+184%）；意大利/西班牙为最大入口。</li>
+    <li>配套：中国稀土/永磁许可证快车道；就 EU 对华实体制裁清单<b>相互除名</b>。<b>短期趋稳，但 6–12 个月仍预期部门性限制累积。</b></li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>JPM 全球汽车：欧盟限制中国混动车进口——从 TRQ 转向 VER，最早 2026/12/1 实施<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>欧盟将针对中国 PHEV 的政策从<b>关税配额制（TRQ）转为双边自愿出口限制（VER）</b>，管控范围<b>新增覆盖 HEV</b>；措施有效期 <b>4 年</b>，最早 <b>2026 年 12 月 1 日</b>实施。</li>
+    <li>欧盟当前中国 HEV/PHEV <b>市占率 30%+，目标压降至 15%</b>；受影响最大为对欧敞口高的比亚迪（出口 30%–40%）、奇瑞（约 25%）与上汽。</li>
+    <li>欧盟大众市场潜在受益者：大众集团、Stellantis、雷诺、丰田。欧盟威胁：<b>内存芯片价格潜在涨幅 20%–25%、出口增值税退税潜在削减 4%</b>，2027 年车企盈利可能较 2026 年持平甚至下滑。</li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>Bernstein 中国汽车：出口退税削减确认，「清盘事件将至」<span class="src">原文级 · XZ库+源哥库</span></h3>
+  <ul>
+    <li>新能源车（含 BEV 与 PHEV）出口增值税退税率由 <b>13% 下调至 9%</b>，<b>2027-04-01 生效</b>，确认市场流传数月的政策猜测。</li>
+    <li>车企海外新能源销售敞口排序：<b>比亚迪 ~45%</b>（有效敞口随泰/巴/匈工厂落地有望降至 40% 以下）、奇瑞 36%、上汽 27%、吉利/零跑各 24%。</li>
+    <li>熊市情景：以出口占比 45%、出口 ASP 20 万元、单车净利 2 万元测算，退税削减拖累合并净利润约 <b>-27%</b>，出口业务净利降幅可达 30%；实际影响大概率小于极端情景。</li>
+    <li>比亚迪海外产能 2027 年可达约 <b>950k</b>（约占其 250 万辆海外目标 40%）；首选 OP 为比亚迪，吉利/小米 OP，其余 MP。</li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>花旗中国汽车：中欧 PHEV 协议带来短期风险缓和<span class="src">原文级 · XZ库</span></h3>
+  <ul>
+    <li>视为 <b>尾部风险缓和事件</b>（非强重评级催化）；供应链受益标的：宁德时代（电池）、福耀玻璃、敏实集团、三花智控、拓普集团、星宇股份。</li>
+    <li>「FY26 欧盟本土产能 / 潜在出口削减量」比率：<b>比亚迪 1.0（防御性最强）</b>、奇瑞 0.6、小鹏 0.6、零跑 0.2。</li>
+    <li>后续谈判节点：2027 年 1 月部长级视频会议、2027 年 3 月第三届欧中贸易与投资理事会会议。</li>
+  </ul>
+</div>
+
+<div class="card sub-geo">
+  <h3>地缘快讯与市场反应：沙特遇袭、油轮改航，布伦特 $106.7<span class="src">原文级 · 源哥库</span></h3>
+  <ul>
+    <li>沙特面临新一轮无人机与巡航导弹袭击，<b>至少十艘空载超级油轮避开波斯湾航线</b>；泽连斯基威胁继续对俄远程打击。</li>
+    <li>周一（10/12）商品：布伦特原油期货 <b>+1.8% 报 $106.7/桶</b>；WTI <b>+2.1% 报 $93.7</b>；黄金现货 -0.5% 报 $4172.2/oz；LME 期铜 <b>+0.5% 报 $14,618.5/t</b>。</li>
+    <li>汇市：美元指数 <b>+0.3% 报 102.6</b>；欧元 -0.4% 报 1.12；日元 -0.2% 报 158.6。</li>
+  </ul>
+</div>
+<div class="sec"><div class="bar" style="background:var(--ai)"></div><h2>一 · 两库同源去重</h2><span class="cnt">8 组</span></div>
+
+<div class="card">
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:8px">同一机构同一主题在两库同时出现时只保留一条，下表标注实际读取出处。</p>
+  <table class="tbl dedup">
+    <tr><th>主题</th><th>同源机构</th><th>实际读取出处</th><th>处理</th></tr>
+    <tr><td>存储芯片：周期与超级周期</td><td>大摩</td><td><b>XZ库</b>（源哥库另有中文摘要版）</td><td class="ok">保留 1 条</td></tr>
+    <tr><td>OCP 大会厘清 800V 争议</td><td>大摩</td><td><b>XZ库</b>（源哥库同题）</td><td class="ok">保留 1 条</td></tr>
+    <tr><td>企业是否采用开源权重模型</td><td>大摩</td><td><b>源哥库</b>（XZ库 34 号同源）</td><td class="ok">保留 1 条</td></tr>
+    <tr><td>中国汽车出口退税削减</td><td>Bernstein / 花旗 / JPM</td><td><b>XZ库 + 源哥库</b>交叉</td><td class="ok">合并 1 条 + 2 条分列</td></tr>
+    <tr><td>中欧混动车贸易协议</td><td>野村 / 花旗 / JPM</td><td><b>XZ库 + 源哥库</b></td><td class="ok">合并</td></tr>
+    <tr><td>中国台湾 ODM 3Q26 前瞻</td><td>JPM</td><td><b>XZ库</b>（源哥库简报版）</td><td class="ok">保留 1 条</td></tr>
+    <tr><td>大宗商品持仓与流向</td><td>JPM</td><td><b>XZ库</b>（源哥库汇总版）</td><td class="ok">保留 1 条</td></tr>
+    <tr><td>中国造船业 3Q26 前瞻</td><td>JPM</td><td><b>源哥库</b>（XZ库同源 PDF）</td><td class="ok">保留 1 条</td></tr>
+  </table>
+</div>
+
+<div class="sec"><div class="bar" style="background:var(--hw)"></div><h2>二 · 机构评级速查</h2><span class="cnt">精选</span></div>
+
+<div class="card">
+  <table class="tbl">
+    <tr><th>标的</th><th>机构</th><th>评级</th><th>目标价 / 要点</th></tr>
+    <tr><td>LRCX</td><td>UBS</td><td><b>Buy</b></td><td>$435；C2026 WFE 上调至约 $150B</td></tr>
+    <tr><td>TXN</td><td>UBS</td><td>—</td><td>$380；数据中心 CQ3/CQ4 +73%/+75%</td></tr>
+    <tr><td>S-Oil</td><td>GS</td><td><b>Buy</b></td><td>TP 220,000；运费敞口最低、防御性最佳</td></tr>
+    <tr><td>IOC</td><td>GS</td><td><b>Sell</b></td><td>TP 105；亚洲炼油商受运费冲击最重</td></tr>
+    <tr><td>比亚迪（1211.HK）</td><td>Bernstein / 花旗</td><td><b>Outperform</b></td><td>TP 130 港元；本土化对冲最强</td></tr>
+    <tr><td>Salesforce</td><td>美银</td><td><b>Buy</b>（上调）</td><td>$285；企业 AI 战略护城河</td></tr>
+    <tr><td>阿里巴巴</td><td>JPM</td><td><b>Overweight</b></td><td>$200 / 195 港币；12 月季度云+AI 盈亏交叉</td></tr>
+    <tr><td>腾讯控股</td><td>大摩</td><td><b>Overweight</b></td><td>3Q26 收入 +8.9%、non-IFRS OP -3.1%</td></tr>
+    <tr><td>台积电（2330.TT）</td><td>汇丰</td><td><b>Buy</b></td><td>TP 3800 新台币；2026/27 CAPEX $640/850 亿</td></tr>
+    <tr><td>中国船舶</td><td>JPM</td><td><b>Overweight</b></td><td>TP 52 元（上调）；Q3 净利同比 +141%</td></tr>
+    <tr><td>松发股份</td><td>JPM</td><td><b>Overweight</b></td><td>TP 267 元（上调）；Q3 净利同比 +343%</td></tr>
+    <tr><td>AT&amp;T</td><td>Bernstein</td><td><b>下调至 MP</b></td><td>$24；星链竞争威胁延长辩论周期</td></tr>
+    <tr><td>中国重汽 / 奇瑞汽车</td><td>JPM</td><td><b>Overweight</b></td><td>重卡优于乘用车；奇瑞西班牙工厂防御居首</td></tr>
+  </table>
+</div>
+
+<div class="sec"><div class="bar" style="background:var(--mac)"></div><h2>三 · 上期悬案追踪</h2><span class="cnt">对照 10-12 期</span></div>
+
+<div class="card">
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:8px">对照上期（10-12）四个悬案的「下期必看节点」，逐条给本期结论。上期为 10-13 期的《数据源中断通知》（无日报），故基准取最后一份完整日报 10-12。</p>
+  <table class="tbl">
+    <tr><th style="width:22%">上期悬案</th><th style="width:12%">状态</th><th>本期进展与结论</th></tr>
+
+    <tr>
+      <td><b>① AI 资本开支的资金来源可持续性</b></td>
+      <td><b class="down">恶化</b></td>
+      <td>上期首次出现资金端证据（9 月 AI 信用融资 230 亿美元创年内新低）。<b>本期进一步强化：</b>美银 FMS 显示「30% 投资者预计 6 个月内现 AI capex 削减」（上月仅 14%）；「AI 超大规模企业 capex」被 39% 列为系统性信用事件首要来源；美银估算 Meta 2027 capex &gt;$2000 亿、Amazon/Google 均 &gt;$3000 亿，明年或需融资 $200–700 亿。<b>结论：订单端仍超预期，但资金与政治许可端背离扩大，风险窗口指向 2027 上半年。</b></td>
+    </tr>
+
+    <tr>
+      <td><b>② HBM 供需口径分歧</b>（GS 称 +321% vs 大摩称 2027 短缺）</td>
+      <td><b class="up">部分解出</b></td>
+      <td>本期两源给出增量口径：GS《HBF 报告》明确「短期新增供给有限 → NAND 供需维持紧张，HBF 或拉长周期」；美光电话会给出「HBM3E 交换比 3:1 → HBM4E 4:1，2027 量产爬坡」。<b>结论：两源在「2027 年仍结构性紧张」上收敛，分歧收窄至「紧张幅度」而非「方向」。</b></td>
+    </tr>
+
+    <tr>
+      <td><b>③ 中国财政「有钱找不到项目」</b></td>
+      <td><b class="up">部分解出</b></td>
+      <td>本期花旗给出量化：财政部 10/9 回收 <b>5500 亿元</b>未使用地方债额度（3000 亿一般 + 2500 亿专项，相当于 GDP 0.4%，超市场预期 5000 亿）；但花旗明确指出「已规划政策规模足以支撑增长目标，<b>瓶颈在执行落地</b>」——与上期大摩「找不到符合条件的项目」判断一致。<b>结论：口径分歧收敛为「执行节奏」问题，而非「资金总量」问题。</b></td>
+    </tr>
+
+    <tr>
+      <td><b>④ 布伦特现货期货剪刀差成因</b></td>
+      <td><b class="up">解出</b></td>
+      <td>上期只有「剪刀差走阔、归因缺失」。<b>本期 GS 给出明确机制：</b>「市场驱动力已从原油短缺转向<b>原油运输成本飙升</b>」；船对船转运是运费飙升主因；穆尔班对巴士拉溢价从 $2/桶暴增至 <b>$43/桶</b>；Dated Brent 对 WTI 溢价 $40/桶。JPM 佐证「欧洲炼厂利润再度转负、减产风险上升」。<b>结论：上期「近月实物流动性紧张」的推断被证实，且找到了运费这一具体传导机制。</b></td>
+    </tr>
+  </table>
+</div>
+
+<div class="audit">
+  <h2>四 · 数据源可读性审计</h2>
+  <div class="row"><span class="lbl">ima-mcp 连接器</span><span class="val"><span class="pill g">本次可用</span> 两库目录均可正常拉取（10-11 / 10-13 两期曾不可用，本期恢复）</span></div>
+  <div class="row"><span class="lbl">源哥库数据日期</span><span class="val"><b>2026-10-13</b>（10-14 未发布）</span></div>
+  <div class="row"><span class="lbl">XZ 库数据日期</span><span class="val"><b>2026-10-13</b>（1014 文件夹不存在，回退到 1013）</span></div>
+  <div class="row"><span class="lbl">XZ 当日文件夹</span><span class="val"><span class="pill g">存在</span> 1013 = folder_7515772473605819，共 <b>86 份 PDF</b></span></div>
+  <div class="row"><span class="lbl">XZ 清单抓取</span><span class="val"><span class="pill g">完整</span> 两页 cursor 翻页（""→CDI=→CFY=，is_end=true，total_size=86）</span></div>
+  <div class="row"><span class="lbl">原文级读取</span><span class="val"><span class="pill g">正常</span> 源哥库 6 篇 + XZ 库 15 份 PDF（部分超长报告以落盘 head 方式读取正文首部）</span></div>
+  <div class="row"><span class="lbl">源哥库汇总帖</span><span class="val"><span class="pill y">部分</span> 「外资研报」汇总条目多为图片/文件形态，仅取可解析条目</span></div>
+  <div class="row"><span class="lbl">知识星球 404K</span><span class="val"><span class="pill r">已弃用</span> 本期未访问 zsxq</span></div>
+  <div class="row"><span class="lbl">去重执行</span><span class="val"><span class="pill g">8 组</span> 同源同标题条目已合并并标注实际出处</span></div>
+</div>
+
+<div class="sec"><div class="bar" style="background:var(--geo)"></div><h2>五 · 结论：三条可执行判断</h2><span class="cnt">本期落地</span></div>
+
+<div class="card" style="border-left:4px solid var(--geo)">
+  <p style="font-size:13.5px;color:var(--ink2)"><b>判断一 · AI 交易的「订单 vs 资金」背离已到需要防守的位置。</b>订单端本期仍全线超预期（英伟达需求消化 2027 年 70%–100% 增长），但资金端连续两期恶化（9 月 AI 信用融资年内新低 → 本期 30% 投资者预期半年内 capex 削减）。<b>可执行：</b>在 AI 组合里降低「纯依赖后续融资的 neocloud / 高杠杆算力租赁」权重，向「现金流自给 + 供给侧瓶颈」环节（成熟制程产能、模拟芯片、电源架构、TSMC/SPE）倾斜 —— 这正是 GS「AI 基础设施受益股贡献标普 3Q EPS 增长逾半数」与 JPM「最易路演标的为 substrate/OSAT/TSMC/SPE」的共同指向。</p>
+  <p style="font-size:13.5px;color:var(--ink2)"><b>判断二 · 存储超级周期的「周期属性」需与「结构性」分开定价。</b>大摩的判据最清晰：「结构性更好的存储周期 ≠ 有吸引力的存储股价，容易赚的钱阶段已过」。三星/海力士峰值 P/E 仅 3–4 倍、股价较峰值 -35%，说明市场拒绝为「这次不同」付全价。<b>可执行：</b>上行阶段估值可慷慨、下行阶段反之；寻找离场点要「远早于拐点」。当前价位不适合追高，但 2027 年前价格坚挺提供持有基础 —— 是「不新增、不恐慌」而非「清仓」的位置。</p>
+  <p style="font-size:13.5px;color:var(--ink2)"><b>判断三 · 中欧汽车是「不确定性出清」而非「基本面反转」。</b>退税削减 + 混动配额双落地（Bernstein 定义为「清盘事件」），短期尾部风险出清、悲观已定价，但出口量面临软上限、熊市情景净利 -27% 尚在路上。<b>可执行：</b>优先「有实质欧盟本土产能」的车企与供应链 —— 比亚迪（本土化比率 1.0，防御性最强）、福耀/敏实/三花/拓普（就近供应护城河），而非纯出口敞口标的。剩余关键变量是国内需求复苏与 2027Q1 基数重置。</p>
+</div>
+
+<div class="sec"><div class="bar" style="background:var(--ink3)"></div><h2>六 · 方法论与结构声明</h2><span class="cnt">结构自证</span></div>
+
+<div class="card">
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:8px"><b>叙事方法论：</b>「新闻事实是珠子，背后的共识、商业动向与政治态度才是纲。」本章节顺序即重要性顺序 —— 把「纲」（零、双源共识矩阵）放在「珠子」（A–D 板块）之前，读法是「先看矩阵定框架，再看新闻验证或证伪框架」。<b>新闻明天就会过时，结构不会。</b></p>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:8px"><b>本期为修正版：</b>初版（2026-10-14 00:22）因未加载 <code>cross-source-daily</code> 技能、凭记忆手搭骨架，缺失「零、双源共识矩阵」「三、上期悬案追踪」「五、结论」「六、方法论声明」四节。本版按标准版母版（自 2026-10-10 确立）补齐，数据与初版一致、未新增未读来源。</p>
+  <p style="font-size:13px;color:var(--ink3);margin-bottom:8px"><b>结构自证（契约校验器输出原文）：</b></p>
+  <pre style="background:#f7f8fa;border:1px solid var(--line);border-radius:8px;padding:12px;font-size:11.5px;line-height:1.6;overflow-x:auto;color:var(--ink2)">==============================================================
+cross-source-daily 标准版章节契约校验
+文件: 源哥XZ交叉日报-20261014.html
+字节: 63564 | h2 章节数: 12
+==============================================================
+[实际章节]
+   1. 数据源可读性声明（头部声明，不占契约节）
+   2. 零 · 双源共识矩阵
+   3. A · AI 科技新闻
+   4. B · 重要人物言论
+   5. C · 宏观
+   6. D · 地缘
+   7. 一 · 两库同源去重
+   8. 二 · 机构评级速查
+   9. 三 · 上期悬案追踪
+  10. 四 · 数据源可读性审计
+  11. 五 · 结论：三条可执行判断
+  12. 六 · 方法论与结构声明
+
+[契约比对] 11/11 全部 OK
+  共识矩阵 OK | AI OK | 人物 OK | 宏观 OK | 地缘 OK
+  去重 OK | 评级 OK | 悬案 OK | 审计 OK | 结论 OK | 方法论 OK
+
+[结构硬检查]
+  [OK  ] 标签全部配对
+  [OK  ] 无残留锚点
+  [OK  ] 零外部依赖
+
+==============================================================
+PASS 契约完整，章节数 12（契约 11 节 + 头部声明 1 节）
+退出码 = 0</pre>
+  <p style="font-size:13px;color:var(--ink3);margin-top:8px"><b>来源层级：</b>全文 42 条内容卡片均为<b>原文级</b>（已读到正文/逐字稿或图片 OCR 含实质数据），无服务端摘要级、无标题推断级。<b>去重：</b>两库同源 8 组已合并并标注实际出处。<b>免责：</b>本报告为知识库内容交叉整理，仅供研究参考，不构成任何投资建议。</p>
+</div>
+
+<footer>
+  <b>数据源：</b>源哥 ima 会员专享库 ＋ 果果的研究星球 · XZ服务器（外资行研报每日合集）。<br>
+  <b>层级标注：</b><span class="lv1">原文级</span> / <span class="lv2">服务端摘要级</span> / <span class="lv3">标题推断级</span>，三者不可混用。<br>
+  <b>读法：</b>新闻明天就会过时，结构不会 —— 先看「零、双源共识矩阵」定框架，再看 A–D 新闻验证或证伪框架。<br>
+  <b>免责：</b>本报告为知识库内容交叉整理，仅供研究参考，不构成任何投资建议。数字与观点以原始研报为准。<br>
+  源哥 × XZ服务器 · 全品类交叉日报（修正版）· 数据日期 2026-10-13 · 生成于 2026-10-14
+</footer>
+</div>
+</body>
+</html>
+
+
+
+
+

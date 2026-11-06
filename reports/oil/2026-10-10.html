@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>原油日报 · 2026-10-10</title>
+<style>
+  :root{
+    --bg:#0f141b; --bg-grad:#0b0f16; --panel:#151c26; --panel2:#1a2230; --border:#242e3c;
+    --txt:#e9edf4; --sub:#98a4b6; --muted:#667184;
+    --up:#e5484d; --down:#2fb875; --blue:#54a8ff; --gold:#e8b84b; --accent:#4da3ff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:radial-gradient(1200px 600px at 50% -100px, #1a2534 0%, var(--bg-grad) 55%);
+    color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    line-height:1.75; padding:40px 20px 70px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+
+  header{text-align:center;margin-bottom:34px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:600;text-transform:uppercase;margin-bottom:10px}
+  .eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:var(--gold);opacity:.5}
+  header h1{font-size:34px;font-weight:800;letter-spacing:1px;color:var(--txt);margin-bottom:6px}
+  header h1 .dot{color:var(--accent)}
+  header .src{color:var(--sub);font-size:12.5px;line-height:1.9}
+  header .src .pill{display:inline-block;padding:1px 9px;border-radius:20px;background:rgba(77,163,255,.12);color:var(--blue);border:1px solid rgba(77,163,255,.3);font-size:11px;margin:0 3px}
+
+  .hero{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+  .hero .kpi{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px 22px;text-align:center;min-width:150px;flex:1;transition:transform .18s ease,border-color .18s ease}
+  .hero .kpi:hover{transform:translateY(-3px);border-color:var(--accent)}
+  .hero .kpi .v{font-size:24px;font-weight:800;color:var(--up);letter-spacing:.5px}
+  .hero .kpi .v.blue{color:var(--blue)}
+  .hero .kpi .v.green{color:var(--down)}
+  .hero .kpi .l{font-size:12px;color:var(--sub);margin-top:4px}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin-bottom:22px;box-shadow:0 4px 24px rgba(0,0,0,.22)}
+  .card h2{font-size:18px;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;letter-spacing:.3px}
+  .card h2 .no{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,#4da3ff,#2f7fd6);color:#fff;font-size:14px;font-weight:800;box-shadow:0 2px 8px rgba(77,163,255,.35)}
+  .card h2 .hint{font-size:11.5px;color:var(--muted);font-weight:400;margin-left:auto}
+
+  .reason{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;padding:12px 14px;border-radius:11px;background:var(--panel2);border:1px solid transparent;transition:border-color .15s}
+  .reason:hover{border-color:var(--border)}
+  .reason .idx{flex:0 0 28px;height:28px;border-radius:8px;background:rgba(77,163,255,.16);color:var(--blue);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:2px}
+  .reason .txt{font-size:14.5px;color:#d2d9e4}
+  .reason .txt b{color:var(--blue)}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:11px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  thead th{color:var(--sub);font-weight:600;background:var(--panel2);font-size:12px;letter-spacing:.3px;position:sticky;top:0}
+  tbody tr{transition:background .12s}
+  tbody tr:hover{background:rgba(255,255,255,.02)}
+  td b{color:var(--txt)}
+  td .tm{font-variant-numeric:tabular-nums;color:var(--sub)}
+
+  .tag{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;font-weight:600;white-space:nowrap;line-height:1.5}
+  .tag-up{background:rgba(229,72,77,.14);color:#ff7a7e;border:1px solid rgba(229,72,77,.42)}
+  .tag-down{background:rgba(47,184,117,.14);color:#4fd699;border:1px solid rgba(47,184,117,.42)}
+  .tag-neu{background:rgba(152,164,182,.12);color:var(--sub);border:1px solid var(--border)}
+  .tag-strong{background:rgba(229,72,77,.22);color:#ff7a7e;border:1px solid var(--up);font-weight:700}
+  .tag-gold{background:rgba(232,184,75,.14);color:var(--gold);border:1px solid rgba(232,184,75,.4)}
+
+  .quote{border-left:4px solid var(--blue);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;font-size:14px;color:#c9d0dc;margin:16px 0 4px}
+  .quote b{color:var(--blue)}
+  .quote.gold{border-left-color:var(--gold)}
+  .quote.gold b{color:var(--gold)}
+
+  .inst-card{display:flex;gap:14px;align-items:flex-start;padding:13px 15px;border-radius:11px;background:var(--panel2);border:1px solid var(--border);margin-bottom:12px}
+  .inst-card .org{flex:0 0 120px;font-size:13px;font-weight:800;color:var(--blue);line-height:1.5}
+  .inst-card .org .d{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+  .inst-card .view{font-size:13.5px;color:#d2d9e4}
+  .inst-card .view b{color:var(--blue)}
+
+  .zsxq{display:flex;flex-direction:column;gap:14px}
+  .z-card{background:var(--panel2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;position:relative}
+  .z-card .z-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+  .z-card .z-badge{font-size:11px;font-weight:700;padding:3px 11px;border-radius:6px;background:rgba(232,184,75,.16);color:var(--gold);border:1px solid rgba(232,184,75,.35);letter-spacing:.5px}
+  .z-card .z-group{font-size:13px;font-weight:700;color:var(--txt)}
+  .z-card .z-time{font-size:11px;color:var(--muted);margin-left:auto}
+  .z-card p{font-size:13.5px;color:#ccd4e0;line-height:1.8}
+  .z-card p b{color:var(--gold)}
+  .z-card p .c-blue{color:var(--blue)}
+
+  .verdict{background:linear-gradient(135deg,#1a2230,#141a24);border:1px solid #2a3550}
+  .verdict .main{font-size:15.5px;font-weight:700;color:var(--txt);margin-bottom:16px;padding:16px 18px;background:var(--panel2);border-radius:11px;border-left:4px solid var(--up);line-height:1.8}
+  .verdict .main b{color:var(--up)}
+  .verdict ul{padding-left:4px;font-size:13.5px;color:#c9d0dc;list-style:none}
+  .verdict li{margin-bottom:11px;padding-left:22px;position:relative;line-height:1.75}
+  .verdict li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:2px;background:var(--blue)}
+  .verdict li b{color:var(--up)}
+  .verdict li b.down{color:var(--down)}
+  .verdict li b.gold{color:var(--gold)}
+  .verdict li .k{font-weight:700;color:var(--txt)}
+
+  .footer{text-align:center;color:var(--muted);font-size:11.5px;margin-top:14px;line-height:1.9}
+
+  @media (max-width:640px){
+    body{padding:24px 12px 50px}
+    .card{padding:20px 16px}
+    header h1{font-size:26px}
+    .hero .kpi{min-width:130px;padding:12px 14px}
+    .hero .kpi .v{font-size:20px}
+    .inst-card .org{flex-basis:90px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Crude Oil Daily</div>
+    <h1>原油日报<span class="dot"> · </span>2026.10.10</h1>
+    <div class="src">
+      <span class="pill">华尔街见闻</span><span class="pill">market-delta 实时快讯</span><span class="pill">Wind 海外机构</span><span class="pill">知识星球</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="kpi"><div class="v">$101.20</div><div class="l">布伦特结算（+0.62%）</div></div>
+    <div class="kpi"><div class="v green">$88.94</div><div class="l">WTI（-0.56%）</div></div>
+    <div class="kpi"><div class="v blue">$41/桶</div><div class="l">单桶运费（六十年新高）</div></div>
+    <div class="kpi"><div class="v">146万</div><div class="l">美湾原油停产（桶/日）</div></div>
+  </div>
+
+  <!-- 一、核心结论 -->
+  <div class="card">
+    <h2><span class="no">一</span>核心结论：今日看多原油的 5 个最核心理由</h2>
+    <div class="reason"><div class="idx">1</div><div class="txt"><b>伊朗把打击范围扩出霍尔木兹，并已击中 LPG 船</b>——伊朗革命卫队宣布对"违规"船只严惩不再限于霍尔木兹海峡，已击中一艘 LPG 船，推动油价走高；特朗普标榜海峡一日通航 2800 万桶（超战前），但 Kpler 称日均仅 10 艘船、通航风险极高。</div></div>
+    <div class="reason"><div class="idx">2</div><div class="txt"><b>飓风 Isaias 升级三级，美湾 72% 原油停产</b>——美国 146 万桶/日原油产量暂停（占该地区 72%），129 座海上平台撤离，Mars 原油转升水 3 美元/桶；约 14% 美国炼油产能位于风暴路径内。</div></div>
+    <div class="reason"><div class="idx">3</div><div class="txt"><b>油轮运费创六十年新高，运输成本逼近油价一半</b>——单桶原油运费飙至 41 美元，VLCC 从美国运油到亚洲 7,700 万美元（2025 年均值 920 万美元，涨逾 8 倍），炼油商利润遭快速侵蚀。</div></div>
+    <div class="reason"><div class="idx">4</div><div class="txt"><b>全球库存降至"令人恐惧的薄弱"水平</b>——沙特阿美 CEO 警告全球商业库存不足 60 亿桶、补库需两年；EIA 上调布伦特预期因库存加速下滑 + 柴油偏紧 + 海峡油流受阻；IMF 预计高油价持续至 2027 年。</div></div>
+    <div class="reason"><div class="idx">5</div><div class="txt"><b>成品油才是真正硬短缺</b>——美国柴油裂解价差持续 100 美元/桶以上，新加坡柴油 73 美元/桶；特朗普/普京达成协议释放数百万吨俄罗斯柴油，但 G7 释储 1 亿桶多半是"兑现 3 月旧账"，边际供应有限。</div></div>
+  </div>
+
+  <!-- 二、海外机构观点 -->
+  <div class="card">
+    <h2><span class="no">二</span>近 5 天海外机构观点 <span class="hint">Wind 财经新闻</span></h2>
+    <div class="inst-card"><div class="org">高盛<span class="d">Bhandari · 10/8</span></div><div class="view">柴油价格或维持高位至 <b>2027 年</b>；布油企稳 80 美元附近，但炼油产能疲弱限制柴油回落。</div></div>
+    <div class="inst-card"><div class="org">高盛<span class="d">10/9</span></div><div class="view">波斯湾出口恢复但可见库存 2017 年以来低位，9 月布油风险溢价 <b>22 美元</b>（历史第二高）。</div></div>
+    <div class="inst-card"><div class="org">丹斯克银行<span class="d">10/8</span></div><div class="view">海峡通行量两个多月最低、周二仅 <b>7 艘</b>；油价已超 102 美元。</div></div>
+    <div class="inst-card"><div class="org">瑞穗证券<span class="d">10/9</span></div><div class="view">若美国炼油产能被迫退出市场，后果<b>"灾难性"</b>。</div></div>
+    <div class="inst-card"><div class="org">IMF<span class="d">格奥尔基耶娃 · 10/7</span></div><div class="view">预计高油价持续至 <b>2027 年</b>，运输成本高企支撑 100 美元/桶。</div></div>
+    <div class="quote gold">海外机构共识：油价中枢 <b>100 美元/桶</b> 高位震荡，成品油/柴油比原油更短缺；分歧在"俄柴油释放 + G7 释储能否真正缓解结构性短缺"。</div>
+  </div>
+
+  <!-- 三、知识星球深度观点 -->
+  <div class="card">
+    <h2><span class="no">三</span>知识星球深度观点 <span class="hint">近期时效</span></h2>
+    <div class="zsxq">
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">光大能源化工</span><span class="z-group">IEA 下调供需、红海加剧供应危机</span><span class="z-time">2026-10-09</span></div>
+        <p>IEA 下调原油供需预期；红海冲突或加剧中东供应危机，油价波动加剧；美伊谈判僵局致供应正常化<b>推迟至明年</b>。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">国联民生能源</span><span class="z-group">美油库存 -397 万桶、天然气紧缺</span><span class="z-time">2026-10-10</span></div>
+        <p>美国原油库存周环比 <b>-397 万桶</b>；中国 LNG 到岸 26.24 美元/百万英热（同比 <b>+142%</b>），天然气紧缺加剧。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">华创 AI 新材料</span><span class="z-group">全球柴油结构性短缺</span><span class="z-time">2026-10-10</span></div>
+        <p>波斯湾柴油出口降至战前 <b>1/4</b>，俄罗斯柴油出口大幅收缩，美国柴油裂解价差破 <b>100 美元/桶</b> 创历史新高。</p>
+      </div>
+      <div class="z-card">
+        <div class="z-head"><span class="z-badge">Orange 期权</span><span class="z-group">卖高隐波原油、买低隐波苯乙烯</span><span class="z-time">2026-10-08</span></div>
+        <p>节前"双卖原油 + 双买苯乙烯"赢麻了——卖高隐波（内盘原油隐波 98 vs 外盘 50）、买低隐波，本质是<span class="c-blue">波动率溢价套利</span>。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、今日实时快讯 -->
+  <div class="card">
+    <h2><span class="no">四</span>今日（10/10）实时快讯与时间线 <span class="hint">数据截止 20:00</span></h2>
+    <table>
+      <thead><tr><th style="width:70px">时间</th><th>事件</th><th style="width:92px">标签</th></tr></thead>
+      <tbody>
+      <tr><td class="tm">10/10</td><td>特朗普/普京会谈：俄释放 <b>30万+50万+100万+300万吨柴油</b></td><td><span class="tag tag-down">供给增加</span></td></tr>
+      <tr><td class="tm">10/10</td><td>伊朗称击中 LPG 船、警告打击违规不限于霍尔木兹</td><td><span class="tag tag-up">地缘升级</span></td></tr>
+      <tr><td class="tm">10/10</td><td>飓风 Isaias 升级三级，美湾 <b>146 万桶/日（72%）</b>停产</td><td><span class="tag tag-up">供给中断</span></td></tr>
+      <tr><td class="tm">10/10</td><td>沙特阿美恢复对欧洲全额供油（管道恢复 80%+）</td><td><span class="tag tag-down">供给修复</span></td></tr>
+      <tr><td class="tm">10/10</td><td>油轮运费创六十年新高：VLCC 7,700 万美元、单桶 41 美元</td><td><span class="tag tag-up">运输成本</span></td></tr>
+      <tr><td class="tm">10/10</td><td>特朗普改口称"可能"中选前对伊朗军事行动</td><td><span class="tag tag-up">地缘反复</span></td></tr>
+      <tr><td class="tm">10/10</td><td>标普纳指反弹，油价"过山车"（盘中跌 2% 后转涨再转跌）</td><td><span class="tag tag-neu">价格波动</span></td></tr>
+      <tr><td class="tm">10/9</td><td>布油 <b>101.20（+0.62%）</b>、WTI 88.94（-0.56%）</td><td><span class="tag tag-neu">结算</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键价格：布油 <b>101.20 美元</b>（+0.62%）/ WTI 88.94 美元（-0.56%）；单桶运费 41 美元；美湾停产 146 万桶/日。</div>
+  </div>
+
+  <!-- 五、昨天参照 -->
+  <div class="card">
+    <h2><span class="no">五</span>昨天（10/9）发生了什么（背景参照）</h2>
+    <table>
+      <thead><tr><th style="width:120px">时间/事件</th><th>内容</th></tr></thead>
+      <tbody>
+      <tr><td><b>特朗普辟谣</b></td><td>称不会中选前攻击伊朗、正"富有成效磋商"；伊外长称通过调解方间接谈判</td></tr>
+      <tr><td><b>霍尔木兹爆炸</b></td><td>周四晚海峡南部航线数起"猛烈爆炸"，"违规油轮"触雷</td></tr>
+      <tr><td><b>飓风逼近</b></td><td>墨西哥湾约 51.2 万桶/日停产，瑞穗警告炼油产能退出"灾难性"</td></tr>
+      <tr><td><b>油运新高</b></td><td>VLCC 美→亚 7,700 万美元，单桶运费 38.5 美元</td></tr>
+      <tr><td><b>库存低位</b></td><td>全球可见库存 2017 年以来低位，9 月布油风险溢价 22 美元（历史第二高）</td></tr>
+      </tbody>
+    </table>
+    <div class="quote">关键参照：昨天油价是"特朗普辟谣 + 飓风停产 + 油运新高"三因素交织，今日升级为"伊朗扩打击范围 + 飓风 72% 停产 + 俄柴油释放对冲"，多空拉锯更加剧烈。</div>
+  </div>
+
+  <!-- 六、逻辑对比 -->
+  <div class="card">
+    <h2><span class="no">六</span>核心逻辑增强 vs 削弱对比</h2>
+    <table>
+      <thead><tr><th>核心逻辑</th><th>10/9 状态</th><th>10/10 状态</th><th style="width:92px">变化</th></tr></thead>
+      <tbody>
+      <tr><td><b>地缘风险溢价</b></td><td>特朗普辟谣不攻击</td><td>伊朗扩打击范围 + 击中 LPG 船</td><td><span class="tag tag-up">增强 ↑↑</span></td></tr>
+      <tr><td><b>飓风供给中断</b></td><td>51.2 万桶/日停产</td><td>升级三级、72% 停产（146 万桶）</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>油运成本</b></td><td>VLCC 7,700 万美元</td><td>单桶 41 美元创六十年新高</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>库存低位</b></td><td>2017 年以来低位</td><td>沙特阿美"令人恐惧薄弱"</td><td><span class="tag tag-up">增强 ↑</span></td></tr>
+      <tr><td><b>俄柴油释放</b></td><td>—</td><td>俄释放数百万吨柴油</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>沙特供欧恢复</b></td><td>管道恢复中</td><td>恢复全额供油（80%+）</td><td><span class="tag tag-down">削弱 ↓</span></td></tr>
+      <tr><td><b>成品油短缺</b></td><td>柴油裂解 100 美元</td><td>持续高企但俄柴油对冲</td><td><span class="tag tag-neu">持平 →</span></td></tr>
+      <tr><td><b>整体净影响</b></td><td colspan="2" style="text-align:center">—</td><td><span class="tag tag-strong">地缘/飓风 ↑↑ vs 供给修复 ↓</span></td></tr>
+      </tbody>
+    </table>
+    <div class="quote">对比判断：昨日多空交织，今日地缘（伊朗扩范围）与飓风（72% 停产）双重供给冲击显著增强，但俄柴油释放 + 沙特供欧恢复构成实质对冲。整体呈"高位剧烈拉锯"，净影响略偏多但波动极大。</div>
+  </div>
+
+  <!-- 七、综合结论 -->
+  <div class="card verdict">
+    <h2><span class="no">七</span>综合结论</h2>
+    <div class="main">今日原油的运行主线 = <b>地缘升级</b>（伊朗扩打击范围）+ 飓风停产（72%）+ 油运成本新高（六十年）三重供给冲击，被俄柴油释放 + 沙特供欧恢复部分对冲，油价在 100 美元高位剧烈拉锯。</div>
+    <ul>
+      <li><span class="k">方向</span>：高位震荡，地缘溢价主导，布油 100-102 美元拉锯；短线波动剧烈，方向依赖地缘事件演化。</li>
+      <li><span class="k">海外机构共识</span>：油价中枢 100 美元高位震荡至 2027 年，成品油/柴油比原油更短缺（高盛、IMF、丹斯克）。</li>
+      <li><span class="k">星球视角</span>：光大看红海冲突加剧供应危机；华创看柴油结构性短缺；Orange 期权用<b class="gold">"卖高隐波原油 + 买低隐波苯乙烯"</b>做波动率套利，而非裸多方向。</li>
+      <li><span class="k">风险点</span>：俄柴油释放 + G7 释储若真能缓解结构性短缺，油价或快速回吐；特朗普"改口"反复耗尽市场信任；10Y 美债逼近 5.4% 压制风险偏好。</li>
+      <li><span class="k">下周关键</span>：美国 CPI（决定 10 月是否加息）、飓风 Isaias 灾后恢复速度、伊朗对"七日计划"的回复、俄柴油实际交付进度。</li>
+      <li><span class="k">操作倾向</span>：地缘事件型交易，严控仓位紧盯新闻流；趋势偏多但不在 100 美元上方追多，关注波动率套利机会。</li>
+    </ul>
+  </div>
+
+  <div class="footer">生成时间：2026-10-10 20:00 · 数据截止 20:00<br>数据源：华尔街见闻 · market-delta 实时快讯 · Wind 财经新闻（海外机构观点） · 知识星球（光大 / 国联民生 / 华创 / Orange 期权）</div>
+</div>
+</body>
+</html>

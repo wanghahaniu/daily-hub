@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宏观地缘日报 · 2026-10-19</title>
+<style>
+  :root{
+    --d1:#3563e9; /* 维度一 利率 · 蓝 */
+    --d2:#8a5cf6; /* 维度二 股市 · 紫 */
+    --d3:#0e9fc0; /* 维度三 经济数据 · 青 */
+    --d4:#e07b1f; /* 维度四 美元黄金大宗 · 橙 */
+    --d5:#e0492f; /* 维度五 地缘经贸 · 红 */
+    --d6:#1c9c54; /* 维度六 节假日 · 绿 */
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+    background:linear-gradient(180deg,#eef1f8 0%,#f6f4fb 100%);
+    color:#2b2b3a; line-height:1.75; padding:24px 14px 40px;
+  }
+  .page { max-width:760px; margin:0 auto; }
+
+  .header {
+    background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 55%,#b45ce0 100%);
+    border-radius:18px; padding:30px 28px 26px; color:#fff;
+    box-shadow:0 10px 30px rgba(108,92,231,.25);
+  }
+  .header h1 { font-size:26px; letter-spacing:1px; display:flex; align-items:center; gap:10px; }
+  .header .sub { margin-top:10px; font-size:13.5px; opacity:.92; }
+  .header .tags { margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; }
+  .header .tags span {
+    background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35);
+    padding:3px 12px; border-radius:999px; font-size:12.5px;
+  }
+
+  .card {
+    background:#fff; border-radius:16px; padding:22px 24px;
+    margin-top:18px; box-shadow:0 4px 16px rgba(60,60,120,.07);
+  }
+  .card-title {
+    font-size:18px; font-weight:700; display:flex; align-items:center; gap:9px;
+    padding-bottom:12px; margin-bottom:14px; border-bottom:2px dashed #e6e6f2;
+  }
+  .card-title .ico { font-size:20px; }
+
+  .hl-red    { color:#e0492f; font-weight:700; }
+  .hl-green  { color:#1c9c54; font-weight:700; }
+  .hl-blue   { color:#3563e9; font-weight:700; }
+  .hl-purple { color:#8a5cf6; font-weight:700; }
+  .hl-orange { color:#e07b1f; font-weight:700; }
+  mark { background:#fff1a8; padding:0 4px; border-radius:4px; font-weight:600; color:#5a4a00; }
+
+  .chip-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .chip {
+    border-radius:10px; padding:10px 14px; font-size:13.5px; font-weight:600;
+    display:flex; align-items:center; gap:8px;
+  }
+  .chip small { display:block; font-weight:400; opacity:.8; font-size:12px; }
+  .chip.c-green  { background:#e8f7ee; color:#157a41; border-left:4px solid #2ebd6e; }
+  .chip.c-red    { background:#fdecea; color:#c03a24; border-left:4px solid #e0563c; }
+  .chip.c-blue   { background:#e9effe; color:#2b54c9; border-left:4px solid #4c7df0; }
+  .chip.c-orange { background:#fdf1e3; color:#b96a12; border-left:4px solid #f09a3e; }
+  .chip.c-purple { background:#f1ebfd; color:#6d3fc0; border-left:4px solid #8a5cf6; }
+
+  .takeaway {
+    margin-top:14px; border-radius:10px; padding:12px 16px; font-size:14px;
+    background:#f4f0fe; border:1px solid #ddd0fa; color:#5b3ea8;
+  }
+  .takeaway b { color:#7a3fd0; }
+  .takeaway.warn { background:#fdf1e3; border-color:#f5d9b0; color:#9a5b0e; }
+  .takeaway.warn b { color:#c46a00; }
+  .takeaway.danger { background:#fdecea; border-color:#f6c6bd; color:#b03020; }
+  .takeaway.danger b { color:#d03517; }
+
+  .step { display:flex; gap:12px; margin-top:14px; }
+  .step .num {
+    flex:0 0 26px; height:26px; border-radius:50%; color:#fff; font-size:14px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; margin-top:2px;
+  }
+  .step .num.n1 { background:#4c7df0; } .step .num.n2 { background:#8a5cf6; } .step .num.n3 { background:#e0563c; }
+  .step .body { flex:1; }
+  .step .body h4 { font-size:15px; margin-bottom:4px; }
+  .step .body p { font-size:13.8px; color:#4a4a5c; }
+
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:12px 0 4px; }
+  .stats.s3 { grid-template-columns:repeat(3,1fr); }
+  .stat { background:#f6f8ff; border:1px solid #e2e8fb; border-radius:10px; text-align:center; padding:12px 6px; }
+  .stat .v { font-size:19px; font-weight:800; color:#3563e9; }
+  .stat .k { font-size:12px; color:#6a6a7c; margin-top:2px; }
+
+  ul.pts { margin:10px 0 0 2px; list-style:none; }
+  ul.pts li { font-size:13.9px; color:#45455a; padding:5px 0 5px 20px; position:relative; }
+  ul.pts li::before { content:"▸"; position:absolute; left:2px; color:#8a5cf6; font-weight:700; }
+  ul.pts li b { color:#2b2b3a; }
+
+  .src { font-size:12px; color:#9090a4; margin-top:12px; padding-top:10px; border-top:1px dashed #eceaf6; }
+  .src b { color:#7a7a90; }
+
+  .badge { display:inline-block; font-size:11px; border-radius:6px; padding:1px 7px; margin-right:4px; font-weight:600; white-space:nowrap; }
+  .lv0 { background:#5b3ea8; color:#fff; }
+  .lv1 { background:#ece4fb; color:#5b3ea8; }
+  .lv2 { border:1.5px dashed #b0a8c8; color:#8a8a9c; }
+  .f-buy  { background:#fdecea; color:#c03a24; border:1px solid #f3c2b8; }
+  .f-sell { background:#e8f7ee; color:#157a41; border:1px solid #bfe6cd; }
+  .f-watch{ background:#fdf1e3; color:#b96a12; border:1px solid #f5d9b0; }
+  .dim { display:inline-block; font-size:11px; border-radius:6px; padding:1px 8px; color:#fff; font-weight:700; margin-right:4px; white-space:nowrap; }
+
+  .tier { font-size:10.5px; font-weight:800; border-radius:5px; padding:0 6px; margin-right:5px; white-space:nowrap; }
+  .t1 { background:#2b2b3a; color:#fff; }
+  .t2 { background:#8a8a9c; color:#fff; }
+  .t3 { background:#d8d8e4; color:#5a5a6e; }
+
+  table { width:100%; border-collapse:collapse; font-size:13px; background:#fff; }
+  th,td { border:1px solid #eceaf6; padding:8px 9px; text-align:left; vertical-align:top; }
+  th { background:#f6f4fb; font-weight:700; }
+
+  .more { margin-top:10px; padding:10px 14px; background:#f8f8fc; border-radius:10px; font-size:12.8px; color:#5a5a6e; }
+  .more p { padding:3px 0; }
+  .more b { color:#45455a; }
+  .subblk { font-size:13px; font-weight:800; color:#6d5fb8; margin:14px 0 2px; }
+  .who { font-weight:800; }
+
+  .dim-card { border-top:3px solid var(--d1); }
+
+  .summary {
+    margin-top:20px; border-radius:18px; padding:24px;
+    background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 60%,#b45ce0 100%);
+    color:#fff; box-shadow:0 10px 30px rgba(108,92,231,.25);
+  }
+  .summary h2 { font-size:19px; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+  .sum-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .sum-item {
+    background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28);
+    border-radius:12px; padding:13px 15px; font-size:13.5px;
+  }
+  .sum-item h4 { font-size:14.5px; margin-bottom:5px; }
+  .sum-item p { opacity:.93; }
+
+  .footer-tags { margin-top:18px; text-align:center; font-size:12.5px; color:#8a8a9c; }
+  .footer-tags span { display:inline-block; margin:3px 5px; padding:3px 12px; background:#eceaf6; border-radius:999px; color:#6d5fb8; }
+
+  @media (max-width:560px) {
+    .chip-row, .sum-grid, .stats, .stats.s3 { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 头部 -->
+  <div class="header">
+    <h1>🌐 宏观地缘日报</h1>
+    <div class="sub">2026年10月19日（周一）· v3 版式 ｜ 覆盖窗口 10-18 ~ 10-19 ｜ AI 去杠杆进入信用定价 · 出口管制技术化 · 油价 110 美元双向拉扯 · 中国 Q3 GDP 今日待验</div>
+    <div class="tags">
+      <span>#AI信用定价</span><span>#费半八连跌</span><span>#出口管制技术化</span><span>#稀土集团化</span><span>#油价110</span><span>#Q3GDP待验</span><span>#金融街论坛</span>
+    </div>
+  </div>
+
+  <!-- 总览 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🧭</span>今日总览 · 本期覆盖</div>
+    <div class="stats">
+      <div class="stat"><div class="v">6</div><div class="k">可读星球源（全部引用）</div></div>
+      <div class="stat"><div class="v">6</div><div class="k">一级要点（≥3源交叉）</div></div>
+      <div class="stat"><div class="v">30</div><div class="k">原文级取证条目</div></div>
+      <div class="stat"><div class="v">4</div><div class="k">口径分歧（并列披露）</div></div>
+    </div>
+    <div class="chip-row" style="margin-top:16px;">
+      <div class="chip c-purple">💳 AI 从杀估值进入杀融资<small>费半八连跌 −12%｜云商信用利差 148bp 最宽</small></div>
+      <div class="chip c-red">🧱 出口管制从货物扩到技术<small>AI 23 项 + 生物医药 5 项 + 光伏｜稀土集团化</small></div>
+      <div class="chip c-orange">🛢️ 油价 110 美元的双向拉扯<small>霍尔木兹流量仅冲突前 70%｜柴油外交在压价</small></div>
+      <div class="chip c-blue">🏦 数据越强、美债越涨<small>2Y −11bp / 10Y −19bp｜股灾式避险</small></div>
+    </div>
+    <div class="takeaway">
+      <b>一句话主线：</b><span class="hl-purple">分母没松</span>（10Y 仍在 5% 上方，靠股灾回补才回落），<span class="hl-red">AI 的定价权从股市交给债市</span>（信用利差成为 capex 的边际约束），<span class="hl-orange">油价被"物理中断"与"政治压价"夹住</span>，<span class="hl-blue">中国这一侧，出口与信贷超预期、内需与财政不及预期，Q3 GDP 今日给出裁决</span>。
+    </div>
+  </div>
+
+  <!-- 数据源声明 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">📡</span>数据源可读性声明（每期必读）</div>
+    <ul class="pts">
+      <li><b>星球侧 6 源全部可读、全部引用</b>：小牛研报纪要 / 研报平权 / 刘煜辉之宏观高维 / 财经图集 / Economic国际投行研报 / 404K Semi-Ai。本期重跑双接口权限探测（group+topics 与 topic+search），已加入星球 22 个、<b>可读 7 个</b>。</li>
+      <li><b>可用而未引用（须写明原因）</b>：<b>Orange期权</b>（可读）——内容为期权策略与波动率交易，与六维宏观框架定位不符，本期不引用；<b>海外大模型</b>——topics 报错（体验到期/无读取权限）、search 返回 0 条。</li>
+      <li><b>全文深读</b>：财经图集 10-19 早报 <b>25,846 字</b>（topic +detail 全文，非列表摘要）；10-18「本周报告」帖经核为网盘索引、无正文，未作引用依据；10-17 周末特辑上一期已深读，本期不重复引用。</li>
+      <li><b>窗口</b>：10-18 ~ 10-19（近 2 天），近 3 天抓取 603 条（小牛 200 / 404K 200 / Economic 173 / 研报平权 41 / 刘煜辉 13 / 财经图集 4），窗口内有效 406 条。</li>
+    </ul>
+    <div class="takeaway danger">
+      <b>结构性缺口（连续第十期）：</b>ima 侧 3 库（源哥会员专享 7395683732563191 / XZ服务器 7482839675192179 / 每日财讯情报库 7388512949121820）<b>本期仍不可读</b>——连接器清单返回「未安装」，本会话工具索引无任何 ima 工具。这意味着<b>彭博/路透中文原稿、XZ 外资行 PDF、A 股复盘笔记三个独家层缺失</b>，本期全部结论仅建立在星球侧二手转述之上。<mark>请阿成检查 ima 连接器授权</mark>；若第十一期仍缺，建议改由企业微信/邮箱渠道补位。
+    </div>
+  </div>
+
+  <!-- 一、跨源共识矩阵 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🎯</span>一、跨源共识矩阵（纲）</div>
+    <table>
+    <tr><th style="width:21%">主线</th><th style="width:24%">源覆盖（独立源数）</th><th style="width:18%">事实层</th><th style="width:19%">机制层</th><th style="width:18%">仓位层 / 分歧</th></tr>
+    <tr><td><b>① AI 去杠杆进入信用定价</b><br><span class="dim" style="background:var(--d2)">股市</span></td><td>财经图集·Economic·小牛·研报平权·404K <b>(5)</b></td><td>✅ 一致：费半八连跌累计 −12%；KOSPI 周 −14.5%、远期 PE 4.2x；台股外资 −192 亿美元创纪录；云商信用利差 148bp</td><td>✅ 最强：AI capex 融资从股权转向债券，信用利差成为边际约束；一阶导向上、二阶导转负，先杀估值后杀业绩</td><td>⚠️ 分歧大：小牛「调整接近尾声」vs 刘煜辉「二阶导为负杀估值」；高盛仍超配半导体、KOSPI 目标 +118%</td></tr>
+    <tr><td><b>② 出口管制技术化 + 稀土集团化</b><br><span class="dim" style="background:var(--d5)">地缘</span></td><td>小牛·Economic·财经图集 <b>(3)</b></td><td>✅ 一致：10-16 拟增列 AI 23 项、生物医药 5 项、光伏；美对钨废料禁出口一年；盛和向中稀转让 51% 股权</td><td>✅ 成立：管制对象从商品转为技术要素与工艺平台，壁垒从产能搬到知识资产；稀土指标统筹提升议价</td><td>⚠️ 创新药「被限制」担忧被证伪（单一品种授权与 CXO 不受限）→ 利空出尽；小金属供给溢价待传导</td></tr>
+    <tr><td><b>③ 油价 110 美元的双向拉扯</b><br><span class="dim" style="background:var(--d4)">大宗</span></td><td>小牛·Economic·财经图集 <b>(3)</b></td><td>✅ 一致：布油 109.86 / WTI 101.41；霍尔木兹流量回落至冲突前 70%；SPR 2.83 亿桶停止释放</td><td>✅ 成立：物理中断给底部、柴油外交给顶部，价格由边际库存与政策执行决定；裂解与运费比原油干净</td><td>⚠️ 中枢分歧极大：JPM 4Q26 80 / 2027 56 vs 中金 27 年底 89 vs 高盛 12 个月 75（见分歧三）</td></tr>
+    <tr><td><b>④ 数据强、美债反而涨</b><br><span class="dim" style="background:var(--d1)">利率</span></td><td>Economic·财经图集·小牛 <b>(3)</b></td><td>✅ 一致：CPI/PPI/初请均强，但 2Y −11bp、10Y −19bp、30Y −20bp；MOVE 98.5</td><td>✅ 成立：股票波动率→CTA 空头回补→利率下行，非基本面转暖；10Y 破 5% 后与股指估值转负相关</td><td>⚠️ 方向分歧：JPM 做多前端/10s30s 陡化 vs 美银 sell the rip、做空 2Y（见分歧二）</td></tr>
+    <tr><td><b>⑤ 中国：外需强、内需弱、财政紧</b><br><span class="dim" style="background:var(--d3)">数据</span></td><td>Economic·财经图集·小牛 <b>(3+)</b></td><td>✅ 一致：出口 +36.3% / 顺差 1335 亿美元创纪录；零售 0.1%、固投 −7.2%、广义财政 −3.5%</td><td>✅ 成立：出口的就业拉动下降（资本密集+自动化），政策「精准微调」难破去杠杆循环，2027 LGFV 是压力点</td><td>⚠️ Q3 GDP 预期 4.4%（路透）vs 4.3%（美银）；汇率目标三家差 25bp（见分歧四）</td></tr>
+    <tr><td><b>⑥ A 股筹码出清到极值区</b><br><span class="dim" style="background:var(--d2)">股市</span></td><td>小牛·Economic·财经图集 <b>(3)</b></td><td>✅ 一致：上证周 −2.56%、创业板 −8.90%；机构重仓 AI 硬件自高点 −41.1%/−33.4%；国债 ETF 10 日净申购 102 亿</td><td>✅ 成立：机构减仓扩散到融资盘，属筹码结构问题；历史上「一阶导向上、二阶导转弱」首轮调整后中小盘更有弹性</td><td>⚠️ 政策底已现（两次托 3700）、市场底待确认；高盛维持超配 A 股（沪深300 目标 5200）</td></tr>
+    </table>
+    <div class="takeaway">
+      <b>矩阵读法：</b>本期六条主线里，<b>机制层共识最强的是①与④</b>——它们是同一件事的两面：AI 的融资需求推高利率，利率又反噬 AI 估值。<b>边际变化最快的是②</b>（10-16 征求意见稿 + 稀土股权整合同日落地），<b>最容易被误读的是③</b>——布油 110 美元看起来是"地缘溢价"，但本周真正的增量信息是"柴油外交"和"放松影子油轮制裁"，即<b>政策正在给油价设顶</b>。
+    </div>
+  </div>
+
+  <!-- 二、一级宏观要点 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">💳</span>要点 1 · AI 去杠杆进入「信用定价」阶段：从杀估值到杀融资</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d2)">股市</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·AI 硬件/高融资成长</span><span class="badge f-buy">利多·红利/低估值</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>① 费城半导体指数<span class="hl-green">连续 8 个交易日下跌</span>、累计跌幅超 <span class="hl-green">12%</span>，追平 2006 年以来最长连跌，空头同期浮盈约 <b>320 亿美元</b>。② 韩国 KOSPI 周跌 <span class="hl-green">14.5%</span>（八个交易日累计超 20%），远期 PE 压至 <b>4.2 倍</b>、创 1999 年以来最低，外资单周净流出 83 亿美元、半导体持仓低于历史均值 2.5 个标准差。③ 中国台湾单周外资净流出 <b>192 亿美元</b>创历史，10-15 单日 −99 亿美元；除中国外 EM 亚洲单周流出 <b>280 亿美元</b>创纪录。④ JULI 指数中超大规模云服务商利差走阔 12bp 至 <b>148bp</b>（2026-07 来最宽）。⑤ Anthropic 9 月 ARR 推算约 <b>700 亿美元</b>、低于市场预期；<b>CoreWeave CDS 利差同步走高</b>（国海海外归因：加息预期走强 + Anthropic 营收引发算力需求担忧），其有息债务约 <b>350 亿美元</b>、Q2 净利息费用已占收入 <b>25%</b>，而 Nebius 现金 80 亿 vs 有息债务 85 亿、净债务近零——<b>同一个 AI 主题内部，信用分层已经开始</b>。⑥ 高盛测算：六家云商 2026–27 平均年度 AI capex 需每年约 <b>3,080 亿美元</b> AI 收入才能覆盖折旧与运营，若要求 10%–20% 投入资本回报，需 <b>4,170–5,260 亿美元</b>。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>这轮下跌的性质变了：<b>不再是"估值太贵"的脉冲式回调，而是融资方式切换引发的重定价。</b>过去两年 AI capex 靠经营现金流 + 股权融资，现在切到债券——2026 年至今 AI 相关（超大规模云+半导体+数据中心）贡献了投资级新增供给 3,910 亿美元中的 2,170 亿，占 55%。<mark>一旦融资靠债，定价权就从股票分析师手里交到信用投资者手里</mark>：利差走阔 → 发债成本上升 → capex 指引下修 → 收入预期下修。JPM 与伯恩斯坦对 CoreWeave 的多空分歧，本质是"现金流时点错配"还是"增长模式隐患"之争。<b>一阶导（算力需求）仍向上，二阶导（capex 增速）已转负——这是杀估值而不是杀业绩的阶段。</b>需求侧的反证也还在：过去半个月 B300 / H200 / B200 一年期租金分别涨 <b>11% / 3% / 5%</b>，CoreWeave 调整后经营利润率由 Q1 约 1% 升至 Q2 约 5%（国海海外口径）。<b>融资压力 ≠ 需求转弱</b>，这正是多空双方谁也说服不了谁的原因。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>小牛量化口径：机构重仓前 15 / 前 200 的 AI 硬件股自高点分别跌 <b>41.1% / 33.4%</b>，已与 2021–22 新能源首轮调整（−42.7% / −34.3%）基本相当，且 10-15 起高融资组合跌幅首次超过机构重仓组合——<b>抛压已从机构扩散到杠杆盘</b>。高盛逆势维持超配科技硬件与半导体（2027E EPS +50.4%、PEG 0.6），KOSPI 12 个月目标隐含 +118%。刘煜辉给的是反方一句话：<b>"二阶导为负，杀估值。"</b></p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>以前大家担心 AI 是"故事吹太大"，现在担心的是更硬的东西——<b>借钱建算力，借钱的利息在涨，而收入到账比预期慢</b>。所以看 AI 不用再盯股价，盯两个数就够了：<b>云商的信用利差</b>（现在 148bp，还在扩就是没跌完）和<b>未来两周四大 CSP 的 2027 年 capex 指引</b>（市场一致预期 +40%~50%，低于 50% 就是下修确认）。只要这两项没有同时转好，反弹都是技术性的。
+    </div>
+    <div class="src"><b>来源：</b>财经图集 10-19 早报（Bloomberg/S3/FactSet/高盛）/ Economic·高盛亚太周报·JPM 北美信用·JPM 美股策略 / 小牛·美股科技周观点·市场调整接近尾声·国海海外 CDS 与 Neocloud / 研报平权·CoreWeave 多空 / 404K 宏观早报标题级</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🧱</span>要点 2 · 出口管制从「货物」扩到「技术」：AI 23 项 + 生物医药 + 光伏，与稀土集团化同日落地</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d5)">经贸</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·战略小金属/稀土</span><span class="badge f-watch">创新药·利空证伪</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>① 10-16 商务部、科技部就修订《中国禁止出口限制出口技术目录》公开征求意见，拟增列：<b>AI 领域 23 项关键技术</b>（大模型、智能体、算力集群等）、<b>生物医药 5 项</b>（细胞与基因治疗、小核酸药、病原微生物）、<b>光伏技术</b>。已开源、已发论文进入公共领域的<mark>不纳入管理</mark>；API 调用、SaaS 应用等出海形式<mark>不属于大模型技术出口管理范围</mark>；创新药<b>单一药物品种授权、开发工艺、CXO 服务不对外转让所有权的不受限</b>。② 美国商务部对<b>钨废料实施为期一年的出口禁令</b>；两用物项对日出口管制加强，氧化钇/氧化锆对日供应不确定性上升。③ 盛和资源拟向中国稀土集团全资子公司中稀发展转让 4 家冶炼分离子公司 <b>51% 股权</b>（合计 1.78 万吨 REO/年，交易价款 16.58–18.11 亿元），交易后转权益法核算。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>管制的<b>对象变了</b>：过去管的是"货"（稀土氧化物、镓锗、石墨），现在管的是"知识与工艺平台"（模型权重、训练算法、算力集群技术、细胞治疗工艺平台）。<mark>这等于把竞争壁垒从"产能"搬到"知识资产"</mark>，对手无法靠建厂绕开。同期稀土股权向中稀集团集中，是把分散的冶炼分离产能收进一个价格与指标的统筹主体——<b>供给端的议价能力从"企业级"升到"国家级"</b>。大摩的判断与此呼应：中美进入"管理式竞争"，在芯片与稀土/电池上形成微妙平衡，中国以温和缩减混动出口换取稀土快速许可与规则对话。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>① <b>创新药是本期最干净的一条"利空证伪"</b>：市场原本担心 license-out 被卡，细则明确单一品种授权与 CXO 不受限，中信医药直接给出"看好中国创新药资产美元化估值重塑"。② <b>战略小金属供给溢价抬升</b>：钨精矿本周仍跌 22.55% 至 29.18 万元/吨、锑跌 8.82% 至 9.3 万元/吨——<b>价格还没反应禁令，这构成时间差</b>；锡库存周降 17.68% 至 5,902 吨，是唯一"价格跌、库存也跌"的品种。③ AI 模型出海短期不受影响，但中期需合规评估。</p>
+      </div>
+    </div>
+    <div class="takeaway warn">
+      <b>说人话：</b>这份目录真正的作用不是"禁止卖东西"，而是<b>告诉全世界：中国手里可调的工具，从实物清单升级成了技术清单</b>。对投资有两层含义：一是稀土、钨、锑这些小金属的"战略属性"要被重新定价（现在价格还在跌，说明市场没反应过来）；二是创新药的出海逻辑没被打断，之前的下跌属于错杀。
+    </div>
+    <div class="src"><b>来源：</b>小牛·AI 周思考 1018·生物医药点评·稀土点评·小金属双周谈 / Economic·大摩中国展望 / 财经图集 10-19（进口价格 +8.1% 的关税传导）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🛢️</span>要点 3 · 油价 110 美元的双向拉扯：霍尔木兹再受限，但「柴油外交」正在压价</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d4)">大宗</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·裂解价差/油运</span><span class="badge f-sell">利空·航空/化工中下游</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>① 布伦特结算 <span class="hl-red">109.86 美元</span>（+3.72%）、WTI <span class="hl-red">101.41 美元</span>（+3.51%），连续第七个交易日上涨。② 霍尔木兹<b>再度出现油轮触雷起火</b>，海峡流量经 STS 转运一度恢复至 1,950 万桶/天，10 月以来<b>回落至冲突前约 70%</b>。③ 美国 SPR 释放至 <b>2.83 亿桶</b>（历史极限 2.7 亿）后停止；中国 9 月进口原油 <b>3,710 万吨</b>，环比 −90 万吨、同比 <b>−1,016 万吨</b>。④ VLCC 中东-中国运费达 <b>38 美元/桶</b>，原油到岸成本接近 <b>140 美元/桶</b>；墨湾综合裂解价差 <b>70 美元/桶</b>，美国炼厂开工率回升至 94%。⑤ 政策侧：G7 承诺加速释放柴油储备、美俄达成便利俄柴油出口安排、特朗普公开呼吁中国增加成品油供应；美国考虑<b>逐船解除影子油轮制裁</b>（160 艘中 Kpler 估计仅约 24 艘、15% 具备回归条件）；美国议员提出法案试图阻止美俄柴油协议。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>现在油价里同时装着两股相反的力：<b>物理中断给底部</b>（海峡 70%、SPR 见底、库存接近历史低位），<b>政治压价给顶部</b>（柴油外交、影子油轮松绑、中期选举前压通胀）。所以单边追涨或追空都不划算，<mark>真正干净的表达是"裂解价差 + 运费"而不是原油本身</mark>——高油价与高运费的组合，让下游化工的到岸成本被抬到 140 美元，利润被两头挤压。JPM 提醒另一条传导链：霍尔木兹的影响已溢出能源，正通过运费、燃料与物流成本向农产品传导。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>中金：27 年底布油合约 10 月以来 +10 美元至 <b>89 美元</b>，但国内油气股 A/H 股价内含油价仅 <b>75 / 70 美元</b>——估值修复空间。高盛 12 个月布油目标 <b>75 美元</b>；JPM 4Q26 中枢 <b>80 美元</b>、2027 年下移至 <b>56 美元</b>。<b>三家方向完全相反，见分歧三。</b>油运：美国松绑影子船队仅影响运价峰值、无法真正压低运价，调整后性价比凸显。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>油价 110 美元不是"要打仗了"这么简单。<b>一边是海峡真的过不去船，一边是美国在拼命找柴油、放储备、松制裁——政府在跟市场对赌</b>。对普通人最直接的影响是柴油和运费，对投资者最干净的做法是买"炼油利润"和"运价"，而不是赌油价单边。
+    </div>
+    <div class="src"><b>来源：</b>小牛·中金油气化工·国金交运 / Economic·JPM 全球大宗商品观察 / 财经图集 10-19（进口价格燃料项飙升）/ 小牛·盘前热点（结算价）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🏦</span>要点 4 · 美债「数据越强、收益率越低」：这是股灾式避险，不是基本面转向</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d1)">利率</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·久期/前端</span><span class="badge f-watch">方向分歧最大</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>本周 2 年期 −11bp、5 年期 −17bp、10 年期 <b>−19bp</b>、30 年期 <b>−20bp</b>，曲线呈"牛平"；10Y 周内振幅达 30bp。触发数据全是"强"的：9 月 CPI 同比 3.7%/核心 2.6%（核心环比 0.35% 超预期）、PPI 高于预期、初请 19.9 万低于 20 万、续请降至 171 万。<b>数据越强、债价越涨</b>，这是本周最反直觉的一幕。MOVE 指数升至 <b>98.5bp</b>（历史高位区 90–110）。9 月 FOMC 纪要意外出现"国债市场功能与压力规划"讨论；美联储 10 月 RMP 再次零购买，11 月或恢复每月 100 亿美元。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>JPM 点破了因果顺序：<b>不是通胀预期回落带动利率下行，而是股市波动率触顶→CTA 在长端的系统性空头被迫平仓→收益率被买下来</b>。他们还给出一个关键非线性：10 年期收益率与标普估值倍数呈倒 U 型，<mark>当 10Y 突破 5% 后，两者转为负相关</mark>——利率再往上，股票跌得更快，反而把资金赶回债市。所以本轮"股灾式降息"是自我强化的，但也极其脆弱：<b>一旦股市止跌，这个买盘就消失。</b></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>JPM：做多 <b>10s30s 陡化</b>（低贝塔做多前端久期），理由是曲线比模型平坦约 3bp、且 11-04 再融资公告若确认长端供给不变则安全边际更高。美银：完全相反——<b>逢反弹卖出（sell the rip）</b>，做空 2Y + 2s30s 趋平 + 做多 30Y ASW，理由是"粘性通胀终将压倒鸽派口吻"。<b>同一周、同一堆数据，两家给出相反交易，见分歧二。</b></p>
+      </div>
+    </div>
+    <div class="takeaway warn">
+      <b>说人话：</b>这周美债涨，不是因为通胀好转，而是因为<b>股票跌得太凶，逼着一批做空债券的基金平仓回补</b>。这种上涨是"借来的"，股市一稳就会还回去。真正要盯的日子是 <b>11 月 4 日财政部再融资公告</b>——它决定未来长债供给是增是减，也决定这波利率下行能走多远。
+    </div>
+    <div class="src"><b>来源：</b>Economic·JPM 美国国债策略·美银全球利率观察 / 财经图集 10-19（外资持有美债占比降至 23.4%）/ 小牛·交运复盘（10Y 自 5.365% 高点回落）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">🇨🇳</span>要点 5 · 中国：出口与信贷超预期，内需与财政不及预期，Q3 GDP 今日给出裁决</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d3)">数据</span><span class="badge lv0">原文级</span><span class="badge f-watch">今日待验·Q3 GDP</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>路透调查预期中国 <b>Q3 GDP 同比 +4.4%</b>（Q2 为 4.3%）；美银预测 <b>+4.3%</b>、与二季度持平、低于共识。9 月数据：出口同比 <b>+36.3%</b>、进口 <b>+31.0%</b>、贸易顺差 <b>1,335 亿美元创历史纪录</b>；CPI +0.9%、PPI <b>+5.0%</b>（阶段新高）；社融存量 +7.1%、M2 +7.2%。但美银预测 9 月工业增加值仅 +5.3%、<b>零售 +0.1%</b>、<b>固定资产投资累计 −7.2%</b>；1–8 月广义财政支出同比 <b>−3.5%</b>。政策面：5,500 亿元地方专项债新增额度 + 8,000 亿元结构性借贷工具；新能源车出口退税率 2027 年 4 月起由 13% 降至 9%。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>大摩把这叫"双速经济"：出口有韧性、投资消费持续疲软、再通胀极窄。<b>关键机制是传导断了</b>——工业部门资本密集度与自动化提升，同样的出口金额带来的就业和工资增长在下降；传统行业过剩产能消化慢，出口强势无法溢出到内需与通胀。<mark>所以"出口超预期"不再等于"经济超预期"，这是今年最重要的认知切换</mark>。美银补上财政一侧：广义财政实质偏紧、税收征管趋严、出口退税削减，构成隐性"加税"，压制企业利润与投资意愿。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>高盛维持 MSCI 中国 12 个月目标 <b>80 点（+13%）</b>、沪深 300 <b>5,200 点（+25%）</b>，超配材料、科技硬件、资本货物、零售、保险；MSCI 中国/沪深 300 远期 PE 仅 9.7x/12.0x。大摩把美元兑人民币预测上调至 2026 年末 <b>6.65</b>、2027 年末 6.60。美银的结论最冷：<b>"唯有中央层面可信、全面的政策转向，才能扭转预期；渐进式宽松只能缓冲放缓。"</b></p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>中国现在的问题不是"能不能生产"，而是"生产出来的东西谁来买"。出口创纪录、顺差创纪录，但零售只涨 0.1%、投资还在 −7%，说明<b>钱没流到居民和企业手里</b>。今天公布的 Q3 GDP 大概率落在 4.3%–4.4%，<b>数字本身不重要，重要的是 9 月单月数据有没有比预期更差</b>——那才决定政策会不会从"小步"变成"大步"。
+    </div>
+    <div class="src"><b>来源：</b>Economic·高盛中国市场周报·美银亚洲经济观察·大摩中国展望 / 财经图集 10-19（铁路客流 37.1 亿人次、长鑫净利 1,310–1,325 亿）/ 小牛·盘前热点（路透 GDP 预期）</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="ico">📉</span>要点 6 · A 股：筹码出清已到历史极值区，但仍处在「左侧」</div>
+    <p style="font-size:13px;"><span class="dim" style="background:var(--d2)">股市</span><span class="badge lv0">原文级</span><span class="badge f-watch">左侧·政策底已现</span></p>
+    <div class="step">
+      <div class="num n1">1</div>
+      <div class="body">
+        <h4>事实层</h4>
+        <p>上周上证 <span class="hl-green">−2.56%</span>、创业板指 <span class="hl-green">−8.90%</span>、科创 50 <span class="hl-green">−6.8%</span>、沪深 300 −3.4%；周五成交 <b>15,692 亿元</b>、缩量 768 亿。机构重仓前 15 / 前 200 的 AI 硬件股自高点跌 <b>41.1% / 33.4%</b>（2021–22 新能源首轮为 −42.7% / −34.3%）。截至 10-16，国债 ETF 近 10 个交易日净申购 <b>102 亿元</b>，接近 2023 年以来 99% 分位；10-15/16 两日宽基 ETF 合计净流入 <b>477 亿元</b>。但机构重仓最高组相对最低组的 10 日滚动收益仍为 <b>−7.9%</b>，尚未出现见底信号。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n2">2</div>
+      <div class="body">
+        <h4>机制层</h4>
+        <p>调整的路径很清楚：<b>9-22 起机构减仓 → 10-15 起扩散到高融资个股</b>（高融资组合跌幅首次超过机构重仓组合），电子、通信等 AI 硬件是抛压最集中方向。这意味着<b>卖出的不是"看空基本面的人"，而是"被杠杆逼着卖的人"</b>，所以跌得快、也容易在政策信号出现时急反弹。历史类比：产业景气"一阶导"仍向上、"二阶导"转弱时，首轮估值调整结束后，新技术中小盘往往比机构核心大票更有弹性。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num n3">3</div>
+      <div class="body">
+        <h4>仓位层</h4>
+        <p>上证 3,700 点上方两次跌破后均被拉回，<b>3,650 是多方最后的整数防线</b>；本周若守住 3,650、收盘站回 3,700，超跌反弹窗口打开。红利资产自 9 月加息落地后持续走强（皖通、京沪、山高、深高），是当前唯一有增量资金的方向。高盛从估值角度维持超配 A 股：沪深 300 远期 PE 12.0x、目标 5,200 点。</p>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>说人话：</b>现在 A 股不是"贵不贵"的问题，是<b>"谁的筹码还没割完"</b>的问题。机构重仓的 AI 硬件已经跌回上一轮新能源首轮调整的深度，国债 ETF 申购到了 99% 分位、宽基 ETF 两天进了 477 亿——这些是"恐慌尾声"的特征，但<b>还没到"反转确认"</b>（机构重仓组相对收益还是 −7.9%）。所以策略是不追、不砍，等 3,650 的确认信号。
+    </div>
+    <div class="src"><b>来源：</b>小牛·市场调整接近尾声·本周策略观点 1019·交运复盘 / Economic·高盛中国市场周报 / 财经图集 10-19（A 股行业/风格/主题 ETF 表现）</div>
+  </div>
+
+  <!-- 分歧披露 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">⚖️</span>口径分歧并列披露（不擅自二选一）</div>
+    <div class="takeaway warn">
+      <b>分歧一 · 10 月美联储加息概率：17% vs 50%，差三倍。</b>JPM 北美信用研究明确写"市场定价的本月加息概率仍与周初持平于 <b>17%</b>"；美银全球外汇观察同周写"OIS 定价概率约 <b>50%</b>"，并重申 10 月加息预期。<b>两家引用的都是 OIS 类工具，差距却达 33 个百分点</b>——可能是报价时点（CPI 公布前后）或期限/合约口径不同。存疑，本期不取中值，两者并列。
+    </div>
+    <div class="takeaway warn">
+      <b>分歧二 · 美债交易方向：做多前端 vs 做空 2Y。</b>JPM 建议"战术性做多 10s30s 陡化"作为低贝塔前端久期暴露；美银建议"做空 2 年期 + 2s30s 趋平 + 做多 30Y ASW"，并主张逢反弹卖出。<b>分歧的根不在数据，在对"这轮下行是技术性回补还是趋势反转"的判断</b>：JPM 认为持仓比问卷更干净、反弹可持续；美银认为 CTA 回补未结束、基本面终将重拾升势。两者都自认是"战术"，都不建议押方向性长单。
+    </div>
+    <div class="takeaway warn">
+      <b>分歧三 · 布油中枢：80 vs 89 vs 75，三个方向。</b>JPM：2026Q4 中枢 <b>80 美元</b>、2027 年下移至 <b>56 美元</b>（非 OPEC 供应恢复+需求放缓）；中金：27 年底布油合约已升至 <b>89 美元</b>、且 A/H 油气股仅内含 75/70 美元；高盛：12 个月目标 <b>75 美元</b>。<b>现货 109.86 美元，三家预测全部低于现货</b>——说明卖方普遍把当前价格视为"地缘溢价"，分歧只在溢价消退的速度。
+    </div>
+    <div class="takeaway warn">
+      <b>分歧四 · 人民币目标价：6.40 vs 6.60 vs 6.65。</b>高盛：美元兑人民币 12 个月 <b>6.40</b>（最强升值预期）；美银：2026 年末 <b>6.60</b>、2027 年末 6.50；大摩：2026 年末 <b>6.65</b>、2027 年末 6.60。当前在岸约 <b>6.68</b>。<b>三家都看升值，幅度差 25bp</b>；大摩额外提示"内需偏弱，快速升值并非政策首选"，高盛的 6.40 隐含更强的结汇与利差收敛假设。
+    </div>
+    <div class="takeaway">
+      <b>本期另有一处小口径差（不影响结论，仅登记）：</b>10Y 美债收盘，JPM 以全周 −19bp 计（自 5.10% 附近至约 4.91%），高盛亚太周报仍以 <b>5.08%</b> 为"当前值"；财经图集引用外资持仓为 <b>7 月</b>数据（TIC 两个月滞后），不可当作 9 月资金流解读。
+    </div>
+  </div>
+
+  <!-- 三、六维事实清单 -->
+  <div class="card dim-card" style="border-top-color:var(--d1)">
+    <div class="card-title"><span class="ico">💵</span>维度一 · 利率与货币政策</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·久期</span><b>强数据下美债全周大涨</b>：2Y −11bp、5Y −17bp、10Y −19bp、30Y −20bp，牛平；10Y 周内振幅 30bp。驱动是股市波动率引发的 CTA 空头回补，而非通胀预期回落。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">方向分歧</span><b>10 月加息概率 17%（JPM）vs 50%（美银 OIS）</b>；9 月 CPI 3.7%/核心 2.6%、核心环比 0.35% 超预期，初请 19.9 万、续请 171 万（逆季节性回落，暗示失业率可能进一步下行）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>9 月 FOMC 纪要出现「国债市场功能与压力规划」讨论</b>：美联储在评估极端压力下的工具箱（集中清算、国债期货/互换渠道提供流动性），并坚持"市场功能支持"与"货币政策"分离——"最后做市商"角色雏形。10 月 RMP 零购买，11 月或恢复每月 100 亿美元。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>财政部供给信号</b>：长端互换利差走阔 3–4bp，初级交易商问卷询问结构性需求与拍卖规模调整，被解读为"为缩减长端供给留门"；11-04 再融资公告是关键。</p>
+      <p><span class="tier t2">L2</span><b>美元资产配置反弹</b>：美银均值-方差框架下最优美元资产比例由 2025-11 的 57% 回升至 <b>69%</b>，基本证伪"去美元化"极端叙事，但未回到 2015–25 年的 80%。</p>
+      <p><span class="tier t2">L2</span><b>波动率新制度</b>：MOVE 98.5bp，历史高位区；当 MOVE 单周跳升超历史四分位，美股与 IG 信用周均回报分别负偏离 0.6% 与 0.14%。</p>
+      <p><span class="tier t3">L3</span>韩国 3Y 国债 −13bp 至 3.85%、10Y −21bp 至 4.18%；中国 10Y 国债下行至 <b>1.65%</b>。</p>
+      <p><span class="tier t3">L3</span><span class="badge lv2">标题级</span>404K 宏观早报 10-19 标题「科技抛售加深，债市回补遇通胀」——与本期主线同向；该源正文未落盘，仅作方向校验，不作数据引用。</p>
+    </div>
+    <div class="src"><b>来源：</b>Economic·JPM 美国国债策略·美银全球利率观察 / 小牛·申万宏源宏观·交运复盘 / 财经图集 10-19</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d2)">
+    <div class="card-title"><span class="ico">📈</span>维度二 · 股市与风险偏好</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·半导体</span><b>费半八连跌、累计 −12%</b>（追平 2006 年来最长），空头浮盈 320 亿美元；周五纳指 −2.14%、标普 −1.09%、道指 −0.34%，存储概念指数 −6.28%，ARM −7%、美光/AMD −5%。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>KOSPI 周 −14.5%（八个交易日 −20%）、远期 PE 4.2x 创 1999 年来最低</b>；外资单周 −83 亿美元、半导体持仓低于均值 2.5σ；杠杆 ETF 规模从 6 月 530 亿美元峰值降至 155 亿。韩国 10Y 国债 −21bp 至 4.18%。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>中国台湾单周外资净流出 192 亿美元创历史</b>（10-15 单日 −99 亿），TAIEX 周 −4.5%；除中国外 EM 亚洲单周 −280 亿美元创纪录；印尼因 MSCI 拟将其重分类为"独立市场"单日跌 13%~14%，土耳其被冻结正面调整、跌 3%。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">A 股左侧</span><b>A 股风险偏好继续下行</b>：上证周 −2.56%、创业板 −8.90%；周五成交 1.57 万亿缩量 768 亿；红利（皖通/京沪/山高/深高）逆势领涨，科技补跌。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>AI 新云的信用分层</b>：CoreWeave CDS 利差走高（加息预期 + Anthropic 营收担忧双驱动），有息债务约 <b>350 亿美元</b>、Q2 净利息费用占收入约 <b>25%</b>，对再融资条件最敏感；Nebius 现金约 80 亿、有息债务约 85 亿，净债务负担轻，PaaS 与托管推理业务更受偏好。<b>需求端未坏</b>：B300/H200/B200 一年期租金半月分别 +11%/+3%/+5%，CoreWeave 调整后经营利润率 Q1 约 1% → Q2 约 5%。</p>
+      <p><span class="tier t2">L2</span><b>美国大型银行股连续六周下跌</b>，2008 年以来最长，KBW 银行指数较 8 月高点回落约 13%；三季度财报未扭转走势，固收业务疲弱 + 高利率引发贷款损失担忧。</p>
+      <p><span class="tier t2">L2</span><b>盈利集中度</b>：FactSet 预计 Q3"七巨头"EPS +33.2% vs 标普其余 493 家 +27.7%，但<b>剔除英伟达与 Meta 后其余五家仅 +7.5%</b>。</p>
+      <p><span class="tier t2">L2</span><b>估值</b>：MXAPJ 远期 PE 9.6x（10 年 Z 值 −2.9）、MXEF 9.4x（低于 10 年均值 2.5σ）；高盛维持 MXAPJ 12 个月目标 1,120（+35%）。</p>
+      <p><span class="tier t3">L3</span>印度 NIFTY 周 +3%（IT 板块 +12%）领涨亚洲；巴西大选后 Bovespa 累计 +7%，当周外资流入 22 亿美元。</p>
+    </div>
+    <div class="src"><b>来源：</b>财经图集 10-19 / Economic·高盛亚太周报·高盛新兴市场周报·高盛韩国周报 / 小牛·盘前热点·本周策略·国海海外 CDS 与 Neocloud</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d3)">
+    <div class="card-title"><span class="ico">🧮</span>维度三 · 经济数据（预期 vs 实际落差）</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-sell">利空·通胀</span><b>美国 9 月进口价格环比 +1.1%（预期 +0.8%）、同比 +8.1%</b>，四个月最大涨幅；非燃料项延续升势，说明<b>关税成本没有由企业消化而是转嫁</b>；燃料项受中东局势与波斯湾油轮封锁推动飙升。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>美国 9 月制造业产出 +0.3%（符合预期）、同比 +1.1%</b>，金属与机械支撑、汽车大幅下滑；工业产能利用率 <b>76.9%</b>（2023-12 来新高、预期 76.5%），但制造业与公用事业仍低于历史均值。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·中国出口链</span><b>中国 9 月出口 +36.3%、进口 +31.0%、顺差 1,335 亿美元创纪录</b>；CPI +0.9%、PPI +5.0%；社融存量 +7.1%、M2 +7.2%。高盛随之上调 2026/27 PPI 预测至 2.8%/0.3%，下调 CPI 至 0.8%/0.6%。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>欧元区 9 月 CPI 3.8%（连续第三个月加速、三年最高）</b>、核心 2.5%、环比 +0.6%；8 月商品贸易逆差 <b>161 亿欧元</b>（2023-01 来最大），能源进口量价齐升、进口 +16.7%。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>美国财政</b>：9 月预算赤字 270 亿美元（预期 290 亿），FY26 累计 <b>1.992 万亿美元</b>（+12%，历史第三高）；FY26 净利息支出 <b>1.05 万亿美元</b>创纪录（+814 亿），可交易国债平均利率五年由 1.47% 升至 <b>3.52%</b>，净利息占 GDP 3.2%。</p>
+      <p><span class="tier t2">L2</span><b>中国 Q3 GDP 今日公布</b>：路透预期 +4.4%，美银 +4.3%；美银预测 9 月工业增加值 5.3%、零售 0.1%、固投累计 −7.2%。</p>
+      <p><span class="tier t2">L2</span><b>印度 9 月出口 +22% 至 444 亿美元创同期纪录</b>，进口 +8.9%，逆差收窄至 302 亿美元；卢比疲弱压制进口购买力，央行干预+加息信号暂稳汇率。</p>
+      <p><span class="tier t3">L3</span>中国前三季度铁路发送旅客 37.1 亿人次（+4.8%，同期纪录），外国旅客 1,900 万人次（+33%）。</p>
+    </div>
+    <div class="src"><b>来源：</b>财经图集 10-19（BEA/Fed/财政部/欧盟统计局）/ Economic·高盛中国市场周报·美银亚洲经济观察 / 小牛·申万宏源宏观</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d4)">
+    <div class="card-title"><span class="ico">🥇</span>维度四 · 美元、黄金与大宗联动</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·油价/裂解</span><b>布油 109.86（+3.72%）、WTI 101.41（+3.51%）</b>，七连涨；霍尔木兹流量回落至冲突前 70%，SPR 2.83 亿桶停止释放，全球库存接近历史低位；VLCC 中东-中国 38 美元/桶、到岸成本近 140 美元。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">仓位拥挤度</span><b>CFTC 持仓（截至 10-13）</b>：美元指数净多 2.02 万张、连续四周回升、5 年 <b>75.0 分位</b>；纳斯达克 100 净多 6.78 万张、<b>93.5 分位</b>（拥挤高位）；黄金净多 11.11 万张、<b>44.2 分位</b>；白银 5,735 张、<b>17.7 分位</b>（空头创 1 月来最高）；WTI 净多 11.06 万张、43.8 分位。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>铜：结构性紧张延续</b>。JPM 维持看多，4Q26 触及 <b>14,800 美元/吨</b>、2027 年高位震荡 14,000–15,200；铝 2027 年过剩压力显现、锌待矿端约束缓解、镍围绕印尼政策区间（现约 15,000，政策偏好 16,000–18,000）。LME Week 期间铜资金与价格同步获支撑（金属未平仓价值 +125 亿美元）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·煤炭</span><b>秦港 5500 大卡 1,025 元/吨（周 +26）</b>，产地续涨；发改委山西复产保供会推动产量恢复，但安监不放松，Q4 旺季偏紧格局难改，冬储后或挑战 <b>1,100–1,150 元</b>。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>小金属</b>：锡锭 37.89 万元/吨（周 −7.51%）、库存 5,902 吨（−17.68%）；钨精矿 29.18 万元/吨（−22.55%）；锑锭 9.3 万元/吨（−8.82%）；钼铁 33.5 万元/吨（−1.47%）；钽矿 243.5 美元/磅（+0.41%）；铀 90 美元/磅（+0.28%）；<b>金属铬 77,500 元/吨、较月初涨 16,500 元</b>（涨幅最陡的隐性强品种）。</p>
+      <p><span class="tier t2">L2</span><b>油价尾部风险的第三种读法</b>（国金化工）：地缘冲突持续、尾部风险或未充分释放，但<b>全面升级概率较小</b>，高油价预计仍以<b>脉冲</b>为主；中期补库存与碳排放约束支撑化工品，金属铬涨价与化工补库同源——<b>这是"买裂解、买运费、不赌单边"的又一条旁证</b>。</p>
+      <p><span class="tier t2">L2</span><b>黄金</b>：COMEX 约 <b>4,205 美元/盎司</b>（高盛口径），高盛 12 个月目标 5,140；JPM 看 2027Q4 测试 5,000。ETF 持仓"头重脚轻"，但央行购金与去美元化使深回调被视为结构性买点。</p>
+      <p><span class="tier t2">L2</span><b>运价与农产品</b>：BDI 周 −14.4%；霍尔木兹影响经运费与燃料向农产品传导，厄尔尼诺侵蚀糖市平衡（2026/27 缺口上调至温和赤字），小麦/玉米 7 月以来分别 +12%/+15%（黑海港口遇袭）。</p>
+      <p><span class="tier t3">L3</span>欧洲天然气：10-05~11 当周西北欧+英国需求 4 亿立方米/天（周 +8%），居民采暖需求同比仍低约 20%，天气接近或略高于十年均值。</p>
+    </div>
+    <div class="src"><b>来源：</b>财经图集 10-19（CFTC/彭博）/ Economic·JPM 全球大宗商品观察·高盛亚太周报 / 小牛·中金油气·国金金属·煤炭周观点·国金化工</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d5)">
+    <div class="card-title"><span class="ico">🌍</span>维度五 · 地缘政治 · 经贸摩擦与制裁</div>
+    <p class="subblk">子块① 安全地缘</p>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·油价</span><b>霍尔木兹再度出现油轮触雷起火</b>，通行不确定性增强；海峡流量 10 月以来回落至冲突前 <b>70%</b>，现货市场缺口支撑 100 美元/桶中枢。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>美日将于 10-19 至 10-29 在日本多地举行「利剑 27」大规模联合军演</b>；以色列大选临近，特朗普公开表态<b>支持内塔尼亚胡连任</b>，并称"若以色列选错领导人，美国将不得不自己做这件事"。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv1">摘要级</span><b>俄乌：普京提议与特朗普、习近平举行峰会以结束战争</b>；泽连斯基称特朗普正逼迫乌克兰屈服；特朗普称"对俄决定很简单，正在和谈、不想做蠢事"，并指责泽连斯基袭击俄炼厂损害全球柴油市场。</li>
+    </ul>
+    <p class="subblk">子块② 经贸摩擦与制裁</p>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">中国相关·最高优先级</span><b>中国拟增列 AI 23 项、生物医药 5 项、光伏技术入出口管制目录</b>（10-16 征求意见）；同期<b>美国对钨废料实施一年出口禁令</b>、两用物项对日管制加强（氧化钇/氧化锆）。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>稀土集团化提速</b>：盛和资源向中稀发展转让 4 家冶炼分离子公司 51% 股权（1.78 万吨 REO/年）；行业供给端持续优化、集团议价能力加强，价格中枢抬升。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>美国拟逐船解除影子油轮制裁</b>：允许转让给合法运营商运输非受制裁原油，目的在增加运力、压低运价；160 艘制裁船中 Kpler 估计仅约 24 艘（15%）具备回归条件。美国议员另提法案试图阻止美俄柴油协议。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>中欧「管理式调整」</b>：大摩称中国或主动温和缩减对欧混动汽车出口，同时维持稀土快速出口许可，并对纯电乘用车反补贴税采取价格承诺等柔性安排，以换取市场准入与规则对话。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>中美关系读数</b>：高盛 GSSRUSCN 指数 <b>56</b>（中性偏积极）；大摩称元首会晤后贸易关系有所正常化，在芯片与稀土/电池形成"微妙平衡"。</p>
+      <p><span class="tier t2">L2</span><b>中国持美债降至 2008 年来最低</b>：7 月持 6,180.1 亿美元（−153.7 亿），比利时+卢森堡合计 15,307.8 亿（−192.5 亿）；当月净卖出中长期国债 76.8 亿、净买入美股 4.8 亿，合计净卖出美元资产 99.4 亿。</p>
+      <p><span class="tier t3">L3</span>美银：美元在"宏观韧性/粘性通胀"与"科技例外论风险"间拉锯，EURUSD 长期头肩顶下看 1.0882/1.06；法国 OAT-Bund 利差 138.5bp。</p>
+    </div>
+    <div class="src"><b>来源：</b>小牛·中金油气·AI 周思考·稀土点评·盘前热点 / Economic·大摩·高盛·美银 / 财经图集 10-19</div>
+  </div>
+
+  <div class="card dim-card" style="border-top-color:var(--d6)">
+    <div class="card-title"><span class="ico">🗓️</span>维度六 · 节假日与季节性</div>
+    <ul class="pts">
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-watch">政策窗口</span><b>2026 金融街论坛年会 10-19 至 10-22 在北京举办</b>，全球 40 多个国家和地区 400 余位嘉宾出席；同日国新办就"加快推进科技兴商"举行发布会——<b>本周是政策信号最密集的四天</b>。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><span class="badge f-buy">利多·煤炭</span><b>冬储与迎峰度冬启动</b>：秦港 5500 大卡 1,025 元/吨、周 +26，冬储补库接力后或挑战 1,100–1,150 元，年内仍有刷新年内高点可能；欧洲天然气进入取暖季，HDD 回升但同比仍偏暖。</li>
+      <li><span class="tier t1">L1</span><span class="badge lv0">原文级</span><b>日历事件密集</b>：11-03 美国中期选举（共和党/民主党路径对财政、关税、监管影响分化）；12-07 至 12-13 第十六届中国航展（珠海，参展装备超 3,000 件）；双 11 首日预售启动。</li>
+    </ul>
+    <div class="more">
+      <p><span class="tier t2">L2</span><b>厄尔尼诺时间表</b>（申万宏源）：本轮或为史上最强、持续 1 年以上，<b>11–12 月达峰</b>，影响峰值滞后至 2027 年夏季；主要影响我国蔬菜/水稻、全球大豆/铜。<b>2026 冬季：菜价涨、果价跌、糖价涨、豆价跌、铜价涨、煤价跌</b>，通胀总效应或为正。</p>
+      <p><span class="tier t2">L2</span><b>冰雪季</b>：2025–26 冰雪季全国参与 3.08 亿人、冰雪旅游 2.2 亿人次、产业规模破万亿，运动消费 2,050 亿元（+9.3%）。</p>
+      <p><span class="tier t3">L3</span>本周财报日历：META、特斯拉、德州仪器、Lam Research；中国 9 月经济数据与 Q3 GDP 于今日起陆续公布。</p>
+    </div>
+    <div class="src"><b>来源：</b>小牛·盘前热点·煤炭周观点·申万宏源宏观 / Economic·JPM 北美信用（中期选举五渠道）/ 财经图集 10-19</div>
+  </div>
+
+  <!-- 关键人物言论 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🗣️</span>关键人物言论 · 说人话版（按内容归口）</div>
+    <p class="subblk">归口维度一 · 美联储官员</p>
+    <ul class="pts">
+      <li><span class="who">沃什（美联储理事）：</span>"未释放进一步加息信号"，同时肯定 AI 长期增长潜力。<b>说人话：</b>他既不想再加息，也不想否认 AI——<b>等于给"10 月不加息"发了软许可</b>，这也是小金属与锡价周五反弹的直接由头。</li>
+      <li><span class="who">鲍曼：</span>"此刻不感到采取行动的紧迫性"。<span class="who">沃什：</span>对经济符合预期表示乐观。<b>说人话：</b>两位官员在禁声期前集体放软，把 10 月加息概率往下压——但这也意味着<b>如果通胀再来一次超预期，Fed 的信誉成本更高</b>。</li>
+    </ul>
+    <p class="subblk">归口维度五 · 经贸摩擦与制裁</p>
+    <ul class="pts">
+      <li><span class="who">特朗普（谈中国/柴油）：</span>呼吁中国增加成品油供应；称与俄罗斯的柴油安排"旨在维持谈判进程"。<b>说人话：</b>他在用"外交换柴油"，目标是<b>压住美国国内柴油价格</b>——这是中期选举前最直接的政治账，也解释了为什么油价越高、政策压价动作越密。</li>
+      <li><span class="who">特朗普（谈以色列/伊朗）：</span>"伊朗已被系统性地摧毁……除非他们迅速改变做法，否则我们很快就会完成这项任务"，并全力支持内塔尼亚胡连任。<b>说人话：</b>这句话把<b>以色列选举和美国中东政策绑在一起</b>，意味着 11 月前后地缘风险溢价不会自然消退。</li>
+    </ul>
+    <p class="subblk">归口维度五 · 安全地缘</p>
+    <ul class="pts">
+      <li><span class="who">泽连斯基：</span>称特朗普正逼迫乌克兰向俄罗斯屈服。<span class="who">普京：</span>提议与特朗普、习举行峰会结束战争。<b>说人话：</b>三方都在抢"和平进程"的主导权，<b>但袭击炼厂的动作说明战场并未降温</b>——谈判预期与供应中断可以同时存在，这正是油价"下有底、上有顶"的政治来源。</li>
+    </ul>
+    <p class="subblk">归口维度二 · 市场与产业（跨源）</p>
+    <ul class="pts">
+      <li><span class="who">瑞·达利欧：</span>当 GDP、股市、财富与地缘期望高度集中于 AI 单一领域，资源配置失衡会使泡沫破裂风险指数级放大；"伟大的技术"≠"绝佳的投资"；财政赤字须压到 GDP 的 3% 以下。<b>说人话：</b>他讲的是<b>"技术成功≠股东赚钱"</b>——AI 越成功，越可能通过降价与竞争把利润让出去，同时债务的利息还在滚。</li>
+      <li><span class="who">刘煜辉：</span>"二阶导为负杀估值"（8-08 已提示）；"中国制造多居于 AI 产业链中上游，牛鞭效应躲不开"；"消费没有诀窍，只有减税和发钱"。<b>说人话：</b>中国在 AI 链条里卖铲子，<b>下游砍单会被上游放大</b>——所以 A 股的 AI 硬件跌得比美股更狠；而内需唯一有效的药方，他认为是财政直达居民。</li>
+      <li><span class="who">黄仁勋：</span>"连产品都没见过，你能向谁下 500 亿、1000 亿美元的订单？实际上只有我们一家。"<b>说人话：</b>这是对"订单能见度"的自信，也侧面说明<b>二线算力供应商的订单质量要打折</b>——研报平权提醒 AMD Helios 大规模交付可能要到 2027 下半年。</li>
+    </ul>
+    <div class="src"><b>来源：</b>小牛·国金金属·盘前热点·申万宏源 / Economic·JPM 美国国债·JPM 商品 / 刘煜辉之宏观高维 / 研报平权</div>
+  </div>
+
+  <!-- 四象限总结 -->
+  <div class="summary">
+    <h2>🧭 四象限总结 · 已定价 vs 未定价</h2>
+    <div class="sum-grid">
+      <div class="sum-item">
+        <h4>① 已定价 · 利空｜AI 硬件的估值</h4>
+        <p>费半八连跌 −12%、KOSPI 远期 PE 4.2x 创 1999 年来最低、台股外资创纪录流出。市场已经把"贵"这件事杀完了，<b>再跌需要新的坏消息</b>——而新坏消息的来源是信用，不是估值。</p>
+      </div>
+      <div class="sum-item">
+        <h4>② 已定价 · 利多｜油价的地缘溢价</h4>
+        <p>布油 110 美元、七连涨、霍尔木兹 70% 通行。地缘溢价已被充分计入，<b>反而要提防"柴油外交+影子油轮松绑"带来的回吐</b>；裂解价差与运费比原油更抗跌。</p>
+      </div>
+      <div class="sum-item">
+        <h4>③ 未定价 · 利空｜AI 的信用约束</h4>
+        <p>云商利差 148bp 为 7 月来最宽，但 JPM 仍建议"逢调整买入"、高盛仍超配半导体。<b>卖方共识还没转向信用框架</b>——这是最可能被下修的一环，触发点是四大 CSP 的 2027 capex 指引（市场要 ≥50%，一致预期仅 40–50%）。</p>
+      </div>
+      <div class="sum-item">
+        <h4>④ 未定价 · 利多｜中国战略小金属与稀土</h4>
+        <p>出口管制扩至 AI/生物医药/光伏 + 稀土股权向中稀集中 + 美国钨废料禁令，<b>三重供给收缩同时落地，而钨 −22.55%、锑 −8.82% 的价格还在跌</b>。政策已定价、商品未定价，这是本周最明确的时间差。</p>
+      </div>
+    </div>
+    <div class="takeaway" style="background:rgba(255,255,255,.16); border-color:rgba(255,255,255,.3); color:#fff; margin-top:14px;">
+      <b style="color:#fff;">一句话收口：</b>本周不要问"AI 还行不行"，要问<b style="color:#fff;">"AI 还能不能借到便宜的钱"</b>；不要问"油价还能涨多少"，要问<b style="color:#fff;">"美国愿意为压油价付出多少政治成本"</b>；不要问"A 股见底没有"，要问<b style="color:#fff;">"3,650 守不守得住"</b>。三个问题的答案都不在今天，而在 11-04 财政部公告、四大 CSP 财报和今日 Q3 GDP 之后的 9 月单月数据里。
+    </div>
+  </div>
+
+  <!-- 审计表 -->
+  <div class="card">
+    <div class="card-title"><span class="ico">🔍</span>数据源可读性审计表（每期必附 · 本期实测 2026-10-19 08:55 / 09:03 增量复核）</div>
+    <table>
+      <tr><th style="width:26%">数据源</th><th style="width:13%">状态</th><th style="width:13%">本期引用</th><th style="width:48%">说明</th></tr>
+      <tr><td>小牛研报纪要</td><td>✅ 可读</td><td>27 次</td><td>20261018 复盘 / 本周策略 1019 / 盘前热点 / 煤炭周观点 / 中金油气 / 国金交运 / 稀土与小金属 / 生物医药与 AI 周思考 / 国海海外 CDS 与 Neocloud / 国金化工（09:03 增量补录 3 条）</td></tr>
+      <tr><td>Economic国际投行研报</td><td>✅ 可读</td><td>22 次</td><td>高盛（中国市场/亚太/新兴/韩国）4 篇 + 美银（亚洲经济/全球外汇/全球利率）3 篇 + JPM（美债/信用/商品）3 篇 + 大摩（中国展望）1 篇；署名机构另计：高盛 30 / JPM 28 / 美银 23 / 大摩 12（同一机构可能被多源转引）</td></tr>
+      <tr><td>财经图集</td><td>✅ 可读</td><td>23 次</td><td>10-19 早报 25,846 字 topic+detail 全文深读（中国/美国/欧洲/亚太/新兴/全球/大宗七章）</td></tr>
+      <tr><td>研报平权</td><td>✅ 可读</td><td>7 次</td><td>CoreWeave 多空 / 黄仁勋与 Helios / OpenAI 与 Anthropic 估值口径</td></tr>
+      <tr><td>刘煜辉之宏观高维</td><td>✅ 可读</td><td>7 次</td><td>二阶导杀估值、牛鞭效应、消费药方（窗口内仅短评，原文级）</td></tr>
+      <tr><td>404K Semi-Ai</td><td>✅ 可读</td><td>5 次</td><td>宏观早报 10-18/10-19 仅标题级（正文未落盘）+ JPM 算力测算转引</td></tr>
+      <tr><td>Orange期权</td><td>✅ 可读</td><td>0 次</td><td><b>可用而未引用</b>：定位期权策略与波动率交易，与六维宏观框架不符</td></tr>
+      <tr><td>海外大模型</td><td>❌ 不可读</td><td>0 次</td><td>group+topics 报错（成员体验到期/无 AI 读取权限）、topic+search n=0</td></tr>
+      <tr><td>其余 14 个已加入星球</td><td>❌ 不可读</td><td>0 次</td><td>三思门 / 无极宏观 / CF40研究 / 泷韬 / 地平线 / 180K 等均未开通 AI 读取权限（双接口均 LOCKED）</td></tr>
+      <tr><td>ima·源哥会员专享</td><td>❌ 未启用</td><td>0 次</td><td>连接器未安装（连续第十期）；彭博/路透中文原稿层缺失</td></tr>
+      <tr><td>ima·XZ服务器</td><td>❌ 未启用</td><td>0 次</td><td>连接器未安装；外资行 PDF 原文层缺失</td></tr>
+      <tr><td>ima·每日财讯情报库</td><td>❌ 未启用</td><td>0 次</td><td>连接器未安装；A 股复盘与外资流向独家层缺失</td></tr>
+    </table>
+    <div class="takeaway danger">
+      <b>内审自检：</b>① 六维是否各有 L1？→ 是（3/4/4/4/7/3，合计 25 条）。② 是否有中国相关条目？→ 是（校验器口径命中 86 处，一级要点 2/5/6 均以中国为核心）。③ 每个可用源是否至少引用一次？→ 是，6/6；未引用的 Orange期权已写明原因。④ 一级要点是否都 ≥3 源交叉？→ 是（5/3/3/3/3+/3）。⑤ 口径冲突是否并列披露？→ 是（4 处，另登记 2 处小口径差）。⑥ <b>09:03 增量复核</b>：08:55 后新增 11 条，其中 3 条实质补录（国海海外 CDS/Neocloud 信用分层、国金化工油价脉冲判断、金属铬 77,500 元/吨较月初 +16,500），其余为家电/非银/新能车/建材等行业观点，不入六维框架。
+    </div>
+  </div>
+
+  <div class="footer-tags">
+    <span>#AI信用定价</span><span>#费半八连跌</span><span>#KOSPI_4.2x</span><span>#出口管制技术化</span><span>#稀土集团化</span><span>#钨废料禁令</span><span>#油价110</span><span>#柴油外交</span><span>#美债牛平</span><span>#Q3GDP待验</span><span>#3650防线</span><span>#金融街论坛</span>
+  </div>
+
+</div>
+</body>
+</html>

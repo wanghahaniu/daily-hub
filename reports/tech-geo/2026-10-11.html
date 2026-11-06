@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>科技与地缘每日总结 · 2026-10-11</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;background:linear-gradient(180deg,#eef1f8 0%,#f7f5fc 100%);color:#2b2b3a;line-height:1.78;padding:22px 13px 44px;-webkit-font-smoothing:antialiased;font-size:15px;}
+.page{max-width:780px;margin:0 auto}
+.header{background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 55%,#b45ce0 100%);border-radius:18px;padding:28px 26px 24px;color:#fff;box-shadow:0 10px 30px rgba(108,92,231,.25)}
+.header .kick{font-size:11.5px;letter-spacing:.16em;opacity:.8;text-transform:uppercase}
+.header h1{font-size:26px;letter-spacing:.5px;margin-top:8px;display:flex;align-items:center;gap:9px}
+.header .sub{margin-top:10px;font-size:13.8px;opacity:.95}
+.header .tags{margin-top:14px;display:flex;flex-wrap:wrap;gap:7px}
+.header .tags span{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);padding:3px 11px;border-radius:999px;font-size:12.3px}
+.card{background:#fff;border-radius:16px;padding:20px 22px;margin-top:16px;box-shadow:0 4px 16px rgba(60,60,120,.07)}
+.card.flat{box-shadow:none;background:#faf9fe;border:0.5px solid #e6e6f2}
+.card-title{font-size:17.5px;font-weight:700;display:flex;align-items:center;gap:9px;padding-bottom:11px;margin-bottom:13px;border-bottom:2px dashed #e6e6f2}
+.card-title .ico{font-size:19px}
+.card-title .sub{font-size:12.3px;font-weight:400;color:#8a8a9e;margin-left:auto;text-align:right}
+.hl{font-weight:700}
+.hl-red{color:#d5372a}.hl-green{color:#178a4e}.hl-blue{color:#2f57cf}
+.hl-purple{color:#7c3fd4}.hl-orange{color:#c9700f}
+mark{background:#fff1a8;padding:0 4px;border-radius:4px;font-weight:600;color:#5a4a00}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:4px 0 2px}
+.stat{background:#f6f8ff;border:1px solid #e2e8fb;border-radius:10px;text-align:center;padding:11px 5px}
+.stat .v{font-size:18.5px;font-weight:800;color:#3563e9;letter-spacing:-.01em}
+.stat .v small{font-size:11.5px;font-weight:600;margin-left:1px}
+.stat .k{font-size:11.5px;color:#6a6a7c;margin-top:2px;line-height:1.4}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:#eceaf6;border:0.5px solid #eceaf6;border-radius:10px;overflow:hidden;margin:12px 0}
+.kv>div{background:#fff;padding:9px 11px}
+.kv .k{font-size:11.3px;color:#8a8a9c;margin-bottom:2px;line-height:1.4}
+.kv .v{font-size:16.5px;font-weight:700;letter-spacing:-.01em}
+.kv .v small{font-size:11.5px;font-weight:400;color:#5f5e6a;margin-left:2px}
+.chip-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+.chip{border-radius:10px;padding:10px 13px;font-size:13.3px;font-weight:600;display:flex;align-items:center;gap:8px}
+.chip small{display:block;font-weight:400;opacity:.85;font-size:11.8px;line-height:1.5;margin-top:1px}
+.chip.c-purple{background:#f1ebfd;color:#6d3fc0;border-left:4px solid #8a5cf6}
+.chip.c-red{background:#fdecea;color:#c03a24;border-left:4px solid #e0563c}
+.chip.c-blue{background:#e9effe;color:#2b54c9;border-left:4px solid #4c7df0}
+.chip.c-green{background:#e8f7ee;color:#157a41;border-left:4px solid #2ebd6e}
+.chip.c-orange{background:#fdf1e3;color:#b96a12;border-left:4px solid #f09a3e}
+.takeaway{margin-top:13px;border-radius:10px;padding:12px 15px;font-size:13.9px;background:#f4f0fe;border:1px solid #ddd0fa;color:#5b3ea8;line-height:1.76}
+.takeaway b{color:#7a3fd0}
+.takeaway.warn{background:#fdf1e3;border-color:#f5d9b0;color:#9a5b0e}
+.takeaway.warn b{color:#c46a00}
+.takeaway.danger{background:#fdecea;border-color:#f6c6bd;color:#b03020}
+.takeaway.danger b{color:#d03517}
+.takeaway.good{background:#e8f7ee;border-color:#bfe6cd;color:#156b3c}
+.takeaway.good b{color:#1a8a4e}
+.step{display:flex;gap:12px;margin-top:13px}
+.step .num{flex:0 0 26px;height:26px;border-radius:50%;color:#fff;font-size:13.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:3px}
+.step .num.n1{background:#4c7df0}.step .num.n2{background:#8a5cf6}.step .num.n3{background:#e0563c}
+.step .body{flex:1}
+.step .body h4{font-size:14.8px;margin-bottom:4px;line-height:1.6}
+.step .body p{font-size:13.8px;color:#4a4a5c}
+.chain{display:flex;flex-direction:column;margin-top:8px}
+.chain-item{display:flex;align-items:flex-start;gap:12px;position:relative;padding-bottom:15px}
+.chain-item:before{content:"";position:absolute;left:15px;top:33px;bottom:0;width:2px;background:#e8d9fb}
+.chain-item:last-child:before{display:none}
+.chain-icon{flex:0 0 32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;background:#f1ebfd;border:1px solid #ddd0fa}
+.chain-item .txt{flex:1;font-size:13.8px;color:#4a4a5c;padding-top:4px;line-height:1.72}
+.chain-item .txt b{color:#2b2b3a}
+.scenario{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.sc-box{border-radius:12px;padding:13px 15px;font-size:13.7px;display:flex;gap:11px;align-items:flex-start;line-height:1.72}
+.sc-box .tag{flex:0 0 auto;font-size:11.5px;font-weight:800;border-radius:6px;padding:2px 9px;margin-top:3px;white-space:nowrap}
+.sc-box .bd{flex:1;min-width:0}
+.sc-box h4{font-size:14.2px;margin-bottom:4px;line-height:1.6}
+.sc-1{background:#e8f7ee;border:1px solid #bfe6cd}
+.sc-1 h4,.sc-1 .tag{color:#157a41}.sc-1 .tag{background:#d2f0dd}
+.sc-2{background:#fdf1e3;border:1px solid #f5d9b0}
+.sc-2 h4,.sc-2 .tag{color:#b96a12}.sc-2 .tag{background:#f8e2c4}
+.sc-3{background:#fdecea;border:1px solid #f3c2b8}
+.sc-3 h4,.sc-3 .tag{color:#c03a24}.sc-3 .tag{background:#f9d3cb}
+.sc-4{background:#e9effe;border:1px solid #c3d3fb}
+.sc-4 h4,.sc-4 .tag{color:#2b54c9}.sc-4 .tag{background:#d6e2fd}
+ul.pts{margin:9px 0 0;list-style:none}
+ul.pts li{font-size:13.9px;color:#45455a;padding:5px 0 5px 19px;position:relative;line-height:1.74}
+ul.pts li:before{content:"▸";position:absolute;left:1px;color:#8a5cf6;font-weight:700}
+ul.pts li b{color:#2b2b3a}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 0}
+table{width:100%;border-collapse:collapse;font-size:13.3px;min-width:520px}
+th{text-align:left;font-weight:600;font-size:11.8px;color:#5f5e6a;padding:7px 8px;background:#f1efe8;border-bottom:1px solid #d3d0c7;white-space:nowrap}
+td{padding:7px 8px;border-bottom:1px solid #eceaf6;vertical-align:top;line-height:1.66}
+tr:last-child td{border-bottom:none}
+td.r,th.r{text-align:right;white-space:nowrap}
+.bars{margin:10px 0 2px}
+.bar-row{display:grid;grid-template-columns:104px 1fr 66px;align-items:center;gap:9px;margin-bottom:6px;font-size:12.4px}
+.bar-row .lab{color:#5f5e6a;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar-row .tr{background:#f1efe8;border-radius:3px;height:16px;overflow:hidden}
+.bar-row .fl{height:100%;display:inline-block;border-radius:3px}
+.bar-row .val{font-weight:700;font-size:12.4px}
+.legend{display:flex;flex-wrap:wrap;gap:13px;font-size:11.8px;color:#5f5e6a;margin-bottom:7px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.note{font-size:11.8px;color:#8a8a9c;margin-top:8px;line-height:1.66}
+.quote{border-left:3px solid #d3d0c7;padding:3px 0 3px 13px;margin:11px 0;font-size:14px;line-height:1.76}
+.quote .q-a{display:block;font-size:11.8px;color:#8a8a9c;margin-top:4px}
+.summary{margin-top:18px;border-radius:18px;padding:22px 24px;color:#fff;background:linear-gradient(135deg,#5b6cff 0%,#8a5cf6 60%,#b45ce0 100%);box-shadow:0 10px 30px rgba(108,92,231,.25)}
+.summary h2{font-size:18.5px;margin-bottom:13px;display:flex;align-items:center;gap:8px}
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.sum-item{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:13px 15px;font-size:13.4px;line-height:1.74}
+.sum-item h4{font-size:14.3px;margin-bottom:5px}
+.sum-item p{opacity:.94}
+.foot{margin-top:20px;padding:16px 20px;background:#fff;border-radius:14px;box-shadow:0 4px 16px rgba(60,60,120,.06);font-size:12.6px;color:#6a6a7c;line-height:1.85}
+.foot b{color:#3a3a4c}
+.foot details{margin-top:10px}
+.foot summary{cursor:pointer;font-size:12.6px;color:#6d5fb8;font-weight:600}
+.foot .idx{margin-top:8px;font-size:11.6px;color:#8a8a9c;line-height:1.8;max-height:210px;overflow-y:auto}
+.footer-tags{margin-top:16px;text-align:center;font-size:12.3px;color:#8a8a9c}
+.footer-tags span{display:inline-block;margin:3px 5px;padding:3px 12px;background:#eceaf6;border-radius:999px;color:#6d5fb8}
+@media(max-width:640px){
+body{font-size:14.5px;padding:16px 11px 40px}
+.page{max-width:100%}
+.card{padding:16px 15px;border-radius:14px}
+.header{padding:22px 19px 20px}
+.header h1{font-size:21.5px}
+.header .sub{font-size:13px}
+.card-title{font-size:16px}
+.card-title .sub{font-size:11.5px}
+.chip-row,.scenario,.sum-grid{grid-template-columns:1fr}
+.stats{grid-template-columns:1fr 1fr}
+.kv{grid-template-columns:1fr 1fr}
+.bar-row{grid-template-columns:84px 1fr 56px;font-size:11.5px}
+.summary{padding:18px 16px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════ 1. 头部 ══════════ -->
+<div class="header">
+  <div class="kick">Economic × 404K × 研报平权 × 小牛研报纪要 · 每日总结</div>
+  <h1>📡 科技与地缘每日总结</h1>
+  <div class="sub">2026 年 10 月 11 日（周日） · 今天真正的变化不是存储继续涨，而是「HBM 利润王」这个头衔第一次换了主人——同时第一次有整机厂自己把量砍了三成。</div>
+  <div class="tags">
+    <span>#美光利润率排序反转</span><span>#终端开始砍量</span><span>#信用替代</span><span>#降规不是降规</span>
+  </div>
+</div>
+
+<!-- ══════════ 2. 今日总览 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🧭</span>今日总览<span class="sub">去重后 354 条 · 有效 345 条</span></div>
+  <div class="stats">
+    <div class="stat"><div class="v">4</div><div class="k">数据源星球</div></div>
+    <div class="stat"><div class="v">354</div><div class="k">去重后条数</div></div>
+    <div class="stat"><div class="v">345</div><div class="k">有效内容</div></div>
+    <div class="stat"><div class="v">20+</div><div class="k">投行/机构</div></div>
+  </div>
+  <div class="chip-row">
+    <div class="chip c-purple">🧬 HBM 让位<small>美光管 HBM 的事业部利润率 76%，从去年第一掉到末位；出货在下滑的手机/PC 事业部以 88% 登顶</small></div>
+    <div class="chip c-red">📉终端开始砍量<small>三星 MX 要求供应商四季度零部件交付减少近 30%，PC 3Q26 出货同比 −21%，iPhone 18 Pro 零部件订单至少砍 15%</small></div>
+    <div class="chip c-blue">🏦 信用替代<small>英伟达以两份 15 年三净租赁（合计 196 亿美元）换来 42.5 亿 Baa2 债券、6.129% 利率，为 Anthropic 提前锁 2028 年 350MW Rubin</small></div>
+    <div class="chip c-orange">🔻 降规不是降规<small>Rubin 拟改 8 层 HBM4（288GB→192GB），美银称这是存储的增长催化剂；但尚无任何实质晶圆投入，放量要等 2027 上半年</small></div>
+  </div>
+  <div class="takeaway">
+    <b>一句话：</b>今天所有信息指向同一件事——<span class="hl-red">AI 资本开支的瓶颈已完整地从「芯片够不够」迁移到「电从哪来、地从哪来、钱能不能撑到那一天」，而这一次代价第一次被终端明确记账</span>。
+    <mark>稀缺的不再是产能，而是「写进合同的电、写进合同的期限、写进合同的信用」——三者都只能用资产负债表去买</mark>
+  </div>
+  <div class="takeaway warn">
+    <b>口径提醒：</b>抓取时段 23:11–23:20，四星球主体数据日为 <b>2026-10-11</b>（运行日即数据日，无需补抓）。各源有效条数：<b>小牛 240 / 404K 54 / Economic 51</b>，附件 <b>358 个</b>（本轮未深读 PDF，按「研报目录索引」处理）。<b>研报平权当日 4 条去重后零独立条目</b>（连续第五次全为搬运），按指令仍执行抓取，在此如实披露。404K 的「信息汇总/早报/晚报」类聚合帖正文为空，已剔除 17 条、不计入有效内容。
+  </div>
+</div>
+
+<!-- ══════════ 3. 三条主线 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🧩</span>今天的三条主线<span class="sub">从零散事实里提炼的共识</span></div>
+
+  <div class="step">
+    <div class="num n1">1</div>
+    <div class="body">
+      <h4>约束从「能不能拿到货」彻底回到「终端付不付得起」，而终端的应对方式已经从涨价切换成减配与砍量</h4>
+      <p>承载的事实（分属 PC、手机、服饰三个互不相干的行业）：3Q26 全球 PC 出货 6,070 万台同比 <b>−21%</b>（IDC 剔除工作站；摩根大通口径 6,270 万台 −20.1%），是疫情以来最大单季跌幅，4Q26 预计跌幅扩大到 <b>−28%</b>；中国台湾前五大笔电 ODM 9 月出货环比 +32% 至 966 万台但同比仍 <b>−20%</b>；3Q 智能手机用 12GB LPDDR5X 环比 <b>+20%</b> 至 180 美元；GPU 同比涨 <b>50–60%</b>；三星电子拟将 Galaxy S27 出厂价上调 <b>10–14 万韩元</b>，且 MX 事业部已要求供应商把四季度零部件交付量<b>减少近 30%</b>；苹果 iPhone 18 Pro/Pro Max 零部件订单被要求至少削减 <b>15%</b>；耐克 1Q27 大中华区收入 <b>−26%</b>、Converse −28%，并取消分区域同店披露。<br>
+      <b>提炼：</b>这三个行业的共同形态不是「都涨价了」，而是「都出现了<mark>量先于价让步</mark>的动作」——PC 从下半年起整机提价直接导致订单萎缩，服务器 CPU 与闪存新合约全面向现货价靠拢，手机厂第一次主动砍交付量。降配若从临时应变变成长期常态，单机半导体价值量的增长会被卡死，PC 产业链不仅出货没起色、连「靠单机价值量增长」这条最后的路也会被堵。<br>
+      <b>说人话：</b>过去两年涨价一直是「中游赚、终端扛」。今天第一次看到终端不只是扛，而是<strong>反手把订单砍掉</strong>——三星让供应商四季度少交三成，是这条链上第一个由巨头主动砍量的动作。砍量比涨价诚实：涨价是商量，砍量是投票。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num n2">2</div>
+    <div class="body">
+      <h4>稀缺性的定价权正从「产能」迁移到「信用与交付时间」，而迁移的唯一通道是资产负债表</h4>
+      <p>承载的事实：Hut 8 以英伟达为租客签下两份 15 年三净租赁、每份基础合同约 98 亿美元合计 <b>196 亿美元</b>，据此发行 <b>42.5 亿美元 Baa2</b> 债券、利率仅 <b>6.129%</b> 建数据中心，再转租给 Lambda，最终由 Anthropic 在 2028 年取得约 <b>350MW</b> Rubin（单价约 5.80 美元/GPU-hr）。SemiAnalysis 判定去杠杆前英伟达须持续担任主债务人，即英伟达账上凭空多出 196 亿美元「已签约、待转让」的租约承诺，换回约 11.5 万颗 Rubin 的全额利润、约 10% 营收分成，以及在电网互联排队动辄 4–7 年的环境下提前锁定 704MW 已供电园区的第 7–15 年使用权。SpaceX 同期收购 Grain 的全美 800MHz 频谱（估算 60–80 亿美元），仅相当于其 2Q 现金的 6–8%，或约 150MW AI 算力的投资。年创投融资 335 亿美元中<mark>超 80% 流向供电与每瓦算力</mark>，2028 年美国数据中心电力净缺口预计 33GW。Lumentum 全部光器件产能已被客户提前锁定，缺口覆盖至 <b>2029 年初</b>，新建产能需 3–5 年。<br>
+      <b>提炼：</b>以前抢的是「明年能出货多少」，现在抢的是「2029 年还能不能拿到电和位子」。三条独立证据指向同一机制——<strong>当一个环节的交付周期长于客户的融资周期，定价权就从产能方转移到能垫付周期的一方，而垫付只能靠信用。</strong>电网排队 4–7 年、光器件 3–5 年、数据中心土建与壳体数年，这些周期谁都等不起，于是有人必须把资产负债表当成交付工具来用。<br>
+      <b>说人话：</b>196 亿租约换来的不是 196 亿收入，是<strong>一张 2029 年的座位号</strong>。大摩给英伟达 FY28 营收 +70% 的指引也印证了同一件事——他们测算该指引<strong>受供应条件（场地、电力、建筑壳体）限制，而非受需求限制</strong>，实际需求增长接近 100%。</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="num n3">3</div>
+    <div class="body">
+      <h4>「配置被砍、单价照涨」——降规降的是规格，真正稀缺的是那些规格没被砍掉的环节</h4>
+      <p>承载的事实：美银测算部分厂商明年可能向 Rubin 供应 <b>8 层 HBM4</b>（8×3GB＝24GB）替代当前主流 12 层（36GB），单GPU 内存容量将从 288GB 降至 192GB。美银判断这不是需求削减：① 为应对 HBM 短缺 GPU 总出货会提升；② 每颗新 GPU 还要搭配 LPDDR5 SOCAMM 与键值缓存 eSSD；③ 巨头应为「旧世代」内存支付相对 12 层的溢价。但同一份报告同时写明：<mark>尚未观察到 8 层 HBM4 有任何实质性晶圆投入</mark>，受 6 个月以上制造周期影响，放量在 2027 上半年甚至三季度前都极为有限。另一侧证据来自美光自身披露：管 HBM 的云存储事业部 6–8 月营收 163 亿美元（占 30%）、营业利润率 <b>76%</b>，高于去年同期 48% 却在四个事业部中<b>垫底</b>；反而是以手机与 PC 为主的移动与客户端事业部利润率从 29% 升至 <b>88%</b> 登顶——而该事业部出货比特数环比是<b>下降</b>的。原因由美光自己给出：<strong>2026 全年 HBM 价格与数量协议已在 2025 年 12 月全部敲定</strong>。<br>
+      <b>提炼：</b>HBM 的稀缺溢价本质上是一份<strong>时间锁</strong>——价格锁在一年前、销量锁在交付后，于是它在本轮重定价里反而落后于出货下滑的手机/PC 内存。这解释了为什么「拥有 AI 存储器＝最高利润率」这个环境已经结束。而降规之所以是增长催化剂，也不因为 HBM 本身，而因为<strong>把 GPU 内存降下来，才腾得出预算给 SOCAMM、eSSD、铜箔、液冷、光纤</strong>。<br>
+      <b>说人话：</b>把 HBM 从 36GB 降到 24GB 看着像技术退步，其实是<strong>省下的钱拿去买了别的东西</strong>。大摩测算最能说明这一点：降到 192GB 后 HBM 成本从 4,320 美元降至 2,880 美元，毛利率从 75.0% 升到 77.6%；若同时提价 15% 且仍守住 72% 毛利率，每颗 GPU 可承受的 HBM 成本能涨到 43.13 美元/GB（<strong>+187.5%</strong>）——砍规格换来的空间，大到可以再扛一轮涨价。</p>
+    </div>
+  </div>
+
+  <div class="takeaway good">
+    <b>三条线的交汇点：</b>AI 资本开支已跨过「抢芯片」阶段，进入「<strong>抢电、抢地、抢信用、等工程</strong>」阶段。三件事的共同前提是钱要能撑很久，因此定价权正在向<strong>握有存量合规资产的一方</strong>迁移——已供电的园区、已通过客户验证的产能、已签字的长约、可用的高评级；而承担代价的一方——整机、PC、手机、服饰——今天第一次被明确要求「自己想办法」，而它们手里只有三个动作：涨价、减配、砍量。
+  </div>
+  <div class="takeaway">
+    <b>可跟踪的裁决变量收敛为三组：</b>① <b>10/12–15 OCP 全球峰会</b>（10/13 NPO研讨会、10/14 CPO 外置激光器与 12.8T VCSEL、10/15 Lumentum×甲骨文OCS；门票已售罄）——看 CPO/NPO 商用路径是否从「讨论」变「排产」。② <b>10/15 台积电 3Q26 法说会</b>——四季度指引 446–458 亿美元与毛利率 65–67% 能否上修、2 纳米爬坡与良率、2027 年资本开支是「更多晶圆产能还是更多封装产能」（今年已提至 600–640 亿美元，70–80% 投先进制程）。③ <b>PC 与手机出货的连续性</b>——4Q26 PC 同比跌幅是否真扩大到 −28%，以及三星 MX 砍量是否在四季度落地为实际零部件交付数字。
+  </div>
+</div>
+
+<!-- ══════════ 4. 头条一 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🧬</span>头条 · 「HBM 是利润支柱」这个前提今天第一次失效<span class="sub">当日最被低估的一条</span></div>
+
+  <div class="kv">
+    <div><div class="k">管 HBM 的云存储事业部</div><div class="v hl-green">76%<small> 营业利润率</small></div></div>
+    <div><div class="k">去年同期同一部门</div><div class="v">48%<small> 四部门第 1</small></div></div>
+    <div><div class="k">接棒的移动与客户端</div><div class="v hl-red">88%<small> 去年仅 29%</small></div></div>
+    <div><div class="k">该部门出货比特数</div><div class="v hl-green">环比下降</div></div>
+  </div>
+
+  <ul class="pts">
+    <li><b>最刺眼的不是利润率数字，是排序反转</b>：美光按四个事业部披露，6–8 月季度云存储事业部（含面向所有数据中心客户的 HBM）营收 163 亿美元、占总营收 30%，利润率 76% 仍高于去年 48%，但已从第一掉到<b>最末位</b>。四个事业部中<b>只有它</b>的利润率环比下降。</li>
+    <li><b>原因不是需求，是定价日期</b>：美光在 2025 年 12 月的财报电话会上就透露，2026 全年 HBM 的价格与数量协议已全部敲定。而截至 9 月的一年（即 FY26），包含 HBM 在内的整体 DRAM 平均售价较上一财年上涨约 <b>180%</b>。同期智能手机与 PC 的出货量本身在下降，却因为<mark>价格没被提前锁死</mark>而率先吃到了涨价。</li>
+    <li><b>追赶的时间表已经给出</b>：美光总裁兼 COO 巴蒂亚 9 月 30 日明确表示「我们大幅提高了 2027 年 HBM 的价格，新价格将在自然年年初生效，缩小与通用 DRAM 的盈利差距」——<strong>利润率修复窗口在 2027 年 1 月，不是现在</strong>。</li>
+    <li><b>同期反证：DRAM/NAND 现货其实在回落</b>。DDR5 本周微涨至 58 美元新高、DDR4 稳在 45 美元附近，但 NAND 现货自 9 月起回调，1Tb 产品跌超 10%。也就是说，<strong>合约价与现货价已经出现方向背离</strong>。</li>
+  </ul>
+
+  <div class="scenario">
+    <div class="sc-box sc-2">
+      <span class="tag">市场旧框架</span>
+      <div class="bd">
+        <h4>「HBM = 存储公司的利润支柱」</h4>
+        <p>长期被当作结构性事实：高附加值、认证壁垒高、供不应求。伯恩斯坦在同日的亚洲半导体前瞻里仍把「AI 是否仍是看多主线」作为核心问句，美银则把 2026 年 DRAM ASP <b>+242%</b>、NAND <b>+276%</b> 作为超级周期的主要证据。</p>
+      </div>
+    </div>
+    <div class="sc-box sc-3">
+      <span class="tag">当日事实</span>
+      <div class="bd">
+        <h4>利润排序由「重定价速度」决定，不由需求强度决定</h4>
+        <p>决定美光 2026 年利润率排名的<strong>不是需求强度，而是重新定价的速度</strong>。<mark>市场已不再是「拥有 AI 存储器就意味着能拿到最高利润率」的环境。</mark></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <b>我的判断：</b>这条信息的价值不在美光自己——它把一条被广泛使用的估值锚给拆了。**「AI 存储 = 高利润率」这个前提一旦松动，定价权就要按「谁的价格能重签」重新排序**，而不是按「谁的产能更稀缺」。研究筛选条件应从「谁掌握了 AI 存储」切到「<mark>谁的价格合同已经打开、且重签窗口在什么时候</mark>」。这也解释了为什么美银把 2027 年 HBM 价格上调看作增长催化剂——那正是下一个重定价窗口。
+  </div>
+  <div class="takeaway warn">
+    <b>要打的折扣：</b>① 这是<strong>单季度口径</strong>的排序，会随 2027 年 1 月 HBM 新价生效而重排，不要把单季利润率外推成全年。② 云存储事业部同时装着「面向大型云厂商的存储器」与 HBM，两者混在一起披露，无法完全拆分 HBM 的单独贡献。③ 404K 当日另有观点质疑「三星与 SK 海力士主动减产」，但同时承认不知哪家存储公司未满负荷运转——<strong>这一条属传闻，不构成本日事实</strong>。
+  </div>
+</div>
+
+<!-- ══════════ 5. 头条二（含条形图） ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">📉</span>头条 · 涨价的钱全部截留在中游，终端第一次开始砍量<span class="sub">PC 与手机同日给出两条独立证据</span></div>
+
+  <div class="kv">
+    <div><div class="k">3Q26 全球 PC 出货</div><div class="v hl-green">−21%<small> 6,070万台</small></div></div>
+    <div><div class="k">3Q PC 均价</div><div class="v hl-red">约 1,200 美元<small> 较25年初+40%</small></div></div>
+    <div><div class="k">4Q26 出货预计</div><div class="v hl-green">−28%</div></div>
+    <div><div class="k">CY27 大摩 / 共识</div><div class="v hl-green">−11% / −4%</div></div>
+  </div>
+
+  <div style="margin-top:14px;margin-bottom:2px;font-size:13px;font-weight:700;">同一轮涨价里，各环节的损益方向（统一 0–200% 标度，按幅度绝对值绘制）</div>
+  <div class="legend">
+    <span><i style="background:#e0563c"></i>涨价 / 盈利改善环节</span>
+    <span><i style="background:#2ebd6e"></i>量价齐跌环节（终端）</span>
+  </div>
+  <div class="bars">
+    <div class="bar-row"><div class="lab">中国巨石 Q3 归母</div><div class="tr"><div class="fl" style="width:82.5%;background:#e0563c"></div></div><div class="val" style="color:#d5372a">+165%</div></div>
+    <div class="bar-row"><div class="lab">电子布米净利</div><div class="tr"><div class="fl" style="width:46.5%;background:#e0563c"></div></div><div class="val" style="color:#d5372a">+93%</div></div>
+    <div class="bar-row"><div class="lab">3Q PC 均价</div><div class="tr"><div class="fl" style="width:20%;background:#e0563c"></div></div><div class="val" style="color:#d5372a">+40%</div></div>
+    <div class="bar-row"><div class="lab">3Q DRAM/NAND 合约</div><div class="tr"><div class="fl" style="width:12.5%;background:#e0563c"></div></div><div class="val" style="color:#d5372a">约 +25%</div></div>
+    <div class="bar-row"><div class="lab">3Q NAND 合约</div><div class="tr"><div class="fl" style="width:10%;background:#e0563c"></div></div><div class="val" style="color:#d5372a">+20%</div></div>
+    <div class="bar-row"><div class="lab">iPhone 18 Pro 零部件</div><div class="tr"><div class="fl" style="width:7.5%;background:#2ebd6e"></div></div><div class="val" style="color:#178a4e">−15%</div></div>
+    <div class="bar-row"><div class="lab">3Q26 全球 PC 出货</div><div class="tr"><div class="fl" style="width:10.5%;background:#2ebd6e"></div></div><div class="val" style="color:#178a4e">−21%</div></div>
+  </div>
+  <div class="note">口径：正负按涨红跌绿。中国巨石为单季归母净利同比（中值）；电子布为单米净利 2.8→5.4 元的环比变化；PC 均价与合约价来自大摩、美银同口径测算。柱宽按幅度绝对值除以 200% 绘制，<strong>本图为单段条、无堆叠，不存在存量段加总口径问题</strong>。读法：中间全为正、两端为负 ⇒ 利润截留在中游，代价落在终端。</div>
+
+  <ul class="pts">
+    <li><b>PC 链的两条独立证据互相印证</b>：摩根大通用 IDC 算 3Q26 出货 <b>6,270 万台、同比 −20.1%、环比 −9.1%</b>，指出 1H26 为规避内存涨价而提前备货（inventory pull-in）严重透支了 3Q 需求；巴克莱从代工端给出同向数据——中国台湾前五大笔电 ODM 9 月出货 966 万台、环比 +32% 但同比 −20%，2026 年笔电代工出货预估维持 <b>1.087 亿台（−16%）</b>、2027 年从 1.065 亿台下调至 <b>1.046 亿台</b>。</li>
+    <li><b>手机端给出的是更硬的信号</b>：三星 S26 系列上市仅 7 个月即上调韩国出厂价（256GB 标准版/Plus/Ultra各涨 14.96 万韩元、Ultra 1TB 涨 27.61 万韩元），仍考虑将 S27 再提高 10 万韩元以上；但同时 MX 事业部要求供应商将四季度零部件交付量<strong>减少近 30%</strong>。Meritz 估算 MX 及网络业务 3Q 营业亏损约 <b>1.8 万亿韩元</b>（2Q 为 7000 亿），若准确则亏损将进一步扩大。</li>
+  </ul>
+
+  <div class="takeaway">
+    <b>我的判断：</b>这一天最值得记的不是 PC 又跌了 21%，而是<strong>上游第一次出现了「主动砍量」这个动作</strong>。砍量与涨价的区别在于：涨价还可以谈，砍量是投票。三星 MX 让供应商四季度少交三成，等于承认「靠涨价无法保住毛利」。这意味着<strong>本轮涨价的定价权正在见顶</strong>——不是价格见顶，是买方手里的选项变多了（减配、砍量、换供应商）。研究上应把观察指标从「报价」切到「<mark>交付量与交付周期</mark>」。
+  </div>
+  <div class="takeaway danger">
+    <b>但两个数字要盯：</b>① <strong>合约价与现货价已经背离</strong>——NAND 现货自 9 月起回调、1Tb 产品跌超 10%，而合约价仍在涨。若现货持续走弱，2027 年合约价谈判会立刻转向买方。② <strong>降配一旦常态化，单机半导体价值量的增长会被卡死</strong>：巴克莱明确警告，若客户在四季度继续以涨价保毛利，很可能出现大范围削减单机内存配置，届时 PC 产业链的出货与单机价值量将同时失去增长来源。
+  </div>
+</div>
+
+<!-- ══════════ 6. 头条三（chain 结构） ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🏦</span>头条 · 英伟达把资产负债表当成交付工具，卖的仍然只是芯片<span class="sub">当日最值得深读的一笔交易</span></div>
+
+  <div class="kv">
+    <div><div class="k">Hut 8 两份 15 年三净租赁</div><div class="v">196<small> 亿美元</small></div></div>
+    <div><div class="k">发行债券 / 评级 / 利率</div><div class="v">42.5 亿<small> Baa2 / 6.129%</small></div></div>
+    <div><div class="k">Anthropic 2028 年取得</div><div class="v">350<small> MW Rubin</small></div></div>
+    <div><div class="k">单价</div><div class="v">5.80<small> 美元/GPU-hr</small></div></div>
+    <div><div class="k">园区两期合计租约</div><div class="v">704<small> MW</small></div></div>
+  </div>
+
+  <p style="font-size:14px;margin-top:12px;">主线二讲的是「为什么」，这里只补一笔最干净的可验证证据：SemiAnalysis 拆解显示这笔交易买到的<strong>不是收入，而是一张长期座位号</strong>。对英伟达而言，196 亿美元租约换来三样东西——11.5 万颗 Rubin 的全额利润出货、约 10% 营收分成、以及 704MW 已供电园区的第 7–15 年使用权。15 年租约对上约 6 年承购，不是期限错配，是刻意保留的选择权。</p>
+
+  <ul class="pts">
+    <li><b>回报率可独立验证（不依赖任何指引）</b>：404K 引用英伟达上季度披露的营收与营业利润反推单位经济效率——<strong>计算与网络业务每投入 1 美元台积电晶圆成本约创造 3.4 美元，图形业务约 2.0 美元</strong>；两者共享台积电生产配额时，数据中心业务的资本效率约为图形业务的 1.7 倍。<strong>换言之，台积电产能配额在两组业务间的分配，等于一个隐含的 70% 溢价决策。</strong></li>
+    <li><b>同型动作在电力侧重复出现</b>：SpaceX 收购 Grain 的全美 800MHz 频谱（估算 60–80 亿美元、约 1.25–1.70 美元/MHz-POP）仅相当于其2Q 现金的 6–8%，或约 150MW AI 算力的投资；大摩测算 SpaceX 到 2030 年累计频谱支出 380 亿美元（占资本开支 &lt;5%），低频+中频合计约 77MHz，为三大运营商的 20–25%。</li>
+    <li><b>大摩对英伟达 FY28 指引给出了同一个答案</b>：测算 <b>2028 财年营收 +70%（数据中心约 +75%）的指引受供应条件（场地、电力、建筑壳体）限制，而非需求限制</b>，实际需求增长接近 100%；仅 SpaceX 与亚马逊两家客户就解释超大规模云业务增长的 72%，其余客户只需 +21% 即可达标，而市场对微软/甲骨文/Meta/谷歌资本开支的共识是 +39%。</li>
+  </ul>
+
+  <div class="takeaway warn">
+    <b>别忽略的刹车：</b>① <strong>表外承诺在累积</strong>——这类租约不进当期收入，却会变成未来数年的刚性义务；若 2029 年前AI 需求不及预期，英伟达将同时持有被闲置的已供电资产与纸面租金。② <strong>这笔交易无法复制</strong>——Baa2/6.129% 的融资条件依赖英伟达这一个信用主体，把它抽象成「AI 云融资范式」是过度外推。③ <strong>每 1 美元频谱/租约投入都挤占更高 ROI 的资本</strong>：大摩自己指出，资本同时还要留给星舰、Terafab、AI 芯片。
+  </div>
+</div>
+
+<!-- ══════════ 7. 涨价传导链 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🧪</span>传导链 · 四段同时在涨，驱动力完全不同<span class="sub">从材料到终端，涨价理由逐段更换</span></div>
+
+  <div class="chain">
+    <div class="chain-item">
+      <div class="chain-icon">🧪</div>
+      <div class="txt"><b>上游材料 — 驱动力：产能供给受控，不是需求拉动</b><br>
+      电子纱 G75 10 月调价 <span class="hl-red">+3,000 元/吨</span>、报价 25,800–26,000 元/吨；电子布 7628 调价 <span class="hl-red">+1.5 元/米</span>至 13–13.3 元/米，10 月涨幅与 8、9 月相当、<b>高于前 7 个月</b>，库存紧张。氨纶：晓星 10 月 8 日起全规格上调 <span class="hl-red">1,000 元/吨</span>，华东 40D 周均价 28,100 元/吨。金属铬：SOFC 每 GW 约耗 0.7 万吨（折铬盐约 2.6 万吨），Bloom Energy 与 Brookfield 的 AI 电力项目融资从 50 亿美元扩大至 <span class="hl-red">250 亿美元</span>（一年增长五倍）。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">⚡</div>
+      <div class="txt"><b>元器件 — 驱动力：单机用量提升 + 长协预付</b><br>
+      三星电机 2026 年已披露 MLCC 长单 <span class="hl-red">3.95 万亿韩元</span>（约 27.29 亿美元），其中 2027 年长单已锁定高盛预测当年 MLCC 收入的<b>约四分之一</b>；高盛将其 AI MLCC 收入占比由 2025 年 11% 上调至 2026/27/28 年 <b>21%/32%/39%</b>，元件营业利润率 2028 年升至 37%；FC-BGA 3Q26 产能接近满负荷，2028 年 AI 数据中心 ABF 拟占 FC-BGA 收入 <b>70%</b>，叠加<b>客户预付资本开支锁定订单</b>。AMD 自 10 月 1 日起上调向 AIB 供应的 GDDR6 价格。HVLP4 铜箔：Vera Rubin、AMD MI400、Trainium 3 均已采用，4Q26 需求预计<b>超每月 1,000 吨</b>，且由 HVLP1/2 升至 HVLP3/4 可能使<b>有效产能下降约 50%</b>。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">💾</div>
+      <div class="txt"><b>整机与服务器 — 驱动力：成本传导不出去，只能自己扛或砍量</b><br>
+      消费端 3Q26 全球 PC 出货 <span class="hl-green">−21%</span>、ASP 涨近 40%，渠道利润两头挤；大摩测算若想完全转嫁成本，2H26 需提价 <b>55% 同比</b>、CY27 再涨 20%+，「这显然不现实」。大立光直接官方承认：<mark>绿电成本是结构性的、2027 年价格已谈定无法转嫁</mark>，3Q26 毛利率 42.2%（同比 −500bp、环比 −720bp）。服务器端相反：戴尔科技实地调研显示 AI 与涨价推动预测上调，2026–2030 复合增速 DCI <b>+43%</b>、数据中心以太网交换机 <b>+36%</b>、服务器 <b>+31%</b>。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">🏁</div>
+      <div class="txt"><b>消费与服务端 — 驱动力：需求本身在收缩，与涨价无关</b><br>
+      耐克 1Q27 固定汇率收入 <span class="hl-green">−5.0%</span>、大中华区 <b>−26%</b>，EPS 0.48 美元虽超预期但靠毛利率与费用（SG&amp;A −2.6%）而非销量；EMEA 连续 4 个季度、APLA 连续 5 个季度「销售增速减库存增速」为负。黄金周国内需求平淡、出境游稳健，机票涨价把游客推向港澳及短途目的地。汇丰中国电力是唯一反向的一条：预计 <span class="hl-red">2027 年年度合同电价同比反弹超 10%</span>，全面上调华润电力、华能国际、华电国际至买入。</div>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <div class="sc-box sc-4">
+      <span class="tag">反弹测算</span>
+      <div class="bd">
+        <h4>汇丰：中国电力是本轮唯一「成本与售价同向」的一环</h4>
+        <p>广东三季度现货/月度均价 <b>422/440 元/兆瓦时</b>，较2026 年度合同价 372 元高 <b>13%/18%</b>；广东、江苏、浙江 2024–2026 年累计跌幅 <b>20%–26%</b>，预计 2027 年反弹超 10% 为全国最强。煤价已引发政策关注、短期企稳（秦皇岛 5,500 大卡 986 元/吨同比 +19%，主因山西矿难后 6–8 月产量同比 −33%）。<mark>电价重估 + 煤价回落 = dark spread 双反弹</mark>，汇丰 2027e 盈利修订：华能国际 <b>+39%</b>、华润电力 +16%、华电国际 +28%。</p>
+      </div>
+    </div>
+    <div class="sc-box sc-3">
+      <span class="tag">风险</span>
+      <div class="bd">
+        <h4>最容易过度外推的是「涨价可持续」这四个字</h4>
+        <p>三条证伪条件：① <strong>NAND 现货自 9 月已回调、1Tb 跌超 10%</strong>，与合约价方向背离；② 降配一旦常态化，<strong>单机半导体价值量的增长会被卡死</strong>，届时量与价值量同时失去来源；③ 三星已用砍量（−30%）代替涨价投票。<br>另注意基期陷阱：中国巨石 Q3 归母 +165%、电子布米净利 +93%，是<b>极低基数 + 价格一次性跳升</b>，不可当作景气斜率。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 8. 五组分歧 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">⚖️</span>4 组真实分歧<span class="sub">同一家公司，不同机构给出不同结论</span></div>
+  <p style="font-size:13.8px;color:#4a4a5c;">本节不做共识罗列。以下四组的分歧点都不在估值方法，而在<strong>「谁在为哪一段的确定性付钱」</strong>。</p>
+
+  <div class="card flat" style="margin-top:14px;">
+    <div class="card-title" style="font-size:15.5px;"><span class="ico">①</span>PC 还要跌多少：大摩 CY27 −11% 对共识 −4%</div>
+    <div class="scenario">
+      <div class="sc-box sc-3">
+        <span class="tag">大摩：还要跌</span>
+        <div class="bd">
+          <h4>更换周期回归历史峰值</h4>
+          <p>CY26/CY27 出货下调至 2.49 亿台（−14%）与 <b>2.21 亿台（−11%）</b>，分别低于共识 2pct 与 <b>7pct</b>；ASP 增速上调至 +25%/+15%。最看空惠普（<b>19 美元、潜在下行 41%</b>）与宏碁（23.5 新台币、−25%），因低端消费 PC 依赖更高且缺乏对冲业务。</p>
+        </div>
+      </div>
+      <div class="sc-box sc-2">
+        <span class="tag">摩根大通：量跌价稳</span>
+        <div class="bd">
+          <h4>跌势延续但不至于崩塌</h4>
+          <p>出货 6,270 万台同比 −20.1%、环比 −9.1%，远低于历史季节性（2Q→3Q 通常环比 +9.7%），但成本刚性使定价仍显著高于去年。<b>苹果是唯一同比份额提升者（+90bp）</b>，惠普 −260bp。投资启示是聚焦结构性阿尔法，而非行业 beta。</p>
+        </div>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>我的判断：</b>两者并不矛盾——大摩说的是<strong>量的水位</strong>，摩根大通说的是<strong>价的结构</strong>，真正被低估的是第三个问题：<mark>整机厂利润率在 2027 年会被挤到什么程度</mark>。大摩自己给了量级：若想完全转嫁成本，2H26 需提价 55% 同比、CY27 再涨 20%+，「这显然不现实」——所以 2027 年是「收入下滑 + 利润率压缩」双杀。共识的 −4% 隐含更换周期延长至 4 年出头，而历史消化期峰值是 5 年，大摩假设 4.8–4.9 年。<b>裁决变量是 4Q26 出货同比是否真扩大到 −28%</b>；在裁决落地前我不把 −11% 当基准——共识从 −4% 向 −11% 收敛需要至少两季订单数据，目前只有一季。
+    </div>
+  </div>
+
+  <div class="card flat" style="margin-top:12px;">
+    <div class="card-title" style="font-size:15.5px;"><span class="ico">②</span>「降规」是需求崩塌还是增长催化剂——同一份报告里两个答案</div>
+    <div class="scenario">
+      <div class="sc-box sc-1">
+        <span class="tag">美银：增长催化剂</span>
+        <div class="bd">
+          <h4>8 层 HBM4 替代 12 层，是存储行业的另一增长催化剂</h4>
+          <p>三条理由：① 为应对 HBM 短缺，GPU 总出货量有望快速提升；② 新增 GPU 需额外搭配 LPDDR5 SOCAMM 与键值缓存 eSSD；③ 科技巨头应为 8 层这一「旧世代」内存支付相对 12 层的<strong>溢价</strong>。据此将 2026 下半年及 2027–28 年 NAND ASP 假设上调 4%，3Q 全球 NAND 合约涨幅从 +15% 上调 5pct 至 +20%。</p>
+        </div>
+      </div>
+      <div class="sc-box sc-3">
+        <span class="tag">同一份报告：几乎无量产</span>
+        <div class="bd">
+          <h4>尚未观察到任何实质性晶圆投入，放量要等到 2027 上半年甚至三季度</h4>
+          <p>受 6 个月以上制造周期影响，8 层 HBM4 的放量在 2027 上半年甚至三季度前都极为有限。<br>反面参照：大摩的测算显示，Rubin ASP 已较 Blackwell 高 <b>57.1%</b>，2028 财年指引的 6,626 亿美元数据中心营收（+75%）<strong>大部分来自价格与新产品，出货量增幅仅需 7.3%</strong>。供给端 2026 年 DRAM 资本开支 972 亿美元（+70%）、NAND 347 亿美元（+57%）。</p>
+        </div>
+      </div>
+    </div>
+    <div class="takeaway good">
+      <b>我的判断：</b>本日最值得记录的形态是——<strong>结论（增长催化剂）与论据（无量产投入）出现在同一份报告里</strong>。降规的真实作用发生在 2027 年而非现在，眼下它更应被读作<mark>一个尚未启动的期权</mark>。分歧不在数字，在<strong>时间轴</strong>：美银把一个 2027 年的产能事件折现进了 2026 年的 ASP 假设。我认同「降规腾出预算给 SOCAMM/eSSD/铜箔/液冷」这条机制，但认为<strong>受益顺序应当是周边器件而非存储本身</strong>。裁决变量是8 层 HBM4 的晶圆投入是否在 2026Q4–2027Q1 出现可验证的量——在那之前，基于「降规放量」的盈利上修都应打折。
+    </div>
+  </div>
+
+  <div class="card flat" style="margin-top:12px;">
+    <div class="card-title" style="font-size:15.5px;"><span class="ico">③</span>形态异常型 · 降目标价但不降评级：宁德时代被砍 17%，评级仍是增持</div>
+    <div class="scenario">
+      <div class="sc-box sc-4">
+        <span class="tag">大摩：降目标价</span>
+        <div class="bd">
+          <h4>A 股 595→500 元、H 股 815→705 港元</h4>
+          <p>2027 年 EPS 24.90 元（原 27.05，<b>−7.9%</b>）、2028 年 30.95 元（原 33.22，<b>−6.8%</b>）；2027 年 EV 电池量下调 5.8%、ESS 量下调 2.2%。LFP 动力电池单位毛利因增值税退税缩减与新消费税降约 1 分/Wh，587Ah 储能电芯较 314Ah 多 2.5 分/Wh 可部分对冲。目标价下调主因盈利下修，当前股价 297.75 元仍对应约 68% 上行空间。</p>
+        </div>
+      </div>
+      <div class="sc-box sc-1">
+        <span class="tag">大摩：维持增持</span>
+        <div class="bd">
+          <h4>「市场忽略了什么」——三类增量 + TCO 等价溢价</h4>
+          <p>维持 A/H 增持，A 股为 Top Pick；H 股 16× 与 LGES 可比，隐含 H/A 溢价 20%。论据：① 需求敞口不能再用「中国 ePV 走弱」概括——中国 eCV 年初至今 <b>+53%</b>、欧洲 <b>+32%</b>、世界其他地区 <b>+158%</b>；② 全生命周期分析可支撑最高 <b>0.24 元/Wh</b> 溢价，而当前单位毛利溢价仅约 0.09 元/Wh；③ <b>CATL-inside</b> 品牌资产：国内三元电池市占约 70%，40 万元以上车型配套率近 98%。</p>
+        </div>
+      </div>
+    </div>
+    <div class="takeaway good">
+      <b>我的判断：</b>本日最值得记录的形态是<strong>目标价砍 17%、盈利预测砍 7–8%，而评级一步不退</strong>——这与此前记录的「升目标价不升评级」是同型但方向相反：那次是估值锚太远，这次是<strong>盈利周期太长</strong>。大摩的逻辑是把「明年宏观差」与「竞争格局不变」分开定价，前者用目标价表达、后者用评级表达，这在方法上是对的，但<mark>有两点不可取</mark>：一是 68% 隐含上行空间与 16× EV/EBITDA 并存，使这个目标价的信息量接近于零，更像「表述长期看多」的工具而非估值结论；二是把 37.1% 的 NielsenIQ 调查（消费者愿为搭载宁德放弃购买）当护城河证据，混淆了「品牌偏好」与「定价权」——前者不阻止 OEM 换供应商。**裁决变量是管理层 2027 年生产计划，以及 2026Q4 中国 ESS 招标能否在 2027Q1 转化为出货。**
+    </div>
+  </div>
+
+  <div class="card flat" style="margin-top:12px;">
+    <div class="card-title" style="font-size:15.5px;"><span class="ico">④</span>市场定价 vs 官方辟谣：FCC 议程没提光模块，3.2T 与 65% 从何而来</div>
+    <div class="scenario">
+      <div class="sc-box sc-3">
+        <span class="tag">市场担忧</span>
+        <div class="bd">
+          <h4>路透报道 + 议员法案</h4>
+          <p>8 月 4 日路透社援引知情人士报道，FCC 正研究限制中国制造的<strong>新型号</strong>数据中心光收发模块，同时明确方案可能修改或搁置；9 月 25 日美国议员提出限制敏感政府系统采购中国光模块的法案，属国会立法路径。市场流传的 3.2T 专项禁令与「BOM 美系物料价值 65%」门槛，主要来自机构研判，<strong>尚非正式监管条款</strong>。</p>
+        </div>
+      </div>
+      <div class="sc-box sc-1">
+        <span class="tag">10 月 11 日：边际修复</span>
+        <div class="bd">
+          <h4>FCC 10/29 议程共七项，未包含光模块议题</h4>
+          <p>七项议题为频谱拍卖、卫星直连、无人机频段、海外实验室认证、国际电信监管、农村宽带及无障碍规则——<strong>既未含中国光模块进口限制，也无 3.2T 专项禁令</strong>。结论：短期禁令快速落地的预期降温，有望修复此前被政策扰动压制的板块风险偏好。<b>但议程不含 ≠ 议题消失</b>。</p>
+        </div>
+      </div>
+    </div>
+    <div class="takeaway">
+      <b>我的判断：</b>分歧焦点是<strong>「可预测性」而非「供应风险」</strong>，与此前记录的 HDD「抛售过度」型分歧同型。市场把一份路透引述 + 一份国会法案 + 一份机构推演叠成了「政策已定」的叙事，而 FCC 用一份议程把它拆回了「未列入议程」。<mark>这类交易的性质是政策预期修复，不是基本面修复</mark>——产业端 800G 需求由全球 AI 资本开支支撑、1.6T 进入放量周期，中国头部厂商在良率、产能、客户认证及交付上优势突出、美国云厂商短期难以完成全面替代，这些并未因议程改变一分。<b>可验证变量是 FCC 正式规则文本、国会法案推进进度与北美客户采购政策变化</b>；10/29 之前我倾向把它当反弹而非反转，理由是同一份议程里仍有「海外实验室认证」这一项——那正是 65% 门槛可能落地的通道。
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 9. 财报与交割数据 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">📊</span>财报与交割数据<span class="sub">不可辩驳的一层</span></div>
+  <div class="tw">
+  <table>
+    <tr><th>标的</th><th>已公布事实</th><th class="r">关键数字</th></tr>
+    <tr><td>台积电</td><td>3Q26 营收超自身指引上限约 2%，超预期来自晶圆出货放量而非汇率折算虚增；市场共识 3Q EPS 同比 +59%，全市场 Q3 盈利共识同比 +72%</td><td class="r"><span class="hl-red">+51%</span> 1.49 万亿新台币</td></tr>
+    <tr><td>三星电子</td><td>3Q26 初步披露营业利润基本符合预期，确认存储超级周期；DRAM/NAND 贡献超 100% 总营业利润，完全抵消手机与代工亏损</td><td class="r">DRAM OPM <span class="hl-red">75%</span>／NAND <span class="hl-red">65%</span></td></tr>
+    <tr><td>美光</td><td>6–8 月季度云存储事业部（含 HBM）营收 163 亿美元、占总营收 30%，利润率 76%，但环比下降并从第一降至末位</td><td class="r"><span class="hl-green">76%</span>（去年 48%/第 1）</td></tr>
+    <tr><td>大立光</td><td>3Q26 营收 156.5 亿新台币（环比 +15%、同比 −11%），毛利率 42.2%，营业利润 47.35 亿（同比 −24%），净利 51.8 亿（同比 −27%）；疲弱主因存储成本高企抑制换机与新机发布延迟</td><td class="r">毛利率同比 <span class="hl-green">−500bp</span></td></tr>
+    <tr><td>速腾聚创</td><td>3Q26 激光雷达交付创单季历史新高，机器人板块与 ADAS 双双超预期；固态 E2 于 9 月实现首个商业化项目量产</td><td class="r">595,600 台 <span class="hl-red">+221%</span></td></tr>
+    <tr><td>中国巨石</td><td>三季报预告：前三季归母与扣非均同比 +100%~+110%，Q3 电子布盈利大幅提升、激励费用与粗纱小幅拖累</td><td class="r">Q3 归母 23.3 亿 <span class="hl-red">+165%</span></td></tr>
+    <tr><td>阿里巴巴</td><td>9 月季度云收入增速预计由上季 45% 加速至 52%，外部客户需求增长近 55%；AI 实验室及应用亏损由 140 亿收窄至 110 亿元</td><td class="r">集团 EBITA 300 亿（共识 260 亿）</td></tr>
+    <tr><td>港交所</td><td>3Q26E 盈利环比与同比双降，为 2Q24 以来首次同比负增长；现货 ADT 同比降 11%，南向 ADT 同比骤降 30%</td><td class="r">EPS 3.76 港元 <span class="hl-green">环比 −12%</span></td></tr>
+    <tr><td>中国台湾</td><td>9 月出口同比 +61%（高盛预期 +47%），9 月上市公司营收 +47%，7–9 月累计营收达共识 Q3 预期的 102%</td><td class="r">出口 <span class="hl-red">+61%</span></td></tr>
+    <tr><td>韩国</td><td>9 月出口（剔除船舶）+86.0%；KOSPI 周跌 5.4%，外资单周净卖出 6,438 亿韩元，科技板块净流出 5,234 亿</td><td class="r">前瞻 PE <span class="hl-red">5.1×</span></td></tr>
+    <tr><td>耐克</td><td>1Q27 EPS 0.48 美元超预期，但超预期来自毛利率与费用而非收入修复；取消分区域同店披露</td><td class="r">大中华区 <span class="hl-green">−26%</span></td></tr>
+    <tr><td>分众传媒</td><td>10 月 10 日国家市场监管总局附加限制性条件批准收购新潮传媒股权案（涉及价格稳定、公平服务等）</td><td class="r">股息率 6.9%</td></tr>
+  </table>
+  </div>
+  <div class="takeaway">
+    <b>这里的裁决信号是「同一家公司内部买卖双方损益反向」已连续两期出现，本日出现了第三层</b>：上期是三星 DS +56% vs DX 亏损扩大 2.3–2.6 倍；本期美光<b>云存储（卖 HBM 的）76% 垫底 vs 移动与客户端（买 HBM 做的）88% 登顶</b>——而后者出货比特数还在下降。**资金的最硬确认不来自谁的营收增长更快，而来自「同一集团内部谁在替谁付成本」的结构变化。** 上游的量与价都在兑现（台积电 +51%、三星 OPM 75%/65%、中国台湾出口 +61%、韩国出口 +86%），但耐克大中华区 −26%、PC −21%、港交所 EPS 环比 −12% 说明<strong>红利没有向下传导，而是停在了中游</strong>。最值得注意的结构变化在港交所——<mark>IPO 储备创历史纪录（处理中 577 家）、新上市股票贡献 ADT 占比升至 17%，但存量交投在萎缩</mark>，市场结构在换血而非扩张。
+  </div>
+</div>
+
+<!-- ══════════ 10. 评级速览 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">📌</span>评级与目标价变动<span class="sub">按调整幅度排序 · 15 家机构</span></div>
+  <div class="tw">
+  <table>
+    <tr><th>标的</th><th>机构</th><th>评级</th><th class="r">目标价</th><th>触发点</th></tr>
+    <tr><td>大立光</td><td>高盛</td><td>买入</td><td class="r">6,263→<span class="hl-red">11,000</span> 新台币</td><td><b>上调 76%</b>；估值法由 2027E PE 切为贴现 PE，FAU 营收占比 2027 年 3%→2030 年 &gt;50%</td></tr>
+    <tr><td>长荣海运</td><td>汇丰</td><td>减持→<span class="hl-red">买入</span></td><td class="r">200→<span class="hl-red">300</span> 新台币</td><td>评级上调 + 目标价 +50%；3Q26 营收 1,468 亿新台币超汇丰预测 22%</td></tr>
+    <tr><td>东方海外</td><td>汇丰</td><td>减持→<span class="hl-red">买入</span></td><td class="r">130→<span class="hl-red">170</span> 港元</td><td>评级上调；估值倍数由 0.71× 切至 0.85× 2027E PB</td></tr>
+    <tr><td>华能国际</td><td>汇丰</td><td>持有→<span class="hl-red">买入</span></td><td class="r">H 5.00→<span class="hl-red">7.00</span> 港元</td><td>2027 年电价反弹超 10%；2027e 净利上调 <b>39%</b>（电价涨 3% → 净利 +7.4%）</td></tr>
+    <tr><td>华电国际</td><td>汇丰</td><td>持有→<span class="hl-red">买入</span></td><td class="r">H 4.30→<span class="hl-red">5.30</span> 港元</td><td>2027e 净利上调 28%；H 股 2027e 股息率 7.3%</td></tr>
+    <tr><td>三星电机</td><td>高盛</td><td>买入</td><td class="r">225→<span class="hl-red">240</span> 万韩元</td><td>3Q26E 营业利润 6,700 亿韩元（+157%）；2026/27/28 EPS 上调 11%/21%/20%</td></tr>
+    <tr><td>SpaceX</td><td>大摩</td><td>超配</td><td class="r">300 美元</td><td>收购 800MHz 频谱；伯恩斯坦 248 美元、高盛看多铁塔与频谱持有方</td></tr>
+    <tr><td>SHEIN</td><td>高盛</td><td>买入（首覆）</td><td class="r"><span class="hl-red">62</span> 港元</td><td>现价 34.50 港元，隐含 <b>+79.7%</b>；基于 2027E 18× PE</td></tr>
+    <tr><td>友邦保险</td><td>高盛</td><td>买入</td><td class="r">96→95 港元</td><td>3Q26 VONB 疲软主因高基数；当前 1.0× FY27E P/EV 低于三年均值 1.2×</td></tr>
+    <tr><td>紫光股份</td><td>高盛</td><td>中性</td><td class="r">30.8→28.6 元</td><td>营收上修但 OPM 下修：白牌放量摊薄盈利，2026–28 净利下调 5%/8%/4%</td></tr>
+    <tr><td>富士美 / HTI</td><td>高盛</td><td>中性</td><td class="r">4,840 日元 / 41 美元</td><td>富士美 FY3/29 目标较大盛低 23%、六年资本开支 1,300 亿日元创新高；HTI 上行仅 2.0%</td></tr>
+    <tr><td>宁德时代</td><td>大摩</td><td>增持</td><td class="r">A 595→<span class="hl-green">500</span> 元</td><td><b>降目标价不降评级</b>（A 股为 Top Pick）；2027 EPS −7.9%、2028 −6.8%</td></tr>
+    <tr><td>中远海控</td><td>汇丰</td><td>减持→持有</td><td class="r">H 14.40→18.00 港元</td><td>评级仅上调至持有；股价已跑赢 +23%，2027–28 产能过剩隐忧</td></tr>
+  </table>
+  </div>
+  <div class="note">以上目标价均为各机构口径，不代表本报观点。<b>降级与下调集中补录</b>：德银耐克 37→33 美元（维持持有，FY27E EPS 由 1.44 下调至 1.25、较市场低 17%，FY28E 1.68→1.40）；高盛 HTC 34.4→32.8 新台币（<b>维持卖出</b>，隐含 −21.9%，2026–28 收入下调 4%/0%/27%）；大摩日本量化认为 AI/半导体「进入后半程」，建议战术增配低波（当前估值处历史 98% 分位）。</div>
+</div>
+
+<!-- ══════════ 11. 地缘 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">🌍</span>地缘<span class="sub">原油驱动力已从「缺油」换成「运力」</span></div>
+
+  <div class="takeaway danger" style="margin-top:0;">
+    <b>口径披露：</b>本期地缘增量主要来自摩根大通两份大宗商品报告，<b>有明确量化框架与运力数据支撑</b>；但缺少卖方对中东地缘本身的推演（本期无霍尔木兹通行量与战争险保费新数据），因此<strong>不做地缘缓和/升级的方向性外推</strong>，只呈现可验证的运费与运力事实。
+  </div>
+
+  <div class="chain" style="margin-top:14px;">
+    <div class="chain-item">
+      <div class="chain-icon">🛢️</div>
+      <div class="txt"><b>原油：10 月与 4 月形似而神异——四月交易的是原油短缺，十月交易的是运输瓶颈</b><br>
+      霍尔木兹流量从 7–8 月约 750 万桶/日跳升至 <span class="hl-red">1,200 万桶/日</span>；全球 923 艘 VLCC 中 <b>766 艘活跃</b>，闲置运力极度稀缺；美国制裁致约 <b>124 艘伊朗 VLCC（占全球运力约 13%）</b>实质退出。船对船转运耗时 10 天、绕航拉长航程 → 中东原油（不含伊朗）额外消耗 <b>35 艘 VLCC、13 艘苏伊士型、10 艘阿芙拉型</b>，同期其他地区 VLCC 雇佣量下降 16 艘。<br>
+      <b>说人话：</b>油没少，是<strong>运不过去</strong>。运费成了到岸价的主角：9 月中东至中国 VLCC 运费飙至约 <span class="hl-red">35 美元/桶</span>（年初仅 3 美元），美湾至中国 41 美元；中国买家中东原油全到岸成本约 <b>143 美元/桶</b>（巴西 126、美湾 131）。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">⛽</div>
+      <div class="txt"><b>成品油比原油更紧，运费市场正逼近经济天花板</b><br>
+      西北欧水热裂解炼厂毛利从 8 美元/桶跌至 <span class="hl-green">−14 美元/桶</span>，低复杂度炼厂降负荷风险骤升。9 月柴油创主要市场纪录高位，<b>美国柴油对欧出口从战前 20–25 万桶/日飙升至 8 月近 50 万桶/日</b>，既耗美国库存也缓和欧洲去库。G7 同意四个月释放 1 亿桶（前 20 天集中投放柴油），但<mark>关键细节未定，且大部分为兑现既有承诺</mark>——IEA 3 月承诺的 4.12 亿桶已释放 3.21 亿，剩余约 0.91 亿；本次实质是完成 3 月计划并侧重柴油，可能含美国 SPR 剩余 4,000 万桶（已排期至 12 月）。<br>
+      <b>说人话：</b>摩根大通的结论值得原样记住——<strong>瓶颈未解，但买方已无力承担运费，市场正通过需求破坏寻求再平衡</strong>；调整不会来自运力增加，而来自油轮需求收缩。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">🌾</div>
+      <div class="txt"><b>厄尔尼诺已升级为「非常强」，但农产品冲击要到 2027 年一季度才见顶</b><br>
+      9 月正式确认形成<strong>东部型超强厄尔尼诺事件</strong>；10–12 月有 <span class="hl-red">75% 概率成为 1950 年以来最强</span>。摩根大通判断峰值影响在 <strong>2027 年 Q1 显现</strong>，因粮价通常滞后海洋温度峰值约六个月 ⇒ <mark>食品 CPI 脉冲将在 2027 年初强化</mark>。中国侧已现早期影响：3Q26 长江电力发电量 939.92 亿千瓦时、<strong>同比 −13.3%</strong>（来水偏枯），雅砻江水电约 316.90 亿千瓦时、<span class="hl-red">同比 +11.9%</span>——<strong>同一现象在水电内部是分化而非同向</strong>。欧洲侧相反：9 月 28 日–10 月 4 日西北欧+英国天然气需求 3.70 亿立方米/日、同比 <span class="hl-green">−22%</span>（采暖度日数仅 3，去年同期 11）。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">🇫🇷</div>
+      <div class="txt"><b>法国：抛售已超越基本面，仓位因素放大了冲击</b><br>
+      马克龙任内最后一年预算草案赤字仍高于 GDP 的 5%；更高借贷成本可能把利息支出从约占 GDP 2% 推至中期 <span class="hl-red">4% 左右</span>；若无可信整固，公共债务未来十年可能逼近 GDP 的 <b>125%</b>。但后续约 100bp 的 OAT-德债利差扩大「难以仅凭财政基本面证明」，更符合<strong>短端引领的急剧去杠杆</strong>（对冲基金自 2024 年以来在 OAT 短端积累 carry 头寸）。RN 提出节省 1,400 亿欧元的建设性计划。高盛强调<mark>CAC 40 仅约 15% 收入来自国内、约 13× 远期 PE（与历史均值基本一致，并非绝对便宜）</mark>——三大催化剂（政治清晰度、更强增长、新买家）目前皆无。关键投票 <b>10/20 与 10/27</b>。</div>
+    </div>
+    <div class="chain-item">
+      <div class="chain-icon">📉</div>
+      <div class="txt"><b>当日市场情绪：资金明确从科技转向红利与低相关资产</b><br>
+      KOSPI 周跌 <span class="hl-green">5.4%</span> 至 6,625.93 点（科技 −5.8%、证券 −5.7%、钢铁 −6.1%；仅休闲 +2.0%、化工 +1.7% 抗跌），外资单周净卖出 6,438 亿韩元、<b>其中科技板块净流出 5,234 亿韩元</b>；年初至今累计净流出 197,208 亿韩元。除中国外的新兴亚洲录得 <b>75 亿美元</b>外资流出（韩国 −49 亿、印度 −13 亿）。反之：巴西首轮大选后 Bovespa 自选举以来反弹约 7%、美元计价涨 <span class="hl-red">15%</span>（利率敏感型 +14%、小型股 +10%），外资净流入 22 亿美元。结构上，中国台湾与韩国合计占 MXAPJ 权重一半、信息技术占 43%，<mark>前十大个股占区域指数市值 41%、创历史新高</mark>。</div>
+    </div>
+  </div>
+
+  <div class="takeaway">
+    <b>本日最值得注意的一个反直觉信号：存储超级周期最强的季度，韩国科技板块与外资同时创出本轮最大单周流出</b>——这印证了第三条主线。KOSPI 前瞻 PE 已跌到 <strong>5.1 倍</strong>（2008 年以来最低，均值 9.9 倍），MSCI 韩国相对全球 AC 指数 PE 折让 <strong>70%</strong>，科技板块前瞻 PE 仅 4.3 倍（历史均值 10.6 倍），高盛风险晴雨表落至 −0.4 进入避险区。**估值便宜到历史极低、盈利仍在上修（科技板块 6 个月盈利上修 71%）、资金仍在流出——这三件事同时成立，只能用「集中度风险」解释：前十大占 41% 的结构下，卖出的是仓位而不是基本面。** 高盛的替代方案是筛「P/B 低于自身历史均值超 1 个标准差 + 2027 EPS 增速反弹 + 近1 个月盈利上修」的韩国股票，共筛出 21 只非 AI 标的，2027 预期 EPS 增速区间 3%–174%、与 KOSPI 一年相关性仅 18%–61%。<b>裁决变量：10/13 美国 9 月核心 CPI（大摩预测环比 +0.24%、同比 2.5%；整体 CPI 环比 +0.62%、同比 3.7%）与 10/16 美国财政部交易商调查</b>——若 CPI 坚挺，美银判断「市场严重低估 10 月加息风险」，美联储将面临「要么加息、要么容忍债券进一步抛售」的抉择。
+  </div>
+</div>
+
+<!-- ══════════ 12. 言论 ══════════ -->
+<div class="card">
+  <div class="card-title"><span class="ico">💬</span>今天的几句原话</div>
+
+  <div class="quote">市场严重低估 10 月加息风险。若 CPI 与增长数据保持坚挺，美联储将面临抉择：要么加息，要么容忍债券进一步抛售。
+  <div class="q-a">—— 美银《全球利率观察：陡峭化许可》，2026-10-11</div></div>
+
+  <div class="quote">我们大幅提高了 2027 年 HBM 的价格。新价格将在自然年年初生效，缩小与通用 DRAM 的盈利差距。
+  <div class="q-a">—— 美光总裁兼 COO 桑尼什·巴蒂亚，9 月 30 日财报电话会（本日因美光分部利润率排序反转而被重新解读）</div></div>
+
+  <div class="quote">3 年前，全部数据中心基础设施中有 1/3 用于推理，如今这一比例超过 60%，未来 2—3 年将迅速接近 90%。……全球最大的云服务提供商，同时也是全球最大的公司，营业利润率达到 40%。它们现在正将这些营业利润重新投入下一轮人工智能基础设施建设。今年的投入合计为 1.2 万亿美元，到 2030 年将增长至超过 3 万亿美元。
+  <div class="q-a">—— 迈威尔科技数据中心网络事业群执行副总裁兼总经理戴维·拉佐夫斯基，2026-10-11</div></div>
+
+  <div class="quote">未来十年最有价值的数据集，或许是那些乏味的数据：保修索赔和缺陷率，也就是人类购物者绝不会坐下来阅读的东西。智能体却会如饥似渴地吸收它们。
+  <div class="q-a">—— 404K 收入叙事，2026-10-11</div></div>
+</div>
+
+<!-- ══════════ 13. 四象限 ══════════ -->
+<div class="summary">
+  <h2>🎯 一句话总结 · 四象限</h2>
+  <div class="sum-grid">
+    <div class="sum-item">
+      <h4>📍 今天的现状</h4>
+      <p>约束已从「产能」位移到「终端买单能力 + 信用」。最刺眼的数字是美光管 HBM 的事业部利润率 <b>76% 垫底</b>（去年 48% 第一），最反直觉的现象是<b>三星 MX 要求供应商四季度少交近 30%</b>——上游巨头第一次用砍量而非涨价投票。</p>
+    </div>
+    <div class="sum-item">
+      <h4>⚙️ 产业的逻辑</h4>
+      <p>稀缺性正从产能迁移到信用与交付时间：196 亿美元租约 + 42.5 亿 Baa2/6.129% 债券换来 2028 年 350MW Rubin 与 704MW 已供电园区第 7–15 年使用权。钱的流向是<strong>先买「写进合同的电、期限与信用」</strong>，再买芯片。最接近确定性现金流的仍是电力与散热：日立能源园区（SPV 融资 + EPC）、大元泵业（Google + NV 双主线）、CR 专用金属铬（每 GW 耗 0.7 万吨）。</p>
+    </div>
+    <div class="sum-item">
+      <h4>⚠️ 关键风险</h4>
+      <p>① 3Q26 PC 出货 <b>−21%</b>、4Q 预计 <b>−28%</b>，大摩 CY27 看 −11% vs 共识 −4%；② NAND 现货自 9 月回调、1Tb 跌超 10%，与合约价背离；③ 8 层 HBM4 <b>尚无实质晶圆投入</b>，放量最早 2027 上半年；④ 英伟达表外多出 <b>196 亿美元</b>待转让租约；⑤ 极端同比须查基数（中国巨石 +165% 为低基数+价格跳升）；⑥ 10/29 FCC 议程虽未列光模块，但仍含「海外实验室认证」这一落地通道。</p>
+    </div>
+    <div class="sum-item">
+      <h4>💡 盯什么</h4>
+      <p><b>10/12–15 OCP 全球峰会</b>（10/13 NPO 研讨会 · 10/14 CPO 外置激光器与 12.8T VCSEL · 10/15 Lumentum×甲骨文 OCS，门票已售罄）→ <b>10/13 美国 9 月核心 CPI 与美国银行股财报启幕</b> → <b>10/15 台积电 3Q26 法说会</b>（四季度指引、2nm 爬坡、2027 capex 是晶圆还是封装）→ <b>10/20 与 10/27 法国预算投票</b> → <b>10/29 FCC 公开委员会 + 三星正式业绩</b>（2027 HBM 合约重定价）→ <b>11/3 美国中期选举</b> → 11 月台积电月营收（单月首次确认 CPO 收入）。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 14. 页脚 ══════════ -->
+<div class="foot">
+  <b>数据源</b>　四星球当日全量抓取（2026-10-11，主体数据日与运行日同日）：小牛研报纪要 268 / 404K Semi-Ai 71 / Economic 国际投行研报 51 / 研报平权 4，原始 394 条；跨星球标题归一去重剔除 20 条后 <b>354 条</b>；过滤聚合空帖与正文过短帖后<b>有效内容 345 条</b>（小牛 240 / 404K 54 / Economic 51）。附件 <b>358 个</b>，<b>本轮未深读 PDF</b>，小牛 PDF 帖按「研报目录索引」处理，正文为空不计遗漏。<br>
+  <b>口径偏差（如实披露）</b>　① <b>研报平权当日 4 条全部为其他星球搬运，去重后零独立条目</b>（连续第五次），按指令仍执行抓取；② <b>小牛与 Economic 存在同批外资研报重叠</b>（小牛为 PDF 原文、Economic 为中文精华文字帖），两者不逐条对齐；③ 本期缺少卖方对中东地缘本身的专题推演，地缘板块仅呈现有量化支撑的运费与运力事实，未做方向性外推；④ 小牛约 1/4 帖真实内容在 PDF 附件内（标题为「#外资研报」等占位标签），已按文件名清单纳入研报目录视角，<b>未逐份深读</b>。<br>
+  <b>覆盖机构</b>　高盛 · 摩根士丹利 · 摩根大通 · 美银 · 瑞银（伯恩斯坦）· 巴克莱 · 汇丰 · 德意志银行 · 野村 · 中信建投 · 中金 · 国泰海通 · 国金 · 广发 · 长江 · 天风 · 东吴 · 招商 · 浙商 · 华泰 · 开源 · 国元（另有中信电器智造、国海通信、长江化工等专题）<br>
+  <b>编制口径</b>　「我的判断」与「说人话」段落为本报基于公开信息的推演，非原文观点；目标价与评级均为各机构口径，不代表本报立场。<b>本文为信息整理，不构成任何投资建议。</b><br>
+  <b>下期关注日历</b>　<b>10/12–15 OCP 全球峰会（NPO/CPO/XPO 商业化路径）</b> · 10/13 美国 9 月核心 CPI（若整体环比 0.62%、同比 3.7% 则 10 月加息定价进一步上修）+ 美国银行股财报启幕 · 10/14 美国零售销售与 PPI · <b>10/15 台积电 3Q26 法说会（最关键）</b> · 10/15–16 欧盟-中国贸易讨论 · 10/20 与 10/27 法国预算投票 · 10/22 苹果 FY26Q4 ·<b>10/29 FCC 公开委员会议（光模块议题是否补入）+ 三星正式业绩（2027 HBM 合约重定价）</b> · 10 月底–11 月上旬 hyperscaler 三季报（2027 CAPEX 指引）· <b>11/3 美国中期选举</b> · 11/4 美国季度再融资公告 · 11 月台积电月营收（单月首次确认 CPO 收入）。<br>
+  <details>
+    <summary>📄 关键报告原文索引（点击展开）</summary>
+    <div class="idx">
+      美银 — 全球存储科技：三星三季度与「降规」影响 / 大摩 — IT 硬件（北美）：PC 承压至 2027 / 摩根大通 — PC 市场追踪 3Q26 / 摩根大通 — 原油观察：四月重现 / 摩根大通 — 全球大宗商品观察 / 大摩 — 苹果：已经开始削减 iPhone 零部件订单？/ 摩根大通 — 人民币外汇：央行加入估值辩论 / 大摩 — 美国经济周报：中性利率的无谓纷扰 / 美银 — 全球利率观察：陡峭化许可 / 大摩 — 宁德时代：市场忽略了什么 / 高盛 — 三星电机：MLCC 与 ABF / 高盛 — 大立光：FAU 驱动估值重评 / 大摩 — TDK 考虑出售 HDD 磁头 / 摩根大通 — 揖斐电：ABF 载板 / 高盛 — DISCO 桑畑工厂调研 / 高盛 — 欧洲周报：法国 2027 / 汇丰 — 中国电力：转向全面看多 / 汇丰 — 亚洲集运：运费底部抬升 / 高盛 — 亚太 / 新兴市场 / 韩国 / 日本 / 印度 / 中国台湾周报 / 巴克莱 — 美国软件行业 / 伯恩斯坦 — 周末医疗保健脉动 / 德银 — 耐克 10-Q 要点 / 伯恩斯坦 — 安捷伦 AMG 调研 / 大摩 — 日本量化：AI 后半程 / 404K — 英伟达如何用信用背书锁定 Anthropic 2028 年 Rubin 算力 / 404K — 摩根士丹利路演：英伟达重回首选 / 404K — 三星考虑上调 S27 价格 / 404K — 存储订单与价格重排 / 404K — 算力采购前移 / 国海通信 — Lumentum 缺口覆盖至 2029 年初 / 长江化工 — 铬行业：SOFC / 长江证券 — 全球利率中枢 / 中信电器智造 — 大元泵业：Google+NV 双主线 / 广发公用 — 超强厄尔尼诺与水电电量 / 广发建筑 — 5,500 亿地方债限额 / 中国巨石三季报预告点评 / 东吴证券 — 谷歌 890MW 核电 PPA / 大摩 — 中国科技半导体：重访 CPO 及测试封装 / 摩根大通 — 中国科技：PCE 基板 T 玻璃短缺
+    </div>
+  </details>
+  <div style="margin-top:11px;color:#a0a0b0;font-size:11.8px;">瑞安编制 · 2026-10-11 23:20–23:55（抓取时段 23:11–23:20，四星球当日推送已于 20:09–20:14 完成，无需补抓）</div>
+</div>
+
+<div class="footer-tags">
+  <span>Economic 国际投行研报</span><span>404K Semi-Ai</span><span>研报平权</span><span>小牛研报纪要</span>
+</div>
+
+</div>
+</body>
+</html>
