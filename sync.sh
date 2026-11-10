@@ -3,10 +3,10 @@
 #
 # ⚠️ 两个关键约束（踩过坑，别改）：
 #  1) Pages 绑定的是 gh-pages 分支，必须 main 和 gh-pages 一起推，只推 main 页面不会更新
-#  2) 9 类日报全部公开（含源哥×XZ交叉日报、宏观地缘日报）—— 阿成 2026-10-08 决定解除限制
+#  2) 日报全部公开（含源哥×XZ交叉日报、宏观地缘日报）—— 阿成 2026-10-08 决定解除限制
 #
 # 开关：把 PUBLIC_ALL 改成 no 即可把 cross / macro-geo 两类重新隔离到本地（不上网）
-PUBLIC_ALL="yes"          # yes = 9 类全部公开；no = 只公开 7 类，另两类仅本地
+PUBLIC_ALL="yes"          # yes = 全部公开（2026-11-06 起 10 类）；no = 隔离 cross/macro-geo 两类
 set -e
 cd "$(dirname "$0")"
 PY="C:/Users/wangz/.workbuddy/binaries/python/versions/3.13.12/python.exe"
